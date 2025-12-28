@@ -1,0 +1,64 @@
+<section data-step="2" class="layout-step2">
+  <h1 data-i18n="step2.title">Cíl & energie</h1>
+
+  <!-- Cíl + Jednotka energie na jedné řádce (na mobilu pod sebou) -->
+  <div class="row row--2 align-end">
+    <!-- Cíl -->
+    <div class="field field--target">
+      <label><strong data-i18n="step2.target">Cíl</strong></label>
+
+      <!-- vysvětlení HNED pod nadpisem -->
+      <div class="help" data-i18n="step2.target_explainer">
+        Vyberte, zda chcete hubnout, udržovat nebo přibírat váhu. Doporučení příjmu se automaticky přizpůsobí.
+      </div>
+
+      <!-- volba cíle (chips) -->
+      <div id="target_group" class="chips" role="group" aria-label="Cíl">
+        <button type="button" class="chip" data-value="lose"     data-i18n="step2.target_lose">Zhubnout</button>
+        <button type="button" class="chip" data-value="maintain" data-i18n="step2.target_maintain">Udržet váhu</button>
+        <button type="button" class="chip" data-value="gain"     data-i18n="step2.target_gain">Přibrat</button>
+      </div>
+
+      <!-- dynamický hint podle výběru -->
+      <div id="target_help" class="help_under"></div>
+      <div class="error" id="err-target"></div>
+    </div>
+
+    <!-- Jednotka energie (vedle cíle) -->
+    <div class="field">
+      <label><strong data-i18n="step2.energy_unit">Jednotka energie</strong></label>
+      <div class="help" id="energy_help" data-i18n="step2.energy_help">
+        kJ a kcal jsou dvě jednotky pro energii. Pokud si nejste jistí, ponechte kJ (výchozí).
+      </div>
+      <div id="energy_unit_group" class="chips" role="group" aria-label="Jednotka energie">
+        <button type="button" class="chip" data-value="kcal">kcal</button>
+        <button type="button" class="chip" data-value="kJ">kJ</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- BMR: užší input + VĚTŠÍ jednotka za ním + error hned pod vstupem -->
+<div class="row">
+  <div class="field field--bmr">
+    <label for="bmr_value"><strong data-i18n="step2.bmr_label">BMR</strong></label>
+    <div class="input-with-unit">
+      <input id="bmr_value" type="number" inputmode="numeric" placeholder="—" />
+      <span id="bmr_unit" class="unit-badge unit-badge-xl">kJ</span>
+    </div>
+
+    <!-- ERROR JE TEĎ HNED POD INPUTEM -->
+    <div class="error error-inline" id="err-bmr"></div>
+
+    <!-- help se bude doplňovat o limity z app.js -->
+    <div class="help" id="bmr_help" data-i18n="step2.bmr_help_kj">
+      Vypočítáno z profilu (kJ/den). Můžete upravit ručně.
+    </div>
+
+    <div class="note" data-i18n="step2.bmr_explainer">
+      BMR (bazální metabolismus) je energie, kterou tělo spotřebuje v klidu. Hodnotu můžete upravit, pokud víte přesnější údaj.
+    </div>
+  </div>
+</div>
+
+</section>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/home.css">
+  <title data-i18n="payment_failed.title">Platba se nezdařila</title>
+  <style>
+    :root {
+      --error: #b3261e;
+      --error-dark: #8d1d18;
+      --panel: #ffffff;
+      --error-bg: #fcebea;
+    }
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 18% 22%, rgba(179,38,30,0.12), transparent 36%),
+                  radial-gradient(circle at 82% 0%, rgba(141,29,24,0.18), transparent 30%),
+                  linear-gradient(135deg, #fff7f6, #f8f2f1);
+      padding: 32px 16px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      overflow-x: hidden;
+    }
+    .status-shell {
+      width: min(860px, 100%);
+      display: grid;
+      gap: 12px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .brand-link img {
+      width: min(140px, 42vw);
+      height: auto;
+    }
+    .status-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+      overflow: hidden;
+    }
+    .status-head {
+      display: grid;
+      grid-template-columns: minmax(64px, auto) 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .status-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--error), var(--error-dark));
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    .status-icon svg { width: 28px; height: 28px; }
+    h1 { margin: 4px 0 6px; font-size: clamp(26px, 3vw, 34px); }
+    .lead { margin: 0; color: var(--muted); }
+    .lead,
+    h1,
+    .tip span {
+      overflow-wrap: anywhere;
+    }
+    .highlight {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn { justify-content: center; min-width: 180px; }
+    .btn.retry {
+      background: var(--error);
+      border: 1px solid var(--error);
+    }
+    .btn.retry:hover { background: var(--error-dark); }
+    .resume {
+      border: 1px dashed var(--error);
+      background: var(--error-bg);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .resume h2 { margin: 0; font-size: 18px; }
+    .tips {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: #fdfcfb;
+      display: grid;
+      gap: 10px;
+    }
+    .tip {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #0f172a;
+    }
+    .tip .badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--fg);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .support {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 22px 14px 26px; }
+      .status-shell { gap: 10px; }
+      .brand-link img { width: 120px; }
+      .status-card { padding: 22px; }
+      .status-head { grid-template-columns: 1fr; }
+      .status-icon { width: 56px; height: 56px; }
+      .btn { width: 100%; }
+      h1 { font-size: clamp(24px, 7vw, 32px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="status-shell">
+    <a class="brand-link" href="/index.html" aria-label="FitLime">
+      <img src="/public/images/logo_pruhledne.png" alt="FitLime logo">
+      <span>FitLime</span>
+    </a>
+
+    <section class="status-card">
+      <div class="status-head">
+        <div class="status-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 6-12 12"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </div>
+        <div>
+          <h1 data-i18n="payment_failed.heading">Platba se nezdařila</h1>
+          <p class="lead" data-i18n="payment_failed.message">Bohužel se platbu nepodařilo dokončit.</p>
+          <p class="lead highlight">
+            <span id="fail-note">Platba neproběhla. Zkuste ji prosím zopakovat.</span>
+          </p>
+        </div>
+      </div>
+
+      <div id="resume-block" class="resume" hidden>
+        <h2 data-i18n="payment_failed.resume_text">Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.</h2>
+        <button id="resume-btn" class="btn retry" data-i18n="payment_failed.resume_btn">Vrátit se k formuláři</button>
+      </div>
+
+      <div class="tips" id="tipList"></div>
+
+      <div class="actions">
+        <a href="/index.html" class="btn outline" data-i18n="payment_failed.back_home">← Zpět na hlavní stránku</a>
+        <a href="mailto:info@fitlime.cz" class="btn">Podpora: info@fitlime.cz</a>
+      </div>
+
+      <p class="support" id="supportNote">Pokud platba znovu selže, napište nám a objednávku dokončíme ručně.</p>
+    </section>
+  </main>
+
+  <script>
+    function getText(dictionary, key) {
+      return key.split(".").reduce((obj, part) => (obj ? obj[part] : undefined), dictionary);
+    }
+
+    async function initFailPage() {
+      const lang = localStorage.getItem("lang") || "cs";
+      const i18n = await fetch(`/i18n/${lang}.json`).then(r => r.json()).catch(() => ({}));
+      const t = (key) => getText(i18n, key) || key;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const value = t(el.dataset.i18n);
+        if (value && value !== el.dataset.i18n) {
+          el.textContent = value;
+        }
+      });
+
+      const translatedTitle = t("payment_failed.title");
+      if (translatedTitle && translatedTitle !== "payment_failed.title") {
+        document.title = translatedTitle;
+      }
+
+      const failNote = lang === "en"
+        ? "The payment was not processed. Please try again or use another card."
+        : "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.";
+      document.getElementById("fail-note").textContent = failNote;
+
+      const formState = localStorage.getItem("formState");
+      if (formState) {
+        const block = document.getElementById("resume-block");
+        block.hidden = false;
+        document.getElementById("resume-btn").addEventListener("click", () => {
+          window.location.href = `/form.html?resume=true&lang=${lang}`;
+        });
+      }
+
+      const tipsCs = [
+        "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",
+        "Zkuste platbu zopakovat později nebo na jiném zařízení/prohlížeči.",
+        "Pokud problém přetrvá, napište nám a vše vyřešíme ručně."
+      ];
+      const tipsEn = [
+        "Check that your card is enabled for online payments and has sufficient funds.",
+        "Try the payment again later or from another device/browser.",
+        "If it still fails, write to us and we will finalize the order manually."
+      ];
+      const tips = lang === "en" ? tipsEn : tipsCs;
+      const tipList = document.getElementById("tipList");
+      tipList.innerHTML = tips.map((text, idx) => `
+        <div class="tip">
+          <span class="badge">${idx + 1}</span>
+          <span>${text}</span>
+        </div>
+      `).join("");
+
+      const supportNote = lang === "en"
+        ? "If the payment keeps failing, contact us and we'll complete the order manually."
+        : "Pokud platba znovu selže, napište nám a objednávku dokončíme ručně.";
+      document.getElementById("supportNote").textContent = supportNote;
+    }
+
+    initFailPage();
+  </script>
+</body>
+</html>

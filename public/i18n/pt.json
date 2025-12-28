@@ -1,0 +1,9 @@
+{
+  "common": { "back": "Voltar", "next": "Avançar", "required": "Campo obrigatório" },
+  "step3": { "title": "Desporto & treino", "level": "Atividade desportiva", "none": "Não pratico", "recreational": "Recreativo", "regular": "Regular", "planChoice": "Plano", "own": "Tenho o meu plano (apenas dieta)", "need": "Quero plano de treino (extra)", "hours": "Quantas horas por semana?", "pref": "Desportos preferidos", "main": "Desporto principal" },
+  "step4": { "title": "Nutrição & macros", "diet": "Tipo de dieta", "diet_none": "Sem restrições", "diet_veg": "Vegetariana", "diet_pes": "Pescetariana", "diet_gf": "Sem glúten", "diet_lf": "Sem lactose", "dislikes": "Não como", "other": "Outro (opcional)", "macros": "Macronutrientes (%)", "sum": "Soma" },
+  "step5": { "title": "Balanço energético", "info": "Comparação de gasto e ingestão. Segunda com treino, terça sem.", "monday": "Segunda (com treino)", "tuesday": "Terça (sem treino)" },
+  "step6": { "title": "Seleção do plano", "variant": "Plano", "light": "Light (teste)", "standard": "Standard", "premium": "Premium", "period": "Período", "training": "Incluir plano de treino (+extra)", "price": "Preço" },
+  "step7": { "title": "Revisão & confirmação", "overview": "Resumo", "name": "Nome", "email": "E-mail", "terms": "Concordo com os Termos", "privacy": "Concordo com a Política de Privacidade", "total": "Preço total", "buy": "Comprar" },
+  "errors": { "sport_level": "Selecione o nível de atividade.", "plan_choice": "Selecione a opção do plano.", "mainSportId": "O desporto principal deve estar selecionado.", "macros_sum": "As macros devem somar 100%.", "macros_limits": "Macros fora do intervalo permitido.", "other_len": "Máx. 80 caracteres.", "variant": "Selecione um plano.", "name": "Nome (2–80 car.).", "email": "E-mail inválido.", "consents": "Aceite os consentimentos." }
+}

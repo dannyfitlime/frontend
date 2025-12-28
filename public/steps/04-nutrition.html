@@ -1,0 +1,64 @@
+<section class="layout-step4">
+  <h1 data-i18n="step4.title">Stravování & makra</h1>
+
+  <!-- Typ diety -->
+  <div class="field">
+    <label><strong data-i18n="step4.diet">Typ diety</strong></label>
+    <div class="help" data-i18n="step4.help_diet">Vyberte typ stravy, který běžně dodržujete.</div>
+    <div id="diet_group" class="chips chips-hero" role="group" aria-label="Typ diety">
+      <button type="button" class="chip" data-value="none"         data-i18n="step4.diet_none">Bez omezení</button>
+      <button type="button" class="chip" data-value="vegetarian"   data-i18n="step4.diet_vegetarian">Vegetarián</button>
+      <button type="button" class="chip" data-value="pescetarian"  data-i18n="step4.diet_pescetarian">Pescetarián</button>
+      <button type="button" class="chip" data-value="gluten_free"  data-i18n="step4.diet_gluten_free">Bezlepkové</button>
+      <button type="button" class="chip" data-value="lactose_free" data-i18n="step4.diet_lactose_free">Bez laktózy</button>
+    </div>
+  </div>
+
+  <!-- Nejím -->
+  <div class="field" id="dislikes_block">
+    <label>
+      <strong class="dislikes_title" data-i18n="step4.dislikes_title">Potraviny k vyloučení z jídelníčku (volitelné)</strong>
+    </label>
+    <div class="help" data-i18n="step4.help_dislikes">Označte suroviny, kterým se chcete v jídelníčku vyhnout.</div>
+    <div id="dislikes" class="chips" role="group" aria-label="Nejím">
+      <button type="button" class="chip" data-id="mushrooms" data-i18n="step4.dislike_mushrooms">Houby</button>
+      <button type="button" class="chip" data-id="olives"    data-i18n="step4.dislike_olives">Olivy</button>
+      <button type="button" class="chip" data-id="pepper"    data-i18n="step4.dislike_pepper">Paprika</button>
+      <button type="button" class="chip" data-id="tomato"    data-i18n="step4.dislike_tomato">Rajčata</button>
+      <button type="button" class="chip" data-id="onion"     data-i18n="step4.dislike_onion">Cibule</button>
+      <button type="button" class="chip" data-id="fish"      data-i18n="step4.dislike_fish">Ryby</button>
+      <button type="button" class="chip" data-id="seafood"   data-i18n="step4.dislike_seafood">Mořské plody</button>
+      <button type="button" class="chip" data-id="eggs"      data-i18n="step4.dislike_eggs">Vejce</button>
+    </div>
+  </div>
+  
+<!-- Počet opakování jídel -->
+  <div class="field" id="repeats_block">
+    <label id="step4_repeats_title">
+      <strong data-i18n="step4.repeats_title">Počet opakování jídel</strong>
+    </label>
+
+    <div id="step4_help_repeats" class="help" data-i18n="step4.help_repeats">
+      Vyberte, kolikrát se mohou jídla během týdne opakovat.
+    </div>
+
+    <div id="repeat_group" class="chips chips-hero" role="group" aria-label="Počet opakování jídel">
+      <button type="button" class="chip" data-value="1" data-i18n="step4.repeat_once">1×</button>
+      <button type="button" class="chip" data-value="2" data-i18n="step4.repeat_twice">2×</button>
+      <button type="button" class="chip" data-value="3" data-i18n="step4.repeat_thrice">3×</button>
+    </div>
+
+    <div class="repeat-hints">
+      <div class="repeat-hint active" data-value="1" id="step4_repeats_hint1" data-i18n="step4.hint1">
+        Jídelníček je nejpestřejší, jídla se neopakují.
+      </div>
+      <div class="repeat-hint" data-value="2" id="step4_repeats_hint2" data-i18n="step4.hint2">
+        Střední varianta – některá jídla se zopakují, stále dostatečně pestré.
+      </div>
+      <div class="repeat-hint" data-value="3" id="step4_repeats_hint3" data-i18n="step4.hint3">
+        Méně pestré, ale snazší na přípravu.
+      </div>
+    </div>
+    <div class="error" id="err-repeats"></div>
+  </div>
+</section>

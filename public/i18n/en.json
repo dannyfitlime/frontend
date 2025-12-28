@@ -1,0 +1,874 @@
+{
+  "home": {
+    "meta": {
+      "title": "FitLime – Personalized Meal & Training Plans",
+      "description": "Complete personalized meal and training plans. Healthy lifestyle, diverse meals, education, and sports support."
+    },
+    "cookies": {
+      "text": "We use cookies for proper website functionality and analytics. <a href='/cookies.html'>Learn more</a>.",
+      "decline": "Decline",
+      "accept": "Accept all"
+    },
+    "nav": {
+      "how": "How it works",
+      "preview": "Preview",
+      "coverage": "What's included",
+      "pricing": "Pricing",
+      "about": "About us",
+      "reference": "Testimonials"
+    },
+    "hero": {
+      "title": "Personalized meal & training plan in minutes",
+      "lead": "Fill out a short questionnaire and get a plan tailored to your needs.",
+      "cta": "Start questionnaire",
+      "note": "Non-binding, it only takes a few minutes."
+    },
+    "why": {
+      "title": "Why FitLime?",
+      "cards": {
+        "lifestyle": {
+          "title": "🌱 Lifestyle change",
+          "text": "Education and a long-term approach to nutrition — not just a list of meals."
+        },
+        "meals": {
+          "title": "🥗 Unique meals",
+          "text": "A diverse, inspiring, and colorful meal plan for every day."
+        },
+        "flex": {
+          "title": "⚖️ Flexibility",
+          "text": "We respect allergies, intolerances, and your preferences."
+        },
+        "output": {
+          "title": "📋 Practical output",
+          "text": "Meal plan, recipes, shopping list, and much more."
+        },
+        "micro": {
+          "title": "💊 Micronutrients",
+          "text": "The plan covers a wide range of vitamins and minerals."
+        },
+        "sport": {
+          "title": "🏋️ Sports support",
+          "text": "Nutrition set up for performance, recovery, and your goals."
+        }
+      }
+    },
+    "how": {
+      "title": "How it works:",
+      "step1": {
+        "title": "Questionnaire",
+        "text": "You fill in your basic details.",
+        "point1": "age, height, weight, and goals",
+        "point2": "dietary preferences",
+        "point3": "daily routine and physical activity"
+      },
+      "step2": {
+        "title": "Calculation",
+        "text": "Our algorithm creates your meal plan with expert input.",
+        "point1": "takes your energy expenditure into account",
+        "point2": "nutritional balance of macro and micronutrients",
+        "point3": "adapted to your lifestyle"
+      },
+      "step3": {
+        "title": "Delivery",
+        "text": "You receive a complete package.",
+        "point1": "weekly meal plan with recipes",
+        "point2": "educational and explanatory material",
+        "point3": "shopping list"
+      },
+      "step4": {
+        "title": "Results",
+        "text": "Track your progress and stay motivated.",
+        "point1": "clearly measurable improvements",
+        "point2": "greater meal variety",
+        "point3": "better energy and overall feeling"
+      }
+    },
+    "preview": {
+      "title": "Meal plan preview",
+      "lead": "A real sample day from the plan: meal variety, micronutrients, and energy balance."
+    },
+    "coverage": {
+      "title": "What the plan covers",
+      "intro": "An overview of all key nutrients grouped into four clear categories. Click to view details.",
+      "boxes": {
+        "energy": {
+          "title": "Energy & macronutrients",
+          "items": {
+            "energy": "<b>Energy</b> – enough calories without overeating",
+            "protein": "<b>Protein</b> – recovery and muscle support",
+            "fat": "<b>Fat</b> – healthy source of energy",
+            "carbs": "<b>Carbohydrates</b> – fuel for body and mind"
+          }
+        },
+        "groups": {
+          "title": "Food groups",
+          "items": {
+            "fruitveg": "<b>Fruits & vegetables</b> – vitamins, minerals, fiber",
+            "dairy": "<b>Dairy</b> – calcium and protein",
+            "fish": "<b>Fish</b> – source of omega-3",
+            "fiber": "<b>Fiber</b> – supports digestion"
+          }
+        },
+        "vitamins": {
+          "title": "Vitamins",
+          "items": {
+            "vitc": "<b>Vit. C</b> – immunity",
+            "vitd": "<b>Vit. D</b> – bones and vitality",
+            "vite": "<b>Vit. E</b> – antioxidant",
+            "vitb": "<b>Vit. B complex</b> – energy and nerves",
+            "folic": "<b>Folic acid</b> – cell growth"
+          }
+        },
+        "minerals": {
+          "title": "Minerals",
+          "items": {
+            "iron": "<b>Iron</b> – blood and oxygen",
+            "magnesium": "<b>Magnesium</b> – muscles and fatigue",
+            "calcium": "<b>Calcium</b> – bones and teeth",
+            "potassium": "<b>Potassium</b> – muscles and blood pressure"
+          }
+        }
+      },
+      "hint": "Click for detail"
+    },
+    "training": {
+      "title": "Training plan",
+      "text": "We always create your meal plan with your training goals in mind — whether endurance, strength, or recreational sports. If you wish, we’ll include a personalized training plan based on your favorite activities, completely free.",
+      "cta": "I want both meal & training plan"
+    },
+    "pricing": {
+      "title": "Plans & pricing",
+      "per_week": "/ week",
+      "per_month": "/ month",
+      "advantage": "better value",
+      "standard": {
+        "title": "⚖️ Standard – full (5 days)",
+        "feature1": "5-day meal plan (Mon–Fri)",
+        "feature2": "Unique, varied meals",
+        "feature3": "Personalized by training diary",
+        "feature4": "Recipes for each meal",
+        "feature5": "Shopping list",
+        "feature6": "Energy intake & expenditure charts",
+        "feature7": "Nutrient education materials"
+      },
+      "premium": {
+        "badge": "Most popular",
+        "title": "🏆 Premium – tailored (7 days)",
+        "feature1": "7-day meal plan (Mon–Sun)",
+        "feature2": "Unique, varied meals",
+        "feature3": "Personalized by training diary",
+        "feature4": "Recipes for each meal",
+        "feature5": "Shopping list",
+        "feature6": "Energy intake & expenditure charts",
+        "feature7": "Nutrient education materials",
+        "extra1": "Education on sports nutrition",
+        "extra2": "Tailored supplement plan",
+        "extra3": "Hydration plan",
+        "extra4": "Diet preferences & restrictions",
+        "extra5": "Adjustable macronutrients"
+      },
+      "cta": "Start questionnaire",
+      "note": "Non-binding — you choose during checkout."
+    },
+    "faq": {
+      "title": "FAQ – Frequently Asked Questions",
+      "q1": {
+        "q": "How will I receive my meal plan?",
+        "a": "We’ll send it to your email as a PDF file including clear tables and charts."
+      },
+      "q2": {
+        "q": "Will I need special ingredients?",
+        "a": "No, recipes are based on commonly available supermarket ingredients."
+      },
+      "q3": {
+        "q": "How long does the plan last?",
+        "a": "We typically create a 7-day plan with 35 unique meals — you can reuse or modify it as needed."
+      },
+      "q4": {
+        "q": "Is a shopping list included?",
+        "a": "Yes, you’ll receive a clear shopping list for the entire week."
+      },
+      "q5": {
+        "q": "What if I don’t have kitchen scales?",
+        "a": "Portions are listed, but approximate measures (spoon, cup, pieces) are fine. Focus on variety and balance rather than precision."
+      },
+      "q6": {
+        "q": "Can you adjust for allergies or intolerances?",
+        "a": "Yes — just specify your preferences and restrictions in the form."
+      },
+      "q7": {
+        "q": "Can you tailor the plan to my goals?",
+        "a": "Of course — whether it’s weight loss, muscle gain, or maintenance."
+      },
+      "q8": {
+        "q": "What if I have a medical condition?",
+        "a": "We can adapt the plan for special needs (e.g., high cholesterol, diabetes) — with expert consultation if necessary."
+      },
+      "q9": {
+        "q": "Who creates the meal plans?",
+        "a": "They are designed by nutrition experts with experience in sports medicine."
+      },
+      "q10": {
+        "q": "Where do you get nutritional data?",
+        "a": "We use verified food databases and our own computational models."
+      },
+      "q11": {
+        "q": "What if I dislike a recipe?",
+        "a": "The plan includes multiple options, so you can always choose your favorite. The Premium plan also allows food exclusions."
+      },
+      "q12": {
+        "q": "Can I update my plan later?",
+        "a": "Yes, monthly plans can be adjusted based on your feedback."
+      },
+      "q13": {
+        "q": "How fast will I receive it?",
+        "a": "We deliver within 3 business days, usually within 1 day."
+      },
+      "q14": {
+        "q": "Is it suitable for non-athletes?",
+        "a": "Yes, we can create plans for people with minimal or no physical activity."
+      }
+    },
+    "about": {
+      "title": "About us",
+      "libor": {
+        "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
+        "item1": "Clinical biochemist, internal medicine specialist at VFN and 1st Faculty of Medicine, Charles University",
+        "item2": "Expert consultant in sports nutrition",
+        "item3": "Collaboration with the Czech Olympic Team"
+      },
+      "danny": {
+        "name": "Ing. Daniel Vítek",
+        "item1": "Graduate in Bioinformatics at CTU FEE",
+        "item2": "Studies at the Faculty of Physical Education and Sport (Madrid)",
+        "item3": "Bioinformatics & technology in nutrition"
+      }
+    },
+    "reference": {
+      "title": "Testimonials",
+      "client1": {
+        "text": "“It changed the way we think about eating. We feel more energized throughout the day.”",
+        "author": "— Mati | Solene",
+        "flags": [
+          "cl",
+          "es"
+        ]
+      },
+      "client2": {
+        "text": "“Meals are simple and tasty. The shopping list saves time. I feel great cycling.”",
+        "author": "— Hana",
+        "flags": [
+          "de"
+        ]
+      },
+      "client3": {
+        "text": "“Premium matched my training plan perfectly. The service is good AF.”",
+        "author": "— David",
+        "flags": [
+          "us",
+          "cz"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "lead": "Start the questionnaire and see how your personalized plan could look.",
+      "cta": "Start questionnaire",
+      "note": "You choose during checkout. It only takes a few minutes."
+    },
+    "footer": {
+      "brand": "FitLime s.r.o. © 2025",
+      "powered": "powered by sportvitalpro.cz",
+      "payments": "Payments processed by Comgate",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookies"
+    }
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "error_required": "This field is required.",
+    "error_number": "Enter a valid number.",
+    "error_range": "Value must be between {{min}} and {{max}}.",
+    "error_email": "Enter a valid email address.",
+    "error_macro_sum": "The sum of carbs, protein, and fat must equal 100%.",
+    "error_macro_c": "Carbohydrates must be between {{min}} and {{max}}%.",
+    "error_macro_p": "Protein must be between {{min}} and {{max}}%.",
+    "error_macro_f": "Fat must be between {{min}} and {{max}}%.",
+    "range": "Range",
+    "per_day_short": "day",
+    "leave_title": "Leave the form?",
+    "leave_text": "You may lose unsaved changes. Do you want to continue to the homepage?",
+    "leave_stay": "Stay",
+    "leave_leave": "Leave",
+    "home": "Home",
+    "years": "years"
+  },
+  "intro": {
+    "title": "Start your journey to better nutrition",
+    "point1": "Discover your needs – quick calculation of energy and goals.",
+    "point2": "Get your plan – recommended meals and activities.",
+    "point3": "Full overview – clear next steps.",
+    "cta": "Let's start"
+  },
+  "a11y": {
+    "hero_perks_label": "Main benefits",
+    "opens_new_tab": "Opens in a new tab"
+  },
+  "steps": [
+    "Profile",
+    "Goal & Energy",
+    "Sports",
+    "Diet",
+    "Macros & Charts",
+    "Plan",
+    "Summary"
+  ],
+  "step1": {
+    "title": "Basic information",
+    "sex": "Gender",
+    "sex_male": "Male",
+    "sex_female": "Female",
+    "sex_other": "Other",
+    "age": "Age (years)",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "activity": "Daily routine",
+    "activity_sedentary": "Sedentary",
+    "activity_moderately_active": "Moderately active",
+    "activity_very_active": "Very active",
+    "steps": "Daily steps",
+    "steps_0_4k": "0 – 4k",
+    "steps_4_8k": "4 – 8k",
+    "steps_8_12k": "8 – 12k",
+    "steps_12_20k": "12 – 20k",
+    "steps_20_40k": "20 – 40k",
+    "age_placeholder": "e.g. 32",
+    "height_placeholder": "e.g. 178",
+    "weight_placeholder": "e.g. 82",
+    "info_text": "We need this information to calculate your basal metabolism and estimate your daily energy expenditure. Based on it, we’ll create a meal plan suited to your goals."
+  },
+  "step2": {
+    "title": "Goal & Energy",
+    "target": "Nutritional goal",
+    "target_lose": "Lose weight",
+    "target_maintain": "Maintain weight",
+    "target_gain": "Gain weight",
+    "help_lose": "We recommend a mild caloric deficit.",
+    "help_maintain": "The goal is energy balance.",
+    "help_gain": "A slight caloric surplus supports growth.",
+    "energy_unit": "Energy unit",
+    "unit_kj": "kJ",
+    "unit_kcal": "kcal",
+    "bmr_label": "Basal Metabolic Rate (BMR)",
+    "bmr_help_kj": "Calculated from profile (kJ/day). You can adjust manually.",
+    "bmr_help_kcal": "Calculated from profile (kcal/day). You can adjust manually.",
+    "target_explainer": "Select whether you want to lose, maintain, or gain weight. The intake recommendation will adjust automatically.",
+    "energy_help": "Choose your preferred energy unit.",
+    "bmr_explainer": "BMR is the amount of energy your body burns at rest. You can modify it if you know a more accurate value."
+  },
+  "step3": {
+    "title": "Sports activity",
+    "level": "Activity level",
+    "level_none": "I don’t exercise",
+    "sports": "Sports",
+    "level_recreational": "Recreational",
+    "level_regular": "Performance",
+    "plan_choice": "Training plan",
+    "plan_own": "I have my own plan",
+    "plan_need": "I want a training plan",
+    "help_plan_choice": "Choose whether you already have a plan or want us to create one.",
+    "help_own_block": "Enter details about your sport — how often you train, duration, and intensity.",
+    "add_sport": "Add another sport",
+    "help_main_sport": "Select the sport you do most often.",
+    "help_need_sports": "Select the sports you want in your plan.",
+    "help_hours": "Total weekly training time.",
+    "intensity": "Intensity",
+    "intensity_low": "Low",
+    "intensity_medium": "Medium",
+    "intensity_high": "High",
+    "sessions_per_week": "Sessions/week",
+    "minutes": "Duration (min)",
+    "hours_per_week": "Weekly duration (h/week)",
+    "future_sports": "Sports you’d like to try",
+    "help_none_multi": "You can select multiple options",
+    "main_sport": "Main sport",
+    "groups": {
+      "title_endurance": "Endurance sports",
+      "title_winter": "Winter sports",
+      "title_team": "Team sports",
+      "title_individual": "Individual sports",
+      "title_fitness": "Fitness & gym",
+      "title_water": "Water sports",
+      "title_combat": "Combat sports",
+      "title_other": "Other sports"
+    },
+    "suggest_walking": "Walking",
+    "suggest_running": "Running",
+    "suggest_cycling": "Cycling",
+    "suggest_yoga": "Yoga",
+    "suggest_homegym": "Strength training",
+    "suggest_swimming": "Swimming",
+    "suggest_football": "Football",
+    "suggest_basketball": "Basketball",
+    "suggest_other": "Other",
+    "level_explainer": "Select how often you exercise. This will adjust the required details.",
+    "other_placeholder": "Other..."
+  },
+  "step4": {
+    "title": "Diet preferences",
+    "diet": "Diet type",
+    "diet_none": "No restrictions",
+    "diet_vegetarian": "Vegetarian",
+    "diet_pescetarian": "Pescetarian",
+    "diet_gluten_free": "Gluten-free",
+    "diet_lactose_free": "Lactose-free",
+    "dislikes": "Foods I don’t eat",
+    "dislikes_title": "I don’t eat",
+    "dislikes_hint": "- optional",
+    "other_placeholder": "Others…",
+    "dislike_mushrooms": "Mushrooms",
+    "dislike_olives": "Olives",
+    "dislike_pepper": "Peppers",
+    "dislike_tomato": "Tomatoes",
+    "dislike_onion": "Onions",
+    "dislike_fish": "Fish",
+    "dislike_seafood": "Seafood",
+    "dislike_eggs": "Eggs",
+    "dislike_other": "Other (specify)",
+    "dislikes_optional": "(optional)",
+    "help_diet": "Choose your usual dietary style.",
+    "help_dislikes": "Select ingredients you want to exclude from your plan.",
+    "premium_note": "Diet adjustments and exclusions are available only in the Premium plan.",
+    "repeats_title": "Meal repetition frequency",
+    "help_repeats": "Select how often meals can repeat during the week.",
+    "repeat_once": "Once",
+    "repeat_twice": "Twice",
+    "repeat_thrice": "Multiple times",
+    "hint1": "Most varied — meals do not repeat.",
+    "hint2": "Balanced — some meals repeat, still quite varied.",
+    "hint3": "Less variety, but easier to prepare."
+  },
+  "step5": {
+    "title": "Macros & charts",
+    "macros_title": "Macronutrients",
+    "graphs_title": "Energy intake & expenditure charts",
+    "carb": "Carbohydrates (%)",
+    "fat": "Fat (%)",
+    "protein": "Protein (%)",
+    "sum_input": "Sum",
+    "help_macros": "Values are pre-filled based on your activity level.",
+    "premium_note": "Macro customization applies only to the Premium plan.",
+    "bmr": "BMR",
+    "bda": "Daily activity",
+    "sport": "Sport activity",
+    "intake": "Intake",
+    "exp_label": "Expenditure",
+    "in_label": "Intake",
+    "balance": "Balance",
+    "help": "The charts compare your energy intake and expenditure on different days. Intake adjusts based on your goal (lose, maintain, gain). These are informative values to help you understand energy balance — the real plan will be personalized.",
+    "toggle_sport": "Show sports activity",
+    "toggle_help": "Toggle this to see the difference between days with and without exercise. It helps visualize how physical activity changes your energy needs."
+  },
+  "step6": {
+    "title": "Choose your plan",
+    "variant": "Plan variant",
+    "variant_help": "Select which plan you prefer.",
+    "period_title": "Plan duration",
+    "period_help": "Choose whether you want a one-time plan or a monthly subscription.",
+    "period_week": "One-time",
+    "period_month": "Four weeks",
+    "help_week": "We’ll create one plan for you.",
+    "help_month": "We’ll create four consecutive plans.",
+    "standard_title": "Standard",
+    "standard_days": "5 days",
+    "standard_desc": "Full meal plan for the working week.",
+    "standard_feature1": "🥗 Diverse meals",
+    "standard_feature2": "📋 Recipes & shopping list",
+    "standard_feature3": "💪 Personalized by your training",
+    "standard_delivery": "Delivery within 3 business days",
+    "premium_title": "Premium",
+    "premium_days": "7 days",
+    "premium_desc": "Complete weekly plan with extra features.",
+    "premium_feature1": "🌱 Everything from Standard",
+    "premium_feature2": "💊 Personalized supplement plan",
+    "premium_feature3": "🥤 Hydration & diet preferences",
+    "premium_delivery": "Express delivery within 2 business days",
+    "details_title": "Plan details",
+    "standard_detail_title": "Standard – full (5 days)",
+    "standard_detail1": "Meal plan for 5 days (Mon–Fri)",
+    "standard_detail2": "Unique, varied meals",
+    "standard_detail3": "Personalized by training diary",
+    "standard_detail4": "Recipes for each meal",
+    "standard_detail5": "Shopping list",
+    "standard_detail6": "Energy intake & expenditure charts",
+    "standard_detail7": "Nutrient education materials",
+    "premium_detail_title": "Premium – tailored (7 days)",
+    "premium_detail1": "Meal plan for 7 days (Mon–Sun)",
+    "premium_detail2": "Unique, varied meals",
+    "premium_detail3": "Personalized by training diary",
+    "premium_detail4": "Recipes for each meal",
+    "premium_detail5": "Shopping list",
+    "premium_detail6": "Energy intake & expenditure charts",
+    "premium_detail7": "Nutrient education materials",
+    "premium_detail8": "Education on sports nutrition",
+    "premium_detail9": "Tailored supplement plan",
+    "premium_detail10": "Hydration plan",
+    "premium_detail11": "Selected diet preferences",
+    "premium_detail12": "Exclusion of specific foods",
+    "premium_detail13": "Customizable macronutrients",
+    "total_label": "Total price:"
+  },
+  "step7": {
+    "title": "Summary & purchase",
+    "summary_title": "Order summary",
+    "basic": "Basic details",
+    "activity": "Daily activity",
+    "goal": "Goal & energy",
+    "sports": "Sports activities",
+    "training": "Training plan:",
+    "diet": "Diet type",
+    "dislikes": "Foods excluded",
+    "repeats": "Meal repetition",
+    "macros": "Macronutrient distribution",
+    "plan": "Selected plan",
+    "repeats_1": "Once per day",
+    "repeats_2": "Twice per day",
+    "repeats_3": "Three times per day",
+    "level_none": "No sport",
+    "want_sport": "Want to include sport",
+    "level_recreational": "Recreational",
+    "level_performance": "Performance",
+    "future_sport": "Interested in",
+    "want_plan": "Want training plan",
+    "hours_per_week": "Hours per week",
+    "main_sport": "Main sport",
+    "macros_carbs": "Carbohydrates",
+    "macros_fats": "Fats",
+    "macros_proteins": "Proteins",
+    "discount": "Discount code",
+    "discount_applied": "Discount applied",
+    "total": "Total price",
+    "summary_personal": "Personal information",
+    "name": "Name",
+    "email": "Email",
+    "newsletter": "Subscribe to newsletter",
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john.doe@email.com"
+    },
+    "terms": "I agree with the Terms & Conditions",
+    "privacy": "I agree with the Privacy Policy",
+    "buy": "Purchase",
+    "use": "Apply",
+    "discount_invalid": "Invalid code",
+    "trust": "Payments processed by Comgate",
+    "missing_fields": "Please fill in your name, email, and required consents.",
+    "purchase_failed": "The order could not be completed. Please try again."
+  },
+  "payment_failed.title": "Payment failed",
+  "payment_failed.heading": "❌ Payment failed",
+  "payment_failed.message": "Unfortunately, the payment could not be processed.",
+  "payment_failed.resume_text": "Your form data has been saved — you can continue where you left off.",
+  "payment_failed.resume_btn": "↩️ Return to form",
+  "payment_failed.back_home": "← Back to homepage",
+  "buttons": {
+    "sending": "Sending..."
+  },
+  "thanks": {
+    "title": "Thank you for your order | FitLime",
+    "header": "Order completed successfully :)",
+    "subtitle_1": "Thank you for your purchase!",
+    "subtitle_2_prefix": "A confirmation email has been sent to",
+    "order_id": "Order ID",
+    "name": "Name",
+    "plan": "Plan",
+    "period": "Duration",
+    "next_premium": "We’ll prepare and send your plan within 2 business days.",
+    "next_basic": "We’ll prepare and send your plan within 3 business days.",
+    "next_email": "Please check your Spam or Promotions folder if you don’t see the email.",
+    "next_tips": "In the meantime, you can read our nutrition tips.",
+    "btn_home": "Back to homepage",
+    "btn_tips": "Nutrition tips"
+  },
+  "days": {
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday"
+  },
+  "termsPage": {
+    "metaTitle": "Terms & Conditions – FitLime",
+    "back": "← Back to homepage",
+    "subtitle": "For providing a one-time custom meal plan",
+    "title": "Terms & Conditions – FitLime",
+    "effective": "Effective from: 01.01.2026",
+    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, ID: 04528930, info@fitlime.cz",
+    "sections": {
+      "intro": {
+        "title": "1. Introductory Provisions",
+        "item1": "These Terms govern the rights and obligations between the Provider and the Customer.",
+        "item2": "By submitting an order, the Customer confirms they have read and agree to these Terms."
+      },
+      "service": {
+        "title": "2. Nature of the Service",
+        "item1": "The Provider offers a one-time personalized service – creating an individual weekly meal plan based on the Customer’s data.",
+        "item2": "The service includes:",
+        "includes1": "accepting the order,",
+        "includes2": "evaluating the provided data,",
+        "includes3": "creating the meal plan,",
+        "includes4": "sending the meal plan to the Customer’s e-mail.",
+        "item3": "The service does not include:",
+        "excludes1": "later edits after delivery,",
+        "excludes2": "consultations,",
+        "excludes3": "long-term guidance or support,",
+        "excludes4": "individual medical diagnostics.",
+        "item4": "The meal plan is created solely from the data provided by the Customer; the Customer is responsible for its truthfulness and completeness."
+      },
+      "order": {
+        "title": "3. Order and Contract Formation",
+        "item1": "The order is concluded by completing the form and paying the price.",
+        "item2": "The contract is formed once payment is confirmed through the ComGate payment gateway.",
+        "item3": "The Provider confirms the order by e-mail."
+      },
+      "price": {
+        "title": "4. Price and Payment Terms",
+        "item1": "The service price is listed on the website and is final.",
+        "item2": "Payment is made exclusively online via the ComGate Payments gateway.",
+        "item3": "Work on the meal plan begins only after the price is paid."
+      },
+      "delivery": {
+        "title": "5. Service Delivery",
+        "item1": "The Provider offers variants with different delivery times: Standard – within 3 business days, Premium – within 2 business days.",
+        "item2": "The deadline begins once payment and complete data are received from the Customer.",
+        "item3": "The meal plan is delivered by e-mail to the address provided by the Customer.",
+        "item4": "If the e-mail ends up in spam/bulk/promo folders, it is considered delivered.",
+        "item5": "If the Customer does not provide all required information, the delivery time is extended by the waiting time for the missing data.",
+        "item6": "The Provider may slightly extend the deadline (technical issues, illness, force majeure) and will inform the Customer by e-mail."
+      },
+      "recommend": {
+        "title": "6. Advisory Nature of the Meal Plan",
+        "item1": "All information, recommendations, and parts of the meal plan are general and advisory.",
+        "item2": "The meal plan serves as a sample the Customer may draw inspiration from.",
+        "item3": "The Customer should always follow:",
+        "list1": "their personal feelings,",
+        "list2": "their current physical and health condition,",
+        "list3": "their doctor’s recommendations,",
+        "list4": "their individual food tolerance.",
+        "item4": "If any part of the meal plan or hydration guidance is unsuitable, the Customer follows their own needs."
+      },
+      "health": {
+        "title": "7. Health Limitations and Liability Disclaimer",
+        "item1": "The Provider is not a healthcare facility and does not provide medical services.",
+        "item2": "The meal plan is not diagnosis, treatment, or diet therapy.",
+        "item3": "The Provider is not liable for:",
+        "list1": "health consequences caused by improper use of the meal plan,",
+        "list2": "consequences arising from untrue data provided by the Customer,",
+        "list3": "any adverse reactions to foods,",
+        "list4": "changes in health status while following the meal plan."
+      },
+      "results": {
+        "title": "8. No Guarantee of Results",
+        "lead": "The Customer acknowledges that the Provider does not guarantee any specific outcome.",
+        "list1": "weight loss,",
+        "list2": "muscle gain,",
+        "list3": "changes in health status,",
+        "list4": "improved physical fitness.",
+        "note": "Results depend on many factors (health condition, hormones, genetics, physical activity, adherence to the plan, environment, stress, sleep, medication)."
+      },
+      "withdrawal": {
+        "title": "9. Withdrawal from the Contract",
+        "item1": "The Customer acknowledges that under Section 1837(d) of the Civil Code they cannot withdraw, as the service is tailored to their individual requirements.",
+        "item2": "Once the Provider starts working on the meal plan, the right to withdraw expires."
+      },
+      "claims": {
+        "title": "10. Complaints and Refunds",
+        "lead": "A complaint is only possible in these cases:",
+        "item1": "The meal plan could not be created for objective professional reasons.",
+        "item2": "The Provider does not deliver the meal plan within the guaranteed timeframe for the selected service variant, and the delay is not caused by the Customer or spam delivery.",
+        "item3": "In cases 1 or 2, the Customer is entitled to a full refund.",
+        "note": "Other complaints are not possible because this is a bespoke service."
+      },
+      "copyright": {
+        "title": "11. Copyright",
+        "item1": "The meal plan is the Provider’s copyrighted work.",
+        "item2": "It is intended only for the Customer’s personal use.",
+        "item3": "Sharing, publishing, selling, or modifying the meal plan is prohibited."
+      },
+      "privacy": {
+        "title": "12. Personal Data Protection",
+        "item1": "Personal data processing follows the Privacy Policy available on the FitLime website."
+      },
+      "disputes": {
+        "title": "13. Out-of-court Dispute Resolution",
+        "item1": "Czech Trade Inspection Authority – www.coi.cz",
+        "item2": "EU online platform – ec.europa.eu/consumers/odr"
+      },
+      "final": {
+        "title": "14. Final Provisions",
+        "item1": "The Provider may update these Terms at any time.",
+        "item2": "The current version is always available on the FitLime website.",
+        "item3": "Legal relations are governed by the laws of the Czech Republic."
+      }
+    }
+  },
+  "privacyPage": {
+  "metaTitle": "Privacy Policy – FitLime",
+  "back": "← Back to homepage",
+  "subtitle": "For websites fitlime.cz, fitlime.sk, fitlime.eu",
+  "title": "Privacy Policy",
+  "effective": "Effective from: 01.01.2026",
+  "sections": {
+    "controller": {
+      "title": "1. Data Controller",
+      "provider": "Sportvital-Pro s.r.o.",
+      "address": "Mokropeská 1799, 252 28 Černošice",
+      "ico": "ID: 04528930",
+      "email": "E-mail: info@fitlime.cz",
+      "domains": "The Controller operates FitLime projects on domains fitlime.cz, fitlime.sk, fitlime.eu."
+    },
+    "data": {
+      "title": "2. What personal data we process",
+      "directTitle": "A) Data provided directly by the user",
+      "directItem1": "first and last name",
+      "directItem2": "e-mail",
+      "directItem3": "gender",
+      "directItem4": "age",
+      "directItem5": "height, weight",
+      "directItem6": "sport activity (if provided)",
+      "directItem7": "goals (weight loss, gain, recommendations)",
+      "directItem8": "optional health or restriction data (allergies, intolerances, health condition)",
+      "directNote": "Note: Health data are a special category of personal data – we process them only with consent, as they are necessary to create a tailored meal plan.",
+      "orderTitle": "B) Order data",
+      "orderItem1": "purchased service (meal plan, consultation, plan)",
+      "orderItem2": "selected variant and language",
+      "orderItem3": "payment method",
+      "orderItem4": "information from the ComGate payment gateway",
+      "comgateTitle": "C) Data from the ComGate payment gateway",
+      "comgateItem1": "payment identification",
+      "comgateItem2": "payment status",
+      "comgateItem3": "amount",
+      "comgateItem4": "variable symbol",
+      "comgateItem5": "information on payment success/failure",
+      "comgateNote": "We receive these data without card details.",
+      "webTitle": "D) Data created by using the website",
+      "webItem1": "IP address",
+      "webItem2": "cookies",
+      "webItem3": "analytics data (Google Analytics, optionally Meta Pixel)",
+      "webItem4": "device and browser information"
+    },
+    "purposes": {
+      "title": "3. Purposes and legal bases",
+      "p1Title": "Provision of the service",
+      "p1Desc": "Creating a personalized meal plan, communication, evaluating data. Legal basis: contract performance (Art. 6(1)(b) GDPR).",
+      "p2Title": "Processing of health data",
+      "p2Desc": "Health status, allergies, height, weight, BMI, age – necessary to personalize the plan. Legal basis: explicit consent (Art. 9(2)(a) GDPR).",
+      "p3Title": "Payments via ComGate",
+      "p3Desc": "Processing payments, order confirmation, invoice records. Legal basis: contract performance + legal obligation.",
+      "p4Title": "Marketing and newsletter",
+      "p4Desc": "Sending news and tips, special offers. Legal basis: consent.",
+      "p5Title": "Analytics and website security",
+      "p5Desc": "Measuring traffic, error detection, protection against attacks. Legal basis: legitimate interest of the Controller."
+    },
+    "retention": {
+      "title": "4. Data retention periods",
+      "service": "Service provision data – 3 years after the last order.",
+      "health": "Health data (meal plan) – until consent is withdrawn or max. 1 year after service completion.",
+      "invoices": "Invoices and accounting records – 10 years as required by law.",
+      "marketing": "Marketing – until unsubscribe / max. 3 years from the last e-mail open.",
+      "comgate": "ComGate payment data – according to their internal rules (usually 3–5 years)."
+    },
+    "recipients": {
+      "title": "5. Recipients of personal data",
+      "lead": "Your personal data may be shared with:",
+      "item1": "hosting provider",
+      "item2": "web developer / FitLime site administrator",
+      "item3": "external accountant",
+      "item4": "ComGate Payments, a.s. (payment gateway)",
+      "item5": "Google (Google Analytics, Google Workspace)",
+      "item6": "Meta Platforms (if marketing pixel tracking is used)",
+      "note": "All processors comply with GDPR requirements."
+    },
+    "cookies": {
+      "title": "6. Cookies",
+      "intro": "FitLime uses:",
+      "item1": "necessary cookies (technical)",
+      "item2": "analytics cookies",
+      "item3": "marketing cookies",
+      "note": "A cookie banner with options is shown on first visit."
+    },
+    "rights": {
+      "title": "7. User rights",
+      "lead": "You have the right to:",
+      "item1": "access your data",
+      "item2": "rectify inaccurate data",
+      "item3": "erasure (where permitted by law)",
+      "item4": "restriction of processing",
+      "item5": "object",
+      "item6": "data portability",
+      "item7": "withdraw consent at any time",
+      "complaint": "You can lodge a complaint with the Czech Data Protection Authority, www.uoou.cz."
+    },
+    "contact": {
+      "title": "8. Contact information",
+      "lead": "For any requests, contact:",
+      "email": "info@fitlime.cz",
+      "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice"
+    },
+    "final": {
+      "title": "9. Final provisions",
+      "item1": "These Policies may be updated.",
+      "item2": "The current version is always published on the FitLime website.",
+      "item3": "Effective from: 01.01.2026."
+    }
+  }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookies | FitLime",
+    "hero": {
+      "eyebrow": "Transparency",
+      "title": "Cookies",
+      "lead": "We use cookies on FitLime so the site works correctly, stays secure, and we can keep improving it. Below is a summary of the cookie types, why we use them, and how to manage your consent.",
+      "pill1": "Consent can be changed anytime",
+      "pill2": "We use only the essentials",
+      "pill3": "Data stored in the EU"
+    },
+    "cards": {
+      "how": {
+        "title": "How cookies work",
+        "text": "Cookies are small text files saved in your browser. They let the site remember basic settings so everything runs smoothly and securely.",
+        "li1": "Keep language, form content, and other essential choices.",
+        "li2": "Help maintain secure operation and protect against abuse.",
+        "li3": "Optionally collect anonymized traffic data to improve the site."
+      },
+      "types": {
+        "title": "Which types we use",
+        "essential": "Essential — power the site (language choice, form state). They cannot be turned off because the site would not work.",
+        "analytics": "Analytics — anonymous measurement of traffic and performance. Enabled only after your consent.",
+        "marketing": "Marketing — personalization and third-party campaigns. Used only if you explicitly allow them."
+      }
+    },
+    "manage": {
+      "title": "How to change or withdraw consent",
+      "step1": "On the homepage, a banner appears on first visit so you can accept or decline optional cookies.",
+      "step2": "You can reset your choice anytime via the button below or by clearing cookies in your browser.",
+      "step3": "Technical cookies stay active so the site can run and show you the consent banner again.",
+      "resetBtn": "Reset cookie choice",
+      "resetHint": "Removes your previous consent in this browser and will show the cookie banner on your next visit.",
+      "resetAlert": "Cookie settings were cleared. After returning to the homepage, the consent banner will appear again."
+    },
+    "contacts": {
+      "title": "Controller & contacts",
+      "controllerLabel": "Controller",
+      "controller": "Sportvital-Pro s.r.o., ID: 04528930",
+      "emailLabel": "E-mail",
+      "email": "info@fitlime.com",
+      "docsLabel": "More documents",
+      "docs": "Privacy Policy"
+    },
+    "back": "Back to homepage"
+  }
+}
+

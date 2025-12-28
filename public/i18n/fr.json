@@ -1,0 +1,474 @@
+{
+  "home": {
+    "meta": {
+      "title": "AthleteFueling – Plan alimentaire & entraînement sur mesure",
+      "description": "Plans alimentaires et d’entraînement complets et personnalisés. Mode de vie sain, repas variés, éducation et soutien sportif."
+    },
+    "cookies": {
+      "text": "Nous utilisons des cookies pour le bon fonctionnement du site et l’analyse. <a href='/cookies.html'>Plus d’informations</a>.",
+      "decline": "Refuser",
+      "accept": "Tout accepter"
+    },
+    "nav": {
+      "how": "Comment ça marche",
+      "preview": "Exemple",
+      "coverage": "Ce que le plan couvre",
+      "pricing": "Tarifs",
+      "about": "À propos",
+      "reference": "Témoignages"
+    },
+    "hero": {
+      "title": "Plan alimentaire et entraînement sur mesure en quelques minutes",
+      "lead": "Remplis un court questionnaire et reçois un plan adapté à tous tes besoins.",
+      "cta": "Lancer le formulaire",
+      "note": "Sans engagement, cela ne prend que quelques minutes."
+    },
+    "why": {
+      "title": "Pourquoi AthleteFueling ?",
+      "cards": {
+        "lifestyle": {
+          "title": "🌱 Changement de mode de vie",
+          "text": "Éducation et approche durable de la nutrition, pas seulement un tableau de repas."
+        },
+        "meals": {
+          "title": "🥗 Repas uniques",
+          "text": "Un plan varié, inspirant et coloré pour chaque jour."
+        },
+        "flex": {
+          "title": "⚖️ Flexibilité",
+          "text": "Nous respectons les allergies, intolérances et tes préférences."
+        },
+        "output": {
+          "title": "📋 Résultat pratique",
+          "text": "Plan alimentaire, recettes, liste de courses et bien plus encore."
+        },
+        "micro": {
+          "title": "💊 Micronutriments",
+          "text": "Le plan couvre un large éventail de vitamines et minéraux."
+        },
+        "sport": {
+          "title": "🏋️ Soutien sportif",
+          "text": "Une alimentation adaptée à la performance, à la récupération et à tes objectifs."
+        }
+      }
+    },
+    "how": {
+      "title": "Comment ça marche :",
+      "step1": {
+        "title": "1) Questionnaire rapide",
+        "text": "Tu complètes des informations de base sur toi.",
+        "point1": "âge, taille, poids et objectifs",
+        "point2": "préférences alimentaires",
+        "point3": "routine quotidienne et activités sportives"
+      },
+      "step2": {
+        "title": "2) Calcul intelligent",
+        "text": "Un algorithme, avec notre aide, élabore ton plan alimentaire.",
+        "point1": "prise en compte de la dépense énergétique",
+        "point2": "équilibre nutritionnel macro et micronutriments",
+        "point3": "adaptation à ton mode de vie"
+      },
+      "step3": {
+        "title": "3) Livraison",
+        "text": "Tu reçois un package complet.",
+        "point1": "plan alimentaire avec recettes pour toute la semaine",
+        "point2": "matériel explicatif et éducatif",
+        "point3": "liste de courses"
+      },
+      "step4": {
+        "title": "4) Résultats",
+        "text": "Observe les changements et reste motivé.",
+        "point1": "progrès clairement mesurables",
+        "point2": "plus de variété dans ton alimentation",
+        "point3": "meilleure sensation et plus d’énergie"
+      }
+    },
+    "preview": {
+      "title": "Exemple de plan alimentaire",
+      "lead": "Une journée réelle du plan : variété des repas, micronutriments et bilan énergétique."
+    },
+    "coverage": {
+      "title": "Ce que couvre le plan alimentaire :",
+      "items": {
+        "energy": "⚡ Énergie",
+        "carbs": "🍚 Glucides",
+        "fat": "🥑 Lipides",
+        "protein": "🍗 Protéines",
+        "fruitveg": "🍎 Fruits et légumes",
+        "dairy": "🥛 Produits laitiers",
+        "fish": "🐟 Poisson",
+        "fiber": "🌾 Fibres",
+        "salt": "🧂 Sel",
+        "satfat": "🥩 Graisses saturées",
+        "monofat": "🥜 Graisses monoinsaturées",
+        "polyfat": "🌻 Graisses polyinsaturées",
+        "chol": "🥚 Cholestérol",
+        "potassium": "🍌 Potassium",
+        "calcium": "🦴 Calcium",
+        "magnesium": "🥦 Magnésium",
+        "iron": "🥩 Fer",
+        "vitc": "🍊 Vitamine C",
+        "vitd": "🌞 Vitamine D",
+        "vite": "🍰 Vitamine E",
+        "vitb12": "💊 Vitamine B12",
+        "vitb": "💊 Vitamine B1 & B2",
+        "vitb6": "💊 Vitamine B6",
+        "folic": "🥬 Acide folique"
+      },
+      "toggle": "Afficher plus",
+      "less": "Afficher moins"
+    },
+    "training": {
+      "title": "Plan d’entraînement",
+      "text": "Nous préparons toujours le plan alimentaire en tenant compte de ton entraînement et de tes objectifs – endurance, force ou sport récréatif. Si tu le souhaites, nous créons gratuitement un plan d’entraînement personnalisé basé sur tes préférences et activités favorites.",
+      "cta": "Je veux un plan alimentaire et d’entraînement"
+    },
+    "pricing": {
+      "title": "Forfaits et tarifs",
+      "per_week": "/ semaine",
+      "per_month": "/ mois",
+      "advantage": "plus avantageux",
+      "standard": {
+        "title": "⚖️ Standard – complet (5 jours)",
+        "feature1": "Plan alimentaire pour 5 jours (Lun–Ven)",
+        "feature2": "Repas uniques et variés",
+        "feature3": "Personnalisation selon ton carnet d’entraînement",
+        "feature4": "Recettes pour chaque repas",
+        "feature5": "Liste de courses",
+        "feature6": "Graphiques d’apport et de dépense énergétique",
+        "feature7": "Éducation sur les nutriments"
+      },
+      "premium": {
+        "badge": "Le plus populaire",
+        "title": "🏆 Premium – sur mesure (7 jours)",
+        "feature1": "Plan alimentaire pour 7 jours (Lun–Dim)",
+        "feature2": "Repas uniques et variés",
+        "feature3": "Personnalisation selon ton carnet d’entraînement",
+        "feature4": "Recettes pour chaque repas",
+        "feature5": "Liste de courses",
+        "feature6": "Graphiques d’apport et de dépense énergétique",
+        "feature7": "Éducation sur les nutriments",
+        "extra1": "Éducation en nutrition sportive",
+        "extra2": "Compléments personnalisés",
+        "extra3": "Plan d’hydratation",
+        "extra4": "Préférences alimentaires (régimes, choix)",
+        "extra5": "Ajustement des macronutriments"
+      },
+      "cta": "Lancer le formulaire",
+      "note": "Sans engagement, tu choisis seulement lors de la commande."
+    },
+    "faq": {
+      "title": "FAQ – Questions fréquentes",
+      "q1": {
+        "q": "Comment vais-je recevoir le plan alimentaire ?",
+        "a": "Nous t’envoyons le plan alimentaire par e-mail au format PDF, avec tableaux et graphiques clairs."
+      },
+      "q2": {
+        "q": "Aurais-je besoin d’aliments spéciaux ?",
+        "a": "Non, les recettes utilisent des ingrédients courants disponibles en supermarché."
+      },
+      "q3": {
+        "q": "Combien de temps dure le plan ?",
+        "a": "Nous créons généralement un plan de 7 jours avec 35 repas uniques. Tu peux le répéter ou l’adapter si nécessaire."
+      },
+      "q4": {
+        "q": "Les listes de courses sont-elles incluses ?",
+        "a": "Oui, nous préparons une liste claire pour toute la semaine."
+      },
+      "q5": {
+        "q": "Et si je n’ai pas de balance de cuisine ?",
+        "a": "Nous indiquons les grammes, mais des mesures approximatives (cuillères, tasses, pièces) suffisent souvent. L’essentiel est la variété et une approche saine."
+      },
+      "q6": {
+        "q": "Adaptez-vous aux allergies et intolérances ?",
+        "a": "Oui, indique simplement tes préférences et restrictions dans le formulaire de commande."
+      },
+      "q7": {
+        "q": "Pouvez-vous adapter le plan à des objectifs spécifiques ?",
+        "a": "Bien sûr – perte de poids, prise de muscle ou maintien du poids."
+      },
+      "q8": {
+        "q": "Et si j’ai des problèmes de santé ?",
+        "a": "Le plan peut être adapté à des besoins spécifiques (cholestérol élevé, diabète). Nous consultons un spécialiste si nécessaire."
+      },
+      "q9": {
+        "q": "Qui prépare les plans ?",
+        "a": "Des experts en nutrition avec expérience en médecine sportive."
+      },
+      "q10": {
+        "q": "D’où viennent les valeurs nutritionnelles ?",
+        "a": "Nous utilisons des bases de données vérifiées et nos propres modèles de calcul."
+      },
+      "q11": {
+        "q": "Et si je n’aime pas une recette ?",
+        "a": "Le plan inclut plusieurs variantes, tu peux donc choisir selon tes goûts. L’exclusion d’aliments spécifiques est disponible avec le forfait Premium."
+      },
+      "q12": {
+        "q": "Pouvez-vous modifier mon plan plus tard ?",
+        "a": "Oui, dans les plans mensuels, nous pouvons l’ajuster en fonction de tes retours."
+      },
+      "q13": {
+        "q": "En combien de temps vais-je recevoir mon plan ?",
+        "a": "Les deux forfaits sont livrés sous 3 jours ouvrables maximum, généralement sous 1 jour."
+      },
+      "q14": {
+        "q": "Le plan convient-il aussi aux non sportifs ?",
+        "a": "Oui, nous préparons aussi des plans pour les personnes non sportives ou ayant seulement une activité récréative."
+      }
+    },
+    "about": {
+      "title": "À propos",
+      "libor": {
+        "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
+        "item1": "Biochimiste clinique, médecin interniste au VFN et 1. LF UK",
+        "item2": "Consultant en nutrition sportive",
+        "item3": "Collaboration avec l’équipe olympique tchèque"
+      },
+      "danny": {
+        "name": "Ing. Daniel Vítek",
+        "item1": "Diplômé en Bioinformatique à ČVUT FEL",
+        "item2": "Études à la Faculté des Sciences du Sport (Madrid)",
+        "item3": "Bioinformatique et technologies en nutrition"
+      }
+    },
+    "reference": {
+      "title": "Témoignages",
+      "client1": {
+        "text": "« Cela a changé notre vision de l’alimentation. Nous avons plus d’énergie durant la journée. »",
+        "author": "— Mati | Solene",
+        "flags": ["cl", "es"]
+      },
+      "client2": {
+        "text": "« Les repas sont simples et savoureux. La liste de courses fait gagner du temps. Je me sens bien à vélo. »",
+        "author": "— Hana",
+        "flags": ["de"]
+      },
+      "client3": {
+        "text": "« Le Premium a parfaitement correspondu à mon plan d’entraînement. Le service est good AF. »",
+        "author": "— David",
+        "flags": ["us", "cz"]
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "lead": "Lance le formulaire sans engagement et découvre ton plan personnalisé.",
+      "cta": "Lancer le formulaire",
+      "note": "Tu choisis seulement lors de la commande. Cela prend juste quelques minutes."
+    },
+    "footer": {
+      "brand": "AthleteFueling s.r.o. © 2025",
+      "powered": "propulsé par sportvitalpro.cz",
+      "payments": "Paiements gérés par Comgate",
+      "terms": "Conditions générales",
+      "privacy": "Politique de confidentialité",
+      "cookies": "Cookies"
+    }
+  },
+
+  "common": {
+    "back": "Retour",
+    "next": "Suivant",
+    "error_required": "Ce champ est obligatoire.",
+    "error_email": "Veuillez entrer un e-mail valide.",
+    "error_number": "Veuillez entrer un nombre valide.",
+    "error_range": "Valeur hors de la plage autorisée.",
+    "range": "Plage",
+    "per_day_short": "jour",
+    "leave_title": "Quitter le formulaire ?",
+    "leave_text": "Si tu pars, tu risques de perdre les modifications non enregistrées. Veux-tu revenir à la page principale ?",
+    "leave_stay": "Rester",
+    "leave_leave": "Quitter",
+    "home": "Accueil"
+  },
+  "intro": {
+    "title": "Commence ton chemin vers une meilleure alimentation",
+    "point1": "Découvre tes besoins – calcul rapide d’énergie et d’objectifs.",
+    "point2": "Reçois ton plan – recommandations de repas et d’activités.",
+    "point3": "Aperçu global – étapes claires pour la suite.",
+    "cta": "Allons-y"
+  },
+  "a11y": {
+    "hero_perks_label": "Avantages principaux",
+    "opens_new_tab": "S’ouvre dans un nouvel onglet"
+  },
+  "steps": [
+    "Profil",
+    "Objectif & énergie",
+    "Sport",
+    "Alimentation",
+    "Dépense vs apport",
+    "Plan",
+    "Résumé"
+  ],
+  "step1": {
+    "title": "Données de base",
+    "sex": "Sexe",
+    "sex_male": "Homme",
+    "sex_female": "Femme",
+    "sex_other": "Autre",
+    "age": "Âge",
+    "height": "Taille (cm)",
+    "weight": "Poids (kg)",
+    "activity": "Routine quotidienne",
+    "activity_sedentary": "Sédentaire",
+    "activity_moderate": "Modérément actif",
+    "activity_high": "Très actif",
+    "steps": "Pas quotidiens",
+    "age_placeholder": "ex. 32",
+    "height_placeholder": "ex. 178",
+    "weight_placeholder": "ex. 82"
+  },
+  "step2": {
+    "title": "Objectif & énergie",
+    "target": "Objectif",
+    "target_lose": "Perdre du poids",
+    "target_maintain": "Maintenir le poids",
+    "target_gain": "Prendre du poids",
+    "help_lose": "Nous recommandons un déficit calorique modéré.",
+    "help_maintain": "L’objectif est l’équilibre énergétique.",
+    "help_gain": "Un léger surplus calorique favorise la prise de masse.",
+    "energy_unit": "Unité d’énergie",
+    "unit_kj": "kJ",
+    "unit_kcal": "kcal",
+    "bmr_label": "BMR",
+    "bmr_help_kj": "Calculé à partir du profil (kJ/jour). Tu peux l’ajuster manuellement.",
+    "bmr_help_kcal": "Calculé à partir du profil (kcal/jour). Tu peux l’ajuster manuellement.",
+    "target_explainer": "Choisis si tu veux perdre, maintenir ou prendre du poids. La recommandation s’adapte automatiquement.",
+    "energy_help": "Choisis l’unité d’énergie.",
+    "bmr_explainer": "Le BMR (métabolisme de base) est l’énergie que ton corps consomme au repos. Tu peux l’ajuster si tu connais une valeur plus précise."
+  },
+  "step3": {
+    "title": "Activité sportive",
+    "level": "Niveau d’activité",
+    "level_none": "Je ne fais pas de sport",
+    "sports": "Sports",
+    "level_recreational": "Loisir",
+    "level_regular": "Compétition",
+    "plan_choice": "Plan",
+    "plan_own": "J’ai mon plan (seulement repas)",
+    "plan_need": "Je veux un plan d’entraînement (supplément)",
+    "intensity": "Intensité",
+    "intensity_low": "Basse",
+    "intensity_medium": "Moyenne",
+    "intensity_high": "Haute",
+    "sessions_per_week": "Entraînements par semaine",
+    "minutes": "Durée de l’entraînement (min)",
+    "hours_per_week": "Temps par semaine (h/sem)",
+    "none_hint": "Qu’aimerais-tu essayer ?",
+    "main_sport": "Sport principal",
+    "groups": {
+      "title_endurance": "Sports d’endurance",
+      "title_winter": "Sports d’hiver",
+      "title_team": "Sports collectifs",
+      "title_individual": "Sports individuels",
+      "title_fitness": "Fitness & gym",
+      "title_water": "Sports aquatiques",
+      "title_combat": "Sports de combat",
+      "title_other": "Autres sports"
+    },
+    "suggest_walking": "Marche",
+    "suggest_running": "Course",
+    "suggest_cycling": "Vélo",
+    "suggest_yoga": "Yoga",
+    "suggest_homegym": "Musculation",
+    "suggest_swimming": "Natation",
+    "suggest_football": "Football",
+    "suggest_basketball": "Basketball",
+    "suggest_other": "Autre",
+    "level_explainer": "Choisis ta fréquence d’activité. Les données demandées s’adapteront.",
+    "other_placeholder": "Autre…"
+  },
+  "step4": {
+    "title": "Alimentation",
+    "diet": "Type de régime",
+    "diet_none": "Sans restriction",
+    "diet_vegetarian": "Végétarien",
+    "diet_pescetarian": "Pescétarien",
+    "diet_gluten_free": "Sans gluten",
+    "diet_lactose_free": "Sans lactose",
+    "dislikes": "Je n’aime pas",
+    "macros_title": "Macronutriments",
+    "carb": "Glucides (%)",
+    "fat": "Lipides (%)",
+    "protein": "Protéines (%)",
+    "note_premium": "L’ajustement des macros est disponible uniquement avec le plan Premium.",
+    "dislikes_title": "Je n’aime pas",
+    "dislikes_hint": "- optionnel",
+    "dislike_mushrooms": "Champignons",
+    "dislike_olives": "Olives",
+    "dislike_pepper": "Poivrons",
+    "dislike_tomato": "Tomates",
+    "dislike_onion": "Oignons",
+    "dislike_fish": "Poisson",
+    "dislike_seafood": "Fruits de mer",
+    "dislike_eggs": "Œufs",
+    "dislike_other": "Autre (préciser)",
+    "premium_note": "L’ajustement des macros est appliqué uniquement avec le plan Premium.",
+    "help_diet": "Choisis le type de régime que tu suis habituellement.",
+    "help_dislikes": "Coche les ingrédients à éviter dans ton plan.",
+    "dislikes_optional": "(optionnel)",
+    "help_macros": "Plage recommandée : G 40–60 %, L 20–35 %, P 15–30 %. Le total doit faire 100 %. ",
+    "sum_input": "Somme"
+  },
+  "step5": {
+    "title": "Dépense vs apport énergétique",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "bmr": "BMR",
+    "bda": "Activité quotidienne",
+    "sport": "Activité sportive",
+    "intake": "Apport",
+    "mon": "Lun",
+    "tue": "Mar",
+    "exp_label": "Dépense",
+    "in_label": "Apport",
+    "help": "Les graphiques comparent dépense et apport. L’apport suit la dépense selon l’objectif choisi."
+  },
+  "step6": {
+    "variant": "Variante du plan",
+    "light_title": "Light (découverte)",
+    "standard_title": "Standard",
+    "premium_title": "Premium",
+    "period_1x": "Unique",
+    "period_4x": "4 semaines",
+    "training_title": "Plan d’entraînement",
+    "training_no": "Non",
+    "training_yes": "Oui + 200 CZK",
+    "total": "Total",
+    "example_price": "690 CZK (€29.90)",
+    "note": "En dehors de CZ, nous affichons le prix en EUR.",
+    "days_3": "3 jours",
+    "light_f1": "Plan de repas pour 3 jours",
+    "light_f2": "Repas uniques sans répétition",
+    "light_f3": "Petit-déjeuner, collations, soupe, déjeuner, dîner",
+    "light_f4": "Fruits et légumes",
+    "light_f5": "Suppléments recommandés",
+    "light_f6": "Recettes pour tous les repas",
+    "days_5": "5 jours",
+    "std_f1": "Plan alimentaire complet pour 5 jours (Lun–Ven)",
+    "std_f2": "Recettes et liste de courses",
+    "std_f3": "Prise en compte de l’activité sportive",
+    "std_f4": "Graphiques d’apport et de dépense énergétique",
+    "std_f5": "Éducation : bases des macro- et micronutriments",
+    "days_7": "7 jours",
+    "prem_f1": "Possibilité d’exclure des ingrédients (Je n’aime pas)",
+    "prem_f2": "Macronutriments personnalisés",
+    "prem_f3": "Plan d’hydratation",
+    "prem_f4": "Éducation : macro et micronutriments + nutrition sportive",
+    "prem_f5": "Recettes et liste de courses",
+    "prem_f6": "Prise en compte des préférences sportives"
+  },
+  "step7": {
+    "title": "Résumé & achat",
+    "plan_title": "Plan choisi",
+    "macros_title": "Macronutriments",
+    "sports_title": "Activité sportive",
+    "dislikes_title": "Je n’aime pas",
+    "total": "Prix total",
+    "name": "Nom",
+    "email": "E-mail",
+    "terms": "J’accepte les Conditions générales",
+    "privacy": "J’accepte la Politique de confidentialité",
+    "buy": "Acheter"
+  }
+}

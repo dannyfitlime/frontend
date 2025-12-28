@@ -1,0 +1,473 @@
+{
+  "home": {
+    "meta": {
+      "title": "AthleteFueling – dieta i trening dopasowane do Ciebie",
+      "description": "Kompletne, spersonalizowane plany żywieniowe i treningowe. Zdrowy styl życia, różnorodne posiłki, edukacja i wsparcie sportowe."
+    },
+    "cookies": {
+      "text": "Używamy plików cookie do prawidłowego działania strony i analityki. <a href='/cookies.html'>Więcej informacji</a>.",
+      "decline": "Odrzuć",
+      "accept": "Akceptuj wszystkie"
+    },
+    "nav": {
+      "how": "Jak to działa",
+      "preview": "Przykład",
+      "coverage": "Co obejmuje plan",
+      "pricing": "Cennik",
+      "about": "O nas",
+      "reference": "Opinie"
+    },
+    "hero": {
+      "title": "Dieta i trening dopasowane do Ciebie w kilka minut",
+      "lead": "Wypełnij krótki formularz i otrzymaj plan odpowiadający Twoim potrzebom.",
+      "cta": "Rozpocznij formularz",
+      "note": "Bez zobowiązań, zajmuje tylko kilka minut."
+    },
+    "why": {
+      "title": "Dlaczego AthleteFueling?",
+      "cards": {
+        "lifestyle": {
+          "title": "🌱 Zmiana stylu życia",
+          "text": "Edukacja i długoterminowe podejście do żywienia, nie tylko tabela posiłków."
+        },
+        "meals": {
+          "title": "🥗 Unikalne posiłki",
+          "text": "Różnorodny, inspirujący i kolorowy jadłospis na każdy dzień."
+        },
+        "flex": {
+          "title": "⚖️ Elastyczność",
+          "text": "Uwzględniamy alergie, nietolerancje i Twoje preferencje."
+        },
+        "output": {
+          "title": "📋 Praktyczny wynik",
+          "text": "Jadłospis, przepisy, lista zakupów i wiele więcej."
+        },
+        "micro": {
+          "title": "💊 Mikroskładniki",
+          "text": "Plan obejmuje szerokie spektrum witamin i minerałów."
+        },
+        "sport": {
+          "title": "🏋️ Wsparcie sportu",
+          "text": "Żywienie dopasowane do wydajności, regeneracji i celów."
+        }
+      }
+    },
+    "how": {
+      "title": "Jak to działa:",
+      "step1": {
+        "title": "1) Krótki formularz",
+        "text": "Podajesz podstawowe informacje o sobie.",
+        "point1": "wiek, wzrost, waga i cele",
+        "point2": "preferencje żywieniowe",
+        "point3": "codzienny tryb życia i aktywność sportowa"
+      },
+      "step2": {
+        "title": "2) Inteligentne obliczenia",
+        "text": "Algorytm z naszą pomocą układa jadłospis.",
+        "point1": "uwzględnienie wydatku energetycznego",
+        "point2": "równowaga makro- i mikroskładników",
+        "point3": "dopasowanie do stylu życia"
+      },
+      "step3": {
+        "title": "3) Dostawa",
+        "text": "Otrzymujesz kompletny pakiet.",
+        "point1": "jadłospis z przepisami na cały tydzień",
+        "point2": "materiały objaśniające i edukacyjne",
+        "point3": "lista zakupów"
+      },
+      "step4": {
+        "title": "4) Wyniki",
+        "text": "Obserwuj zmiany i motywuj się.",
+        "point1": "wyraźnie mierzalne postępy",
+        "point2": "większa różnorodność w diecie",
+        "point3": "lepsze samopoczucie i energia"
+      }
+    },
+    "preview": {
+      "title": "Przykładowy jadłospis",
+      "lead": "Jeden prawdziwy dzień z planu: różnorodność posiłków, mikroskładniki i bilans energetyczny."
+    },
+    "coverage": {
+      "title": "Co obejmuje jadłospis:",
+      "items": {
+        "energy": "⚡ Energia",
+        "carbs": "🍚 Węglowodany",
+        "fat": "🥑 Tłuszcze",
+        "protein": "🍗 Białko",
+        "fruitveg": "🍎 Owoce i warzywa",
+        "dairy": "🥛 Nabiał",
+        "fish": "🐟 Ryby",
+        "fiber": "🌾 Błonnik",
+        "salt": "🧂 Sól",
+        "satfat": "🥩 Tłuszcze nasycone",
+        "monofat": "🥜 Tłuszcze jednonienasycone",
+        "polyfat": "🌻 Tłuszcze wielonienasycone",
+        "chol": "🥚 Cholesterol",
+        "potassium": "🍌 Potas",
+        "calcium": "🦴 Wapń",
+        "magnesium": "🥦 Magnez",
+        "iron": "🥩 Żelazo",
+        "vitc": "🍊 Witamina C",
+        "vitd": "🌞 Witamina D",
+        "vite": "🍰 Witamina E",
+        "vitb12": "💊 Witamina B12",
+        "vitb": "💊 Witamina B1 & B2",
+        "vitb6": "💊 Witamina B6",
+        "folic": "🥬 Kwas foliowy"
+      },
+      "toggle": "Pokaż więcej",
+      "less": "Pokaż mniej"
+    },
+    "training": {
+      "title": "Plan treningowy",
+      "text": "Zawsze przygotowujemy jadłospis z uwzględnieniem Twojego treningu i celów – wytrzymałościowych, siłowych lub rekreacyjnych. Jeśli chcesz, przygotujemy dla Ciebie bezpłatny, spersonalizowany plan treningowy oparty na Twoich preferencjach.",
+      "cta": "Chcę jadłospis i trening"
+    },
+    "pricing": {
+      "title": "Pakiety i ceny",
+      "per_week": "/ tydzień",
+      "per_month": "/ miesiąc",
+      "advantage": "bardziej opłacalne",
+      "standard": {
+        "title": "⚖️ Standard – pełny (5 dni)",
+        "feature1": "Jadłospis na 5 dni (Pn–Pt)",
+        "feature2": "Unikalne, różnorodne posiłki",
+        "feature3": "Personalizacja wg dziennika treningowego",
+        "feature4": "Przepisy do każdego posiłku",
+        "feature5": "Lista zakupów",
+        "feature6": "Wykresy spożycia i wydatku energetycznego",
+        "feature7": "Edukacja o składnikach odżywczych"
+      },
+      "premium": {
+        "badge": "Najpopularniejszy",
+        "title": "🏆 Premium – na miarę (7 dni)",
+        "feature1": "Jadłospis na 7 dni (Pn–Nd)",
+        "feature2": "Unikalne, różnorodne posiłki",
+        "feature3": "Personalizacja wg dziennika treningowego",
+        "feature4": "Przepisy do każdego posiłku",
+        "feature5": "Lista zakupów",
+        "feature6": "Wykresy spożycia i wydatku energetycznego",
+        "feature7": "Edukacja o składnikach odżywczych",
+        "extra1": "Edukacja o żywieniu w sporcie",
+        "extra2": "Suplementy dopasowane indywidualnie",
+        "extra3": "Plan nawodnienia",
+        "extra4": "Możliwość wyboru preferencji dietetycznych",
+        "extra5": "Możliwość ustawienia makroskładników"
+      },
+      "cta": "Rozpocznij formularz",
+      "note": "Bez zobowiązań, wybierasz dopiero przy zamówieniu."
+    },
+    "faq": {
+      "title": "FAQ – Najczęściej zadawane pytania",
+      "q1": {
+        "q": "Jak otrzymam jadłospis?",
+        "a": "Wyślemy Ci jadłospis e-mailem w formacie PDF, wraz z czytelnymi tabelami i wykresami."
+      },
+      "q2": {
+        "q": "Czy potrzebuję specjalnych produktów?",
+        "a": "Nie, przepisy bazują na powszechnie dostępnych produktach z supermarketu."
+      },
+      "q3": {
+        "q": "Na jak długo wystarczy jadłospis?",
+        "a": "Standardowo przygotowujemy plan na 7 dni z 35 unikalnymi posiłkami. Możesz go powtarzać lub modyfikować według potrzeb."
+      },
+      "q4": {
+        "q": "Czy zawiera listy zakupów?",
+        "a": "Tak, przygotujemy przejrzystą listę na cały tydzień."
+      },
+      "q5": {
+        "q": "A jeśli nie mam wagi kuchennej?",
+        "a": "Podajemy gramatury, ale często wystarczą miary orientacyjne (łyżki, kubki, sztuki). Ważniejsza jest różnorodność i zdrowe podejście."
+      },
+      "q6": {
+        "q": "Czy dostosujecie plan do alergii i nietolerancji?",
+        "a": "Tak, wystarczy podać swoje preferencje i ograniczenia w formularzu zamówienia."
+      },
+      "q7": {
+        "q": "Czy możecie dopasować plan do konkretnych celów?",
+        "a": "Oczywiście – odchudzanie, budowa mięśni czy utrzymanie masy ciała."
+      },
+      "q8": {
+        "q": "Co jeśli mam problemy zdrowotne?",
+        "a": "Plan można dostosować także do szczególnych potrzeb (np. wysoki cholesterol, cukrzyca) – konsultujemy w razie potrzeby ze specjalistą."
+      },
+      "q9": {
+        "q": "Kto układa jadłospisy?",
+        "a": "Specjaliści ds. żywienia z doświadczeniem w medycynie sportowej."
+      },
+      "q10": {
+        "q": "Skąd pochodzą wartości odżywcze?",
+        "a": "Korzystamy ze sprawdzonych baz danych żywności i własnych modeli obliczeniowych."
+      },
+      "q11": {
+        "q": "Co jeśli nie smakuje mi jakiś przepis?",
+        "a": "Jadłospis zawiera różne warianty, więc zawsze znajdziesz coś dla siebie. Wykluczenie składników oferujemy w pakiecie Premium."
+      },
+      "q12": {
+        "q": "Czy mogę później zmienić jadłospis?",
+        "a": "Tak, w planach miesięcznych można go dostosowywać na bieżąco w oparciu o feedback."
+      },
+      "q13": {
+        "q": "Jak szybko otrzymam jadłospis?",
+        "a": "Oba pakiety dostarczamy maksymalnie w 3 dni robocze, zwykle w 1 dzień."
+      },
+      "q14": {
+        "q": "Czy jadłospis jest odpowiedni także dla niesportowców?",
+        "a": "Tak, przygotowujemy plany również dla osób niesportowych lub rekreacyjnych."
+      }
+    },
+    "about": {
+      "title": "O nas",
+      "libor": {
+        "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
+        "item1": "Biochemik kliniczny, lekarz internista w VFN i 1. LF UK",
+        "item2": "Konsultant ds. żywienia sportowego",
+        "item3": "Współpraca z Czeskim Komitetem Olimpijskim"
+      },
+      "danny": {
+        "name": "Ing. Daniel Vítek",
+        "item1": "Absolwent Bioinformatyki na ČVUT FEL",
+        "item2": "Studia na Wydziale Wychowania Fizycznego i Sportu (Madryt)",
+        "item3": "Bioinformatyka i technologie w żywieniu"
+      }
+    },
+    "reference": {
+      "title": "Opinie",
+      "client1": {
+        "text": "„Zmieniliśmy nasze spojrzenie na żywienie. Mamy więcej energii w ciągu dnia.”",
+        "author": "— Mati | Solene",
+        "flags": ["cl", "es"]
+      },
+      "client2": {
+        "text": "„Posiłki są proste i smaczne. Lista zakupów oszczędza czas. Czuję się dobrze na rowerze.”",
+        "author": "— Hana",
+        "flags": ["de"]
+      },
+      "client3": {
+        "text": "„Pakiet Premium idealnie pasował do mojego planu treningowego. Ta usługa jest świetna AF.”",
+        "author": "— David",
+        "flags": ["us", "cz"]
+      }
+    },
+    "cta": {
+      "title": "Gotowy, aby zacząć?",
+      "lead": "Uruchom formularz i sprawdź, jak może wyglądać Twój spersonalizowany plan.",
+      "cta": "Rozpocznij formularz",
+      "note": "Wybierasz dopiero przy zamówieniu. Zajmuje to tylko kilka minut."
+    },
+    "footer": {
+      "brand": "AthleteFueling s.r.o. © 2025",
+      "powered": "powered by sportvitalpro.cz",
+      "payments": "Płatności obsługiwane przez Comgate",
+      "terms": "Warunki handlowe",
+      "privacy": "Polityka prywatności",
+      "cookies": "Cookies"
+    }
+  },
+  "common": {
+    "back": "Wstecz",
+    "next": "Dalej",
+    "error_required": "To pole jest wymagane.",
+    "error_email": "Wpisz poprawny e-mail.",
+    "error_number": "Wpisz poprawną liczbę.",
+    "error_range": "Wartość poza zakresem.",
+    "range": "Zakres",
+    "per_day_short": "dzień",
+    "leave_title": "Opuścić formularz?",
+    "leave_text": "Jeśli wyjdziesz, możesz stracić niezapisane zmiany. Czy chcesz wrócić do strony głównej?",
+    "leave_stay": "Zostań",
+    "leave_leave": "Opuść",
+    "home": "Strona główna"
+  },
+  "intro": {
+    "title": "Rozpocznij swoją drogę do lepszego odżywiania",
+    "point1": "Poznasz swoje potrzeby – szybkie obliczenie energii i celów.",
+    "point2": "Otrzymasz plan – rekomendacje jadłospisu i aktywności.",
+    "point3": "Pełny przegląd – jasne kroki, co robić dalej.",
+    "cta": "Zaczynamy"
+  },
+  "a11y": {
+    "hero_perks_label": "Główne zalety",
+    "opens_new_tab": "Otwiera się w nowej karcie"
+  },
+  "steps": [
+    "Profil",
+    "Cel i energia",
+    "Sport",
+    "Odżywianie",
+    "Wydatkowanie vs spożycie",
+    "Plan",
+    "Podsumowanie"
+  ],
+  "step1": {
+    "title": "Podstawowe dane",
+    "sex": "Płeć",
+    "sex_male": "Mężczyzna",
+    "sex_female": "Kobieta",
+    "sex_other": "Inna",
+    "age": "Wiek",
+    "height": "Wzrost (cm)",
+    "weight": "Waga (kg)",
+    "activity": "Codzienna aktywność",
+    "activity_sedentary": "Siedzący tryb",
+    "activity_moderate": "Umiarkowanie aktywny",
+    "activity_high": "Bardzo aktywny",
+    "steps": "Kroki dziennie",
+    "age_placeholder": "np. 32",
+    "height_placeholder": "np. 178",
+    "weight_placeholder": "np. 82"
+  },
+  "step2": {
+    "title": "Cel i energia",
+    "target": "Cel",
+    "target_lose": "Schudnąć",
+    "target_maintain": "Utrzymać wagę",
+    "target_gain": "Przybrać",
+    "help_lose": "Zalecamy umiarkowany deficyt kaloryczny.",
+    "help_maintain": "Celem jest równowaga energetyczna.",
+    "help_gain": "Lekka nadwyżka kaloryczna wspiera przyrost masy.",
+    "energy_unit": "Jednostka energii",
+    "unit_kj": "kJ",
+    "unit_kcal": "kcal",
+    "bmr_label": "BMR",
+    "bmr_help_kj": "Obliczone z profilu (kJ/dzień). Możesz edytować ręcznie.",
+    "bmr_help_kcal": "Obliczone z profilu (kcal/dzień). Możesz edytować ręcznie.",
+    "target_explainer": "Wybierz, czy chcesz schudnąć, utrzymać czy przybrać na wadze. Zalecenia dopasują się automatycznie.",
+    "energy_help": "Ustaw jednostkę energii.",
+    "bmr_explainer": "BMR (podstawowa przemiana materii) to energia, którą organizm zużywa w spoczynku. Możesz edytować, jeśli znasz dokładniejszą wartość."
+  },
+  "step3": {
+    "title": "Aktywność sportowa",
+    "level": "Poziom aktywności",
+    "level_none": "Nie trenuję",
+    "sports": "Sporty",
+    "level_recreational": "Rekreacyjnie",
+    "level_regular": "Wyczynowo",
+    "plan_choice": "Plan",
+    "plan_own": "Mam swój plan (tylko dieta)",
+    "plan_need": "Chcę plan treningowy (dopłata)",
+    "intensity": "Intensywność",
+    "intensity_low": "Niska",
+    "intensity_medium": "Średnia",
+    "intensity_high": "Wysoka",
+    "sessions_per_week": "Treningi w tygodniu",
+    "minutes": "Czas trwania (min)",
+    "hours_per_week": "Czas tygodniowo (h/tydzień)",
+    "none_hint": "Co Cię interesuje?",
+    "main_sport": "Główny sport",
+    "groups": {
+      "title_endurance": "Sporty wytrzymałościowe",
+      "title_winter": "Sporty zimowe",
+      "title_team": "Sporty zespołowe",
+      "title_individual": "Sporty indywidualne",
+      "title_fitness": "Fitness & siłownia",
+      "title_water": "Sporty wodne",
+      "title_combat": "Sporty walki",
+      "title_other": "Inne sporty"
+    },
+    "suggest_walking": "Chodzenie",
+    "suggest_running": "Bieganie",
+    "suggest_cycling": "Rower",
+    "suggest_yoga": "Joga",
+    "suggest_homegym": "Trening siłowy",
+    "suggest_swimming": "Pływanie",
+    "suggest_football": "Piłka nożna",
+    "suggest_basketball": "Koszykówka",
+    "suggest_other": "Inne",
+    "level_explainer": "Określ, jak często trenujesz. Na podstawie tego zmienią się wymagane dane.",
+    "other_placeholder": "Inne…"
+  },
+  "step4": {
+    "title": "Odżywianie",
+    "diet": "Typ diety",
+    "diet_none": "Brak ograniczeń",
+    "diet_vegetarian": "Wegetariańska",
+    "diet_pescetarian": "Pescetariańska",
+    "diet_gluten_free": "Bezglutenowa",
+    "diet_lactose_free": "Bez laktozy",
+    "dislikes": "Nie jem",
+    "macros_title": "Makroskładniki",
+    "carb": "Węglowodany (%)",
+    "fat": "Tłuszcze (%)",
+    "protein": "Białko (%)",
+    "note_premium": "Edycja makro dostępna tylko w planie Premium.",
+    "dislikes_title": "Nie jem",
+    "dislikes_hint": "- opcjonalnie",
+    "dislike_mushrooms": "Grzyby",
+    "dislike_olives": "Oliwki",
+    "dislike_pepper": "Papryka",
+    "dislike_tomato": "Pomidory",
+    "dislike_onion": "Cebula",
+    "dislike_fish": "Ryby",
+    "dislike_seafood": "Owoce morza",
+    "dislike_eggs": "Jajka",
+    "dislike_other": "Inne (dopisz)",
+    "premium_note": "Edycja makro obowiązuje tylko w planie Premium.",
+    "help_diet": "Wybierz rodzaj diety, który stosujesz na co dzień.",
+    "help_dislikes": "Zaznacz składniki, których chcesz unikać w jadłospisie.",
+    "dislikes_optional": "(opcjonalne)",
+    "help_macros": "Rekomendowane zakresy: W 40–60 %, T 20–35 %, B 15–30 %. Suma powinna wynosić 100%.",
+    "sum_input": "Suma"
+  },
+  "step5": {
+    "title": "Wydatkowanie vs spożycie energii",
+    "monday": "Poniedziałek",
+    "tuesday": "Wtorek",
+    "bmr": "BMR",
+    "bda": "Codzienna aktywność",
+    "sport": "Aktywność sportowa",
+    "intake": "Spożycie",
+    "mon": "Pon.",
+    "tue": "Wt.",
+    "exp_label": "Wydatkowanie",
+    "in_label": "Spożycie",
+    "help": "Wykresy pokazują porównanie wydatku i spożycia energii. Spożycie dopasowuje się do celu."
+  },
+  "step6": {
+    "variant": "Wariant planu",
+    "light_title": "Light (próbny)",
+    "standard_title": "Standard",
+    "premium_title": "Premium",
+    "period_1x": "Jednorazowo",
+    "period_4x": "4 tygodnie",
+    "training_title": "Plan treningowy",
+    "training_no": "Nie",
+    "training_yes": "Tak + 200 CZK",
+    "total": "Razem",
+    "example_price": "690 CZK (€29.90)",
+    "note": "Poza Czechami pokazujemy ceny w EUR.",
+    "days_3": "3 dni",
+    "light_f1": "Jadłospis na 3 dni",
+    "light_f2": "Unikalne posiłki bez powtarzania",
+    "light_f3": "Śniadanie, przekąski, zupa, obiad, kolacja",
+    "light_f4": "Owoce i warzywa",
+    "light_f5": "Rekomendowane suplementy",
+    "light_f6": "Przepisy do wszystkich posiłków",
+    "days_5": "5 dni",
+    "std_f1": "Pełny jadłospis na 5 dni (Pn–Pt)",
+    "std_f2": "Przepisy i lista zakupów",
+    "std_f3": "Uwzględnienie aktywności sportowej",
+    "std_f4": "Wykresy spożycia i wydatku energii",
+    "std_f5": "Edukacja: podstawy makro- i mikroskładników",
+    "days_7": "7 dni",
+    "prem_f1": "Możliwość wykluczenia składników (Nie jem)",
+    "prem_f2": "Makroskładniki na miarę",
+    "prem_f3": "Plan nawodnienia",
+    "prem_f4": "Edukacja: makro i mikro + żywienie w sporcie",
+    "prem_f5": "Przepisy i lista zakupów",
+    "prem_f6": "Uwzględnienie preferencji sportowych"
+  },
+  "step7": {
+    "title": "Podsumowanie i zakup",
+    "plan_title": "Wybrany plan",
+    "macros_title": "Makroskładniki",
+    "sports_title": "Aktywność sportowa",
+    "dislikes_title": "Nie jem",
+    "total": "Łączna cena",
+    "name": "Imię",
+    "email": "E-mail",
+    "terms": "Akceptuję warunki handlowe",
+    "privacy": "Akceptuję politykę prywatności",
+    "buy": "Kup"
+  }
+}

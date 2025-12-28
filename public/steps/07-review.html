@@ -1,0 +1,133 @@
+<section id="step7">
+  <h1 data-i18n="step7.title">Shrnutí & nákup</h1>
+
+  <div class="review-grid">
+    <!-- Levý sloupec: Souhrn -->
+    <div class="review-left">
+      <div class="card summary-card">
+        <h3 data-i18n="step7.summary_title">Souhrn objednávky</h3>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.plan">Zvolený plán</h4>
+          <p id="rev_plan">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.basic">Základní údaje</h4>
+          <p id="rev_basic">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.activity">Denní aktivita</h4>
+          <p id="rev_activity">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.goal">Cíl & energie</h4>
+          <p id="rev_goal">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.sports">Sportovní aktivity</h4>
+          <p id="rev_sports">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.diet">Typ diety</h4>
+          <p id="rev_diet">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.dislikes">Potraviny, které nejím</h4>
+          <p id="rev_dislikes">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.repeats">Počet opakování jídel</h4>
+          <p id="rev_repeats">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step7.macros">Rozložení makronutrientů</h4>
+          <p id="rev_macros">—</p>
+        </div>        
+      </div>
+    </div>
+
+    <!-- Pravý sloupec: Cena + Formulář -->
+    <div class="review-right">
+
+      <div class="card">
+        <h3 data-i18n="step7.summary_personal">Osobní údaje</h3>
+        <!-- Zákazník -->
+        <div class="field">
+          <label for="cust_name" data-i18n="step7.name">Jméno</label>
+          <input id="cust_name" maxlength="80" data-i18n-placeholder="step7.placeholders.name" />
+          <div class="error" id="err-customer_name"></div>
+        </div>
+
+        <div class="field">
+          <label for="cust_email" data-i18n="step7.email">E-mail</label>
+          <input id="cust_email" type="email" inputmode="email" data-i18n-placeholder="step7.placeholders.email" />
+          <div class="error" id="err-customer_email"></div>
+        </div>
+
+        <!-- Newsletter (volitelně, můžeš zakomentovat) -->
+        
+        <div class="field consent-toggle newsletter-toggle">
+          <label>
+            <span data-i18n="step7.newsletter">Chci odebírat newsletter</span>
+            <input type="checkbox" id="newsletter_optin" />            
+          </label>
+        </div>     
+
+        <!-- Souhlasy -->
+        <div class="field consent-toggle">
+          <label>
+            <span data-i18n="step7.terms">Souhlasím s Obchodními podmínkami</span>
+            <input type="checkbox" id="consent_terms" />            
+          </label>
+          <div class="error" id="err-consent_terms"></div>
+        </div>
+
+        <div class="field consent-toggle">
+          <label>
+            <span data-i18n="step7.privacy">Souhlasím se Zásadami zpracování osobních údajů</span>
+            <input type="checkbox" id="consent_privacy" />            
+          </label>
+          <div class="error" id="err-consent_privacy"></div>
+        </div>
+
+        <!-- Cena -->
+        <div class="field total-price">
+          <strong class="price-label" data-i18n="step7.total">Celková cena</strong>
+          <span id="reviewPrice" class="price-value">—</span>
+        </div>
+
+
+        <!-- CTA -->
+        <div class="field" style="margin-top:12px;">
+          <button id="btn-purchase" class="primary" data-i18n="step7.buy">Koupit</button>
+        </div>
+      
+        <!-- Trust element -->
+        <div class="trust">
+          <small data-i18n="step7.trust">Platby zprostředkovává Comgate</small>
+        </div>
+      </div>
+      
+      <!-- Sleva -->
+      <div class="field discount-field">
+        <label for="discount_code" data-i18n="step7.discount">Slevový kód</label>
+        <div class="discount-input">
+          <input id="discount_code" type="text" />
+          <button id="apply-discount" type="button" class="btn-discount" data-i18n="step7.use">Použít</button>
+        </div>
+        <div class="error" id="err-discount"></div>
+      <!-- Info o aplikovaném slevovém kódu -->
+      <div id="discount-info"></div>
+
+      
+    </div>
+  </div>
+</section>

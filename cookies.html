@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <title data-i18n="cookiesPage.metaTitle">Cookies | FitLime</title>
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/home.css">
+  <style>
+    .policy-page { padding: 60px 0 80px; max-width: 960px; }
+    .policy-hero {
+      background: linear-gradient(135deg, #f9fff6, #e9f6ec);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+    }
+    .policy-hero .eyebrow { text-transform: uppercase; font-size: 12px; letter-spacing: .18em; color: #37563d; font-weight: 800; margin: 0 0 4px; }
+    .policy-hero h1 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 40px); }
+    .policy-hero .lead { margin: 0 0 14px; color: #1f2937; line-height: 1.6; }
+    .pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill { background: #ffffff; border: 1px solid #cdd5ce; border-radius: 999px; padding: 8px 14px; font-weight: 700; color: #123319; }
+    .policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 18px; }
+    .policy-card { padding: 20px 18px; border-radius: 18px; border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff; }
+    .policy-card h2 { margin-top: 0; margin-bottom: 10px; font-size: 22px; color: var(--accent); }
+    .policy-card p { margin: 0 0 12px; }
+    .checklist { padding-left: 0; list-style: none; margin: 10px 0 0; }
+    .checklist li { padding-left: 26px; position: relative; margin-bottom: 10px; }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 2px; color: #0f6b28; font-weight: 800; font-size: 0.95em; }
+    .type-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .type-list li { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: #f9fafb; }
+    .type-list strong { display: block; }
+    .policy-section { margin: 18px 0; padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); }
+    .policy-section h2 { margin: 0 0 10px; font-size: 22px; color: var(--accent); }
+    .steps { padding-left: 18px; margin: 0 0 12px; }
+    .steps li { margin-bottom: 8px; }
+    .reset-row { display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .data-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 0; padding: 0; }
+    .data-list dt { font-weight: 700; color: #111; }
+    .data-list dd { margin: 4px 0 10px; color: #334155; }
+    @media (max-width: 720px) {
+      .policy-page { padding-top: 40px; }
+      .reset-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body class="policy-body">
+
+  <main class="container policy-page" aria-labelledby="pageTitle">
+    <section class="policy-hero">
+      <p class="eyebrow" data-i18n="cookiesPage.hero.eyebrow">Transparentnost</p>
+      <h1 id="pageTitle" data-i18n="cookiesPage.hero.title">Cookies</h1>
+      <p class="lead" data-i18n="cookiesPage.hero.lead">Na webu FitLime používáme cookies, aby stránky správně fungovaly, byly bezpečné a mohli jsme je postupně zlepšovat. Níže najdete přehled typů, důvodů i způsobů, jak svůj souhlas upravit.</p>
+      <div class="pill-row">
+        <span class="pill" data-i18n="cookiesPage.hero.pill1">Souhlas lze kdykoli změnit</span>
+        <span class="pill" data-i18n="cookiesPage.hero.pill2">Používáme jen nezbytné minimum</span>
+        <span class="pill" data-i18n="cookiesPage.hero.pill3">Data jsou uchovávána v EU</span>
+      </div>
+    </section>
+
+    <div class="policy-grid">
+      <article class="policy-card">
+        <h2 data-i18n="cookiesPage.cards.how.title">Jak cookies fungují</h2>
+        <p data-i18n="cookiesPage.cards.how.text">Cookies jsou malé textové soubory, které se uloží ve vašem prohlížeči. Díky nim si web zapamatuje základní nastavení, aby vše běželo plynule a bezpečně.</p>
+        <ul class="checklist">
+          <li data-i18n="cookiesPage.cards.how.li1">Udrží jazyk, obsah formulářů a další nezbytné volby.</li>
+          <li data-i18n="cookiesPage.cards.how.li2">Pomáhají zajistit bezpečný provoz a ochranu proti zneužití.</li>
+          <li data-i18n="cookiesPage.cards.how.li3">Dobrovolně sbírají anonymizovaná data o návštěvnosti pro další zlepšování webu.</li>
+        </ul>
+      </article>
+
+      <article class="policy-card">
+        <h2 data-i18n="cookiesPage.cards.types.title">Jaké typy používáme</h2>
+        <ul class="type-list">
+          <li data-i18n="cookiesPage.cards.types.essential">
+            <strong>Nezbytné</strong>
+            Umožňují chod webu (volba jazyka, stav formuláře). Nelze je vypnout, protože by stránky nefungovaly.
+          </li>
+          <li data-i18n="cookiesPage.cards.types.analytics">
+            <strong>Analytické</strong>
+            Anonymní měření návštěvnosti a výkonu. Aktivují se jen po vašem souhlasu.
+          </li>
+          <li data-i18n="cookiesPage.cards.types.marketing">
+            <strong>Marketingové</strong>
+            Personalizace a kampaně třetích stran. Používáme je pouze, pokud je výslovně povolíte.
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <section class="policy-section">
+      <h2 data-i18n="cookiesPage.manage.title">Jak změnit nebo odvolat souhlas</h2>
+      <ol class="steps">
+        <li data-i18n="cookiesPage.manage.step1">Na hlavní stránce se při první návštěvě zobrazí lišta s možností přijmout nebo odmítnout volitelné cookies.</li>
+        <li data-i18n="cookiesPage.manage.step2">Svůj výběr můžete kdykoli obnovit kliknutím na tlačítko níže nebo vymazáním cookies v prohlížeči.</li>
+        <li data-i18n="cookiesPage.manage.step3">Technické cookies zůstávají aktivní, aby web mohl fungovat a zobrazit vám novou volbu.</li>
+      </ol>
+      <div class="reset-row">
+        <button id="resetCookies" class="btn outline" data-i18n="cookiesPage.manage.resetBtn">Resetovat volbu cookies</button>
+        <p class="muted" style="max-width:520px;" data-i18n="cookiesPage.manage.resetHint">Smaže předchozí souhlas v prohlížeči a při další návštěvě znovu zobrazí cookie lištu.</p>
+      </div>
+    </section>
+
+    <section class="policy-section">
+      <h2 data-i18n="cookiesPage.contacts.title">Správce a kontakty</h2>
+      <dl class="data-list">
+        <div>
+          <dt data-i18n="cookiesPage.contacts.controllerLabel">Správce</dt>
+          <dd data-i18n="cookiesPage.contacts.controller">AthleteFueling s.r.o., IČO: 19576401</dd>
+        </div>
+        <div>
+          <dt data-i18n="cookiesPage.contacts.emailLabel">E-mail</dt>
+          <dd><a href="mailto:info@fitlime.com" data-i18n="cookiesPage.contacts.email">info@fitlime.com</a></dd>
+        </div>
+        <div>
+          <dt data-i18n="cookiesPage.contacts.docsLabel">Další dokumenty</dt>
+          <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs">Zásady ochrany osobních údajů</a></dd>
+        </div>
+      </dl>
+    </section>
+
+    <div style="margin-top: 30px;">
+      <a class="btn" href="/index.html" data-i18n="cookiesPage.back">Zpět na hlavní stránku</a>
+    </div>
+  </main>
+
+  <script type="module">
+    import { bootI18n } from '/src/i18n-core.js';
+    bootI18n();
+  </script>
+  <script>
+    document.getElementById('resetCookies')?.addEventListener('click', () => {
+      ['cookiesChoice', 'cookieConsent'].forEach((key) => {
+        try { localStorage.removeItem(key); } catch (_) {}
+      });
+      const t = window?.i18n?.t?.('cookiesPage.manage.resetAlert');
+      const msg = t && t !== 'cookiesPage.manage.resetAlert'
+        ? t
+        : 'Cookie settings were cleared. After returning to the homepage, the consent banner will appear again.';
+      alert(msg);
+    });
+  </script>
+</body>
+</html>

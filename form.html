@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <title>FitLime – objednávka</title>
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/form-layout.css"/>
+  <link rel="stylesheet" href="/src/styles/form.css" />
+</head>
+<body>
+  <!-- NOVÁ HLAVIČKA -->
+  <header class="page-header">
+    <div class="header-title">
+      <h1 id="step-title">Název aktuální sekce</h1>
+    </div>
+    <a href="/index.html" class="brand header-logo">
+      <img src="/images/logo.png" alt="Logo FitLime" class="header-logo__img">
+    </a>
+    <nav class="header-steps" role="navigation" aria-label="Průběh kroků">
+      <div id="stepper" class="stepper">
+        <!-- tvoje .dot tečky -->
+      </div>
+    </nav>
+  </header>
+
+  <!-- Obsah -->
+  <main class="container">
+    <!-- Intro slide -->
+    <section class="intro-hero" aria-label="Úvod k formuláři">
+      <h2 data-i18n="intro.title">Začni svou cestu k lepšímu stravování</h2>
+      <ul class="bullets">
+        <li><span data-i18n="intro.point1">Zjistíš své potřeby – rychlý výpočet energie a cílů.</span></li>
+        <li><span data-i18n="intro.point2">Dostaneš plán – doporučení jídelníčku a aktivit.</span></li>
+        <li><span data-i18n="intro.point3">Celkový přehled – jasné kroky, co dělat dál.</span></li>
+      </ul>
+      <button id="intro-start" class="cta-primary pulse">
+        🚀 <span data-i18n="intro.cta">Pojďme na to</span>
+      </button>
+    </section>
+
+    <!-- Aktuální krok -->
+    <section class="step" aria-live="polite">
+      <div id="step-container"></div>
+    </section>
+  
+    <!-- CTA -->
+    <section id="step-cta" class="cta" aria-label="Ovládání formuláře">
+      <button id="btn-back" disabled>
+        <span data-i18n="common.back">Zpět</span>
+      </button>
+      <button id="btn-next">
+        <span data-i18n="common.next">Další</span>
+      </button>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <!-- Levý blok: odkazy -->
+      <div class="footer-left">
+        <nav class="footer-links" aria-label="Právní odkazy">
+          <a href="/terms.html" data-i18n="home.footer.terms"></a>
+          <a href="/gdpr.html" data-i18n="home.footer.privacy"></a>
+          <a href="/cookies.html" data-i18n="home.footer.cookies"></a>
+        </nav>
+      </div>
+
+      <!-- Střední blok: značka -->
+      <div class="footer-center">
+        <span class="brandline">FitLime s.r.o. © <span id="year">2026</span></span>
+      </div>
+
+      <!-- Pravý blok: platby -->
+      <div class="footer-right">
+        <div>
+          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Skripty -->
+  <script type="module" src="/src/app.js"></script>
+  <script type="module" src="/src/stepsapp.js"></script>
+  <script type="module">
+    import { bootI18n } from '/src/i18n-core.js';
+
+    // Nastavit rok ve footeru
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Načíst jazyk podle priority (?lang → localStorage → browser → fallback)
+    (async () => {
+      await bootI18n();
+    })();
+
+    // Intro krok (mezikrok)
+(function(){
+  const started = sessionStorage.getItem('formStarted') === '1';
+  if (!started){
+    document.body.classList.add('intro-mode');
+  }
+  const btn = document.getElementById('intro-start');
+  if (btn){
+    btn.addEventListener('click', ()=>{
+      sessionStorage.setItem('formStarted','1');
+      document.body.classList.remove('intro-mode');
+
+      // --- přidané: reset scrollu ---
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
+     
+    });
+  }
+})();
+
+  </script>
+</body>
+</html>

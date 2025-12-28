@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/home.css">
+  <title data-i18n="thanks.title">Děkujeme za objednávku | FitLime</title>
+  <style>
+    :root {
+      --success: #0f7c2d;
+      --success-bg: #e8f6ec;
+      --panel: #ffffff;
+    }
+    body {
+      background: radial-gradient(circle at 15% 20%, rgba(0,128,10,0.08), transparent 38%),
+                  radial-gradient(circle at 85% 0%, rgba(0,80,3,0.12), transparent 32%),
+                  linear-gradient(135deg, #f9fbf7, #eef4ef);
+      min-height: 100vh;
+      padding: 32px 16px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 14px;
+      overflow-x: hidden;
+    }
+    .status-shell {
+      width: min(940px, 100%);
+      display: grid;
+      gap: 12px;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .brand-link img {
+      width: min(140px, 42vw);
+      height: auto;
+    }
+    .status-card {
+      background: var(--panel);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      overflow: hidden;
+    }
+    .status-head {
+      display: grid;
+      grid-template-columns: minmax(64px, auto) 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .status-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #0a641f, #1b9d3f);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+    .status-icon svg { width: 32px; height: 32px; }
+    .eyebrow {
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 12px;
+      color: #0f3d1b;
+      margin: 0;
+    }
+    h1 {
+      margin: 4px 0 6px;
+      font-size: clamp(28px, 3vw, 36px);
+    }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+    }
+    .lead,
+    h1,
+    .summary-row,
+    .step span {
+      overflow-wrap: anywhere;
+    }
+    .email-line {
+      color: #0a2812;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .summary {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: #f9fafb;
+      display: grid;
+      gap: 12px;
+    }
+    .summary-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+    }
+    .summary-row strong { color: #0f3d1b; }
+    .summary-row span.label { color: #475569; }
+    .steps {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: var(--success-bg);
+      display: grid;
+      gap: 10px;
+    }
+    .steps .title {
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: #0f3d1b;
+    }
+    .step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #0a2a15;
+    }
+    .step .badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #0f3d1b;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      min-width: 170px;
+      justify-content: center;
+    }
+    .support {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 22px 14px 26px; }
+      .status-shell { gap: 10px; }
+      .brand-link img { width: 120px; }
+      .status-card { padding: 22px; }
+      .status-head { grid-template-columns: 1fr; }
+      .status-icon { width: 56px; height: 56px; }
+      .summary-row { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+      h1 { font-size: clamp(24px, 7vw, 32px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="status-shell">
+    <a class="brand-link" href="/index.html" aria-label="FitLime">
+      <img src="/public/images/logo_pruhledne.png" alt="FitLime logo">
+      <span>FitLime</span>
+    </a>
+
+    <section class="status-card">
+      <div class="status-head">
+        <div class="status-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">Objednávka potvrzena</p>
+          <h1 data-i18n="thanks.header">Objednávka úspěšně dokončena</h1>
+          <p class="lead" data-i18n="thanks.subtitle_1">Děkujeme, tvůj plán je na cestě.</p>
+          <p class="lead email-line">
+            <span data-i18n="thanks.subtitle_2_prefix">Potvrzení jsme právě odeslali na e-mail</span>
+            <span id="custEmail"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="summary" id="orderBox"></div>
+
+      <div class="steps">
+        <p class="title" id="nextStepsTitle">Co se bude dít dál</p>
+        <div id="nextSteps"></div>
+      </div>
+
+      <div class="buttons">
+        <a href="/index.html" class="btn" data-i18n="thanks.btn_home">Zpět na hlavní stránku</a>
+        <a href="https://www.sportvitalpro.cz/clanky" class="btn outline" data-i18n="thanks.btn_tips">Tipy na výživu</a>
+      </div>
+
+      <p class="support" id="supportNote">Potřebujete něco upravit? Napište nám na info@fitlime.cz.</p>
+    </section>
+  </main>
+
+  <script>
+    function getText(dictionary, key) {
+      return key.split(".").reduce((obj, part) => (obj ? obj[part] : undefined), dictionary);
+    }
+
+    async function initThanksPage() {
+      const formState = JSON.parse(localStorage.getItem("formState") || "{}");
+      const lang = formState?.locale || localStorage.getItem("lang") || "cs";
+
+      const i18n = await fetch(`/i18n/${lang}.json`).then(r => r.json()).catch(() => ({}));
+      const translate = (key) => getText(i18n, key);
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const value = translate(el.dataset.i18n);
+        if (value) {
+          el.textContent = value;
+        }
+      });
+
+      const translatedTitle = translate("thanks.title");
+      if (translatedTitle) {
+        document.title = translatedTitle;
+      }
+
+      if (!(formState && formState.customer && formState.plan)) {
+        window.location.replace("/index.html");
+        return;
+      }
+
+      const fallback = "-";
+      const labels = lang === "en"
+        ? { orderId: "Order ID", name: "Name", plan: "Plan", period: "Period" }
+        : { orderId: "Číslo objednávky", name: "Jméno", plan: "Plán", period: "Období" };
+
+      const planLabel = translate(`step6.${formState?.plan?.variant}_title`) || formState?.plan?.variant || fallback;
+      const periodLabel = translate(`step6.period_${formState?.plan?.period}`) || formState?.plan?.period || fallback;
+      const orderBox = document.getElementById("orderBox");
+
+      document.getElementById("custEmail").textContent = formState.customer.email || fallback;
+
+      orderBox.innerHTML = `
+        <div class="summary-row">
+          <span class="label">${translate("thanks.order_id") || labels.orderId}</span>
+          <strong>${formState?.order_id || fallback}</strong>
+        </div>
+        <div class="summary-row">
+          <span class="label">${translate("thanks.name") || labels.name}</span>
+          <strong>${formState?.customer?.name || fallback}</strong>
+        </div>
+        <div class="summary-row">
+          <span class="label">${translate("thanks.plan") || labels.plan}</span>
+          <strong>${planLabel}</strong>
+        </div>
+  
+      `;
+
+      const stepsTitle = document.getElementById("nextStepsTitle");
+      stepsTitle.textContent = lang === "en" ? "What happens next" : "Co se bude dít dál";
+
+      const nextSteps = document.getElementById("nextSteps");
+      const isPremium = (formState?.plan?.variant || "").toLowerCase() === "premium";
+      const premiumText = translate("thanks.next_premium") || (lang === "en" ? "We will prepare your meal plan within 2 business days." : "Váš jídelníček připravíme do 2 pracovních dnů.");
+      const basicText = translate("thanks.next_basic") || (lang === "en" ? "We will prepare your meal plan within 3 business days." : "Váš jídelníček připravíme do 3 pracovních dnů.");
+      const emailText = translate("thanks.next_email") || (lang === "en" ? "Check spam/promotions if the e-mail is missing." : "Když e-mail nepřijde, zkontrolujte spam a promo.");
+      const tipsText = translate("thanks.next_tips") || (lang === "en" ? "Meanwhile, browse our nutrition tips." : "Mezitím můžete projít naše tipy o výživě.");
+
+      nextSteps.innerHTML = `
+        <div class="step">
+          <span class="badge">1</span>
+          <span>${isPremium ? premiumText : basicText}</span>
+        </div>
+        <div class="step">
+          <span class="badge">2</span>
+          <span>${emailText}</span>
+        </div>
+        <div class="step">
+          <span class="badge">3</span>
+          <span>${tipsText}</span>
+        </div>
+      `;
+
+      const supportNote = lang === "en"
+        ? "Need to adjust your details? Write us at info@fitlime.cz and we'll help."
+        : "Potřebujete něco upravit? Napište nám na info@fitlime.cz a rádi pomůžeme.";
+      document.getElementById("supportNote").textContent = supportNote;
+    }
+
+    initThanksPage();
+  </script>
+</body>
+</html>

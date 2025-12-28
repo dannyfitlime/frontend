@@ -1,0 +1,79 @@
+{
+  "endurance": {
+    "cs": "Vytrvalostní sporty",
+    "sk": "Vytrvalostné športy",
+    "en": "Endurance sports",
+    "de": "Ausdauersportarten",
+    "pt": "Desportos de resistência",
+    "es": "Deportes de resistencia",
+    "it": "Sport di resistenza",
+    "pl": "Sporty wytrzymałościowe",
+    "fr": "Sports d'endurance"
+  },
+  "winter": {
+    "cs": "Zimní sporty",
+    "sk": "Zimné športy",
+    "en": "Winter sports",
+    "de": "Wintersportarten",
+    "pt": "Desportos de inverno",
+    "es": "Deportes de invierno",
+    "it": "Sport invernali",
+    "pl": "Sporty zimowe",
+    "fr": "Sports d'hiver"
+  },
+  "team": {
+    "cs": "Kolektivní sporty",
+    "sk": "Kolektívne športy",
+    "en": "Team sports",
+    "de": "Mannschaftssportarten",
+    "pt": "Desportos coletivos",
+    "es": "Deportes de equipo",
+    "it": "Sport di squadra",
+    "pl": "Sporty drużynowe",
+    "fr": "Sports collectifs"
+  },
+  "individual": {
+    "cs": "Individuální sporty",
+    "sk": "Individuálne športy",
+    "en": "Individual sports",
+    "de": "Einzelsportarten",
+    "pt": "Desportos individuais",
+    "es": "Deportes individuales",
+    "it": "Sport individuali",
+    "pl": "Sporty indywidualne",
+    "fr": "Sports individuels"
+  },
+  "fitness": {
+    "cs": "Fitness & tělocvična",
+    "sk": "Fitness & telocvičňa",
+    "en": "Fitness & Gym",
+    "de": "Fitness & Turnhalle",
+    "pt": "Fitness & ginásio",
+    "es": "Fitness & gimnasio",
+    "it": "Fitness & palestra",
+    "pl": "Fitness i siłownia",
+    "fr": "Fitness & salle de sport"
+  },
+  "water": {
+    "cs": "Vodní sporty",
+    "sk": "Vodné športy",
+    "en": "Water sports",
+    "de": "Wassersportarten",
+    "pt": "Desportos aquáticos",
+    "es": "Deportes acuáticos",
+    "it": "Sport acquatici",
+    "pl": "Sporty wodne",
+    "fr": "Sports aquatiques"
+  },
+  "combat": {
+    "cs": "Bojové sporty",
+    "sk": "Bojové športy",
+    "en": "Combat sports",
+    "de": "Kampfsportarten",
+    "pt": "Desportos de combate",
+    "es": "Deportes de combate",
+    "it": "Sport da combattimento",
+    "pl": "Sporty walki",
+    "fr": "Sports de combat"
+  }
+}

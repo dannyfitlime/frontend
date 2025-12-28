@@ -1,0 +1,1180 @@
+{
+  "running": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Běh",
+      "sk": "Beh",
+      "en": "Running",
+      "de": "Laufen",
+      "pt": "Corrida",
+      "es": "Correr",
+      "it": "Corsa",
+      "pl": "Bieganie",
+      "fr": "Course à pied"
+    },
+    "macros": { "c": 60, "f": 15, "p": 25 }
+  },
+  "cycling": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Cyklistika",
+      "sk": "Cestná cyklistika",
+      "en": "Cycling",
+      "de": "Radfahren",
+      "pt": "Ciclismo",
+      "es": "Ciclismo",
+      "it": "Ciclismo",
+      "pl": "Kolarstwo",
+      "fr": "Cyclisme"
+    },
+    "macros": { "c": 62, "f": 15, "p": 23 }
+  },
+  "swimming": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Plavání",
+      "sk": "Plávanie",
+      "en": "Swimming",
+      "de": "Schwimmen",
+      "pt": "Natação",
+      "es": "Natación",
+      "it": "Nuoto",
+      "pl": "Pływanie",
+      "fr": "Natation"
+    },
+    "macros": { "c": 58, "f": 17, "p": 25 }
+  },
+  "hiking": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Turistika",
+      "sk": "Turistika",
+      "en": "Hiking",
+      "de": "Wandern",
+      "pt": "Caminhada",
+      "es": "Senderismo",
+      "it": "Escursionismo",
+      "pl": "Turystyka piesza",
+      "fr": "Randonnée"
+    },
+    "macros": { "c": 55, "f": 15, "p": 30 }
+  },
+  "walking": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Chůze",
+      "sk": "Chôdza",
+      "en": "Walking",
+      "de": "Gehen",
+      "pt": "Caminhar",
+      "es": "Caminar",
+      "it": "Camminata",
+      "pl": "Chodzenie",
+      "fr": "Marche"
+    },
+    "macros": { "c": 55, "f": 15, "p": 30 }
+  },
+  "inline_skating": {
+    "group": "endurance",
+    "labels": {
+      "cs": "In-line bruslení",
+      "sk": "Kolieskove korčulie",
+      "en": "Inline skating",
+      "de": "Inlineskaten",
+      "pt": "Patinagem em linha",
+      "es": "Patinaje en línea",
+      "it": "Pattinaggio in linea",
+      "pl": "Jazda na rolkach",
+      "fr": "Roller en ligne"
+    },
+    "macros": { "c": 60, "f": 16, "p": 24 }
+  },
+  "roller_skiing": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Kolečkové lyže",
+      "sk": "Kolieskové lyže",
+      "en": "Roller skiing",
+      "de": "Rollski",
+      "pt": "Esqui de rodas",
+      "es": "Esquí de ruedas",
+      "it": "Sci a rotelle",
+      "pl": "Nartorolki",
+      "fr": "Ski-roues"
+    },
+    "macros": { "c": 62, "f": 16, "p": 22 }
+  },
+  "triathlon": {
+    "group": "endurance",
+    "labels": {
+      "cs": "Triatlon",
+      "sk": "Triatlon",
+      "en": "Triathlon",
+      "de": "Triathlon",
+      "pt": "Triatlo",
+      "es": "Triatlón",
+      "it": "Triathlon",
+      "pl": "Triathlon",
+      "fr": "Triathlon"
+    },
+    "macros": { "c": 60, "f": 17, "p": 23 }
+  },  
+  "alpine_skiing": {
+    "group": "winter",
+    "labels": {
+      "cs": "Lyžování (sjezd)",
+      "sk": "Lyžovanie (zjazd)",
+      "en": "Alpine skiing",
+      "de": "Skifahren (Abfahrt)",
+      "pt": "Esqui alpino",
+      "es": "Esquí alpino",
+      "it": "Sci alpino",
+      "pl": "Narciarstwo alpejskie",
+      "fr": "Ski alpin"
+    },
+    "macros": { "c": 52, "f": 20, "p": 28 }
+  },
+  "snowboarding": {
+    "group": "winter",
+    "labels": {
+      "cs": "Snowboarding",
+      "sk": "Snowboarding",
+      "en": "Snowboarding",
+      "de": "Snowboarden",
+      "pt": "Snowboard",
+      "es": "Snowboard",
+      "it": "Snowboard",
+      "pl": "Snowboarding",
+      "fr": "Snowboard"
+    },
+    "macros": { "c": 52, "f": 20, "p": 28 }
+  },
+  "cross_country_skiing": {
+    "group": "winter",
+    "labels": {
+      "cs": "Lyžování (běh)",
+      "sk": "Bežecké lyžovanie",
+      "en": "Cross-country skiing",
+      "de": "Skilanglauf",
+      "pt": "Esqui de fundo",
+      "es": "Esquí de fondo",
+      "it": "Sci di fondo",
+      "pl": "Biegi narciarskie",
+      "fr": "Ski de fond"
+    },
+    "macros": { "c": 62, "f": 16, "p": 22 }
+  },
+  "ice_hockey": {
+    "group": "winter",
+    "labels": {
+      "cs": "Lední hokej",
+      "sk": "Ľadový hokej",
+      "en": "Ice hockey",
+      "de": "Eishockey",
+      "pt": "Hóquei no gelo",
+      "es": "Hockey sobre hielo",
+      "it": "Hockey su ghiaccio",
+      "pl": "Hokej na lodzie",
+      "fr": "Hockey sur glace"
+    },
+    "macros": { "c": 55, "f": 22, "p": 23 }
+  },
+  "biathlon": {
+    "group": "winter",
+    "labels": {
+      "cs": "Biatlon",
+      "sk": "Biatlon",
+      "en": "Biathlon",
+      "de": "Biathlon",
+      "pt": "Biatlo",
+      "es": "Biatlón",
+      "it": "Biathlon",
+      "pl": "Biatlon",
+      "fr": "Biathlon"
+    },
+    "macros": { "c": 60, "f": 17, "p": 23 }
+  },
+  "figure_skating": {
+    "group": "winter",
+    "labels": {
+      "cs": "Krasobruslení",
+      "sk": "Krasokorčuľovanie",
+      "en": "Figure skating",
+      "de": "Eiskunstlauf",
+      "pt": "Patinagem artística",
+      "es": "Patinaje artístico",
+      "it": "Pattinaggio artistico",
+      "pl": "Łyżwiarstwo figurowe",
+      "fr": "Patinage artistique"
+    },
+    "macros": { "c": 55, "f": 20, "p": 25 }
+  },
+  "ski_jumping": {
+    "group": "winter",
+    "labels": {
+      "cs": "Skoky na lyžích",
+      "sk": "Skoky na lyžiach",
+      "en": "Ski jumping",
+      "de": "Skispringen",
+      "pt": "Salto de esqui",
+      "es": "Salto de esquí",
+      "it": "Salto con gli sci",
+      "pl": "Skoki narciarskie",
+      "fr": "Saut à ski"
+    },
+    "macros": { "c": 50, "f": 20, "p": 30 }
+  },
+  "curling": {
+    "group": "winter",
+    "labels": {
+      "cs": "Curling",
+      "sk": "Curling",
+      "en": "Curling",
+      "de": "Curling",
+      "pt": "Curling",
+      "es": "Curling",
+      "it": "Curling",
+      "pl": "Curling",
+      "fr": "Curling"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "bobsleigh": {
+    "group": "winter",
+    "labels": {
+      "cs": "Saně / boby / skeleton",
+      "sk": "Sane / boby / skeleton",
+      "en": "Luge / bobsleigh / skeleton",
+      "de": "Rodeln / Bob / Skeleton",
+      "pt": "Trenó / bobsleigh / skeleton",
+      "es": "Trineo / bobsleigh / skeleton",
+      "it": "Slittino / bob / skeleton",
+      "pl": "Saneczkarstwo / bobsleje / skeleton",
+      "fr": "Luge / bobsleigh / skeleton"
+    },
+    "macros": { "c": 52, "f": 20, "p": 28 }
+  },
+  "ski_mountaineering": {
+    "group": "winter",
+    "labels": {
+      "cs": "Skialpinismus",
+      "sk": "Skialpinizmus",
+      "en": "Ski mountaineering",
+      "de": "Skibergsteigen",
+      "pt": "Esqui-alpinismo",
+      "es": "Esquí de travesía",
+      "it": "Sci alpinismo",
+      "pl": "Skialpinizm",
+      "fr": "Ski-alpinisme"
+    },
+    "macros": { "c": 62, "f": 16, "p": 22 }
+  },  
+  "football": {
+    "group": "team",
+    "labels": {
+      "cs": "Fotbal",
+      "sk": "Futbal",
+      "en": "Football / Soccer",
+      "de": "Fußball",
+      "pt": "Futebol",
+      "es": "Fútbol",
+      "it": "Calcio",
+      "pl": "Piłka nożna",
+      "fr": "Football"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },
+  "basketball": {
+    "group": "team",
+    "labels": {
+      "cs": "Basketbal",
+      "sk": "Basketbal",
+      "en": "Basketball",
+      "de": "Basketball",
+      "pt": "Basquetebol",
+      "es": "Baloncesto",
+      "it": "Pallacanestro",
+      "pl": "Koszykówka",
+      "fr": "Basket-ball"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },
+  "volleyball": {
+    "group": "team",
+    "labels": {
+      "cs": "Volejbal",
+      "sk": "Volejbal",
+      "en": "Volleyball",
+      "de": "Volleyball",
+      "pt": "Voleibol",
+      "es": "Voleibol",
+      "it": "Pallavolo",
+      "pl": "Siatkówka",
+      "fr": "Volley-ball"
+    },
+    "macros": { "c": 56, "f": 21, "p": 23 }
+  },
+  "beach_volleyball": {
+    "group": "team",
+    "labels": {
+      "cs": "Plážový volejbal",
+      "sk": "Plážový volejbal",
+      "en": "Beach volleyball",
+      "de": "Beachvolleyball",
+      "pt": "Voleibol de praia",
+      "es": "Vóley playa",
+      "it": "Beach volley",
+      "pl": "Siatkówka plażowa",
+      "fr": "Beach-volley"
+    },
+    "macros": { "c": 56, "f": 21, "p": 23 }
+  },
+  "handball": {
+    "group": "team",
+    "labels": {
+      "cs": "Házená",
+      "sk": "Hádzaná",
+      "en": "Handball",
+      "de": "Handball",
+      "pt": "Andebol",
+      "es": "Balonmano",
+      "it": "Pallamano",
+      "pl": "Piłka ręczna",
+      "fr": "Handball"
+    },
+    "macros": { "c": 56, "f": 21, "p": 23 }
+  },
+  "rugby": {
+    "group": "team",
+    "labels": {
+      "cs": "Ragby",
+      "sk": "Ragby",
+      "en": "Rugby",
+      "de": "Rugby",
+      "pt": "Râguebi / Rugby",
+      "es": "Rugby",
+      "it": "Rugby",
+      "pl": "Rugby",
+      "fr": "Rugby"
+    },
+    "macros": { "c": 54, "f": 23, "p": 23 }
+  },
+  "baseball": {
+    "group": "team",
+    "labels": {
+      "cs": "Baseball / Softball",
+      "sk": "Baseball / Softbal",
+      "en": "Baseball / Softball",
+      "de": "Baseball / Softball",
+      "pt": "Beisebol / Softbol",
+      "es": "Béisbol / Sófbol",
+      "it": "Baseball / Softball",
+      "pl": "Baseball / Softball",
+      "fr": "Baseball / Softball"
+    },
+    "macros": { "c": 53, "f": 20, "p": 27 }
+  },
+  "cricket": {
+    "group": "team",
+    "labels": {
+      "cs": "Kriket",
+      "sk": "Kriket",
+      "en": "Cricket",
+      "de": "Kricket",
+      "pt": "Críquete",
+      "es": "Críquet",
+      "it": "Cricket",
+      "pl": "Krykiet",
+      "fr": "Cricket"
+    },
+    "macros": { "c": 53, "f": 19, "p": 28 }
+  },
+  "lacrosse": {
+    "group": "team",
+    "labels": {
+      "cs": "Lacrosse",
+      "sk": "Lakros",
+      "en": "Lacrosse",
+      "de": "Lacrosse",
+      "pt": "Lacrosse",
+      "es": "Lacrosse",
+      "it": "Lacrosse",
+      "pl": "Lacrosse",
+      "fr": "Lacrosse"
+    },
+    "macros": { "c": 57, "f": 20, "p": 23 }
+  },
+  "ultimate_frisbee": {
+    "group": "team",
+    "labels": {
+      "cs": "Ultimate frisbee",
+      "sk": "Ultimate frisbee",
+      "en": "Ultimate frisbee",
+      "de": "Ultimate Frisbee",
+      "pt": "Ultimate frisbee",
+      "es": "Ultimate frisbee",
+      "it": "Ultimate frisbee",
+      "pl": "Ultimate frisbee",
+      "fr": "Ultimate frisbee"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },  
+  "tennis": {
+    "group": "individual",
+    "labels": {
+      "cs": "Tenis",
+      "sk": "Tenis",
+      "en": "Tennis",
+      "de": "Tennis",
+      "pt": "Ténis",
+      "es": "Tenis",
+      "it": "Tennis",
+      "pl": "Tenis",
+      "fr": "Tennis"
+    },
+    "macros": { "c": 56, "f": 20, "p": 24 }
+  },
+  "padel": {
+    "group": "individual",
+    "labels": {
+      "cs": "Padel",
+      "sk": "Padel",
+      "en": "Padel",
+      "de": "Padel",
+      "pt": "Padel",
+      "es": "Pádel",
+      "it": "Padel",
+      "pl": "Padel",
+      "fr": "Padel"
+    },
+    "macros": { "c": 56, "f": 20, "p": 24 }
+  },
+  "table_tennis": {
+    "group": "individual",
+    "labels": {
+      "cs": "Stolní tenis",
+      "sk": "Stolný tenis",
+      "en": "Table tennis",
+      "de": "Tischtennis",
+      "pt": "Ténis de mesa",
+      "es": "Tenis de mesa",
+      "it": "Tennis tavolo",
+      "pl": "Tenis stołowy",
+      "fr": "Tennis de table"
+    },
+    "macros": { "c": 58, "f": 18, "p": 24 }
+  },
+  "golf": {
+    "group": "individual",
+    "labels": {
+      "cs": "Golf",
+      "sk": "Golf",
+      "en": "Golf",
+      "de": "Golf",
+      "pt": "Golfe",
+      "es": "Golf",
+      "it": "Golf",
+      "pl": "Golf",
+      "fr": "Golf"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "climbing_wall": {
+    "group": "individual",
+    "labels": {
+      "cs": "Lezení na stěně",
+      "sk": "Lezenie na stene",
+      "en": "Indoor climbing / Wall climbing",
+      "de": "Klettern an der Wand",
+      "pt": "Escalada em parede",
+      "es": "Escalada en rocódromo",
+      "it": "Arrampicata su parete",
+      "pl": "Wspinaczka na ściance",
+      "fr": "Escalade en salle"
+    },
+    "macros": { "c": 50, "f": 22, "p": 28 }
+  },
+  "mountaineering": {
+    "group": "individual",
+    "labels": {
+      "cs": "Horolezectví",
+      "sk": "Horolezectvo",
+      "en": "Mountaineering / Rock climbing",
+      "de": "Bergsteigen / Klettern",
+      "pt": "Montanhismo / Escalada",
+      "es": "Alpinismo / Escalada",
+      "it": "Alpinismo / Arrampicata",
+      "pl": "Alpinizm / Wspinaczka",
+      "fr": "Alpinisme / Escalade"
+    },
+    "macros": { "c": 55, "f": 20, "p": 25 }
+  },
+  "horse_riding": {
+    "group": "individual",
+    "labels": {
+      "cs": "Jízda na koni",
+      "sk": "Jazda na koni",
+      "en": "Horse riding / Equestrian",
+      "de": "Reiten",
+      "pt": "Hipismo / Equitação",
+      "es": "Equitación",
+      "it": "Equitazione",
+      "pl": "Jazda konna",
+      "fr": "Équitation"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "parkour": {
+    "group": "individual",
+    "labels": {
+      "cs": "Parkour",
+      "sk": "Parkour",
+      "en": "Parkour",
+      "de": "Parkour",
+      "pt": "Parkour",
+      "es": "Parkour",
+      "it": "Parkour",
+      "pl": "Parkour",
+      "fr": "Parkour"
+    },
+    "macros": { "c": 54, "f": 22, "p": 24 }
+  },
+  "shooting": {
+    "group": "individual",
+    "labels": {
+      "cs": "Střelba",
+      "sk": "Streľba",
+      "en": "Shooting",
+      "de": "Schießen",
+      "pt": "Tiro",
+      "es": "Tiro",
+      "it": "Tiro a segno",
+      "pl": "Strzelectwo",
+      "fr": "Tir"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "squash": {
+    "group": "individual",
+    "labels": {
+      "cs": "Squash",
+      "sk": "Squash",
+      "en": "Squash",
+      "de": "Squash",
+      "pt": "Squash",
+      "es": "Squash",
+      "it": "Squash",
+      "pl": "Squash",
+      "fr": "Squash"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },
+  "badminton": {
+    "group": "individual",
+    "labels": {
+      "cs": "Badminton",
+      "sk": "Bedminton",
+      "en": "Badminton",
+      "de": "Badminton",
+      "pt": "Badminton",
+      "es": "Bádminton",
+      "it": "Badminton",
+      "pl": "Badminton",
+      "fr": "Badminton"
+    },
+    "macros": { "c": 58, "f": 19, "p": 23 }
+  },  
+  "gym": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Posilovna",
+      "sk": "Posilňovňa",
+      "en": "Gym / Fitness",
+      "de": "Fitnessstudio",
+      "pt": "Ginásio / Musculação",
+      "es": "Gimnasio / Musculación",
+      "it": "Palestra",
+      "pl": "Siłownia",
+      "fr": "Salle de sport"
+    },
+    "macros": { "c": 50, "f": 25, "p": 25 }
+  },
+  "crossfit": {
+    "group": "fitness",
+    "labels": {
+      "cs": "CrossFit",
+      "sk": "CrossFit",
+      "en": "CrossFit",
+      "de": "CrossFit",
+      "pt": "CrossFit",
+      "es": "CrossFit",
+      "it": "CrossFit",
+      "pl": "CrossFit",
+      "fr": "CrossFit"
+    },
+    "macros": { "c": 52, "f": 25, "p": 23 }
+  },
+  "yoga": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Jóga",
+      "sk": "Joga",
+      "en": "Yoga",
+      "de": "Yoga",
+      "pt": "Ioga",
+      "es": "Yoga",
+      "it": "Yoga",
+      "pl": "Joga",
+      "fr": "Yoga"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "stretching": {
+  "group": "fitness",
+  "labels": {
+    "cs": "Strečink",
+    "sk": "Stretching",
+    "en": "Stretching",
+    "de": "Stretching",
+    "pt": "Alongamento",
+    "es": "Estiramiento",
+    "it": "Stretching",
+    "pl": "Rozciąganie",
+    "fr": "Étirements"
+  },
+  "macros": { "c": 50, "f": 18, "p": 32 }
+  },
+  "conditioning": {
+  "group": "fitness",
+  "labels": {
+    "cs": "Kondiční trénink",
+    "sk": "Kondičný tréning",
+    "en": "Conditioning",
+    "de": "Conditioning Training",
+    "pt": "Treino de condicionamento",
+    "es": "Entrenamiento de condición física",
+    "it": "Allenamento di condizionamento",
+    "pl": "Trening kondycyjny",
+    "fr": "Entraînement de condition physique"
+  },
+  "macros": { "c": 54, "f": 22, "p": 24 }
+},
+
+  "pilates": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Pilates",
+      "sk": "Pilates",
+      "en": "Pilates",
+      "de": "Pilates",
+      "pt": "Pilates",
+      "es": "Pilates",
+      "it": "Pilates",
+      "pl": "Pilates",
+      "fr": "Pilates"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "gymnastics": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Gymnastika",
+      "sk": "Gymnastika",
+      "en": "Gymnastics",
+      "de": "Gymnastik",
+      "pt": "Ginástica",
+      "es": "Gimnasia",
+      "it": "Ginnastica",
+      "pl": "Gimnastyka",
+      "fr": "Gymnastique"
+    },
+    "macros": { "c": 54, "f": 22, "p": 24 }
+  },
+  "dance": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Tanec",
+      "sk": "Tanec",
+      "en": "Dance",
+      "de": "Tanz",
+      "pt": "Dança",
+      "es": "Baile / Danza",
+      "it": "Danza",
+      "pl": "Taniec",
+      "fr": "Danse"
+    },
+    "macros": { "c": 56, "f": 20, "p": 24 }
+  },
+  "zumba": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Zumba",
+      "sk": "Zumba",
+      "en": "Zumba",
+      "de": "Zumba",
+      "pt": "Zumba",
+      "es": "Zumba",
+      "it": "Zumba",
+      "pl": "Zumba",
+      "fr": "Zumba"
+    },
+    "macros": { "c": 57, "f": 20, "p": 23 }
+  },
+  "hiit": {
+    "group": "fitness",
+    "labels": {
+      "cs": "HIIT trénink",
+      "sk": "HIIT tréning",
+      "en": "HIIT training",
+      "de": "HIIT-Training",
+      "pt": "Treino HIIT",
+      "es": "Entrenamiento HIIT",
+      "it": "Allenamento HIIT",
+      "pl": "Trening HIIT",
+      "fr": "Entraînement HIIT"
+    },
+    "macros": { "c": 54, "f": 23, "p": 23 }
+  },
+  "trx": {
+    "group": "fitness",
+    "labels": {
+      "cs": "TRX",
+      "sk": "TRX",
+      "en": "TRX",
+      "de": "TRX",
+      "pt": "TRX",
+      "es": "TRX",
+      "it": "TRX",
+      "pl": "TRX",
+      "fr": "TRX"
+    },
+    "macros": { "c": 53, "f": 24, "p": 23 }
+  },
+  "jump_rope": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Skákání přes švihadlo",
+      "sk": "Skákanie cez švihadlo",
+      "en": "Jump rope",
+      "de": "Seilspringen",
+      "pt": "Saltar à corda",
+      "es": "Saltar a la comba",
+      "it": "Saltare la corda",
+      "pl": "Skakanie na skakance",
+      "fr": "Corde à sauter"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },
+  "street_workout": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Street workout",
+      "sk": "Street workout",
+      "en": "Street workout",
+      "de": "Street Workout",
+      "pt": "Street workout",
+      "es": "Street workout",
+      "it": "Street workout",
+      "pl": "Street workout",
+      "fr": "Street workout"
+    },
+    "macros": { "c": 50, "f": 25, "p": 25 }
+  },
+  "aerobics": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Aerobik",
+      "sk": "Aerobik",
+      "en": "Aerobics",
+      "de": "Aerobic",
+      "pt": "Aeróbica",
+      "es": "Aeróbic",
+      "it": "Aerobica",
+      "pl": "Aerobik",
+      "fr": "Aérobic"
+    },
+    "macros": { "c": 57, "f": 20, "p": 23 }
+  },
+  "pole_dance": {
+    "group": "fitness",
+    "labels": {
+      "cs": "Pole dance",
+      "sk": "Pole dance",
+      "en": "Pole dance",
+      "de": "Pole Dance",
+      "pt": "Pole dance",
+      "es": "Pole dance",
+      "it": "Pole dance",
+      "pl": "Pole dance",
+      "fr": "Pole dance"
+    },
+    "macros": { "c": 54, "f": 22, "p": 24 }
+  },  
+  "canoeing": {
+    "group": "water",
+    "labels": {
+      "cs": "Kanoistika",
+      "sk": "Kanoistika",
+      "en": "Canoeing",
+      "de": "Kanufahren",
+      "pt": "Canoagem",
+      "es": "Piragüismo",
+      "it": "Canoa / Canottaggio leggero",
+      "pl": "Kajakarstwo",
+      "fr": "Canoë"
+    },
+    "macros": { "c": 58, "f": 20, "p": 22 }
+  },
+  "water_polo": {
+    "group": "water",
+    "labels": {
+      "cs": "Vodní pólo",
+      "sk": "Vodné pólo",
+      "en": "Water polo",
+      "de": "Wasserball",
+      "pt": "Polo aquático",
+      "es": "Waterpolo",
+      "it": "Pallanuoto",
+      "pl": "Piłka wodna",
+      "fr": "Water-polo"
+    },
+    "macros": { "c": 59, "f": 20, "p": 21 }
+  },
+  "diving": {
+    "group": "water",
+    "labels": {
+      "cs": "Skoky do vody",
+      "sk": "Skoky do vody",
+      "en": "Diving",
+      "de": "Wasserspringen",
+      "pt": "Saltos para a água",
+      "es": "Saltos de trampolín",
+      "it": "Tuffi",
+      "pl": "Skoki do wody",
+      "fr": "Plongeon"
+    },
+    "macros": { "c": 52, "f": 20, "p": 28 }
+  },
+  "surfing": {
+    "group": "water",
+    "labels": {
+      "cs": "Surfing",
+      "sk": "Surfovanie",
+      "en": "Surfing",
+      "de": "Surfen",
+      "pt": "Surfe",
+      "es": "Surf",
+      "it": "Surf",
+      "pl": "Surfing",
+      "fr": "Surf"
+    },
+    "macros": { "c": 55, "f": 20, "p": 25 }
+  },
+  "windsurfing": {
+    "group": "water",
+    "labels": {
+      "cs": "Windsurfing",
+      "sk": "Windsurfing",
+      "en": "Windsurfing",
+      "de": "Windsurfen",
+      "pt": "Windsurf",
+      "es": "Windsurf",
+      "it": "Windsurf",
+      "pl": "Windsurfing",
+      "fr": "Planche à voile"
+    },
+    "macros": { "c": 56, "f": 20, "p": 24 }
+  },
+  "kitesurfing": {
+    "group": "water",
+    "labels": {
+      "cs": "Kitesurfing",
+      "sk": "Kitesurfing",
+      "en": "Kitesurfing",
+      "de": "Kitesurfen",
+      "pt": "Kitesurf",
+      "es": "Kitesurf",
+      "it": "Kitesurf",
+      "pl": "Kitesurfing",
+      "fr": "Kitesurf"
+    },
+    "macros": { "c": 56, "f": 20, "p": 24 }
+  },
+  "paddleboarding": {
+    "group": "water",
+    "labels": {
+      "cs": "Paddleboarding (SUP)",
+      "sk": "Paddleboarding (SUP)",
+      "en": "Paddleboarding (SUP)",
+      "de": "Stand Up Paddling (SUP)",
+      "pt": "Paddle surf (SUP)",
+      "es": "Paddle surf (SUP)",
+      "it": "Stand up paddle (SUP)",
+      "pl": "SUP / Deska z wiosłem",
+      "fr": "Paddle (SUP)"
+    },
+    "macros": { "c": 54, "f": 18, "p": 28 }
+  },
+  "rafting": {
+    "group": "water",
+    "labels": {
+      "cs": "Rafting",
+      "sk": "Rafting",
+      "en": "Rafting",
+      "de": "Rafting",
+      "pt": "Rafting",
+      "es": "Rafting",
+      "it": "Rafting",
+      "pl": "Rafting",
+      "fr": "Rafting"
+    },
+    "macros": { "c": 56, "f": 19, "p": 25 }
+  },
+  "freediving": {
+    "group": "water",
+    "labels": {
+      "cs": "Potápění / freediving",
+      "sk": "Potápanie / freediving",
+      "en": "Diving / Freediving",
+      "de": "Tauchen / Freediving",
+      "pt": "Mergulho / Freediving",
+      "es": "Buceo / Apnea",
+      "it": "Immersione / Apnea",
+      "pl": "Nurkowanie / Freediving",
+      "fr": "Plongée / Apnée"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "sailing": {
+    "group": "water",
+    "labels": {
+      "cs": "Jachting",
+      "sk": "Jachting",
+      "en": "Sailing / Yachting",
+      "de": "Segeln / Yachting",
+      "pt": "Vela / Iatismo",
+      "es": "Vela / Yate",
+      "it": "Vela / Yachting",
+      "pl": "Żeglarstwo",
+      "fr": "Voile / Yachting"
+    },
+    "macros": { "c": 52, "f": 18, "p": 30 }
+  },
+  "wakeboarding": {
+    "group": "water",
+    "labels": {
+      "cs": "Wakeboarding",
+      "sk": "Wakeboarding",
+      "en": "Wakeboarding",
+      "de": "Wakeboarden",
+      "pt": "Wakeboard",
+      "es": "Wakeboard",
+      "it": "Wakeboard",
+      "pl": "Wakeboarding",
+      "fr": "Wakeboard"
+    },
+    "macros": { "c": 54, "f": 20, "p": 26 }
+  },
+  "rowing": {
+    "group": "water",
+    "labels": {
+      "cs": "Veslování",
+      "sk": "Veslovanie",
+      "en": "Rowing",
+      "de": "Rudern",
+      "pt": "Remo",
+      "es": "Remo",
+      "it": "Canottaggio",
+      "pl": "Wioślarstwo",
+      "fr": "Aviron"
+    },
+    "macros": { "c": 60, "f": 20, "p": 20 }
+  },
+  "synchronized_swimming": {
+    "group": "water",
+    "labels": {
+      "cs": "Synchronizované plavání",
+      "sk": "Synchronizované plávanie",
+      "en": "Synchronized swimming",
+      "de": "Synchronschwimmen",
+      "pt": "Natação sincronizada",
+      "es": "Natación sincronizada",
+      "it": "Nuoto sincronizzato",
+      "pl": "Pływanie synchroniczne",
+      "fr": "Natation synchronisée"
+    },
+    "macros": { "c": 57, "f": 20, "p": 23 }
+  },  
+  "boxing": {
+    "group": "combat",
+    "labels": {
+      "cs": "Box",
+      "sk": "Box",
+      "en": "Boxing",
+      "de": "Boxen",
+      "pt": "Boxe",
+      "es": "Boxeo",
+      "it": "Boxe",
+      "pl": "Boks",
+      "fr": "Boxe"
+    },
+    "macros": { "c": 52, "f": 24, "p": 24 }
+  },
+  "kickboxing": {
+    "group": "combat",
+    "labels": {
+      "cs": "Kickbox",
+      "sk": "Kickbox",
+      "en": "Kickboxing",
+      "de": "Kickboxen",
+      "pt": "Kickboxing",
+      "es": "Kickboxing",
+      "it": "Kickboxing",
+      "pl": "Kickboxing",
+      "fr": "Kick-boxing"
+    },
+    "macros": { "c": 52, "f": 24, "p": 24 }
+  },
+  "judo": {
+    "group": "combat",
+    "labels": {
+      "cs": "Judo",
+      "sk": "Judo",
+      "en": "Judo",
+      "de": "Judo",
+      "pt": "Judo",
+      "es": "Judo",
+      "it": "Judo",
+      "pl": "Judo",
+      "fr": "Judo"
+    },
+    "macros": { "c": 50, "f": 25, "p": 25 }
+  },
+  "karate": {
+    "group": "combat",
+    "labels": {
+      "cs": "Karate",
+      "sk": "Karate",
+      "en": "Karate",
+      "de": "Karate",
+      "pt": "Karaté",
+      "es": "Karate",
+      "it": "Karate",
+      "pl": "Karate",
+      "fr": "Karaté"
+    },
+    "macros": { "c": 52, "f": 24, "p": 24 }
+  },
+  "taekwondo": {
+    "group": "combat",
+    "labels": {
+      "cs": "Taekwondo",
+      "sk": "Taekwondo",
+      "en": "Taekwondo",
+      "de": "Taekwondo",
+      "pt": "Taekwondo",
+      "es": "Taekwondo",
+      "it": "Taekwondo",
+      "pl": "Taekwondo",
+      "fr": "Taekwondo"
+    },
+    "macros": { "c": 52, "f": 24, "p": 24 }
+  },
+  "bjj": {
+  "group": "combat",
+  "labels": {
+    "cs": "Brazilské jiu-jitsu",
+    "sk": "Brazílske jiu-jitsu",
+    "en": "Brazilian Jiu-Jitsu (BJJ)",
+    "de": "Brazilian Jiu-Jitsu",
+    "pt": "Jiu-jitsu brasileiro",
+    "es": "Jiu-jitsu brasileño",
+    "it": "Jiu-jitsu brasiliano",
+    "pl": "Brazylijskie jiu-jitsu",
+    "fr": "Jiu-jitsu brésilien"
+  },
+  "macros": { "c": 48, "f": 25, "p": 27 }
+},
+
+  "aikido": {
+    "group": "combat",
+    "labels": {
+      "cs": "Aikido",
+      "sk": "Aikido",
+      "en": "Aikido",
+      "de": "Aikido",
+      "pt": "Aikido",
+      "es": "Aikido",
+      "it": "Aikido",
+      "pl": "Aikido",
+      "fr": "Aïkido"
+    },
+    "macros": { "c": 52, "f": 23, "p": 25 }
+  },
+  "fencing": {
+    "group": "combat",
+    "labels": {
+      "cs": "Šerm",
+      "sk": "Šerm",
+      "en": "Fencing",
+      "de": "Fechten",
+      "pt": "Esgrima",
+      "es": "Esgrima",
+      "it": "Scherma",
+      "pl": "Szermierka",
+      "fr": "Escrime"
+    },
+    "macros": { "c": 54, "f": 22, "p": 24 }
+  },
+  "wrestling": {
+    "group": "combat",
+    "labels": {
+      "cs": "Wrestling",
+      "sk": "Wrestling",
+      "en": "Wrestling",
+      "de": "Ringen / Wrestling",
+      "pt": "Wrestling",
+      "es": "Lucha libre / Wrestling",
+      "it": "Wrestling",
+      "pl": "Zapasy",
+      "fr": "Lutte"
+    },
+    "macros": { "c": 50, "f": 25, "p": 25 }
+  },
+  "capoeira": {
+    "group": "combat",
+    "labels": {
+      "cs": "Capoeira",
+      "sk": "Capoeira",
+      "en": "Capoeira",
+      "de": "Capoeira",
+      "pt": "Capoeira",
+      "es": "Capoeira",
+      "it": "Capoeira",
+      "pl": "Capoeira",
+      "fr": "Capoeira"
+    },
+    "macros": { "c": 56, "f": 21, "p": 23 }
+  },
+  "mma": {
+    "group": "combat",
+    "labels": {
+      "cs": "MMA",
+      "sk": "MMA",
+      "en": "MMA",
+      "de": "MMA",
+      "pt": "MMA",
+      "es": "MMA",
+      "it": "MMA",
+      "pl": "MMA",
+      "fr": "MMA"
+    },
+    "macros": { "c": 50, "f": 25, "p": 25 }
+  }
+
+
+
+
+}
+
+

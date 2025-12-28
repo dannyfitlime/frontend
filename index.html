@@ -1,0 +1,1182 @@
+﻿<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <title data-i18n="home.meta.title"></title>
+
+  <!-- SEO -->
+  <meta name="description" content="" data-i18n="home.meta.description">
+  <meta property="og:title" content="" data-i18n="home.meta.title">
+  <meta property="og:description" content="" data-i18n="home.meta.description">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/public/images/logo.png">
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/home.css" />
+</head>
+<body>
+  <script type="module" src="/src/password-gate.js"></script>
+  <!-- ===== COOKIES BAR ===== -->
+  <div id="cookiesBar" class="cookies-bar" role="dialog" aria-live="polite" aria-label="Nastavení cookies" hidden>
+    <div class="cookies-bar__inner">
+      <p data-i18n="home.cookies.text"></p>
+      <div class="cookies-bar__actions">
+        <button class="btn outline small" id="cookiesDecline" data-i18n="home.cookies.decline"></button>
+        <button class="btn small" id="cookiesAccept" data-i18n="home.cookies.accept"></button>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- ===== HEADER ===== -->
+  <header class="home-topbar" id="topbar">
+    <div class="home-container home-topbar__inner">
+
+      <!-- Logo -->
+      <a class="home-brand" href="." aria-label="FitLime domů">
+        <img class="logo" src="/public/images/logo_pruhledne.png" alt="Fit Lime logo" />
+        <span class="text">Fit Lime</span>
+      </a>
+
+      <!-- Navigace pro desktop -->
+      <nav class="home-nav" aria-label="Hlavní navigace">
+        <a href="#how" data-i18n="home.nav.how"></a>
+        <a href="#preview" data-i18n="home.nav.preview"></a>
+        <a href="#home-coverage" data-i18n="home.nav.coverage"></a>
+        <a href="#pricing" data-i18n="home.nav.pricing"></a>
+        <a href="#about" data-i18n="home.nav.about"></a>
+      </nav>
+
+      <!-- Burger button -->
+      <button class="menu-toggle" id="menuBtn" aria-label="Otevřít menu" aria-controls="drawer" aria-expanded="false">
+        ☰
+      </button>
+    </div>
+  </header>
+
+    <!-- ===== FULLSCREEN DRAWER ===== -->
+    <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__backdrop" id="drawerBackdrop"></div>
+    <div class="drawer__content">
+      <div class="drawer__panel">
+        <button class="drawer__close" id="drawerClose" aria-label="Zavřít menu" data-i18n-aria-label="home.drawer.close">×</button>
+        <nav class="drawer__links" aria-label="Menu">
+          <a href="#how" data-i18n="home.drawer.how"></a>
+          <a href="#preview" data-i18n="home.drawer.preview"></a>
+          <a href="#home-coverage" data-i18n="home.drawer.coverage"></a>
+          <a href="#pricing" data-i18n="home.drawer.pricing"></a>
+          <a href="#about" data-i18n="home.drawer.about"></a>
+        </nav>
+      </div>
+      <div class="drawer__image">
+        <img src="/public/images/drawer.png" alt="Zdravá výživa" data-i18n-aria-label="home.drawer.imageAlt" />
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="home-container hero-wrap">
+        <h1 data-i18n="home.hero.title"></h1>
+        <p class="lead" data-i18n="home.hero.lead"></p>
+        <div class="cta-row">
+          <a class="btn btn-xl" href="/form.html" data-i18n="home.hero.cta"></a>
+        </div>
+        <p class="lead" data-i18n="home.hero.note"></p>
+      </div>
+    </section>
+
+    <div class="background-soft">
+    <!-- ===== PROČ ===== -->    
+    <section id="why" class="why-section">
+      <div class="home-container">
+        <h2 class="why-title" data-i18n="home.why.title"></h2>
+        <p class="why-subtitle" data-i18n="home.why.subtitle"></p>
+
+        <div class="why-columns">
+          <!-- 1 -->
+          <div class="why-item">
+            <img src="/public/images/why1.png" alt="Zdravý životní styl" loading="lazy">
+            <h3 data-i18n="home.why.items.lifestyle.title"></h3>
+            <ul>
+              <li data-i18n="home.why.items.lifestyle.point1"></li>
+              <li data-i18n="home.why.items.lifestyle.point2"></li>
+              <li data-i18n="home.why.items.lifestyle.point3"></li>
+            </ul>
+          </div>
+
+          <!-- 2 -->
+          <div class="why-item">
+            <img src="/public/images/why2.png" alt="Výživa na míru" loading="lazy">
+            <h3 data-i18n="home.why.items.nutrition.title"></h3>
+            <ul>
+              <li data-i18n="home.why.items.nutrition.point1"></li>
+              <li data-i18n="home.why.items.nutrition.point2"></li>
+              <li data-i18n="home.why.items.nutrition.point3"></li>
+            </ul>
+          </div>
+
+          <!-- 3 -->
+          <div class="why-item">
+            <img src="/public/images/why3.png" alt="Praktický přístup" loading="lazy">
+            <h3 data-i18n="home.why.items.practical.title"></h3>
+            <ul>
+              <li data-i18n="home.why.items.practical.point1"></li>
+              <li data-i18n="home.why.items.practical.point2"></li>
+              <li data-i18n="home.why.items.practical.point3"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== JAK TO FUNGUJE ===== -->
+    <section id="how" class="how-steps">
+      <div class="home-container">        
+        <h2 class="how-title" data-i18n="home.how.title"></h2>
+        <p class="how-subtitle" data-i18n="home.how.subtitle"></p>
+
+        <!-- === LABELY KROKŮ === -->
+        <div class="how-step-labels">
+          <div data-step="0" class="label-item active" data-i18n="home.how.step1.title"></div>
+          <div data-step="1" class="label-item" data-i18n="home.how.step2.title"></div>
+          <div data-step="2" class="label-item" data-i18n="home.how.step3.title"></div>
+          <div data-step="3" class="label-item" data-i18n="home.how.step4.title"></div>
+        </div>
+
+        <!-- === PROGRESS TIMELINE === -->
+        <div class="how-progress">
+
+          <!-- Černá linka -->
+          <div class="progress-line">
+            <!-- Zelená vyplněná část -->
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+
+          <!-- Tečky -->
+          <div class="progress-dots">
+            <div class="p-dot active" data-step="0"></div>
+            <div class="p-dot" data-step="1"></div>
+            <div class="p-dot" data-step="2"></div>
+            <div class="p-dot" data-step="3"></div>
+          </div>
+
+        </div>
+
+        <!-- === MALÉ IKONY === -->
+        <div class="how-step-icons">
+          <img src="/images/how1.png" class="icon-small active" data-step="0">
+          <img src="/images/how2.png" class="icon-small" data-step="1">
+          <img src="/images/how3.png" class="icon-small" data-step="2">
+          <img src="/images/how4.png" class="icon-small" data-step="3">
+        </div>
+
+        <!-- === VELKÝ OBSAH (JEDINÝ, KTERÝ SE MĚNÍ) === -->
+        <div class="how-detail">
+          <div class="how-detail-inner">
+            <img id="how-big-img" src="/images/how1.png" alt="step image" class="how-big-img">
+            <div id="how-big-texts" style="display:none;">
+              <p data-i18n="home.how.step1.text"></p>
+              <p data-i18n="home.how.step2.text"></p>
+              <p data-i18n="home.how.step3.text"></p>
+              <p data-i18n="home.how.step4.text"></p>
+            </div>
+            <p id="how-big-text" class="how-big-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRO KOHO JE JÍDELNÍČEK ===== -->
+    <section id="for-whom" class="audience">
+      <div class="home-container">
+        <!-- Hlavička sekce -->
+        <div class="audience-header">
+          <h2 data-i18n="home.audience.title">
+            Pro koho je jídelníček určen
+          </h2>
+          <p class="lead" data-i18n="home.audience.lead">
+            Zdravý jídelníček přizpůsobujeme tomu, jak žiješ – jestli trénuješ na závody,
+            chodíš si jen občas zacvičit, nebo chceš „jen“ jíst lépe a mít víc energie.
+          </p>
+        </div>
+
+        <!-- 3 cílové skupiny -->
+        <div class="audience-grid">
+          <!-- 1) Výkonnostní a vrcholoví sportovci -->
+          <article class="audience-card">
+            <div class="audience-image">
+              <img src="/public/images/elite_sport.png" alt="Vrcholový sportovec při tréninku">
+            </div>
+            <div class="audience-body">              
+              <h3 data-i18n="home.audience.pro.title">
+                Výkonnostní a vrcholoví sportovci
+              </h3>
+              <p data-i18n="home.audience.pro.text">
+                Máš tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle
+                zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.
+              </p>        
+              
+            </div>
+            <div class="audience-tag audience-tag--pro">
+                <span data-i18n="home.audience.pro.tag"></span>
+              </div>
+          </article>
+
+          <!-- 2) Hobby sportovci -->
+          <article class="audience-card">
+            <div class="audience-image">
+              <img src="/public/images/sport.png" alt="Hobby sportovec při cvičení">
+            </div>
+            <div class="audience-body">              
+              <h3 data-i18n="home.audience.hobby.title">
+                Hobby sportovci
+              </h3>
+              <p data-i18n="home.audience.hobby.text">
+                Běháš, chodíš do fitka, na kolo nebo skupinové lekce a chceš se cítit
+                lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.
+              </p>
+              
+            </div>
+            <div class="audience-tag audience-tag--hobby">
+                <span data-i18n="home.audience.hobby.tag"></span>
+              </div>
+          </article>
+
+          <!-- 3) Nesportovci / běžná populace -->
+          <article class="audience-card">
+            <div class="audience-image">
+              <img src="/public/images/no_sport.png" alt="Běžný člověk u zdravého jídla">
+            </div>
+            <div class="audience-body">              
+              <h3 data-i18n="home.audience.everyday.title">
+                Běžný život bez pravidelného sportu
+              </h3>
+              <p data-i18n="home.audience.everyday.text">
+                Nejsi „sportovec“, ale chceš jíst zdravěji, mít stabilnější energii
+                během dne nebo zhubnout? Postavíme jídelníček, který je realistický
+                a dlouhodobě udržitelný.
+              </p>
+              
+            </div>
+            <div class="audience-tag audience-tag--everyday">
+                <span data-i18n="home.audience.everyday.tag"></span>
+              </div>
+          </article>
+        </div>
+
+        <!-- CTA pod kartami -->
+        <div class="audience-cta">
+          <a class="btn btn-xl" href="/form.html" data-i18n="home.audience.cta">
+            Zjisti, jaký plán je pro tebe
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===== UKÁZKA ===== -->
+    <section id="preview" class="preview">
+      <div class="home-container">
+        <h2 data-i18n="home.preview.title"></h2>
+        <p class="lead" data-i18n="home.preview.lead"></p>
+        <div class="preview-tags">
+          <span class="tag" data-tag="1" data-i18n="home.preview.tags.tag1"></span>
+          <span class="tag" data-tag="2" data-i18n="home.preview.tags.tag2"></span>
+          <span class="tag" data-tag="3" data-i18n="home.preview.tags.tag3"></span>
+          <span class="tag" data-tag="4" data-i18n="home.preview.tags.tag4"></span>
+          <span class="tag" data-tag="5" data-i18n="home.preview.tags.tag5"></span>
+        </div>
+      </div>
+
+      <div id="lightgallery" class="preview-grid">
+        <a href="/images/preview1.png" data-tag="1">
+          <img src="/images/preview1.png" alt="Ukázka PDF 1">
+        </a>
+        <a href="/images/preview2.png" data-tag="2">
+          <img src="/images/preview2.png" alt="Ukázka PDF 2">
+        </a>
+        <a href="/images/preview3.png" data-tag="3">
+          <img src="/images/preview3.png" alt="Ukázka PDF 3">
+        </a>
+        <a href="/images/preview4.png" data-tag="3">
+          <img src="/images/preview4.png" alt="Ukázka PDF 4">
+        </a>
+        <a href="/images/preview5.png" data-tag="4">
+          <img src="/images/preview5.png" alt="Ukázka PDF 5">
+        </a>
+        <a href="/images/preview6.png" data-tag="5">
+          <img src="/images/preview6.png" alt="Ukázka PDF 6">
+        </a>
+        <a href="/images/preview7.png" data-tag="5">
+          <img src="/images/preview7.png" alt="Ukázka PDF 7">
+        </a>
+      </div>
+      
+      <div class="home-container center" style="margin-top:40px;">
+          <a class="btn btn-xl" href="/form.html" data-i18n="home.pricing.cta"></a>
+          <p class="muted" data-i18n="home.pricing.note"></p>
+      </div>
+    </section>
+
+    <!-- ===== DIETNÍ SIMULÁTOR ===== -->
+    <section id="diet-simulator" class="diet-sim">
+      <div class="home-container">
+
+        <h2 class="diet-title" data-i18n="home.diet.title"></h2>
+        <p class="diet-subtitle" data-i18n="home.diet.subtitle"></p>
+
+        <!-- === SEZNAM POTRAVIN K VÝBĚRU === -->
+        <div class="diet-food-list" id="dietFoodList">          
+          <label><input type="checkbox" value="avocado"> <span data-i18n="home.diet.food.avocado"></span></label>
+          <label><input type="checkbox" value="donut"> <span data-i18n="home.diet.food.donut"></span></label>
+          <label><input type="checkbox" value="burger"> <span data-i18n="home.diet.food.burger"></span></label>
+          <label><input type="checkbox" value="fries"> <span data-i18n="home.diet.food.fries"></span></label>
+          <label><input type="checkbox" value="apple"> <span data-i18n="home.diet.food.apple"></span></label>         
+          <label><input type="checkbox" value="chicken"> <span data-i18n="home.diet.food.chicken"></span></label>          
+          <label><input type="checkbox" value="hotdog"> <span data-i18n="home.diet.food.hotdog"></span></label>
+          <label><input type="checkbox" value="rice"> <span data-i18n="home.diet.food.rice"></span></label>
+          <label><input type="checkbox" value="salad"> <span data-i18n="home.diet.food.salad"></span></label>
+          <label><input type="checkbox" value="icecream"> <span data-i18n="home.diet.food.icecream"></span></label>          
+        </div>
+
+        <!-- === GRAF NUTRIENTŮ === -->
+        <div class="diet-chart-container">
+          <canvas id="dietChart"></canvas>
+        </div>
+
+        <!-- === POPIS ALGORITMU === -->
+        <p class="diet-info-text" data-i18n="home.diet.algorithm"></p>
+
+        <!-- === STATISTICKÉ BOXY === -->
+        <div class="diet-stats">
+          <div class="diet-stat-box">
+            <h3 data-i18n="home.diet.stats.stat1.title"></h3>
+            <p data-i18n="home.diet.stats.stat1.text"></p>
+          </div>
+
+          <div class="diet-stat-box">
+            <h3 data-i18n="home.diet.stats.stat2.title"></h3>
+            <p data-i18n="home.diet.stats.stat2.text"></p>
+          </div>
+        </div>
+
+        <p class="diet-info-text" data-i18n="home.diet.bottomNote"></p>
+      </div>
+    </section>
+
+    <!-- ===== CO POKRÝVÁ ===== -->
+    <section id="home-coverage" class="coverage-alt">
+      <img src="images/coverage-desktop.jpg" alt="" class="bg-img bg-img--desktop">
+      <img src="images/coverage-mobile.jpg" alt="" class="bg-img bg-img--mobile">
+
+      <div class="container">
+        <h2 data-i18n="home.coverage.title">Co jídelníček pokrývá</h2>
+        <p class="intro" data-i18n="home.coverage.intro">
+          Shrnutí všech hlavních živin do čtyř přehledných kategorií. Kliknutím zobrazíte detaily.
+        </p>
+
+        <div class="coverage-boxes">
+          <!-- Box 1 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroživiny</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.energy.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroživiny</h3>
+              <ul>
+                <li data-i18n="home.coverage.boxes.energy.items.energy"></li>
+                <li data-i18n="home.coverage.boxes.energy.items.protein"></li>
+                <li data-i18n="home.coverage.boxes.energy.items.fat"></li>
+                <li data-i18n="home.coverage.boxes.energy.items.carbs"></li>
+                <li data-i18n="home.coverage.boxes.energy.items.fiber"></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.groups.title">Skupiny potravin</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.groups.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.groups.title">Skupiny potravin</h3>
+              <ul>
+                <li data-i18n="home.coverage.boxes.groups.items.fruit"></li>
+                <li data-i18n="home.coverage.boxes.groups.items.veggies"></li>
+                <li data-i18n="home.coverage.boxes.groups.items.dairy"></li>
+                <li data-i18n="home.coverage.boxes.groups.items.fish"></li>
+                
+              </ul>
+            </div>
+          </div>
+          <!-- Box 3 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny tuků</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.fats.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny Tuků</h3>
+              <ul> 
+                <li data-i18n="home.coverage.boxes.fats.items.satu"></li>
+                <li data-i18n="home.coverage.boxes.fats.items.mono"></li>
+                <li data-i18n="home.coverage.boxes.fats.items.poly"></li>
+                <li data-i18n="home.coverage.boxes.fats.items.chole"></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Box 4 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">Vitamíny B komplexu</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.vitamins_b.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">Vitamíny</h3>
+              <ul> 
+                <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb1"></li>
+                <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb2"></li>
+                <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb6"></li>
+                <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb12"></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Box 5 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.vitamins.title">Vitamíny</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.vitamins.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.vitamins.title">Vitamíny</h3>
+              <ul> 
+                <li data-i18n="home.coverage.boxes.vitamins.items.vitc"></li>
+                <li data-i18n="home.coverage.boxes.vitamins.items.vitd"></li>
+                <li data-i18n="home.coverage.boxes.vitamins.items.vite"></li>
+                <li data-i18n="home.coverage.boxes.vitamins.items.folic"></li>                
+              </ul>
+            </div>
+          </div>
+          <!-- Box 6 -->
+          <div class="big-box">
+            <div class="box-front">
+              <h3 data-i18n="home.coverage.boxes.minerals.title">Minerály</h3>
+              <p class="box-subtitle" data-i18n="home.coverage.boxes.minerals.subtitle"></p>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
+            </div>
+            <div class="box-back">
+              <h3 data-i18n="home.coverage.boxes.minerals.title">Minerály</h3>
+              <ul>
+                <li data-i18n="home.coverage.boxes.minerals.items.magnesium"></li>
+                <li data-i18n="home.coverage.boxes.minerals.items.potassium"></li>
+                <li data-i18n="home.coverage.boxes.minerals.items.sodium"></li>
+                <li data-i18n="home.coverage.boxes.minerals.items.calcium"></li>
+                <li data-i18n="home.coverage.boxes.minerals.items.iron"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CENÍK ===== -->   
+    <section id="pricing" class="pricing">
+      <div class="home-container">
+        <h2 data-i18n="home.pricing.title"></h2>
+        <div class="price-grid">
+
+          <article class="plan" data-plan="std">
+            <h3 data-i18n="home.pricing.standard.title"></h3>
+            <ul class="features">
+              <li data-i18n="home.pricing.standard.feature1"></li>
+              <li data-i18n="home.pricing.standard.feature2"></li>
+              <li data-i18n="home.pricing.standard.feature3"></li>   
+              <li data-i18n="home.pricing.standard.feature4"></li>
+              <li data-i18n="home.pricing.standard.feature5"></li>
+              <li data-i18n="home.pricing.standard.feature6"></li>
+              <li data-i18n="home.pricing.standard.feature7"></li>
+            </ul>
+            <div class="price">
+                <div class="price-week">
+                    <span class="val"></span>
+                   <!-- <span class="unit" data-i18n="home.pricing.per_week"></span>-->
+                </div>
+                <!-- Monthly plans temporarily disabled
+                <div class="price-month note">
+                    <span class="val"></span>
+                    <span class="unit" data-i18n="home.pricing.per_month"></span>
+                    <span class="badge-adv" data-i18n="home.pricing.advantage"></span>
+                </div>
+                -->
+            </div>
+          </article>
+
+          <article class="plan popular" data-plan="prem">
+            <div class="badge" data-i18n="home.pricing.premium.badge"></div>
+            <h3 data-i18n="home.pricing.premium.title"></h3>
+            <ul class="features">
+              <li data-i18n="home.pricing.premium.feature1"></li>
+              <li data-i18n="home.pricing.premium.feature2"></li>
+              <li data-i18n="home.pricing.premium.feature3"></li>   
+              <li data-i18n="home.pricing.premium.feature4"></li>
+              <li data-i18n="home.pricing.premium.feature5"></li>
+              <li data-i18n="home.pricing.premium.feature6"></li>
+              <li data-i18n="home.pricing.premium.feature7"></li>
+              <li class="extra" data-i18n="home.pricing.premium.extra1"></li>
+              <li class="extra" data-i18n="home.pricing.premium.extra2"></li>
+              <li class="extra" data-i18n="home.pricing.premium.extra3"></li>
+              <li class="extra" data-i18n="home.pricing.premium.extra4"></li>
+              <li class="extra" data-i18n="home.pricing.premium.extra5"></li>
+            </ul>
+            <div class="price">
+                <div class="price-week">
+                    <span class="val"></span>
+                   <!-- <span class="unit" data-i18n="home.pricing.per_week"></span> -->
+                </div>
+                <!-- Monthly plans temporarily disabled
+                <div class="price-month note">
+                    <span class="val"></span>
+                    <span class="unit" data-i18n="home.pricing.per_month"></span>
+                    <span class="badge-adv" data-i18n="home.pricing.advantage"></span>
+                </div>
+                -->
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="home-container center" style="margin-top:40px;">
+          <a class="btn btn-xl" href="/form.html" data-i18n="home.pricing.cta"></a>
+          <p class="muted" data-i18n="home.pricing.note"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="features">
+    <div class="home-container">
+        <h2 data-i18n="home.faq.title"></h2>
+        <div class="faq">
+        <details>
+            <summary data-i18n="home.faq.q1.q"></summary>
+            <p data-i18n="home.faq.q1.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q2.q"></summary>
+            <p data-i18n="home.faq.q2.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q3.q"></summary>
+            <p data-i18n="home.faq.q3.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q4.q"></summary>
+            <p data-i18n="home.faq.q4.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q5.q"></summary>
+            <p data-i18n="home.faq.q5.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q6.q"></summary>
+            <p data-i18n="home.faq.q6.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q7.q"></summary>
+            <p data-i18n="home.faq.q7.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q8.q"></summary>
+            <p data-i18n="home.faq.q8.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q9.q"></summary>
+            <p data-i18n="home.faq.q9.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q10.q"></summary>
+            <p data-i18n="home.faq.q10.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q11.q"></summary>
+            <p data-i18n="home.faq.q11.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q12.q"></summary>
+            <p data-i18n="home.faq.q12.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q13.q"></summary>
+            <p data-i18n="home.faq.q13.a"></p>
+        </details>
+        <details>
+            <summary data-i18n="home.faq.q14.q"></summary>
+            <p data-i18n="home.faq.q14.a"></p>
+        </details>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- ===== O NÁS ===== -->
+    <section id="about" class="features">
+      <div class="home-container">
+        <h2 data-i18n="home.about.title"></h2>
+        <div class="team">
+          <article class="team-card">
+            <img class="avatar" src="/public/images/lee.jpg" alt="" loading="lazy" decoding="async"/>
+            <div>
+              <h3 data-i18n="home.about.libor.name"></h3>
+              <ul class="features">
+                <li data-i18n="home.about.libor.item1"></li>
+                <li data-i18n="home.about.libor.item2"></li>
+                <li data-i18n="home.about.libor.item3"></li>
+              </ul>
+            </div>
+          </article>
+          <article class="team-card">
+            <img class="avatar" src="/public/images/danny.jpg" alt="" loading="lazy" decoding="async"/>
+            <div>
+              <h3 data-i18n="home.about.danny.name"></h3>
+              <ul class="features">
+                <li data-i18n="home.about.danny.item1"></li>
+                <li data-i18n="home.about.danny.item2"></li>
+                <li data-i18n="home.about.danny.item3"></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>   
+
+    <!-- ===== REFERENCE ===== -->
+    <section id="reference" class="carousel-section">
+      <div class="home-container">
+        <h2 data-i18n="home.reference.title"></h2>
+
+        <div class="carousel" data-carousel="reference">
+          <div class="carousel-track">
+
+        <article class="card quote">
+            <img src="/public/images/client1.jpg" alt="Mati – client" class="avatar"/>
+            <blockquote data-i18n="home.reference.client1.text"></blockquote>
+            <div class="author">
+            <span data-i18n="home.reference.client1.author"></span>
+            <img src="/public/images/flags/cl.svg" alt="Chile" class="flag">
+            <img src="/public/images/flags/es.svg" alt="Spain" class="flag">
+            </div>
+        </article>
+
+        <article class="card quote">
+            <img src="/public/images/client2.jpg" alt="Hana – client" class="avatar"/>
+            <blockquote data-i18n="home.reference.client2.text"></blockquote>
+            <div class="author">
+            <span data-i18n="home.reference.client2.author"></span>
+            <img src="/public/images/flags/de.svg" alt="Germany" class="flag">
+            </div>
+        </article>
+
+        <article class="card quote">
+            <img src="/public/images/client3.jpg" alt="David – client" class="avatar"/>
+            <blockquote data-i18n="home.reference.client3.text"></blockquote>
+            <div class="author">
+            <span data-i18n="home.reference.client3.author"></span>
+            <img src="/public/images/flags/cz.svg" alt="Czech Republic" class="flag">
+            <img src="/public/images/flags/us.svg" alt="USA" class="flag">           
+            </div>
+        </article>
+        </div>
+       <div class="carousel-dots"></div>
+      </div>
+    </div>
+    </section>
+    </div>
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="footer-cta" id="cta-final">
+      <img src="images/ready.jpg" alt="" class="footer-cta__bg">
+      <div class="footer-cta__overlay"></div>
+      <div class="home-container footer-cta__wrap">
+        <h2 data-i18n="home.cta.title"></h2>
+        <p class="footer-cta__lead" data-i18n="home.cta.lead"></p>
+        <a class="btn btn-xl" href="/form.html" data-i18n="home.cta.cta"></a>
+        <p class="footer-cta__note muted" data-i18n="home.cta.note"></p>
+      </div>
+    </section>
+  </main>
+
+<!-- Modal viewer -->
+<div id="imageModal" class="img-modal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img id="modalImage" class="modal-image" src="" alt="">
+    <div class="arrow left-arrow">&#10094;</div>
+    <div class="arrow right-arrow">&#10095;</div>
+  </div>
+</div>
+
+  <!-- ===== FOOTER ===== -->  
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="footer-left">
+        <div>
+          <span class="brandline" data-i18n="home.footer.brand"></span>
+        </div>
+        <div>
+          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+        </div>
+      </div>
+
+      <!-- Uprostřed -->
+    <div class="footer-center">
+    <div id="langSwitch" class="lang-switch"></div>
+    <div>
+        <a href="https://www.sportvitalpro.cz" 
+        class="footer-credit" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        Powered by sportvitalpro.cz
+        </a>
+    </div>
+    </div>
+
+
+      <div class="footer-right">
+        <div>
+          <span class="payments muted" data-i18n="home.footer.payments"></span>
+        </div>
+        <nav class="footer-links">
+          <a href="/terms.html" data-i18n="home.footer.terms"></a>
+          <a href="/gdpr.html" data-i18n="home.footer.privacy"></a>
+          <a href="/cookies.html" data-i18n="home.footer.cookies"></a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+
+ <!-- ===== SCRIPTS ===== -->
+<script>
+  // -----------------------
+  // Konfigurace
+  // -----------------------
+  // Podporované jazyky
+  const SUPPORTED = ['cs','sk','en','de','pt','es','it','pl','fr'];
+  // Popisky pro jazykový přepínač
+  const LANG_LABELS = {
+    cs: 'Čeština', sk: 'Slovenčina', en: 'English', de: 'Deutsch', pt: 'Português',
+    es: 'Español', it: 'Italiano', pl: 'Polski', fr: 'Français'
+  };
+  // Ceník – částky v Kč a EUR pro Standard a Premium
+  const PRICING = {
+    standard:{ week:{ czk:690, eur:29.90 }, month:{ czk:2090, eur:89.90 } },
+    premium: { week:{ czk:990, eur:44.90 }, month:{ czk:2990, eur:129.90 } }
+  };
+
+  // -----------------------
+  // Jazyk
+  // -----------------------
+  // Vrátí aktuální jazyk podle URL ?lang, localStorage nebo nastavení prohlížeče
+  function getCurrentLang() {
+    const qs = new URLSearchParams(location.search).get('lang');
+    if (qs && SUPPORTED.includes(qs)) { localStorage.setItem('lang', qs); return qs; }
+    const stored = localStorage.getItem('lang');
+    if (stored && SUPPORTED.includes(stored)) return stored;
+    const nav = (navigator.language || '').slice(0,2).toLowerCase();
+    return SUPPORTED.includes(nav) ? nav : 'cs';
+  }
+
+  // Přepne jazyk (uloží do localStorage a přesměruje s ?lang=)
+  function setLang(lang) {
+    localStorage.setItem('lang', lang);
+    const url = new URL(location.href);
+    url.searchParams.set('lang', lang);
+    location.href = url.toString();
+  }
+
+  // 👉 NOVÁ verze – podle šířky viewportu
+  function renderLangSwitcher(current) {
+    const container = document.getElementById('langSwitch');
+    if (!container) return;
+
+    // desktop = všechny jazyky vedle sebe
+    if (window.innerWidth > 900) {
+      container.innerHTML = SUPPORTED.map(code => {
+        if (code === current) {
+          return `<span class="lang-current">${LANG_LABELS[code]}</span>`;
+        } else {
+          return `<a href="#" class="lang-option" data-lang="${code}">${LANG_LABELS[code]}</a>`;
+        }
+      }).join(' | ');
+
+      container.querySelectorAll('.lang-option').forEach(link =>
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          setLang(link.dataset.lang);
+        })
+      );
+      return;
+    }
+
+    // mobil/tablet = původní chování
+    container.innerHTML = `<span id="langToggle" class="lang-text">${LANG_LABELS[current]}</span>`;
+    document.getElementById('langToggle').addEventListener('click', () => renderLangOptions(current));
+  }
+
+
+  // Vykreslí seznam jazyků – ostatní jazyky jsou klikací
+  function renderLangOptions(current) {
+    const container = document.getElementById('langSwitch');
+    container.innerHTML = SUPPORTED.map(code => {
+      if (code === current) {
+        return `<span class="lang-current">${LANG_LABELS[code]}</span>`;
+      } else {
+        return `<a href="#" class="lang-option" data-lang="${code}">${LANG_LABELS[code]}</a>`;
+      }
+    }).join(' | ');
+
+    // Přidá posluchače kliknutí na jazyk
+    container.querySelectorAll('.lang-option').forEach(link =>
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLang(link.dataset.lang);
+      })
+    );
+  }
+
+  // -----------------------
+  // Formulář & odkazy
+  // -----------------------
+  // Upraví všechny odkazy na /form.html, aby obsahovaly ?lang=xx
+  function updateFormLinks(lang) {
+    document.querySelectorAll('a[href="/form.html"]').forEach(a => {
+      a.href = `/form.html?lang=${lang}`;
+    });
+  }
+
+  // -----------------------
+  // Ceny
+  // -----------------------
+  // Formátuje cenu do Kč nebo EUR
+  function formatMoney(val, useEur) {
+    return useEur ? `${val.toFixed(2).replace('.', ',')} €` : `${val.toLocaleString('cs-CZ')} Kč`;
+  }
+
+  // Aktualizuje ceny v ceníku podle jazyka
+  function applyPrices(lang) {
+  const useEur = lang !== 'cs';
+  const cur = useEur ? 'eur' : 'czk';
+
+  ['std','prem'].forEach(plan => {
+    const week = PRICING[plan === 'std' ? 'standard' : 'premium'].week[cur];
+    const month = PRICING[plan === 'std' ? 'standard' : 'premium'].month[cur];
+
+    const root = document.querySelector(`[data-plan="${plan}"]`);
+    if (root) {
+      const weekEl = root.querySelector('.price-week .val');
+      const monthEl = root.querySelector('.price-month .val');
+      if (weekEl) weekEl.textContent = formatMoney(week, useEur);
+      if (monthEl) monthEl.textContent = formatMoney(month, useEur);
+      // jednotky a badge se řeší přes i18n => bootI18n()
+    }
+  });
+}
+
+
+  // -----------------------
+  // Rok ve footeru (volitelné)
+  // -----------------------
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // -----------------------
+  // Inicializace po načtení
+  // -----------------------
+  (async () => {
+    const INIT_LANG = getCurrentLang();     // zjistí jazyk
+    renderLangSwitcher(INIT_LANG);          // vykreslí switcher
+    updateFormLinks(INIT_LANG);             // aktualizuje odkazy na formulář
+    applyPrices(INIT_LANG);                 // nastaví ceny
+  })();
+
+  // Přepočítá ceny při přepnutí období (pokud existuje přepínač)
+  document.getElementById('toggle-period')?.addEventListener('change', () => applyPrices(getCurrentLang()));
+
+
+// === Topbar scroll behavior ===
+const topbar = document.getElementById("topbar");
+const menuBtn = document.getElementById("menuBtn");
+
+function handleScroll() {
+  if (window.scrollY > 50) {
+    topbar.classList.add("compact");
+
+    // Desktop = nahradíme tlačítko textem "Menu"
+    if (window.innerWidth >= 1024) {
+      menuBtn.textContent = "Menu";
+    } else {
+      menuBtn.textContent = "☰";
+    }
+  } else {
+    topbar.classList.remove("compact");
+
+    // Vždy vrátíme původní burger na mobilu
+    if (window.innerWidth < 1024) {
+      menuBtn.textContent = "☰";
+    } else {
+      menuBtn.textContent = "Menu"; // nahoře na desktopu může být taky text "Menu"
+    }
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("resize", handleScroll);
+handleScroll();
+
+
+// === Drawer menu behavior ===
+const drawer = document.getElementById("drawer");
+const drawerBackdrop = document.getElementById("drawerBackdrop");
+const drawerClose = document.getElementById("drawerClose");
+const drawerLinks = document.querySelectorAll(".drawer__links a");
+
+function openDrawer() {
+  drawer.setAttribute("aria-hidden", "false");
+  drawer.classList.remove("closing");
+  drawer.classList.add("opening");
+  menuBtn.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+}
+
+function closeDrawer() {
+  drawer.classList.remove("opening");
+  drawer.classList.add("closing");
+  menuBtn.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+
+  // Po skončení animace zavření → schovej drawer
+  drawer.addEventListener("animationend", () => {
+    if (drawer.classList.contains("closing")) {
+      drawer.setAttribute("aria-hidden", "true");
+      drawer.classList.remove("closing");
+    }
+  }, { once: true });
+}
+
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = drawer.getAttribute("aria-hidden") === "false";
+  if (isOpen) {
+    closeDrawer();
+  } else {
+    openDrawer();
+  }
+});
+
+if (drawerBackdrop) {
+  drawerBackdrop.addEventListener("click", closeDrawer);
+}
+if (drawerClose) {
+  drawerClose.addEventListener("click", closeDrawer);
+}
+drawerLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // zabrání okamžitému skoku
+
+    const targetId = link.getAttribute("href"); // např. "#how"
+
+    closeDrawer(); // zavře menu
+
+    // Po krátkém zpoždění skočíme na sekci
+    setTimeout(() => {
+      if (targetId.startsWith("#")) {
+        const el = document.querySelector(targetId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = targetId; // fallback pro odkazy na jiné stránky
+      }
+    }, 300); // 0.3s aby se stihla animace draweru
+  });
+});
+
+// how sekce animace
+document.addEventListener("DOMContentLoaded", () => {
+
+  const labels = document.querySelectorAll(".label-item");
+  const dots = document.querySelectorAll(".p-dot");
+  const icons = document.querySelectorAll(".icon-small");
+
+  const bigImg = document.getElementById("how-big-img");
+  const bigText = document.getElementById("how-big-text");
+  const progressFill = document.getElementById("progress-fill");
+
+  const textStorage = document.querySelectorAll("#how-big-texts p");
+
+
+  window.setStep = function(step){
+
+    /* ===== 1) Změna velkého obrázku ===== */
+    bigImg.src = `/images/how${step + 1}.png`;
+
+    /* ===== 2) Změna textu z hidden i18n bloků ===== */
+    bigText.innerHTML = textStorage[step].innerHTML;
+
+    // animace
+    bigImg.classList.remove("fade");
+    bigText.classList.remove("fade");
+    void bigImg.offsetWidth;
+    bigImg.classList.add("fade");
+    bigText.classList.add("fade");
+
+
+    /* ===== 3) labely ===== */
+    labels.forEach((l, index) => {
+      l.classList.toggle("active", index === step);
+    });
+
+    /* ===== 4) ikony ===== */
+    icons.forEach((icon, index) => {
+      icon.classList.toggle("active", index === step);
+    });
+
+    /* ===== 5) tečky ===== */
+    dots.forEach((dot, index) => {
+      dot.classList.remove("active", "completed");
+      if (index < step) dot.classList.add("completed");
+      if (index === step) dot.classList.add("active");
+    });
+
+    /* ===== 6) progress bar ===== */
+    const percentage = (step / (dots.length - 1)) * 100;
+    progressFill.style.width = percentage + "%";
+  }
+
+
+  /* === Events === */
+  labels.forEach(l => {
+    l.addEventListener("click", () => setStep(+l.dataset.step));
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => setStep(+dot.dataset.step));
+  });
+
+  icons.forEach(icon => {
+    icon.addEventListener("click", () => setStep(+icon.dataset.step));
+  });
+});
+
+</script>
+
+<!-- === Lightgallery modal viewer === -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close-btn");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const backdrop = document.querySelector(".modal-backdrop");
+
+  const images = [...document.querySelectorAll("#lightgallery a")];
+  let currentIndex = 0;
+
+  // Otevření modalu
+  images.forEach((item, index) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentIndex = index;
+      modalImage.src = item.href;
+      modal.classList.add("active");
+
+      // Zamknout scroll
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Zavření modalu
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = ""; // vrátí scroll
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  // Navigace
+  rightArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImage.src = images[currentIndex].href;
+  });
+
+  leftArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImage.src = images[currentIndex].href;
+  });
+
+  // Zavření klávesou ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});
+</script>
+<script>
+  const tags = document.querySelectorAll('.tag');
+  const images = document.querySelectorAll('.preview-grid a');
+
+  // ✅ Najetí na tag zvýrazní obrázek
+  tags.forEach(tag => {
+    tag.addEventListener('mouseenter', () => {
+      const target = tag.dataset.tag;
+      document.querySelectorAll(`.preview-grid a[data-tag="${target}"] img`).forEach(img => {
+        img.classList.add('highlight');
+      });
+    });
+    tag.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.preview-grid img').forEach(img => img.classList.remove('highlight'));
+    });
+  });
+
+  // ✅ Najetí na obrázek zvýrazní tag
+  images.forEach(img => {
+    img.addEventListener('mouseenter', () => {
+      const target = img.dataset.tag;
+      const tag = document.querySelector(`.tag[data-tag="${target}"]`);
+      tag.classList.add('highlight');
+    });
+    img.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.tag').forEach(tag => tag.classList.remove('highlight'));
+    });
+  });
+</script>
+
+<!-- Dietní simulátor -->
+<script type="module" src="/src/charts.js"></script>
+
+<script type="module">
+  import { bootI18n } from '/src/i18n-core.js';
+
+  bootI18n().then(() => {
+    setStep(0);  
+  });
+</script>
+
+
