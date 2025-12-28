@@ -16,5 +16,13 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',   // https://fitlime.cz/
+        form: 'form.html'     // https://fitlime.cz/form.html
+      }
+    }
   }
 })
