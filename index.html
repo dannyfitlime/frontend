@@ -15,8 +15,8 @@
   <link rel="icon" href="/favicon.ico">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/src/styles/base.css" />
-  <link rel="stylesheet" href="/src/styles/home.css" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/home.css" />
 </head>
 <body>
   <script type="module" src="/src/password-gate.js"></script>
@@ -788,6 +788,36 @@
     standard:{ week:{ czk:690, eur:29.90 }, month:{ czk:2090, eur:89.90 } },
     premium: { week:{ czk:990, eur:44.90 }, month:{ czk:2990, eur:129.90 } }
   };
+  // Domain-language mapping for automatic redirects
+  const HOST_LANG_RULES = [
+    { suffix: 'fitlime.sk', lang: 'sk' },
+    { suffix: 'fitlime.eu', lang: 'en' },
+    { suffix: 'fitlime.cz', lang: 'cs' }
+  ];
+
+  function hostPreferredLang(hostname = location.hostname){
+    const host = (hostname || '').toLowerCase();
+    const rule = HOST_LANG_RULES.find(r => host === r.suffix || host.endsWith('.'+r.suffix) || host.endsWith(r.suffix));
+    return rule?.lang || null;
+  }
+
+  function domainForLang(lang){
+    if (lang === 'sk') return 'fitlime.sk';
+    if (lang === 'en') return 'fitlime.eu';
+    if (lang === 'cs') return 'fitlime.cz';
+    return null;
+  }
+
+  function buildUrlForLang(lang){
+    const url = new URL(location.href);
+    url.searchParams.set('lang', lang);
+    const targetHost = domainForLang(lang);
+    if (targetHost) {
+      url.hostname = targetHost;
+      url.protocol = 'https:';
+    }
+    return url.toString();
+  }
 
   // -----------------------
   // Jazyk
@@ -795,7 +825,19 @@
   // Vrátí aktuální jazyk podle URL ?lang, localStorage nebo nastavení prohlížeče
   function getCurrentLang() {
     const qs = new URLSearchParams(location.search).get('lang');
-    if (qs && SUPPORTED.includes(qs)) { localStorage.setItem('lang', qs); return qs; }
+    if (qs && SUPPORTED.includes(qs)) {
+      localStorage.setItem('lang', qs);
+      const targetHost = domainForLang(qs);
+      if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
+        location.replace(buildUrlForLang(qs));
+      }
+      return qs;
+    }
+    const hostLang = hostPreferredLang();
+    if (hostLang && SUPPORTED.includes(hostLang)) {
+      localStorage.setItem('lang', hostLang);
+      return hostLang;
+    }
     const stored = localStorage.getItem('lang');
     if (stored && SUPPORTED.includes(stored)) return stored;
     const nav = (navigator.language || '').slice(0,2).toLowerCase();
@@ -804,10 +846,9 @@
 
   // Přepne jazyk (uloží do localStorage a přesměruje s ?lang=)
   function setLang(lang) {
+    if (!SUPPORTED.includes(lang)) return;
     localStorage.setItem('lang', lang);
-    const url = new URL(location.href);
-    url.searchParams.set('lang', lang);
-    location.href = url.toString();
+    location.href = buildUrlForLang(lang);
   }
 
   // 👉 NOVÁ verze – podle šířky viewportu

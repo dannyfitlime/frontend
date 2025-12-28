@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="/public/images/logotucne.png">
-  <link rel="stylesheet" href="/src/styles/base.css">
-  <link rel="stylesheet" href="/src/styles/home.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <title data-i18n="payment_failed.title">Platba se nezdařila</title>
   <style>
     :root {
@@ -195,8 +195,70 @@
       return key.split(".").reduce((obj, part) => (obj ? obj[part] : undefined), dictionary);
     }
 
+    const SUPPORTED_LANGS = ['cs','sk','en','de','pt','es','it','pl','fr'];
+    const HOST_LANG_RULES = [
+      { suffix: 'fitlime.sk', lang: 'sk' },
+      { suffix: 'fitlime.eu', lang: 'en' },
+      { suffix: 'fitlime.cz', lang: 'cs' }
+    ];
+
+    function hostPreferredLang(hostname = location.hostname){
+      const host = (hostname || '').toLowerCase();
+      const rule = HOST_LANG_RULES.find(r => host === r.suffix || host.endsWith('.'+r.suffix) || host.endsWith(r.suffix));
+      return rule?.lang || null;
+    }
+
+    function domainForLang(lang){
+      if (lang === 'sk') return 'fitlime.sk';
+      if (lang === 'en') return 'fitlime.eu';
+      if (lang === 'cs') return 'fitlime.cz';
+      return null;
+    }
+
+    function buildUrlForLang(lang){
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      const targetHost = domainForLang(lang);
+      if (targetHost) {
+        url.hostname = targetHost;
+        url.protocol = 'https:';
+      }
+      return url.toString();
+    }
+
+    function resolveLang(formState){
+      const urlLang = new URLSearchParams(location.search).get("lang");
+      if (urlLang && SUPPORTED_LANGS.includes(urlLang)) {
+        localStorage.setItem("lang", urlLang);
+        const targetHost = domainForLang(urlLang);
+        if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
+          location.replace(buildUrlForLang(urlLang));
+        }
+        return urlLang;
+      }
+      const hostLang = hostPreferredLang();
+      if (hostLang && SUPPORTED_LANGS.includes(hostLang)) {
+        localStorage.setItem("lang", hostLang);
+        return hostLang;
+      }
+      const formLang = formState?.locale;
+      if (formLang && SUPPORTED_LANGS.includes(formLang)) {
+        localStorage.setItem("lang", formLang);
+        return formLang;
+      }
+      const stored = localStorage.getItem("lang");
+      if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
+      const nav = (navigator.language || "").slice(0,2).toLowerCase();
+      if (SUPPORTED_LANGS.includes(nav)) return nav;
+      return "cs";
+    }
+
     async function initFailPage() {
-      const lang = localStorage.getItem("lang") || "cs";
+      const formStateRaw = localStorage.getItem("formState");
+      const formState = JSON.parse(formStateRaw || "{}");
+      const lang = resolveLang(formState);
+      document.documentElement.lang = lang;
+      const contactEmail = lang === "sk" ? "info@fitlime.sk" : (lang === "cs" ? "info@fitlime.cz" : "info@fitlime.eu");
       const i18n = await fetch(`/i18n/${lang}.json`).then(r => r.json()).catch(() => ({}));
       const t = (key) => getText(i18n, key) || key;
 
@@ -217,8 +279,13 @@
         : "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.";
       document.getElementById("fail-note").textContent = failNote;
 
-      const formState = localStorage.getItem("formState");
-      if (formState) {
+      const supportEmailLink = document.querySelector('.actions a[href^="mailto:"]');
+      if (supportEmailLink) {
+        supportEmailLink.href = `mailto:${contactEmail}`;
+        supportEmailLink.textContent = lang === "en" ? `Support: ${contactEmail}` : `Podpora: ${contactEmail}`;
+      }
+
+      if (formStateRaw) {
         const block = document.getElementById("resume-block");
         block.hidden = false;
         document.getElementById("resume-btn").addEventListener("click", () => {
@@ -246,8 +313,8 @@
       `).join("");
 
       const supportNote = lang === "en"
-        ? "If the payment keeps failing, contact us and we'll complete the order manually."
-        : "Pokud platba znovu selže, napište nám a objednávku dokončíme ručně.";
+        ? `If the payment keeps failing, contact us at ${contactEmail} and we'll complete the order manually.`
+        : `Pokud platba znovu selže, napište nám na ${contactEmail} a objednávku dokončíme ručně.`;
       document.getElementById("supportNote").textContent = supportNote;
     }
 

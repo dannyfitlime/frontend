@@ -8,6 +8,15 @@ export const SUPPORTED = ['cs','sk','en','de','pt','es','it','pl','fr'];
 // Stav i18n (aktuální slovník + vybraný jazyk)
 export const i18n = { dict:null, fallback:null, lang:'cs' };
 
+// Domain-based language preferences (.sk/.eu/.cz)
+function hostPreferredLang(hostname = location.hostname){
+  const host = (hostname || '').toLowerCase();
+  if (host.endsWith('fitlime.sk')) return 'sk';
+  if (host.endsWith('fitlime.eu')) return 'en';
+  if (host.endsWith('fitlime.cz')) return 'cs';
+  return null;
+}
+
 // Contact e-mail selector per language (.cz / .sk / .eu)
 export function contactEmailFor(lang = i18n.lang){
   if (lang === 'cs') return 'info@fitlime.cz';
@@ -90,20 +99,28 @@ export async function detectLang(){
     return urlLang;
   }
 
-  // 2) z localStorage
+  // 2) podle domeny (.sk => sk, .eu => en, .cz => cs)
+  const hostLang = hostPreferredLang();
+  if (hostLang && SUPPORTED.includes(hostLang)) {
+    localStorage.setItem('lang', hostLang);
+    return hostLang;
+  }
+
+  // 3) z localStorage
   const stored = localStorage.getItem('lang');
   if (stored && SUPPORTED.includes(stored)) {
     return stored;
   }
 
-  // 3) jazyk prohlížeče
+  // 4) jazyk prohlizece
   const nav = (navigator.languages||[])
     .map(x => x.slice(0,2).toLowerCase())
     .find(l => SUPPORTED.includes(l));
   if (nav) return nav;
 
-  // 4) fallback
+  // 5) fallback
   return 'cs';
+
 }
 
 // ===============================
