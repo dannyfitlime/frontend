@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/home.css" />
 </head>
-<body>
+<body data-page="home">
   <script type="module" src="/src/password-gate.js"></script>
   <!-- ===== COOKIES BAR ===== -->
-  <div id="cookiesBar" class="cookies-bar" role="dialog" aria-live="polite" aria-label="Nastavení cookies" hidden>
+  <div id="cookiesBar" class="cookies-bar" role="dialog" aria-live="polite" aria-label="Nastavení cookies" aria-hidden="true" hidden>
     <div class="cookies-bar__inner">
       <p data-i18n="home.cookies.text"></p>
       <div class="cookies-bar__actions">
@@ -704,10 +704,10 @@
        <div class="carousel-dots"></div>
       </div>
     </div>
-    </section>
-    </div>
-    <!-- ===== CALL TO ACTION ===== -->
-    <section class="footer-cta" id="cta-final">
+  </section>
+  </div>
+  <!-- ===== CALL TO ACTION ===== -->
+  <section class="footer-cta" id="cta-final">
       <img src="images/ready.jpg" alt="" class="footer-cta__bg">
       <div class="footer-cta__overlay"></div>
       <div class="home-container footer-cta__wrap">
@@ -718,6 +718,50 @@
       </div>
     </section>
   </main>
+
+<script>
+  // Lightweight cookie bar logic for the homepage
+  (() => {
+    const bar = document.getElementById('cookiesBar');
+    if (!bar) return;
+
+    const isHome = document.body?.dataset?.page === 'home'
+      || location.pathname === '/'
+      || location.pathname.endsWith('/index.html');
+    if (!isHome) return;
+
+    const ACCEPT_KEY = 'cookieConsent';
+    const acceptBtn = document.getElementById('cookiesAccept');
+    const declineBtn = document.getElementById('cookiesDecline');
+
+    const hideBar = (state) => {
+      try { localStorage.setItem(ACCEPT_KEY, state); } catch (_) {}
+      bar.classList.remove('is-open');
+      bar.setAttribute('aria-hidden', 'true');
+      setTimeout(() => bar.setAttribute('hidden', ''), 220);
+    };
+
+    const showBar = () => {
+      bar.removeAttribute('hidden');
+      bar.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => bar.classList.add('is-open'));
+    };
+
+    let stored = null;
+    try { stored = localStorage.getItem(ACCEPT_KEY); } catch (_) {}
+    if (!stored) {
+      showBar();
+    } else {
+      bar.setAttribute('hidden', '');
+      bar.setAttribute('aria-hidden', 'true');
+    }
+
+    acceptBtn?.addEventListener('click', () => hideBar('accepted'));
+    declineBtn?.addEventListener('click', () => hideBar('declined'));
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideBar('dismissed'); });
+    setTimeout(() => acceptBtn?.focus({ preventScroll: true }), 60);
+  })();
+</script>
 
 <!-- Modal viewer -->
 <div id="imageModal" class="img-modal">
@@ -803,9 +847,9 @@
 
   function domainForLang(lang){
     if (lang === 'sk') return 'fitlime.sk';
-    if (lang === 'en') return 'fitlime.eu';
     if (lang === 'cs') return 'fitlime.cz';
-    return null;
+    // vsechny ostatni jazyky smeruji na .eu
+    return 'fitlime.eu';
   }
 
   function buildUrlForLang(lang){
