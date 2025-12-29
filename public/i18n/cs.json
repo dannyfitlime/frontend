@@ -19,12 +19,12 @@
     },
     "hero": {
       "title": "Jídelníček na míru během pár minut",
-      "lead": "Vyplň krátký dotazník a získej plán, který pokrývá všechny tvé potřeby.",
+      "lead": "Vyplňte krátký dotazník a získejte plán, který pokrývá všechny Vaše potřeby.",
       "cta": "Spustit formulář",
       "note": "Nezávazně, zabere to jen pár minut."
     },
-        "why": {
-      "title": "FitLime – víc než jen jídelníček.",
+    "why": {
+      "title": "FitLime - víc než jen jídelníček.",
       "subtitle": "Tvoříme personalizované plány, které mění každodenní stravování v dlouhodobý, zdravý a udržitelný životní styl.",
       "items": {
         "lifestyle": {
@@ -49,22 +49,22 @@
     },
     "how": {
       "title": "Jak to funguje",
-      "subtitle": "Vytvoření jídelního plánu je jednoduché a rychlé. Stačí nám pár základních informací o tobě a tvých cílech. Na základě nich ti během několika minut vygenerujeme personalizovaný jídelníček na míru.",
+      "subtitle": "Vytvoření jídelního plánu je jednoduché a rychlé. Stačí nám pár základních informací o Vás a Vašich cílech. Na základě nich Vám během několika minut vygenerujeme personalizovaný jídelníček na míru.",
       "step1": {
         "title": "Dotazník",
-        "text": "Vyplníš několik jednoduchých otázek o sobě, svém životním stylu a jídelních preferencích. Díky nim pochopíme tvé cíle, oblíbené potraviny, případná omezení i to, jaký typ stravování ti dlouhodobě vyhovuje."
+        "text": "Vyplníte několik jednoduchých otázek o sobě, svém životním stylu a jídelních preferencích. Díky nim pochopíme Vaše cíle, oblíbené potraviny, případná omezení i to, jaký typ stravování Vám dlouhodobě vyhovuje."
       },
       "step2": {
         "title": "Výpočet",
-        "text": "Na základě tvých údajů vytvoříme personalizovaný jídelníček pomocí chytrého algoritmu, který vybere ideální kombinaci potravin a přizpůsobí celý plán tvým cílům, chutím i životnímu stylu."
+        "text": "Na základě Vašich údajů vytvoříme personalizovaný jídelníček pomocí chytrého algoritmu, který vybere ideální kombinaci potravin a přizpůsobí celý plán Vašim cílům, chutím i životnímu stylu."
       },
       "step3": {
         "title": "Doručení",
-        "text": "Po objednávce ti přijde potvrzovací e-mail. Přehledně zpracovaný plán s recepty, přesnými gramážemi i praktickými doporučeními obdržíš u Premium verze nejpozději do 2 pracovních dnů, u Standard verze do 3 dnů."
+        "text": "Po objednávce Vám přijde potvrzovací e-mail. Přehledně zpracovaný plán s recepty, přesnými gramážemi i praktickými doporučeními obdržíte u Premium verze nejpozději do 2 pracovních dnů, u Standard verze do 3 dnů."
       },
       "step4": {
         "title": "Výsledky",
-        "text": "Začni se řídit plánem a sleduj, jak se postupně mění tvoje tělo, energie i celkový pocit ze sebe sama. Každý den malý krok, který tě přiblíží k zdravějším zvykům, lepší kondici a větší spokojenosti."
+        "text": "Začněte se řídit plánem a sledujte, jak se postupně mění Vaše tělo, energie i celkový pocit ze sebe sama. Každý den malý krok, který Vás přiblíží ke zdravějším zvykům, lepší kondici a větší spokojenosti."
       }
     },
     "preview": {
@@ -80,8 +80,8 @@
       }
     },
     "diet": {
-      "title": "Zkus si složit ideální oběd",
-      "subtitle": "Vyber jednotlivé potraviny a uvidíš, jak se při skládání oběda mění celkové nutriční hodnoty. Ukazované hodnoty jsou normalizované pro lepší ilustraci a porovnání zdravých i méně zdravých potravin mezi sebou.",
+      "title": "Zkuste si složit ideální oběd",
+      "subtitle": "Vyberte jednotlivé potraviny a uvidíte, jak se při skládání oběda mění celkové nutriční hodnoty. Ukazované hodnoty jsou normalizované pro lepší ilustraci a porovnání zdravých i méně zdravých potravin mezi sebou.",
       "autoSelect": "Vybrat doporučené potraviny",
       "food": {
         "avocado": "Avokádo",
@@ -96,7 +96,7 @@
         "icecream": "Zmrzlina"
       },
       "chart": {
-        "noSelection": "Zaškrtni alespoň jednu potravinu pro zobrazení grafu",
+        "noSelection": "Zaškrtněte alespoň jednu potravinu pro zobrazení grafu",
         "recommended": "Doporučený příjem (100 %)",
         "nutrients": {
           "energy": "Energie",
@@ -201,23 +201,23 @@
     },
     "audience": {
       "title": "Pro koho je jídelníček určen",
-      "lead": "Zdravý jídelníček přizpůsobujeme tomu, jak žiješ – jestli trénuješ na závody, chodíš si jen občas zacvičit, nebo chceš jíst lépe a mít víc energie.",
+      "lead": "Zdravý jídelníček přizpůsobujeme tomu, jak žijete – jestli trénujete na závody, chodíte si jen občas zacvičit, nebo chcete jíst lépe a mít víc energie.",
       "pro": {
         "title": "Vrcholoví sportovci",
-        "text": "Máš tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.",
+        "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.",
         "tag": "Výkon"
       },
       "hobby": {
         "title": "Aktivní životní styl",
-        "text": "Běháš, chodíš do fitka, na kolo nebo skupinové lekce a chceš se cítit lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.",
+        "text": "Běháte, chodíte do fitka, na kolo nebo skupinové lekce a chcete se cítit lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.",
         "tag": "Balance"
       },
       "everyday": {
         "title": "Běžný život",
-        "text": "Nejsi „sportovec“, ale chceš jíst zdravěji, mít energii během dne nebo zhubnout? Postavíme jídelníček, který je realistický a dlouhodobě udržitelný.",
+        "text": "Nejste „sportovec“, ale chcete jíst zdravěji, mít energii během dne nebo zhubnout? Postavíme jídelníček, který je realistický a dlouhodobě udržitelný.",
         "tag": "Začínám"
       },
-      "cta": "Zjisti, jaký plán je pro tebe"
+      "cta": "Zjistěte, jaký plán je pro Vás"
     },
     "pricing": {
       "title": "Varianty jídelníčků a ceník",
@@ -251,21 +251,21 @@
         "extra5": "Možnost nastavení makronutrientů"
       },
       "cta": "Spustit formulář",
-      "note": "Nezávazně, vybereš si až v objednávce."
+      "note": "Nezávazně, vyberete si až v objednávce."
     },
     "faq": {
-      "title": "FAQ – Často kladené dotazy",
+      "title": "FAQ - Často kladené dotazy",
       "q1": {
         "q": "Jak jídelníček obdržím?",
-        "a": "Jídelníček ti zašleme na e-mail ve formátu PDF, včetně přehledných tabulek a grafů."
+        "a": "Jídelníček Vám zašleme na e-mail ve formátu PDF, včetně přehledných tabulek a grafů."
       },
       "q2": {
         "q": "Budu potřebovat speciální potraviny?",
-        "a": "Ne, recepty stavíme na běžně dostupných surovinách ze supermarketu. Ke každé surovině navíc dostaneš odkaz na Rohlík.cz pro rychlý online nákup."
+        "a": "Ne, recepty stavíme na běžně dostupných surovinách ze supermarketu. Ke každé surovině navíc dostanete odkaz na Rohlík.cz pro rychlý online nákup."
       },
       "q3": {
         "q": "Jak dlouho jídelníček vydrží?",
-        "a": "Standardně sestavujeme plán na 7 dní, obsahující 35 unikátních jídel. A proto, můžeš tenhle plán dle potřeby opakovat či upravovat."
+        "a": "Standardně sestavujeme plán na 7 dní, obsahující 35 unikátních jídel. A proto jej můžete dle potřeby opakovat či upravovat."
       },
       "q4": {
         "q": "Jsou součástí i nákupní seznamy?",
@@ -284,8 +284,8 @@
         "a": "Samozřejmě – ať už jde o hubnutí, nabírání svalů či udržení své tělesné hmotnosti. Stačí to uvést ve formuláři."
       },
       "q8": {
-        "q": "Můžu jídelníček používat dlouhodobě?",
-        "a": "Plán je navržen tak, aby byl udržitelný dlouhodobě. Jednotlivé týdny můžeš opakovat, kombinovat nebo jemně upravovat."
+        "q": "Mohu j?deln??ek pou??vat dlouhodob??",
+        "a": "Plán je navržen tak, aby byl udržitelný dlouhodobě. Jednotlivé týdny můžete opakovat, kombinovat nebo jemně upravovat."
       },
       "q9": {
         "q": "Kdo jídelníčky sestavuje?",
@@ -297,7 +297,7 @@
       },
       "q11": {
         "q": "Co když mi některý recept nechutná?",
-        "a": "Jídelníček obsahuje více variant, takže si vždy vybereš podle chuti. Navíc, vyloučení konkrétních potravin nabízíme v rámci Premium balíčku."
+        "a": "Jídelníček obsahuje více variant, takže si vždy vyberete podle chuti. Navíc, vyloučení konkrétních potravin nabízíme v rámci Premium balíčku."
       },
       "q12": {
         "q": "Můžete mi jídelníček později upravit?",
@@ -305,11 +305,11 @@
       },
       "q13": {
         "q": "Jak rychle jídelníček obdržím?",
-        "a": "U standardního balíčku garantujeme doručení do 3 pracovních dnů, u Premium balíčku do 2 pracovních dnů. Pokud bychom termín nedodrželi, vrátíme ti peníze."
+        "a": "U standardního balíčku garantujeme doručení do 3 pracovních dnů, u Premium balíčku do 2 pracovních dnů. Pokud bychom termín nedodrželi, vrátíme Vám peníze."
       },
       "q14": {
         "q": "Musím si instalovat nějakou aplikaci?",
-        "a": "Ne. Jídelníček přijde v PDF a můžeš si ho otevřít v mobilu, počítači nebo vytisknout."
+        "a": "Ne. Jídelníček přijde v PDF a můžete si ho otevřít v mobilu, počítači nebo vytisknout."
       }
     },
     "about": {
@@ -355,9 +355,9 @@
     },
     "cta": {
       "title": "Připraven začít?",
-      "lead": "Spusť nezávazně formulář a zjisti, jak může vypadat tvůj osobní plán.",
+      "lead": "Spusťte nezávazně formulář a zjistěte, jak může vypadat Váš osobní plán.",
       "cta": "Spustit formulář",
-      "note": "Vybereš si až v objednávce. Zabere to jen pár minut."
+      "note": "Vyberete si až v objednávce. Zabere to jen pár minut."
     },
     "footer": {
       "brand": "FitLime s.r.o. © 2026",
@@ -390,10 +390,10 @@
     "years": "let"
   },
   "intro": {
-    "title": "Začni svou cestu k lepšímu stravování",
-    "point1": "Zjistíš své potřeby – rychlý výpočet energie a cílů.",
-    "point2": "Dostaneš plán – doporučení jídelníčku a aktivit.",
-    "point3": "Celkový přehled – jasné kroky, co dělat dál.",
+    "title": "Začněte svou cestu k lepšímu stravování",
+    "point1": "Zjistíte své potřeby – rychlý výpočet energie a cílů.",
+    "point2": "Dostanete plán – doporučení jídelníčku a aktivit.",
+    "point3": "Celkový přehled - jasné kroky, co dělat dál.",
     "cta": "Pojďme na to"
   },
   "a11y": {
@@ -430,7 +430,7 @@
     "age_placeholder": "např. 32",
     "height_placeholder": "např. 178",
     "weight_placeholder": "např. 82",
-    "info_text": "Tyto údaje potřebujeme, abychom mohli správně vypočítat tvůj bazální metabolismus a odhadnout výdej běžné denní aktivity. Na základě toho vytvoříme jídelníček, který odpovídá tvým cílům."
+    "info_text": "Tyto údaje potřebujeme, abychom mohli správně vypočítat Váš bazální metabolismus a odhadnout výdej běžné denní aktivity. Na základě toho vytvoříme jídelníček, který odpovídá Vašim cílům."
   },
   "step2": {
     "title": "Cíl & energie",
@@ -445,15 +445,15 @@
     "unit_kj": "kJ",
     "unit_kcal": "kcal",
     "bmr_label": "Bazální metabolismus (BMR)",
-    "bmr_help_kj": "Vypočítáno z profilu (kJ/den). Můžeš upravit ručně.",
-    "bmr_help_kcal": "Vypočítáno z profilu (kcal/den). Můžeš upravit ručně.",
+    "bmr_help_kj": "Vypočítáno z profilu (kJ/den). Můžete upravit ručně.",
+    "bmr_help_kcal": "Vypočítáno z profilu (kcal/den). Můžete upravit ručně.",
     "target_explainer": "Vyberte, zda chcete hubnout, udržovat nebo přibírat váhu. Doporučení příjmu se automaticky přizpůsobí.",
     "energy_help": "Nastavte jednotku energie.",
     "bmr_explainer": "BMR (bazální metabolismus) je energie, kterou tělo spotřebuje v klidu. Hodnotu můžete upravit, pokud víte přesnější údaj."
   },
   "step3": {
     "title": "Sportovní aktivita",
-    "level": "Tvoje sportovní aktivita",
+    "level": "Vaše sportovní aktivita",
     "help_activity_level": "Vyberte, zda pravidelně sportujete - jídelníček tomu přizpůsobíme.",
     "level_none": "Nesportuji",
     "sports": "Sporty",
@@ -464,10 +464,10 @@
     "plan_own": "Mám svůj plán",
     "plan_need": "Chci tréninkový plán",
     "help_plan_choice_fixed": "Popište nám svůj trénink.",
-    "help_own_block": "Zadejte podrobnosti o svém sportu – kolikrát týdně trénujete, jaká je intenzita a délka tréninku.",
+    "help_own_block": "Zadejte podrobnosti o svém sportu - kolikrát týdně trénujete, jaká je intenzita a délka tréninku.",
     "add_own_block": "Přidat další sport",
-    "help_main_sport": "Vyber sport, který děláš nejčastěji.",
-    "help_need_sports": "Vyber sporty, které chceš mít v tréninkovém plánu.",
+    "help_main_sport": "Vyberte sport, který děláte nejčastěji.",
+    "help_need_sports": "Vyberte sporty, které chcete mít v tréninkovém plánu.",
     "help_hours": "Celkový čas věnovaný sportu za týden.",
     "intensity": "Intenzita",
     "intensity_low": "Nízká",
@@ -476,8 +476,8 @@
     "sessions_per_week": "Tréninky týdně",
     "minutes": "Délka tréninku (min)",
     "hours_per_week": "Čas týdně (h/týden)",
-    "future_sports": "Co by tě lákalo?",
-    "help_none_multi": "Můžeš vybrat více možností",
+    "future_sports": "Co by Vás lákalo?",
+    "help_none_multi": "Můžete vybrat více možností",
     "main_sport": "Hlavní sport",
     "groups": {
       "title_endurance": "Vytrvalostní sporty",
@@ -500,13 +500,13 @@
     "suggest_other": "Jiné",
     "level_explainer": "Zvolte, jak často sportujete. Podle volby se změní požadované údaje.",
     "other_placeholder": "Jiné…",
-    "error_select_sport": "Vyber si sport z nabídky.",
+    "error_select_sport": "Vyberte si sport z nabídky.",
     "error_sessions_total": "Celkový počet tréninků za týden musí být maximálně 18.",
     "add_own_block_limit_hint": "Dosáhli jste maximálního počtu sportů.",
     "add_own_block_full": "Kapacita vyčerpána",
     "error_sessions_total_field": "Celkem max 18 tréninků.",
-    "error_future_max3": "Můžeš vybrat maximálně 3 sporty.",
-    "select_sport_placeholder": "Zvol si sport"
+    "error_future_max3": "Můžete vybrat maximálně 3 sporty.",
+    "select_sport_placeholder": "Zvolte sport"
   },
   "step4": {
     "title": "Stravování",
@@ -552,13 +552,13 @@
   "step6": {
     "title": "Výběr plánu",
     "variant": "Varianta plánu",
-    "variant_help": "Zvol si, jaký chceš plán.",
+    "variant_help": "Zvolte, jaký chcete plán.",
     "period_title": "Výběr období",
-    "period_help": "Zvol si, zda chceš plán na týden nebo měsíc.",
+    "period_help": "Zvolte, zda chcete plán na týden nebo měsíc.",
     "period_week": "Jednorázově",
     "period_month": "Čtyři týdny",
-    "help_week": "Vytvoříme ti jeden plán.",
-    "help_month": "Vytvoříme ti čtyři plány.",
+    "help_week": "Vytvoříme Vám jeden plán.",
+    "help_month": "Vytvoříme Vám čtyři plány.",
     "standard_title": "Standard",
     "standard_days": "5 dní",
     "standard_desc": "Plnohodnotný jídelníček na pracovní týden.",
@@ -597,7 +597,7 @@
     "premium_detail12": "Vyloučení konkrétních potravin",
     "premium_detail13": "Možnost nastavení makronutrientů",
     "standard_warning_title": "Změny se neprojeví ve Standard plánu",
-    "standard_warning_text": "Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chceš pokračovat i přesto?",
+    "standard_warning_text": "Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chcete pokračovat i přesto?",
     "total_label": "Cena celkem:"
   },
   "step7": {
@@ -667,7 +667,7 @@
     "next_premium": "Tvůj jídelníček připravíme a odešleme do 2 pracovních dnů.",
     "next_basic": "Tvůj jídelníček připravíme a odešleme do 3 pracovních dnů.",
     "next_email": "Zkontroluj složku Spam nebo Promo, pokud e-mail nenajdeš.",
-    "next_tips": "Mezitím si můžeš přečíst naše tipy o výživě.",
+    "next_tips": "Mezitím si můžete přečíst naše tipy o výživě.",
     "btn_home": "Zpět na hlavní stránku",
     "btn_tips": "Tipy na výživu"
   },
@@ -801,103 +801,102 @@
         "email": "E-mail: info@fitlime.cz",
         "domains": "Správce provozuje projekty FitLime na doménách fitlime.cz, fitlime.sk, fitlime.eu."
       },
-    "data": {
-      "title": "2. Jaké osobní údaje zpracováváme",
-      "directTitle": "A) Údaje poskytnuté přímo uživatelem",
-      "directItem1": "jméno a příjmení",
-      "directItem2": "e-mail",
-      "directItem3": "pohlaví",
-      "directItem4": "věk",
-      "directItem5": "výška, váha",
-      "directItem6": "sportovní aktivita (pokud uvedete)",
-      "directItem7": "cíle (hubnutí, přibírání, doporučení)",
-      "directItem8": "volitelné údaje o zdraví či omezeních (alergie, intolerance, zdravotní stav)",
-      "directNote": "Poznámka: Údaje o zdraví jsou zvláštní kategorií osobních údajů – zpracováváme je jen se souhlasem, protože bez nich není možné vytvořit jídelníček na míru.",
-      "orderTitle": "B) Údaje o objednávce",
-      "orderItem1": "zakoupená služba (jídelníček, konzultace, plán)",
-      "orderItem2": "zvolená varianta a jazyk",
-      "orderItem3": "platební metoda",
-      "orderItem4": "informace z platební brány ComGate",
-      "comgateTitle": "C) Údaje z platební brány ComGate",
-      "comgateItem1": "identifikace platby",
-      "comgateItem2": "status platby",
-      "comgateItem3": "částka",
-      "comgateItem4": "variabilní symbol",
-      "comgateItem5": "informace o úspěchu/neúspěchu platby",
-      "comgateNote": "Tyto údaje dostáváme bez detailů platební karty.",
-      "webTitle": "D) Údaje vzniklé používáním webu",
-      "webItem1": "IP adresa",
-      "webItem2": "cookies",
-      "webItem3": "analytická data (Google Analytics, případně Meta Pixel)",
-      "webItem4": "informace o zařízení a prohlížeči"
-    },
-    "purposes": {
-      "title": "3. Účely a právní základy zpracování",
-      "p1Title": "Poskytnutí služby",
-      "p1Desc": "Tvorba personalizovaného jídelníčku, komunikace, vyhodnocení údajů. Právní základ: plnění smlouvy (čl. 6 odst. 1 písm. b GDPR).",
-      "p2Title": "Zpracování zdravotních údajů",
-      "p2Desc": "Údaje o zdravotním stavu, alergiích, výšce, váze, BMI, věku – nutné pro personalizaci plánu. Právní základ: výslovný souhlas (čl. 9 odst. 2 písm. a GDPR).",
-      "p3Title": "Platby přes ComGate",
-      "p3Desc": "Zpracování plateb, potvrzení objednávky, evidence faktury. Právní základ: plnění smlouvy + zákonná povinnost.",
-      "p4Title": "Marketing a newsletter",
-      "p4Desc": "Zasílání novinek a tipů, speciální nabídky. Právní základ: souhlas.",
-      "p5Title": "Analytika a zabezpečení webu",
-      "p5Desc": "Měření návštěvnosti, detekce chyb, ochrana před útoky. Právní základ: oprávněný zájem Správce."
-    },
-    "retention": {
-      "title": "4. Doba uchování osobních údajů",
-      "service": "Údaje pro poskytování služby – 3 roky po poslední zakázce.",
-      "health": "Zdravotní údaje (jídelníček) – do zrušení souhlasu nebo max. 1 rok po dokončení služby.",
-      "invoices": "Faktury a účetní doklady – 10 let dle zákona.",
-      "marketing": "Marketing – do odhlášení / max. 3 roky od posledního otevření e-mailu.",
-      "comgate": "ComGate platební data – dle jejich interních pravidel (obvykle 3–5 let)."
-    },
-    "recipients": {
-      "title": "5. Příjemci osobních údajů",
-      "lead": "Vaše osobní údaje mohou být předány:",
-      "item1": "poskytovatel hostingu",
-      "item2": "webdeveloper / správce webu FitLime",
-      "item3": "externí účetní",
-      "item4": "ComGate Payments, a.s. (platební brána)",
-      "item5": "Google (Google Analytics, Google Workspace)",
-      "item6": "Meta Platforms (pokud používáte marketingové pixelové měření)",
-      "note": "Všichni zpracovatelé plní podmínky GDPR."
-    },
-    "cookies": {
-      "title": "6. Cookies",
-      "intro": "Web FitLime používá:",
-      "item1": "nezbytné cookies (technické)",
-      "item2": "analytické cookies",
-      "item3": "marketingové cookies",
-      "note": "Při první návštěvě je zobrazena cookie lišta s možností volby."
-    },
-    "rights": {
-      "title": "7. Práva uživatele",
-      "lead": "Máte právo na:",
-      "item1": "přístup ke svým údajům",
-      "item2": "opravu nepřesných údajů",
-      "item3": "výmaz (pokud to dovoluje zákon)",
-      "item4": "omezení zpracování",
-      "item5": "námitku",
-      "item6": "přenositelnost údajů",
-      "item7": "odvolání souhlasu kdykoliv",
-      "complaint": "Stížnost lze podat u: Úřad pro ochranu osobních údajů, www.uoou.cz."
-    },
-    "contact": {
-      "title": "8. Kontaktní informace",
-      "lead": "Pro jakékoliv žádosti pište na:",
-      "email": "info@fitlime.cz",
-      "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Česká republika"
-    },
-    "final": {
-      "title": "9. Závěrečná ustanovení",
-      "item1": "Tyto Zásady mohou být aktualizovány.",
-      "item2": "Aktuální verze je vždy zveřejněna na webu FitLime.",
-      "item3": "Účinnost od: 01.01.2026."
+      "data": {
+        "title": "2. Jaké osobní údaje zpracováváme",
+        "directTitle": "A) Údaje poskytnuté přímo uživatelem",
+        "directItem1": "jméno a příjmení",
+        "directItem2": "e-mail",
+        "directItem3": "pohlaví",
+        "directItem4": "věk",
+        "directItem5": "výška, váha",
+        "directItem6": "sportovní aktivita (pokud uvedete)",
+        "directItem7": "cíle (hubnutí, přibírání, doporučení)",
+        "directItem8": "volitelné údaje o zdraví či omezeních (alergie, intolerance, zdravotní stav)",
+        "directNote": "Poznámka: Údaje o zdraví jsou zvláštní kategorií osobních údajů – zpracováváme je jen se souhlasem, protože bez nich není možné vytvořit jídelníček na míru.",
+        "orderTitle": "B) Údaje o objednávce",
+        "orderItem1": "zakoupená služba (jídelníček, konzultace, plán)",
+        "orderItem2": "zvolená varianta a jazyk",
+        "orderItem3": "platební metoda",
+        "orderItem4": "informace z platební brány ComGate",
+        "comgateTitle": "C) Údaje z platební brány ComGate",
+        "comgateItem1": "identifikace platby",
+        "comgateItem2": "status platby",
+        "comgateItem3": "částka",
+        "comgateItem4": "variabilní symbol",
+        "comgateItem5": "informace o úspěchu/neúspěchu platby",
+        "comgateNote": "Tyto údaje dostáváme bez detailů platební karty.",
+        "webTitle": "D) Údaje vzniklé používáním webu",
+        "webItem1": "IP adresa",
+        "webItem2": "cookies",
+        "webItem3": "analytická data (Google Analytics, případně Meta Pixel)",
+        "webItem4": "informace o zařízení a prohlížeči"
+      },
+      "purposes": {
+        "title": "3. Účely a právní základy zpracování",
+        "p1Title": "Poskytnutí služby",
+        "p1Desc": "Tvorba personalizovaného jídelníčku, komunikace, vyhodnocení údajů. Právní základ: plnění smlouvy (čl. 6 odst. 1 písm. b GDPR).",
+        "p2Title": "Zpracování zdravotních údajů",
+        "p2Desc": "Údaje o zdravotním stavu, alergiích, výšce, váze, BMI, věku – nutné pro personalizaci plánu. Právní základ: výslovný souhlas (čl. 9 odst. 2 písm. a GDPR).",
+        "p3Title": "Platby přes ComGate",
+        "p3Desc": "Zpracování plateb, potvrzení objednávky, evidence faktury. Právní základ: plnění smlouvy + zákonná povinnost.",
+        "p4Title": "Marketing a newsletter",
+        "p4Desc": "Zasílání novinek a tipů, speciální nabídky. Právní základ: souhlas.",
+        "p5Title": "Analytika a zabezpečení webu",
+        "p5Desc": "Měření návštěvnosti, detekce chyb, ochrana před útoky. Právní základ: oprávněný zájem Správce."
+      },
+      "retention": {
+        "title": "4. Doba uchování osobních údajů",
+        "service": "Údaje pro poskytování služby – 3 roky po poslední zakázce.",
+        "health": "Zdravotní údaje (jídelníček) – do zrušení souhlasu nebo max. 1 rok po dokončení služby.",
+        "invoices": "Faktury a účetní doklady – 10 let dle zákona.",
+        "marketing": "Marketing – do odhlášení / max. 3 roky od posledního otevření e-mailu.",
+        "comgate": "ComGate platební data – dle jejich interních pravidel (obvykle 3–5 let)."
+      },
+      "recipients": {
+        "title": "5. Příjemci osobních údajů",
+        "lead": "Vaše osobní údaje mohou být předány:",
+        "item1": "poskytovatel hostingu",
+        "item2": "webdeveloper / správce webu FitLime",
+        "item3": "externí účetní",
+        "item4": "ComGate Payments, a.s. (platební brána)",
+        "item5": "Google (Google Analytics, Google Workspace)",
+        "item6": "Meta Platforms (pokud používáte marketingové pixelové měření)",
+        "note": "Všichni zpracovatelé plní podmínky GDPR."
+      },
+      "cookies": {
+        "title": "6. Cookies",
+        "intro": "Web FitLime používá:",
+        "item1": "nezbytné cookies (technické)",
+        "item2": "analytické cookies",
+        "item3": "marketingové cookies",
+        "note": "Při první návštěvě je zobrazena cookie lišta s možností volby."
+      },
+      "rights": {
+        "title": "7. Práva uživatele",
+        "lead": "Máte právo na:",
+        "item1": "přístup ke svým údajům",
+        "item2": "opravu nepřesných údajů",
+        "item3": "výmaz (pokud to dovoluje zákon)",
+        "item4": "omezení zpracování",
+        "item5": "námitku",
+        "item6": "přenositelnost údajů",
+        "item7": "odvolání souhlasu kdykoliv",
+        "complaint": "Stížnost lze podat u: Úřad pro ochranu osobních údajů, www.uoou.cz."
+      },
+      "contact": {
+        "title": "8. Kontaktní informace",
+        "lead": "Pro jakékoliv žádosti pište na:",
+        "email": "info@fitlime.cz",
+        "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Česká republika"
+      },
+      "final": {
+        "title": "9. Závěrečná ustanovení",
+        "item1": "Tyto Zásady mohou být aktualizovány.",
+        "item2": "Aktuální verze je vždy zveřejněna na webu FitLime.",
+        "item3": "Účinnost od: 01.01.2026."
+      }
     }
-  }
   },
-
   "cookiesPage": {
     "metaTitle": "Cookies | FitLime",
     "hero": {
@@ -944,5 +943,3 @@
     "back": "Zpět na hlavní stránku"
   }
 }
-
-

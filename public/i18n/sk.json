@@ -1,11 +1,11 @@
-{
+﻿{
   "home": {
     "meta": {
-      "title": "AthleteFueling – jedálniček & tréning na mieru",
-      "description": "Kompletné jedálničky a tréningy na mieru. Zdravý životný štýl, pestré jedlá, edukácia a podpora športu."
+      "title": "FitLime - zdravý jedálniček na mieru",
+      "description": "Kompletné jedálne a tréningové plány na mieru. Zdravý životný štýl, pestré jedlá, edukácia a podpora športu."
     },
     "cookies": {
-      "text": "Používame cookies pre správne fungovanie webu a analytiku. <a href='/cookies.html'>Viac informácií</a>.",
+      "text": "Používame cookies na správne fungovanie webu a analytiku. <a href='/cookies.html'>Viac informácií</a>.",
       "decline": "Odmietnuť",
       "accept": "Prijať všetko"
     },
@@ -18,202 +18,298 @@
       "reference": "Referencie"
     },
     "hero": {
-      "title": "Jedálniček a tréning na mieru počas pár minút",
-      "lead": "Vyplň krátky dotazník a získaj plán, ktorý pokrýva všetky tvoje potreby.",
+      "title": "Jedálniček na mieru v priebehu pár minút",
+      "lead": "Vyplňte krátky dotazník a získajte plán, ktorý pokrýva všetky Vaše potreby.",
       "cta": "Spustiť formulár",
       "note": "Nezáväzne, zaberie to len pár minút."
     },
     "why": {
-      "title": "Prečo AthleteFueling?",
-      "cards": {
+      "title": "FitLime - viac než len jedálniček.",
+      "subtitle": "Tvoríme personalizované plány, ktoré menia každodenné stravovanie na dlhodobý, zdravý a udržateľný životný štýl.",
+      "items": {
         "lifestyle": {
-          "title": "🌱 Zmena životného štýlu",
-          "text": "Edukácia a dlhodobý prístup k výžive, nie len tabuľka jedál."
+          "title": "Zdravý životný štýl",
+          "point1": "Edukácia a dlhodobý prístup k zdraviu",
+          "point2": "Reálne výsledky bez extrémov",
+          "point3": "Udržateľná zmena návykov"
         },
-        "meals": {
-          "title": "🥗 Unikátne jedlá",
-          "text": "Pestrý, inšpiratívny a farebný jedálniček na každý deň."
+        "nutrition": {
+          "title": "Výživa na mieru",
+          "point1": "Unikátne a pestré jedlá každý deň",
+          "point2": "Rešpektujeme alergie a preferencie",
+          "point3": "Vyladené makro aj mikroživiny"
         },
-        "flex": {
-          "title": "⚖️ Flexibilita",
-          "text": "Rešpektujeme alergie, intolerancie a tvoje preferencie."
-        },
-        "output": {
-          "title": "📋 Praktický výstup",
-          "text": "Jedálniček, recepty, nákupný zoznam a mnoho ďalšieho."
-        },
-        "micro": {
-          "title": "💊 Mikronutrienty",
-          "text": "Plán pokrýva široké spektrum vitamínov a minerálov."
-        },
-        "sport": {
-          "title": "🏋️ Podpora športu",
-          "text": "Strava nastavená pre výkon, regeneráciu a tvoje ciele."
+        "practical": {
+          "title": "Praktický prístup",
+          "point1": "Prehľadný jedálniček, recepty a zoznam",
+          "point2": "Podpora športu, regenerácie a výkonu",
+          "point3": "Jednoduché dodržiavanie vďaka inteligentnému systému"
         }
       }
     },
     "how": {
-      "title": "Ako to funguje:",
+      "title": "Ako to funguje",
+      "subtitle": "Vytvorenie jedálničného plánu je jednoduché a rýchle. Stačí nám pár základných informácií o Vás a Vašich cieľoch. Na ich základe Vám v priebehu niekoľkých minút vygenerujeme personalizovaný jedálniček na mieru.",
       "step1": {
-        "title": "1) Rýchly dotazník",
-        "text": "Vyplníš základné informácie o sebe.",
-        "point1": "vek, výška, váha a ciele",
-        "point2": "stravovacie preferencie",
-        "point3": "denný režim a športové aktivity"
+        "title": "Dotazník",
+        "text": "Vyplníte niekoľko jednoduchých otázok o sebe, svojom životnom štýle a stravovacích preferenciách. Vďaka nim pochopíme Vaše ciele, obľúbené potraviny, prípadné obmedzenia aj to, aký typ stravovania Vám dlhodobo vyhovuje."
       },
       "step2": {
-        "title": "2) Inteligentný výpočet",
-        "text": "Algoritmus s našou pomocou zostaví jedálniček.",
-        "point1": "zohľadnenie energetického výdaja",
-        "point2": "nutričná vyváženosť makro a mikronutrientov",
-        "point3": "prispôsobenie životnému štýlu"
+        "title": "Výpočet",
+        "text": "Na základe Vašich údajov vytvoríme personalizovaný jedálniček pomocou inteligentného algoritmu, ktorý vyberie ideálnu kombináciu potravín a prispôsobí celý plán Vašim cieľom, chutiam aj životnému štýlu."
       },
       "step3": {
-        "title": "3) Doručenie",
-        "text": "Obdržíš kompletný balíček.",
-        "point1": "jedálniček s receptami na celý týždeň",
-        "point2": "vysvetľujúci a edukačný materiál",
-        "point3": "nákupný zoznam"
+        "title": "Doručenie",
+        "text": "Po objednávke Vám príde potvrdzovací e-mail. Prehľadne spracovaný plán s receptami, presnými gramážami aj praktickými odporúčaniami obdržíte pri verzii Premium najneskôr do 2 pracovných dní, pri verzii Standard do 3 dní."
       },
       "step4": {
-        "title": "4) Výsledky",
-        "text": "Sleduj zmeny a motivuj sa.",
-        "point1": "jasne merateľné pokroky",
-        "point2": "väčšia pestrosť v strave",
-        "point3": "lepší pocit z jedla aj energie"
+        "title": "Výsledky",
+        "text": "Začnite sa riadiť plánom a sledujte, ako sa postupne mení Vaše telo, energia aj celkový pocit zo seba samého. Každý deň malý krok, ktorý Vás priblíži k zdravším zvykom, lepšej kondícii a väčšej spokojnosti."
       }
     },
     "preview": {
-      "title": "Ukážka jedálnička",
-      "lead": "Jeden reálny deň z plánu: pestrosť jedál, mikroživiny aj bilancia energie."
+      "title": "Ukážka športového jedálnička",
+      "lead": "Objednaný plán zahŕňa detailne spracovaný PDF súbor, ktorý Vám bude doručený po jeho dokončení. Tento dokument Vás prevedie celým plánom a ponúkne jasné pokyny k jeho používaniu. Obsahuje tieto hlavné časti:",
+      "tags": {
+        "tag0": "1) Úvodný prehľad s vysvetlením, ako plán používať",
+        "tag1": "2) Grafy príjmu vs. výdaja energie vrátane tréningového plánu",
+        "tag2": "3) Jedálniček na mieru Vašim parametrom (ukážka len 1 dňa)",
+        "tag3": "4) Kompletný nutričný prehľad všetkých sledovaných živín",
+        "tag4": "5) Inteligentný nákupný zoznam s odkazmi na Rohlik.cz",
+        "tag5": "6) Recepty a odporúčania, ako s plánom správne pracovať"
+      }
+    },
+    "diet": {
+      "title": "Skúste si zložiť ideálny obed",
+      "subtitle": "Vyberte jednotlivé potraviny a uvidíte, ako sa pri skladaní obeda menia celkové nutričné hodnoty. Zobrazované hodnoty sú normalizované pre lepšiu ilustráciu a porovnanie zdravších aj menej zdravých možností.",
+      "autoSelect": "Vybrať odporúčané potraviny",
+      "food": {
+        "avocado": "Avokádo",
+        "donut": "Donut",
+        "burger": "Hamburger",
+        "fries": "Hranolky",
+        "apple": "Jablko",
+        "chicken": "Kuracie prsia",
+        "hotdog": "Párok v rožku",
+        "rice": "Ryža",
+        "salad": "Zeleninový šalát",
+        "icecream": "Zmrzlina"
+      },
+      "chart": {
+        "noSelection": "Zaškrtnite aspoň jednu potravinu na zobrazenie grafu",
+        "recommended": "Odporúčaný príjem (100 %)",
+        "nutrients": {
+          "energy": "Energia",
+          "carbs": "Sacharidy",
+          "fat": "Tuky",
+          "protein": "Bielkoviny",
+          "fiber": "Vláknina",
+          "cholesterol": "Cholesterol",
+          "sodium": "Sodík"
+        }
+      },
+      "algorithm": "Tento simulátor ukazuje jednoduchý princíp toho, ako náš program funguje. V skutočnosti je však celý proces oveľa komplexnejší. Pracujeme s oveľa širšou škálou potravín aj celých jedál a zároveň optimalizujeme desiatky rôznych živín (<a href=\"#home-coverage\" class=\"diet-link\">pozri sekciu „Čo jedálniček pokrýva“</a>).",
+      "stats": {
+        "stat1": {
+          "title": "300+ overených jedál",
+          "text": "Optimalizujeme širokú databázu receptov pre každý plán."
+        },
+        "stat2": {
+          "title": "25+ sledovaných parametrov",
+          "text": "Každé jedlo hodnotíme podľa mnohých parametrov."
+        }
+      },
+      "bottomNote": "Do výslednej skladby jedálnička vstupujú aj ďalšie faktory – správne gramáže, pestrosť, logické radenie jedál počas dňa aj ich vyváženosť v rámci celého týždňa."
+    },
+    "drawer": {
+      "close": "Zavrieť menu",
+      "how": "Ako to funguje",
+      "preview": "Ukážka",
+      "coverage": "Čo pokrýva",
+      "pricing": "Cenník",
+      "about": "O nás",
+      "imageAlt": "Zdravá výživa"
     },
     "coverage": {
-      "title": "Čo jedálniček pokrýva:",
-      "items": {
-        "energy": "⚡ Energia",
-        "carbs": "🍚 Sacharidy",
-        "fat": "🥑 Tuky",
-        "protein": "🍗 Bielkoviny",
-        "fruitveg": "🍎 Ovocie a zelenina",
-        "dairy": "🥛 Mliečne výrobky",
-        "fish": "🐟 Ryby",
-        "fiber": "🌾 Vláknina",
-        "salt": "🧂 Soľ",
-        "satfat": "🥩 Nasýtené tuky",
-        "monofat": "🥜 Mononenasýtené tuky",
-        "polyfat": "🌻 Polynenasýtené tuky",
-        "chol": "🥚 Cholesterol",
-        "potassium": "🍌 Draslík",
-        "calcium": "🦴 Vápnik",
-        "magnesium": "🥦 Horčík",
-        "iron": "🥩 Železo",
-        "vitc": "🍊 Vitamín C",
-        "vitd": "🌞 Vitamín D",
-        "vite": "🍰 Vitamín E",
-        "vitb12": "💊 Vitamín B12",
-        "vitb": "💊 Vitamín B1 & B2",
-        "vitb6": "💊 Vitamín B6",
-        "folic": "🥬 Kyselina listová"
+      "title": "Čo jedálniček pokrýva",
+      "intro": "Kompletný prehľad všetkých kľúčových živín a potravinových skupín:",
+      "boxes": {
+        "energy": {
+          "title": "Energia a makroživiny",
+          "subtitle": "Základné stavebné kamene vyváženého jedálnička.",
+          "items": {
+            "energy": "<b>Energia</b> – základná potreba tela",
+            "protein": "<b>Bielkoviny</b> – regenerácia a svaly",
+            "fat": "<b>Tuky</b> – koncentrovaný zdroj energie",
+            "carbs": "<b>Sacharidy</b> – palivo pre telo a mozog",
+            "fiber": "<b>Vláknina</b> – podpora trávenia"
+          }
+        },
+        "groups": {
+          "title": "Skupiny potravín",
+          "subtitle": "Základné potravinové skupiny pre zdravú výživu.",
+          "items": {
+            "fruit": "<b>Ovocie</b> – vitamíny a minerály",
+            "veggies": "<b>Zelenina</b> – antioxidanty a vláknina",
+            "dairy": "<b>Mliečne výrobky</b> – vápnik a bielkoviny",
+            "fish": "<b>Ryby</b> – zdroj bielkovín a omega-3 mastných kyselín"
+          }
+        },
+        "fats": {
+          "title": "Skupiny tukov",
+          "subtitle": "Rôzne typy tukov a ich rola vo výžive.",
+          "items": {
+            "satu": "<b>Nasytené tuky</b> – energetický zdroj",
+            "mono": "<b>Mononenasýtené tuky</b> – zdravie srdca",
+            "poly": "<b>Polynenasýtené tuky</b> – omega-3 a omega-6 mastné kyseliny",
+            "chole": "<b>Cholesterol</b> – tvorba hormónov"
+          }
+        },
+        "vitamins_b": {
+          "title": "Vitamíny B-komplexu",
+          "subtitle": "Kľúčové vitamíny pre energiu, nervy a metabolizmus.",
+          "items": {
+            "vitb1": "<b>Vit. B1 </b> – premena energie a nervy",
+            "vitb2": "<b>Vit. B2 </b> – pokožka a metabolizmus",
+            "vitb6": "<b>Vit. B6 </b> – hormóny a imunitný systém",
+            "vitb12": "<b>Vit. B12 </b> – obehová sústava, nervová sústava a energia"
+          }
+        },
+        "vitamins": {
+          "title": "Ostatné vitamíny",
+          "subtitle": "Podpora imunity, vitality, antioxidantov a rastu buniek.",
+          "items": {
+            "vitc": "<b>Vit. C</b> – imunita, antioxidant",
+            "vitd": "<b>Vit. D</b> – kosti a vitalita",
+            "vite": "<b>Vit. E</b> – antioxidant, ochrana buniek",
+            "folic": "<b>Kyselina listová</b> – rast buniek, nervová sústava"
+          }
+        },
+        "minerals": {
+          "title": "Minerály",
+                   "subtitle": "Nezbytné prvky pre zdravé telo aj správnu funkciu svalov.",
+          "items": {
+            "sodium": "<b>Sodík</b> – rovnováha tekutín",
+            "iron": "<b>Železo</b> – krv a kyslík",
+            "magnesium": "<b>Horčík</b> – svaly a únava",
+            "calcium": "<b>Vápnik</b> – kosti a zuby",
+            "potassium": "<b>Draslík</b> – svaly a tlak"
+          }
+        }
       },
-      "toggle": "Zobraziť viac",
-      "less": "Zobraziť menej"
+      "hint": "Kliknite pre detail"
     },
-    "training": {
-      "title": "Tréningový plán",
-      "text": "Jedálniček vždy pripravujeme s ohľadom na tvoj tréning a ciele – či už ide o vytrvalostný, silový alebo rekreačný šport. Ak chceš, zdarma ti k tomu vytvoríme aj osobný tréningový plán na mieru, vychádzajúci z tvojich preferencií a obľúbených aktivít.",
-      "cta": "Chcem jedálniček aj tréning"
+    "audience": {
+      "title": "Pre koho je jedálniček určený",
+      "lead": "Zdravý jedálniček prispôsobujeme tomu, ako žijete – či trénujete na preteky, chodíte si len občas zacvičiť, alebo chcete jesť lepšie a mať viac energie.",
+      "pro": {
+        "title": "Vrcholoví športovci",
+        "text": "Máte tréningový plán, sezónu alebo preteky? Jedálniček ladíme podľa zaťaženia v jednotlivých dňoch, aby sedel výkonu, regenerácii aj telesnej hmotnosti.",
+        "tag": "Výkon"
+      },
+      "hobby": {
+        "title": "Aktívny životný štýl",
+        "text": "Beháte, chodíte do fitka, na bicykel alebo skupinové lekcie a chcete sa cítiť ľahšie, silnejšie a mať viac energie? Jedálniček zapadne do práce, školy aj rodiny.",
+        "tag": "Balance"
+      },
+      "everyday": {
+        "title": "Bežný život",
+        "text": "Nie ste „športovec“, ale chcete jesť zdravšie, mať energiu počas dňa alebo schudnúť? Postavíme jedálniček, ktorý je realistický a dlhodobo udržateľný.",
+        "tag": "Začínam"
+      },
+      "cta": "Zistite, aký plán je pre Vás"
     },
     "pricing": {
-      "title": "Balíčky a ceny",
+      "title": "Varianty jedálničkov a cenník",
       "per_week": "/ týždeň",
       "per_month": "/ mesiac",
-      "advantage": "výhodnejšie",
+      "advantage": "výhodnejšia",
       "standard": {
-        "title": "⚖️ Štandard – plnohodnotný (5 dní)",
-        "feature1": "Jedálniček na 5 dní (Po–Pia)",
+        "title": "⚖️ Standard - plnohodnotný (5 dní)",
+        "feature1": "Jedálniček na 5 dní (Po-Pi)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
         "feature4": "Recepty k jednotlivým jedlám",
         "feature5": "Nákupný zoznam",
         "feature6": "Grafy príjmu a výdaja energie",
-        "feature7": "Edukácia k jednotlivým nutrientom"
+        "feature7": "Edukácia k jednotlivým živinám"
       },
       "premium": {
-        "badge": "Najobľúbenejší",
-        "title": "🏆 Premium – na mieru (7 dní)",
-        "feature1": "Jedálniček na 7 dní (Po–Ne)",
+        "badge": "Najobľúbenejšia",
+        "title": "🏆 Premium - na mieru (7 dní)",
+        "feature1": "Jedálniček na 7 dní (Po-Ne)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
         "feature4": "Recepty k jednotlivým jedlám",
         "feature5": "Nákupný zoznam",
         "feature6": "Grafy príjmu a výdaja energie",
-        "feature7": "Edukácia k jednotlivým nutrientom",
+        "feature7": "Edukácia k jednotlivým živinám",
         "extra1": "Edukácia o výžive v športe",
-        "extra2": "Doplnky výživy na mieru",
+        "extra2": "Doplnky stravy na mieru",
         "extra3": "Pitný režim",
-        "extra4": "Možnosť dietnej preferencie (dieta, preferencia)",
+        "extra4": "Možnosť diétnych preferencií (diéta, vylúčenie potravín)",
         "extra5": "Možnosť nastavenia makronutrientov"
       },
       "cta": "Spustiť formulár",
-      "note": "Nezáväzne, vyberieš si až v objednávke."
+      "note": "Nezáväzne, vyberiete si až v objednávke."
     },
     "faq": {
-      "title": "FAQ – Často kladené otázky",
+      "title": "FAQ - Často kladené otázky",
       "q1": {
         "q": "Ako obdržím jedálniček?",
-        "a": "Jedálniček ti zašleme na e-mail vo formáte PDF, vrátane prehľadných tabuliek a grafov."
+        "a": "Jedálniček Vám pošleme na e-mail vo formáte PDF, vrátane prehľadných tabuliek a grafov."
       },
       "q2": {
         "q": "Budú potrebné špeciálne potraviny?",
-        "a": "Nie, recepty staviame na bežne dostupných surovinách zo supermarketu."
+        "a": "Nie, recepty staviame na bežne dostupných surovinách zo supermarketu. Ku každej surovine navyše dostanete odkaz na Rohlik.cz pre rýchly online nákup."
       },
       "q3": {
         "q": "Ako dlho jedálniček vydrží?",
-        "a": "Štandardne zostavujeme plán na 7 dní, obsahujúci 35 unikátnych jedál. Tento plán môžeš podľa potreby opakovať či upravovať."
+        "a": "Štandardne zostavujeme plán na 7 dní, obsahujúci 35 unikátnych jedál. A preto ho môžete podľa potreby opakovať či upravovať."
       },
       "q4": {
         "q": "Sú súčasťou aj nákupné zoznamy?",
-        "a": "Áno, pripravíme prehľadný zoznam surovín na celý týždeň."
+        "a": "Áno, pripravíme prehľadný zoznam surovín na celý týždeň – vrátane priamych odkazov na nákup jednotlivých položiek na Rohlik.cz."
       },
       "q5": {
         "q": "Čo ak nemám kuchynskú váhu?",
-        "a": "Gramáže uvádzame, ale často stačia orientačné miery (lyžice, hrnček, kusy). Nie je nutné všetko vážiť – dôležitejšia je pestrosť a zdravý prístup."
+        "a": "Gramáže uvádzame, ale často postačia orientačné miery (lyžica, hrnček, kusy). Nie je nutné jedlo neustále vážiť – dôležitejšia je pestrosť a zdravý prístup."
       },
       "q6": {
         "q": "Prispôsobíte jedálniček alergiám a intoleranciám?",
-        "a": "Áno, stačí uviesť svoje preferencie a obmedzenia pri objednávke."
+        "a": "Áno, stačí uviesť svoje preferencie a obmedzenia pri objednávke vo formulári."
       },
       "q7": {
         "q": "Môžete jedálniček prispôsobiť konkrétnym cieľom?",
-        "a": "Samozrejme – či už ide o chudnutie, naberanie svalov alebo udržanie hmotnosti."
+        "a": "Samozrejme – či už ide o chudnutie, naberanie svalov alebo udržanie telesnej hmotnosti. Stačí to uviesť vo formulári."
       },
       "q8": {
-        "q": "Čo ak mám zdravotné obmedzenia?",
-        "a": "Plán vieme upraviť aj pre špecifické potreby (napr. vysoký cholesterol, diabetes) – konzultujeme podľa potreby s odborníkom."
+        "q": "Môžem jedálniček používať dlhodobo?",
+        "a": "Plán je navrhnutý tak, aby bol udržateľný dlhodobo. Jednotlivé týždne môžete opakovať, kombinovať alebo jemne upravovať."
       },
       "q9": {
-        "q": "Kto zostavuje jedálničky?",
+        "q": "Kto jedálničky zostavuje?",
         "a": "Na plánoch sa podieľajú odborníci na výživu s praxou v športovej medicíne."
       },
       "q10": {
         "q": "Odkiaľ čerpáte nutričné hodnoty?",
-        "a": "Používame overené databázy potravín a vlastné výpočtové modely."
+        "a": "Čerpáme z overených zdrojov – najmä z databázy USDA a dopĺňame ju vlastnými výpočtovými modelmi."
       },
       "q11": {
         "q": "Čo ak mi niektorý recept nechutí?",
-        "a": "Jedálniček obsahuje viac variant, takže si vždy vyberieš. Navyše, vylúčenie konkrétnych potravín ponúkame v rámci Premium balíčka."
+        "a": "Jedálniček obsahuje viac variantov, takže si vždy vyberiete podľa chuti. Navyše, vylúčenie konkrétnych potravín ponúkame v rámci balíčka Premium."
       },
       "q12": {
-        "q": "Môžem si jedálniček neskôr upraviť?",
-        "a": "Áno, pri mesačných plánoch je možné jedálniček priebežne prispôsobovať podľa spätnej väzby."
+        "q": "Môžete mi jedálniček neskôr upraviť?",
+        "a": "V tejto chvíli úpravy jedálničkov po doručení neponúkame. Do budúcna však plánujeme pridať možnosť priebežných úprav podľa Vašej spätnej väzby."
       },
       "q13": {
         "q": "Ako rýchlo jedálniček obdržím?",
-        "a": "Oba balíčky doručujeme maximálne do 3 pracovných dní, zvyčajne do 1 dňa."
+        "a": "Pri štandardnom balíčku garantujeme doručenie do 3 pracovných dní, pri Premium do 2 pracovných dní. Ak by sme termín nedodržali, vrátime Vám peniaze."
       },
       "q14": {
-        "q": "Je jedálniček vhodný aj pre nešportovcov?",
-        "a": "Áno, jedálniček zostavíme aj pre ľudí, ktorí nešportujú alebo majú len rekreačný pohyb."
+        "q": "Musím si inštalovať nejakú aplikáciu?",
+        "a": "Nie. Jedálniček príde v PDF a môžete si ho otvoriť v mobile, počítači alebo vytlačiť."
       }
     },
     "about": {
@@ -227,30 +323,30 @@
       "danny": {
         "name": "Ing. Daniel Vítek",
         "item1": "Absolvent odboru Bioinformatika na ČVUT FEL",
-        "item2": "Štúdium na Fakulte telovýchovy a športu (Madrid)",
+        "item2": "Štúdium na Fakulte telesnej výchovy a športu (Madrid)",
         "item3": "Bioinformatika a technológie vo výžive"
       }
     },
     "reference": {
-      "title": "Referencie",
+      "title": "FitLime Komunita",
       "client1": {
-        "text": "„Zmenilo nám to pohľad na stravovanie. Máme viac energie počas dňa.“",
-        "author": "— Mati | Solene",
+        "text": "\"Zmenilo nám to pohľad na stravovanie. Máme viac energie počas dňa.\"",
+        "author": "- Mati | Solene",
         "flags": [
           "cl",
           "es"
         ]
       },
       "client2": {
-        "text": "„Jedlá sú jednoduché a chutné. Nákupný zoznam šetrí čas. Cítim sa dobre na bicykli.“",
-        "author": "— Hana",
+        "text": "\"Jedlá sú jednoduché a chutné. Nákupný zoznam šetrí čas. Cítim sa dobre na bicykli.\"",
+        "author": "- Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
-        "text": "„Premium mi sadol k tréningovému plánu. Tá služba je good AF.“",
-        "author": "— David",
+        "text": "\"Premium mi sadlo k tréningovému plánu. Tá služba je super.\"",
+        "author": "- David",
         "flags": [
           "us",
           "cz"
@@ -258,15 +354,15 @@
       }
     },
     "cta": {
-      "title": "Pripravený začať?",
-      "lead": "Spusti nezáväzne formulár a zisti, ako môže vyzerať tvoj osobný plán.",
+      "title": "Pripravení začať?",
+      "lead": "Spustite nezáväzne formulár a zistite, ako môže vyzerať Váš osobný plán.",
       "cta": "Spustiť formulár",
-      "note": "Vyberieš si až v objednávke. Zaberie to len pár minút."
+      "note": "Vyberiete si až v objednávke. Zaberie to len pár minút."
     },
     "footer": {
-      "brand": "AthleteFueling s.r.o. © 2025",
+      "brand": "FitLime s.r.o. © 2026",
       "powered": "powered by sportvitalpro.cz",
-      "payments": "Platby sprostredkováva Comgate",
+      "payments": "Platby sprostredkúva Comgate",
       "terms": "Obchodné podmienky",
       "privacy": "Ochrana osobných údajov",
       "cookies": "Cookies"
@@ -274,24 +370,30 @@
   },
   "common": {
     "back": "Späť",
+    "continue": "Pokračovať",
     "next": "Ďalej",
     "error_required": "Toto pole je povinné.",
-    "error_email": "Zadajte platný e-mail.",
     "error_number": "Zadajte platné číslo.",
-    "error_range": "Hodnota je mimo povolený rozsah.",
+    "error_range": "Hodnota musí byť medzi {{min}} a {{max}}.",
+    "error_email": "Zadajte platný e-mail.",
+    "error_macro_sum": "Súčet sacharidov, bielkovín a tukov musí byť 100 %. ",
+    "error_macro_c": "Sacharidy musia byť medzi {{min}} a {{max}} %. ",
+    "error_macro_p": "Bielkoviny musia byť medzi {{min}} a {{max}} %. ",
+    "error_macro_f": "Tuky musia byť medzi {{min}} a {{max}} %. ",
     "range": "Rozsah",
     "per_day_short": "deň",
     "leave_title": "Opustiť formulár?",
-    "leave_text": "Ak odídeš, môžeš prísť o neuložené zmeny. Chceš pokračovať na hlavnú stránku?",
+    "leave_text": "Ak odídete, môžete prísť o neuložené zmeny. Chcete pokračovať na hlavnú stránku?",
     "leave_stay": "Zostať",
     "leave_leave": "Odísť",
-    "home": "Domov"
+    "home": "Domov",
+    "years": "rokov"
   },
   "intro": {
-    "title": "Začni svoju cestu k lepšiemu stravovaniu",
-    "point1": "Zistíš svoje potreby – rýchly výpočet energie a cieľov.",
-    "point2": "Dostaneš plán – odporúčania jedálnička a aktivít.",
-    "point3": "Celkový prehľad – jasné kroky, čo robiť ďalej.",
+    "title": "Začnite svoju cestu k lepšiemu stravovaniu",
+    "point1": "Zistíte svoje potreby – rýchly výpočet energie a cieľov.",
+    "point2": "Dostanete plán – odporúčania jedálnička a aktivít.",
+    "point3": "Celkový prehľad - jasné kroky, čo robiť ďalej.",
     "cta": "Poďme na to"
   },
   "a11y": {
@@ -303,7 +405,7 @@
     "Cieľ & energia",
     "Šport",
     "Stravovanie",
-    "Výdaj vs príjem",
+    "Makronutrienty a grafy",
     "Plán",
     "Zhrnutie"
   ],
@@ -312,24 +414,29 @@
     "sex": "Pohlavie",
     "sex_male": "Muž",
     "sex_female": "Žena",
-    "sex_other": "Iné",
-    "age": "Vek",
+    "age": "Vek (rokov)",
     "height": "Výška (cm)",
-    "weight": "Váha (kg)",
+    "weight": "Hmotnosť (kg)",
     "activity": "Denný režim",
     "activity_sedentary": "Sedavý",
-    "activity_moderate": "Stredne aktívny",
-    "activity_high": "Veľmi aktívny",
+    "activity_moderately_active": "Stredne aktívny",
+    "activity_very_active": "Veľmi aktívny",
     "steps": "Denné kroky",
+    "steps_0_4k": "0 - 4k",
+    "steps_4_8k": "4 - 8k",
+    "steps_8_12k": "8 - 12k",
+    "steps_12_20k": "12 - 20k",
+    "steps_20_40k": "20 - 40k",
     "age_placeholder": "napr. 32",
     "height_placeholder": "napr. 178",
-    "weight_placeholder": "napr. 82"
+    "weight_placeholder": "napr. 82",
+    "info_text": "Tieto údaje potrebujeme, aby sme mohli správne vypočítať Váš bazálny metabolizmus a odhadnúť výdaj bežnej dennej aktivity. Na základe toho vytvoríme jedálniček, ktorý zodpovedá Vašim cieľom."
   },
   "step2": {
     "title": "Cieľ & energia",
-    "target": "Cieľ",
+    "target": "Nutričný cieľ",
     "target_lose": "Schudnúť",
-    "target_maintain": "Udržať váhu",
+    "target_maintain": "Udržať hmotnosť",
     "target_gain": "Pribrať",
     "help_lose": "Odporúčame mierny kalorický deficit.",
     "help_maintain": "Cieľom je energetická rovnováha.",
@@ -337,38 +444,47 @@
     "energy_unit": "Jednotka energie",
     "unit_kj": "kJ",
     "unit_kcal": "kcal",
-    "bmr_label": "BMR",
-    "bmr_help_kj": "Vypočítané z profilu (kJ/deň). Môžeš upraviť ručne.",
-    "bmr_help_kcal": "Vypočítané z profilu (kcal/deň). Môžeš upraviť ručne.",
-    "target_explainer": "Vyber, či chceš chudnúť, udržiavať alebo priberať. Odporúčanie sa automaticky prispôsobí.",
-    "energy_help": "Nastav jednotku energie.",
-    "bmr_explainer": "BMR je energia, ktorú telo spotrebuje v pokoji. Hodnotu môžeš upraviť, ak poznáš presnejší údaj."
+    "bmr_label": "Bazálny metabolizmus (BMR)",
+    "bmr_help_kj": "Vypočítané z profilu (kJ/deň). Môžete upraviť ručne.",
+    "bmr_help_kcal": "Vypočítané z profilu (kcal/deň). Môžete upraviť ručne.",
+    "target_explainer": "Vyberte, či chcete chudnúť, udržiavať alebo priberať hmotnosť. Odporúčanie príjmu sa automaticky prispôsobí.",
+    "energy_help": "Nastavte jednotku energie.",
+    "bmr_explainer": "BMR (bazálny metabolizmus) je energia, ktorú telo spotrebuje v pokoji. Hodnotu môžete upraviť, ak poznáte presnejší údaj."
   },
   "step3": {
     "title": "Športová aktivita",
-    "level": "Úroveň aktivity",
+    "level": "Vaša športová aktivita",
+    "help_activity_level": "Vyberte, či pravidelne športujete – jedálniček tomu prispôsobíme.",
     "level_none": "Nešportujem",
     "sports": "Športy",
-    "level_recreational": "Rekreačne",
-    "level_regular": "Výkonnostne",
-    "plan_choice": "Plán",
-    "plan_own": "Mám svoj plán (len jedálniček)",
-    "plan_need": "Chcem tréningový plán (príplatok)",
+    "level_sport": "Športujem",
+    "help_none": "Bežná chôdza a každodenný pohyb, bez pravidelného cvičenia.",
+    "help_sport": "Pravidelne športujem a chcem, aby jedálniček reflektoval moju aktivitu.",
+    "plan_choice": "Tréningový plán",
+    "plan_own": "Mám svoj plán",
+    "plan_need": "Chcem tréningový plán",
+    "help_plan_choice_fixed": "Popíšte nám svoj tréning.",
+    "help_own_block": "Zadajte podrobnosti o svojom športe - koľkokrát týždenne trénujete, aká je intenzita a dĺžka tréningu.",
+    "add_own_block": "Pridať ďalší šport",
+    "help_main_sport": "Vyberte šport, ktorý robíte najčastejšie.",
+    "help_need_sports": "Vyberte športy, ktoré chcete mať v tréningovom pláne.",
+    "help_hours": "Celkový čas venovaný športu za týždeň.",
     "intensity": "Intenzita",
     "intensity_low": "Nízka",
     "intensity_medium": "Stredná",
     "intensity_high": "Vysoká",
-    "sessions_per_week": "Tréningy za týždeň",
+    "sessions_per_week": "Tréningy týždenne",
     "minutes": "Dĺžka tréningu (min)",
     "hours_per_week": "Čas týždenne (h/týždeň)",
-    "none_hint": "Čo by ťa lákalo?",
+    "future_sports": "Čo by Vás lákalo?",
+    "help_none_multi": "Môžete vybrať viac možností",
     "main_sport": "Hlavný šport",
     "groups": {
       "title_endurance": "Vytrvalostné športy",
       "title_winter": "Zimné športy",
       "title_team": "Kolektívne športy",
       "title_individual": "Individuálne športy",
-      "title_fitness": "Fitness & posilňovňa",
+      "title_fitness": "Fitness & telocvičňa",
       "title_water": "Vodné športy",
       "title_combat": "Bojové športy",
       "title_other": "Ostatné športy"
@@ -377,331 +493,449 @@
     "suggest_running": "Beh",
     "suggest_cycling": "Bicykel",
     "suggest_yoga": "Jóga",
-    "suggest_homegym": "Posilňovanie",
+    "suggest_gym": "Posilňovanie",
     "suggest_swimming": "Plávanie",
     "suggest_football": "Futbal",
     "suggest_basketball": "Basketbal",
     "suggest_other": "Iné",
-    "level_explainer": "Zvoľ, ako často športuješ. Podľa toho sa zmenia požadované údaje.",
-    "other_placeholder": "Iné…"
+    "level_explainer": "Zvoľte, ako často športujete. Podľa voľby sa zmenia požadované údaje.",
+    "other_placeholder": "Iné",
+    "error_select_sport": "Vyberte si šport z ponuky.",
+    "error_sessions_total": "Celkový počet tréningov za týždeň musí byť maximálne 18.",
+    "add_own_block_limit_hint": "Dosiahli ste maximálny počet športov.",
+    "add_own_block_full": "Kapacita vyčerpaná",
+    "error_sessions_total_field": "Celkovo max 18 tréningov.",
+    "error_future_max3": "Môžete vybrať maximálne 3 športy.",
+    "select_sport_placeholder": "Zvoľte šport"
   },
   "step4": {
     "title": "Stravovanie",
     "diet": "Typ diéty",
-    "diet_none": "Bez obmedzenia",
+    "diet_none": "Bez obmedzení",
     "diet_vegetarian": "Vegetarián",
     "diet_pescetarian": "Pescetarián",
     "diet_gluten_free": "Bezlepková",
     "diet_lactose_free": "Bez laktózy",
-    "dislikes": "Nejem",
-    "macros_title": "Makronutrienty",
-    "carb": "Sacharidy (%)",
-    "fat": "Tuky (%)",
-    "protein": "Bielkoviny (%)",
-    "note_premium": "Úprava makier je dostupná iba v Premium pláne.",
-    "dislikes_title": "Nejem",
-    "dislikes_hint": "- voliteľné",
+    "dislikes_title": "Potraviny na vylúčenie z jedálnička",
     "dislike_mushrooms": "Huby",
     "dislike_olives": "Olivy",
-    "dislike_pepper": "Paprika",
-    "dislike_tomato": "Paradajky",
-    "dislike_onion": "Cibuľa",
-    "dislike_fish": "Ryby",
-    "dislike_seafood": "Morské plody",
+    "dislike_coriander": "Koriander",
+    "dislike_tomatoes": "Paradajky",
+    "dislike_cottage": "Tvaroh",
+    "dislike_tuna": "Tuniak",
+    "dislike_salmon": "Losos",
     "dislike_eggs": "Vajcia",
-    "dislike_other": "Iné (doplniť)",
-    "premium_note": "Úprava makier sa uplatní iba pri Premium pláne.",
-    "help_diet": "Vyber typ stravy, ktorý bežne dodržuješ.",
-    "help_dislikes": "Označ suroviny, ktorým sa chceš vyhnúť.",
-    "dislikes_optional": "(voliteľné)",
-    "help_macros": "Odporúčané rozmedzie: S 40–60 %, T 20–35 %, B 15–30 %. Súčet by mal byť 100 %. ",
-    "sum_input": "Suma"
+    "help_diet": "Vyberte typ stravy, ktorý bežne dodržiavate.",
+    "help_dislikes": "Označte suroviny, ktorým sa chcete v jedálničku vyhnúť.",
+    "premium_note": "Úprava diét a vylúčenie potravín sú dostupné len pri pláne Premium."
   },
   "step5": {
-    "title": "Výdaj vs príjem energie",
-    "monday": "Pondelok",
-    "tuesday": "Utorok",
-    "bmr": "BMR",
-    "bda": "Bežná denná aktivita",
-    "sport": "Športová aktivita",
-    "intake": "Príjem",
-    "mon": "Po",
-    "tue": "Ut",
-    "exp_label": "Výdaj",
-    "in_label": "Príjem",
-    "help": "Grafy ukazujú porovnanie výdaja a príjmu. Príjem kopíruje výdaj podľa cieľa."
+    "title": "Makronutrienty & energia",
+    "subtitle": "Hodnoty sú predvyplnené na základe Vašich aktivít.",
+    "energy": "Denný príjem energie",
+    "energy_note": "(podľa cieľa)",
+    "carbs": "Sacharidy",
+    "proteins": "Bielkoviny",
+    "fats": "Tuky",
+    "help_macros": "Hodnoty sú predvyplnené na základe Vašich aktivít.",
+    "chart_title": "Denný príjem",
+    "chart_legend_carbs": "Sacharidy",
+    "chart_legend_proteins": "Bielkoviny",
+    "chart_legend_fats": "Tuky",
+    "unit_kj": "kJ",
+    "unit_kcal": "kcal"
   },
   "step6": {
-    "variant": "Varianta plánu",
-    "light_title": "Light (ochutnávka)",
-    "standard_title": "Štandard",
-    "premium_title": "Premium",
-    "period_1x": "Jednorazovo",
-    "period_4x": "4 týždne",
-    "training_title": "Tréningový plán",
-    "training_no": "Nie",
-    "training_yes": "Áno + 200 CZK",
-    "total": "Spolu",
-    "example_price": "690 CZK (€29.90)",
-    "note": "Mimo ČR zobrazíme cenu v EUR.",
-    "days_3": "3 dni",
-    "light_f1": "Jedálniček na 3 dni",
-    "light_f2": "Unikátne jedlá bez opakovania",
-    "light_f3": "Raňajky, desiata, polievka, obed, večera",
-    "light_f4": "Ovocie a zelenina",
-    "light_f5": "Odporúčané výživové doplnky",
-    "light_f6": "Recepty ku všetkým jedlám",
-    "days_5": "5 dní",
-    "std_f1": "Plnohodnotný jedálniček na 5 dní (Po–Pia)",
-    "std_f2": "Recepty a nákupný zoznam",
-    "std_f3": "Zohľadnenie športovej aktivity",
-    "std_f4": "Grafy príjmu a výdaja energie",
-    "std_f5": "Edukácia: základy makro- a mikronutrientov",
-    "days_7": "7 dní",
-    "prem_f1": "Možnosť vyňať suroviny (Nejem)",
-    "prem_f2": "Makronutrienty na mieru",
-    "prem_f3": "Pitný režim",
-    "prem_f4": "Edukácia: makro a mikroživiny + výživa v športe",
-    "prem_f5": "Recepty a nákupný zoznam",
-    "prem_f6": "Zahrnutie športových preferencií"
+    "title": "Plány a cenotvorba",
+    "variant": "Zvoľte variant",
+    "variant_help": "Zvoľte, aký chcete plán.",
+    "period_title": "Obdobie",
+    "period_help": "Zvoľte, či chcete plán na týždeň alebo mesiac.",
+    "period_week": "1 týždeň",
+    "period_month": "1 mesiac",
+    "help_week": "Vytvoríme Vám jeden plán.",
+    "help_month": "Vytvoríme Vám štyri plány.",
+    "standard_title": "⚖️ Standard - plnohodnotný (5 dní)",
+    "standard_days": "5 dní",
+    "standard_desc": "Vyvážený plán na pracovné dni.",
+    "standard_feature1": "5-dňový jedálniček (Po-Pi)",
+    "standard_feature2": "Unikátne, pestré jedlá",
+    "standard_feature3": "Personalizácia podľa tréningového denníka",
+    "standard_delivery": "Dodanie do 3 pracovných dní",
+    "premium_title": "🏆 Premium - na mieru (7 dní)",
+    "premium_days": "7 dní",
+    "premium_desc": "Kompletný plán na celý týždeň.",
+    "premium_feature1": "7-dňový jedálniček (Po-Ne)",
+    "premium_feature2": "Unikátne, pestré jedlá",
+    "premium_feature3": "Personalizácia podľa tréningového denníka",
+    "premium_delivery": "Dodanie do 2 pracovných dní",
+    "details_title": "Podrobnosti plánov",
+    "standard_detail_title": "Standard - plnohodnotný (5 dní)",
+    "standard_detail1": "Jedálniček na 5 dní (Po-Pi)",
+    "standard_detail2": "Unikátne, pestré jedlá",
+    "standard_detail3": "Personalizácia podľa tréningového denníka",
+    "standard_detail4": "Recepty k jednotlivým jedlám",
+    "standard_detail5": "Nákupný zoznam",
+    "standard_detail6": "Grafy príjmu a výdaja energie",
+    "standard_detail7": "Edukácia k jednotlivým živinám",
+    "premium_detail_title": "Premium - na mieru (7 dní)",
+    "premium_detail1": "Jedálniček na 7 dní (Po-Ne)",
+    "premium_detail2": "Unikátne, pestré jedlá",
+    "premium_detail3": "Personalizácia podľa tréningového denníka",
+    "premium_detail4": "Recepty k jednotlivým jedlám",
+    "premium_detail5": "Nákupný zoznam",
+    "premium_detail6": "Grafy príjmu a výdaja energie",
+    "premium_detail7": "Edukácia k jednotlivým živinám",
+    "premium_detail8": "Edukácia o výžive v športe",
+    "premium_detail9": "Doplnky stravy na mieru",
+    "premium_detail10": "Pitný režim",
+    "premium_detail11": "Vybrané diétné preferencie",
+    "premium_detail12": "Vylúčenie konkrétnych potravín",
+    "premium_detail13": "Možnosť nastaviť makronutrienty",
+    "standard_warning_title": "Zmeny sa neprejavia v pláne Standard",
+    "standard_warning_text": "V pláne Standard sa neuloží vlastná diéta, výber jedál ani úpravy makronutrientov. Chcete pokračovať aj napriek tomu?",
+    "total_label": "Cena celkom:"
   },
   "step7": {
     "title": "Zhrnutie & nákup",
-    "plan_title": "Vybraný plán",
-    "macros_title": "Makronutrienty",
-    "sports_title": "Športová aktivita",
-    "dislikes_title": "Nejem",
+    "summary_title": "Súhrn objednávky",
+    "basic": "Základné údaje",
+    "activity": "Denná aktivita",
+    "goal": "Cieľ & energia",
+    "sports": "Športové aktivity",
+    "training": "Chcem tréningový plán:",
+    "diet": "Typ diéty",
+    "dislikes": "Potraviny, ktoré nejete",
+    "repeats": "Opakovanie jedál",
+    "macros": "Rozloženie makronutrientov",
+    "plan": "Zvolený plán",
+    "repeats_1": "Raz denne",
+    "repeats_2": "Dvakrát denne",
+    "repeats_3": "Trikrát denne",
+    "level_none": "Nešportujem",
+    "want_sport": "Zatiaľ nešportujem",
+    "level_sport": "Športujem",
+    "future_sport": "Láka ma",
+    "want_plan": "Chcem tréningový plán",
+    "hours_per_week": "Čas týždenne",
+    "main_sport": "Hlavný šport",
+    "macros_carbs": "Sacharidy",
+    "macros_fats": "Tuky",
+    "macros_proteins": "Bielkoviny",
+    "discount": "Zľavový kód",
+    "discount_applied": "Zľava aplikovaná",
     "total": "Celková cena",
+    "summary_personal": "Osobné údaje",
     "name": "Meno",
     "email": "E-mail",
+    "newsletter": "Chcem odoberať newsletter",
+    "placeholders": {
+      "name": "Ján Novák",
+      "email": "jan.novak@email.cz"
+    },
     "terms": "Súhlasím s Obchodnými podmienkami",
     "privacy": "Súhlasím so Zásadami spracovania osobných údajov",
-    "buy": "Kúpiť"
+    "buy": "Kúpiť",
+    "trust": "Platby sprostredkúva Comgate",
+    "use": "Použiť",
+    "discount_invalid": "Neplatný kód",
+    "missing_fields": "Doplňte prosím meno, e-mail a povinné súhlasy.",
+    "purchase_failed": "Objednávku sa nepodarilo dokončiť. Skúste to prosím znova."
+  },
+  "payment_failed.title": "Platba sa nepodarila",
+  "payment_failed.heading": "❌ Platba sa nepodarila",
+  "payment_failed.message": "Žiaľ, platbu sa nepodarilo dokončiť.",
+  "payment_failed.resume_text": "Formulár sme Vám zachovali – môžete pokračovať tam, kde ste skončili.",
+  "payment_failed.resume_btn": "↩️ Vrátiť sa k formuláru",
+  "payment_failed.back_home": "← Späť na hlavnú stránku",
+  "buttons": {
+    "sending": "Prebieha odosielanie..."
+  },
+  "thanks": {
+    "title": "Ďakujeme za objednávku | FitLime",
+    "header": "Objednávka úspešne dokončená :)",
+    "subtitle_1": "Ďakujeme za objednávku!",
+    "subtitle_2_prefix": "Potvrdenie sme práve poslali na e-mail",
+    "order_id": "Číslo objednávky",
+    "name": "Meno",
+    "plan": "Plán",
+    "period": "Obdobie",
+    "next_premium": "Váš jedálniček pripravíme a odošleme do 2 pracovných dní.",
+    "next_basic": "Váš jedálniček pripravíme a odošleme do 3 pracovných dní.",
+    "next_email": "Skontrolujte priečinok Spam alebo Promo, ak e-mail nenájdete.",
+    "next_tips": "Medzitým si môžete prečítať naše tipy o výžive.",
+    "btn_home": "Späť na hlavnú stránku",
+    "btn_tips": "Tipy na výživu"
   },
   "termsPage": {
-    "metaTitle": "Obchodn? podmienky ? FitLime",
-    "back": "? Sp?? na hlavn? str?nku",
-    "subtitle": "Pre poskytovanie jednorazov?ho jed?lni?ka na mieru",
-    "title": "Obchodn? podmienky ? FitLime",
-    "effective": "??inn? od: 01.01.2026",
-    "provider": "Sportvital-Pro s.r.o., Mokropesk? 1799, 252 28 ?erno?ice, I?O: 04528930, info@fitlime.cz",
+    "metaTitle": "Obchodné podmienky - FitLime",
+    "back": "← Späť na hlavnú stránku",
+    "subtitle": "Pre poskytovanie jednorazového jedálnička na mieru",
+    "title": "Obchodné podmienky - FitLime",
+    "effective": "Účinné od: 01.01.2026",
+    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Česká republika, IČO: 04528930, info@fitlime.cz",
     "sections": {
       "intro": {
-        "title": "1. ?vodn? ustanovenia",
-        "item1": "Tieto Obchodn? podmienky upravuj? pr?va a povinnosti medzi Poskytovate?om a Z?kazn?kom.",
-        "item2": "Odoslan?m objedn?vky Z?kazn?k potvrdzuje, ?e sa s podmienkami obozn?mil a s?hlas? s nimi."
+        "title": "1. Úvodné ustanovenia",
+        "item1": "Tieto Obchodné podmienky upravujú práva a povinnosti medzi Poskytovateľom a Zákazníkom.",
+        "item2": "Odoslaním objednávky Zákazník potvrdzuje, že sa s podmienkami oboznámil a súhlasí s nimi."
       },
       "service": {
-        "title": "2. Charakter poskytovanej slu?by",
-        "item1": "Poskytovate? pon?ka jednorazov? personalizovan? slu?bu ? vytvorenie individu?lneho t??denn?ho jed?lni?ka na z?klade ?dajov od Z?kazn?ka.",
-        "item2": "Slu?ba zah??a:",
-        "includes1": "prijatie objedn?vky,",
-        "includes2": "vyhodnotenie ?dajov,",
-        "includes3": "vytvorenie jed?lni?ka,",
-        "includes4": "odoslanie jed?lni?ka na e-mail Z?kazn?ka.",
-        "item3": "Slu?ba neobsahuje:",
-        "excludes1": "n?sledn? ?pravy po doru?en?,",
-        "excludes2": "konzult?cie,",
-        "excludes3": "dlhodob? vedenie ?i podporu,",
-        "excludes4": "individu?lnu zdravotn? diagnostiku.",
-        "item4": "Jed?lni?ek je vytvoren? v?hradne pod?a ?dajov poskytnut?ch Z?kazn?kom; za ich pravdivos? a ?plnos? zodpoved? Z?kazn?k."
+        "title": "2. Charakter poskytovanej služby",
+        "item1": "Poskytovateľ ponúka jednorazovú personalizovanú službu - vytvorenie individuálneho týždenného jedálnička na základe údajov od Zákazníka.",
+        "item2": "Služba zahŕňa:",
+        "includes1": "prijatie objednávky,",
+        "includes2": "vyhodnotenie údajov,",
+        "includes3": "vytvorenie jedálnička,",
+        "includes4": "zaslanie jedálnička na e-mail Zákazníka.",
+        "item3": "Služba neobsahuje:",
+        "excludes1": "následné úpravy po doručení,",
+        "excludes2": "konzultácie,",
+        "excludes3": "dlhodobé vedenie či podporu,",
+        "excludes4": "individuálnu zdravotnú diagnostiku.",
+        "item4": "Jedálniček je vytvorený výhradne podľa údajov poskytnutých Zákazníkom; za ich pravdivosť a úplnosť zodpovedá Zákazník."
       },
       "order": {
-        "title": "3. Objedn?vka a uzavretie zmluvy",
-        "item1": "Objedn?vka je uzavret? vyplnen?m formul?ra a ?hradou ceny.",
-        "item2": "Zmluva je uzavret? okamihom potvrdenia platby prostredn?ctvom platobnej br?ny ComGate.",
-        "item3": "Poskytovate? potvrd? objedn?vku e-mailom."
+        "title": "3. Objednávka a uzavretie zmluvy",
+        "item1": "Objednávka je uzavretá vyplnením formulára a úhradou ceny.",
+        "item2": "Zmluva je uzavretá okamihom potvrdenia platby prostredníctvom platobnej brány ComGate.",
+        "item3": "Poskytovateľ potvrdí objednávku e-mailom."
       },
       "price": {
-        "title": "4. Cena a platobn? podmienky",
-        "item1": "Cena slu?by je uveden? na webe a je kone?n?.",
-        "item2": "Platba prebieha v?hradne online prostredn?ctvom platobnej br?ny ComGate Payments, a.s.",
-        "item3": "Tvorba jed?lni?ka za?ne a? po ?hrade ceny."
+        "title": "4. Cena a platobné podmienky",
+        "item1": "Cena služby je uvedená na webe a je konečná.",
+        "item2": "Platba prebieha výhradne online prostredníctvom platobnej brány ComGate Payments, a.s.",
+        "item3": "Tvorba jedálnička začne až po úhrade ceny."
       },
       "delivery": {
-        "title": "5. Dodanie slu?by",
-        "item1": "Poskytovate? pon?ka varianty s odli?nou dobou dodania: Standard ? do 3 pracovn?ch dn?, Premium ? do 2 pracovn?ch dn?.",
-        "item2": "Lehota za??na plyn?? okamihom prijatia platby a kompletn?ch ?dajov od Z?kazn?ka.",
-        "item3": "Jed?lni?ek je doru?en? e-mailom na adresu uveden? Z?kazn?kom.",
-        "item4": "Ak e-mail spadne do prie?inka spam/hromadn?/promo, pova?uje sa za doru?en?.",
-        "item5": "Ak Z?kazn?k neuvedie v?etky potrebn? inform?cie, lehota dodania sa predl?uje o ?as ?akania na doplnenie ?dajov.",
-        "item6": "Poskytovate? si vyhradzuje pr?vo lehotu mierne pred??i? (technick? z?vada, choroba, vy??ia moc) a informuje o tom e-mailom."
+        "title": "5. Dodanie služby",
+        "item1": "Poskytovateľ ponúka varianty s rozdielnou dobou dodania: Standard - do 3 pracovných dní, Premium - do 2 pracovných dní.",
+        "item2": "Lehota začína plynúť okamihom prijatia platby a kompletných údajov od Zákazníka.",
+        "item3": "Jedálniček je doručený e-mailom na adresu uvedenú Zákazníkom.",
+        "item4": "Ak e-mail skončí v spam/bulk/promo priečinku, považuje sa za doručený.",
+        "item5": "Ak Zákazník neuvedie všetky potrebné informácie, lehota dodania sa predlžuje o čas čakania na doplnenie údajov.",
+        "item6": "Poskytovateľ si vyhradzuje právo lehotu mierne predĺžiť (technická závada, choroba, vyššia moc) a informuje o tom e-mailom."
       },
       "recommend": {
-        "title": "6. Odpor??ac? charakter jed?lni?ka",
-        "item1": "V?etky inform?cie, odpor??ania a ?asti jed?lni?ka maj? v?eobecn? a odpor??ac? charakter.",
-        "item2": "Jed?lni?ek sl??i ako vzor, ktor?m sa m??e Z?kazn?k in?pirova?.",
-        "item3": "Z?kazn?k sa m? v?dy riadi?:",
-        "list1": "vlastn?mi pocitmi,",
-        "list2": "aktu?lnym fyzick?m a zdravotn?m stavom,",
-        "list3": "odpor??an?m svojho lek?ra,",
-        "list4": "individu?lnou toleranciou potrav?n.",
-        "item4": "Ak Z?kazn?kovi niektor? ?as? jed?lni?ka ?i pitn?ho re?imu nevyhovuje, riadi sa vlastn?mi potrebami."
+        "title": "6. Odporúčací charakter jedálnička",
+        "item1": "Všetky informácie, odporúčania a časti jedálnička majú všeobecný a odporúčací charakter.",
+        "item2": "Jedálniček slúži ako vzor, ktorým sa môže Zákazník inšpirovať.",
+        "item3": "Zákazník sa má vždy riadiť:",
+        "list1": "svojimi osobnými pocitmi,",
+        "list2": "aktuálnym fyzickým a zdravotným stavom,",
+        "list3": "odporúčaním svojho lekára,",
+        "list4": "individuálnou toleranciou potravín.",
+        "item4": "Ak Zákazníkovi niektorá časť jedálnička či pitného režimu nevyhovuje, riadi sa vlastnými potrebami."
       },
       "health": {
-        "title": "7. Zdravotn? obmedzenia a vyl??enie zodpovednosti",
-        "item1": "Poskytovate? nie je zdravotn?cke zariadenie a neposkytuje zdravotn? slu?by.",
-        "item2": "Jed?lni?ek nie je diagnostika, lie?ba ani dietoterapia.",
-        "item3": "Poskytovate? nenesie zodpovednos? za:",
-        "list1": "zdravotn? n?sledky sp?soben? nevhodn?m pou?it?m jed?lni?ka,",
-        "list2": "n?sledky vypl?vaj?ce z nepravdiv?ch ?dajov Z?kazn?ka,",
-        "list3": "pr?padn? negat?vne reakcie na potraviny,",
-        "list4": "zmeny zdravotn?ho stavu po?as dodr?iavania jed?lni?ka."
+        "title": "7. Zdravotné obmedzenia a vylúčenie zodpovednosti",
+        "item1": "Poskytovateľ nie je zdravotnícke zariadenie a neposkytuje zdravotné služby.",
+        "item2": "Jedálniček nie je diagnostika, liečba ani dietoterapia.",
+        "item3": "Poskytovateľ nenesie zodpovednosť za:",
+        "list1": "zdravotné následky spôsobené nevhodným použitím jedálnička,",
+        "list2": "následky plynúce z nepravdivých údajov Zákazníka,",
+        "list3": "prípadné negatívne reakcie na potraviny,",
+        "list4": "zmeny zdravotného stavu počas dodržiavania jedálnička."
       },
       "results": {
-        "title": "8. ?iadna z?ruka v?sledkov",
-        "lead": "Z?kazn?k berie na vedomie, ?e Poskytovate? negarantuje konkr?tny v?sledok.",
-        "list1": "?bytok hmotnosti,",
-        "list2": "n?rast svalovej hmoty,",
-        "list3": "zmenu zdravotn?ho stavu,",
-        "list4": "zlep?enie fyzickej kond?cie.",
-        "note": "V?sledky z?visia od mnoh?ch faktorov (zdravotn? stav, horm?ny, genetika, fyzick? aktivita, presnos? dodr?iavania pl?nu, prostredie, stres, sp?nok, lieky)."
+        "title": "8. Žiadna záruka výsledkov",
+        "lead": "Zákazník berie na vedomie, že Poskytovateľ negarantuje konkrétny výsledok.",
+        "list1": "úbytok hmotnosti,",
+        "list2": "nárast svalovej hmoty,",
+        "list3": "zmenu zdravotného stavu,",
+        "list4": "zlepšenie fyzickej kondície.",
+        "note": "Výsledky závisia od mnohých faktorov (zdravotný stav, hormóny, genetika, fyzická aktivita, presnosť dodržiavania plánu, prostredie, stres, spánok, lieky)."
       },
       "withdrawal": {
-        "title": "9. Odst?penie od zmluvy",
-        "item1": "Z?kazn?k berie na vedomie, ?e pod?a ? 1837 p?sm. d) Ob?ianskeho z?konn?ka nem??e odst?pi? od zmluvy, preto?e ide o slu?bu vytvoren? pod?a jeho individu?lnych po?iadaviek.",
-        "item2": "Akon?hle Poskytovate? za?ne pracova? na jed?lni?ku, pr?vo na odst?penie zanik?."
+        "title": "9. Odstúpenie od zmluvy",
+        "item1": "Zákazník berie na vedomie, že podľa § 1837 písm. d) občianskeho zákonníka nemôže odstúpiť od zmluvy, pretože ide o službu vytvorenú podľa jeho individuálnych požiadaviek.",
+        "item2": "Akonáhle Poskytovateľ začne pracovať na jedálničku, právo na odstúpenie zaniká."
       },
       "claims": {
-        "title": "10. Reklam?cie a vr?tenie pe?az?",
-        "lead": "Reklam?cia je mo?n? len v t?chto pr?padoch:",
-        "item1": "Jed?lni?ek nebolo mo?n? vytvori? z objekt?vnych odborn?ch d?vodov.",
-        "item2": "Poskytovate? nedoru?? jed?lni?ek v garantovanej lehote zodpovedaj?cej zak?penej variante slu?by a oneskorenie nie je sp?soben? Z?kazn?kom ani doru?en?m do spamu.",
-        "item3": "V pr?padoch bodov 1 alebo 2 m? Z?kazn?k n?rok na vr?tenie celej zaplatenej sumy.",
-        "note": "In? d?vody reklam?cie nie s? mo?n?, preto?e ide o individu?lne vytvoren? slu?bu."
+        "title": "10. Reklamácie a vrátenie peňazí",
+        "lead": "Reklamácia je možná iba v týchto prípadoch:",
+        "item1": "Jedálniček nebolo možné vytvoriť z objektívnych odborných dôvodov.",
+        "item2": "Poskytovateľ nedoručí jedálniček v garantovanej lehote zodpovedajúcej zakúpenej variante služby a omeškanie nie je spôsobené Zákazníkom ani doručením do spamu.",
+        "item3": "V prípadoch 1 alebo 2 má Zákazník nárok na vrátenie celej zaplatenej čiastky.",
+        "note": "Iné dôvody reklamácie nie sú možné, pretože ide o individuálne vytvorenú službu."
       },
       "copyright": {
-        "title": "11. Autorsk? pr?va",
-        "item1": "Jed?lni?ek je autorsk?m dielom Poskytovate?a.",
-        "item2": "Je ur?en? len pre osobn? potrebu Z?kazn?ka.",
-        "item3": "Je zak?zan? jed?lni?ek zdie?a?, verejne publikova?, pred?va? ?i upravova?."
+        "title": "11. Autorské práva",
+        "item1": "Jedálniček je autorským dielom Poskytovateľa.",
+        "item2": "Je určený iba pre osobnú potrebu Zákazníka.",
+        "item3": "Je zakázané jedálniček zdieľať, verejne publikovať, predávať či upravovať."
       },
       "privacy": {
-        "title": "12. Ochrana osobn?ch ?dajov",
-        "item1": "Spracovanie osobn?ch ?dajov sa riadi dokumentom Z?sady ochrany osobn?ch ?dajov, dostupn?m na webe FitLime."
+        "title": "12. Ochrana osobných údajov",
+        "item1": "Spracovanie osobných údajov sa riadi dokumentom Zásady ochrany osobných údajov, dostupným na webe FitLime."
       },
       "disputes": {
-        "title": "13. Mimos?dne rie?enie sporov",
-        "item1": "?esk? obchodn? in?pekcia ? www.coi.cz",
-        "item2": "Online platforma E? ? ec.europa.eu/consumers/odr"
+        "title": "13. Mimosúdne riešenie sporov",
+        "item1": "Česká obchodná inšpekcia - www.coi.cz",
+        "item2": "Online platforma EÚ - ec.europa.eu/consumers/odr"
       },
       "final": {
-        "title": "14. Z?vere?n? ustanovenia",
-        "item1": "Poskytovate? m??e obchodn? podmienky kedyko?vek aktualizova?.",
-        "item2": "Aktu?lna verzia je v?dy dostupn? na webe FitLime.",
-        "item3": "Pr?vne vz?ahy sa riadia pr?vom ?eskej republiky."
+        "title": "14. Záverečné ustanovenia",
+        "item1": "Poskytovateľ môže obchodné podmienky kedykoľvek aktualizovať.",
+        "item2": "Aktuálna verzia je vždy dostupná na webe FitLime.",
+        "item3": "Právne vzťahy sa riadia právom Českej republiky."
       }
     }
   },
   "privacyPage": {
-    "metaTitle": "Z?sady ochrany osobn?ch ?dajov ? FitLime",
-    "back": "? Sp?? na hlavn? str?nku",
+    "metaTitle": "Zásady ochrany osobných údajov - FitLime",
+    "back": "← Späť na hlavnú stránku",
     "subtitle": "Pre weby fitlime.cz, fitlime.sk, fitlime.eu",
-    "title": "Z?sady ochrany osobn?ch ?dajov",
-    "effective": "??innos? od: 01.01.2026",
+    "title": "Zásady ochrany osobných údajov",
+    "effective": "Účinné od: 01.01.2026",
     "sections": {
       "controller": {
-        "title": "1. Prev?dzkovate? osobn?ch ?dajov",
+        "title": "1. Správca osobných údajov",
         "provider": "Sportvital-Pro s.r.o.",
-        "address": "Mokropesk? 1799, 252 28 ?erno?ice",
-        "ico": "I?O: 04528930",
+        "address": "Mokropeská 1799, 252 28 Černošice, Česká republika",
+        "ico": "IČO: 04528930",
         "email": "E-mail: info@fitlime.cz",
-        "domains": "Prev?dzkovate? spravuje projekty FitLime na dom?nach fitlime.cz, fitlime.sk, fitlime.eu."
+        "domains": "Správca prevádzkuje projekty FitLime na doménach fitlime.cz, fitlime.sk, fitlime.eu."
       },
       "data": {
-        "title": "2. Ak? osobn? ?daje sprac?vame",
-        "directTitle": "A) ?daje poskytnut? priamo pou??vate?om",
+        "title": "2. Aké osobné údaje spracúvame",
+        "directTitle": "A) Údaje poskytnuté priamo používateľom",
         "directItem1": "meno a priezvisko",
         "directItem2": "e-mail",
         "directItem3": "pohlavie",
         "directItem4": "vek",
-        "directItem5": "v??ka, v?ha",
-        "directItem6": "?portov? aktivita (ak ju uvediete)",
-        "directItem7": "ciele (chudnutie, naberanie, odpor??ania)",
-        "directItem8": "volite?n? ?daje o zdrav? ?i obmedzeniach (alergie, intolerancie, zdravotn? stav)",
-        "directNote": "Pozn?mka: ?daje o zdrav? s? osobitnou kateg?riou osobn?ch ?dajov ? sprac?vame ich len so s?hlasom, preto?e bez nich nie je mo?n? vytvori? jed?lni?ek na mieru.",
-        "orderTitle": "B) ?daje o objedn?vke",
-        "orderItem1": "zak?pen? slu?ba (jed?lni?ek, konzult?cia, pl?n)",
-        "orderItem2": "zvolen? varianta a jazyk",
-        "orderItem3": "platobn? met?da",
-        "orderItem4": "inform?cie z platobnej br?ny ComGate",
-        "comgateTitle": "C) ?daje z platobnej br?ny ComGate",
-        "comgateItem1": "identifik?cia platby",
-        "comgateItem2": "status platby",
+        "directItem5": "výška, hmotnosť",
+        "directItem6": "športová aktivita (ak uvediete)",
+        "directItem7": "ciele (chudnutie, naberanie, odporúčania)",
+        "directItem8": "voliteľné údaje o zdraví či obmedzeniach (alergie, intolerancie, zdravotný stav)",
+        "directNote": "Poznámka: Údaje o zdraví sú osobitnou kategóriou osobných údajov – spracúvame ich len so súhlasom, pretože bez nich nie je možné vytvoriť jedálniček na mieru.",
+        "orderTitle": "B) Údaje o objednávke",
+        "orderItem1": "zakúpená služba (jedálniček, konzultácia, plán)",
+        "orderItem2": "zvolená varianta a jazyk",
+        "orderItem3": "platobná metóda",
+        "orderItem4": "informácie z platobnej brány ComGate",
+        "comgateTitle": "C) Údaje z platobnej brány ComGate",
+        "comgateItem1": "identifikácia platby",
+        "comgateItem2": "stav platby",
         "comgateItem3": "suma",
-        "comgateItem4": "variabiln? symbol",
-        "comgateItem5": "inform?cia o ?spechu/ne?spechu platby",
-        "comgateNote": "Tieto ?daje dost?vame bez detailov platobnej karty.",
-        "webTitle": "D) ?daje vzniknut? pou??van?m webu",
+        "comgateItem4": "variabilný symbol",
+        "comgateItem5": "informácie o úspechu/neúspechu platby",
+        "comgateNote": "Tieto údaje dostávame bez detailov platobnej karty.",
+        "webTitle": "D) Údaje vzniknuté používaním webu",
         "webItem1": "IP adresa",
         "webItem2": "cookies",
-        "webItem3": "analytick? d?ta (Google Analytics, pr?padne Meta Pixel)",
-        "webItem4": "inform?cie o zariaden? a prehliada?i"
+        "webItem3": "analytické dáta (Google Analytics, prípadne Meta Pixel)",
+        "webItem4": "informácie o zariadení a prehliadači"
       },
       "purposes": {
-        "title": "3. ??ely a pr?vne z?klady spracovania",
-        "p1Title": "Poskytnutie slu?by",
-        "p1Desc": "Tvorba personalizovan?ho jed?lni?ka, komunik?cia, vyhodnotenie ?dajov. Pr?vny z?klad: plnenie zmluvy (?l. 6 ods. 1 p?sm. b GDPR).",
-        "p2Title": "Spracovanie zdravotn?ch ?dajov",
-        "p2Desc": "?daje o zdravotnom stave, alergi?ch, v??ke, v?he, BMI, veku ? potrebn? na personaliz?ciu pl?nu. Pr?vny z?klad: v?slovn? s?hlas (?l. 9 ods. 2 p?sm. a GDPR).",
+        "title": "3. Účely a právne základy spracovania",
+        "p1Title": "Poskytnutie služby",
+        "p1Desc": "Tvorba personalizovaného jedálnička, komunikácia, vyhodnotenie údajov. Právny základ: plnenie zmluvy (čl. 6 ods. 1 písm. b GDPR).",
+        "p2Title": "Spracovanie zdravotných údajov",
+        "p2Desc": "Údaje o zdravotnom stave, alergiách, výške, hmotnosti, BMI, veku – nutné pre personalizáciu plánu. Právny základ: výslovný súhlas (čl. 9 ods. 2 písm. a GDPR).",
         "p3Title": "Platby cez ComGate",
-        "p3Desc": "Spracovanie platieb, potvrdenie objedn?vky, evidencia fakt?ry. Pr?vny z?klad: plnenie zmluvy + z?konn? povinnos?.",
+        "p3Desc": "Spracovanie platieb, potvrdenie objednávky, evidencia faktúry. Právny základ: plnenie zmluvy + zákonná povinnosť.",
         "p4Title": "Marketing a newsletter",
-        "p4Desc": "Zasielanie noviniek a tipov, ?peci?lne ponuky. Pr?vny z?klad: s?hlas.",
-        "p5Title": "Analytika a zabezpe?enie webu",
-        "p5Desc": "Meranie n?v?tevnosti, detekcia ch?b, ochrana pred ?tokmi. Pr?vny z?klad: opr?vnen? z?ujem prev?dzkovate?a."
+        "p4Desc": "Zasielanie noviniek a tipov, špeciálne ponuky. Právny základ: súhlas.",
+        "p5Title": "Analytika a zabezpečenie webu",
+        "p5Desc": "Meranie návštevnosti, detekcia chýb, ochrana pred útokmi. Právny základ: oprávnený záujem Správcu."
       },
       "retention": {
-        "title": "4. Doba uchov?vania osobn?ch ?dajov",
-        "service": "?daje pre poskytovanie slu?by ? 3 roky po poslednej z?kazke.",
-        "health": "Zdravotn? ?daje (jed?lni?ek) ? do zru?enia s?hlasu alebo max. 1 rok po dokon?en? slu?by.",
-        "invoices": "Fakt?ry a ??tovn? doklady ? 10 rokov pod?a z?kona.",
-        "marketing": "Marketing ? do odhl?senia / max. 3 roky od posledn?ho otvorenia e-mailu.",
-        "comgate": "ComGate platobn? d?ta ? pod?a ich intern?ch pravidiel (zvy?ajne 3?5 rokov)."
+        "title": "4. Doba uchovávania osobných údajov",
+        "service": "Údaje pre poskytovanie služby – 3 roky po poslednej zákazke.",
+        "health": "Zdravotné údaje (jedálniček) – do zrušenia súhlasu alebo max. 1 rok po dokončení služby.",
+        "invoices": "Faktúry a účtovné doklady – 10 rokov podľa zákona.",
+        "marketing": "Marketing – do odhlásenia / max. 3 roky od posledného otvorenia e-mailu.",
+        "comgate": "ComGate platobné dáta – podľa ich interných pravidiel (zvyčajne 3–5 rokov)."
       },
       "recipients": {
-        "title": "5. Pr?jemcovia osobn?ch ?dajov",
-        "lead": "Va?e osobn? ?daje m??u by? odovzdan?:",
-        "item1": "poskytovate? hostingu",
-        "item2": "webdeveloper / spr?vca webu FitLime",
-        "item3": "extern? ??tovn?k",
-        "item4": "ComGate Payments, a.s. (platobn? br?na)",
+        "title": "5. Príjemcovia osobných údajov",
+        "lead": "Vaše osobné údaje môžu byť poskytnuté:",
+        "item1": "poskytovateľ hostingu",
+        "item2": "webdeveloper / správca webu FitLime",
+        "item3": "externý účtovník",
+        "item4": "ComGate Payments, a.s. (platobná brána)",
         "item5": "Google (Google Analytics, Google Workspace)",
-        "item6": "Meta Platforms (ak pou??vate marketingov? pixelov? meranie)",
-        "note": "V?etci spracovatelia sp??aj? podmienky GDPR."
+        "item6": "Meta Platforms (ak používate marketingové pixelové meranie)",
+        "note": "Všetci spracovatelia plnia podmienky GDPR."
       },
       "cookies": {
         "title": "6. Cookies",
-        "intro": "Web FitLime pou??va:",
-        "item1": "nevyhnutn? cookies (technick?)",
-        "item2": "analytick? cookies",
-        "item3": "marketingov? cookies",
-        "note": "Pri prvej n?v?teve sa zobraz? cookie li?ta s mo?nos?ou vo?by."
+        "intro": "Web FitLime používa:",
+        "item1": "nevyhnutné cookies (technické)",
+        "item2": "analytické cookies",
+        "item3": "marketingové cookies",
+        "note": "Pri prvej návšteve sa zobrazí cookie lišta s možnosťou voľby."
       },
       "rights": {
-        "title": "7. Pr?va pou??vate?a",
-        "lead": "M?te pr?vo na:",
-        "item1": "pr?stup k svojim ?dajom",
-        "item2": "opravu nepresn?ch ?dajov",
-        "item3": "vymazanie (ak to umo??uje z?kon)",
+        "title": "7. Práva používateľa",
+        "lead": "Máte právo na:",
+        "item1": "prístup k svojim údajom",
+        "item2": "opravu nepresných údajov",
+        "item3": "vymazanie (ak to umožňuje zákon)",
         "item4": "obmedzenie spracovania",
-        "item5": "n?mietku",
-        "item6": "prenosite?nos? ?dajov",
-        "item7": "odvolanie s?hlasu kedyko?vek",
-        "complaint": "S?a?nos? je mo?n? poda? u: ?rad na ochranu osobn?ch ?dajov SR, www.dataprotection.gov.sk."
+        "item5": "námietku",
+        "item6": "prenositeľnosť údajov",
+        "item7": "odvolanie súhlasu kedykoľvek",
+        "complaint": "Sťažnosť možno podať na: Úrad na ochranu osobných údajov SR, www.dataprotection.gov.sk."
       },
       "contact": {
-        "title": "8. Kontaktn? inform?cie",
-        "lead": "Pre ak?ko?vek ?iadosti p??te na:",
+        "title": "8. Kontaktné informácie",
+        "lead": "Pre akékoľvek žiadosti píšte na:",
         "email": "info@fitlime.cz",
-        "address": "Sportvital-Pro s.r.o., Mokropesk? 1799, 252 28 ?erno?ice"
+        "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Česká republika"
       },
       "final": {
-        "title": "9. Z?vere?n? ustanovenia",
-        "item1": "Tieto Z?sady m??u by? aktualizovan?.",
-        "item2": "Aktu?lna verzia je v?dy zverejnen? na webe FitLime.",
-        "item3": "??innos? od: 01.01.2026."
+        "title": "9. Záverečné ustanovenia",
+        "item1": "Tieto Zásady môžu byť aktualizované.",
+        "item2": "Aktuálna verzia je vždy zverejnená na webe FitLime.",
+        "item3": "Účinnosť od: 01.01.2026."
       }
     }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookies | FitLime",
+    "hero": {
+      "eyebrow": "Transparentnosť",
+      "title": "Cookies",
+      "lead": "Na webe FitLime používame cookies, aby stránky správne fungovali, boli bezpečné a mohli sme ich postupne zlepšovať. Nižšie nájdete prehľad typov, dôvodov aj spôsobov, ako svoj súhlas upraviť.",
+      "pill1": "Súhlas možno kedykoľvek zmeniť",
+      "pill2": "Používame len nevyhnutné minimum",
+      "pill3": "Dáta sú uchovávané v EÚ"
+    },
+    "cards": {
+      "how": {
+        "title": "Ako cookies fungujú",
+        "text": "Cookies sú malé textové súbory, ktoré sa ukladajú vo Vašom prehliadači. Vďaka nim si web zapamätá základné nastavenia, aby všetko bežalo plynule a bezpečne.",
+        "li1": "Udržia jazyk, obsah formulárov a ďalšie nevyhnutné voľby.",
+        "li2": "Pomáhajú zaistiť bezpečnú prevádzku a ochranu proti zneužitiu.",
+        "li3": "Dobrovoľne zbierajú anonymizované dáta o návštevnosti pre ďalšie zlepšovanie webu."
+      },
+      "types": {
+        "title": "Aké typy používame",
+        "essential": "Nevyhnutné - umožňujú chod webu (voľba jazyka, stav formulára). Nedajú sa vypnúť, pretože by stránky nefungovali.",
+        "analytics": "Analytické - anonymné meranie návštevnosti a výkonu. Aktivujú sa len po Vašom súhlase.",
+        "marketing": "Marketingové - personalizácia a kampane tretích strán. Používame ich iba ak ich výslovne povolíte."
+      }
+    },
+    "manage": {
+      "title": "Ako zmeniť alebo odvolať súhlas",
+      "step1": "Na hlavnej stránke sa pri prvej návšteve zobrazí lišta s možnosťou prijať alebo odmietnuť voliteľné cookies.",
+      "step2": "Svoj výber môžete kedykoľvek obnoviť kliknutím na tlačidlo nižšie alebo vymazaním cookies v prehliadači.",
+      "step3": "Technické cookies zostávajú aktívne, aby web mohol fungovať a zobraziť Vám novú voľbu.",
+      "resetBtn": "Resetovať voľbu cookies",
+      "resetHint": "Vymaže predchádzajúci súhlas v prehliadači a pri ďalšej návšteve znova zobrazí cookie lištu.",
+      "resetAlert": "Nastavenie cookies bolo vymazané. Po návrate na hlavnú stránku sa znova zobrazí lišta na výber."
+    },
+    "contacts": {
+      "title": "Správca a kontakty",
+      "controllerLabel": "Správca",
+      "controller": "Sportvital-Pro s.r.o., IČO: 04528930",
+      "emailLabel": "E-mail",
+      "email": "info@fitlime.com",
+      "docsLabel": "Ďalšie dokumenty",
+      "docs": "Zásady ochrany osobných údajov"
+    },
+    "back": "Späť na hlavnú stránku"
   }
 }

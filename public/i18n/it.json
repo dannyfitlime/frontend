@@ -1,289 +1,399 @@
 {
   "home": {
     "meta": {
-      "title": "AthleteFueling – Piano alimentare & allenamento su misura",
-      "description": "Piani alimentari e di allenamento completi e personalizzati. Stile di vita sano, pasti vari, educazione e supporto sportivo."
+      "title": "FitLime – piano alimentare sano su misura",
+      "description": "Piani alimentari completi e personalizzati. Stile di vita sano, pasti vari, educazione e supporto allo sport."
     },
     "cookies": {
-      "text": "Utilizziamo i cookie per il corretto funzionamento del sito e per l’analisi. <a href='/cookies.html'>Maggiori informazioni</a>.",
+      "text": "Utilizziamo i cookie per il corretto funzionamento del sito e per l'analisi. <a href='/cookies.html'>Più informazioni</a>.",
       "decline": "Rifiuta",
       "accept": "Accetta tutto"
     },
     "nav": {
       "how": "Come funziona",
       "preview": "Esempio",
-      "coverage": "Cosa copre il piano",
+      "coverage": "Cosa include il piano",
       "pricing": "Prezzi",
       "about": "Chi siamo",
       "reference": "Testimonianze"
     },
     "hero": {
-      "title": "Piano alimentare e allenamento su misura in pochi minuti",
-      "lead": "Compila un breve questionario e ricevi un piano che copre tutte le tue esigenze.",
-      "cta": "Avvia il modulo",
+      "title": "Piano alimentare su misura in pochi minuti",
+      "lead": "Compila un breve questionario e ottieni un piano che copre tutte le tue esigenze.",
+      "cta": "Inizia il questionario",
       "note": "Senza impegno, richiede solo pochi minuti."
     },
     "why": {
-      "title": "Perché AthleteFueling?",
-      "cards": {
+      "title": "FitLime – più di un semplice piano alimentare.",
+      "subtitle": "Creiamo piani personalizzati che trasformano l'alimentazione quotidiana in uno stile di vita sano e sostenibile nel lungo periodo.",
+      "items": {
         "lifestyle": {
-          "title": "🌱 Cambiamento dello stile di vita",
-          "text": "Educazione e approccio a lungo termine alla nutrizione, non solo una tabella di pasti."
+          "title": "Stile di vita sano",
+          "point1": "Educazione e approccio a lungo termine alla salute",
+          "point2": "Risultati reali senza estremi",
+          "point3": "Cambiamento sostenibile delle abitudini"
         },
-        "meals": {
-          "title": "🥗 Pasti unici",
-          "text": "Un piano alimentare vario, ispirante e colorato per ogni giorno."
+        "nutrition": {
+          "title": "Nutrizione su misura",
+          "point1": "Pasti unici e vari ogni giorno",
+          "point2": "Rispettiamo allergie e preferenze",
+          "point3": "Macro e micronutrienti ben bilanciati"
         },
-        "flex": {
-          "title": "⚖️ Flessibilità",
-          "text": "Rispettiamo allergie, intolleranze e preferenze personali."
-        },
-        "output": {
-          "title": "📋 Risultato pratico",
-          "text": "Piano alimentare, ricette, lista della spesa e molto altro."
-        },
-        "micro": {
-          "title": "💊 Micronutrienti",
-          "text": "Il piano copre un ampio spettro di vitamine e minerali."
-        },
-        "sport": {
-          "title": "🏋️ Supporto sportivo",
-          "text": "Alimentazione pensata per performance, recupero e obiettivi personali."
+        "practical": {
+          "title": "Approccio pratico",
+          "point1": "Piano alimentare chiaro, ricette e lista della spesa",
+          "point2": "Supporto allo sport, al recupero e alla performance",
+          "point3": "Facile da seguire grazie a un sistema intelligente"
         }
       }
     },
     "how": {
-      "title": "Come funziona:",
+      "title": "Come funziona",
+      "subtitle": "Creare il tuo piano alimentare è semplice e veloce. Abbiamo solo bisogno di alcune informazioni di base su di te e sui tuoi obiettivi. In base a questi dati, generiamo in pochi minuti un piano alimentare personalizzato.",
       "step1": {
-        "title": "1) Questionario veloce",
-        "text": "Compila le informazioni di base su di te.",
-        "point1": "età, altezza, peso e obiettivi",
-        "point2": "preferenze alimentari",
-        "point3": "routine quotidiana e attività sportive"
+        "title": "Questionario",
+        "text": "Rispondi ad alcune domande semplici su di te, il tuo stile di vita e le tue preferenze alimentari. Grazie a queste capiamo i tuoi obiettivi, i cibi preferiti, le eventuali restrizioni e il tipo di alimentazione che fa per te a lungo termine."
       },
       "step2": {
-        "title": "2) Calcolo intelligente",
-        "text": "L’algoritmo, con il nostro supporto, crea il piano alimentare.",
-        "point1": "considerazione del dispendio energetico",
-        "point2": "equilibrio nutrizionale di macro e micronutrienti",
-        "point3": "adattamento allo stile di vita"
+        "title": "Calcolo",
+        "text": "In base ai tuoi dati creiamo un piano alimentare personalizzato tramite un algoritmo intelligente che sceglie la combinazione ideale di alimenti e adatta l'intero piano ai tuoi obiettivi, gusti e stile di vita."
       },
       "step3": {
-        "title": "3) Consegna",
-        "text": "Ricevi un pacchetto completo.",
-        "point1": "piano alimentare con ricette per tutta la settimana",
-        "point2": "materiale esplicativo ed educativo",
-        "point3": "lista della spesa"
+        "title": "Consegna",
+        "text": "Dopo l'ordine riceverai un'e-mail di conferma. Il piano strutturato in modo chiaro, con ricette, porzioni precise e raccomandazioni pratiche, ti verrà inviato al massimo in 2 giorni lavorativi nella versione Premium e in 3 giorni lavorativi nella versione Standard."
       },
       "step4": {
-        "title": "4) Risultati",
-        "text": "Osserva i cambiamenti e rimani motivato.",
-        "point1": "progressi chiaramente misurabili",
-        "point2": "maggiore varietà nell’alimentazione",
-        "point3": "migliore sensazione e più energia"
+        "title": "Risultati",
+        "text": "Comincia a seguire il piano e osserva come il tuo corpo, la tua energia e il tuo benessere cambiano gradualmente. Ogni giorno un piccolo passo che ti avvicina ad abitudini più sane, a una migliore forma fisica e a una maggiore soddisfazione."
       }
     },
     "preview": {
-      "title": "Esempio di piano alimentare",
-      "lead": "Un giorno reale del piano: varietà dei pasti, micronutrienti ed equilibrio energetico."
+      "title": "Esempio di piano alimentare sportivo",
+      "lead": "Il piano ordinato include un file PDF dettagliato che ti verrà inviato dopo il completamento. Questo documento ti guida attraverso l'intero piano e ti dà istruzioni chiare su come utilizzarlo. Contiene le seguenti parti principali:",
+      "tags": {
+        "tag0": "1) Riepilogo introduttivo con spiegazione su come usare il piano",
+        "tag1": "2) Grafici dell'apporto energetico vs. dispendio, incluso piano di allenamento",
+        "tag2": "3) Piano alimentare su misura dei tuoi parametri (esempio di 1 solo giorno)",
+        "tag3": "4) Riepilogo nutrizionale completo di tutti i nutrienti monitorati",
+        "tag4": "5) Lista della spesa intelligente con link a Rohlík.cz",
+        "tag5": "6) Ricette e raccomandazioni su come lavorare correttamente con il piano"
+      }
+    },
+    "diet": {
+      "title": "Prova a comporre il pranzo ideale",
+      "subtitle": "Seleziona gli alimenti e osserva come cambiano i valori nutrizionali totali man mano che compone il pranzo. I valori mostrati sono normalizzati per illustrare e confrontare meglio alimenti più sani e meno sani tra loro.",
+      "autoSelect": "Seleziona alimenti consigliati",
+      "food": {
+        "avocado": "Avocado",
+        "donut": "Donut",
+        "burger": "Hamburger",
+        "fries": "Patatine fritte",
+        "apple": "Mela",
+        "chicken": "Petto di pollo",
+        "hotdog": "Hot dog",
+        "rice": "Riso",
+        "salad": "Insalata di verdure",
+        "icecream": "Gelato"
+      },
+      "chart": {
+        "noSelection": "Seleziona almeno un alimento per mostrare il grafico",
+        "recommended": "Apporto raccomandato (100%)",
+        "nutrients": {
+          "energy": "Energia",
+          "carbs": "Carboidrati",
+          "fat": "Grassi",
+          "protein": "Proteine",
+          "fiber": "Fibre",
+          "cholesterol": "Colesterolo",
+          "sodium": "Sodio"
+        }
+      },
+      "algorithm": "Questo simulatore mostra in modo semplice il principio di funzionamento del nostro programma. Nella realtà il processo è molto più complesso. Lavoriamo con una gamma molto più ampia di alimenti e pasti completi e ottimizziamo contemporaneamente dozzine di nutrienti diversi (<a href=\"#home-coverage\" class=\"diet-link\">vedi sezione “Cosa include il piano”</a>).",
+      "stats": {
+        "stat1": {
+          "title": "300+ pasti testati",
+          "text": "Ottimizziamo un ampio database di ricette per ogni piano."
+        },
+        "stat2": {
+          "title": "25+ parametri monitorati",
+          "text": "Ogni pasto è valutato secondo molti parametri."
+        }
+      },
+      "bottomNote": "Nella composizione finale del piano alimentare entrano in gioco anche altri fattori – porzioni corrette, varietà, ordine logico dei pasti durante la giornata ed equilibrio nell'arco di tutta la settimana."
+    },
+    "drawer": {
+      "close": "Chiudi menu",
+      "how": "Come funziona",
+      "preview": "Esempio",
+      "coverage": "Cosa include il piano",
+      "pricing": "Prezzi",
+      "about": "Chi siamo",
+      "imageAlt": "Alimentazione sana"
     },
     "coverage": {
-      "title": "Cosa copre il piano alimentare:",
-      "items": {
-        "energy": "⚡ Energia",
-        "carbs": "🍚 Carboidrati",
-        "fat": "🥑 Grassi",
-        "protein": "🍗 Proteine",
-        "fruitveg": "🍎 Frutta e verdura",
-        "dairy": "🥛 Latticini",
-        "fish": "🐟 Pesce",
-        "fiber": "🌾 Fibre",
-        "salt": "🧂 Sale",
-        "satfat": "🥩 Grassi saturi",
-        "monofat": "🥜 Grassi monoinsaturi",
-        "polyfat": "🌻 Grassi polinsaturi",
-        "chol": "🥚 Colesterolo",
-        "potassium": "🍌 Potassio",
-        "calcium": "🦴 Calcio",
-        "magnesium": "🥦 Magnesio",
-        "iron": "🥩 Ferro",
-        "vitc": "🍊 Vitamina C",
-        "vitd": "🌞 Vitamina D",
-        "vite": "🍰 Vitamina E",
-        "vitb12": "💊 Vitamina B12",
-        "vitb": "💊 Vitamina B1 & B2",
-        "vitb6": "💊 Vitamina B6",
-        "folic": "🥬 Acido folico"
+      "title": "Cosa include il piano",
+      "intro": "Riepilogo completo di tutti i nutrienti e gruppi alimentari chiave:",
+      "boxes": {
+        "energy": {
+          "title": "Energia e macronutrienti",
+          "subtitle": "I blocchi di base di un piano alimentare equilibrato.",
+          "items": {
+            "energy": "<b>Energia</b> – fabbisogno di base dell'organismo",
+            "protein": "<b>Proteine</b> – rigenerazione e muscoli",
+            "fat": "<b>Grassi</b> – fonte concentrata di energia",
+            "carbs": "<b>Carboidrati</b> – carburante per il corpo e il cervello",
+            "fiber": "<b>Fibre</b> – supporto alla digestione"
+          }
+        },
+        "groups": {
+          "title": "Gruppi alimentari",
+          "subtitle": "Principali gruppi alimentari per una dieta sana.",
+          "items": {
+            "fruit": "<b>Frutta</b> – vitamine e minerali",
+            "veggies": "<b>Verdure</b> – antiossidanti e fibre",
+            "dairy": "<b>Latticini</b> – calcio e proteine",
+            "fish": "<b>Pesce</b> – fonte di proteine e acidi grassi omega-3"
+          }
+        },
+        "fats": {
+          "title": "Tipi di grassi",
+          "subtitle": "Tipi diversi di grassi e il loro ruolo nell'alimentazione.",
+          "items": {
+            "satu": "<b>Grassi saturi</b> – fonte di energia",
+            "mono": "<b>Grassi monoinsaturi</b> – salute del cuore",
+            "poly": "<b>Grassi polinsaturi</b> – acidi grassi omega-3 e omega-6",
+            "chole": "<b>Colesterolo</b> – produzione di ormoni"
+          }
+        },
+        "vitamins_b": {
+          "title": "Vitamine del gruppo B",
+          "subtitle": "Vitamine importanti per energia, sistema nervoso e metabolismo.",
+          "items": {
+            "vitb1": "<b>Vit. B1</b> – metabolismo energetico e sistema nervoso",
+            "vitb2": "<b>Vit. B2</b> – pelle e metabolismo",
+            "vitb6": "<b>Vit. B6</b> – ormoni e sistema immunitario",
+            "vitb12": "<b>Vit. B12</b> – sistema cardiovascolare, sistema nervoso ed energia"
+          }
+        },
+        "vitamins": {
+          "title": "Altre vitamine",
+          "subtitle": "Supporto all'immunità, vitalità, antiossidanti e crescita cellulare.",
+          "items": {
+            "vitc": "<b>Vit. C</b> – immunità, antiossidante",
+            "vitd": "<b>Vit. D</b> – ossa e vitalità",
+            "vite": "<b>Vit. E</b> – antiossidante, protezione delle cellule",
+            "folic": "<b>Acido folico</b> – crescita cellulare, sistema nervoso"
+          }
+        },
+        "minerals": {
+          "title": "Minerali",
+          "subtitle": "Elementi essenziali per un corpo sano e il buon funzionamento dei muscoli.",
+          "items": {
+            "sodium": "<b>Sodio</b> – equilibrio dei liquidi",
+            "iron": "<b>Ferro</b> – sangue e ossigeno",
+            "magnesium": "<b>Magnesio</b> – muscoli e stanchezza",
+            "calcium": "<b>Calcio</b> – ossa e denti",
+            "potassium": "<b>Potassio</b> – muscoli e pressione sanguigna"
+          }
+        }
       },
-      "toggle": "Mostra di più",
-      "less": "Mostra di meno"
+      "hint": "Clicca per vedere i dettagli"
     },
-    "training": {
-      "title": "Piano di allenamento",
-      "text": "Prepariamo sempre il piano alimentare tenendo conto del tuo allenamento e dei tuoi obiettivi – resistenza, forza o attività ricreativa. Se vuoi, creiamo gratuitamente un piano di allenamento personalizzato basato sulle tue preferenze e attività preferite.",
-      "cta": "Voglio piano alimentare e allenamento"
+    "audience": {
+      "title": "Per chi è pensato il piano alimentare",
+      "lead": "Adattiamo il piano alimentare sano al tuo stile di vita – che tu ti stia preparando per gare, faccia sport solo di tanto in tanto o voglia semplicemente mangiare meglio e avere più energia.",
+      "pro": {
+        "title": "Atleti di alto livello",
+        "text": "Hai un piano di allenamento, una stagione agonistica o gare? Adattiamo il piano alimentare in base al carico di ogni giorno, in modo che corrisponda alla prestazione, al recupero e al peso corporeo.",
+        "tag": "Performance"
+      },
+      "hobby": {
+        "title": "Stile di vita attivo",
+        "text": "Corri, vai in palestra, in bici o fai corsi di gruppo e vuoi sentirti più leggero, più forte e con più energia? Il piano alimentare si adatta a lavoro, studi e famiglia.",
+        "tag": "Equilibrio"
+      },
+      "everyday": {
+        "title": "Vita quotidiana",
+        "text": "Non ti consideri uno “sportivo”, ma vuoi mangiare in modo più sano, avere energia durante il giorno o perdere peso? Prepariamo un piano alimentare realistico e sostenibile.",
+        "tag": "Per iniziare"
+      },
+      "cta": "Scopri qual è il piano ideale per te"
     },
     "pricing": {
-      "title": "Pacchetti e prezzi",
+      "title": "Tipi di piani alimentari e prezzi",
       "per_week": "/ settimana",
       "per_month": "/ mese",
       "advantage": "più conveniente",
       "standard": {
         "title": "⚖️ Standard – completo (5 giorni)",
-        "feature1": "Piano alimentare per 5 giorni (Lun–Ven)",
+        "feature1": "Piano alimentare per 5 giorni (lun–ven)",
         "feature2": "Pasti unici e vari",
         "feature3": "Personalizzazione in base al diario di allenamento",
         "feature4": "Ricette per ogni pasto",
         "feature5": "Lista della spesa",
         "feature6": "Grafici di apporto e dispendio energetico",
-        "feature7": "Educazione sui nutrienti"
+        "feature7": "Educazione sui diversi nutrienti"
       },
       "premium": {
-        "badge": "Il più popolare",
+        "badge": "Il più scelto",
         "title": "🏆 Premium – su misura (7 giorni)",
-        "feature1": "Piano alimentare per 7 giorni (Lun–Dom)",
+        "feature1": "Piano alimentare per 7 giorni (lun–dom)",
         "feature2": "Pasti unici e vari",
         "feature3": "Personalizzazione in base al diario di allenamento",
         "feature4": "Ricette per ogni pasto",
         "feature5": "Lista della spesa",
         "feature6": "Grafici di apporto e dispendio energetico",
-        "feature7": "Educazione sui nutrienti",
-        "extra1": "Educazione sulla nutrizione sportiva",
-        "extra2": "Integratori personalizzati",
+        "feature7": "Educazione sui diversi nutrienti",
+        "extra1": "Educazione sulla nutrizione nello sport",
+        "extra2": "Integratori alimentari su misura",
         "extra3": "Piano di idratazione",
-        "extra4": "Preferenze dietetiche (diete, scelte)",
-        "extra5": "Regolazione dei macronutrienti"
+        "extra4": "Possibilità di preferenze dietetiche (regimi, esclusione di alimenti)",
+        "extra5": "Possibilità di definire i macronutrienti"
       },
-      "cta": "Avvia il modulo",
-      "note": "Senza impegno, scegli solo al momento dell’ordine."
+      "cta": "Inizia il questionario",
+      "note": "Senza impegno, scegli più avanti al momento dell'ordine."
     },
     "faq": {
       "title": "FAQ – Domande frequenti",
       "q1": {
         "q": "Come riceverò il piano alimentare?",
-        "a": "Ti inviamo il piano via e-mail in formato PDF, con tabelle e grafici chiari."
+        "a": "Ti invieremo il piano alimentare al tuo indirizzo e-mail in formato PDF, comprensivo di tabelle e grafici chiari."
       },
       "q2": {
-        "q": "Avrò bisogno di alimenti speciali?",
-        "a": "No, le ricette si basano su ingredienti comuni disponibili nei supermercati."
+        "q": "Dovrò comprare alimenti speciali?",
+        "a": "No, le ricette si basano su ingredienti comuni disponibili al supermercato. Per ogni ingrediente riceverai anche un link a Rohlík.cz per un acquisto online veloce."
       },
       "q3": {
-        "q": "Quanto dura il piano?",
-        "a": "Creiamo di solito un piano di 7 giorni con 35 pasti unici. Puoi ripeterlo o adattarlo secondo necessità."
+        "q": "Per quanto tempo posso usare il piano?",
+        "a": "Di solito prepariamo un piano per 7 giorni, con 35 pasti unici. Puoi ripeterlo o adattarlo secondo le tue necessità."
       },
       "q4": {
         "q": "Sono incluse le liste della spesa?",
-        "a": "Sì, prepariamo una lista chiara per l’intera settimana."
+        "a": "Sì, prepariamo una lista della spesa chiara per l'intera settimana – inclusi link diretti all'acquisto dei prodotti su Rohlík.cz."
       },
       "q5": {
-        "q": "E se non ho una bilancia da cucina?",
-        "a": "Indichiamo i grammi, ma spesso bastano misure orientative (cucchiai, tazze, pezzi). L’importante è la varietà e un approccio sano."
+        "q": "E se non avessi una bilancia da cucina?",
+        "a": "Indichiamo le porzioni in grammi, ma spesso bastano misure approssimative (cucchiai, tazze, pezzi). Non è necessario pesare tutti gli alimenti – è più importante la varietà e un approccio sano."
       },
       "q6": {
         "q": "Adattate il piano a allergie e intolleranze?",
-        "a": "Sì, basta indicare le tue preferenze e restrizioni nel modulo d’ordine."
+        "a": "Sì, basta indicare le tue preferenze e restrizioni quando compili il modulo d'ordine."
       },
       "q7": {
         "q": "Potete adattare il piano a obiettivi specifici?",
-        "a": "Certo – perdita di peso, aumento muscolare o mantenimento del peso."
+        "a": "Certo – che si tratti di perdita di peso, aumento della massa muscolare o mantenimento. Basta indicarlo nel modulo."
       },
       "q8": {
-        "q": "E se ho problemi di salute?",
-        "a": "Il piano può essere adattato a esigenze specifiche (colesterolo alto, diabete). Consultiamo uno specialista se necessario."
+        "q": "Posso usare il piano a lungo termine?",
+        "a": "Il piano è concepito per essere sostenibile a lungo termine. Puoi ripetere le settimane, combinarle o modificarle leggermente."
       },
       "q9": {
-        "q": "Chi prepara i piani?",
-        "a": "Esperti di nutrizione con esperienza in medicina sportiva."
+        "q": "Chi elabora i piani alimentari?",
+        "a": "I piani sono elaborati da esperti in nutrizione con esperienza in medicina dello sport."
       },
       "q10": {
         "q": "Da dove provengono i valori nutrizionali?",
-        "a": "Utilizziamo database verificati e modelli di calcolo propri."
+        "a": "Usiamo fonti affidabili — principalmente il database USDA (United States Department of Agriculture), integrato da nostri modelli di calcolo."
       },
       "q11": {
-        "q": "E se non mi piace una ricetta?",
-        "a": "Il piano contiene diverse varianti, quindi puoi sempre scegliere. L’esclusione di alimenti specifici è disponibile con il pacchetto Premium."
+        "q": "E se non mi piacesse una ricetta?",
+        "a": "Il piano include varie opzioni, quindi avrai sempre qualcosa di tuo gradimento. Inoltre, l'esclusione di alimenti specifici è disponibile nel pacchetto Premium."
       },
       "q12": {
         "q": "Potete modificare il mio piano in seguito?",
-        "a": "Sì, nei piani mensili è possibile adattarlo in base al tuo feedback."
+        "a": "Al momento non offriamo modifiche dopo la consegna. In futuro intendiamo aggiungere la possibilità di aggiustamenti continui in base al tuo feedback."
       },
       "q13": {
-        "q": "Quanto velocemente riceverò il piano?",
-        "a": "Entrambi i pacchetti vengono consegnati entro 3 giorni lavorativi, di solito in 1 giorno."
+        "q": "In quanto tempo riceverò il piano?",
+        "a": "Nel pacchetto Standard garantiamo la consegna in 3 giorni lavorativi, nel pacchetto Premium in 2 giorni lavorativi. Se non rispettiamo il termine, rimborsiamo l'importo pagato."
       },
       "q14": {
-        "q": "Il piano è adatto anche ai non sportivi?",
-        "a": "Sì, prepariamo piani anche per persone non sportive o con solo attività ricreativa."
+        "q": "Devo installare qualche applicazione?",
+        "a": "No. Il piano viene inviato in PDF e puoi aprirlo sul telefono, sul computer o stamparlo."
       }
     },
     "about": {
       "title": "Chi siamo",
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
-        "item1": "Biochimico clinico, internista presso VFN e 1. LF UK",
-        "item2": "Consulente esperto in nutrizione sportiva",
-        "item3": "Collaborazione con la squadra olimpica ceca"
+        "item1": "Biochimico clinico, medico internista presso VFN e 1ª Facoltà di Medicina dell'Università Carlo",
+        "item2": "Consulente specializzato in nutrizione sportiva",
+        "item3": "Collaborazione con la Squadra Olimpica Ceca"
       },
       "danny": {
         "name": "Ing. Daniel Vítek",
-        "item1": "Laureato in Bioinformatica a ČVUT FEL",
-        "item2": "Studi alla Facoltà di Scienze Motorie (Madrid)",
-        "item3": "Bioinformatica e tecnologie nella nutrizione"
+        "item1": "Laurea in Bioinformatica presso la Facoltà di Ingegneria Elettrica del ČVUT",
+        "item2": "Studi presso la Facoltà di Educazione Fisica e Sport (Madrid)",
+        "item3": "Bioinformatica e tecnologie applicate alla nutrizione"
       }
     },
     "reference": {
-      "title": "Testimonianze",
+      "title": "Comunità FitLime",
       "client1": {
-        "text": "«Ci ha cambiato il modo di vedere l’alimentazione. Abbiamo più energia durante la giornata.»",
+        "text": "“Ha cambiato la nostra visione dell'alimentazione. Abbiamo più energia durante la giornata.”",
         "author": "— Mati | Solene",
-        "flags": ["cl", "es"]
+        "flags": [
+          "cl",
+          "es"
+        ]
       },
       "client2": {
-        "text": "«I pasti sono semplici e gustosi. La lista della spesa fa risparmiare tempo. Mi sento bene in bici.»",
+        "text": "“I pasti sono semplici e gustosi. La lista della spesa fa risparmiare tempo. Mi sento bene in bici.”",
         "author": "— Hana",
-        "flags": ["de"]
+        "flags": [
+          "de"
+        ]
       },
       "client3": {
-        "text": "«Il Premium si è adattato perfettamente al mio piano di allenamento. Il servizio è good AF.»",
+        "text": "“Il Premium si è integrato alla perfezione nel mio piano di allenamento. Il servizio è incredibilmente valido.”",
         "author": "— David",
-        "flags": ["us", "cz"]
+        "flags": [
+          "us",
+          "cz"
+        ]
       }
     },
     "cta": {
-      "title": "Pronto a iniziare?",
-      "lead": "Avvia il modulo senza impegno e scopri come può essere il tuo piano personale.",
-      "cta": "Avvia il modulo",
-      "note": "Scegli solo al momento dell’ordine. Richiede pochi minuti."
+      "title": "Pronto per iniziare?",
+      "lead": "Inizia il questionario senza impegno e scopri come potrebbe essere il tuo piano personale.",
+      "cta": "Inizia il questionario",
+      "note": "Scegli più avanti al momento dell'ordine. Richiede solo pochi minuti."
     },
     "footer": {
-      "brand": "AthleteFueling s.r.o. © 2025",
+      "brand": "FitLime s.r.o. © 2026",
       "powered": "powered by sportvitalpro.cz",
-      "payments": "Pagamenti gestiti da Comgate",
+      "payments": "Pagamenti elaborati da Comgate",
       "terms": "Condizioni generali",
-      "privacy": "Informativa sulla privacy",
-      "cookies": "Cookies"
+      "privacy": "Protezione dei dati personali",
+      "cookies": "Cookie"
     }
   },
   "common": {
     "back": "Indietro",
+    "continue": "Continua",
     "next": "Avanti",
     "error_required": "Questo campo è obbligatorio.",
-    "error_email": "Inserisci un’e-mail valida.",
     "error_number": "Inserisci un numero valido.",
-    "error_range": "Valore fuori dall’intervallo consentito.",
+    "error_range": "Il valore deve essere compreso tra {{min}} e {{max}}.",
+    "error_email": "Inserisci un'e-mail valida.",
+    "error_macro_sum": "La somma di carboidrati, proteine e grassi deve essere 100%.",
+    "error_macro_c": "I carboidrati devono essere compresi tra {{min}} e {{max}}%.",
+    "error_macro_p": "Le proteine devono essere comprese tra {{min}} e {{max}}%.",
+    "error_macro_f": "I grassi devono essere compresi tra {{min}} e {{max}}%.",
     "range": "Intervallo",
     "per_day_short": "giorno",
-    "leave_title": "Uscire dal modulo?",
-    "leave_text": "Se esci, potresti perdere le modifiche non salvate. Vuoi tornare alla pagina principale?",
+    "leave_title": "Uscire dal questionario?",
+    "leave_text": "Se lasci la pagina, potresti perdere le modifiche non salvate. Vuoi tornare alla pagina iniziale?",
     "leave_stay": "Resta",
     "leave_leave": "Esci",
-    "home": "Home"
+    "home": "Inizio",
+    "years": "anni"
   },
   "intro": {
     "title": "Inizia il tuo percorso verso una migliore alimentazione",
-    "point1": "Scopri le tue esigenze – calcolo rapido di energia e obiettivi.",
-    "point2": "Ricevi il piano – raccomandazioni di pasti e attività.",
-    "point3": "Panoramica completa – passi chiari per andare avanti.",
+    "point1": "Scopri le tue esigenze – calcolo rapido dell'energia e degli obiettivi.",
+    "point2": "Ricevi un piano – raccomandazioni su piano alimentare e attività.",
+    "point3": "Panoramica – passi chiari su cosa fare dopo.",
     "cta": "Andiamo"
   },
   "a11y": {
@@ -295,7 +405,7 @@
     "Obiettivo & energia",
     "Sport",
     "Alimentazione",
-    "Dispendio vs apporto",
+    "Macronutrienti e grafici",
     "Piano",
     "Riepilogo"
   ],
@@ -304,56 +414,70 @@
     "sex": "Sesso",
     "sex_male": "Uomo",
     "sex_female": "Donna",
-    "sex_other": "Altro",
-    "age": "Età",
+    "age": "Età (anni)",
     "height": "Altezza (cm)",
     "weight": "Peso (kg)",
     "activity": "Routine quotidiana",
     "activity_sedentary": "Sedentario",
-    "activity_moderate": "Moderatamente attivo",
-    "activity_high": "Molto attivo",
-    "steps": "Passi quotidiani",
-    "age_placeholder": "es. 32",
-    "height_placeholder": "es. 178",
-    "weight_placeholder": "es. 82"
+    "activity_moderately_active": "Moderatamente attivo",
+    "activity_very_active": "Molto attivo",
+    "steps": "Passi giornalieri",
+    "steps_0_4k": "0 – 4k",
+    "steps_4_8k": "4 – 8k",
+    "steps_8_12k": "8 – 12k",
+    "steps_12_20k": "12 – 20k",
+    "steps_20_40k": "20 – 40k",
+    "age_placeholder": "es.: 32",
+    "height_placeholder": "es.: 178",
+    "weight_placeholder": "es.: 82",
+    "info_text": "Abbiamo bisogno di questi dati per calcolare correttamente il tuo metabolismo basale e stimare il dispendio dell'attività quotidiana. In base a ciò creiamo un piano alimentare che corrisponde ai tuoi obiettivi."
   },
   "step2": {
     "title": "Obiettivo & energia",
-    "target": "Obiettivo",
-    "target_lose": "Dimagrire",
+    "target": "Obiettivo nutrizionale",
+    "target_lose": "Perdere peso",
     "target_maintain": "Mantenere il peso",
     "target_gain": "Aumentare di peso",
-    "help_lose": "Si consiglia un moderato deficit calorico.",
-    "help_maintain": "L’obiettivo è l’equilibrio energetico.",
-    "help_gain": "Un leggero surplus calorico favorisce l’aumento.",
+    "help_lose": "Consigliamo un leggero deficit calorico.",
+    "help_maintain": "L'obiettivo è l'equilibrio energetico.",
+    "help_gain": "Un piccolo surplus calorico favorisce l'aumento di massa.",
     "energy_unit": "Unità di energia",
     "unit_kj": "kJ",
     "unit_kcal": "kcal",
-    "bmr_label": "BMR",
+    "bmr_label": "Metabolismo basale (BMR)",
     "bmr_help_kj": "Calcolato dal profilo (kJ/giorno). Puoi modificarlo manualmente.",
     "bmr_help_kcal": "Calcolato dal profilo (kcal/giorno). Puoi modificarlo manualmente.",
-    "target_explainer": "Scegli se vuoi dimagrire, mantenere o aumentare di peso. La raccomandazione si adatta automaticamente.",
-    "energy_help": "Imposta l’unità di energia.",
-    "bmr_explainer": "Il BMR (metabolismo basale) è l’energia che il corpo consuma a riposo. Puoi modificarlo se conosci un valore più preciso."
+    "target_explainer": "Scegli se vuoi perdere peso, mantenere o aumentare. Il suggerimento sull'apporto si adatterà automaticamente.",
+    "energy_help": "Imposta l'unità di energia.",
+    "bmr_explainer": "Il BMR (metabolismo basale) è l'energia che il corpo consuma a riposo. Puoi modificare il valore se hai un dato più preciso."
   },
   "step3": {
     "title": "Attività sportiva",
-    "level": "Livello di attività",
+    "level": "La tua attività sportiva",
+    "help_activity_level": "Indica se pratichi sport regolarmente – adatteremo il piano alimentare di conseguenza.",
     "level_none": "Non pratico sport",
     "sports": "Sport",
-    "level_recreational": "Ricreativo",
-    "level_regular": "Agonistico",
-    "plan_choice": "Piano",
-    "plan_own": "Ho già un piano (solo alimentazione)",
-    "plan_need": "Voglio un piano di allenamento (supplemento)",
+    "level_sport": "Pratico sport",
+    "help_none": "Camminate e movimento quotidiano normale, senza allenamenti regolari.",
+    "help_sport": "Pratico sport regolarmente e voglio che il piano alimentare rifletta la mia attività.",
+    "plan_choice": "Piano di allenamento",
+    "plan_own": "Ho un mio piano",
+    "plan_need": "Voglio un piano di allenamento",
+    "help_plan_choice_fixed": "Descrivi il tuo allenamento.",
+    "help_own_block": "Indica i dettagli del tuo sport – numero di allenamenti a settimana, intensità e durata.",
+    "add_own_block": "Aggiungi un altro sport",
+    "help_main_sport": "Seleziona lo sport che pratichi più spesso.",
+    "help_need_sports": "Seleziona gli sport che vorresti avere nel piano di allenamento.",
+    "help_hours": "Tempo totale dedicato allo sport alla settimana.",
     "intensity": "Intensità",
     "intensity_low": "Bassa",
     "intensity_medium": "Media",
     "intensity_high": "Alta",
     "sessions_per_week": "Allenamenti a settimana",
-    "minutes": "Durata allenamento (min)",
-    "hours_per_week": "Ore a settimana",
-    "none_hint": "Cosa ti piacerebbe provare?",
+    "minutes": "Durata dell'allenamento (min)",
+    "hours_per_week": "Tempo a settimana (h/settimana)",
+    "future_sports": "Cosa ti piacerebbe provare?",
+    "help_none_multi": "Puoi selezionare più opzioni",
     "main_sport": "Sport principale",
     "groups": {
       "title_endurance": "Sport di resistenza",
@@ -363,111 +487,459 @@
       "title_fitness": "Fitness & palestra",
       "title_water": "Sport acquatici",
       "title_combat": "Sport da combattimento",
-      "title_other": "Altro"
+      "title_other": "Altri sport"
     },
     "suggest_walking": "Camminata",
     "suggest_running": "Corsa",
-    "suggest_cycling": "Bici",
+    "suggest_cycling": "Ciclismo",
     "suggest_yoga": "Yoga",
-    "suggest_homegym": "Palestra",
+    "suggest_gym": "Palestra",
     "suggest_swimming": "Nuoto",
     "suggest_football": "Calcio",
     "suggest_basketball": "Basket",
     "suggest_other": "Altro",
-    "level_explainer": "Seleziona la frequenza di attività sportiva. Le richieste cambieranno di conseguenza.",
-    "other_placeholder": "Altro…"
+    "level_explainer": "Indica con quale frequenza pratichi sport. I dati richiesti cambiano a seconda della scelta.",
+    "other_placeholder": "Altro…",
+    "error_select_sport": "Seleziona uno sport dall'elenco.",
+    "error_sessions_total": "Il numero totale di allenamenti a settimana deve essere al massimo 18.",
+    "add_own_block_limit_hint": "Hai raggiunto il numero massimo di sport.",
+    "add_own_block_full": "Capacità esaurita",
+    "error_sessions_total_field": "Massimo 18 allenamenti a settimana in totale.",
+    "error_future_max3": "Puoi selezionare al massimo 3 sport.",
+    "select_sport_placeholder": "Scegli uno sport"
   },
   "step4": {
     "title": "Alimentazione",
     "diet": "Tipo di dieta",
-    "diet_none": "Nessuna restrizione",
+    "diet_none": "Senza restrizioni",
     "diet_vegetarian": "Vegetariana",
     "diet_pescetarian": "Pescetariana",
     "diet_gluten_free": "Senza glutine",
     "diet_lactose_free": "Senza lattosio",
-    "dislikes": "Non mangio",
-    "macros_title": "Macronutrienti",
-    "carb": "Carboidrati (%)",
-    "fat": "Grassi (%)",
-    "protein": "Proteine (%)",
-    "note_premium": "La modifica dei macro è disponibile solo con il piano Premium.",
-    "dislikes_title": "Non mangio",
-    "dislikes_hint": "- opzionale",
+    "dislikes_title": "Alimenti da escludere dal piano",
     "dislike_mushrooms": "Funghi",
     "dislike_olives": "Olive",
-    "dislike_pepper": "Peperoni",
-    "dislike_tomato": "Pomodori",
+    "dislike_pepper": "Peperone",
+    "dislike_tomato": "Pomodoro",
     "dislike_onion": "Cipolla",
     "dislike_fish": "Pesce",
     "dislike_seafood": "Frutti di mare",
     "dislike_eggs": "Uova",
-    "dislike_other": "Altro (specificare)",
-    "premium_note": "La modifica dei macro si applica solo con il piano Premium.",
-    "help_diet": "Scegli il tipo di dieta che segui normalmente.",
-    "help_dislikes": "Seleziona gli ingredienti che vuoi evitare.",
-    "dislikes_optional": "(opzionale)",
-    "help_macros": "Gamma raccomandata: C 40–60 %, G 20–35 %, P 15–30 %. La somma deve essere 100%.",
-    "sum_input": "Somma"
+    "help_diet": "Scegli il tipo di alimentazione che segui di solito.",
+    "help_dislikes": "Seleziona gli ingredienti che vuoi evitare nel piano.",
+    "premium_note": "La personalizzazione della dieta e l'esclusione di alimenti sono disponibili solo nel piano Premium.",
+    "repeats_title": "Numero di ripetizioni dei pasti",
+    "help_repeats": "Scegli quante volte i pasti possono ripetersi durante la settimana.",
+    "repeat_once": "Una volta",
+    "repeat_twice": "Due volte",
+    "repeat_thrice": "Più volte",
+    "hint1": "Il piano è più vario, i pasti non si ripetono.",
+    "hint2": "Variante intermedia – alcuni pasti si ripetono, mantenendo una buona varietà.",
+    "hint3": "Meno vario, ma più semplice da preparare."
   },
   "step5": {
-    "title": "Dispendio vs apporto energetico",
-    "monday": "Lunedì",
-    "tuesday": "Martedì",
-    "bmr": "BMR",
-    "bda": "Attività quotidiana",
-    "sport": "Attività sportiva",
-    "intake": "Apporto",
-    "mon": "Lun",
-    "tue": "Mar",
-    "exp_label": "Dispendio",
-    "in_label": "Apporto",
-    "help": "I grafici mostrano il confronto tra dispendio e apporto. L’apporto segue il dispendio in base all’obiettivo scelto."
+    "title": "Macronutrienti & grafici",
+    "subtitle": "I valori sono precompilati in base alle tue attività.",
+    "macros_title": "Macronutrienti",
+    "graphs_title": "Grafici di apporto e dispendio energetico",
+    "carb": "Carboidrati (%)",
+    "fat": "Grassi (%)",
+    "protein": "Proteine (%)",
+    "sum_input": "Somma",
+    "help_macros": "I valori sono precompilati in base alle tue attività.",
+    "premium_note": "La modifica dei macronutrienti viene applicata solo nel piano Premium."
   },
   "step6": {
-    "variant": "Variante del piano",
-    "light_title": "Light (assaggio)",
+    "title": "Scelta del piano",
+    "variant": "Tipo di piano",
+    "variant_help": "Scegli il piano desiderato.",
+    "period_title": "Periodo",
+    "period_help": "Scegli se vuoi il piano per una settimana o per un mese.",
+    "period_week": "Una volta",
+    "period_month": "Quattro settimane",
+    "help_week": "Prepariamo un piano per te.",
+    "help_month": "Prepariamo quattro piani per te.",
     "standard_title": "Standard",
+    "standard_days": "5 giorni",
+    "standard_desc": "Piano alimentare completo per la settimana lavorativa.",
+    "standard_feature1": "🥗 Pasti vari",
+    "standard_feature2": "📋 Ricette e lista della spesa",
+    "standard_feature3": "💪 Personalizzazione in base all'allenamento",
+    "standard_delivery": "Consegna entro 3 giorni lavorativi",
     "premium_title": "Premium",
-    "period_1x": "Una tantum",
-    "period_4x": "4 settimane",
-    "training_title": "Piano di allenamento",
-    "training_no": "No",
-    "training_yes": "Sì + 200 CZK",
-    "total": "Totale",
-    "example_price": "690 CZK (€29.90)",
-    "note": "Fuori dalla CZ mostriamo i prezzi in EUR.",
-    "days_3": "3 giorni",
-    "light_f1": "Piano alimentare di 3 giorni",
-    "light_f2": "Pasti unici senza ripetizione",
-    "light_f3": "Colazione, spuntini, zuppa, pranzo, cena",
-    "light_f4": "Frutta e verdura",
-    "light_f5": "Integratori consigliati",
-    "light_f6": "Ricette per tutti i pasti",
-    "days_5": "5 giorni",
-    "std_f1": "Piano completo di 5 giorni (Lun–Ven)",
-    "std_f2": "Ricette e lista della spesa",
-    "std_f3": "Considerazione dell’attività sportiva",
-    "std_f4": "Grafici di apporto e dispendio energetico",
-    "std_f5": "Educazione: basi di macro e micronutrienti",
-    "days_7": "7 giorni",
-    "prem_f1": "Possibilità di escludere ingredienti (Non mangio)",
-    "prem_f2": "Macronutrienti personalizzati",
-    "prem_f3": "Piano di idratazione",
-    "prem_f4": "Educazione: macro e micronutrienti + nutrizione sportiva",
-    "prem_f5": "Ricette e lista della spesa",
-    "prem_f6": "Inclusione delle preferenze sportive"
+    "premium_days": "7 giorni",
+    "premium_desc": "Piano completo per l'intera settimana con funzioni extra.",
+    "premium_feature1": "🌱 Tutto del piano Standard",
+    "premium_feature2": "💊 Integratori alimentari su misura",
+    "premium_feature3": "🥤 Idratazione & preferenze dietetiche",
+    "premium_delivery": "Consegna express entro 2 giorni lavorativi",
+    "details_title": "Dettagli dei piani",
+    "standard_detail_title": "Standard – completo (5 giorni)",
+    "standard_detail1": "Piano alimentare per 5 giorni (lun–ven)",
+    "standard_detail2": "Pasti unici e vari",
+    "standard_detail3": "Personalizzazione in base al diario di allenamento",
+    "standard_detail4": "Ricette per ogni pasto",
+    "standard_detail5": "Lista della spesa",
+    "standard_detail6": "Grafici di apporto e dispendio energetico",
+    "standard_detail7": "Educazione sui diversi nutrienti",
+    "premium_detail_title": "Premium – su misura (7 giorni)",
+    "premium_detail1": "Piano alimentare per 7 giorni (lun–dom)",
+    "premium_detail2": "Pasti unici e vari",
+    "premium_detail3": "Personalizzazione in base al diario di allenamento",
+    "premium_detail4": "Ricette per ogni pasto",
+    "premium_detail5": "Lista della spesa",
+    "premium_detail6": "Grafici di apporto e dispendio energetico",
+    "premium_detail7": "Educazione sui diversi nutrienti",
+    "premium_detail8": "Educazione sulla nutrizione nello sport",
+    "premium_detail9": "Integratori alimentari su misura",
+    "premium_detail10": "Piano di idratazione",
+    "premium_detail11": "Preferenze dietetiche selezionate",
+    "premium_detail12": "Esclusione di alimenti specifici",
+    "premium_detail13": "Possibilità di definire i macronutrienti",
+    "standard_warning_title": "Le modifiche non si riflettono nel piano Standard",
+    "standard_warning_text": "Nel piano Standard, la dieta personalizzata, la scelta specifica dei pasti e le modifiche dei macronutrienti non verranno salvate. Vuoi continuare comunque?",
+    "total_label": "Prezzo totale:"
   },
   "step7": {
     "title": "Riepilogo & acquisto",
-    "plan_title": "Piano scelto",
-    "macros_title": "Macronutrienti",
-    "sports_title": "Attività sportiva",
-    "dislikes_title": "Non mangio",
+    "summary_title": "Riepilogo dell'ordine",
+    "basic": "Dati di base",
+    "activity": "Attività quotidiana",
+    "goal": "Obiettivo & energia",
+    "sports": "Attività sportive",
+    "training": "Voglio un piano di allenamento:",
+    "diet": "Tipo di dieta",
+    "dislikes": "Alimenti che non mangio",
+    "repeats": "Ripetizione dei pasti",
+    "macros": "Distribuzione dei macronutrienti",
+    "plan": "Piano scelto",
+    "repeats_1": "Una volta al giorno",
+    "repeats_2": "Due volte al giorno",
+    "repeats_3": "Tre volte al giorno",
+    "level_none": "Non pratico sport",
+    "want_sport": "Ancora non pratico sport",
+    "level_sport": "Pratico sport",
+    "future_sport": "Sono interessato a",
+    "want_plan": "Voglio un piano di allenamento",
+    "hours_per_week": "Tempo a settimana",
+    "main_sport": "Sport principale",
+    "macros_carbs": "Carboidrati",
+    "macros_fats": "Grassi",
+    "macros_proteins": "Proteine",
+    "discount": "Codice sconto",
+    "discount_applied": "Sconto applicato",
     "total": "Prezzo totale",
+    "summary_personal": "Dati personali",
     "name": "Nome",
     "email": "E-mail",
-    "terms": "Accetto i Termini e condizioni",
-    "privacy": "Accetto l’Informativa sulla privacy",
-    "buy": "Acquista"
+    "newsletter": "Voglio ricevere la newsletter",
+    "placeholders": {
+      "name": "Mario Rossi",
+      "email": "mario.rossi@email.it"
+    },
+    "terms": "Accetto le Condizioni generali",
+    "privacy": "Accetto l'Informativa sulla protezione dei dati personali",
+    "buy": "Acquista",
+    "trust": "Pagamenti elaborati da Comgate",
+    "use": "Usa",
+    "discount_invalid": "Codice non valido",
+    "missing_fields": "Compila nome, e-mail e i consensi obbligatori.",
+    "purchase_failed": "Non è stato possibile completare l'ordine. Riprova per favore."
+  },
+  "payment_failed.title": "Pagamento non riuscito",
+  "payment_failed.heading": "❌ Pagamento non riuscito",
+  "payment_failed.message": "Purtroppo il pagamento non è andato a buon fine.",
+  "payment_failed.resume_text": "Abbiamo mantenuto il questionario – puoi continuare da dove ti sei fermato.",
+  "payment_failed.resume_btn": "↩️ Torna al questionario",
+  "payment_failed.back_home": "← Torna alla pagina iniziale",
+  "buttons": {
+    "sending": "Invio in corso..."
+  },
+  "thanks": {
+    "title": "Grazie per l'ordine | FitLime",
+    "header": "Ordine completato con successo :)",
+    "subtitle_1": "Grazie per il tuo ordine!",
+    "subtitle_2_prefix": "Abbiamo appena inviato la conferma all'indirizzo e-mail",
+    "order_id": "Numero d'ordine",
+    "name": "Nome",
+    "plan": "Piano",
+    "period": "Periodo",
+    "next_premium": "Prepareremo il tuo piano alimentare e te lo invieremo entro 2 giorni lavorativi.",
+    "next_basic": "Prepareremo il tuo piano alimentare e te lo invieremo entro 3 giorni lavorativi.",
+    "next_email": "Se non trovi l'e-mail, controlla la cartella Spam o Promozioni.",
+    "next_tips": "Nel frattempo puoi leggere i nostri consigli sulla nutrizione.",
+    "btn_home": "Torna alla pagina iniziale",
+    "btn_tips": "Consigli di nutrizione"
+  },
+  "termsPage": {
+    "metaTitle": "Condizioni generali – FitLime",
+    "back": "← Torna alla pagina iniziale",
+    "subtitle": "Per la fornitura di un piano alimentare personalizzato unico",
+    "title": "Condizioni generali – FitLime",
+    "effective": "In vigore dal: 01.01.2026",
+    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Repubblica Ceca, IČO: 04528930, info@fitlime.cz",
+    "sections": {
+      "intro": {
+        "title": "1. Disposizioni introduttive",
+        "item1": "Le presenti Condizioni generali disciplinano i diritti e gli obblighi tra il Fornitore e il Cliente.",
+        "item2": "Inviando l'ordine, il Cliente conferma di aver letto e di accettare le condizioni."
+      },
+      "service": {
+        "title": "2. Caratteristiche del servizio fornito",
+        "item1": "Il Fornitore offre un servizio personalizzato unico – creazione di un piano alimentare settimanale individuale sulla base dei dati forniti dal Cliente.",
+        "item2": "Il servizio comprende:",
+        "includes1": "ricezione dell'ordine,",
+        "includes2": "valutazione dei dati,",
+        "includes3": "creazione del piano alimentare,",
+        "includes4": "invio del piano alimentare all'e-mail del Cliente.",
+        "item3": "Il servizio non comprende:",
+        "excludes1": "modifiche successive alla consegna,",
+        "excludes2": "consulenze,",
+        "excludes3": "monitoraggio o supporto a lungo termine,",
+        "excludes4": "diagnosi medica individuale.",
+        "item4": "Il piano è creato esclusivamente sulla base delle informazioni fornite dal Cliente, che è responsabile della loro veridicità e completezza."
+      },
+      "order": {
+        "title": "3. Ordine e conclusione del contratto",
+        "item1": "L'ordine viene effettuato compilando il questionario e pagando il prezzo.",
+        "item2": "Il contratto è concluso nel momento in cui il pagamento viene confermato tramite la piattaforma di pagamento ComGate.",
+        "item3": "Il Fornitore conferma l'ordine via e-mail."
+      },
+      "price": {
+        "title": "4. Prezzo e condizioni di pagamento",
+        "item1": "Il prezzo del servizio è indicato sul sito ed è definitivo.",
+        "item2": "Il pagamento avviene esclusivamente online tramite la piattaforma di pagamento ComGate Payments, a.s.",
+        "item3": "La creazione del piano alimentare inizia solo dopo il pagamento del prezzo."
+      },
+      "delivery": {
+        "title": "5. Consegna del servizio",
+        "item1": "Il Fornitore offre varianti con tempi di consegna diversi: Standard – fino a 3 giorni lavorativi, Premium – fino a 2 giorni lavorativi.",
+        "item2": "Il termine decorre dalla ricezione del pagamento e dei dati completi del Cliente.",
+        "item3": "Il piano alimentare viene inviato via e-mail all'indirizzo indicato dal Cliente.",
+        "item4": "Se l'e-mail finisce nella cartella spam/pubblicità/promozioni, si considera comunque consegnata.",
+        "item5": "Se il Cliente non fornisce tutte le informazioni necessarie, il termine di consegna viene prolungato del tempo di attesa per i dati mancanti.",
+        "item6": "Il Fornitore si riserva il diritto di prolungare leggermente il termine (guasto tecnico, malattia, forza maggiore) e informerà il Cliente via e-mail."
+      },
+      "recommend": {
+        "title": "6. Carattere raccomandativo del piano alimentare",
+        "item1": "Tutte le informazioni, raccomandazioni e parti del piano alimentare hanno carattere generale e puramente raccomandativo.",
+        "item2": "Il piano alimentare serve come esempio di riferimento per il Cliente.",
+        "item3": "Il Cliente deve sempre considerare:",
+        "list1": "le proprie sensazioni personali,",
+        "list2": "il proprio stato fisico e di salute attuale,",
+        "list3": "le raccomandazioni del proprio medico,",
+        "list4": "la tolleranza individuale agli alimenti.",
+        "item4": "Se qualche parte del piano alimentare o del regime di idratazione non è adatta al Cliente, questi deve seguire le proprie esigenze."
+      },
+      "health": {
+        "title": "7. Limitazioni sanitarie ed esclusione di responsabilità",
+        "item1": "Il Fornitore non è un soggetto che presta servizi sanitari e non fornisce servizi medici.",
+        "item2": "Il piano alimentare non costituisce diagnosi, trattamento o dietoterapia.",
+        "item3": "Il Fornitore non è responsabile per:",
+        "list1": "conseguenze per la salute derivanti da uso improprio del piano alimentare,",
+        "list2": "conseguenze derivanti da informazioni inesatte fornite dal Cliente,",
+        "list3": "eventuali reazioni avverse agli alimenti,",
+        "list4": "cambiamenti dello stato di salute durante l'applicazione del piano alimentare."
+      },
+      "results": {
+        "title": "8. Assenza di garanzia dei risultati",
+        "lead": "Il Cliente riconosce che il Fornitore non garantisce un risultato specifico.",
+        "list1": "perdita di peso,",
+        "list2": "aumento della massa muscolare,",
+        "list3": "modifica dello stato di salute,",
+        "list4": "miglioramento della condizione fisica.",
+        "note": "I risultati dipendono da molti fattori (stato di salute, ormoni, genetica, attività fisica, rispetto del piano, ambiente, stress, sonno, farmaci)."
+      },
+      "withdrawal": {
+        "title": "9. Recesso dal contratto",
+        "item1": "Il Cliente riconosce che, ai sensi dell'articolo 1837, lettera d) del Codice Civile, non può recedere dal contratto, trattandosi di un servizio fornito secondo le sue esigenze individuali.",
+        "item2": "Non appena il Fornitore inizia a lavorare al piano alimentare, il diritto di recesso si estingue."
+      },
+      "claims": {
+        "title": "10. Reclami e rimborso",
+        "lead": "Il reclamo è possibile solo nei seguenti casi:",
+        "item1": "Non è stato possibile creare il piano alimentare per motivi tecnici o professionali oggettivi.",
+        "item2": "Il Fornitore non consegna il piano alimentare entro il termine garantito corrispondente alla variante del servizio acquistata, e il ritardo non è causato dal Cliente né dalla consegna dell'e-mail nello spam.",
+        "item3": "Nei casi 1 o 2, il Cliente ha diritto al rimborso integrale dell'importo pagato.",
+        "note": "Altri motivi di reclamo non sono possibili, trattandosi di un servizio creato in modo individuale."
+      },
+      "copyright": {
+        "title": "11. Diritti d'autore",
+        "item1": "Il piano alimentare è un'opera protetta dal diritto d'autore del Fornitore.",
+        "item2": "È destinato esclusivamente all'uso personale del Cliente.",
+        "item3": "È vietato condividere, pubblicare, vendere o modificare il piano alimentare."
+      },
+      "privacy": {
+        "title": "12. Protezione dei dati personali",
+        "item1": "Il trattamento dei dati personali è disciplinato dal documento Informativa sulla protezione dei dati personali, disponibile sul sito FitLime."
+      },
+      "disputes": {
+        "title": "13. Risoluzione extragiudiziale delle controversie",
+        "item1": "Ispettorato Ceco del Commercio – www.coi.cz",
+        "item2": "Piattaforma online UE – ec.europa.eu/consumers/odr"
+      },
+      "final": {
+        "title": "14. Disposizioni finali",
+        "item1": "Il Fornitore può aggiornare in qualsiasi momento le presenti Condizioni generali.",
+        "item2": "La versione attuale è sempre disponibile sul sito FitLime.",
+        "item3": "I rapporti giuridici sono regolati dalla legislazione della Repubblica Ceca."
+      }
+    }
+  },
+  "privacyPage": {
+    "metaTitle": "Informativa sulla protezione dei dati personali – FitLime",
+    "back": "← Torna alla pagina iniziale",
+    "subtitle": "Per i siti fitlime.cz, fitlime.sk, fitlime.eu",
+    "title": "Informativa sulla protezione dei dati personali",
+    "effective": "In vigore dal: 01.01.2026",
+    "sections": {
+      "controller": {
+        "title": "1. Titolare del trattamento dei dati personali",
+        "provider": "Sportvital-Pro s.r.o.",
+        "address": "Mokropeská 1799, 252 28 Černošice, Repubblica Ceca",
+        "ico": "IČO: 04528930",
+        "email": "E-mail: info@fitlime.cz",
+        "domains": "Il Titolare gestisce i progetti FitLime sui domini fitlime.cz, fitlime.sk, fitlime.eu."
+      },
+      "data": {
+        "title": "2. Quali dati personali trattiamo",
+        "directTitle": "A) Dati forniti direttamente dall'utente",
+        "directItem1": "nome e cognome",
+        "directItem2": "e-mail",
+        "directItem3": "sesso",
+        "directItem4": "età",
+        "directItem5": "altezza, peso",
+        "directItem6": "attività sportiva (se indicata)",
+        "directItem7": "obiettivi (perdita di peso, aumento di peso, raccomandazioni)",
+        "directItem8": "dati facoltativi sulla salute o limitazioni (allergie, intolleranze, stato di salute)",
+        "directNote": "Nota: I dati sulla salute sono una categoria speciale di dati personali – li trattiamo solo con consenso, perché senza di essi non è possibile creare un piano alimentare personalizzato.",
+        "orderTitle": "B) Dati sull'ordine",
+        "orderItem1": "servizio acquistato (piano alimentare, consulenza, piano)",
+        "orderItem2": "variante scelta e lingua",
+        "orderItem3": "metodo di pagamento",
+        "orderItem4": "informazioni della piattaforma di pagamento ComGate",
+        "comgateTitle": "C) Dati della piattaforma di pagamento ComGate",
+        "comgateItem1": "identificativo del pagamento",
+        "comgateItem2": "stato del pagamento",
+        "comgateItem3": "importo",
+        "comgateItem4": "riferimento variabile",
+        "comgateItem5": "informazione sul buon fine/fallimento del pagamento",
+        "comgateNote": "Riceviamo questi dati senza i dettagli della carta di pagamento.",
+        "webTitle": "D) Dati generati dall'uso del sito",
+        "webItem1": "indirizzo IP",
+        "webItem2": "cookie",
+        "webItem3": "dati analitici (Google Analytics, eventualmente Meta Pixel)",
+        "webItem4": "informazioni sul dispositivo e sul browser"
+      },
+      "purposes": {
+        "title": "3. Finalità e basi giuridiche del trattamento",
+        "p1Title": "Fornitura del servizio",
+        "p1Desc": "Creazione di un piano alimentare personalizzato, comunicazione, valutazione dei dati. Base giuridica: esecuzione del contratto (art. 6, par. 1, lett. b) del GDPR).",
+        "p2Title": "Trattamento dei dati sulla salute",
+        "p2Desc": "Dati su stato di salute, allergie, altezza, peso, IMC, età – necessari per la personalizzazione del piano. Base giuridica: consenso esplicito (art. 9, par. 2, lett. a) del GDPR).",
+        "p3Title": "Pagamenti tramite ComGate",
+        "p3Desc": "Elaborazione dei pagamenti, conferma dell'ordine, registrazione della fattura. Base giuridica: esecuzione del contratto + obbligo legale.",
+        "p4Title": "Marketing e newsletter",
+        "p4Desc": "Invio di novità, consigli e offerte speciali. Base giuridica: consenso.",
+        "p5Title": "Analitica e sicurezza del sito",
+        "p5Desc": "Misurazione dell'audience, rilevamento degli errori, protezione da attacchi. Base giuridica: legittimo interesse del Titolare."
+      },
+      "retention": {
+        "title": "4. Periodo di conservazione dei dati personali",
+        "service": "Dati per la fornitura del servizio – 3 anni dopo l'ultima richiesta.",
+        "health": "Dati sulla salute (piano alimentare) – fino alla revoca del consenso o max 1 anno dopo il completamento del servizio.",
+        "invoices": "Fatture e documenti contabili – 10 anni, secondo la legge.",
+        "marketing": "Marketing – fino alla cancellazione / max 3 anni dopo l'ultima apertura dell'e-mail.",
+        "comgate": "Dati di pagamento ComGate – secondo le loro regole interne (di solito 3–5 anni)."
+      },
+      "recipients": {
+        "title": "5. Destinatari dei dati personali",
+        "lead": "I tuoi dati personali possono essere trasmessi a:",
+        "item1": "fornitore di hosting",
+        "item2": "sviluppatore / amministratore del sito FitLime",
+        "item3": "contabile esterno",
+        "item4": "ComGate Payments, a.s. (piattaforma di pagamento)",
+        "item5": "Google (Google Analytics, Google Workspace)",
+        "item6": "Meta Platforms (se viene utilizzato il pixel di marketing)",
+        "note": "Tutti i responsabili del trattamento rispettano i requisiti del GDPR."
+      },
+      "cookies": {
+        "title": "6. Cookie",
+        "intro": "Il sito FitLime utilizza:",
+        "item1": "cookie necessari (tecnici)",
+        "item2": "cookie analitici",
+        "item3": "cookie di marketing",
+        "note": "Alla prima visita viene mostrata una barra con la possibilità di accettare o rifiutare i cookie opzionali."
+      },
+      "rights": {
+        "title": "7. Diritti dell'utente",
+        "lead": "Hai diritto a:",
+        "item1": "accesso ai tuoi dati",
+        "item2": "rettifica dei dati inesatti",
+        "item3": "cancellazione (quando consentita dalla legge)",
+        "item4": "limitazione del trattamento",
+        "item5": "opposizione al trattamento",
+        "item6": "portabilità dei dati",
+        "item7": "revocare il consenso in qualsiasi momento",
+        "complaint": "Puoi presentare reclamo all'Autorità per la Protezione dei Dati Personali, su www.uoou.cz."
+      },
+      "contact": {
+        "title": "8. Informazioni di contatto",
+        "lead": "Per qualsiasi richiesta, scrivi a:",
+        "email": "info@fitlime.cz",
+        "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Repubblica Ceca"
+      },
+      "final": {
+        "title": "9. Disposizioni finali",
+        "item1": "La presente Informativa può essere aggiornata.",
+        "item2": "La versione attuale è sempre pubblicata sul sito FitLime.",
+        "item3": "In vigore dal: 01.01.2026."
+      }
+    }
+  },
+  "cookiesPage": {
+    "metaTitle": "Cookie | FitLime",
+    "hero": {
+      "eyebrow": "Trasparenza",
+      "title": "Cookie",
+      "lead": "Sul sito FitLime utilizziamo i cookie affinché le pagine funzionino correttamente, siano sicure e possiamo migliorarle continuamente. Di seguito trovi una panoramica dei tipi, dei motivi e delle modalità per modificare il tuo consenso.",
+      "pill1": "Il consenso può essere modificato in qualsiasi momento",
+      "pill2": "Usiamo solo il necessario",
+      "pill3": "I dati sono conservati nell'UE"
+    },
+    "cards": {
+      "how": {
+        "title": "Come funzionano i cookie",
+        "text": "I cookie sono piccoli file di testo che vengono salvati nel tuo browser. Grazie a loro il sito memorizza impostazioni di base affinché tutto proceda in modo fluido e sicuro.",
+        "li1": "Mantengono la lingua, il contenuto dei moduli e altre scelte essenziali.",
+        "li2": "Aiutano a garantire il funzionamento sicuro e la protezione contro gli abusi.",
+        "li3": "Raccolgono volontariamente dati anonimizzati sull'audience per migliorare il sito."
+      },
+      "types": {
+        "title": "Quali tipi utilizziamo",
+        "essential": "Necessari — permettono il funzionamento del sito (scelta della lingua, stato del modulo). Non possono essere disattivati, altrimenti il sito non funzionerebbe.",
+        "analytics": "Analitici — misurazione anonima dell'audience e delle prestazioni. Vengono attivati solo con il tuo consenso.",
+        "marketing": "Marketing — personalizzazione e campagne di terzi. Li utilizziamo solo se li accetti esplicitamente."
+      }
+    },
+    "manage": {
+      "title": "Come modificare o revocare il consenso",
+      "step1": "Alla prima visita alla home page viene mostrata una barra con l'opzione di accettare o rifiutare i cookie opzionali.",
+      "step2": "Puoi reimpostare la tua scelta in qualsiasi momento cliccando sul pulsante qui sotto o cancellando i cookie nel browser.",
+      "step3": "I cookie tecnici rimangono attivi affinché il sito possa funzionare e mostrarti una nuova opzione.",
+      "resetBtn": "Reimposta scelta dei cookie",
+      "resetHint": "Cancella il consenso precedente nel browser e alla prossima visita la barra dei cookie verrà mostrata di nuovo.",
+      "resetAlert": "Le impostazioni dei cookie sono state cancellate. Tornando alla pagina iniziale, la barra di selezione verrà mostrata nuovamente."
+    },
+    "contacts": {
+      "title": "Titolare e contatti",
+      "controllerLabel": "Titolare",
+      "controller": "Sportvital-Pro s.r.o., IČO: 04528930",
+      "emailLabel": "E-mail",
+      "email": "info@fitlime.com",
+      "docsLabel": "Altri documenti",
+      "docs": "Informativa sulla protezione dei dati personali"
+    },
+    "back": "Torna alla pagina iniziale"
   }
 }
