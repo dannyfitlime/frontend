@@ -646,12 +646,21 @@
     "missing_fields": "Bitte füllen Sie Name, E-Mail und die erforderlichen Zustimmungen aus.",
     "purchase_failed": "Die Bestellung konnte nicht abgeschlossen werden. Bitte versuchen Sie es erneut."
   },
-  "payment_failed.title": "Zahlung fehlgeschlagen",
-  "payment_failed.heading": "❌ Zahlung fehlgeschlagen",
-  "payment_failed.message": "Leider konnte die Zahlung nicht abgeschlossen werden.",
-  "payment_failed.resume_text": "Wir haben das Formular für Sie gespeichert – Sie können dort weitermachen, wo Sie aufgehört haben.",
-  "payment_failed.resume_btn": "↩️ Zurück zum Formular",
-  "payment_failed.back_home": "← Zurück zur Startseite",
+  "payment_failed": {
+    "title": "Zahlung fehlgeschlagen",
+    "heading": "❌ Zahlung fehlgeschlagen",
+    "message": "Leider konnte die Zahlung nicht abgeschlossen werden.",
+    "resume_text": "Wir haben das Formular für Sie gespeichert – Sie können dort weitermachen, wo Sie aufgehört haben.",
+    "resume_btn": "↩️ Zurück zum Formular",
+    "back_home": "← Zurück zur Startseite",
+    "note": "Die Zahlung wurde nicht ausgeführt. Bitte versuchen Sie es erneut oder verwenden Sie eine andere Karte.",
+    "tips": [
+      "Bitte prüfen Sie, ob genügend Guthaben vorhanden ist oder Online-Zahlungen aktiviert sind.",
+      "Versuchen Sie die Zahlung später noch einmal oder auf einem anderen Gerät/Browser.",
+      "Wenn das Problem weiterhin besteht, schreiben Sie uns, und wir schließen die Bestellung manuell ab."
+    ],
+    "support": "Wenn die Zahlung erneut fehlschlägt, schreiben Sie uns an {{email}}, und wir schließen die Bestellung manuell ab."
+  },
   "buttons": {
     "sending": "Senden läuft ..."
   },

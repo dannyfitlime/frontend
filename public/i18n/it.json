@@ -646,12 +646,21 @@
     "missing_fields": "Compila nome, e-mail e i consensi obbligatori.",
     "purchase_failed": "Non è stato possibile completare l'ordine. Riprova per favore."
   },
-  "payment_failed.title": "Pagamento non riuscito",
-  "payment_failed.heading": "❌ Pagamento non riuscito",
-  "payment_failed.message": "Purtroppo il pagamento non è andato a buon fine.",
-  "payment_failed.resume_text": "Abbiamo mantenuto il questionario – puoi continuare da dove ti sei fermato.",
-  "payment_failed.resume_btn": "↩️ Torna al questionario",
-  "payment_failed.back_home": "← Torna alla pagina iniziale",
+  "payment_failed": {
+    "title": "Pagamento non riuscito",
+    "heading": "❌ Pagamento non riuscito",
+    "message": "Purtroppo il pagamento non è andato a buon fine.",
+    "resume_text": "Abbiamo conservato il modulo: puoi riprendere da dove ti eri fermato.",
+    "resume_btn": "↩️ Torna al modulo",
+    "back_home": "← Torna alla pagina iniziale",
+    "note": "Il pagamento non è stato eseguito. Riprova o usa un’altra carta.",
+    "tips": [
+      "Controlla di avere fondi sufficienti o i pagamenti online attivi.",
+      "Prova di nuovo più tardi o da un altro dispositivo/browser.",
+      "Se il problema continua, scrivici e completeremo l’ordine manualmente."
+    ],
+    "support": "Se il pagamento fallisce di nuovo, scrivici a {{email}} e completeremo l’ordine manualmente."
+  },
   "buttons": {
     "sending": "Invio in corso..."
   },

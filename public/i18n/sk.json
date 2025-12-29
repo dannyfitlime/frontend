@@ -642,12 +642,21 @@
     "missing_fields": "Doplňte prosím meno, e-mail a povinné súhlasy.",
     "purchase_failed": "Objednávku sa nepodarilo dokončiť. Skúste to prosím znova."
   },
-  "payment_failed.title": "Platba sa nepodarila",
-  "payment_failed.heading": "❌ Platba sa nepodarila",
-  "payment_failed.message": "Žiaľ, platbu sa nepodarilo dokončiť.",
-  "payment_failed.resume_text": "Formulár sme Vám zachovali – môžete pokračovať tam, kde ste skončili.",
-  "payment_failed.resume_btn": "↩️ Vrátiť sa k formuláru",
-  "payment_failed.back_home": "← Späť na hlavnú stránku",
+  "payment_failed": {
+    "title": "Platba sa nepodarila",
+    "heading": "❌ Platba sa nepodarila",
+    "message": "Žiaľ, platbu sa nepodarilo dokončiť.",
+    "resume_text": "Formulár sme Vám zachovali – môžete pokračovať tam, kde ste skončili.",
+    "resume_btn": "↩️ Vrátiť sa k formuláru",
+    "back_home": "← Späť na hlavnú stránku",
+    "note": "Platba neprebehla. Skúste to znova alebo použite inú kartu.",
+    "tips": [
+      "Skontrolujte prosím, či máte dostatok prostriedkov alebo aktivované online platby.",
+      "Skúste platbu zopakovať neskôr alebo na inom zariadení/prehliadači.",
+      "Ak problém pretrváva, napíšte nám a všetko vybavíme ručne."
+    ],
+    "support": "Ak platba stále zlyháva, napíšte nám na {{email}} a objednávku dokončíme ručne."
+  },
   "buttons": {
     "sending": "Prebieha odosielanie..."
   },

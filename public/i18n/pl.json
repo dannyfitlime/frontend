@@ -646,12 +646,21 @@
     "missing_fields": "Proszę uzupełnić imię i nazwisko, e-mail oraz wymagane zgody.",
     "purchase_failed": "Nie udało się dokończyć zamówienia. Proszę spróbować ponownie."
   },
-  "payment_failed.title": "Płatność nie powiodła się",
-  "payment_failed.heading": "❌ Płatność nie powiodła się",
-  "payment_failed.message": "Niestety płatność nie została zrealizowana.",
-  "payment_failed.resume_text": "Formularz został zachowany – mogą Państwo kontynuować od miejsca, w którym przerwali.",
-  "payment_failed.resume_btn": "↩️ Powrót do formularza",
-  "payment_failed.back_home": "← Powrót na stronę główną",
+  "payment_failed": {
+    "title": "Płatność nie powiodła się",
+    "heading": "❌ Płatność nie powiodła się",
+    "message": "Niestety płatność nie została zrealizowana.",
+    "resume_text": "Formularz został zachowany – możesz kontynuować od miejsca, w którym przerwałeś.",
+    "resume_btn": "↩️ Powrót do formularza",
+    "back_home": "← Powrót na stronę główną",
+    "note": "Płatność nie została dokonana. Spróbuj ponownie lub użyj innej karty.",
+    "tips": [
+      "Sprawdź, czy masz wystarczające środki lub włączone płatności online.",
+      "Spróbuj ponownie później lub na innym urządzeniu/przeglądarce.",
+      "Jeśli problem się powtarza, napisz do nas, a zamówienie dokończymy ręcznie."
+    ],
+    "support": "Jeśli płatność znów się nie powiedzie, napisz do nas na {{email}}, a zamówienie dokończymy ręcznie."
+  },
   "buttons": {
     "sending": "Wysyłanie..."
   },

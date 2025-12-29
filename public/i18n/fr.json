@@ -646,12 +646,21 @@
     "missing_fields": "Veuillez compléter votre nom, votre e-mail et les consentements obligatoires.",
     "purchase_failed": "La commande n’a pas pu être finalisée. Veuillez réessayer."
   },
-  "payment_failed.title": "Le paiement a échoué",
-  "payment_failed.heading": "❌ Le paiement a échoué",
-  "payment_failed.message": "Malheureusement, le paiement n’a pas pu être finalisé.",
-  "payment_failed.resume_text": "Nous avons conservé votre formulaire – vous pouvez continuer là où vous vous étiez arrêté(e).",
-  "payment_failed.resume_btn": "↩️ Retourner au formulaire",
-  "payment_failed.back_home": "← Retour à la page d’accueil",
+  "payment_failed": {
+    "title": "Le paiement a échoué",
+    "heading": "❌ Le paiement a échoué",
+    "message": "Malheureusement, le paiement n’a pas pu être finalisé.",
+    "resume_text": "Nous avons conservé votre formulaire – vous pouvez continuer là où vous vous étiez arrêté(e).",
+    "resume_btn": "↩️ Retourner au formulaire",
+    "back_home": "← Retour à la page d’accueil",
+    "note": "Le paiement n’a pas abouti. Veuillez réessayer ou utiliser une autre carte.",
+    "tips": [
+      "Vérifiez que vous disposez de fonds suffisants ou que les paiements en ligne sont activés.",
+      "Réessayez plus tard ou depuis un autre appareil/navigateur.",
+      "Si le problème persiste, écrivez-nous et nous finaliserons la commande manuellement."
+    ],
+    "support": "Si le paiement échoue encore, écrivez-nous à {{email}} et nous finaliserons la commande manuellement."
+  },
   "buttons": {
     "sending": "Envoi en cours..."
   },

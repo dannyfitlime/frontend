@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="cs">
 <head>
   <meta charset="utf-8" />
@@ -192,7 +192,9 @@
 
   <script>
     function getText(dictionary, key) {
-      return key.split(".").reduce((obj, part) => (obj ? obj[part] : undefined), dictionary);
+      return key
+        .split(".")
+        .reduce((obj, part) => (obj ? obj[part] : undefined), dictionary);
     }
 
     const SUPPORTED_LANGS = ['cs','sk','en','de','pt','es','it','pl','fr'];
@@ -205,7 +207,11 @@
 
     function hostPreferredLang(hostname = location.hostname){
       const host = (hostname || '').toLowerCase();
-      const rule = HOST_LANG_RULES.find(r => host === r.suffix || host.endsWith('.'+r.suffix) || host.endsWith(r.suffix));
+      const rule = HOST_LANG_RULES.find(r =>
+        host === r.suffix ||
+        host.endsWith('.' + r.suffix) ||
+        host.endsWith(r.suffix)
+      );
       return rule?.lang || null;
     }
   
@@ -213,7 +219,7 @@
       if (!IS_PROD_HOST) return location.hostname;
       if (lang === 'sk') return 'fitlime.sk';
       if (lang === 'cs') return 'fitlime.cz';
-      // ostatni jazyky na .eu
+      // ostatní jazyky na .eu
       return 'fitlime.eu';
     }
 
@@ -243,21 +249,45 @@
         }
         return urlLang;
       }
+
       const hostLang = IS_PROD_HOST ? hostPreferredLang() : null;
       if (hostLang && SUPPORTED_LANGS.includes(hostLang)) {
         localStorage.setItem("lang", hostLang);
         return hostLang;
       }
+
       const formLang = formState?.locale;
       if (formLang && SUPPORTED_LANGS.includes(formLang)) {
         localStorage.setItem("lang", formLang);
         return formLang;
       }
+
       const stored = localStorage.getItem("lang");
       if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
+
       const nav = (navigator.language || "").slice(0,2).toLowerCase();
       if (SUPPORTED_LANGS.includes(nav)) return nav;
+
       return "cs";
+    }
+
+    async function loadI18n(lang){
+      const paths = [
+        `/i18n/${lang}.json`,
+        `./i18n/${lang}.json`,
+        `${location.pathname.replace(/[^/]+$/, '')}i18n/${lang}.json`
+      ];
+      for (const url of paths) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            return await res.json();
+          }
+        } catch (e) {
+          // try next path
+        }
+      }
+      return {};
     }
 
     async function initFailPage() {
@@ -265,10 +295,15 @@
       const formState = JSON.parse(formStateRaw || "{}");
       const lang = resolveLang(formState);
       document.documentElement.lang = lang;
-      const contactEmail = lang === "sk" ? "info@fitlime.sk" : (lang === "cs" ? "info@fitlime.cz" : "info@fitlime.eu");
-      const i18n = await fetch(`/i18n/${lang}.json`).then(r => r.json()).catch(() => ({}));
+
+      const contactEmail =
+        lang === "sk" ? "info@fitlime.sk" :
+        (lang === "cs" ? "info@fitlime.cz" : "info@fitlime.eu");
+
+      const i18n = await loadI18n(lang);
       const t = (key) => getText(i18n, key) || key;
 
+      // Překlady pro všechny data-i18n elementy
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const value = t(el.dataset.i18n);
         if (value && value !== el.dataset.i18n) {
@@ -276,57 +311,70 @@
         }
       });
 
+      // Titulek stránky
       const translatedTitle = t("payment_failed.title");
       if (translatedTitle && translatedTitle !== "payment_failed.title") {
         document.title = translatedTitle;
       }
 
-      const failNote = lang === "en"
-        ? "The payment was not processed. Please try again or use another card."
-        : "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.";
-      document.getElementById("fail-note").textContent = failNote;
+      // Poznámka k neúspěšné platbě (span id="fail-note")
+      const failNoteEl = document.getElementById("fail-note");
+      if (failNoteEl) {
+        const noteText = t("payment_failed.note");
+        if (noteText && noteText !== "payment_failed.note") {
+          failNoteEl.textContent = noteText;
+        }
+      }
 
+      // Podpora – email v tlačítku
       const supportEmailLink = document.querySelector('.actions a[href^="mailto:"]');
       if (supportEmailLink) {
         supportEmailLink.href = `mailto:${contactEmail}`;
-        supportEmailLink.textContent = lang === "en" ? `Support: ${contactEmail}` : `Podpora: ${contactEmail}`;
+        supportEmailLink.textContent =
+          lang === "en" ? `Support: ${contactEmail}` : `Podpora: ${contactEmail}`;
       }
 
+      // Blok pro obnovení formuláře
       if (formStateRaw) {
         const block = document.getElementById("resume-block");
         block.hidden = false;
-        document.getElementById("resume-btn").addEventListener("click", () => {
-          window.location.href = `/form.html?resume=true&lang=${lang}`;
-        });
+        const resumeBtn = document.getElementById("resume-btn");
+        if (resumeBtn) {
+          resumeBtn.addEventListener("click", () => {
+            window.location.href = `/form.html?resume=true&lang=${lang}`;
+          });
+        }
       }
 
-      const tipsCs = [
-        "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",
-        "Zkuste platbu zopakovat později nebo na jiném zařízení/prohlížeči.",
-        "Pokud problém přetrvá, napište nám a vše vyřešíme ručně."
-      ];
-      const tipsEn = [
-        "Check that your card is enabled for online payments and has sufficient funds.",
-        "Try the payment again later or from another device/browser.",
-        "If it still fails, write to us and we will finalize the order manually."
-      ];
-      const tips = lang === "en" ? tipsEn : tipsCs;
+      // Tipy
       const tipList = document.getElementById("tipList");
-      tipList.innerHTML = tips.map((text, idx) => `
-        <div class="tip">
-          <span class="badge">${idx + 1}</span>
-          <span>${text}</span>
-        </div>
-      `).join("");
+      if (tipList) {
+        const tips = getText(i18n, "payment_failed.tips");
+        if (Array.isArray(tips) && tips.length) {
+          tipList.innerHTML = tips.map((text, idx) => `
+            <div class="tip">
+              <span class="badge">${idx + 1}</span>
+              <span>${text}</span>
+            </div>
+          `).join("");
+        } else {
+          // když nemáme překlad tipů, necháme box prázdný
+          tipList.innerHTML = "";
+        }
+      }
 
-      const supportNote = lang === "en"
-        ? `If the payment keeps failing, contact us at ${contactEmail} and we'll complete the order manually.`
-        : `Pokud platba znovu selže, napište nám na ${contactEmail} a objednávku dokončíme ručně.`;
-      document.getElementById("supportNote").textContent = supportNote;
+      // Support poznámka dole
+      const supportNoteEl = document.getElementById("supportNote");
+      if (supportNoteEl) {
+        const template = getText(i18n, "payment_failed.support");
+        if (typeof template === "string") {
+          supportNoteEl.textContent = template.replace("{{email}}", contactEmail);
+        }
+        // pokud překlad neexistuje, zůstane původní český text v HTML
+      }
     }
 
     initFailPage();
   </script>
 </body>
 </html>
-

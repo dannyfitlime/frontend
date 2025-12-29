@@ -646,12 +646,21 @@
     "missing_fields": "Preencha o nome, e-mail e os consentimentos obrigatórios.",
     "purchase_failed": "Não foi possível concluir a encomenda. Tente novamente, por favor."
   },
-  "payment_failed.title": "O pagamento falhou",
-  "payment_failed.heading": "❌ O pagamento falhou",
-  "payment_failed.message": "Infelizmente, o pagamento não pôde ser concluído.",
-  "payment_failed.resume_text": "Mantivemos o formulário – pode continuar a partir de onde parou.",
-  "payment_failed.resume_btn": "↩️ Voltar ao formulário",
-  "payment_failed.back_home": "← Voltar à página inicial",
+  "payment_failed": {
+    "title": "O pagamento falhou",
+    "heading": "❌ O pagamento falhou",
+    "message": "Infelizmente, o pagamento não pôde ser concluído.",
+    "resume_text": "Mantivemos o formulário – pode continuar a partir de onde parou.",
+    "resume_btn": "↩️ Voltar ao formulário",
+    "back_home": "← Voltar à página inicial",
+    "note": "O pagamento não foi efetuado. Tente novamente ou use outro cartão.",
+    "tips": [
+      "Verifique se tem saldo suficiente ou se os pagamentos online estão ativos.",
+      "Tente novamente mais tarde ou noutro dispositivo/navegador.",
+      "Se o problema continuar, escreva-nos e concluiremos a encomenda manualmente."
+    ],
+    "support": "Se o pagamento voltar a falhar, escreva-nos para {{email}} e concluiremos a encomenda manualmente."
+  },
   "buttons": {
     "sending": "A enviar..."
   },

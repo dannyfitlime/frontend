@@ -284,7 +284,7 @@
         "a": "Samozřejmě – ať už jde o hubnutí, nabírání svalů či udržení své tělesné hmotnosti. Stačí to uvést ve formuláři."
       },
       "q8": {
-        "q": "Mohu j?deln??ek pou??vat dlouhodob??",
+        "q": "Mohu jídelníček použít dlouhodobě?",
         "a": "Plán je navržen tak, aby byl udržitelný dlouhodobě. Jednotlivé týdny můžete opakovat, kombinovat nebo jemně upravovat."
       },
       "q9": {
@@ -646,18 +646,28 @@
     "missing_fields": "Doplňte prosím jméno, e-mail a povinné souhlasy.",
     "purchase_failed": "Objednávku se nepodařilo dokončit. Zkuste to prosím znovu."
   },
-  "payment_failed.title": "Platba se nezdařila",
-  "payment_failed.heading": "❌ Platba se nezdařila",
-  "payment_failed.message": "Bohužel se platbu nepodařilo dokončit.",
-  "payment_failed.resume_text": "Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.",
-  "payment_failed.resume_btn": "↩️ Vrátit se k formuláři",
-  "payment_failed.back_home": "← Zpět na hlavní stránku",
+  "payment_failed": {
+    "title": "Platba se nezdařila",
+    "heading": "❌ Platba se nezdařila",
+    "message": "Bohužel se platbu nepodařilo dokončit.",
+    "resume_text": "Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.",
+    "resume_btn": "↩️ Vrátit se k formuláři",
+    "back_home": "← Zpět na hlavní stránku",
+    "note": "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.",
+    "tips": [
+      "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",
+      "Zkuste platbu zopakovat později nebo na jiném zařízení/prohlížeči.",
+      "Pokud problém přetrvává, napište nám a vše vyřešíme ručně."
+      ],
+    "support": "Pokud platba znovu selže, napište nám na {{email}} a objednávku dokončíme ručně."
+      },
   "buttons": {
     "sending": "Probíhá odesílání..."
   },
   "thanks": {
     "title": "Děkujeme za objednávku | FitLime",
     "header": "Objednávka úspěšně dokončena :)",
+    "eyebrow": "Objednávka potvrzena",
     "subtitle_1": "Děkujeme za objednávku!",
     "subtitle_2_prefix": "Potvrzení jsme právě odeslali na e-mail",
     "order_id": "Číslo objednávky",

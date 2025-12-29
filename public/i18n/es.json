@@ -646,12 +646,21 @@
     "missing_fields": "Rellena el nombre, correo y los consentimientos obligatorios.",
     "purchase_failed": "No se pudo completar el pedido. Inténtalo de nuevo."
   },
-  "payment_failed.title": "El pago ha fallado",
-  "payment_failed.heading": "❌ El pago ha fallado",
-  "payment_failed.message": "Lamentablemente no se pudo completar el pago.",
-  "payment_failed.resume_text": "Hemos guardado tu formulario, puedes seguir justo donde lo dejaste.",
-  "payment_failed.resume_btn": "↩️ Volver al formulario",
-  "payment_failed.back_home": "← Volver al inicio",
+  "payment_failed": {
+    "title": "El pago ha fallado",
+    "heading": "❌ El pago ha fallado",
+    "message": "Lamentablemente no se pudo completar el pago.",
+    "resume_text": "Hemos guardado tu formulario: puedes continuar donde lo dejaste.",
+    "resume_btn": "↩️ Volver al formulario",
+    "back_home": "← Volver al inicio",
+    "note": "El pago no se realizó. Inténtalo de nuevo o utiliza otra tarjeta.",
+    "tips": [
+      "Comprueba que tienes fondos suficientes o los pagos en línea habilitados.",
+      "Intenta pagar más tarde o desde otro dispositivo/navegador.",
+      "Si el problema continúa, escríbenos y finalizaremos el pedido manualmente."
+    ],
+    "support": "Si el pago vuelve a fallar, escríbenos a {{email}} y completaremos el pedido manualmente."
+  },
   "buttons": {
     "sending": "Enviando..."
   },

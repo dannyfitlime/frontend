@@ -646,12 +646,21 @@
     "missing_fields": "Please fill in your name, email, and required consents.",
     "purchase_failed": "The order could not be completed. Please try again."
   },
-  "payment_failed.title": "Payment failed",
-  "payment_failed.heading": "❌ Payment failed",
-  "payment_failed.message": "Unfortunately, the payment could not be processed.",
-  "payment_failed.resume_text": "Your form data has been saved - you can continue where you left off.",
-  "payment_failed.resume_btn": "↩️ Return to form",
-  "payment_failed.back_home": "← Back to homepage",
+  "payment_failed": {
+    "title": "Payment failed",
+    "heading": "❌ Payment failed",
+    "message": "Unfortunately, the payment could not be processed.",
+    "resume_text": "Your form data has been saved - you can continue where you left off.",
+    "resume_btn": "↩️ Return to form",
+    "back_home": "← Back to homepage",
+    "note": "The payment was not processed. Please try again or use another card.",
+    "tips": [
+      "Check that your card is enabled for online payments and has sufficient funds.",
+      "Try the payment again later or from another device/browser.",
+      "If it still fails, write to us and we will finalize the order manually."
+    ],
+    "support": "If the payment keeps failing, contact us at {{email}} and we'll complete the order manually."
+  },
   "buttons": {
     "sending": "Sending..."
   },
@@ -659,6 +668,7 @@
     "title": "Thank you for your order | FitLime",
     "header": "Order completed successfully :)",
     "subtitle_1": "Thank you for your purchase!",
+    "eyebrow": "Order confirmed",
     "subtitle_2_prefix": "A confirmation email has been sent to",
     "order_id": "Order ID",
     "name": "Name",

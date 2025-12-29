@@ -1379,6 +1379,10 @@ export async function handlePurchase() {
   showErrors(errs);
   if (Object.keys(errs).length > 0) return;
 
+  const langParam = i18n?.lang || "cs";
+  const thanksUrl = `/thanks.html?lang=${encodeURIComponent(langParam)}`;
+  const failUrl = `/fail.html?resume=true&lang=${encodeURIComponent(langParam)}`;
+
   const SKIP_PAYMENT = true;
 
   try {
@@ -1425,7 +1429,7 @@ export async function handlePurchase() {
     body: JSON.stringify({
       name: cleanState.customer?.name,
       email: cleanState.customer?.email,
-      locale: i18n.lang || "cs",
+      locale: langParam,
       plan_variant: v,
       plan_period: p,
 
@@ -1457,13 +1461,13 @@ export async function handlePurchase() {
     const formStateWithId = {
       ...formState,
       order_id: orderRes.order_id,
-      locale: i18n.lang || "cs"
+      locale: langParam
     };
     localStorage.setItem("formState", JSON.stringify(formStateWithId));
 
     if (SKIP_PAYMENT) {
       console.log("🧪 Payment skipped, redirecting to thanks.html");
-      window.location.href = "/thanks.html";
+      window.location.href = thanksUrl;
       return;
     }
 
@@ -1474,7 +1478,7 @@ export async function handlePurchase() {
         order_id: orderRes.order_id,
         amount: amountInHalers,
         currency: "CZK",
-        return_url: location.origin + "/thanks.html",
+        return_url: new URL(thanksUrl, location.origin).toString(),
       }),
     }).then((r) => r.json());
 
@@ -1487,6 +1491,6 @@ export async function handlePurchase() {
     console.groupEnd();
 
     alert("❌ Chyba při vytvoření objednávky – podívej se do konzole pro detaily!");
-    window.location.href = "/fail.html?resume=true";
+    window.location.href = failUrl;
   }
 }
