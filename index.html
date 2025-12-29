@@ -286,6 +286,7 @@
         <h2 data-i18n="home.preview.title"></h2>
         <p class="lead" data-i18n="home.preview.lead"></p>
         <div class="preview-tags">
+          <span class="tag" data-tag="0" data-i18n="home.preview.tags.tag0"></span>
           <span class="tag" data-tag="1" data-i18n="home.preview.tags.tag1"></span>
           <span class="tag" data-tag="2" data-i18n="home.preview.tags.tag2"></span>
           <span class="tag" data-tag="3" data-i18n="home.preview.tags.tag3"></span>
@@ -295,6 +296,9 @@
       </div>
 
       <div id="lightgallery" class="preview-grid">
+        <a href="/images/preview0.png" data-tag="0">
+          <img src="/images/preview0.png" alt="Ukázka PDF 0">
+        </a>
         <a href="/images/preview1.png" data-tag="1">
           <img src="/images/preview1.png" alt="Ukázka PDF 1">
         </a>
@@ -330,6 +334,7 @@
 
         <h2 class="diet-title" data-i18n="home.diet.title"></h2>
         <p class="diet-subtitle" data-i18n="home.diet.subtitle"></p>
+        <button type="button" class="btn diet-auto-btn" id="dietAutoSelect" data-i18n="home.diet.autoSelect"></button>
 
         <!-- === SEZNAM POTRAVIN K VÝBĚRU === -->
         <div class="diet-food-list" id="dietFoodList">          
@@ -838,6 +843,7 @@
     { suffix: 'fitlime.eu', lang: 'en' },
     { suffix: 'fitlime.cz', lang: 'cs' }
   ];
+  const IS_PROD_HOST = /fitlime\.(cz|sk|eu)$/i.test(location.hostname);
 
   function hostPreferredLang(hostname = location.hostname){
     const host = (hostname || '').toLowerCase();
@@ -846,6 +852,8 @@
   }
 
   function domainForLang(lang){
+    // Na lokalu/staging nech hostitele, ať se netahá na produkční doménu
+    if (!IS_PROD_HOST) return location.hostname;
     if (lang === 'sk') return 'fitlime.sk';
     if (lang === 'cs') return 'fitlime.cz';
     // vsechny ostatni jazyky smeruji na .eu
@@ -855,10 +863,13 @@
   function buildUrlForLang(lang){
     const url = new URL(location.href);
     url.searchParams.set('lang', lang);
-    const targetHost = domainForLang(lang);
-    if (targetHost) {
-      url.hostname = targetHost;
-      url.protocol = 'https:';
+    if (IS_PROD_HOST) {
+      const targetHost = domainForLang(lang);
+      if (targetHost) {
+        url.hostname = targetHost;
+        url.protocol = 'https:';
+        url.port = '';
+      }
     }
     return url.toString();
   }
@@ -871,13 +882,15 @@
     const qs = new URLSearchParams(location.search).get('lang');
     if (qs && SUPPORTED.includes(qs)) {
       localStorage.setItem('lang', qs);
-      const targetHost = domainForLang(qs);
-      if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
-        location.replace(buildUrlForLang(qs));
+      if (IS_PROD_HOST) {
+        const targetHost = domainForLang(qs);
+        if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
+          location.replace(buildUrlForLang(qs));
+        }
       }
       return qs;
     }
-    const hostLang = hostPreferredLang();
+    const hostLang = IS_PROD_HOST ? hostPreferredLang() : null;
     if (hostLang && SUPPORTED.includes(hostLang)) {
       localStorage.setItem('lang', hostLang);
       return hostLang;

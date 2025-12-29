@@ -71,16 +71,18 @@
       "title": "Ukázka sportovního jídelníčku",
       "lead": "Objednaný plán zahrnuje detailně zpracovaný PDF soubor, který Vám bude doručen po jeho dokončení. Tento dokument Vás provede celým plánem a nabídne jasné pokyny k jeho používání. Obsahuje tyto hlavní části:",
       "tags": {
-        "tag1": "1) Grafy příjmu vs. výdeje energie včetně tréninkového plánu",
-        "tag2": "2) Jídelníček na míru Vaším parametrům (ukázka pouze 1 dne)",
-        "tag3": "3) Kompletní nutriční přehled všech sledovaných živin",
-        "tag4": "4) Chytrý nákupní seznam s odkazy na Rohlík.cz",
-        "tag5": "5) Recepty a doporučení, jak s plánem správně pracovat"
+        "tag0": "1) Úvodní přehled s vysvětlením, jak plán používat",
+        "tag1": "2) Grafy příjmu vs. výdeje energie včetně tréninkového plánu",
+        "tag2": "3) Jídelníček na míru Vaším parametrům (ukázka pouze 1 dne)",
+        "tag3": "4) Kompletní nutriční přehled všech sledovaných živin",
+        "tag4": "5) Chytrý nákupní seznam s odkazy na Rohlík.cz",
+        "tag5": "6) Recepty a doporučení, jak s plánem správně pracovat"
       }
     },
     "diet": {
       "title": "Zkus si složit ideální oběd",
       "subtitle": "Vyber jednotlivé potraviny a uvidíš, jak se při skládání oběda mění celkové nutriční hodnoty. Ukazované hodnoty jsou normalizované pro lepší ilustraci a porovnání zdravých i méně zdravých potravin mezi sebou.",
+      "autoSelect": "Vybrat doporučené potraviny",
       "food": {
         "avocado": "Avokádo",
         "donut": "Donut",
@@ -218,7 +220,7 @@
       "cta": "Zjisti, jaký plán je pro tebe"
     },
     "pricing": {
-      "title": "Balíčky a ceny",
+      "title": "Varianty jídelníčků a ceník",
       "per_week": "/ týden",
       "per_month": "/ měsíc",
       "advantage": "výhodnější",
@@ -491,7 +493,7 @@
     "suggest_running": "Běh",
     "suggest_cycling": "Kolo",
     "suggest_yoga": "Jóga",
-    "suggest_homegym": "Posilování",
+    "suggest_gym": "Posilování",
     "suggest_swimming": "Plavání",
     "suggest_football": "Fotbal",
     "suggest_basketball": "Basketbal",
@@ -545,17 +547,7 @@
     "protein": "Bílkoviny (%)",
     "sum_input": "Suma",
     "help_macros": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
-    "premium_note": "Úprava maker se propíše pouze u Premium plánu.",
-    "bmr": "BMR",
-    "bda": "Běžná denní aktivita",
-    "sport": "Sportovní aktivita",
-    "intake": "Příjem",
-    "exp_label": "Výdej",
-    "in_label": "Příjem",
-    "balance": "Rovnováha",
-    "help": "Grafy ukazují srovnání výdeje a příjmu v jednotlivých dnech. Příjem kopíruje výdej podle zvoleného cíle (hubnutí, udržení, přibírání). Tyto hodnoty mají pouze informativní charakter a slouží k pochopení, jak se mění energetická bilance podle zvoleného cíle. Ve skutečném jídelníčku bude graf upraven.",
-    "toggle_sport": "Ukázat sportovní aktivitu",
-    "toggle_help": "Tento přepínač vám ukáže rozdíl mezi dny se sportovní aktivitou a bez ní. Snadno tak zjistíte, jak se mění doporučený příjem energie podle fyzické aktivity."
+    "premium_note": "Úprava maker se propíše pouze u Premium plánu."
   },
   "step6": {
     "title": "Výběr plánu",
@@ -678,12 +670,6 @@
     "next_tips": "Mezitím si můžeš přečíst naše tipy o výživě.",
     "btn_home": "Zpět na hlavní stránku",
     "btn_tips": "Tipy na výživu"
-  },
-  "days": {
-    "mon": "Pondělí",
-    "tue": "Úterý",
-    "wed": "Středa",
-    "thu": "Čtvrtek"
   },
   "termsPage": {
     "metaTitle": "Obchodní podmínky – FitLime",
@@ -958,4 +944,5 @@
     "back": "Zpět na hlavní stránku"
   }
 }
+
 

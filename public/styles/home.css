@@ -229,7 +229,29 @@ body.menu-open {
 @media (max-width: 960px) {
   .home-nav { display: none; }
   .home-topbar { padding: 0 6px; }
+  .home-topbar__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .home-brand {
+    grid-column: 1 / 3;
+    position: static;
+    transform: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .home-brand .text {
+    justify-self: center;
+  }
   .menu-toggle {
+    margin-left: 0;
+    justify-self: end;
     display: inline-flex;
     width: 42px; height: 42px;
     border-radius: var(--radius);
@@ -247,7 +269,7 @@ body.menu-open {
     background: transparent;
     border: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--fg);
     cursor: pointer;
   }
@@ -258,6 +280,7 @@ body.menu-open {
   border: none;
   box-shadow: none;
   backdrop-filter: none;
+  pointer-events: none; /* let content underneath stay clickable */
 }
 .home-topbar.compact .text,
 .home-topbar.compact .home-nav {
@@ -265,15 +288,51 @@ body.menu-open {
 }
 .home-topbar.compact .home-brand,
 .home-topbar.compact .menu-toggle {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.818);
   backdrop-filter: blur(2px); 
   border-radius: 8px;
+  pointer-events: auto; /* keep controls clickable */
 }
+/* When compact, stretch header content closer to screen edges */
+.home-topbar.compact .home-container {
+  max-width: none;
+  width: 100%;
+  padding: 0 30px;
+}
+/* Bring logo/menu closer to edges on ≤1400px */
+@media (max-width: 1400px) {
+  .home-topbar.compact .home-container {
+  max-width: none;
+  width: 100%;
+  padding: 0 10px;
+  }
+}
+@media (max-width: 900px) {
+  .home-topbar.compact .home-container {
+  max-width: none;
+  width: 100%;
+  padding: 0 0px;
+  }
+}
+
 @media (min-width: 961px) {
   .home-topbar.compact .home-brand .text { display: none; }
 }
 @media (max-width: 960px) {
   .home-topbar.compact .home-brand .text { display: none; }
+  /* In compact mobile state keep logo tight left, button right */
+  .home-topbar.compact .home-topbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .home-topbar.compact .home-brand {
+    grid-column: auto;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+  }
 }
 
 
@@ -482,11 +541,7 @@ body.menu-open {
     border-radius: 18px;
   }
 
-  /* IKONY */
-  .why-item img {
-    width: 80px;
-    margin-bottom: 20px;
-  }
+
 
   /* NADPIS */
   .why-item h3 {
@@ -507,6 +562,46 @@ body.menu-open {
   .why-item ul li::before {
     font-size: 1.1em;
     top: -0.2em;
+  }
+}
+
+@media (max-width: 360px) {
+  .why-section {
+    padding: 20px 10px 0;
+  }
+
+  .why-section .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .why-columns {
+    gap: 20px;
+  }
+
+  .why-item {
+    padding: 24px 18px 28px;
+    border-radius: 16px;
+  }
+
+
+  .why-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .why-item ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .why-item ul li {
+    padding-left: 18px;
+  }
+
+  .why-item ul li::before {
+    font-size: 1em;
+    top: -0.15em;
   }
 }
 
@@ -713,6 +808,30 @@ body.menu-open {
   }
 }
 
+@media (max-width: 360px) {
+  .how-step-icons {
+    padding: 0 10px;
+  }
+
+  .how-detail {
+    margin: 12px 6px 0;
+    padding: 14px 10px;
+  }
+
+  .how-detail-inner {
+    gap: 10px;
+  }
+
+  .how-big-img {
+    width: 90px;
+  }
+
+  .how-big-text {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
 
 
 
@@ -739,10 +858,11 @@ body.menu-open {
 }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .how-step-labels {
-    flex-direction: column;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
   }
 
 
@@ -757,6 +877,21 @@ body.menu-open {
 
   .how-big-img {
     width: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .how-step-icons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 250px) {
+  .how-step-labels {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -790,11 +925,19 @@ body.menu-open {
 }
 
 .preview-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin: 1.2rem 0 2rem 0;
-  justify-content: center;
+  margin: 1.2rem auto 2rem auto;
+  max-width: 720px;
+  justify-items: stretch;
+}
+
+@media (min-width: 1100px) {
+  .preview-tags {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1080px;
+  }
 }
 
 .tag {
@@ -805,9 +948,13 @@ body.menu-open {
   font-weight: 600;
   color: #000;
   border: 2px solid #4b694d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
 
   white-space: normal;        /* ✅ dovolí zalomení */
-  max-width: 90vw;            /* ✅ nikdy nepřesáhne šířku telefonu */
+  max-width: 100%;            /* ✅ nikdy nepřesáhne šířku telefonu */
   text-align: center;         /* ✅ estetické zalomení textu */
 }
 .tag:hover {
@@ -820,6 +967,7 @@ body.menu-open {
 /* Mobilní úpravy */
 @media (max-width: 480px) {
   .preview-tags {
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 
@@ -827,7 +975,8 @@ body.menu-open {
     padding: 8px 12px;
     font-size: 0.85rem;
     border-radius: 14px;
-    max-width: 80vw;          /* ✅ ještě bezpečnější pro malé telefony */
+    min-height: 48px;
+    max-width: 100%;          /* ✅ ještě bezpečnější pro malé telefony */
   }
 }
 
@@ -893,7 +1042,7 @@ body.menu-open {
 .modal-content {
   position: relative;
   z-index: 2;
-  max-width: 90vw;
+  max-width: 100%;
   max-height: 90vh; 
 }
 
@@ -995,6 +1144,29 @@ body.menu-open {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 40px;
+}
+.diet-auto-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 16px;
+  padding: 10px 18px;
+  border: 2px solid #395744;
+  background: #0b6118;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.diet-auto-btn:hover {
+  background: #0e7720;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+.diet-auto-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 }
 
 /* === FOOD LIST === */
@@ -1247,6 +1419,22 @@ body.menu-open {
   padding-bottom: 10px;
 }
 
+@media (max-width: 360px) {
+  .pricing {
+    padding: 48px 10px 16px;
+  }
+
+  .pricing .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 
 /* =========================
    Coverage sekce
@@ -1466,7 +1654,7 @@ PRO KOHO JE JÍDELNÍČEK
 /* Obrázek nahoře – vertikální */
 .audience-image {
   width: 100%;
-  aspect-ratio: 3 / 4;       /* vertikální fotka */
+  aspect-ratio: 1;       /* čtverec */
   overflow: hidden;
 }
 
@@ -1548,6 +1736,22 @@ PRO KOHO JE JÍDELNÍČEK
   }
 }
 
+@media (max-width: 360px) {
+  .audience {
+    padding: 48px 10px 16px;
+  }
+
+  .audience .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 
 
 /* =========================
@@ -1616,6 +1820,26 @@ PRO KOHO JE JÍDELNÍČEK
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 1.1rem;
+}
+
+@media (max-width: 360px) {
+  #about.features {
+    padding: 48px 10px 16px;
+  }
+
+  #about .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .team {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .team-card {
+    grid-template-columns: 72px 1fr;
+  }
 }
 
 
@@ -2022,3 +2246,5 @@ h2 {
   color: var(--accent);
   font-weight: 700;
 }
+
+

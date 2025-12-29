@@ -1,4 +1,4 @@
-/* ========================================================= */
+﻿/* ========================================================= */
 /* ===============   OBECNÉ LAYOUTY & FIELDY   ============== */
 /* ========================================================= */
 
@@ -710,8 +710,8 @@ button:focus-visible {
 /* === Karty plánů === */
 .plan-type-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* ⬅ zmenšeno z 280px */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
   margin: 20px 0;
   overflow-x: clip; /* zabrání přetečení */
   max-width: 100%;
@@ -738,10 +738,15 @@ button:focus-visible {
 /* Nadpisy a texty v kartě */
 .plan-card--select h3 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 22px;
   margin-bottom: 8px;
+  position: relative;
+  gap: 8px;
+}
+.plan-card--select[data-variant="premium"] h3 span:first-child {
+  color: #a37000;
 }
 .plan-card--select .badge {
   background: var(--brand, #111);
@@ -749,6 +754,17 @@ button:focus-visible {
   border-radius: 999px;
   padding: 2px 10px;
   font-size: 13px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.badge--premium {
+  background: linear-gradient(120deg, #b45309, #eab308);
+  color: #2b1a00;
+  box-shadow: 2px 4px 8px rgba(234, 178, 8, 0.45);
+  border: 1px solid rgba(43, 26, 0, 0.1);
 }
 .plan-card--select p,
 .plan-card--select ul {
@@ -763,19 +779,26 @@ button:focus-visible {
 
 /* === Ceny === */
 .plan-card--select .prices {
-  margin-top: 26px;
+  margin: 26px auto 0;
+  padding: 12px 13px;
+  width: fit-content;
   text-align: center;
+  background: linear-gradient(135deg, #e0f2fe, #f3e8ff);
+  border-radius: 14px;
 }
 .price {
-  font-size: 17px;
-  font-weight: 600;
-  margin: 6px 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 4px 0;
+  color: #fff;
 }
-.price--week { color: #000; }
+.price--week { color: #000000; }
 .price--month {
   color: #056608;
-  font-size: 18px;
+  font-size: 22px;
 }
+
 
 /* === Detailní sekce === */
 .plan-details {
@@ -802,7 +825,7 @@ button:focus-visible {
   margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
 /* === Detailní karty === */
@@ -827,7 +850,7 @@ button:focus-visible {
 /* === Rozložení sekcí === */
 .plan-options {
   display: grid;
-  gap: 20px;
+  gap: 25px;
 }
 @media (min-width: 960px) {
   .plan-options {
@@ -1063,3 +1086,4 @@ button.primary:hover { background: #009703; }
   animation: spin 0.8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+

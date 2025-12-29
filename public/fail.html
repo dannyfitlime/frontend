@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/public/images/logotucne.png">
+  <link rel="icon" type="image/png" href="/images/logotucne.png">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/home.css">
   <title data-i18n="payment_failed.title">Platba se nezdařila</title>
@@ -201,14 +201,16 @@
       { suffix: 'fitlime.eu', lang: 'en' },
       { suffix: 'fitlime.cz', lang: 'cs' }
     ];
+    const IS_PROD_HOST = /fitlime\.(cz|sk|eu)$/i.test(location.hostname);
 
     function hostPreferredLang(hostname = location.hostname){
       const host = (hostname || '').toLowerCase();
       const rule = HOST_LANG_RULES.find(r => host === r.suffix || host.endsWith('.'+r.suffix) || host.endsWith(r.suffix));
       return rule?.lang || null;
     }
-
+  
     function domainForLang(lang){
+      if (!IS_PROD_HOST) return location.hostname;
       if (lang === 'sk') return 'fitlime.sk';
       if (lang === 'cs') return 'fitlime.cz';
       // ostatni jazyky na .eu
@@ -218,10 +220,13 @@
     function buildUrlForLang(lang){
       const url = new URL(location.href);
       url.searchParams.set('lang', lang);
-      const targetHost = domainForLang(lang);
-      if (targetHost) {
-        url.hostname = targetHost;
-        url.protocol = 'https:';
+      if (IS_PROD_HOST) {
+        const targetHost = domainForLang(lang);
+        if (targetHost) {
+          url.hostname = targetHost;
+          url.protocol = 'https:';
+          url.port = '';
+        }
       }
       return url.toString();
     }
@@ -230,13 +235,15 @@
       const urlLang = new URLSearchParams(location.search).get("lang");
       if (urlLang && SUPPORTED_LANGS.includes(urlLang)) {
         localStorage.setItem("lang", urlLang);
-        const targetHost = domainForLang(urlLang);
-        if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
-          location.replace(buildUrlForLang(urlLang));
+        if (IS_PROD_HOST) {
+          const targetHost = domainForLang(urlLang);
+          if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
+            location.replace(buildUrlForLang(urlLang));
+          }
         }
         return urlLang;
       }
-      const hostLang = hostPreferredLang();
+      const hostLang = IS_PROD_HOST ? hostPreferredLang() : null;
       if (hostLang && SUPPORTED_LANGS.includes(hostLang)) {
         localStorage.setItem("lang", hostLang);
         return hostLang;

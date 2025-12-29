@@ -1,4 +1,4 @@
-import { renderMacroCharts} from './charts.js';
+﻿import { renderMacroCharts} from './charts.js';
 import { formState } from './state.js';
 import { $, applyI18n, showErrors} from './app.js';
 import {
@@ -955,13 +955,11 @@ function currentCurrency() {
 }
 
 // Formátování ceny
-function formatPrice(czk, eur, periodText = '') {
+function formatPrice(czk, eur) {
   const currency = currentCurrency();
-  if (currency === 'EUR') {
-    return periodText ? `€${eur.toFixed(2)} / ${periodText}` : `€${eur.toFixed(2)}`;
-  } else {
-    return periodText ? `${czk} Kč / ${periodText}` : `${czk} Kč`;
-  }
+  return currency === 'EUR'
+    ? `€${eur.toFixed(2)}`
+    : `${czk} Kč`;
 }
 
 // Dosazení cen do karet z data-atributů
@@ -970,11 +968,9 @@ function updatePlanPrices() {
   prices.forEach(priceEl => {
     const czk = parseFloat(priceEl.dataset.czk);
     const eur = parseFloat(priceEl.dataset.eur);
-    const isWeek = priceEl.classList.contains('price--week');
-    const periodText = isWeek ? '1 týden' : '4 týdny';
 
     const tag = priceEl.querySelector('.tag');
-    const text = formatPrice(czk, eur, periodText);
+    const text = formatPrice(czk, eur);
     if (tag) {
       priceEl.firstChild.nodeValue = text + " ";
     } else {

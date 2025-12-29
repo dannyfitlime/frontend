@@ -175,6 +175,8 @@ const DIET_FOODS = {
   donut:    { energy:50, protein:2,  fat:30, carbs:45, fiber:0, cholesterol:20,  sodium:25 }
   };
 
+const DIET_HEALTHY_DEFAULT = ["chicken", "rice", "salad", "avocado", "apple"];
+
 
 /* -------------------- 2) NUTRIENTY -------------------- */
 
@@ -438,6 +440,16 @@ function diet_computeScore(t) {
   return clamp(s, 0, 100);
 }
 
+function diet_updateTotals() {
+  const totals = diet_sumSelected();
+  diet_animateTo(totals);
+
+  const scoreEl = document.getElementById("dietScore");
+  if (scoreEl) scoreEl.textContent = Math.round(diet_computeScore(totals));
+
+  return totals;
+}
+
 
 /* -------------------- 9) INIT -------------------- */
 
@@ -454,13 +466,19 @@ function initDietSimulator() {
 
   document
     .querySelectorAll(".diet-food-list input[type=checkbox]")
-    .forEach(cb => cb.addEventListener("change", () => {
-      const totals = diet_sumSelected();
-      diet_animateTo(totals);
+    .forEach(cb => cb.addEventListener("change", diet_updateTotals));
 
-      const scoreEl = document.getElementById("dietScore");
-      if (scoreEl) scoreEl.textContent = Math.round(diet_computeScore(totals));
-    }));
+  const autoBtn = document.getElementById("dietAutoSelect");
+  if (autoBtn) {
+    autoBtn.addEventListener("click", () => {
+      document
+        .querySelectorAll(".diet-food-list input[type=checkbox]")
+        .forEach(cb => {
+          cb.checked = DIET_HEALTHY_DEFAULT.includes(cb.value);
+        });
+      diet_updateTotals();
+    });
+  }
 
   window.addEventListener("resize", () =>
     diet_drawChart(cv, DIET_prevTotals)
