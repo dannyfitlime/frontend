@@ -158,13 +158,27 @@
         <li data-i18n="privacyPage.sections.final.item3">Účinnost od: 01.01.2026.</li>
       </ol>
     </section>
-    <a class="btn outline" href="/index.html" data-i18n="privacyPage.back">← Zpět na hlavní stránku</a>
+    <a class="btn outline" href="/index.html" data-i18n="privacyPage.back" data-keep-lang>← Zpět na hlavní stránku</a>
   </main>
 
   <script type="module">
-    import { bootI18n } from '/i18n-core.js';
-    bootI18n();
+    import { bootI18n, i18n } from '/i18n-core.js';
+
+    const KEEP_LANG_SELECTOR = '[data-keep-lang]';
+    function applyLangToLinks(lang){
+      document.querySelectorAll(KEEP_LANG_SELECTOR).forEach(link => {
+        const url = new URL(link.getAttribute('href'), location.origin);
+        url.searchParams.set('lang', lang);
+        link.href = url.pathname + url.search + url.hash;
+      });
+    }
+
+    (async () => {
+      await bootI18n();
+      applyLangToLinks(i18n.lang);
+    })();
   </script>
 </body>
 </html>
+
 

@@ -890,13 +890,13 @@
       }
       return qs;
     }
+    const stored = localStorage.getItem('lang');
+    if (stored && SUPPORTED.includes(stored)) return stored;
     const hostLang = IS_PROD_HOST ? hostPreferredLang() : null;
     if (hostLang && SUPPORTED.includes(hostLang)) {
       localStorage.setItem('lang', hostLang);
       return hostLang;
     }
-    const stored = localStorage.getItem('lang');
-    if (stored && SUPPORTED.includes(stored)) return stored;
     const nav = (navigator.language || '').slice(0,2).toLowerCase();
     return SUPPORTED.includes(nav) ? nav : 'cs';
   }
@@ -961,10 +961,22 @@
   // -----------------------
   // Formulář & odkazy
   // -----------------------
-  // Upraví všechny odkazy na /form.html, aby obsahovaly ?lang=xx
-  function updateFormLinks(lang) {
-    document.querySelectorAll('a[href="/form.html"]').forEach(a => {
-      a.href = `/form.html?lang=${lang}`;
+  function setLangParam(href, lang) {
+    const url = new URL(href, location.origin);
+    url.searchParams.set('lang', lang);
+    return url.pathname + url.search + url.hash;
+  }
+
+  // Upraví důležité odkazy, aby nesly ?lang=xx
+  function updateLangLinks(lang) {
+    const selectors = [
+      'a[href="/form.html"]',
+      'a[href="/terms.html"]',
+      'a[href="/gdpr.html"]',
+      'a[href="/cookies.html"]',
+    ];
+    document.querySelectorAll(selectors.join(',')).forEach(a => {
+      a.href = setLangParam(a.getAttribute('href'), lang);
     });
   }
 
@@ -1011,7 +1023,7 @@
   (async () => {
     const INIT_LANG = getCurrentLang();     // zjistí jazyk
     renderLangSwitcher(INIT_LANG);          // vykreslí switcher
-    updateFormLinks(INIT_LANG);             // aktualizuje odkazy na formulář
+    updateLangLinks(INIT_LANG);             // aktualizuje odkazy na formulář i právní stránky
     applyPrices(INIT_LANG);                 // nastaví ceny
   })();
 

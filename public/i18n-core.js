@@ -99,6 +99,12 @@ export async function detectLang(){
     return urlLang;
   }
 
+  // 2) z localStorage (uprednostnit drive nez domenovy default)
+  const stored = localStorage.getItem('lang');
+  if (stored && SUPPORTED.includes(stored)) {
+    return stored;
+  }
+
   // 2) podle domeny (.sk => sk, .eu => en, .cz => cs)
   const hostLang = hostPreferredLang();
   if (hostLang && SUPPORTED.includes(hostLang)) {
@@ -106,19 +112,13 @@ export async function detectLang(){
     return hostLang;
   }
 
-  // 3) z localStorage
-  const stored = localStorage.getItem('lang');
-  if (stored && SUPPORTED.includes(stored)) {
-    return stored;
-  }
-
-  // 4) jazyk prohlizece
+  // 3) jazyk prohlizece
   const nav = (navigator.languages||[])
     .map(x => x.slice(0,2).toLowerCase())
     .find(l => SUPPORTED.includes(l));
   if (nav) return nav;
 
-  // 5) fallback
+  // 4) fallback
   return 'cs';
 
 }

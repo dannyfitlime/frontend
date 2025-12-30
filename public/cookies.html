@@ -116,19 +116,32 @@
         </div>
         <div>
           <dt data-i18n="cookiesPage.contacts.docsLabel">Další dokumenty</dt>
-          <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs">Zásady ochrany osobních údajů</a></dd>
+          <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs" data-keep-lang>Zásady ochrany osobních údajů</a></dd>
         </div>
       </dl>
     </section>
 
     <div style="margin-top: 30px;">
-      <a class="btn" href="/index.html" data-i18n="cookiesPage.back">Zpět na hlavní stránku</a>
+      <a class="btn" href="/index.html" data-i18n="cookiesPage.back" data-keep-lang>Zpět na hlavní stránku</a>
     </div>
   </main>
 
   <script type="module">
-    import { bootI18n } from '/i18n-core.js';
-    bootI18n();
+    import { bootI18n, i18n } from '/i18n-core.js';
+
+    const KEEP_LANG_SELECTOR = '[data-keep-lang]';
+    function applyLangToLinks(lang){
+      document.querySelectorAll(KEEP_LANG_SELECTOR).forEach(link => {
+        const url = new URL(link.getAttribute('href'), location.origin);
+        url.searchParams.set('lang', lang);
+        link.href = url.pathname + url.search + url.hash;
+      });
+    }
+
+    (async () => {
+      await bootI18n();
+      applyLangToLinks(i18n.lang);
+    })();
   </script>
   <script>
     document.getElementById('resetCookies')?.addEventListener('click', () => {
@@ -144,4 +157,5 @@
   </script>
 </body>
 </html>
+
 

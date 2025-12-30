@@ -15,7 +15,7 @@
     <div class="header-title">
       <h1 id="step-title">Název aktuální sekce</h1>
     </div>
-    <a href="/index.html" class="brand header-logo">
+    <a href="/index.html" class="brand header-logo" data-keep-lang>
       <img src="/images/logo.png" alt="Logo FitLime" class="header-logo__img">
     </a>
     <nav class="header-steps" role="navigation" aria-label="Průběh kroků">
@@ -63,9 +63,9 @@
       <!-- Levý blok: odkazy -->
       <div class="footer-left">
         <nav class="footer-links" aria-label="Právní odkazy">
-          <a href="/terms.html" data-i18n="home.footer.terms"></a>
-          <a href="/gdpr.html" data-i18n="home.footer.privacy"></a>
-          <a href="/cookies.html" data-i18n="home.footer.cookies"></a>
+          <a href="/terms.html" data-i18n="home.footer.terms" data-keep-lang></a>
+          <a href="/gdpr.html" data-i18n="home.footer.privacy" data-keep-lang></a>
+          <a href="/cookies.html" data-i18n="home.footer.cookies" data-keep-lang></a>
         </nav>
       </div>
 
@@ -87,7 +87,16 @@
   <script type="module" src="/src/app.js"></script>
   <script type="module" src="/src/stepsapp.js"></script>
   <script type="module">
-    import { bootI18n } from '/src/i18n-core.js';
+    import { bootI18n, i18n } from '/src/i18n-core.js';
+
+    const KEEP_LANG_SELECTOR = '[data-keep-lang]';
+    function applyLangToLinks(lang){
+      document.querySelectorAll(KEEP_LANG_SELECTOR).forEach(link => {
+        const url = new URL(link.getAttribute('href'), location.origin);
+        url.searchParams.set('lang', lang);
+        link.href = url.pathname + url.search + url.hash;
+      });
+    }
 
     // Nastavit rok ve footeru
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -95,6 +104,7 @@
     // Načíst jazyk podle priority (?lang → localStorage → browser → fallback)
     (async () => {
       await bootI18n();
+      applyLangToLinks(i18n.lang);
     })();
 
     // Intro krok (mezikrok)
