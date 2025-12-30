@@ -1,4 +1,4 @@
-﻿import { renderMacroCharts} from './charts.js';
+import { renderMacroCharts} from './charts.js';
 import { formState } from './state.js';
 import { $, applyI18n, showErrors} from './app.js';
 import {
@@ -961,6 +961,27 @@ function formatPrice(czk, eur) {
     ? `€${eur.toFixed(2)}`
     : `${czk} Kč`;
 }
+function populatePlanPriceData() {
+  const pricing = window?.PRICING;
+  if (!pricing) return;
+
+  ['standard', 'premium'].forEach(variant => {
+    const cfg = pricing[variant];
+    if (!cfg) return;
+
+    const card = document.querySelector(`.plan-card--select[data-variant="${variant}"]`);
+    if (!card) return;
+
+    ['week', 'month'].forEach(period => {
+      const target = card.querySelector(`.price--${period}`);
+      const val = cfg[period];
+      if (target && val) {
+        target.dataset.czk = val.czk;
+        target.dataset.eur = val.eur;
+      }
+    });
+  });
+}
 
 // Dosazení cen do karet z data-atributů
 function updatePlanPrices() {
@@ -981,6 +1002,7 @@ function updatePlanPrices() {
 
 // Výběr plánu a období
 export function bindPlanStep() {
+  populatePlanPriceData();
   const planCards = document.querySelectorAll('.plan-card--select');
   const planButtons = document.querySelectorAll('.plan-buttons .chip');
   const periodButtons = document.querySelectorAll('.plan-period .chip');

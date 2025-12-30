@@ -17,6 +17,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/home.css" />
+  <script src="/public/pricing.js"></script>
 </head>
 <body data-page="home">
   <script type="module" src="/src/password-gate.js"></script>
@@ -833,10 +834,7 @@
     es: 'Español', it: 'Italiano', pl: 'Polski', fr: 'Français'
   };
   // Ceník – částky v Kč a EUR pro Standard a Premium
-  const PRICING = {
-    standard:{ week:{ czk:690, eur:29.90 }, month:{ czk:2090, eur:89.90 } },
-    premium: { week:{ czk:990, eur:44.90 }, month:{ czk:2990, eur:129.90 } }
-  };
+  const PRICING = window.PRICING || {};
   // Domain-language mapping for automatic redirects
   const HOST_LANG_RULES = [
     { suffix: 'fitlime.sk', lang: 'sk' },
