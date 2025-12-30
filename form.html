@@ -87,14 +87,16 @@
   <script type="module" src="/src/app.js"></script>
   <script type="module" src="/src/stepsapp.js"></script>
   <script type="module">
-    import { bootI18n } from '/src/i18n-core.js';
+    import { bootI18n, applyLangToLinks } from '/src/i18n-core.js';
 
     // Nastavit rok ve footeru
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Načíst jazyk podle priority (?lang → localStorage → browser → fallback)
     (async () => {
-      await bootI18n();
+      await bootI18n({
+        onAfterApply: (lang) => applyLangToLinks(lang)
+      });
     })();
 
     // Intro krok (mezikrok)
