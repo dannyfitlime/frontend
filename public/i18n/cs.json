@@ -946,11 +946,13 @@
     "contacts": {
       "title": "Správce a kontakty",
       "controllerLabel": "Správce",
-      "controller": "Sportvital-Pro s.r.o., IČO: 04528930",
+      "controller": "Sportvital-Pro s.r.o.",
+      "ico": "IČO: 04528930",
       "emailLabel": "E-mail",
       "email": "info@fitlime.com",
       "docsLabel": "Další dokumenty",
-      "docs": "Zásady ochrany osobních údajů"
+      "docs": "Zásady ochrany osobních údajů",
+      "terms": "Obchodní podmínky"
     },
     "back": "Zpět na hlavní stránku"
   }

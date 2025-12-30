@@ -689,7 +689,7 @@
     "subtitle": "For providing a one-time custom meal plan",
     "title": "Terms & Conditions - FitLime",
     "effective": "Effective from: 01.01.2026",
-    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, ID: 04528930, info@fitlime.cz",
+    "provider": "Sportvital-Pro s.r.o., Mokropeska 1799, 252 28 Cernosice, ID: 04528930, info@fitlime.cz",
     "sections": {
       "intro": {
         "title": "1. Introductory Provisions",
@@ -808,7 +808,7 @@
       "controller": {
         "title": "1. Data Controller",
         "provider": "Sportvital-Pro s.r.o.",
-        "address": "Mokropeská 1799, 252 28 Černošice",
+        "address": "Mokropeska 1799, 252 28 Cernosice",
         "ico": "ID: 04528930",
         "email": "E-mail: info@fitlime.cz",
         "domains": "The Controller operates FitLime projects on domains fitlime.cz, fitlime.sk, fitlime.eu."
@@ -899,7 +899,7 @@
         "title": "8. Contact information",
         "lead": "For any requests, contact:",
         "email": "info@fitlime.cz",
-        "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice"
+        "address": "Sportvital-Pro s.r.o., Mokropeska 1799, 252 28 Cernosice"
       },
       "final": {
         "title": "9. Final provisions",
@@ -946,7 +946,8 @@
     "contacts": {
       "title": "Controller & contacts",
       "controllerLabel": "Controller",
-      "controller": "Sportvital-Pro s.r.o., ID: 04528930",
+      "controller": "Sportvital-Pro s.r.o.",
+      "ico": "ID: 04528930",
       "emailLabel": "E-mail",
       "email": "info@fitlime.com",
       "docsLabel": "More documents",

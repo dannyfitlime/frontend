@@ -40,6 +40,7 @@
     .data-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 0; padding: 0; }
     .data-list dt { font-weight: 700; color: #111; }
     .data-list dd { margin: 4px 0 10px; color: #334155; }
+    .data-list a { color: inherit; }
     @media (max-width: 720px) {
       .policy-page { padding-top: 40px; }
       .reset-row { flex-direction: column; align-items: flex-start; }
@@ -108,7 +109,8 @@
       <dl class="data-list">
         <div>
           <dt data-i18n="cookiesPage.contacts.controllerLabel">Správce</dt>
-          <dd data-i18n="cookiesPage.contacts.controller">Sportvital-Pro s.r.o., IČO: 04528930</dd>
+          <dd data-i18n="cookiesPage.contacts.controller">Sportvital-Pro s.r.o.</dd>
+          <dd data-i18n="cookiesPage.contacts.ico">IČO: 04528930</dd>
         </div>
         <div>
           <dt data-i18n="cookiesPage.contacts.emailLabel">E-mail</dt>
@@ -117,6 +119,7 @@
         <div>
           <dt data-i18n="cookiesPage.contacts.docsLabel">Další dokumenty</dt>
           <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs" data-keep-lang>Zásady ochrany osobních údajů</a></dd>
+          <dd><a href="/terms.html" data-i18n="cookiesPage.contacts.terms" data-keep-lang>Obchodní podmínky</a></dd>
         </div>
       </dl>
     </section>

@@ -689,7 +689,7 @@
     "subtitle": "Para a prestação de um plano alimentar personalizado único",
     "title": "Condições gerais – FitLime",
     "effective": "Em vigor desde: 01.01.2026",
-    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, República Checa, IČO: 04528930, info@fitlime.cz",
+    "provider": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, República Checa, ID: 04528930, info@fitlime.cz",
     "sections": {
       "intro": {
         "title": "1. Disposições introdutórias",
@@ -809,7 +809,7 @@
         "title": "1. Responsável pelo tratamento de dados pessoais",
         "provider": "Sportvital-Pro s.r.o.",
         "address": "Mokropeská 1799, 252 28 Černošice, República Checa",
-        "ico": "IČO: 04528930",
+        "ico": "ID: 04528930",
         "email": "E-mail: info@fitlime.cz",
         "domains": "O Responsável opera os projetos FitLime nos domínios fitlime.cz, fitlime.sk, fitlime.eu."
       },
@@ -946,7 +946,8 @@
     "contacts": {
       "title": "Responsável e contactos",
       "controllerLabel": "Responsável",
-      "controller": "Sportvital-Pro s.r.o., IČO: 04528930",
+      "controller": "Sportvital-Pro s.r.o.",
+      "ico": "ID: 04528930",
       "emailLabel": "E-mail",
       "email": "info@fitlime.com",
       "docsLabel": "Outros documentos",

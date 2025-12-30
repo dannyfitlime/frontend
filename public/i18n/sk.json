@@ -942,7 +942,8 @@
     "contacts": {
       "title": "Správca a kontakty",
       "controllerLabel": "Správca",
-      "controller": "Sportvital-Pro s.r.o., IČO: 04528930",
+      "controller": "Sportvital-Pro s.r.o.",
+      "ico": "IČO: 04528930",
       "emailLabel": "E-mail",
       "email": "info@fitlime.com",
       "docsLabel": "Ďalšie dokumenty",
