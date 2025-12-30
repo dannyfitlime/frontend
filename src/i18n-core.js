@@ -5,29 +5,6 @@
 // ===============================
 export const SUPPORTED = ['cs','sk','en','de','pt','es','it','pl','fr'];
 
-// Odkazy, na které chceme automaticky doplňovat ?lang
-const LOCALIZED_LINK_PATHS = ['/','/index.html','/form.html','/terms.html','/gdpr.html','/cookies.html','/fail.html','/thanks.html'];
-
-// Přidá lang parametr na vybrané interní odkazy (zachová další query/hash)
-export function applyLangToLinks(lang, extraPaths = []){
-  const paths = new Set([...LOCALIZED_LINK_PATHS, ...extraPaths]);
-  const origin = location.origin;
-
-  document.querySelectorAll('a[href]').forEach(el => {
-    const href = el.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-    let url;
-    try {
-      url = new URL(href, origin);
-    } catch (_) {
-      return;
-    }
-    if (!paths.has(url.pathname)) return;
-    url.searchParams.set('lang', lang);
-    el.href = url.pathname + (url.search || '') + (url.hash || '');
-  });
-}
-
 // Stav i18n (aktuální slovník + vybraný jazyk)
 export const i18n = { dict:null, fallback:null, lang:'cs' };
 

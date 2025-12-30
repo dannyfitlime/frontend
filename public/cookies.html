@@ -127,8 +127,8 @@
   </main>
 
   <script type="module">
-    import { bootI18n, applyLangToLinks } from '/i18n-core.js';
-    bootI18n({ onAfterApply: (lang) => applyLangToLinks(lang) });
+    import { bootI18n } from '/i18n-core.js';
+    bootI18n();
   </script>
   <script>
     document.getElementById('resetCookies')?.addEventListener('click', () => {

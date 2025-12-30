@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="cs">
 <head>
   <meta charset="utf-8" />
@@ -21,7 +21,7 @@
 <body data-page="home">
   <script type="module" src="/src/password-gate.js"></script>
   <!-- ===== COOKIES BAR ===== -->
-  <div id="cookiesBar" class="cookies-bar" role="dialog" aria-live="polite" aria-label="NastavenĂ­ cookies" aria-hidden="true" hidden>
+  <div id="cookiesBar" class="cookies-bar" role="dialog" aria-live="polite" aria-label="Nastavení cookies" aria-hidden="true" hidden>
     <div class="cookies-bar__inner">
       <p data-i18n="home.cookies.text"></p>
       <div class="cookies-bar__actions">
@@ -37,13 +37,13 @@
     <div class="home-container home-topbar__inner">
 
       <!-- Logo -->
-      <a class="home-brand" href="." aria-label="FitLime domĹŻ">
+      <a class="home-brand" href="." aria-label="FitLime domů">
         <img class="logo" src="/public/images/logo_pruhledne.png" alt="Fit Lime logo" />
         <span class="text">Fit Lime</span>
       </a>
 
       <!-- Navigace pro desktop -->
-      <nav class="home-nav" aria-label="HlavnĂ­ navigace">
+      <nav class="home-nav" aria-label="Hlavní navigace">
         <a href="#how" data-i18n="home.nav.how"></a>
         <a href="#preview" data-i18n="home.nav.preview"></a>
         <a href="#home-coverage" data-i18n="home.nav.coverage"></a>
@@ -52,8 +52,8 @@
       </nav>
 
       <!-- Burger button -->
-      <button class="menu-toggle" id="menuBtn" aria-label="OtevĹ™Ă­t menu" aria-controls="drawer" aria-expanded="false">
-        â°
+      <button class="menu-toggle" id="menuBtn" aria-label="Otevřít menu" aria-controls="drawer" aria-expanded="false">
+        ☰
       </button>
     </div>
   </header>
@@ -63,7 +63,7 @@
     <div class="drawer__backdrop" id="drawerBackdrop"></div>
     <div class="drawer__content">
       <div class="drawer__panel">
-        <button class="drawer__close" id="drawerClose" aria-label="ZavĹ™Ă­t menu" data-i18n-aria-label="home.drawer.close">Ă—</button>
+        <button class="drawer__close" id="drawerClose" aria-label="Zavřít menu" data-i18n-aria-label="home.drawer.close">×</button>
         <nav class="drawer__links" aria-label="Menu">
           <a href="#how" data-i18n="home.drawer.how"></a>
           <a href="#preview" data-i18n="home.drawer.preview"></a>
@@ -73,7 +73,7 @@
         </nav>
       </div>
       <div class="drawer__image">
-        <img src="/public/images/drawer.png" alt="ZdravĂˇ vĂ˝Ĺľiva" data-i18n-aria-label="home.drawer.imageAlt" />
+        <img src="/public/images/drawer.png" alt="Zdravá výživa" data-i18n-aria-label="home.drawer.imageAlt" />
       </div>
     </div>
   </aside>
@@ -92,7 +92,7 @@
     </section>
 
     <div class="background-soft">
-    <!-- ===== PROÄŚ ===== -->    
+    <!-- ===== PROČ ===== -->    
     <section id="why" class="why-section">
       <div class="home-container">
         <h2 class="why-title" data-i18n="home.why.title"></h2>
@@ -101,7 +101,7 @@
         <div class="why-columns">
           <!-- 1 -->
           <div class="why-item">
-            <img src="/public/images/why1.png" alt="ZdravĂ˝ ĹľivotnĂ­ styl" loading="lazy">
+            <img src="/public/images/why1.png" alt="Zdravý životní styl" loading="lazy">
             <h3 data-i18n="home.why.items.lifestyle.title"></h3>
             <ul>
               <li data-i18n="home.why.items.lifestyle.point1"></li>
@@ -112,7 +112,7 @@
 
           <!-- 2 -->
           <div class="why-item">
-            <img src="/public/images/why2.png" alt="VĂ˝Ĺľiva na mĂ­ru" loading="lazy">
+            <img src="/public/images/why2.png" alt="Výživa na míru" loading="lazy">
             <h3 data-i18n="home.why.items.nutrition.title"></h3>
             <ul>
               <li data-i18n="home.why.items.nutrition.point1"></li>
@@ -123,7 +123,7 @@
 
           <!-- 3 -->
           <div class="why-item">
-            <img src="/public/images/why3.png" alt="PraktickĂ˝ pĹ™Ă­stup" loading="lazy">
+            <img src="/public/images/why3.png" alt="Praktický přístup" loading="lazy">
             <h3 data-i18n="home.why.items.practical.title"></h3>
             <ul>
               <li data-i18n="home.why.items.practical.point1"></li>
@@ -142,7 +142,7 @@
         <h2 class="how-title" data-i18n="home.how.title"></h2>
         <p class="how-subtitle" data-i18n="home.how.subtitle"></p>
 
-        <!-- === LABELY KROKĹ® === -->
+        <!-- === LABELY KROKŮ === -->
         <div class="how-step-labels">
           <div data-step="0" class="label-item active" data-i18n="home.how.step1.title"></div>
           <div data-step="1" class="label-item" data-i18n="home.how.step2.title"></div>
@@ -153,13 +153,13 @@
         <!-- === PROGRESS TIMELINE === -->
         <div class="how-progress">
 
-          <!-- ÄŚernĂˇ linka -->
+          <!-- Černá linka -->
           <div class="progress-line">
-            <!-- ZelenĂˇ vyplnÄ›nĂˇ ÄŤĂˇst -->
+            <!-- Zelená vyplněná část -->
             <div class="progress-fill" id="progress-fill"></div>
           </div>
 
-          <!-- TeÄŤky -->
+          <!-- Tečky -->
           <div class="progress-dots">
             <div class="p-dot active" data-step="0"></div>
             <div class="p-dot" data-step="1"></div>
@@ -169,7 +169,7 @@
 
         </div>
 
-        <!-- === MALĂ‰ IKONY === -->
+        <!-- === MALÉ IKONY === -->
         <div class="how-step-icons">
           <img src="/images/how1.png" class="icon-small active" data-step="0">
           <img src="/images/how2.png" class="icon-small" data-step="1">
@@ -177,7 +177,7 @@
           <img src="/images/how4.png" class="icon-small" data-step="3">
         </div>
 
-        <!-- === VELKĂť OBSAH (JEDINĂť, KTERĂť SE MÄšNĂŤ) === -->
+        <!-- === VELKÝ OBSAH (JEDINÝ, KTERÝ SE MĚNÍ) === -->
         <div class="how-detail">
           <div class="how-detail-inner">
             <img id="how-big-img" src="/images/how1.png" alt="step image" class="how-big-img">
@@ -193,34 +193,34 @@
       </div>
     </section>
 
-    <!-- ===== PRO KOHO JE JĂŤDELNĂŤÄŚEK ===== -->
+    <!-- ===== PRO KOHO JE JÍDELNÍČEK ===== -->
     <section id="for-whom" class="audience">
       <div class="home-container">
-        <!-- HlaviÄŤka sekce -->
+        <!-- Hlavička sekce -->
         <div class="audience-header">
           <h2 data-i18n="home.audience.title">
-            Pro koho je jĂ­delnĂ­ÄŤek urÄŤen
+            Pro koho je jídelníček určen
           </h2>
           <p class="lead" data-i18n="home.audience.lead">
-            ZdravĂ˝ jĂ­delnĂ­ÄŤek pĹ™izpĹŻsobujeme tomu, jak ĹľijeĹˇ â€“ jestli trĂ©nujeĹˇ na zĂˇvody,
-            chodĂ­Ĺˇ si jen obÄŤas zacviÄŤit, nebo chceĹˇ â€žjenâ€ś jĂ­st lĂ©pe a mĂ­t vĂ­c energie.
+            Zdravý jídelníček přizpůsobujeme tomu, jak žiješ – jestli trénuješ na závody,
+            chodíš si jen občas zacvičit, nebo chceš „jen“ jíst lépe a mít víc energie.
           </p>
         </div>
 
-        <!-- 3 cĂ­lovĂ© skupiny -->
+        <!-- 3 cílové skupiny -->
         <div class="audience-grid">
-          <!-- 1) VĂ˝konnostnĂ­ a vrcholovĂ­ sportovci -->
+          <!-- 1) Výkonnostní a vrcholoví sportovci -->
           <article class="audience-card">
             <div class="audience-image">
-              <img src="/public/images/elite_sport.png" alt="VrcholovĂ˝ sportovec pĹ™i trĂ©ninku">
+              <img src="/public/images/elite_sport.png" alt="Vrcholový sportovec při tréninku">
             </div>
             <div class="audience-body">              
               <h3 data-i18n="home.audience.pro.title">
-                VĂ˝konnostnĂ­ a vrcholovĂ­ sportovci
+                Výkonnostní a vrcholoví sportovci
               </h3>
               <p data-i18n="home.audience.pro.text">
-                MĂˇĹˇ trĂ©ninkovĂ˝ plĂˇn, sezĂłnu nebo zĂˇvody? JĂ­delnĂ­ÄŤek ladĂ­me podle
-                zatĂ­ĹľenĂ­ v jednotlivĂ˝ch dnech, aby sedÄ›l vĂ˝konu, regeneraci i tÄ›lesnĂ© hmotnosti.
+                Máš tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle
+                zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.
               </p>        
               
             </div>
@@ -232,15 +232,15 @@
           <!-- 2) Hobby sportovci -->
           <article class="audience-card">
             <div class="audience-image">
-              <img src="/public/images/sport.png" alt="Hobby sportovec pĹ™i cviÄŤenĂ­">
+              <img src="/public/images/sport.png" alt="Hobby sportovec při cvičení">
             </div>
             <div class="audience-body">              
               <h3 data-i18n="home.audience.hobby.title">
                 Hobby sportovci
               </h3>
               <p data-i18n="home.audience.hobby.text">
-                BÄ›hĂˇĹˇ, chodĂ­Ĺˇ do fitka, na kolo nebo skupinovĂ© lekce a chceĹˇ se cĂ­tit
-                lehÄŤeji, silnÄ›ji a mĂ­t vĂ­c energie? JĂ­delnĂ­ÄŤek zapadne do prĂˇce, Ĺˇkoly i rodiny.
+                Běháš, chodíš do fitka, na kolo nebo skupinové lekce a chceš se cítit
+                lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.
               </p>
               
             </div>
@@ -249,19 +249,19 @@
               </div>
           </article>
 
-          <!-- 3) Nesportovci / bÄ›ĹľnĂˇ populace -->
+          <!-- 3) Nesportovci / běžná populace -->
           <article class="audience-card">
             <div class="audience-image">
-              <img src="/public/images/no_sport.png" alt="BÄ›ĹľnĂ˝ ÄŤlovÄ›k u zdravĂ©ho jĂ­dla">
+              <img src="/public/images/no_sport.png" alt="Běžný člověk u zdravého jídla">
             </div>
             <div class="audience-body">              
               <h3 data-i18n="home.audience.everyday.title">
-                BÄ›ĹľnĂ˝ Ĺľivot bez pravidelnĂ©ho sportu
+                Běžný život bez pravidelného sportu
               </h3>
               <p data-i18n="home.audience.everyday.text">
-                Nejsi â€žsportovecâ€ś, ale chceĹˇ jĂ­st zdravÄ›ji, mĂ­t stabilnÄ›jĹˇĂ­ energii
-                bÄ›hem dne nebo zhubnout? PostavĂ­me jĂ­delnĂ­ÄŤek, kterĂ˝ je realistickĂ˝
-                a dlouhodobÄ› udrĹľitelnĂ˝.
+                Nejsi „sportovec“, ale chceš jíst zdravěji, mít stabilnější energii
+                během dne nebo zhubnout? Postavíme jídelníček, který je realistický
+                a dlouhodobě udržitelný.
               </p>
               
             </div>
@@ -274,13 +274,13 @@
         <!-- CTA pod kartami -->
         <div class="audience-cta">
           <a class="btn btn-xl" href="/form.html" data-i18n="home.audience.cta">
-            Zjisti, jakĂ˝ plĂˇn je pro tebe
+            Zjisti, jaký plán je pro tebe
           </a>
         </div>
       </div>
     </section>
     
-    <!-- ===== UKĂZKA ===== -->
+    <!-- ===== UKÁZKA ===== -->
     <section id="preview" class="preview">
       <div class="home-container">
         <h2 data-i18n="home.preview.title"></h2>
@@ -297,28 +297,28 @@
 
       <div id="lightgallery" class="preview-grid">
         <a href="/images/preview0.png" data-tag="0">
-          <img src="/images/preview0.png" alt="UkĂˇzka PDF 0">
+          <img src="/images/preview0.png" alt="Ukázka PDF 0">
         </a>
         <a href="/images/preview1.png" data-tag="1">
-          <img src="/images/preview1.png" alt="UkĂˇzka PDF 1">
+          <img src="/images/preview1.png" alt="Ukázka PDF 1">
         </a>
         <a href="/images/preview2.png" data-tag="2">
-          <img src="/images/preview2.png" alt="UkĂˇzka PDF 2">
+          <img src="/images/preview2.png" alt="Ukázka PDF 2">
         </a>
         <a href="/images/preview3.png" data-tag="3">
-          <img src="/images/preview3.png" alt="UkĂˇzka PDF 3">
+          <img src="/images/preview3.png" alt="Ukázka PDF 3">
         </a>
         <a href="/images/preview4.png" data-tag="3">
-          <img src="/images/preview4.png" alt="UkĂˇzka PDF 4">
+          <img src="/images/preview4.png" alt="Ukázka PDF 4">
         </a>
         <a href="/images/preview5.png" data-tag="4">
-          <img src="/images/preview5.png" alt="UkĂˇzka PDF 5">
+          <img src="/images/preview5.png" alt="Ukázka PDF 5">
         </a>
         <a href="/images/preview6.png" data-tag="5">
-          <img src="/images/preview6.png" alt="UkĂˇzka PDF 6">
+          <img src="/images/preview6.png" alt="Ukázka PDF 6">
         </a>
         <a href="/images/preview7.png" data-tag="5">
-          <img src="/images/preview7.png" alt="UkĂˇzka PDF 7">
+          <img src="/images/preview7.png" alt="Ukázka PDF 7">
         </a>
       </div>
       
@@ -328,7 +328,7 @@
       </div>
     </section>
 
-    <!-- ===== DIETNĂŤ SIMULĂTOR ===== -->
+    <!-- ===== DIETNÍ SIMULÁTOR ===== -->
     <section id="diet-simulator" class="diet-sim">
       <div class="home-container">
 
@@ -336,7 +336,7 @@
         <p class="diet-subtitle" data-i18n="home.diet.subtitle"></p>
         <button type="button" class="btn diet-auto-btn" id="dietAutoSelect" data-i18n="home.diet.autoSelect"></button>
 
-        <!-- === SEZNAM POTRAVIN K VĂťBÄšRU === -->
+        <!-- === SEZNAM POTRAVIN K VÝBĚRU === -->
         <div class="diet-food-list" id="dietFoodList">          
           <label><input type="checkbox" value="avocado"> <span data-i18n="home.diet.food.avocado"></span></label>
           <label><input type="checkbox" value="donut"> <span data-i18n="home.diet.food.donut"></span></label>
@@ -350,7 +350,7 @@
           <label><input type="checkbox" value="icecream"> <span data-i18n="home.diet.food.icecream"></span></label>          
         </div>
 
-        <!-- === GRAF NUTRIENTĹ® === -->
+        <!-- === GRAF NUTRIENTŮ === -->
         <div class="diet-chart-container">
           <canvas id="dietChart"></canvas>
         </div>
@@ -358,7 +358,7 @@
         <!-- === POPIS ALGORITMU === -->
         <p class="diet-info-text" data-i18n="home.diet.algorithm"></p>
 
-        <!-- === STATISTICKĂ‰ BOXY === -->
+        <!-- === STATISTICKÉ BOXY === -->
         <div class="diet-stats">
           <div class="diet-stat-box">
             <h3 data-i18n="home.diet.stats.stat1.title"></h3>
@@ -375,27 +375,27 @@
       </div>
     </section>
 
-    <!-- ===== CO POKRĂťVĂ ===== -->
+    <!-- ===== CO POKRÝVÁ ===== -->
     <section id="home-coverage" class="coverage-alt">
       <img src="images/coverage-desktop.jpg" alt="" class="bg-img bg-img--desktop">
       <img src="images/coverage-mobile.jpg" alt="" class="bg-img bg-img--mobile">
 
       <div class="container">
-        <h2 data-i18n="home.coverage.title">Co jĂ­delnĂ­ÄŤek pokrĂ˝vĂˇ</h2>
+        <h2 data-i18n="home.coverage.title">Co jídelníček pokrývá</h2>
         <p class="intro" data-i18n="home.coverage.intro">
-          ShrnutĂ­ vĹˇech hlavnĂ­ch Ĺľivin do ÄŤtyĹ™ pĹ™ehlednĂ˝ch kategoriĂ­. KliknutĂ­m zobrazĂ­te detaily.
+          Shrnutí všech hlavních živin do čtyř přehledných kategorií. Kliknutím zobrazíte detaily.
         </p>
 
         <div class="coverage-boxes">
           <!-- Box 1 -->
           <div class="big-box">
             <div class="box-front">
-              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroĹľiviny</h3>
+              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroživiny</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.energy.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
-              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroĹľiviny</h3>
+              <h3 data-i18n="home.coverage.boxes.energy.title">Energie a makroživiny</h3>
               <ul>
                 <li data-i18n="home.coverage.boxes.energy.items.energy"></li>
                 <li data-i18n="home.coverage.boxes.energy.items.protein"></li>
@@ -411,7 +411,7 @@
             <div class="box-front">
               <h3 data-i18n="home.coverage.boxes.groups.title">Skupiny potravin</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.groups.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
               <h3 data-i18n="home.coverage.boxes.groups.title">Skupiny potravin</h3>
@@ -427,12 +427,12 @@
           <!-- Box 3 -->
           <div class="big-box">
             <div class="box-front">
-              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny tukĹŻ</h3>
+              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny tuků</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.fats.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
-              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny TukĹŻ</h3>
+              <h3 data-i18n="home.coverage.boxes.fats.title">Skupiny Tuků</h3>
               <ul> 
                 <li data-i18n="home.coverage.boxes.fats.items.satu"></li>
                 <li data-i18n="home.coverage.boxes.fats.items.mono"></li>
@@ -445,12 +445,12 @@
           <!-- Box 4 -->
           <div class="big-box">
             <div class="box-front">
-              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">VitamĂ­ny B komplexu</h3>
+              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">Vitamíny B komplexu</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.vitamins_b.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
-              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">VitamĂ­ny</h3>
+              <h3 data-i18n="home.coverage.boxes.vitamins_b.title">Vitamíny</h3>
               <ul> 
                 <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb1"></li>
                 <li data-i18n="home.coverage.boxes.vitamins_b.items.vitb2"></li>
@@ -462,12 +462,12 @@
           <!-- Box 5 -->
           <div class="big-box">
             <div class="box-front">
-              <h3 data-i18n="home.coverage.boxes.vitamins.title">VitamĂ­ny</h3>
+              <h3 data-i18n="home.coverage.boxes.vitamins.title">Vitamíny</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.vitamins.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
-              <h3 data-i18n="home.coverage.boxes.vitamins.title">VitamĂ­ny</h3>
+              <h3 data-i18n="home.coverage.boxes.vitamins.title">Vitamíny</h3>
               <ul> 
                 <li data-i18n="home.coverage.boxes.vitamins.items.vitc"></li>
                 <li data-i18n="home.coverage.boxes.vitamins.items.vitd"></li>
@@ -479,12 +479,12 @@
           <!-- Box 6 -->
           <div class="big-box">
             <div class="box-front">
-              <h3 data-i18n="home.coverage.boxes.minerals.title">MinerĂˇly</h3>
+              <h3 data-i18n="home.coverage.boxes.minerals.title">Minerály</h3>
               <p class="box-subtitle" data-i18n="home.coverage.boxes.minerals.subtitle"></p>
-              <span class="hint" data-i18n="home.coverage.hint">KliknÄ›te pro detail</span>
+              <span class="hint" data-i18n="home.coverage.hint">Klikněte pro detail</span>
             </div>
             <div class="box-back">
-              <h3 data-i18n="home.coverage.boxes.minerals.title">MinerĂˇly</h3>
+              <h3 data-i18n="home.coverage.boxes.minerals.title">Minerály</h3>
               <ul>
                 <li data-i18n="home.coverage.boxes.minerals.items.magnesium"></li>
                 <li data-i18n="home.coverage.boxes.minerals.items.potassium"></li>
@@ -498,7 +498,7 @@
       </div>
     </section>
 
-    <!-- ===== CENĂŤK ===== -->   
+    <!-- ===== CENÍK ===== -->   
     <section id="pricing" class="pricing">
       <div class="home-container">
         <h2 data-i18n="home.pricing.title"></h2>
@@ -638,7 +638,7 @@
     </section>
 
 
-    <!-- ===== O NĂS ===== -->
+    <!-- ===== O NÁS ===== -->
     <section id="about" class="features">
       <div class="home-container">
         <h2 data-i18n="home.about.title"></h2>
@@ -678,7 +678,7 @@
           <div class="carousel-track">
 
         <article class="card quote">
-            <img src="/public/images/client1.jpg" alt="Mati â€“ client" class="avatar"/>
+            <img src="/public/images/client1.jpg" alt="Mati – client" class="avatar"/>
             <blockquote data-i18n="home.reference.client1.text"></blockquote>
             <div class="author">
             <span data-i18n="home.reference.client1.author"></span>
@@ -688,7 +688,7 @@
         </article>
 
         <article class="card quote">
-            <img src="/public/images/client2.jpg" alt="Hana â€“ client" class="avatar"/>
+            <img src="/public/images/client2.jpg" alt="Hana – client" class="avatar"/>
             <blockquote data-i18n="home.reference.client2.text"></blockquote>
             <div class="author">
             <span data-i18n="home.reference.client2.author"></span>
@@ -697,7 +697,7 @@
         </article>
 
         <article class="card quote">
-            <img src="/public/images/client3.jpg" alt="David â€“ client" class="avatar"/>
+            <img src="/public/images/client3.jpg" alt="David – client" class="avatar"/>
             <blockquote data-i18n="home.reference.client3.text"></blockquote>
             <div class="author">
             <span data-i18n="home.reference.client3.author"></span>
@@ -791,7 +791,7 @@
         </div>
       </div>
 
-      <!-- UprostĹ™ed -->
+      <!-- Uprostřed -->
     <div class="footer-center">
     <div id="langSwitch" class="lang-switch"></div>
     <div>
@@ -825,15 +825,14 @@
   // -----------------------
   // Konfigurace
   // -----------------------
-  // PodporovanĂ© jazyky
+  // Podporované jazyky
   const SUPPORTED = ['cs','sk','en','de','pt','es','it','pl','fr'];
-  // Popisky pro jazykovĂ˝ pĹ™epĂ­naÄŤ
+  // Popisky pro jazykový přepínač
   const LANG_LABELS = {
-    cs: 'ÄŚeĹˇtina', sk: 'SlovenÄŤina', en: 'English', de: 'Deutsch', pt: 'PortuguĂŞs',
-    es: 'EspaĂ±ol', it: 'Italiano', pl: 'Polski', fr: 'FranĂ§ais'
+    cs: 'Čeština', sk: 'Slovenčina', en: 'English', de: 'Deutsch', pt: 'Português',
+    es: 'Español', it: 'Italiano', pl: 'Polski', fr: 'Français'
   };
-  const LOCALIZED_PATHS = ['/', '/index.html', '/form.html', '/terms.html', '/gdpr.html', '/cookies.html'];
-  // CenĂ­k â€“ ÄŤĂˇstky v KÄŤ a EUR pro Standard a Premium
+  // Ceník – částky v Kč a EUR pro Standard a Premium
   const PRICING = {
     standard:{ week:{ czk:690, eur:29.90 }, month:{ czk:2090, eur:89.90 } },
     premium: { week:{ czk:990, eur:44.90 }, month:{ czk:2990, eur:129.90 } }
@@ -853,7 +852,7 @@
   }
 
   function domainForLang(lang){
-    // Na lokalu/staging nech hostitele, aĹĄ se netahĂˇ na produkÄŤnĂ­ domĂ©nu
+    // Na lokalu/staging nech hostitele, ať se netahá na produkční doménu
     if (!IS_PROD_HOST) return location.hostname;
     if (lang === 'sk') return 'fitlime.sk';
     if (lang === 'cs') return 'fitlime.cz';
@@ -878,7 +877,7 @@
   // -----------------------
   // Jazyk
   // -----------------------
-  // VrĂˇtĂ­ aktuĂˇlnĂ­ jazyk podle URL ?lang, localStorage nebo nastavenĂ­ prohlĂ­ĹľeÄŤe
+  // Vrátí aktuální jazyk podle URL ?lang, localStorage nebo nastavení prohlížeče
   function getCurrentLang() {
     const qs = new URLSearchParams(location.search).get('lang');
     if (qs && SUPPORTED.includes(qs)) {
@@ -902,19 +901,19 @@
     return SUPPORTED.includes(nav) ? nav : 'cs';
   }
 
-  // PĹ™epne jazyk (uloĹľĂ­ do localStorage a pĹ™esmÄ›ruje s ?lang=)
+  // Přepne jazyk (uloží do localStorage a přesměruje s ?lang=)
   function setLang(lang) {
     if (!SUPPORTED.includes(lang)) return;
     localStorage.setItem('lang', lang);
     location.href = buildUrlForLang(lang);
   }
 
-  // đź‘‰ NOVĂ verze â€“ podle ĹˇĂ­Ĺ™ky viewportu
+  // 👉 NOVÁ verze – podle šířky viewportu
   function renderLangSwitcher(current) {
     const container = document.getElementById('langSwitch');
     if (!container) return;
 
-    // desktop = vĹˇechny jazyky vedle sebe
+    // desktop = všechny jazyky vedle sebe
     if (window.innerWidth > 900) {
       container.innerHTML = SUPPORTED.map(code => {
         if (code === current) {
@@ -933,13 +932,13 @@
       return;
     }
 
-    // mobil/tablet = pĹŻvodnĂ­ chovĂˇnĂ­
+    // mobil/tablet = původní chování
     container.innerHTML = `<span id="langToggle" class="lang-text">${LANG_LABELS[current]}</span>`;
     document.getElementById('langToggle').addEventListener('click', () => renderLangOptions(current));
   }
 
 
-  // VykreslĂ­ seznam jazykĹŻ â€“ ostatnĂ­ jazyky jsou klikacĂ­
+  // Vykreslí seznam jazyků – ostatní jazyky jsou klikací
   function renderLangOptions(current) {
     const container = document.getElementById('langSwitch');
     container.innerHTML = SUPPORTED.map(code => {
@@ -950,7 +949,7 @@
       }
     }).join(' | ');
 
-    // PĹ™idĂˇ posluchaÄŤe kliknutĂ­ na jazyk
+    // Přidá posluchače kliknutí na jazyk
     container.querySelectorAll('.lang-option').forEach(link =>
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -960,35 +959,24 @@
   }
 
   // -----------------------
-  // Formular & odkazy
+  // Formulář & odkazy
   // -----------------------
-  // Upravuje interni odkazy, aby nesly aktualni ?lang (zachova dalsi query/hash)
-  function updateLocalizedLinks(lang) {
-    const origin = location.origin;
-    document.querySelectorAll('a[href]').forEach(a => {
-      const href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-      let url;
-      try {
-        url = new URL(href, origin);
-      } catch (_) {
-        return;
-      }
-      if (!LOCALIZED_PATHS.includes(url.pathname)) return;
-      url.searchParams.set("lang", lang);
-      a.href = url.pathname + (url.search || '') + (url.hash || '');
+  // Upraví všechny odkazy na /form.html, aby obsahovaly ?lang=xx
+  function updateFormLinks(lang) {
+    document.querySelectorAll('a[href="/form.html"]').forEach(a => {
+      a.href = `/form.html?lang=${lang}`;
     });
   }
 
   // -----------------------
   // Ceny
   // -----------------------
-  // FormĂˇtuje cenu do KÄŤ nebo EUR
+  // Formátuje cenu do Kč nebo EUR
   function formatMoney(val, useEur) {
-    return useEur ? `${val.toFixed(2).replace('.', ',')} â‚¬` : `${val.toLocaleString('cs-CZ')} KÄŤ`;
+    return useEur ? `${val.toFixed(2).replace('.', ',')} €` : `${val.toLocaleString('cs-CZ')} Kč`;
   }
 
-  // Aktualizuje ceny v cenĂ­ku podle jazyka
+  // Aktualizuje ceny v ceníku podle jazyka
   function applyPrices(lang) {
   const useEur = lang !== 'cs';
   const cur = useEur ? 'eur' : 'czk';
@@ -1003,14 +991,14 @@
       const monthEl = root.querySelector('.price-month .val');
       if (weekEl) weekEl.textContent = formatMoney(week, useEur);
       if (monthEl) monthEl.textContent = formatMoney(month, useEur);
-      // jednotky a badge se Ĺ™eĹˇĂ­ pĹ™es i18n => bootI18n()
+      // jednotky a badge se řeší přes i18n => bootI18n()
     }
   });
 }
 
 
   // -----------------------
-  // Rok ve footeru (volitelnĂ©)
+  // Rok ve footeru (volitelné)
   // -----------------------
   const yearEl = document.getElementById('year');
   if (yearEl) {
@@ -1018,16 +1006,16 @@
   }
 
   // -----------------------
-  // Inicializace po naÄŤtenĂ­
+  // Inicializace po načtení
   // -----------------------
   (async () => {
-    const INIT_LANG = getCurrentLang();     // zjistĂ­ jazyk
-    renderLangSwitcher(INIT_LANG);          // vykreslĂ­ switcher
-    updateLocalizedLinks(INIT_LANG);        // aktualizuje odkazy na formular a policy
-    applyPrices(INIT_LANG);                 // nastavĂ­ ceny
+    const INIT_LANG = getCurrentLang();     // zjistí jazyk
+    renderLangSwitcher(INIT_LANG);          // vykreslí switcher
+    updateFormLinks(INIT_LANG);             // aktualizuje odkazy na formulář
+    applyPrices(INIT_LANG);                 // nastaví ceny
   })();
 
-  // PĹ™epoÄŤĂ­tĂˇ ceny pĹ™i pĹ™epnutĂ­ obdobĂ­ (pokud existuje pĹ™epĂ­naÄŤ)
+  // Přepočítá ceny při přepnutí období (pokud existuje přepínač)
   document.getElementById('toggle-period')?.addEventListener('change', () => applyPrices(getCurrentLang()));
 
 
@@ -1039,20 +1027,20 @@ function handleScroll() {
   if (window.scrollY > 50) {
     topbar.classList.add("compact");
 
-    // Desktop = nahradĂ­me tlaÄŤĂ­tko textem "Menu"
+    // Desktop = nahradíme tlačítko textem "Menu"
     if (window.innerWidth >= 1024) {
       menuBtn.textContent = "Menu";
     } else {
-      menuBtn.textContent = "â°";
+      menuBtn.textContent = "☰";
     }
   } else {
     topbar.classList.remove("compact");
 
-    // VĹľdy vrĂˇtĂ­me pĹŻvodnĂ­ burger na mobilu
+    // Vždy vrátíme původní burger na mobilu
     if (window.innerWidth < 1024) {
-      menuBtn.textContent = "â°";
+      menuBtn.textContent = "☰";
     } else {
-      menuBtn.textContent = "Menu"; // nahoĹ™e na desktopu mĹŻĹľe bĂ˝t taky text "Menu"
+      menuBtn.textContent = "Menu"; // nahoře na desktopu může být taky text "Menu"
     }
   }
 }
@@ -1082,7 +1070,7 @@ function closeDrawer() {
   menuBtn.setAttribute("aria-expanded", "false");
   document.body.classList.remove("menu-open");
 
-  // Po skonÄŤenĂ­ animace zavĹ™enĂ­ â†’ schovej drawer
+  // Po skončení animace zavření → schovej drawer
   drawer.addEventListener("animationend", () => {
     if (drawer.classList.contains("closing")) {
       drawer.setAttribute("aria-hidden", "true");
@@ -1109,19 +1097,19 @@ if (drawerClose) {
 }
 drawerLinks.forEach(link => {
   link.addEventListener("click", (e) => {
-    e.preventDefault(); // zabrĂˇnĂ­ okamĹľitĂ©mu skoku
+    e.preventDefault(); // zabrání okamžitému skoku
 
-    const targetId = link.getAttribute("href"); // napĹ™. "#how"
+    const targetId = link.getAttribute("href"); // např. "#how"
 
-    closeDrawer(); // zavĹ™e menu
+    closeDrawer(); // zavře menu
 
-    // Po krĂˇtkĂ©m zpoĹľdÄ›nĂ­ skoÄŤĂ­me na sekci
+    // Po krátkém zpoždění skočíme na sekci
     setTimeout(() => {
       if (targetId.startsWith("#")) {
         const el = document.querySelector(targetId);
         if (el) el.scrollIntoView({ behavior: "smooth" });
       } else {
-        window.location.href = targetId; // fallback pro odkazy na jinĂ© strĂˇnky
+        window.location.href = targetId; // fallback pro odkazy na jiné stránky
       }
     }, 300); // 0.3s aby se stihla animace draweru
   });
@@ -1143,10 +1131,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.setStep = function(step){
 
-    /* ===== 1) ZmÄ›na velkĂ©ho obrĂˇzku ===== */
+    /* ===== 1) Změna velkého obrázku ===== */
     bigImg.src = `/images/how${step + 1}.png`;
 
-    /* ===== 2) ZmÄ›na textu z hidden i18n blokĹŻ ===== */
+    /* ===== 2) Změna textu z hidden i18n bloků ===== */
     bigText.innerHTML = textStorage[step].innerHTML;
 
     // animace
@@ -1167,7 +1155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.classList.toggle("active", index === step);
     });
 
-    /* ===== 5) teÄŤky ===== */
+    /* ===== 5) tečky ===== */
     dots.forEach((dot, index) => {
       dot.classList.remove("active", "completed");
       if (index < step) dot.classList.add("completed");
@@ -1209,7 +1197,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = [...document.querySelectorAll("#lightgallery a")];
   let currentIndex = 0;
 
-  // OtevĹ™enĂ­ modalu
+  // Otevření modalu
   images.forEach((item, index) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -1222,10 +1210,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ZavĹ™enĂ­ modalu
+  // Zavření modalu
   function closeModal() {
     modal.classList.remove("active");
-    document.body.style.overflow = ""; // vrĂˇtĂ­ scroll
+    document.body.style.overflow = ""; // vrátí scroll
   }
 
   closeBtn.addEventListener("click", closeModal);
@@ -1242,7 +1230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalImage.src = images[currentIndex].href;
   });
 
-  // ZavĹ™enĂ­ klĂˇvesou ESC
+  // Zavření klávesou ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
@@ -1252,7 +1240,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tags = document.querySelectorAll('.tag');
   const images = document.querySelectorAll('.preview-grid a');
 
-  // âś… NajetĂ­ na tag zvĂ˝raznĂ­ obrĂˇzek
+  // ✅ Najetí na tag zvýrazní obrázek
   tags.forEach(tag => {
     tag.addEventListener('mouseenter', () => {
       const target = tag.dataset.tag;
@@ -1265,7 +1253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // âś… NajetĂ­ na obrĂˇzek zvĂ˝raznĂ­ tag
+  // ✅ Najetí na obrázek zvýrazní tag
   images.forEach(img => {
     img.addEventListener('mouseenter', () => {
       const target = img.dataset.tag;
@@ -1278,7 +1266,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
-<!-- DietnĂ­ simulĂˇtor -->
+<!-- Dietní simulátor -->
 <script type="module" src="/src/charts.js"></script>
 
 <script type="module">
