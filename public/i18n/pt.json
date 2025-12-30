@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime – plano alimentar saudável à medida",
@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "O pagamento falhou",
-    "heading": "❌ O pagamento falhou",
+    "heading": "O pagamento falhou",
     "message": "Infelizmente, o pagamento não pôde ser concluído.",
     "resume_text": "Mantivemos o formulário – pode continuar a partir de onde parou.",
-    "resume_btn": "↩️ Voltar ao formulário",
+    "resume_btn": "↩ Voltar ao formulário",
     "back_home": "← Voltar à página inicial",
     "note": "O pagamento não foi efetuado. Tente novamente ou use outro cartão.",
     "tips": [
@@ -665,18 +665,21 @@
     "sending": "A enviar..."
   },
   "thanks": {
-    "title": "Obrigado pela encomenda | FitLime",
+    "title": "Obrigado pela sua encomenda | FitLime",
     "header": "Encomenda concluída com sucesso :)",
+    "eyebrow": "Encomenda confirmada",
     "subtitle_1": "Obrigado pela sua encomenda!",
-    "subtitle_2_prefix": "Acabámos de enviar a confirmação para o e-mail",
+    "subtitle_2_prefix": "Acabámos de enviar a confirmação para o seu e-mail",
+    "next_title": "O que acontece a seguir",
     "order_id": "Número da encomenda",
     "name": "Nome",
     "plan": "Plano",
     "period": "Período",
-    "next_premium": "Vamos preparar o seu plano alimentar e enviá-lo em até 2 dias úteis.",
-    "next_basic": "Vamos preparar o seu plano alimentar e enviá-lo em até 3 dias úteis.",
-    "next_email": "Se não encontrar o e-mail, verifique a pasta Spam ou Promoções.",
-    "next_tips": "Enquanto isso, pode ler as nossas dicas sobre nutrição.",
+    "support_note": "Precisa de alterar alguma coisa? Responda ao e-mail que acabámos de lhe enviar ou escreva para {{email}} — teremos todo o gosto em ajudar.",
+    "next_premium": "Vamos preparar o seu plano alimentar e enviá-lo dentro de 2 dias úteis.",
+    "next_basic": "Vamos preparar o seu plano alimentar e enviá-lo dentro de 3 dias úteis.",
+    "next_email": "Verifique também a pasta Spam ou Promoções caso não encontre o e-mail.",
+    "next_tips": "Enquanto isso, pode ler as nossas dicas de nutrição.",
     "btn_home": "Voltar à página inicial",
     "btn_tips": "Dicas de nutrição"
   },

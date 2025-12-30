@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "Payment failed",
-    "heading": "❌ Payment failed",
+    "heading": "Payment failed",
     "message": "Unfortunately, the payment could not be processed.",
     "resume_text": "Your form data has been saved - you can continue where you left off.",
-    "resume_btn": "↩️ Return to form",
+    "resume_btn": "↩ Return to form",
     "back_home": "← Back to homepage",
     "note": "The payment was not processed. Please try again or use another card.",
     "tips": [
@@ -665,21 +665,23 @@
     "sending": "Sending..."
   },
   "thanks": {
-    "title": "Thank you for your order | FitLime",
-    "header": "Order completed successfully :)",
-    "subtitle_1": "Thank you for your purchase!",
-    "eyebrow": "Order confirmed",
-    "subtitle_2_prefix": "A confirmation email has been sent to",
-    "order_id": "Order ID",
+    "title": "Thank You for Your Order | FitLime",
+    "header": "Order Successfully Completed :)",
+    "eyebrow": "Order Confirmed",
+    "subtitle_1": "Thank you for your order!",
+    "subtitle_2_prefix": "We’ve just sent the confirmation to your email",
+    "next_title": "What Happens Next",
+    "order_id": "Order Number",
     "name": "Name",
     "plan": "Plan",
-    "period": "Duration",
-    "next_premium": "We'll prepare and send your plan within 2 business days.",
-    "next_basic": "We'll prepare and send your plan within 3 business days.",
-    "next_email": "Please check your Spam or Promotions folder if you don't see the email.",
+    "period": "Period",
+    "support_note": "Need to make a change? Reply to the email we’ve just sent you or write to {{email}}, and we’ll be happy to help.",
+    "next_premium": "We will prepare your meal plan and send it to you within 2 business days.",
+    "next_basic": "We will prepare your meal plan and send it to you within 3 business days.",
+    "next_email": "Check your Spam or Promotions folder if you don’t see the email.",
     "next_tips": "In the meantime, you can read our nutrition tips.",
-    "btn_home": "Back to homepage",
-    "btn_tips": "Nutrition tips"
+    "btn_home": "Back to Homepage",
+    "btn_tips": "Nutrition Tips"
   },
   "termsPage": {
     "metaTitle": "Terms & Conditions - FitLime",

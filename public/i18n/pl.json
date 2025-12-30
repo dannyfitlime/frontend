@@ -1,3 +1,4 @@
+﻿
 {
   "home": {
     "meta": {
@@ -648,10 +649,10 @@
   },
   "payment_failed": {
     "title": "Płatność nie powiodła się",
-    "heading": "❌ Płatność nie powiodła się",
+    "heading": "Płatność nie powiodła się",
     "message": "Niestety płatność nie została zrealizowana.",
     "resume_text": "Formularz został zachowany – możesz kontynuować od miejsca, w którym przerwałeś.",
-    "resume_btn": "↩️ Powrót do formularza",
+    "resume_btn": "↩ Powrót do formularza",
     "back_home": "← Powrót na stronę główną",
     "note": "Płatność nie została dokonana. Spróbuj ponownie lub użyj innej karty.",
     "tips": [
@@ -667,16 +668,19 @@
   "thanks": {
     "title": "Dziękujemy za zamówienie | FitLime",
     "header": "Zamówienie zostało pomyślnie zrealizowane :)",
+    "eyebrow": "Zamówienie potwierdzone",
     "subtitle_1": "Dziękujemy za Państwa zamówienie!",
-    "subtitle_2_prefix": "Przed chwilą wysłaliśmy potwierdzenie na adres e-mail",
+    "subtitle_2_prefix": "Potwierdzenie właśnie wysłaliśmy na Państwa adres e-mail",
+    "next_title": "Co dalej",
     "order_id": "Numer zamówienia",
-    "name": "Imię i nazwisko",
+    "name": "Imię",
     "plan": "Plan",
     "period": "Okres",
-    "next_premium": "Przygotujemy Państwa plan żywieniowy i wyślemy go w ciągu maksymalnie 2 dni roboczych.",
-    "next_basic": "Przygotujemy Państwa plan żywieniowy i wyślemy go w ciągu maksymalnie 3 dni roboczych.",
-    "next_email": "Jeśli e-mail nie pojawi się w skrzynce odbiorczej, proszę sprawdzić folder Spam lub Oferty/Promocje.",
-    "next_tips": "W międzyczasie mogą Państwo przeczytać nasze wskazówki dotyczące żywienia.",
+    "support_note": "Czy trzeba coś zmienić? Proszę odpowiedzieć na wiadomość e-mail, którą właśnie wysłaliśmy, lub napisać na {{email}} — chętnie pomożemy.",
+    "next_premium": "Przygotujemy Państwa jadłospis i wyślemy go w ciągu 2 dni roboczych.",
+    "next_basic": "Przygotujemy Państwa jadłospis i wyślemy go w ciągu 3 dni roboczych.",
+    "next_email": "Proszę sprawdzić folder Spam lub Oferty, jeśli wiadomość nie pojawia się w skrzynce odbiorczej.",
+    "next_tips": "W międzyczasie można zapoznać się z naszymi wskazówkami dotyczącymi żywienia.",
     "btn_home": "Powrót na stronę główną",
     "btn_tips": "Wskazówki żywieniowe"
   },

@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime – piano alimentare sano su misura",
@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "Pagamento non riuscito",
-    "heading": "❌ Pagamento non riuscito",
+    "heading": "Pagamento non riuscito",
     "message": "Purtroppo il pagamento non è andato a buon fine.",
     "resume_text": "Abbiamo conservato il modulo: puoi riprendere da dove ti eri fermato.",
-    "resume_btn": "↩️ Torna al modulo",
+    "resume_btn": "↩ Torna al modulo",
     "back_home": "← Torna alla pagina iniziale",
     "note": "Il pagamento non è stato eseguito. Riprova o usa un’altra carta.",
     "tips": [
@@ -665,20 +665,23 @@
     "sending": "Invio in corso..."
   },
   "thanks": {
-    "title": "Grazie per l'ordine | FitLime",
+    "title": "Grazie per il Suo ordine | FitLime",
     "header": "Ordine completato con successo :)",
-    "subtitle_1": "Grazie per il tuo ordine!",
-    "subtitle_2_prefix": "Abbiamo appena inviato la conferma all'indirizzo e-mail",
+    "eyebrow": "Ordine confermato",
+    "subtitle_1": "Grazie per il Suo ordine!",
+    "subtitle_2_prefix": "Abbiamo appena inviato la conferma alla Sua e-mail",
+    "next_title": "Cosa succede dopo",
     "order_id": "Numero d'ordine",
     "name": "Nome",
     "plan": "Piano",
     "period": "Periodo",
-    "next_premium": "Prepareremo il tuo piano alimentare e te lo invieremo entro 2 giorni lavorativi.",
-    "next_basic": "Prepareremo il tuo piano alimentare e te lo invieremo entro 3 giorni lavorativi.",
-    "next_email": "Se non trovi l'e-mail, controlla la cartella Spam o Promozioni.",
-    "next_tips": "Nel frattempo puoi leggere i nostri consigli sulla nutrizione.",
-    "btn_home": "Torna alla pagina iniziale",
-    "btn_tips": "Consigli di nutrizione"
+    "support_note": "Ha bisogno di modificare qualcosa? Risponda semplicemente all’e-mail che Le abbiamo appena inviato oppure scriva a {{email}} — saremo lieti di aiutarLa.",
+    "next_premium": "Prepareremo il Suo piano alimentare e glielo invieremo entro 2 giorni lavorativi.",
+    "next_basic": "Prepareremo il Suo piano alimentare e glielo invieremo entro 3 giorni lavorativi.",
+    "next_email": "Controlli anche la cartella Spam o Promozioni se non trova l’e-mail.",
+    "next_tips": "Nel frattempo può leggere i nostri consigli nutrizionali.",
+    "btn_home": "Torna alla pagina principale",
+    "btn_tips": "Consigli nutrizionali"
   },
   "termsPage": {
     "metaTitle": "Condizioni generali – FitLime",

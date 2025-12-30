@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="/images/logotucne.png">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/home.css">
-  <title data-i18n="thanks.title">Děkujeme za objednávku | FitLime</title>
+  <title data-i18n="thanks.title">DÄ›kujeme za objednĂˇvku | FitLime</title>
   <style>
     :root {
       --success: #0f7c2d;
@@ -18,6 +18,7 @@
                   radial-gradient(circle at 85% 0%, rgba(0,80,3,0.12), transparent 32%),
                   linear-gradient(135deg, #f9fbf7, #eef4ef);
       min-height: 100vh;
+      height: auto;
       padding: 32px 16px 32px;
       display: flex;
       flex-direction: column;
@@ -34,16 +35,37 @@
     .brand-link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
       text-decoration: none;
-      color: var(--fg);
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      justify-content: center;
+    }
+    .brand-card {
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto 6px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #0b5f1a, #0e7c27);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
     }
     .brand-link img {
-      width: min(140px, 42vw);
-      height: auto;
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 16px;
+      padding: 8px;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+    .brand-link span {
+      color: #ffffff;
     }
     .status-card {
       background: var(--panel);
@@ -86,7 +108,11 @@
     }
     .lead {
       margin: 0;
-      color: var(--muted);
+      color: #0a2812;
+    }
+    .lead-block {
+      display: grid;
+      gap: 8px;
     }
     .lead,
     h1,
@@ -152,6 +178,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+      justify-content: center;
     }
     .btn {
       min-width: 170px;
@@ -165,24 +192,29 @@
     @media (max-width: 640px) {
       body { padding: 22px 14px 26px; }
       .status-shell { gap: 10px; }
-      .brand-link img { width: 120px; }
+      .brand-link img {
+        width: 50px;
+        height: 50px;
+        }
       .status-card { padding: 22px; }
-      .status-head { grid-template-columns: 1fr; }
-      .status-icon { width: 56px; height: 56px; }
+      .status-icon { width: 56px; height: 56px; margin-top: 10px;}
       .summary-row { grid-template-columns: 1fr; }
       .btn { width: 100%; }
-      h1 { font-size: clamp(24px, 7vw, 32px); }
+      h1 { font-size: clamp(24px, 3vw, 32px); }
+    }
+    @media (max-width: 280px) {
+      .status-head { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <main class="status-shell">
-    <a class="brand-link" href="/index.html" aria-label="FitLime">
-      <img src="/public/images/logo_pruhledne.png" alt="FitLime logo">
-      <span>FitLime</span>
-    </a>
-
     <section class="status-card">
+      <a class="brand-link brand-card" href="/index.html" aria-label="FitLime">
+        <img src="/images/logo_pruhledne.png" alt="FitLime logo">
+        <span>FitLime</span>
+      </a>
+
       <div class="status-head">
         <div class="status-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -192,18 +224,20 @@
         <div>
           <p class="eyebrow" data-i18n="thanks.eyebrow">Objednávka potvrzena</p>
           <h1 data-i18n="thanks.header">Objednávka úspěšně dokončena</h1>
-          <p class="lead" data-i18n="thanks.subtitle_1">Děkujeme, tvůj plán je na cestě.</p>
-          <p class="lead email-line">
-            <span data-i18n="thanks.subtitle_2_prefix">Potvrzení jsme právě odeslali na e-mail</span>
-            <span id="custEmail"></span>
-          </p>
         </div>
+      </div>
+      <div class="lead-block">
+        <p class="lead" data-i18n="thanks.subtitle_1">Děkujeme, tvůj plán je na cestě.</p>
+        <p class="lead email-line">
+          <span data-i18n="thanks.subtitle_2_prefix">Potvrzení jsme právě odeslali na e-mail</span>
+          <span id="custEmail"></span>
+        </p>
       </div>
 
       <div class="summary" id="orderBox"></div>
 
       <div class="steps">
-        <p class="title" id="nextStepsTitle">Co se bude dít dál</p>
+        <p class="title" id="nextStepsTitle">Co se bude dát dál</p>
         <div id="nextSteps"></div>
       </div>
 
@@ -212,7 +246,7 @@
         <a href="https://www.sportvitalpro.cz/clanky" class="btn outline" data-i18n="thanks.btn_tips">Tipy na výživu</a>
       </div>
 
-      <p class="support" id="supportNote">Potřebujete něco upravit? Napište nám na info@fitlime.cz.</p>
+      <p class="support" id="supportNote">Potřebujete něco upravit? Odpovězte nám na email, který jsme Vám právě poslali, či napište na plan@fitlime.cz.</p>
     </section>
   </main>
 
@@ -290,7 +324,7 @@
       const formState = JSON.parse(localStorage.getItem("formState") || "{}");
       const lang = resolveLang(formState);
       document.documentElement.lang = lang;
-      const contactEmail = lang === "sk" ? "info@fitlime.sk" : (lang === "cs" ? "info@fitlime.cz" : "info@fitlime.eu");
+      const contactEmail = lang === "sk" ? "plan@fitlime.sk" : (lang === "cs" ? "plan@fitlime.cz" : "plan@fitlime.eu");
 
       const i18n = await fetch(`/i18n/${lang}.json`).then(r => r.json()).catch(() => ({}));
       const translate = (key) => getText(i18n, key);
@@ -340,7 +374,7 @@
       `;
 
       const stepsTitle = document.getElementById("nextStepsTitle");
-      stepsTitle.textContent = lang === "en" ? "What happens next" : "Co se bude dít dál";
+      stepsTitle.textContent = translate("thanks.next_title") || (lang === "en" ? "What happens next" : "Co se bude dít dál");
 
       const nextSteps = document.getElementById("nextSteps");
       const isPremium = (formState?.plan?.variant || "").toLowerCase() === "premium";
@@ -364,9 +398,12 @@
         </div>
       `;
 
-      const supportNote = lang === "en"
-        ? `Need to adjust your details? Write us at ${contactEmail} and we'll help.`
-        : `Potřebujete něco upravit? Napište nám na ${contactEmail} a rádi pomůžeme.`;
+      const supportTemplate = translate("thanks.support_note");
+      const supportNote = supportTemplate
+        ? supportTemplate.replace(/\{\{email\}\}/g, contactEmail)
+        : (lang === "en"
+          ? `Need to adjust your details? Write us at ${contactEmail} and we'll help.`
+          : `Potřebujete něco upravit? Napište nám na ${contactEmail} a rádi pomůžeme.`);
       document.getElementById("supportNote").textContent = supportNote;
     }
 
@@ -374,4 +411,6 @@
   </script>
 </body>
 </html>
+
+
 

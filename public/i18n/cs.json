@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "Platba se nezdařila",
-    "heading": "❌ Platba se nezdařila",
+    "heading": "Platba se nezdařila",
     "message": "Bohužel se platbu nepodařilo dokončit.",
     "resume_text": "Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.",
-    "resume_btn": "↩️ Vrátit se k formuláři",
+    "resume_btn": "↩ Vrátit se k formuláři",
     "back_home": "← Zpět na hlavní stránku",
     "note": "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.",
     "tips": [
@@ -670,14 +670,16 @@
     "eyebrow": "Objednávka potvrzena",
     "subtitle_1": "Děkujeme za objednávku!",
     "subtitle_2_prefix": "Potvrzení jsme právě odeslali na e-mail",
+    "next_title": "Co se bude dít dál",
     "order_id": "Číslo objednávky",
     "name": "Jméno",
     "plan": "Plán",
     "period": "Období",
+    "support_note": "Potřebujete něco upravit? Odpovězte nám na email, který jsme Vám právě poslali, či napište na {{email}} a rádi Vám pomůžeme.",
     "next_premium": "Tvůj jídelníček připravíme a odešleme do 2 pracovních dnů.",
     "next_basic": "Tvůj jídelníček připravíme a odešleme do 3 pracovních dnů.",
     "next_email": "Zkontroluj složku Spam nebo Promo, pokud e-mail nenajdeš.",
-    "next_tips": "Mezitím si můžete přečíst naše tipy o výživě.",
+    "next_tips": "Mezitím si můžeš přečíst naše tipy o výživě.",
     "btn_home": "Zpět na hlavní stránku",
     "btn_tips": "Tipy na výživu"
   },
@@ -953,3 +955,5 @@
     "back": "Zpět na hlavní stránku"
   }
 }
+
+

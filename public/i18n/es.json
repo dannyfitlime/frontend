@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime – menú saludable a tu medida",
@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "El pago ha fallado",
-    "heading": "❌ El pago ha fallado",
+    "heading": "El pago ha fallado",
     "message": "Lamentablemente no se pudo completar el pago.",
     "resume_text": "Hemos guardado tu formulario: puedes continuar donde lo dejaste.",
-    "resume_btn": "↩️ Volver al formulario",
+    "resume_btn": "↩ Volver al formulario",
     "back_home": "← Volver al inicio",
     "note": "El pago no se realizó. Inténtalo de nuevo o utiliza otra tarjeta.",
     "tips": [
@@ -665,19 +665,22 @@
     "sending": "Enviando..."
   },
   "thanks": {
-    "title": "Gracias por tu pedido | FitLime",
+    "title": "Gracias por su pedido | FitLime",
     "header": "Pedido completado con éxito :)",
-    "subtitle_1": "¡Gracias por tu pedido!",
-    "subtitle_2_prefix": "Acabamos de enviar la confirmación al correo",
+    "eyebrow": "Pedido confirmado",
+    "subtitle_1": "¡Gracias por su pedido!",
+    "subtitle_2_prefix": "Acabamos de enviar la confirmación a su correo electrónico",
+    "next_title": "Qué sucede a continuación",
     "order_id": "Número de pedido",
     "name": "Nombre",
     "plan": "Plan",
     "period": "Período",
-    "next_premium": "Prepararemos tu menú y te lo enviaremos en un plazo de 2 días laborables.",
-    "next_basic": "Prepararemos tu menú y te lo enviaremos en un plazo de 3 días laborables.",
-    "next_email": "Si no encuentras el correo, revisa la carpeta de Spam o Promociones.",
-    "next_tips": "Mientras tanto, puedes leer nuestros consejos de nutrición.",
-    "btn_home": "Volver al inicio",
+    "support_note": "¿Necesita modificar algo? Responda al correo que le acabamos de enviar o escriba a {{email}} y con gusto le ayudaremos.",
+    "next_premium": "Prepararemos su plan alimenticio y se lo enviaremos en un plazo de 2 días laborables.",
+    "next_basic": "Prepararemos su plan alimenticio y se lo enviaremos en un plazo de 3 días laborables.",
+    "next_email": "Revise la carpeta de Spam o Promociones si no encuentra el correo.",
+    "next_tips": "Mientras tanto, puede leer nuestros consejos de nutrición.",
+    "btn_home": "Volver a la página principal",
     "btn_tips": "Consejos de nutrición"
   },
   "termsPage": {

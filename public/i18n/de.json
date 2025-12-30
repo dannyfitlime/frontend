@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime – gesunder Ernährungsplan nach Maß",
@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "Zahlung fehlgeschlagen",
-    "heading": "❌ Zahlung fehlgeschlagen",
+    "heading": "Zahlung fehlgeschlagen",
     "message": "Leider konnte die Zahlung nicht abgeschlossen werden.",
     "resume_text": "Wir haben das Formular für Sie gespeichert – Sie können dort weitermachen, wo Sie aufgehört haben.",
-    "resume_btn": "↩️ Zurück zum Formular",
+    "resume_btn": "↩ Zurück zum Formular",
     "back_home": "← Zurück zur Startseite",
     "note": "Die Zahlung wurde nicht ausgeführt. Bitte versuchen Sie es erneut oder verwenden Sie eine andere Karte.",
     "tips": [
@@ -667,16 +667,19 @@
   "thanks": {
     "title": "Vielen Dank für Ihre Bestellung | FitLime",
     "header": "Bestellung erfolgreich abgeschlossen :)",
+    "eyebrow": "Bestellung bestätigt",
     "subtitle_1": "Vielen Dank für Ihre Bestellung!",
-    "subtitle_2_prefix": "Die Bestätigung haben wir soeben an die E-Mail-Adresse gesendet:",
+    "subtitle_2_prefix": "Die Bestätigung haben wir soeben an Ihre E-Mail-Adresse gesendet",
+    "next_title": "Wie es weitergeht",
     "order_id": "Bestellnummer",
     "name": "Name",
     "plan": "Plan",
     "period": "Zeitraum",
-    "next_premium": "Wir erstellen deinen Ernährungsplan und senden ihn dir innerhalb von 2 Werktagen.",
-    "next_basic": "Wir erstellen deinen Ernährungsplan und senden ihn dir innerhalb von 3 Werktagen.",
-    "next_email": "Wenn du die E-Mail nicht findest, prüfe bitte auch den Spam- oder Werbungs-Ordner.",
-    "next_tips": "In der Zwischenzeit kannst du unsere Ernährungstipps lesen.",
+    "support_note": "Möchten Sie etwas anpassen? Antworten Sie einfach auf die E-Mail, die wir Ihnen gerade geschickt haben, oder schreiben Sie an {{email}} – wir helfen Ihnen gerne weiter.",
+    "next_premium": "Wir erstellen Ihren Ernährungsplan und senden ihn Ihnen innerhalb von 2 Werktagen zu.",
+    "next_basic": "Wir erstellen Ihren Ernährungsplan und senden ihn Ihnen innerhalb von 3 Werktagen zu.",
+    "next_email": "Bitte prüfen Sie auch den Spam- oder Werbeordner, falls Sie die E-Mail nicht finden.",
+    "next_tips": "In der Zwischenzeit können Sie unsere Ernährungstipps lesen.",
     "btn_home": "Zurück zur Startseite",
     "btn_tips": "Ernährungstipps"
   },

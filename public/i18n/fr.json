@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime – menu sain sur mesure",
@@ -648,10 +648,10 @@
   },
   "payment_failed": {
     "title": "Le paiement a échoué",
-    "heading": "❌ Le paiement a échoué",
+    "heading": "Le paiement a échoué",
     "message": "Malheureusement, le paiement n’a pas pu être finalisé.",
     "resume_text": "Nous avons conservé votre formulaire – vous pouvez continuer là où vous vous étiez arrêté(e).",
-    "resume_btn": "↩️ Retourner au formulaire",
+    "resume_btn": "↩ Retourner au formulaire",
     "back_home": "← Retour à la page d’accueil",
     "note": "Le paiement n’a pas abouti. Veuillez réessayer ou utiliser une autre carte.",
     "tips": [
@@ -666,19 +666,22 @@
   },
   "thanks": {
     "title": "Merci pour votre commande | FitLime",
-    "header": "Commande finalisée avec succès :)",
+    "header": "Commande réalisée avec succès :)",
+    "eyebrow": "Commande confirmée",
     "subtitle_1": "Merci pour votre commande !",
-    "subtitle_2_prefix": "Nous venons d’envoyer la confirmation à l’adresse e-mail",
+    "subtitle_2_prefix": "Nous venons d’envoyer la confirmation à votre adresse e-mail",
+    "next_title": "La suite des étapes",
     "order_id": "Numéro de commande",
     "name": "Nom",
-    "plan": "Plan",
+    "plan": "Formule",
     "period": "Période",
-    "next_premium": "Nous préparerons votre menu et l’enverrons sous 2 jours ouvrables.",
-    "next_basic": "Nous préparerons votre menu et l’enverrons sous 3 jours ouvrables.",
-    "next_email": "Si vous ne trouvez pas l’e-mail, vérifiez les dossiers Spam ou Promotions.",
-    "next_tips": "En attendant, vous pouvez consulter nos conseils nutrition.",
+    "support_note": "Vous souhaitez modifier quelque chose ? Répondez simplement à l’e-mail que nous venons de vous envoyer ou écrivez à {{email}} — nous serons ravis de vous aider.",
+    "next_premium": "Nous préparerons votre plan alimentaire et vous l’enverrons sous 2 jours ouvrables.",
+    "next_basic": "Nous préparerons votre plan alimentaire et vous l’enverrons sous 3 jours ouvrables.",
+    "next_email": "Veuillez vérifier votre dossier Spam ou Promotions si vous ne trouvez pas l’e-mail.",
+    "next_tips": "En attendant, vous pouvez consulter nos conseils nutritionnels.",
     "btn_home": "Retour à la page d’accueil",
-    "btn_tips": "Conseils nutrition"
+    "btn_tips": "Conseils nutritionnels"
   },
   "termsPage": {
     "metaTitle": "Conditions générales – FitLime",

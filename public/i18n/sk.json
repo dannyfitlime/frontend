@@ -644,10 +644,10 @@
   },
   "payment_failed": {
     "title": "Platba sa nepodarila",
-    "heading": "❌ Platba sa nepodarila",
+    "heading": "Platba sa nepodarila",
     "message": "Žiaľ, platbu sa nepodarilo dokončiť.",
     "resume_text": "Formulár sme Vám zachovali – môžete pokračovať tam, kde ste skončili.",
-    "resume_btn": "↩️ Vrátiť sa k formuláru",
+    "resume_btn": "↩ Vrátiť sa k formuláru",
     "back_home": "← Späť na hlavnú stránku",
     "note": "Platba neprebehla. Skúste to znova alebo použite inú kartu.",
     "tips": [
@@ -661,14 +661,17 @@
     "sending": "Prebieha odosielanie..."
   },
   "thanks": {
-    "title": "Ďakujeme za objednávku | FitLime",
-    "header": "Objednávka úspešne dokončená :)",
-    "subtitle_1": "Ďakujeme za objednávku!",
-    "subtitle_2_prefix": "Potvrdenie sme práve poslali na e-mail",
+    "title": "Ďakujeme za vašu objednávku | FitLime",
+    "header": "Objednávka bola úspešne dokončená :)",
+    "eyebrow": "Objednávka potvrdená",
+    "subtitle_1": "Ďakujeme za vašu objednávku!",
+    "subtitle_2_prefix": "Potvrdenie sme práve poslali na váš e-mail",
+    "next_title": "Čo bude nasledovať",
     "order_id": "Číslo objednávky",
     "name": "Meno",
     "plan": "Plán",
     "period": "Obdobie",
+    "support_note": "Potrebujete niečo upraviť? Odpovedzte na e-mail, ktorý sme vám práve poslali, alebo napíšte na {{email}} a radi vám pomôžeme.",
     "next_premium": "Váš jedálniček pripravíme a odošleme do 2 pracovných dní.",
     "next_basic": "Váš jedálniček pripravíme a odošleme do 3 pracovných dní.",
     "next_email": "Skontrolujte priečinok Spam alebo Promo, ak e-mail nenájdete.",
@@ -948,3 +951,4 @@
     "back": "Späť na hlavnú stránku"
   }
 }
+
