@@ -314,15 +314,15 @@ function setMainForActive(id){
 function buildSportsSelectOptions(byGroup, lang, selectedId){
   const labels = {
     endurance: t('step3.groups.title_endurance') || 'Vytrvalostní sporty',
-    winter:    t('step3.groups.title_winter')    || 'Zimní sporty',
-    team:      t('step3.groups.title_team')      || 'Kolektivní sporty',
     individual:t('step3.groups.title_individual')|| 'Individuální sporty',
+    team:      t('step3.groups.title_team')      || 'Kolektivní sporty',
     fitness:   t('step3.groups.title_fitness')   || 'Fitness & tělocvična',
     water:     t('step3.groups.title_water')     || 'Vodní sporty',
+    winter:    t('step3.groups.title_winter')    || 'Zimní sporty',    
     combat:    t('step3.groups.title_combat')    || 'Bojové sporty',
     other:     t('step3.groups.title_other')     || 'Ostatní sporty'
   };
-  const order = ['endurance','winter','team','individual','fitness','water','combat','other'];
+  const order = ['endurance','individual','team','fitness','water','winter','combat','other'];
 
   // 🩵 tahle volba je vidět jako placeholder, ale NE v nabídce
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>

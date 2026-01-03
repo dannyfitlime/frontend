@@ -10,29 +10,7 @@
     "pl": "Sporty wytrzymałościowe",
     "fr": "Sports d'endurance"
   },
-  "winter": {
-    "cs": "Zimní sporty",
-    "sk": "Zimné športy",
-    "en": "Winter sports",
-    "de": "Wintersportarten",
-    "pt": "Desportos de inverno",
-    "es": "Deportes de invierno",
-    "it": "Sport invernali",
-    "pl": "Sporty zimowe",
-    "fr": "Sports d'hiver"
-  },
-  "team": {
-    "cs": "Kolektivní sporty",
-    "sk": "Kolektívne športy",
-    "en": "Team sports",
-    "de": "Mannschaftssportarten",
-    "pt": "Desportos coletivos",
-    "es": "Deportes de equipo",
-    "it": "Sport di squadra",
-    "pl": "Sporty drużynowe",
-    "fr": "Sports collectifs"
-  },
-  "individual": {
+    "individual": {
     "cs": "Individuální sporty",
     "sk": "Individuálne športy",
     "en": "Individual sports",
@@ -43,7 +21,18 @@
     "pl": "Sporty indywidualne",
     "fr": "Sports individuels"
   },
-  "fitness": {
+    "team": {
+    "cs": "Kolektivní sporty",
+    "sk": "Kolektívne športy",
+    "en": "Team sports",
+    "de": "Mannschaftssportarten",
+    "pt": "Desportos coletivos",
+    "es": "Deportes de equipo",
+    "it": "Sport di squadra",
+    "pl": "Sporty drużynowe",
+    "fr": "Sports collectifs"
+  },
+    "fitness": {
     "cs": "Fitness & tělocvična",
     "sk": "Fitness & telocvičňa",
     "en": "Fitness & Gym",
@@ -54,7 +43,7 @@
     "pl": "Fitness i siłownia",
     "fr": "Fitness & salle de sport"
   },
-  "water": {
+    "water": {
     "cs": "Vodní sporty",
     "sk": "Vodné športy",
     "en": "Water sports",
@@ -64,6 +53,17 @@
     "it": "Sport acquatici",
     "pl": "Sporty wodne",
     "fr": "Sports aquatiques"
+  },
+  "winter": {
+    "cs": "Zimní sporty",
+    "sk": "Zimné športy",
+    "en": "Winter sports",
+    "de": "Wintersportarten",
+    "pt": "Desportos de inverno",
+    "es": "Deportes de invierno",
+    "it": "Sport invernali",
+    "pl": "Sporty zimowe",
+    "fr": "Sports d'hiver"
   },
   "combat": {
     "cs": "Bojové sporty",
