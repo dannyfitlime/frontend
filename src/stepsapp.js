@@ -1196,6 +1196,10 @@ function buildReviewSummary() {
     2: t('step8.repeats_2'),
     3: t('step8.repeats_3')
   };
+  const gramsMap = {
+    yes: t('step6.grams_yes'),
+    no: t('step6.grams_no')
+  };
 
   const variantKey = plan?.variant ? `step7.${plan.variant}_title` : null;
   const periodKey  = plan?.period ? `step7.period_${plan.period}` : null;
@@ -1274,6 +1278,7 @@ function buildReviewSummary() {
 
 
     repeats: repeatsMap[nutrition?.repeats] || '—',
+    show_grams: gramsMap[nutrition?.show_grams] || '—',
     macros: (() => {
       const c = nutrition?.macros?.c ?? '—';
       const f = nutrition?.macros?.f ?? '—';
@@ -1306,6 +1311,7 @@ export function bindReviewStep() {
     rev_diet: summary.diet,
     rev_dislikes: summary.dislikes,
     rev_repeats: summary.repeats,
+    rev_show_grams: summary.show_grams,
     rev_macros: summary.macros    
   };
 

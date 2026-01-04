@@ -1095,7 +1095,7 @@ button.primary:hover { background: #009703; }
 }
 
 /* === Slevový kód === */
-.discount-field { margin-top: 24px; }
+.discount-field { margin-top: 44px; }
 .discount-input { display: flex; gap: 8px; }
 .discount-input input {
   flex: 1;

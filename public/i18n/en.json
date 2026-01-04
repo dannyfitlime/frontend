@@ -627,6 +627,7 @@
     "dislikes": "Foods excluded",
     "repeats": "Meal repetition",
     "macros": "Macronutrient distribution",
+    "grams_title": "Portion sizes shown",
     "plan": "Selected plan",
     "repeats_1": "Meals do not repeat",
     "repeats_2": "Meals repeat max twice",
