@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime - Personalized Meal & Training Plans",
@@ -225,7 +225,7 @@
       "per_month": "/ month",
       "advantage": "better value",
       "standard": {
-        "title": "⚖️ Standard - full (5 days)",
+        "title": "?? Standard - full (5 days)",
         "feature1": "5-day meal plan (Mon-Fri)",
         "feature2": "Unique, varied meals",
         "feature3": "Personalized by training diary",
@@ -236,7 +236,7 @@
       },
       "premium": {
         "badge": "Most popular",
-        "title": "🏆 Premium - tailored (7 days)",
+        "title": "?? Premium - tailored (7 days)",
         "feature1": "7-day meal plan (Mon-Sun)",
         "feature2": "Unique, varied meals",
         "feature3": "Personalized by training diary",
@@ -509,6 +509,18 @@
     "select_sport_placeholder": "Choose a sport"
   },
   "step4": {
+    "title": "Macros & charts",
+    "subtitle": "Values are prefilled based on your activities.",
+    "macros_title": "Macronutrients",
+    "graphs_title": "Energy intake & expenditure charts",
+    "carb": "Carbohydrates (%)",
+    "fat": "Fat (%)",
+    "protein": "Protein (%)",
+    "sum_input": "Sum",
+    "help_macros": "Values are pre-filled based on your activity level.",
+    "premium_note": "Macro customization applies only to the Premium plan."
+  },
+  "step5": {
     "title": "Diet preferences",
     "diet": "Diet type",
     "diet_none": "No restrictions",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Eggs",
     "help_diet": "Choose your usual dietary style.",
     "help_dislikes": "Select ingredients you want to exclude from your plan.",
-    "premium_note": "Diet adjustments and exclusions are available only in the Premium plan.",
-    "repeats_title": "Meal repetition frequency",
-    "help_repeats": "Select how often meals can repeat during the week.",
+    "premium_note": "Diet adjustments and exclusions are available only in the Premium plan."
+  },
+      "step6": {
+    "title": "Meal plan settings",
+    "repeats_title": "Meal repetition count",
+    "help_repeats": "Choose how many times meals can repeat during the week.",
     "repeat_once": "Once",
     "repeat_twice": "Twice",
     "repeat_thrice": "Multiple times",
-    "hint1": "Most varied - meals do not repeat.",
-    "hint2": "Balanced - some meals repeat, still quite varied.",
-    "hint3": "Less variety, but easier to prepare."
+    "hint1": "The meal plan is the most varied; meals do not repeat.",
+    "hint2": "Middle option – some meals repeat, still sufficiently varied.",
+    "hint3": "Less varied, but easier to prepare.",
+    "grams_title": "Do you want to show exact gram amounts in the meal plan?",
+    "grams_subtitle": "Choose the option that best supports your relationship with food.",
+    "grams_yes": "Yes, show",
+    "grams_yes_hint": "Ideal for precise tracking of macronutrients and learning portion sizes.",
+    "grams_no": "No, hide",
+    "grams_no_hint": "Suitable for supporting intuitive eating and reducing stress from numbers (also suitable as prevention of eating disorders).",
+    "grams_examples_show": "Shown units",
+    "grams_examples_hide": "Hidden units",
+    "grams_example_left_line1": "Tuna with couscous and cucumber: 400 g",
+    "grams_example_left_line2": "Pear: 1 pc, Plum: 3 pcs",
+    "grams_example_right_line1": "Tuna with couscous and cucumber",
+    "grams_example_right_line2": "Pear, Plum"
   },
-  "step5": {
-    "title": "Macros & charts",
-    "subtitle": "Values are prefilled based on your activities.",
-    "macros_title": "Macronutrients",
-    "graphs_title": "Energy intake & expenditure charts",
-    "carb": "Carbohydrates (%)",
-    "fat": "Fat (%)",
-    "protein": "Protein (%)",
-    "sum_input": "Sum",
-    "help_macros": "Values are pre-filled based on your activity level.",
-    "premium_note": "Macro customization applies only to the Premium plan."
-  },
-  "step6": {
+  "step7": {
     "title": "Choose your plan",
     "variant": "Plan variant",
     "variant_help": "Select which plan you prefer.",
@@ -600,7 +615,7 @@
     "standard_warning_text": "In the Standard plan, your own diet, meal choices, and macro adjustments are not saved. Do you still want to continue?",
     "total_label": "Total price:"
   },
-  "step7": {
+  "step8": {
     "title": "Summary & purchase",
     "summary_title": "Order summary",
     "basic": "Basic details",
@@ -613,9 +628,9 @@
     "repeats": "Meal repetition",
     "macros": "Macronutrient distribution",
     "plan": "Selected plan",
-    "repeats_1": "Once per day",
-    "repeats_2": "Twice per day",
-    "repeats_3": "Three times per day",
+    "repeats_1": "Meals do not repeat",
+    "repeats_2": "Meals repeat max twice",
+    "repeats_3": "Meals repeat multiple times",
     "level_none": "No sport",
     "want_sport": "Want to include sport",
     "level_sport": "I play sports",
@@ -651,8 +666,8 @@
     "heading": "Payment failed",
     "message": "Unfortunately, the payment could not be processed.",
     "resume_text": "Your form data has been saved - you can continue where you left off.",
-    "resume_btn": "↩ Return to form",
-    "back_home": "← Back to homepage",
+    "resume_btn": "? Return to form",
+    "back_home": "‹ Back to homepage",
     "note": "The payment was not processed. Please try again or use another card.",
     "tips": [
       "Check that your card is enabled for online payments and has sufficient funds.",
@@ -685,7 +700,7 @@
   },
   "termsPage": {
     "metaTitle": "Terms & Conditions - FitLime",
-    "back": "← Back to homepage",
+    "back": "‹ Back to homepage",
     "subtitle": "For providing a one-time custom meal plan",
     "title": "Terms & Conditions - FitLime",
     "effective": "Effective from: 01.01.2026",
@@ -800,7 +815,7 @@
   },
   "privacyPage": {
     "metaTitle": "Privacy Policy - FitLime",
-    "back": "← Back to homepage",
+    "back": "‹ Back to homepage",
     "subtitle": "For websites fitlime.cz, fitlime.sk, fitlime.eu",
     "title": "Privacy Policy",
     "effective": "Effective from: 01.01.2026",
@@ -956,3 +971,5 @@
     "back": "Back to homepage"
   }
 }
+
+

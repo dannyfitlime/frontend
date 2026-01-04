@@ -1,0 +1,133 @@
+﻿<section id="plan-step">
+  <div class="plan-options">
+    <!-- VĂ˝bÄ›r plĂˇnu -->
+    <!--
+    <div class="field">
+      <label><strong data-i18n="step6.variant">Varianta plĂˇnu</strong></label>
+      <p class="help" data-i18n="step6.variant_help">Zvol si, jakĂ˝ chceĹˇ plĂˇn.</p>
+      <div class="plan-buttons">
+        <button type="button" class="chip" data-variant="standard" data-i18n="step6.standard_title">Standard</button>
+        <button type="button" class="chip" data-variant="premium" data-i18n="step6.premium_title">Premium</button>
+      </div>
+    </div>
+    -->
+    <!-- VĂ˝bÄ›r obdobĂ­ -->
+    <!-- 
+    <div class="field">
+      <label><strong data-i18n="step6.period_title">VĂ˝bÄ›r obdobĂ­</strong></label>
+      <p class="help" data-i18n="step6.period_help">Zvol si, zda chceĹˇ plĂˇn na tĂ˝den nebo mÄ›sĂ­c.</p>
+      <div class="plan-period">
+        <button type="button" class="chip" data-value="week" data-i18n="step6.period_week">JednorĂˇzovÄ›</button>
+        <button type="button" class="chip" data-value="month" data-i18n="step6.period_month">ÄŚtyĹ™i tĂ˝dny</button>
+      </div>
+      <p class="help_under" id="periodHelp"></p>
+      <div class="error" id="err-period"></div>
+    </div>
+    -->
+  </div>
+
+  <!-- Karty plánů -->
+  <div class="plan-type-grid">
+
+    <!-- Standard -->
+    <article class="plan-card plan-card--select" data-variant="standard" tabindex="0">
+      <h3>
+        <span data-i18n="step7.standard_title">Standard</span>
+        <span class="badge badge--standard" data-i18n="step7.standard_days">5 dní</span>
+      </h3>
+      <p data-i18n="step7.standard_desc">Plnohodnotný jídelnáček na pracovní týden.</p>
+
+      <ul>
+        <li data-i18n="step7.standard_feature1">Pestrá jídla</li>
+        <li data-i18n="step7.standard_feature2">Recepty a nákupní seznam</li>
+        <li data-i18n="step7.standard_feature3">Personalizace podle tréninku</li>
+      </ul>
+
+      
+
+      <div class="prices">
+        <div class="price price--week" data-czk="1990" data-eur="84.90"></div>
+        <!--<div class="price price--month" data-czk="6990" data-eur="289.90"></div>-->
+      </div>
+
+      <!-- Dodací lhůta -->
+      <p class="delivery-time" data-i18n="step7.standard_delivery">Dodání do 3 pracovních dní</p>
+
+    </article>
+
+    <!-- Premium -->
+    <article class="plan-card plan-card--select" data-variant="premium" tabindex="0">
+      <h3>
+        <span data-i18n="step7.premium_title">Premium</span>
+        <span class="badge badge--premium" data-i18n="step7.premium_days">7 dní</span>
+      </h3>
+      <p data-i18n="step7.premium_desc">Kompletní plán na celý týden s extra funkcemi.</p>
+
+      <ul>
+        <li data-i18n="step7.premium_feature1">Vše ze Standard</li>
+        <li data-i18n="step7.premium_feature2">Doplňky stravy na míru</li>
+        <li data-i18n="step7.premium_feature3">Pitný režim & preference</li>
+      </ul>      
+
+      <div class="prices">
+        <div class="price price--week" data-czk="2990" data-eur="124.90"></div>
+        <!--<div class="price price--month" data-czk="9990" data-eur="399.90"></div>-->
+      </div>
+
+      <!-- Expresní dodání -->
+      <p class="delivery-time" data-i18n="step7.premium_delivery">Expresní dodání do 2 pracovních dní</p>
+
+    </article>
+
+  </div>
+
+  <!-- Rozbalovací detail -->
+  <details class="plan-details">
+    <summary data-i18n="step7.details_title">Podrobnosti plánů</summary>
+    <div class="plan-details-grid">
+      
+      <!-- Standard detail -->
+      <article class="plan-card plan-card--detail">
+        <h4 data-i18n="step7.standard_detail_title">Standard – plnohodnotný (5 dní)</h4>
+        <ul>
+          <li data-i18n="step7.standard_detail1">Jídelnáček na 5 dní (Po–Pá)</li>
+          <li data-i18n="step7.standard_detail2">Unikátní, pestrá jídla</li>
+          <li data-i18n="step7.standard_detail3">Personalizace podle tréninkového dne</li>
+          <li data-i18n="step7.standard_detail4">Recepty k jednotlivým jídlům</li>
+          <li data-i18n="step7.standard_detail5">Nákupní seznam</li>
+          <li data-i18n="step7.standard_detail6">Grafy příjmu a výdeje energie</li>
+          <li data-i18n="step7.standard_detail7">Edukace k jednotlivým nutrientům</li>
+        </ul>
+      </article>
+
+      <!-- Premium detail -->
+      <article class="plan-card plan-card--detail">
+        <h4 data-i18n="step7.premium_detail_title">Premium – na míru (7 dní)</h4>
+        <ul>
+          <li data-i18n="step7.premium_detail1">Jídelnáček na 7 dní (Po–Ne)</li>
+          <li data-i18n="step7.premium_detail2">Unikátní, pestrá jídla</li>
+          <li data-i18n="step7.premium_detail3">Personalizace podle tréninkového dne</li>
+          <li data-i18n="step7.premium_detail4">Recepty k jednotlivým jídlům</li>
+          <li data-i18n="step7.premium_detail5">Nákupní seznam</li>
+          <li data-i18n="step7.premium_detail6">Grafy příjmu a výdeje energie</li>
+          <li data-i18n="step7.premium_detail7">Edukace k jednotlivým nutrientům</li>
+
+          <!-- PREMIUM -->
+          <li class="premium-feature" data-i18n="step7.premium_detail8">Edukace o výživě ve sportu</li>
+          <li class="premium-feature" data-i18n="step7.premium_detail9">Doplňky stravy na míru</li>
+          <li class="premium-feature" data-i18n="step7.premium_detail10">Pitný režim</li>
+          <li class="premium-feature" data-i18n="step7.premium_detail11">Nastavení typu diety</li>
+          <li class="premium-feature" data-i18n="step7.premium_detail12">Vyloučení konkrétních potravin</li>
+          <li class="premium-feature" data-i18n="step7.premium_detail13">Možnost nastavení makronutrientů</li>
+        </ul>
+      </article>
+    </div>
+  </details>
+
+  <!-- Cena celkem -->
+  <div class="plan-total">
+    <span class="label" data-i18n="step.total_label">Cena celkem:</span>
+    <span class="value" id="planTotalPrice">—</span>
+  </div>
+</section>
+

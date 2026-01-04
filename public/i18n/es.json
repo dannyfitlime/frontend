@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – menú saludable a tu medida",
@@ -509,6 +509,18 @@
     "select_sport_placeholder": "Selecciona un deporte"
   },
   "step4": {
+    "title": "Macros y gráficos",
+    "subtitle": "Los valores están precargados según tus actividades.",
+    "macros_title": "Macronutrientes",
+    "graphs_title": "Gráficos de ingesta y gasto energético",
+    "carb": "Carbohidratos (%)",
+    "fat": "Grasas (%)",
+    "protein": "Proteínas (%)",
+    "sum_input": "Suma",
+    "help_macros": "Los valores están precargados según tus actividades.",
+    "premium_note": "Los cambios en macronutrientes solo se aplican en el plan Premium."
+  },
+  "step5": {
     "title": "Alimentación",
     "diet": "Tipo de dieta",
     "diet_none": "Sin restricciones",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Huevos",
     "help_diet": "Elige el tipo de alimentación que sigues normalmente.",
     "help_dislikes": "Marca los ingredientes que quieres evitar en tu menú.",
-    "premium_note": "La personalización de dietas y exclusión de alimentos solo está disponible en el plan Premium.",
-    "repeats_title": "Número de repeticiones de los platos",
-    "help_repeats": "Elige cuántas veces se pueden repetir los platos a lo largo de la semana.",
+    "premium_note": "La personalización de dietas y exclusión de alimentos solo está disponible en el plan Premium."
+  },
+  "step6": {
+    "title": "Configuración del menú",
+    "repeats_title": "Repetición de comidas",
+    "help_repeats": "Selecciona cuántas veces se pueden repetir las comidas durante la semana.",
     "repeat_once": "Una vez",
     "repeat_twice": "Dos veces",
     "repeat_thrice": "Más veces",
-    "hint1": "El menú es lo más variado posible, los platos no se repiten.",
-    "hint2": "Opción intermedia: algunos platos se repiten, sigue siendo bastante variado.",
-    "hint3": "Menos variedad, pero más fácil de preparar."
+    "hint1": "El menú es lo más variado posible, las comidas no se repiten.",
+    "hint2": "Opción intermedia: algunas comidas se repiten, manteniendo una buena variedad.",
+    "hint3": "Menos variado, pero más fácil de preparar.",
+    "grams_title": "¿Quieres mostrar los gramos exactos en el menú?",
+    "grams_subtitle": "Elige el método que mejor apoye tu relación con la comida.",
+    "grams_yes": "Sí, quiero mostrarlos",
+    "grams_yes_hint": "Ideal para un seguimiento preciso de los macronutrientes y para aprender el tamaño de las porciones.",
+    "grams_no": "No, quiero ocultarlos",
+    "grams_no_hint": "Adecuado para fomentar la alimentación intuitiva y reducir el estrés por los números (recomendado como prevención de Trastornos de la Conducta Alimentaria).",
+    "grams_examples_show": "Unidades visibles",
+    "grams_examples_hide": "Unidades ocultas",
+    "grams_example_left_line1": "Atún con cuscús y pepino: 400 g",
+    "grams_example_left_line2": "Pera: 1 ud, Ciruela: 3 ud",
+    "grams_example_right_line1": "Atún con cuscús y pepino",
+    "grams_example_right_line2": "Pera, Ciruela"
   },
-  "step5": {
-    "title": "Macros y gráficos",
-    "subtitle": "Los valores están precargados según tus actividades.",
-    "macros_title": "Macronutrientes",
-    "graphs_title": "Gráficos de ingesta y gasto energético",
-    "carb": "Carbohidratos (%)",
-    "fat": "Grasas (%)",
-    "protein": "Proteínas (%)",
-    "sum_input": "Suma",
-    "help_macros": "Los valores están precargados según tus actividades.",
-    "premium_note": "Los cambios en macronutrientes solo se aplican en el plan Premium."
-  },
-  "step6": {
+  "step7": {
     "title": "Elección del plan",
     "variant": "Variante del plan",
     "variant_help": "Elige qué plan quieres.",
@@ -600,7 +615,7 @@
     "standard_warning_text": "En el plan Standard no se guardan tu dieta personalizada, selección de platos ni ajustes de macronutrientes. ¿Quieres continuar igualmente?",
     "total_label": "Precio total:"
   },
-  "step7": {
+  "step8": {
     "title": "Resumen y compra",
     "summary_title": "Resumen del pedido",
     "basic": "Datos básicos",

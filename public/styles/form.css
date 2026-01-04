@@ -1,4 +1,4 @@
-﻿/* ========================================================= */
+/* ========================================================= */
 /* ===============   OBECNÉ LAYOUTY & FIELDY   ============== */
 /* ========================================================= */
 
@@ -405,7 +405,7 @@ button:focus-visible {
   transition: color 0.15s;
 }
 .need-groups-grid .sport-accordion > summary::after {
-  content: '▾';
+  content: '?';
   position: absolute;
   right: 4px;
   top: 50%;
@@ -471,57 +471,11 @@ button:focus-visible {
 }
 
 /* ========================================================= */
-/* ============   STEP 4 – dieta (bez maker)   ============== */
-/* ========================================================= */
-
-/* === Základní barvy a chyby === */
-.layout-step4, .layout-step4 * { color: #111; }
-.layout-step4 .error { color: var(--error); }
-
-/* === Sekce "Nejím" ve stylu políček === */
-.layout-step4 #dislikes_block {
-  margin-top: 30px;
-}
-.layout-step4 #repeats_block {
-  margin-top: 30px;
-}
-
-.layout-step4 #dislikes_block .chip {
-  min-height: 40px;
-  padding: 10px 14px;
-  font-weight: 650;
-}
-
-/* === Repeat hints === */
-
-.repeat-hints {
-  margin-top: 6px;
-  text-align: center;
-}
-.repeat-hints .repeat-hint {
-  margin-top: 6px;
-  display: none;
-}
-.repeat-hints .repeat-hint.active {
-  display: block;
-}
-
-/* === Prémiová poznámka === */
-.premium-note {
-  font-size: 14px;
-  color: #444;
-  border-radius: 6px;
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-}
-
-/* ========================================================= */
-/* ==============   STEP 5 – Makra & Grafy   ================ */
+/* ==============   STEP 4 – Makra & Grafy   ================ */
 /* ========================================================= */
 
 /* === Textové poznámky === */
-.layout-step5 .step5-sub {
+.layout-step4 .step4-sub {
   margin-bottom: 24px;
 }
 .macro-note {
@@ -532,7 +486,7 @@ button:focus-visible {
 }
 
 /* === Grid maker === */
-.layout-step5 .macros-grid {
+.layout-step4 .macros-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px 18px;
@@ -541,21 +495,21 @@ button:focus-visible {
 
 /* Responsivní chování */
 @media (max-width: 960px) {
-  .layout-step5 .macros-grid { grid-template-columns: repeat(2, 1fr); }
+  .layout-step4 .macros-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 320px) {
-  .layout-step5 .macros-grid { grid-template-columns: 1fr; gap: 14px; }
+  .layout-step4 .macros-grid { grid-template-columns: 1fr; gap: 14px; }
 }
 
 /* === Pole maker === */
-.layout-step5 .macros-grid .field label {
+.layout-step4 .macros-grid .field label {
   display: block;
   font-weight: 700;
   color: #111;
   margin-bottom: 6px;
   font-size: 15px;
 }
-.layout-step5 .macros-grid .field input[type="number"] {
+.layout-step4 .macros-grid .field input[type="number"] {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #d0d4da;
@@ -564,30 +518,30 @@ button:focus-visible {
   text-align: center;
   transition: border-color 0.2s;
 }
-.layout-step5 .macros-grid .field input[type="number"]:focus {
+.layout-step4 .macros-grid .field input[type="number"]:focus {
   outline: none;
   border-color: #2563eb;
 }
-.layout-step5 #macro_sum {
+.layout-step4 #macro_sum {
   background: #f1f5f9;
   cursor: default;
 }
 
 /* === Donuty (grafy) === */
-.layout-step5 .macros-grid.donuts {
+.layout-step4 .macros-grid.donuts {
   margin-top: 22px;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
 
-.layout-step5 .macros-grid.donuts .donut {
+.layout-step4 .macros-grid.donuts .donut {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* Donuty vždy 1:1 */
-.layout-step5 .donut canvas {
+.layout-step4 .donut canvas {
   width: 100%;
   max-width: 180px;
   aspect-ratio: 1 / 1;
@@ -597,23 +551,23 @@ button:focus-visible {
 
 /* === Responsivní grafy === */
 @media (max-width: 960px) {
-  .layout-step5 .macros-grid.donuts {
+  .layout-step4 .macros-grid.donuts {
     grid-template-columns: repeat(2, 1fr);
   }
-  .layout-step5 .donut canvas {
+  .layout-step4 .donut canvas {
     max-width: 150px;
   }
 }
 
 @media (max-width: 480px) {
-  .layout-step5 .macros-grid.donuts {
+  .layout-step4 .macros-grid.donuts {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .layout-step5 .donut canvas {
+  .layout-step4 .donut canvas {
     max-width: 160px;
   }
-  .layout-step5 .donut-label {
+  .layout-step4 .donut-label {
     font-size: 14px;
     margin-top: 10px;
   }
@@ -697,9 +651,103 @@ button:focus-visible {
   to { opacity: 1; }
 }
 
+/* ========================================================= */
+/* ============   STEP 5 – dieta    ============== */
+/* ========================================================= */
+
+/* === Základní barvy a chyby === */
+.layout-step5, .layout-step5 * { color: #111; }
+.layout-step5 .error { color: var(--error); }
+
+/* === Sekce "Nejím" ve stylu políček === */
+.layout-step5 #dislikes_block {
+  margin-top: 60px;
+}
+
+.layout-step5 #dislikes_block .chip {
+  min-height: 40px;
+  padding: 10px 14px;
+  font-weight: 650;
+}
+
+/* === Prémiová poznámka === */
+.premium-note {
+  font-size: 14px;
+  color: #444;
+  border-radius: 6px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+/* ========================================================= */
+/* ================   STEP 6 – Nastavení jídelníčku   ======= */
+/* ========================================================= */
+
+
+/* === Repeat hints === */
+.repeat-hints {
+  margin-top: 6px;
+  text-align: center;
+}
+.repeat-hints .repeat-hint {
+  margin-top: 6px;
+  display: none;
+}
+.repeat-hints .repeat-hint.active {
+  display: block;
+} 
+#grams_block {
+  margin-top: 20px;
+}
+/* === Grams hints & examples === */
+.grams-hints {
+  margin-top: 6px;
+  text-align: center;
+}
+.grams-hints .grams-hint {
+  margin-top: 6px;
+  display: none;
+}
+.grams-hints .grams-hint.active {
+  display: block;
+}
+.grams-examples {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 720px) {
+  .grams-examples { grid-template-columns: 1fr 1fr; }
+}
+.grams-example {
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  background: #f8fafc;
+}
+.grams-example-title {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+.grams-example-body {
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.grams_block {
+  margin-top: 20px;
+}
+
 
 /* ========================================================= */
-/* ====================   STEP 6 – PLÁNY   ================== */
+/* ====================   STEP 7 – PLÁNY   ================== */
 /* ========================================================= */
 
 /* === Nadpisy a grid === */
@@ -897,8 +945,8 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
 }
-.delivery-time::before { content: "🕒"; font-size: 16px; }
-[data-variant="premium"] .delivery-time::before { content: "⚡"; }
+.delivery-time::before { content: "??"; font-size: 16px; }
+[data-variant="premium"] .delivery-time::before { content: "?"; }
 
 .plan-card--detail .premium-feature {
   color: #056608;
@@ -918,7 +966,7 @@ button:focus-visible {
 /* ================   STEP 7 – Shrnutí & Nákup   ============ */
 /* ========================================================= */
 
-#step7 { margin: 6px 0 0; }
+#step8 { margin: 6px 0 0; }
 
 /* === Grid rozložení === */
 .review-grid {
@@ -987,8 +1035,8 @@ button:focus-visible {
 }
 
 /* === Formulářová pole === */
-#step7 .field { margin-bottom: 18px; }
-#step7 .field:not(.consent-toggle) > label {
+#step8 .field { margin-bottom: 18px; }
+#step8 .field:not(.consent-toggle) > label {
   display: block;
   font-size: 15px;
   font-weight: 600;
@@ -1020,7 +1068,7 @@ button:focus-visible {
   cursor: pointer;
   accent-color: #056608;
 }
-#step7 .consent-toggle { margin-bottom: 8px; }
+#step8 .consent-toggle { margin-bottom: 8px; }
 .newsletter-toggle { padding: 2px 15px 15px; }
 
 /* === Tlačítko odeslání === */
@@ -1086,4 +1134,6 @@ button.primary:hover { background: #009703; }
   animation: spin 0.8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+
 

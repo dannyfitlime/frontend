@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – piano alimentare sano su misura",
@@ -509,6 +509,18 @@
     "select_sport_placeholder": "Scegli uno sport"
   },
   "step4": {
+    "title": "Macronutrienti & grafici",
+    "subtitle": "I valori sono precompilati in base alle tue attività.",
+    "macros_title": "Macronutrienti",
+    "graphs_title": "Grafici di apporto e dispendio energetico",
+    "carb": "Carboidrati (%)",
+    "fat": "Grassi (%)",
+    "protein": "Proteine (%)",
+    "sum_input": "Somma",
+    "help_macros": "I valori sono precompilati in base alle tue attività.",
+    "premium_note": "La modifica dei macronutrienti viene applicata solo nel piano Premium."
+  },
+  "step5": {
     "title": "Alimentazione",
     "diet": "Tipo di dieta",
     "diet_none": "Senza restrizioni",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Uova",
     "help_diet": "Scegli il tipo di alimentazione che segui di solito.",
     "help_dislikes": "Seleziona gli ingredienti che vuoi evitare nel piano.",
-    "premium_note": "La personalizzazione della dieta e l'esclusione di alimenti sono disponibili solo nel piano Premium.",
-    "repeats_title": "Numero di ripetizioni dei pasti",
+    "premium_note": "La personalizzazione della dieta e l'esclusione di alimenti sono disponibili solo nel piano Premium."
+  },
+  "step6": {
+    "title": "Impostazione del menù",
+    "repeats_title": "Ripetizione dei pasti",
     "help_repeats": "Scegli quante volte i pasti possono ripetersi durante la settimana.",
     "repeat_once": "Una volta",
     "repeat_twice": "Due volte",
     "repeat_thrice": "Più volte",
-    "hint1": "Il piano è più vario, i pasti non si ripetono.",
-    "hint2": "Variante intermedia – alcuni pasti si ripetono, mantenendo una buona varietà.",
-    "hint3": "Meno vario, ma più semplice da preparare."
+    "hint1": "Il menù è molto vario, i pasti non si ripetono.",
+    "hint2": "Opzione intermedia – alcuni pasti si ripetono, mantenendo una buona varietà.",
+    "hint3": "Meno vario, ma più semplice da preparare.",
+    "grams_title": "Vuoi visualizzare le grammature esatte nel menù?",
+    "grams_subtitle": "Scegli l'approccio che meglio supporta il tuo rapporto con il cibo.",
+    "grams_yes": "Sì, voglio visualizzarle",
+    "grams_yes_hint": "Ideale per il monitoraggio preciso dei macronutrienti e per imparare la dimensione delle porzioni.",
+    "grams_no": "No, voglio nasconderle",
+    "grams_no_hint": "Adatto per favorire l'alimentazione intuitiva e ridurre lo stress legato ai numeri (consigliato come prevenzione dei Disturbi del Comportamento Alimentare).",
+    "grams_examples_show": "Unità visualizzate",
+    "grams_examples_hide": "Unità nascoste",
+    "grams_example_left_line1": "Tonno con couscous e cetriolo: 400 g",
+    "grams_example_left_line2": "Pera: 1 pz, Prugna: 3 pz",
+    "grams_example_right_line1": "Tonno con couscous e cetriolo",
+    "grams_example_right_line2": "Pera, Prugna"
   },
-  "step5": {
-    "title": "Macronutrienti & grafici",
-    "subtitle": "I valori sono precompilati in base alle tue attività.",
-    "macros_title": "Macronutrienti",
-    "graphs_title": "Grafici di apporto e dispendio energetico",
-    "carb": "Carboidrati (%)",
-    "fat": "Grassi (%)",
-    "protein": "Proteine (%)",
-    "sum_input": "Somma",
-    "help_macros": "I valori sono precompilati in base alle tue attività.",
-    "premium_note": "La modifica dei macronutrienti viene applicata solo nel piano Premium."
-  },
-  "step6": {
+  "step7": {
     "title": "Scelta del piano",
     "variant": "Tipo di piano",
     "variant_help": "Scegli il piano desiderato.",
@@ -600,7 +615,7 @@
     "standard_warning_text": "Nel piano Standard, la dieta personalizzata, la scelta specifica dei pasti e le modifiche dei macronutrienti non verranno salvate. Vuoi continuare comunque?",
     "total_label": "Prezzo totale:"
   },
-  "step7": {
+  "step8": {
     "title": "Riepilogo & acquisto",
     "summary_title": "Riepilogo dell'ordine",
     "basic": "Dati di base",

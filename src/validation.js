@@ -224,20 +224,12 @@ export function validateSport(sport, t){
 }
 
 
-/* ===== Step 4 – Diet & Exclusions ===== */
+/* ===== Step 5 – Diet & Exclusions ===== */
 export function validateDiet(nutrition, t){
-  const e = {};
-  const d = nutrition || {};
-
-  // Kontrola výběru počtu opakování jídel
-  if (!d.repeats || d.repeats === '' || d.repeats === 'none') {
-    e['repeats'] = reqMsg(t);
-  }
-
-  return e;
+  return {};
 }
 
-/* ===== Step 5 – MACROS ===== */
+/* ===== Step 4 – MACROS ===== */
 export function validateMacros(nutrition, t){
   const e = {};
   const c = Number(nutrition?.macros?.c);
@@ -266,8 +258,25 @@ export function validateMacros(nutrition, t){
   return e;
 }
 
+/* ===== Step 6 – Menu settings ===== */
+export function validateMenuSettings(nutrition, t){
+  const e = {};
+  const d = nutrition || {};
 
-/* ===== Plan (step 6) ===== */
+  // Kontrola výběru počtu opakování jídel
+  if (!d.repeats || d.repeats === '' || d.repeats === 'none') {
+    e['repeats'] = reqMsg(t);
+  }
+
+  // Kontrola výběru zobrazení gramáží
+  if (!d.show_grams || d.show_grams === '') {
+    e['show_grams'] = reqMsg(t);
+  }
+
+  return e;
+}
+
+/* ===== Plan (step 7) ===== */
 export function validatePlan(plan, t){
   const e = {};
   const p = plan || {};
@@ -278,7 +287,7 @@ export function validatePlan(plan, t){
   return e;
 }
 
-/* ===== Review (step 7) ===== */
+/* ===== Review (step 8) ===== */
 export function validateReview(state, t){
   const e = {};
   const name  = state?.customer?.name || '';

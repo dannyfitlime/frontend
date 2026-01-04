@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – zdravý jídelníček na míru",
@@ -225,7 +225,7 @@
       "per_month": "/ měsíc",
       "advantage": "výhodnější",
       "standard": {
-        "title": "⚖️ Standard – plnohodnotný (5 dní)",
+        "title": "?? Standard – plnohodnotný (5 dní)",
         "feature1": "Jídelníček na 5 dní (Po–Pá)",
         "feature2": "Unikátní, pestrá jídla",
         "feature3": "Personalizace podle tréninkového deníku",
@@ -236,7 +236,7 @@
       },
       "premium": {
         "badge": "Nejoblíbenější",
-        "title": "🏆 Premium – na míru (7 dní)",
+        "title": "?? Premium – na míru (7 dní)",
         "feature1": "Jídelníček na 7 dní (Po–Ne)",
         "feature2": "Unikátní, pestrá jídla",
         "feature3": "Personalizace podle tréninkového deníku",
@@ -509,35 +509,6 @@
     "select_sport_placeholder": "Zvolte sport"
   },
   "step4": {
-    "title": "Stravování",
-    "diet": "Typ diety",
-    "diet_none": "Bez omezení",
-    "diet_vegetarian": "Vegetarián",
-    "diet_pescetarian": "Pescetarián",
-    "diet_gluten_free": "Bezlepková",
-    "diet_lactose_free": "Bez laktózy",
-    "dislikes_title": "Potraviny k vyloučení z jídelníčku",
-    "dislike_mushrooms": "Houby",
-    "dislike_olives": "Olivy",
-    "dislike_pepper": "Paprika",
-    "dislike_tomato": "Rajčata",
-    "dislike_onion": "Cibule",
-    "dislike_fish": "Ryby",
-    "dislike_seafood": "Mořské plody",
-    "dislike_eggs": "Vejce",
-    "help_diet": "Vyberte typ stravy, který běžně dodržujete.",
-    "help_dislikes": "Označte suroviny, kterým se chcete v jídelníčku vyhnout.",
-    "premium_note": "Úprava diet a vyloučení potravin jsou dostupné pouze u Premium plánu.",
-    "repeats_title": "Počet opakování jídel",
-    "help_repeats": "Vyberte, kolikrát se mohou jídla během týdne opakovat.",
-    "repeat_once": "Jednou",
-    "repeat_twice": "Dvakrát",
-    "repeat_thrice": "Vícekrát",
-    "hint1": "Jídelníček je nejpestřejší, jídla se neopakují.",
-    "hint2": "Střední varianta – některá jídla se zopakují, stále dostatečně pestré.",
-    "hint3": "Méně pestré, ale snazší na přípravu."
-  },
-  "step5": {
     "title": "Makra & grafy",
     "subtitle": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
     "macros_title": "Makronutrienty",
@@ -549,7 +520,51 @@
     "help_macros": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
     "premium_note": "Úprava maker se propíše pouze u Premium plánu."
   },
+  "step5": {
+    "title": "Stravování",
+    "diet": "Typ diety",
+    "diet_none": "Bez omezení",
+    "diet_vegetarian": "Vegetarián",
+    "diet_pescetarian": "Pescetarián",
+    "diet_gluten_free": "Bezlepková",
+    "diet_lactose_free": "Bez laktózy",
+    "dislikes_title": "Potraviny k vyloučení z jídelníčku (volitelné)",
+    "dislike_mushrooms": "Houby",
+    "dislike_olives": "Olivy",
+    "dislike_pepper": "Paprika",
+    "dislike_tomato": "Rajčata",
+    "dislike_onion": "Cibule",
+    "dislike_fish": "Ryby",
+    "dislike_seafood": "Mořské plody",
+    "dislike_eggs": "Vejce",
+    "help_diet": "Vyberte typ stravy, který běžně dodržujete.",
+    "help_dislikes": "Označte suroviny, kterým se chcete v jídelníčku vyhnout.",
+    "premium_note": "Úprava diet a vyloučení potravin jsou dostupné pouze u Premium plánu."
+  },
   "step6": {
+    "title": "Nastavení jídelníčku",
+    "repeats_title": "Počet opakování jídel",
+    "help_repeats": "Vyberte, kolikrát se mohou jídla během týdne opakovat.",
+    "repeat_once": "Jednou",
+    "repeat_twice": "Dvakrát",
+    "repeat_thrice": "Vícekrát",
+    "hint1": "Jídelníček je nejpestřejší, jídla se neopakují.",
+    "hint2": "Střední varianta – některá jídla se zopakují, stále dostatečně pestré.",
+    "hint3": "Méně pestré, ale snazší na přípravu.",
+    "grams_title": "Chcete v jídelníčku zobrazovat přesné gramáže?",
+    "grams_subtitle": "Vyberte si způsob, který nejlépe podpoří váš vztah k jídlu.",
+    "grams_yes": "Ano, chci zobrazit",
+    "grams_yes_hint": "Ideální pro přesné sledování makroživin a učení se velikosti porcí.",
+    "grams_no": "Ne, chci skrýt",
+    "grams_no_hint": "Vhodné pro podporu intuitivního stravování a snížení stresu z čísel (vhodné i jako prevence Poruch Příjmu Potravy).",
+    "grams_examples_show": "Zobrazené jednotky",
+    "grams_examples_hide": "Skryté jednotky",
+    "grams_example_left_line1": "Tuňák s kuskusem a okurkou: 400 g",
+    "grams_example_left_line2": "Hruška: 1 ks, Švestka: 3 ks",
+    "grams_example_right_line1": "Tuňák s kuskusem a okurkou",
+    "grams_example_right_line2": "Hruška, Švestka"
+  },
+  "step7": {
     "title": "Výběr plánu",
     "variant": "Varianta plánu",
     "variant_help": "Zvolte, jaký chcete plán.",
@@ -570,7 +585,7 @@
     "premium_days": "7 dní",
     "premium_desc": "Kompletní plán na celý týden s extra funkcemi.",
     "premium_feature1": "🌱 Vše ze Standard",
-    "premium_feature2": "💊 Doplňky stravy na míru",
+    "premium_feature2": "🌿 Doplňky stravy na míru",
     "premium_feature3": "🥤 Pitný režim & dietní preference",
     "premium_delivery": "Expresní dodání do 2 pracovních dní",
     "details_title": "Podrobnosti plánů",
@@ -600,7 +615,7 @@
     "standard_warning_text": "Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chcete pokračovat i přesto?",
     "total_label": "Cena celkem:"
   },
-  "step7": {
+  "step8": {
     "title": "Shrnutí & nákup",
     "summary_title": "Souhrn objednávky",
     "basic": "Základní údaje",
@@ -613,9 +628,9 @@
     "repeats": "Opakování jídel",
     "macros": "Rozložení makronutrientů",
     "plan": "Zvolený plán",
-    "repeats_1": "Jednou denně",
-    "repeats_2": "Dvakrát denně",
-    "repeats_3": "Třikrát denně",
+    "repeats_1": "Jídla se neopakují",
+    "repeats_2": "Jídla se mouhou opakovat dvakrát",
+    "repeats_3": "Jídla se opakují vícekrát",
     "level_none": "Nesportuji",
     "want_sport": "Zatím nesportuji",
     "level_sport": "Sportuji",
@@ -651,8 +666,8 @@
     "heading": "Platba se nezdařila",
     "message": "Bohužel se platbu nepodařilo dokončit.",
     "resume_text": "Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.",
-    "resume_btn": "↩ Vrátit se k formuláři",
-    "back_home": "← Zpět na hlavní stránku",
+    "resume_btn": "? Vrátit se k formuláři",
+    "back_home": "‹ Zpět na hlavní stránku",
     "note": "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.",
     "tips": [
       "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",
@@ -685,7 +700,7 @@
   },
   "termsPage": {
     "metaTitle": "Obchodní podmínky – FitLime",
-    "back": "← Zpět na hlavní stránku",
+    "back": "‹ Zpět na hlavní stránku",
     "subtitle": "Pro poskytování jednorázového jídelníčku na míru",
     "title": "Obchodní podmínky – FitLime",
     "effective": "Účinné od: 01.01.2026",
@@ -800,7 +815,7 @@
   },
   "privacyPage": {
     "metaTitle": "Zásady ochrany osobních údajů – FitLime",
-    "back": "← Zpět na hlavní stránku",
+    "back": "‹ Zpět na hlavní stránku",
     "subtitle": "Pro weby fitlime.cz, fitlime.sk, fitlime.eu",
     "title": "Zásady ochrany osobních údajů",
     "effective": "Účinnost od: 01.01.2026",
@@ -957,5 +972,7 @@
     "back": "Zpět na hlavní stránku"
   }
 }
+
+
 
 

@@ -2,10 +2,10 @@
 import { formState } from './state.js';
 import {
   validateProfile, validateGoal, validateSport, BMR_LIMITS,
-  validateMacros, validateDiet, validatePlan, validateReview
+  validateMacros, validateDiet, validateMenuSettings, validatePlan, validateReview
 } from './validation.js';
 import { bindProfileStep, bindGoalStep, bindSportStep, bindDietStep, bindBalanceStep, 
-           onLevelOrPlanChanged, bindPlanStep, bindReviewStep, handlePurchase, cleanupSportStateBeforeNext, beforeGoToStep7 } from './stepsapp.js';
+           bindMenuSettingsStep, onLevelOrPlanChanged, bindPlanStep, bindReviewStep, handlePurchase, cleanupSportStateBeforeNext, beforeGoToStep7 } from './stepsapp.js';
 
 import { i18n as I18N, SUPPORTED as SUPPORTED_LANGS, t as T, bootI18n, loadLang as coreLoadLang } from './i18n-core.js';
 
@@ -42,10 +42,11 @@ const stepFiles = [
   '/steps/01-profile.html',
   '/steps/02-goal.html',
   '/steps/03-sport.html',
-  '/steps/04-nutrition.html',
-  '/steps/05-balance.html',
-  '/steps/06-plan.html',
-  '/steps/07-review.html'
+  '/steps/04-balance.html',
+  '/steps/05-nutrition.html',
+  '/steps/06-menu-settings.html',
+  '/steps/07-plan.html',
+  '/steps/08-review.html'
 ];
 /* ===== Topbar – přepnutí do compact po odskrolování od vrchu ===== */
 (function(){
@@ -284,8 +285,6 @@ function scrollToTopSmart(reason = '') {
 }
 
 
-
-
 /* ================ I18N helpers ================= */
 function applyI18nPlaceholders(){
   const els = document.querySelectorAll('[data-i18n-placeholder]');
@@ -351,10 +350,10 @@ function detectLang(){
 
 function renderStepper(idx){
   const wrap = $('#stepper');
-  const steps = i18n.dict?.steps ?? ['1','2','3','4','5','6','7'];
+  const stepsCount = stepFiles.length;
   if (!wrap) return;
 
-  wrap.innerHTML = steps.map((_, i) => {
+  wrap.innerHTML = Array.from({ length: stepsCount }).map((_, i) => {
     const cls =
       (i === idx)        ? 'dot active' :
       (i < furthestStep) ? 'dot done'   :
@@ -375,7 +374,7 @@ function renderStepper(idx){
 // map step index to i18n title keys
 const STEP_TITLE_KEYS = [
   'step1.title','step2.title','step3.title','step4.title',
-  'step5.title','step6.title','step7.title'
+  'step5.title','step6.title','step7.title','step8.title'
 ];
 function getStepTitle(idx){
   return t(STEP_TITLE_KEYS[idx]) || (i18n.dict?.steps?.[idx] ?? `Krok ${idx+1}`);
@@ -409,10 +408,11 @@ async function loadStep(idx){
     if (idx===0) { dbg('bindProfileStep'); bindProfileStep(); }
     if (idx===1) { dbg('bindGoalStep');    bindGoalStep(); }
     if (idx===2) { dbg('bindSportStep');   bindSportStep(); }
-    if (idx===3) { dbg('bindDietStep'); bindDietStep(); }
-    if (idx===4) { dbg('bindBalanceStep'); bindBalanceStep(); }
-    if (idx===5) { dbg('bindPlanStep');    bindPlanStep(); }
-    if (idx===6) { dbg('bindReviewStep');  bindReviewStep(); }
+    if (idx===3) { dbg('bindBalanceStep'); bindBalanceStep(); }
+    if (idx===4) { dbg('bindDietStep'); bindDietStep(); }
+    if (idx===5) { dbg('bindMenuSettingsStep'); bindMenuSettingsStep(); }
+    if (idx===6) { dbg('bindPlanStep');    bindPlanStep(); }
+    if (idx===7) { dbg('bindReviewStep');  bindReviewStep(); }
     
     // Next: na posledním kroku skryté, jinde „Další“
     const nextBtn = $('#btn-next');
@@ -469,22 +469,26 @@ async function validateCurrent(){
       console.log("[DBG] validateSport", errs, formState.sport);
       break;
 
-    case 3: // Diet (nutrition)
-      errs = validateDiet(formState.nutrition, t);
-      console.log("[DBG] validateDiet", errs, formState.nutrition);
-      break;
-
-    case 4: // Makra (nutrition)
+    case 3: // Makra (nutrition)
       errs = validateMacros(formState.nutrition, t);
       console.log("[DBG] validateMacros", errs, formState.nutrition);
       break;
 
-    case 5: // Plán
+    case 4: // Diet (nutrition)
+      errs = validateDiet(formState.nutrition, t);
+      console.log("[DBG] validateDiet", errs, formState.nutrition);
+      break;
+    case 5: // Menu settings
+      errs = validateMenuSettings(formState.nutrition, t);
+      console.log("[DBG] validateMenuSettings", errs, formState.nutrition);
+      break;
+
+    case 6: // Plan
       errs = validatePlan?.(formState.plan, t) || {};
       console.log("[DBG] validatePlan", errs, formState.plan);
       break;
 
-    case 6: // Review
+    case 7: // Review
       errs = validateReview?.(formState, t) || {};
       console.log("[DBG] validateReview", errs, formState);
       break;
@@ -610,7 +614,7 @@ async function goNextStep(){
   const last = stepFiles.length - 1;
 
   // ✅ kontrola před Review (Step 7)
-  if (currentStep === 5) {
+  if (currentStep === 6) {
     const ok = await beforeGoToStep7();
     if (!ok) return false;
   }
@@ -866,6 +870,8 @@ function bindStepperClicks() {
     console.error('BOOT failed:', e);
   }
 })();
+
+
 
 
 

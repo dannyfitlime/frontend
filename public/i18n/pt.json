@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – plano alimentar saudável à medida",
@@ -508,7 +508,19 @@
     "error_future_max3": "Pode selecionar no máximo 3 desportos.",
     "select_sport_placeholder": "Escolha um desporto"
   },
-  "step4": {
+    "step4": {
+    "title": "Macros & gráficos",
+    "subtitle": "Os valores são pré-preenchidos com base nas tuas atividades.",
+    "macros_title": "Macronutrientes",
+    "graphs_title": "Gráficos de ingestão e gasto de energia",
+    "carb": "Hidratos de carbono (%)",
+    "fat": "Gorduras (%)",
+    "protein": "Proteínas (%)",
+    "sum_input": "Soma",
+    "help_macros": "Os valores são pré-preenchidos com base nas tuas atividades.",
+    "premium_note": "A alteração dos macros só é aplicada no plano Premium."
+  },
+  "step5": {
     "title": "Alimentação",
     "diet": "Tipo de dieta",
     "diet_none": "Sem restrições",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Ovos",
     "help_diet": "Escolha o tipo de alimentação que normalmente segue.",
     "help_dislikes": "Assinale os ingredientes que quer evitar no plano.",
-    "premium_note": "A personalização da dieta e a exclusão de alimentos estão disponíveis apenas no plano Premium.",
-    "repeats_title": "Número de repetições das refeições",
-    "help_repeats": "Escolha quantas vezes as refeições podem repetir-se ao longo da semana.",
+    "premium_note": "A personalização da dieta e a exclusão de alimentos estão disponíveis apenas no plano Premium."
+  },
+"step6": {
+    "title": "Configuração do plano alimentar",
+    "repeats_title": "Repetição de refeições",
+    "help_repeats": "Escolha quantas vezes as refeições se podem repetir durante a semana.",
     "repeat_once": "Uma vez",
     "repeat_twice": "Duas vezes",
     "repeat_thrice": "Mais vezes",
-    "hint1": "O plano é mais variado, as refeições não se repetem.",
-    "hint2": "Variante intermédia – algumas refeições repetem-se, mantendo boa variedade.",
-    "hint3": "Menos variado, mas mais simples de preparar."
+    "hint1": "O plano é o mais variado possível, as refeições não se repetem.",
+    "hint2": "Opção intermédia – algumas refeições repetem-se, mantendo uma boa variedade.",
+    "hint3": "Menos variado, mas mais fácil de preparar.",
+    "grams_title": "Deseja exibir as gramagens exatas no plano?",
+    "grams_subtitle": "Escolha o método que melhor apoie a sua relação com a comida.",
+    "grams_yes": "Sim, quero exibir",
+    "grams_yes_hint": "Ideal para monitorizar macronutrientes com precisão e aprender o tamanho das porções.",
+    "grams_no": "Não, quero ocultar",
+    "grams_no_hint": "Adequado para promover a alimentação intuitiva e reduzir o stress com números (recomendado para a prevenção de Distúrbios Alimentares).",
+    "grams_examples_show": "Unidades visíveis",
+    "grams_examples_hide": "Unidades ocultas",
+    "grams_example_left_line1": "Atum com cuscuz e pepino: 400 g",
+    "grams_example_left_line2": "Pera: 1 ún, Ameixa: 3 ún",
+    "grams_example_right_line1": "Atum com cuscuz e pepino",
+    "grams_example_right_line2": "Pera, Ameixa"
   },
-  "step5": {
-    "title": "Macros & gráficos",
-    "subtitle": "Os valores são pré-preenchidos com base nas tuas atividades.",
-    "macros_title": "Macronutrientes",
-    "graphs_title": "Gráficos de ingestão e gasto de energia",
-    "carb": "Hidratos de carbono (%)",
-    "fat": "Gorduras (%)",
-    "protein": "Proteínas (%)",
-    "sum_input": "Soma",
-    "help_macros": "Os valores são pré-preenchidos com base nas tuas atividades.",
-    "premium_note": "A alteração dos macros só é aplicada no plano Premium."
-  },
-  "step6": {
+  "step7": {
     "title": "Escolha do plano",
     "variant": "Tipo de plano",
     "variant_help": "Escolha o plano pretendido.",
@@ -600,7 +615,7 @@
     "standard_warning_text": "No plano Standard, a dieta personalizada, a escolha específica de refeições e as alterações dos macronutrientes não serão guardadas. Deseja continuar mesmo assim?",
     "total_label": "Preço total:"
   },
-  "step7": {
+  "step8": {
     "title": "Resumo & compra",
     "summary_title": "Resumo da encomenda",
     "basic": "Dados básicos",

@@ -776,7 +776,6 @@ function resetToStandardDefaults() {
 export function bindDietStep() {
   formState.nutrition ||= {};
   if (!formState.nutrition.diet) formState.nutrition.diet = 'none';
-  if (!formState.nutrition.repeats) formState.nutrition.repeats = 'none';
   if (!formState.nutrition.dislikes) formState.nutrition.dislikes = [];
 
   const bindChipGroup = (groupId, target, key) => {
@@ -863,6 +862,41 @@ export function bindDietStep() {
 
   updatePremiumNote();
   checkIfPremiumNeeded(); // ✅ zkontroluj hned po načtení
+}
+
+export function bindMenuSettingsStep() {
+  formState.nutrition ||= {};
+  if (!formState.nutrition.repeats) formState.nutrition.repeats = 'none';
+  if (formState.nutrition.show_grams == null) formState.nutrition.show_grams = null;
+
+  const bindChipGroup = (groupId, target, key, cb) => {
+    const chips = document.querySelectorAll(`#${groupId} .chip`);
+    chips.forEach(ch => {
+      if (target[key] === ch.dataset.value) ch.classList.add('selected');
+      ch.onclick = () => {
+        chips.forEach(x => x.classList.remove('selected'));
+        ch.classList.add('selected');
+        target[key] = ch.dataset.value;
+        cb && cb(ch.dataset.value);
+      };
+    });
+  };
+
+  const updateRepeatHints = (val) => {
+    const hints = document.querySelectorAll('.repeat-hints .repeat-hint');
+    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
+  };
+
+  const updateGramsHints = (val) => {
+    const hints = document.querySelectorAll('.grams-hints .grams-hint');
+    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
+  };
+
+  bindChipGroup('repeat_group', formState.nutrition, 'repeats', updateRepeatHints);
+  updateRepeatHints(formState.nutrition.repeats);
+
+  bindChipGroup('grams_group', formState.nutrition, 'show_grams', updateGramsHints);
+  updateGramsHints(formState.nutrition.show_grams);
 }
 
 
@@ -1010,8 +1044,8 @@ export function bindPlanStep() {
 
   // Slovník textů podle období
   const periodMap = {
-    week: t('step6.help_week') || 'Vytvoříme ti jeden nutriční plán.',
-    month: t('step6.help_month') || 'Vytvoříme ti 4 nutriční plány.'
+    week: t('step7.help_week') || 'Vytvoříme ti jeden nutriční plán.',
+    month: t('step7.help_month') || 'Vytvoříme ti 4 nutriční plány.'
   };
 
   // Výchozí stav
@@ -1099,7 +1133,7 @@ export function bindPlanStep() {
 }
 
 /* ============================================================
-   STEP 7 – REVIEW & PURCHASE (s kontrolou před vstupem)
+   STEP 8 – REVIEW & PURCHASE (s kontrolou před vstupem)
    ============================================================ */
 
 // === Pomocné funkce pro kontrolu ===
@@ -1121,8 +1155,8 @@ function showConfirmPremiumLoss() {
     overlay.className = 'confirm-overlay';
     overlay.innerHTML = `
       <div class="confirm-modal">
-        <h3>${t('step6.standard_warning_title') || 'Změny se neprojeví ve Standard plánu'}</h3>
-        <p>${t('step6.standard_warning_text') ||
+        <h3>${t('step7.standard_warning_title') || 'Změny se neprojeví ve Standard plánu'}</h3>
+        <p>${t('step7.standard_warning_text') ||
           'Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chceš pokračovat i přesto?'}</p>
         <div class="confirm-actions">
           <button type="button" class="btn-secondary" id="confirmCancel">${t('common.back') || 'Zpět'}</button>
@@ -1158,13 +1192,13 @@ function buildReviewSummary() {
   const lang = i18n?.lang || 'cs';
 
   const repeatsMap = {
-    1: t('step7.repeats_1'),
-    2: t('step7.repeats_2'),
-    3: t('step7.repeats_3')
+    1: t('step8.repeats_1'),
+    2: t('step8.repeats_2'),
+    3: t('step8.repeats_3')
   };
 
-  const variantKey = plan?.variant ? `step6.${plan.variant}_title` : null;
-  const periodKey  = plan?.period ? `step6.period_${plan.period}` : null;
+  const variantKey = plan?.variant ? `step7.${plan.variant}_title` : null;
+  const periodKey  = plan?.period ? `step7.period_${plan.period}` : null;
 
   // --- energie + BMR ---
   const targetTxt = t('step2.target_' + goal?.target) || '—';
@@ -1186,14 +1220,14 @@ function buildReviewSummary() {
   }
 
   else if (sport.level === 'none') {
-    sportsSummary = `${t('step7.want_sport') || 'Zatím nesportuji'}`;
+    sportsSummary = `${t('step8.want_sport') || 'Zatím nesportuji'}`;
 
     if (sport.futureMulti?.length) {
       const futureSports = sport.futureMulti
         .map(id => t('step3.suggest_' + id) || id)
         .join(', ');
 
-      sportsSummary += `<br>${t('step7.future_sport') || 'Láká mě'}: ${futureSports}`;
+      sportsSummary += `<br>${t('step8.future_sport') || 'Láká mě'}: ${futureSports}`;
     }
   }
 
@@ -1216,7 +1250,7 @@ function buildReviewSummary() {
     const mainId = sport.mainSportOwn || sport.mainSportId;
     if (mainId) {
       const mainLbl = window._sportCatalog?.[mainId]?.labels?.[lang] || mainId;
-      sportsSummary += `<br>${t('step7.main_sport') || t('step3.main_sport') || 'Hlavní sport'}: ${mainLbl}`;
+      sportsSummary += `<br>${t('step8.main_sport') || t('step3.main_sport') || 'Hlavní sport'}: ${mainLbl}`;
     }
   }
 
@@ -1229,11 +1263,11 @@ function buildReviewSummary() {
 
     goal: goalFull,
     sports: sportsSummary,
-    diet: t('step4.diet_' + nutrition?.diet) || '—',
+    diet: t('step5.diet_' + nutrition?.diet) || '—',
 
     dislikes: (() => {
       const base = (nutrition.dislikes || [])
-        .map(d => t('step4.dislike_' + d) || d);
+        .map(d => t('step5.dislike_' + d) || d);
 
       return base.join(', ') || '—';
     })(),
@@ -1245,9 +1279,9 @@ function buildReviewSummary() {
       const f = nutrition?.macros?.f ?? '—';
       const p = nutrition?.macros?.p ?? '—';
 
-      const carbLabel = t('step7.macros_carbs') || 'Sacharidy';
-      const fatLabel = t('step7.macros_fats') || 'Tuky';
-      const proteinLabel = t('step7.macros_proteins') || 'Bílkoviny';
+      const carbLabel = t('step8.macros_carbs') || 'Sacharidy';
+      const fatLabel = t('step8.macros_fats') || 'Tuky';
+      const proteinLabel = t('step8.macros_proteins') || 'Bílkoviny';
 
       // vrací HTML – bez nadpisu, jen hodnoty pod sebou
       return `
@@ -1377,7 +1411,7 @@ export function bindReviewStep() {
 
         // 💬 Aktualizovat UI
         priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
-        infoEl.textContent = `${t("step7.discount_applied") || "Slevový kód"}: ${code} (−${discount}%)`;
+        infoEl.textContent = `${t("step8.discount_applied") || "Slevový kód"}: ${code} (−${discount}%)`;
         errorEl.textContent = "";
 
         console.log("✅ Discount applied:", code, `-${discount}%`);
@@ -1516,3 +1550,4 @@ export async function handlePurchase() {
     window.location.href = failUrl;
   }
 }
+

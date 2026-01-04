@@ -1,4 +1,4 @@
-﻿
+
 {
   "home": {
     "meta": {
@@ -226,7 +226,7 @@
       "per_month": "/ miesiąc",
       "advantage": "korzystniejsza opcja",
       "standard": {
-        "title": "⚖️ Standard – kompletny (5 dni)",
+        "title": "?? Standard – kompletny (5 dni)",
         "feature1": "Plan żywieniowy na 5 dni (pon–pt)",
         "feature2": "Unikalne i urozmaicone posiłki",
         "feature3": "Personalizacja na podstawie dziennika treningowego",
@@ -237,7 +237,7 @@
       },
       "premium": {
         "badge": "Najczęściej wybierany",
-        "title": "🏆 Premium – szyty na miarę (7 dni)",
+        "title": "?? Premium – szyty na miarę (7 dni)",
         "feature1": "Plan żywieniowy na 7 dni (pon–niedz)",
         "feature2": "Unikalne i urozmaicone posiłki",
         "feature3": "Personalizacja na podstawie dziennika treningowego",
@@ -509,7 +509,19 @@
     "error_future_max3": "Można wybrać maksymalnie 3 sporty.",
     "select_sport_placeholder": "Proszę wybrać sport"
   },
-  "step4": {
+    "step4": {
+    "title": "Makroskładniki i wykresy",
+    "subtitle": "Wartości są wstępnie uzupełnione na podstawie Państwa aktywności.",
+    "macros_title": "Makroskładniki",
+    "graphs_title": "Wykresy podaży i wydatku energetycznego",
+    "carb": "Węglowodany (%)",
+    "fat": "Tłuszcze (%)",
+    "protein": "Białko (%)",
+    "sum_input": "Suma",
+    "help_macros": "Wartości są wstępnie uzupełnione na podstawie Państwa aktywności.",
+    "premium_note": "Zmiana makroskładników jest stosowana wyłącznie w planie Premium."
+  },
+  "step5": {
     "title": "Odżywianie",
     "diet": "Rodzaj diety",
     "diet_none": "Bez ograniczeń",
@@ -528,29 +540,33 @@
     "dislike_eggs": "Jajka",
     "help_diet": "Proszę wybrać typ diety, który zwykle Państwo stosują.",
     "help_dislikes": "Proszę zaznaczyć składniki, których chcą Państwo unikać w planie.",
-    "premium_note": "Personalizacja diety i wykluczanie produktów jest dostępne tylko w planie Premium.",
+    "premium_note": "Personalizacja diety i wykluczanie produktów jest dostępne tylko w planie Premium."
+    
+  },
+      "step6": {
+    "title": "Ustawienia jadłospisu",
     "repeats_title": "Liczba powtórzeń posiłków",
-    "help_repeats": "Proszę wybrać, jak często posiłki mogą się powtarzać w ciągu tygodnia.",
+    "help_repeats": "Wybierz, ile razy posiłki mogą się powtarzać w ciągu tygodnia.",
     "repeat_once": "Raz",
     "repeat_twice": "Dwa razy",
     "repeat_thrice": "Więcej razy",
-    "hint1": "Plan jest najbardziej urozmaicony, posiłki się nie powtarzają.",
-    "hint2": "Wariant pośredni – część posiłków się powtarza, ale różnorodność jest zachowana.",
-    "hint3": "Mniejsza różnorodność, ale prostsze przygotowanie."
+    "hint1": "Jadłospis jest najbardziej urozmaicony, posiłki się nie powtarzają.",
+    "hint2": "Wariant pośredni – część posiłków się powtarza, wciąż wystarczająco urozmaicony.",
+    "hint3": "Mniej urozmaicony, ale łatwiejszy w przygotowaniu.",
+    "grams_title": "Czy chcesz wyświetlać dokładne gramatury w jadłospisie?",
+    "grams_subtitle": "Wybierz opcję, która najlepiej wspiera Twój stosunek do jedzenia.",
+    "grams_yes": "Tak, wyświetl",
+    "grams_yes_hint": "Idealne do dokładnego śledzenia makroskładników i nauki wielkości porcji.",
+    "grams_no": "Nie, ukryj",
+    "grams_no_hint": "Odpowiednie dla wspierania intuicyjnego jedzenia i zmniejszenia stresu związanego z liczbami (także jako profilaktyka zaburzeń odżywiania).",
+    "grams_examples_show": "Wyświetlane jednostki",
+    "grams_examples_hide": "Ukryte jednostki",
+    "grams_example_left_line1": "Tuńczyk z kuskusem i ogórkiem: 400 g",
+    "grams_example_left_line2": "Gruszka: 1 szt., Śliwka: 3 szt.",
+    "grams_example_right_line1": "Tuńczyk z kuskusem i ogórkiem",
+    "grams_example_right_line2": "Gruszka, Śliwka"
   },
-  "step5": {
-    "title": "Makroskładniki i wykresy",
-    "subtitle": "Wartości są wstępnie uzupełnione na podstawie Państwa aktywności.",
-    "macros_title": "Makroskładniki",
-    "graphs_title": "Wykresy podaży i wydatku energetycznego",
-    "carb": "Węglowodany (%)",
-    "fat": "Tłuszcze (%)",
-    "protein": "Białko (%)",
-    "sum_input": "Suma",
-    "help_macros": "Wartości są wstępnie uzupełnione na podstawie Państwa aktywności.",
-    "premium_note": "Zmiana makroskładników jest stosowana wyłącznie w planie Premium."
-  },
-  "step6": {
+  "step7": {
     "title": "Wybór planu",
     "variant": "Rodzaj planu",
     "variant_help": "Proszę wybrać plan.",
@@ -601,7 +617,7 @@
     "standard_warning_text": "W planie Standard zindywidualizowana dieta, szczegółowy wybór posiłków oraz zmiany makroskładników nie zostaną zapisane. Czy na pewno chcą Państwo kontynuować?",
     "total_label": "Cena łączna:"
   },
-  "step7": {
+  "step8": {
     "title": "Podsumowanie i zakup",
     "summary_title": "Podsumowanie zamówienia",
     "basic": "Dane podstawowe",
@@ -652,8 +668,8 @@
     "heading": "Płatność nie powiodła się",
     "message": "Niestety płatność nie została zrealizowana.",
     "resume_text": "Formularz został zachowany – możesz kontynuować od miejsca, w którym przerwałeś.",
-    "resume_btn": "↩ Powrót do formularza",
-    "back_home": "← Powrót na stronę główną",
+    "resume_btn": "? Powrót do formularza",
+    "back_home": "‹ Powrót na stronę główną",
     "note": "Płatność nie została dokonana. Spróbuj ponownie lub użyj innej karty.",
     "tips": [
       "Sprawdź, czy masz wystarczające środki lub włączone płatności online.",
@@ -686,7 +702,7 @@
   },
   "termsPage": {
     "metaTitle": "Warunki ogólne – FitLime",
-    "back": "← Powrót na stronę główną",
+    "back": "‹ Powrót na stronę główną",
     "subtitle": "Dotyczące świadczenia jednorazowego, spersonalizowanego planu żywieniowego",
     "title": "Warunki ogólne – FitLime",
     "effective": "Obowiązuje od: 01.01.2026",
@@ -801,7 +817,7 @@
   },
   "privacyPage": {
     "metaTitle": "Polityka ochrony danych osobowych – FitLime",
-    "back": "← Powrót na stronę główną",
+    "back": "‹ Powrót na stronę główną",
     "subtitle": "Dla serwisów fitlime.cz, fitlime.sk, fitlime.eu",
     "title": "Polityka ochrony danych osobowych",
     "effective": "Obowiązuje od: 01.01.2026",
@@ -957,3 +973,5 @@
     "back": "Powrót na stronę główną"
   }
 }
+
+

@@ -1,0 +1,82 @@
+<section class="layout-step6">
+  <h1 data-i18n="step6.title">Nastavení jídelníčku</h1>
+
+  <!-- Počet opakování jídel -->
+  <div class="field" id="repeats_block">
+    <label id="step6_repeats_title">
+      <strong data-i18n="step6.repeats_title">Počet opakování jídel</strong>
+    </label>
+
+    <div id="step6_help_repeats" class="help" data-i18n="step6.help_repeats">
+      Vyberte, kolikrát se mohou jídla během týdne opakovat.
+    </div>
+
+    <div id="repeat_group" class="chips chips-hero" role="group" aria-label="Počet opakování jídel">
+      <button type="button" class="chip" data-value="1" data-i18n="step6.repeat_once">1×</button>
+      <button type="button" class="chip" data-value="2" data-i18n="step6.repeat_twice">2×</button>
+      <button type="button" class="chip" data-value="3" data-i18n="step6.repeat_thrice">3×</button>
+    </div>
+
+    <div class="repeat-hints">
+      <div class="repeat-hint active" data-value="1" id="step6_repeats_hint1" data-i18n="step6.hint1">
+        Jíelníček je nejpestřejší, jídla se neopakují.
+      </div>
+      <div class="repeat-hint" data-value="2" id="step6_repeats_hint2" data-i18n="step6.hint2">
+        Střední varianta – některá jídla se zopakují, stále dostatečně pestré.
+      </div>
+      <div class="repeat-hint" data-value="3" id="step6_repeats_hint3" data-i18n="step6.hint3">
+        Méně pestré, ale snazší na přípravu.
+      </div>
+    </div>
+    <div class="error" id="err-repeats"></div>
+  </div>
+  <!-- Zobrazení gramů -->
+  <div class="field" id="grams_block">
+    <label>
+      <strong data-i18n="step6.grams_title">Chcete v jídelníčku zobrazovat přesné gramáže?</strong>
+    </label>
+    <div class="help" data-i18n="step6.grams_subtitle">
+      Vyberte si způsob, který nejlépe podpoří váš vztah k jídlu.
+    </div>
+
+    <div id="grams_group" class="chips chips-hero" role="group" aria-label="Zobrazení gramů">
+      <button type="button" class="chip" data-value="yes">
+        <span data-i18n="step6.grams_yes">Ano, chci zobrazit</span>
+      </button>
+      <button type="button" class="chip" data-value="no">
+        <span data-i18n="step6.grams_no">Ne, chci skrýt</span>
+      </button>
+    </div>
+
+    <div class="grams-hints">
+      <div class="grams-hint active" data-value="yes" data-i18n="step6.grams_yes_hint">
+        Ideální pro přesné sledování makroživin a učení se velikosti porcí.
+      </div>
+      <div class="grams-hint" data-value="no" data-i18n="step6.grams_no_hint">
+        Vhodné pro podporu intuitivního stravování a snížení stresu z výpočtů (vhodné i jako prevence Poruch Příjmu Potravy).
+      </div>
+    </div>
+
+    <div class="grams-examples">
+      <div class="grams-example">
+        <div class="grams-example-title" data-i18n="step6.grams_examples_show">Zobrazené jednotky</div>
+        <div class="grams-example-body">
+          <div data-i18n="step6.grams_example_left_line1">Tuňák s kuskusem a okurkou: 400 g</div>
+          <div data-i18n="step6.grams_example_left_line2">Hruška: 1 ks, Švestka: 3 ks</div>
+        </div>
+      </div>
+      <div class="grams-example">
+        <div class="grams-example-title" data-i18n="step6.grams_examples_hide">Skryté jednotky</div>
+        <div class="grams-example-body">
+          <div data-i18n="step6.grams_example_right_line1">Tuňák s kuskusem a okurkou</div>
+          <div data-i18n="step6.grams_example_right_line2">Hruška, Švestka</div>
+        </div>
+      </div>
+    </div>
+    <div class="error" id="err-show_grams"></div>
+  </div>
+</section>
+
+
+
+

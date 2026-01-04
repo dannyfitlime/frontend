@@ -95,6 +95,12 @@
 .page-header .header-steps { justify-self: end; }
 .header-logo__img { height: 40px; width: auto; }
 
+@media (min-width: 1280px) {
+  .page-header {
+    column-gap: 180px;
+  }
+}
+
 /* === Mobilní rozložení === */
 @media (max-width: 720px) {
   .page-header {

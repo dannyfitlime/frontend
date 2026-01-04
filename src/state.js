@@ -58,17 +58,18 @@ export function createInitialState() {
       future_text: ''
     },
 
-    // ===== STEP 4+5 – NUTRICE =====
+    // ===== STEP 5+6 – NUTRICE =====
     nutrition: {
       diet: 'none',
       dislikes: [],
       other_dislike: '',
       repeats: 'none',
+      show_grams: null,
       macros: { c: 55, f: 25, p: 20 },
       _customized: false
     },
 
-    // ===== STEP 6 – PLÁN =====
+    // ===== STEP 7 – PLÁN =====
     plan: {
       variant: 'standard',
       period: 'week',
@@ -79,7 +80,7 @@ export function createInitialState() {
       discount_percent: null
     },
 
-    // ===== STEP 7 – ZÁKAZNÍK + SOUHLASY =====
+    // ===== STEP 8 – ZÁKAZNÍK + SOUHLASY =====
     customer: {
       name: '',
       email: '',

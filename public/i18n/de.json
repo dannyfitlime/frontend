@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – gesunder Ernährungsplan nach Maß",
@@ -225,7 +225,7 @@
       "per_month": "/ Monat",
       "advantage": "günstiger",
       "standard": {
-        "title": "⚖️ Standard – vollwertig (5 Tage)",
+        "title": "?? Standard – vollwertig (5 Tage)",
         "feature1": "Ernährungsplan für 5 Tage (Mo–Fr)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -236,7 +236,7 @@
       },
       "premium": {
         "badge": "Am beliebtesten",
-        "title": "🏆 Premium – maßgeschneidert (7 Tage)",
+        "title": "?? Premium – maßgeschneidert (7 Tage)",
         "feature1": "Ernährungsplan für 7 Tage (Mo–So)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -509,6 +509,18 @@
     "select_sport_placeholder": "Sportart auswählen"
   },
   "step4": {
+    "title": "Makros & Grafiken",
+    "subtitle": "Die Werte sind auf Basis deiner Aktivitäten vorausgefüllt.",
+    "macros_title": "Makronährstoffe",
+    "graphs_title": "Grafiken zu Energieaufnahme und -verbrauch",
+    "carb": "Kohlenhydrate (%)",
+    "fat": "Fette (%)",
+    "protein": "Eiweiß (%)",
+    "sum_input": "Summe",
+    "help_macros": "Die Werte sind auf Grundlage deiner Aktivitäten vorausgefüllt.",
+    "premium_note": "Die Anpassung der Makronährstoffe wird nur im Premium-Plan berücksichtigt."
+  },
+    "step5": {
     "title": "Ernährung",
     "diet": "Ernährungstyp",
     "diet_none": "Ohne Einschränkung",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Eier",
     "help_diet": "Wählen Sie den Ernährungstyp, den Sie normalerweise einhalten.",
     "help_dislikes": "Markieren Sie Zutaten, die Sie im Ernährungsplan vermeiden möchten.",
-    "premium_note": "Anpassung der Ernährungsformen und Ausschluss von Lebensmitteln sind nur im Premium-Plan verfügbar.",
-    "repeats_title": "Anzahl der Wiederholungen von Gerichten",
-    "help_repeats": "Wählen Sie, wie oft Gerichte innerhalb der Woche wiederholt werden dürfen.",
+    "premium_note": "Anpassung der Ernährungsformen und Ausschluss von Lebensmitteln sind nur im Premium-Plan verfügbar."
+  },
+      "step6": {
+    "title": "Einstellungen des Speiseplans",
+    "repeats_title": "Anzahl der Wiederholungen von Mahlzeiten",
+    "help_repeats": "Wählen Sie, wie oft sich Mahlzeiten innerhalb der Woche wiederholen dürfen.",
     "repeat_once": "Einmal",
     "repeat_twice": "Zweimal",
     "repeat_thrice": "Mehrmals",
-    "hint1": "Der Ernährungsplan ist am abwechslungsreichsten, Gerichte wiederholen sich nicht.",
-    "hint2": "Mittelvariante – einige Gerichte wiederholen sich, insgesamt aber weiterhin abwechslungsreich.",
-    "hint3": "Weniger abwechslungsreich, dafür einfacher in der Zubereitung."
+    "hint1": "Der Speiseplan ist am abwechslungsreichsten, Mahlzeiten wiederholen sich nicht.",
+    "hint2": "Mittlere Variante – einige Mahlzeiten wiederholen sich, trotzdem ausreichend abwechslungsreich.",
+    "hint3": "Weniger abwechslungsreich, aber einfacher zuzubereiten.",
+    "grams_title": "Möchten Sie im Speiseplan genaue Grammangaben anzeigen?",
+    "grams_subtitle": "Wählen Sie die Option, die Ihre Beziehung zum Essen am besten unterstützt.",
+    "grams_yes": "Ja, anzeigen",
+    "grams_yes_hint": "Ideal für das genaue Verfolgen von Makronährstoffen und das Erlernen von Portionsgrößen.",
+    "grams_no": "Nein, ausblenden",
+    "grams_no_hint": "Geeignet zur Förderung intuitiven Essens und zur Reduzierung von Stress durch Zahlen (auch zur Prävention von Essstörungen geeignet).",
+    "grams_examples_show": "Angezeigte Einheiten",
+    "grams_examples_hide": "Ausgeblendete Einheiten",
+    "grams_example_left_line1": "Thunfisch mit Couscous und Gurke: 400 g",
+    "grams_example_left_line2": "Birne: 1 Stk., Pflaume: 3 Stk.",
+    "grams_example_right_line1": "Thunfisch mit Couscous und Gurke",
+    "grams_example_right_line2": "Birne, Pflaume"
   },
-  "step5": {
-    "title": "Makros & Grafiken",
-    "subtitle": "Die Werte sind auf Basis deiner Aktivitäten vorausgefüllt.",
-    "macros_title": "Makronährstoffe",
-    "graphs_title": "Grafiken zu Energieaufnahme und -verbrauch",
-    "carb": "Kohlenhydrate (%)",
-    "fat": "Fette (%)",
-    "protein": "Eiweiß (%)",
-    "sum_input": "Summe",
-    "help_macros": "Die Werte sind auf Grundlage deiner Aktivitäten vorausgefüllt.",
-    "premium_note": "Die Anpassung der Makronährstoffe wird nur im Premium-Plan berücksichtigt."
-  },
-  "step6": {
+  "step7": {
     "title": "Planauswahl",
     "variant": "Planvariante",
     "variant_help": "Wählen Sie, welchen Plan Sie möchten.",
@@ -570,7 +585,7 @@
     "premium_days": "7 Tage",
     "premium_desc": "Kompletter Wochenplan mit zusätzlichen Funktionen.",
     "premium_feature1": "🌱 Alles aus Standard",
-    "premium_feature2": "💊 Individuelle Nahrungsergänzungsmittel",
+    "premium_feature2": "🌿 Individuelle Nahrungsergänzungsmittel",
     "premium_feature3": "🥤 Trinkplan & Ernährungspräferenzen",
     "premium_delivery": "Express-Lieferung innerhalb von 2 Werktagen",
     "details_title": "Details zu den Plänen",
@@ -600,7 +615,7 @@
     "standard_warning_text": "Im Standard-Plan werden eigene Ernährungsform, Lebensmittelauswahl und Anpassungen der Makronährstoffe nicht gespeichert. Möchten Sie trotzdem fortfahren?",
     "total_label": "Gesamtpreis:"
   },
-  "step7": {
+  "step8": {
     "title": "Zusammenfassung & Kauf",
     "summary_title": "Bestellübersicht",
     "basic": "Grunddaten",
@@ -651,8 +666,8 @@
     "heading": "Zahlung fehlgeschlagen",
     "message": "Leider konnte die Zahlung nicht abgeschlossen werden.",
     "resume_text": "Wir haben das Formular für Sie gespeichert – Sie können dort weitermachen, wo Sie aufgehört haben.",
-    "resume_btn": "↩ Zurück zum Formular",
-    "back_home": "← Zurück zur Startseite",
+    "resume_btn": "? Zurück zum Formular",
+    "back_home": "‹ Zurück zur Startseite",
     "note": "Die Zahlung wurde nicht ausgeführt. Bitte versuchen Sie es erneut oder verwenden Sie eine andere Karte.",
     "tips": [
       "Bitte prüfen Sie, ob genügend Guthaben vorhanden ist oder Online-Zahlungen aktiviert sind.",
@@ -685,7 +700,7 @@
   },
   "termsPage": {
     "metaTitle": "Allgemeine Geschäftsbedingungen – FitLime",
-    "back": "← Zurück zur Startseite",
+    "back": "‹ Zurück zur Startseite",
     "subtitle": "Für die Bereitstellung eines einmaligen, individuellen Ernährungsplans",
     "title": "Allgemeine Geschäftsbedingungen – FitLime",
     "effective": "Gültig ab: 01.01.2026",
@@ -800,7 +815,7 @@
   },
   "privacyPage": {
     "metaTitle": "Datenschutzerklärung – FitLime",
-    "back": "← Zurück zur Startseite",
+    "back": "‹ Zurück zur Startseite",
     "subtitle": "Für die Websites fitlime.cz, fitlime.sk, fitlime.eu",
     "title": "Datenschutzerklärung",
     "effective": "Gültig ab: 01.01.2026",
@@ -956,3 +971,4 @@
     "back": "Zurück zur Startseite"
   }
 }
+

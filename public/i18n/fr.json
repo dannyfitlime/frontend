@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime – menu sain sur mesure",
@@ -508,7 +508,19 @@
     "error_future_max3": "Vous pouvez sélectionner au maximum 3 sports.",
     "select_sport_placeholder": "Choisissez un sport"
   },
-  "step4": {
+   "step4": {
+    "title": "Macros & graphiques",
+    "subtitle": "Les valeurs sont pré-remplies en fonction de vos activités.",
+    "macros_title": "Macronutriments",
+    "graphs_title": "Graphiques des apports et dépenses d’énergie",
+    "carb": "Glucides (%)",
+    "fat": "Lipides (%)",
+    "protein": "Protéines (%)",
+    "sum_input": "Somme",
+    "help_macros": "Les valeurs sont pré-remplies en fonction de vos activités.",
+    "premium_note": "La modification des macros ne s’applique qu’au plan Premium."
+  },
+  "step5": {
     "title": "Alimentation",
     "diet": "Type de régime",
     "diet_none": "Sans restriction",
@@ -527,29 +539,32 @@
     "dislike_eggs": "Œufs",
     "help_diet": "Choisissez le type d’alimentation que vous suivez habituellement.",
     "help_dislikes": "Cochez les ingrédients que vous souhaitez éviter dans votre menu.",
-    "premium_note": "Les adaptations de régime et l’exclusion d’aliments ne sont disponibles qu’avec le plan Premium.",
-    "repeats_title": "Fréquence de répétition des repas",
+    "premium_note": "Les adaptations de régime et l’exclusion d’aliments ne sont disponibles qu’avec le plan Premium."
+  },
+ "step6": {
+    "title": "Configuration du menu",
+    "repeats_title": "Répétition des repas",
     "help_repeats": "Choisissez combien de fois les repas peuvent se répéter au cours de la semaine.",
     "repeat_once": "Une fois",
     "repeat_twice": "Deux fois",
     "repeat_thrice": "Plusieurs fois",
-    "hint1": "Le menu est le plus varié, les repas ne se répètent pas.",
-    "hint2": "Variante intermédiaire – certains repas se répètent, tout en restant variés.",
-    "hint3": "Moins varié, mais plus simple à préparer."
+    "hint1": "Le menu est très varié, les repas ne se répètent pas.",
+    "hint2": "Option intermédiaire – certains repas se répètent, tout en restant assez variés.",
+    "hint3": "Moins varié, mais plus facile à préparer.",
+    "grams_title": "Souhaitez-vous afficher les grammages précis ?",
+    "grams_subtitle": "Choisissez la méthode qui favorise le mieux votre relation avec la nourriture.",
+    "grams_yes": "Oui, je souhaite les afficher",
+    "grams_yes_hint": "Idéal pour un suivi précis des macronutriments et pour apprendre la taille des portions.",
+    "grams_no": "Non, je souhaite les masquer",
+    "grams_no_hint": "Adapté pour favoriser l'alimentation intuitive et réduire le stress lié aux chiffres (recommandé pour la prévention des Troubles des Conduites Alimentaires).",
+    "grams_examples_show": "Unités affichées",
+    "grams_examples_hide": "Unités masquées",
+    "grams_example_left_line1": "Thon au couscous et concombre : 400 g",
+    "grams_example_left_line2": "Poire : 1 pce, Prune : 3 pce",
+    "grams_example_right_line1": "Thon au couscous et concombre",
+    "grams_example_right_line2": "Poire, Prune"
   },
-  "step5": {
-    "title": "Macros & graphiques",
-    "subtitle": "Les valeurs sont pré-remplies en fonction de vos activités.",
-    "macros_title": "Macronutriments",
-    "graphs_title": "Graphiques des apports et dépenses d’énergie",
-    "carb": "Glucides (%)",
-    "fat": "Lipides (%)",
-    "protein": "Protéines (%)",
-    "sum_input": "Somme",
-    "help_macros": "Les valeurs sont pré-remplies en fonction de vos activités.",
-    "premium_note": "La modification des macros ne s’applique qu’au plan Premium."
-  },
-  "step6": {
+  "step7": {
     "title": "Choix du plan",
     "variant": "Type de plan",
     "variant_help": "Choisissez le plan souhaité.",
@@ -600,7 +615,7 @@
     "standard_warning_text": "Dans le plan Standard, le régime personnalisé, le choix spécifique de repas ni la modification des macronutriments ne seront enregistrés. Souhaitez-vous continuer malgré tout ?",
     "total_label": "Prix total :"
   },
-  "step7": {
+  "step8": {
     "title": "Récapitulatif & achat",
     "summary_title": "Résumé de la commande",
     "basic": "Données de base",
