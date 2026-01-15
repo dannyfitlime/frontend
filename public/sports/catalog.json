@@ -541,18 +541,18 @@
   },
   "shooting": {
     "group": "individual",
-    "labels": {
-      "cs": "Střelba",
-      "sk": "Streľba",
-      "en": "Shooting",
-      "de": "Schießen",
-      "pt": "Tiro",
-      "es": "Tiro",
-      "it": "Tiro a segno",
-      "pl": "Strzelectwo",
-      "fr": "Tir"
-    },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "labels":{
+      "cs": "Sportovní střelba",
+      "sk": "Športová streľba",
+      "en": "Sport shooting",
+      "de": "Sportschießen",
+      "pt": "Tiro esportivo",
+      "es": "Tiro deportivo",
+      "it": "Tiro sportivo",
+      "pl": "Strzelectwo sportowe",
+      "fr": "Tir sportif"
+      },
+  "macros": { "c": 52, "f": 18, "p": 30 }
   },
   "squash": {
     "group": "individual",
