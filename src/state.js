@@ -63,7 +63,7 @@ export function createInitialState() {
       diet: 'none',
       dislikes: [],
       other_dislike: '',
-      repeats: 'none',
+      repeats: '2',
       show_grams: null,
       macros: { c: 55, f: 25, p: 20 },
       _customized: false
