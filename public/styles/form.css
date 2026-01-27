@@ -669,6 +669,16 @@ button:focus-visible {
   padding: 10px 14px;
   font-weight: 650;
 }
+@media (min-width: 1100px) {
+  .layout-step5 #dislikes {
+    gap: 10px;
+  }
+  .layout-step5 #dislikes .chip {
+    flex: 0 1 calc(16.666% - 10px);
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 /* === Prémiová poznámka === */
 .premium-note {

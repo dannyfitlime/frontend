@@ -1,4 +1,4 @@
-{
+﻿{
   "home": {
     "meta": {
       "title": "FitLime - zdravý jedálniček na mieru",
@@ -529,13 +529,16 @@
     "diet_gluten_free": "Bezlepková",
     "diet_lactose_free": "Bez laktózy",
     "dislikes_title": "Potraviny na vylúčenie z jedálnička",
+    "dislike_tomato": "Paradajky",
+    "dislike_paprika_pepper": "Paprika",
+    "dislike_onion": "Cibuľa",
+    "dislike_garlic": "Cesnak",
+    "dislike_chilli": "Čili",
     "dislike_mushrooms": "Huby",
     "dislike_olives": "Olivy",
     "dislike_coriander": "Koriander",
-    "dislike_tomatoes": "Paradajky",
-    "dislike_cottage": "Tvaroh",
-    "dislike_tuna": "Tuniak",
-    "dislike_salmon": "Losos",
+    "dislike_fish": "Ryby",
+    "dislike_seafood": "Morské plody",
     "dislike_eggs": "Vajcia",
     "help_diet": "Vyberte typ stravy, ktorý bežne dodržiavate.",
     "help_dislikes": "Označte suroviny, ktorým sa chcete v jedálničku vyhnúť.",
@@ -972,6 +975,7 @@
     "back": "Späť na hlavnú stránku"
   }
 }
+
 
 
 
