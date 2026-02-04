@@ -510,7 +510,7 @@
   },
   "step4": {
     "title": "Macros & charts",
-    "subtitle": "Values are prefilled based on your activities.",
+    "subtitle": "Macronutrient values are pre-filled based on your activities. The optimization algorithm aims to follow them as accurately as possible, however minor deviations may occur.",
     "macros_title": "Macronutrients",
     "graphs_title": "Energy intake & expenditure charts",
     "carb": "Carbohydrates (%)",

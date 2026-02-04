@@ -510,7 +510,7 @@
   },
     "step4": {
     "title": "Macros & gráficos",
-    "subtitle": "Os valores são pré-preenchidos com base nas tuas atividades.",
+    "subtitle": "Os valores de macronutrientes são pré-preenchidos com base nas suas atividades. O algoritmo de otimização procura segui-los com a maior precisão possível, no entanto podem ocorrer pequenos desvios.",
     "macros_title": "Macronutrientes",
     "graphs_title": "Gráficos de ingestão e gasto de energia",
     "carb": "Hidratos de carbono (%)",

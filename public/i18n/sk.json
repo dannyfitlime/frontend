@@ -510,7 +510,7 @@
   },
   "step4": {
     "title": "Makra & grafy",
-    "subtitle": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
+    "subtitle": "Hodnoty makroživín sú predvyplnené na základe Vašich aktivít. Optimalizačný algoritmus sa ich snaží čo najpresnejšie dodržať, môžu však nastať drobné odchýlky.",
     "macros_title": "Makronutrienty",
     "graphs_title": "Grafy příjmu a výdeje energie",
     "carb": "Sacharidy (%)",

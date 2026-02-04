@@ -511,7 +511,7 @@
   },
     "step4": {
     "title": "Makroskładniki i wykresy",
-    "subtitle": "Wartości są wstępnie uzupełnione na podstawie Państwa aktywności.",
+    "subtitle": "Wartości makroskładników są wstępnie uzupełnione na podstawie Twoich aktywności. Algorytm optymalizacyjny stara się je jak najdokładniej zachować, jednak mogą wystąpić drobne odchylenia.",
     "macros_title": "Makroskładniki",
     "graphs_title": "Wykresy podaży i wydatku energetycznego",
     "carb": "Węglowodany (%)",

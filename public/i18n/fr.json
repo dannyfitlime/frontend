@@ -510,7 +510,7 @@
   },
    "step4": {
     "title": "Macros & graphiques",
-    "subtitle": "Les valeurs sont pré-remplies en fonction de vos activités.",
+    "subtitle": "Les valeurs des macronutriments sont préremplies en fonction de vos activités. L’algorithme d’optimisation cherche à les respecter le plus précisément possible, mais de légers écarts peuvent survenir.",
     "macros_title": "Macronutriments",
     "graphs_title": "Graphiques des apports et dépenses d’énergie",
     "carb": "Glucides (%)",

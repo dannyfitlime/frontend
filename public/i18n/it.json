@@ -510,7 +510,7 @@
   },
   "step4": {
     "title": "Macronutrienti & grafici",
-    "subtitle": "I valori sono precompilati in base alle tue attività.",
+    "subtitle": "I valori dei macronutrienti sono precompilati in base alle tue attività. L’algoritmo di ottimizzazione cerca di rispettarli nel modo più accurato possibile, tuttavia possono verificarsi lievi scostamenti.",
     "macros_title": "Macronutrienti",
     "graphs_title": "Grafici di apporto e dispendio energetico",
     "carb": "Carboidrati (%)",

@@ -510,7 +510,7 @@
   },
   "step4": {
     "title": "Macros y gráficos",
-    "subtitle": "Los valores están precargados según tus actividades.",
+    "subtitle": "Los valores de macronutrientes están prellenados en función de sus actividades. El algoritmo de optimización intenta respetarlos con la mayor precisión posible, aunque pueden producirse pequeñas desviaciones.",
     "macros_title": "Macronutrientes",
     "graphs_title": "Gráficos de ingesta y gasto energético",
     "carb": "Carbohidratos (%)",

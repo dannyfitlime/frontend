@@ -510,7 +510,7 @@
   },
   "step4": {
     "title": "Makros & Grafiken",
-    "subtitle": "Die Werte sind auf Basis deiner Aktivitäten vorausgefüllt.",
+    "subtitle": "Die Makronährstoffwerte sind auf Grundlage Ihrer Aktivitäten vorausgefüllt. Der Optimierungsalgorithmus versucht, diese so genau wie möglich einzuhalten, es kann jedoch zu geringfügigen Abweichungen kommen.",
     "macros_title": "Makronährstoffe",
     "graphs_title": "Grafiken zu Energieaufnahme und -verbrauch",
     "carb": "Kohlenhydrate (%)",

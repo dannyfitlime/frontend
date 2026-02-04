@@ -248,7 +248,8 @@
         "extra2": "Doplňky stravy na míru",
         "extra3": "Pitný režim",
         "extra4": "Možnost dietní preference (dieta, vyloučení potravin)",
-        "extra5": "Možnost nastavení makronutrientů"
+        "extra5": "Možnost nastavení makronutrientů",
+        "extra6": "Denní souhrn příjmu energie a makroživin"
       },
       "cta": "Spustit formulář",
       "note": "Nezávazně, vyberete si až v objednávce."
@@ -510,14 +511,14 @@
   },
   "step4": {
     "title": "Makra & grafy",
-    "subtitle": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
+    "subtitle": "Hodnoty makronuživin jsou předvyplněné na základě Vašich aktivit. Optimalizační algoritmus se je snaží co nejpřesněji dodržet, může však dojít k drobným odchylkám.",
     "macros_title": "Makronutrienty",
     "graphs_title": "Grafy příjmu a výdeje energie",
     "carb": "Sacharidy (%)",
     "fat": "Tuky (%)",
     "protein": "Bílkoviny (%)",
     "sum_input": "Suma",
-    "help_macros": "Hodnoty jsou předvyplněné na základě tvých aktivit.",
+    "help_macros": "Hodnoty jsou předvyplněné na základě Vašich aktivit.",
     "premium_note": "Úprava maker se propíše pouze u Premium plánu."
   },
   "step5": {
