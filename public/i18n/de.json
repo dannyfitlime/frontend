@@ -225,7 +225,7 @@
       "per_month": "/ Monat",
       "advantage": "günstiger",
       "standard": {
-        "title": "?? Standard – vollwertig (5 Tage)",
+        "title": "Standard – vollwertig (5 Tage)",
         "feature1": "Ernährungsplan für 5 Tage (Mo–Fr)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -236,7 +236,7 @@
       },
       "premium": {
         "badge": "Am beliebtesten",
-        "title": "?? Premium – maßgeschneidert (7 Tage)",
+        "title": "Premium – maßgeschneidert (7 Tage)",
         "feature1": "Ernährungsplan für 7 Tage (Mo–So)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -248,7 +248,8 @@
         "extra2": "Individuell angepasste Nahrungsergänzungsmittel",
         "extra3": "Trinkplan",
         "extra4": "Möglichkeit, Ernährungspräferenzen zu berücksichtigen (Diät, Ausschluss von Lebensmitteln)",
-        "extra5": "Möglichkeit zur Einstellung der Makronährstoffe"
+        "extra5": "Möglichkeit, Makronährstoffe einzustellen",
+        "extra6": "Tägliche Zusammenfassung der Energie- und Makronährstoffaufnahme"
       },
       "cta": "Formular starten",
       "note": "Unverbindlich, Sie wählen erst bei der Bestellung."
@@ -614,6 +615,7 @@
     "premium_detail11": "Ausgewählte Ernährungspräferenzen",
     "premium_detail12": "Ausschluss konkreter Lebensmittel",
     "premium_detail13": "Möglichkeit zur Einstellung der Makronährstoffe",
+    "premium_detail14": "Tägliche Zusammenfassung der Energie- und Makronährstoffaufnahme",
     "standard_warning_title": "Änderungen werden im Standard-Plan nicht übernommen",
     "standard_warning_text": "Im Standard-Plan werden eigene Ernährungsform, Lebensmittelauswahl und Anpassungen der Makronährstoffe nicht gespeichert. Möchten Sie trotzdem fortfahren?",
     "total_label": "Gesamtpreis:"

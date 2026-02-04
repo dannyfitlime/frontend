@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "meta": {
       "title": "FitLime - zdravý jedálniček na mieru",
@@ -225,7 +225,7 @@
       "per_month": "/ mesiac",
       "advantage": "výhodnejšia",
       "standard": {
-        "title": "?? Standard - plnohodnotný (5 dní)",
+        "title": "Standard - plnohodnotný (5 dní)",
         "feature1": "Jedálniček na 5 dní (Po-Pi)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
@@ -236,7 +236,7 @@
       },
       "premium": {
         "badge": "Najobľúbenejšia",
-        "title": "?? Premium - na mieru (7 dní)",
+        "title": "Premium - na mieru (7 dní)",
         "feature1": "Jedálniček na 7 dní (Po-Ne)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
@@ -248,7 +248,8 @@
         "extra2": "Doplnky stravy na mieru",
         "extra3": "Pitný režim",
         "extra4": "Možnosť diétnych preferencií (diéta, vylúčenie potravín)",
-        "extra5": "Možnosť nastavenia makronutrientov"
+        "extra5": "Možnosť nastavenia makronutrientov",
+        "extra6": "Denné zhrnutie príjmu energie a makronutrientov"
       },
       "cta": "Spustiť formulár",
       "note": "Nezáväzne, vyberiete si až v objednávke."
@@ -614,6 +615,7 @@
     "premium_detail11": "Vybrané diétne preferencie",
     "premium_detail12": "Vylúčenie konkrétnych potravín",
     "premium_detail13": "Možnosť nastavenia makronutrientov",
+    "premium_detail14": "Denné zhrnutie príjmu energie a makronutrientov",
     "standard_warning_title": "Zmeny sa v pláne Standard neprejavia",
     "standard_warning_text": "V pláne Standard sa neuloží vlastná diéta, výber jedál ani úpravy makronutrientov. Chcete napriek tomu pokračovať?",
     "total_label": "Cena celkom:"
@@ -974,8 +976,5 @@
     },
     "back": "Späť na hlavnú stránku"
   }
+
 }
-
-
-
-

@@ -248,7 +248,8 @@
         "extra2": "Suplementos alimentares à medida",
         "extra3": "Plano de hidratação",
         "extra4": "Possibilidade de preferências de dieta (regimes, exclusão de alimentos)",
-        "extra5": "Possibilidade de definir macronutrientes"
+        "extra5": "Possibilidade de definir macronutrientes",
+        "extra6": "Resumo diário da ingestão de energia e macronutrientes"
       },
       "cta": "Iniciar formulário",
       "note": "Sem compromisso, escolhe mais tarde na encomenda."
@@ -614,6 +615,7 @@
     "premium_detail11": "Preferências de dieta selecionadas",
     "premium_detail12": "Exclusão de alimentos específicos",
     "premium_detail13": "Possibilidade de definição de macronutrientes",
+    "premium_detail14": "Resumo diário da ingestão de energia e macronutrientes",
     "standard_warning_title": "As alterações não se refletem no plano Standard",
     "standard_warning_text": "No plano Standard, a dieta personalizada, a escolha específica de refeições e as alterações dos macronutrientes não serão guardadas. Deseja continuar mesmo assim?",
     "total_label": "Preço total:"

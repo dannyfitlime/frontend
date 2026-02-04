@@ -248,7 +248,8 @@
         "extra2": "Integratori alimentari su misura",
         "extra3": "Piano di idratazione",
         "extra4": "Possibilità di preferenze dietetiche (regimi, esclusione di alimenti)",
-        "extra5": "Possibilità di definire i macronutrienti"
+        "extra5": "Possibilità di impostare i macronutrienti",
+        "extra6": "Riepilogo giornaliero dell’apporto energetico e dei macronutrienti"
       },
       "cta": "Inizia il questionario",
       "note": "Senza impegno, scegli più avanti al momento dell'ordine."
@@ -614,6 +615,7 @@
     "premium_detail11": "Preferenze dietetiche selezionate",
     "premium_detail12": "Esclusione di alimenti specifici",
     "premium_detail13": "Possibilità di definire i macronutrienti",
+    "premium_detail14": "Riepilogo giornaliero dell’apporto energetico e dei macronutrienti",
     "standard_warning_title": "Le modifiche non si riflettono nel piano Standard",
     "standard_warning_text": "Nel piano Standard, la dieta personalizzata, la scelta specifica dei pasti e le modifiche dei macronutrienti non verranno salvate. Vuoi continuare comunque?",
     "total_label": "Prezzo totale:"

@@ -226,7 +226,7 @@
       "per_month": "/ miesiąc",
       "advantage": "korzystniejsza opcja",
       "standard": {
-        "title": "?? Standard – kompletny (5 dni)",
+        "title": "Standard – kompletny (5 dni)",
         "feature1": "Plan żywieniowy na 5 dni (pon–pt)",
         "feature2": "Unikalne i urozmaicone posiłki",
         "feature3": "Personalizacja na podstawie dziennika treningowego",
@@ -237,7 +237,7 @@
       },
       "premium": {
         "badge": "Najczęściej wybierany",
-        "title": "?? Premium – szyty na miarę (7 dni)",
+        "title": "Premium – szyty na miarę (7 dni)",
         "feature1": "Plan żywieniowy na 7 dni (pon–niedz)",
         "feature2": "Unikalne i urozmaicone posiłki",
         "feature3": "Personalizacja na podstawie dziennika treningowego",
@@ -249,7 +249,8 @@
         "extra2": "Indywidualnie dobrane suplementy diety",
         "extra3": "Plan nawodnienia",
         "extra4": "Możliwość określenia preferencji żywieniowych (diety, wykluczenia produktów)",
-        "extra5": "Możliwość zdefiniowania makroskładników"
+        "extra5": "Możliwość ustawienia makroskładników",
+        "extra6": "Dzienne podsumowanie spożycia energii i makroskładników"
       },
       "cta": "Rozpocznij formularz",
       "note": "Bez zobowiązań, wybór planu nastąpi później przy składaniu zamówienia."
@@ -616,6 +617,7 @@
     "premium_detail11": "Uwzględnione preferencje dietetyczne",
     "premium_detail12": "Możliwość wykluczenia konkretnych produktów",
     "premium_detail13": "Możliwość zdefiniowania makroskładników",
+    "premium_detail14": "Dzienne podsumowanie spożycia energii i makroskładników",
     "standard_warning_title": "Zmiany nie zostaną odzwierciedlone w planie Standard",
     "standard_warning_text": "W planie Standard zindywidualizowana dieta, szczegółowy wybór posiłków oraz zmiany makroskładników nie zostaną zapisane. Czy na pewno chcą Państwo kontynuować?",
     "total_label": "Cena łączna:"

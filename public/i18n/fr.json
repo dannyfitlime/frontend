@@ -248,7 +248,8 @@
         "extra2": "Compléments alimentaires sur mesure",
         "extra3": "Programme d’hydratation",
         "extra4": "Possibilité de préférences diététiques (régimes, exclusions d’aliments)",
-        "extra5": "Possibilité de régler les macronutriments"
+        "extra5": "Possibilité de définir les macronutriments",
+        "extra6": "Résumé quotidien de l’apport énergétique et des macronutriments"
       },
       "cta": "Lancer le formulaire",
       "note": "Sans engagement, vous choisirez plus tard dans la commande."
@@ -614,6 +615,7 @@
     "premium_detail11": "Certaines préférences diététiques",
     "premium_detail12": "Exclusion d’aliments spécifiques",
     "premium_detail13": "Possibilité de réglage des macronutriments",
+    "premium_detail14": "Résumé quotidien de l’apport énergétique et des macronutriments",
     "standard_warning_title": "Les modifications ne seront pas prises en compte dans le plan Standard",
     "standard_warning_text": "Dans le plan Standard, le régime personnalisé, le choix spécifique de repas ni la modification des macronutriments ne seront enregistrés. Souhaitez-vous continuer malgré tout ?",
     "total_label": "Prix total :"

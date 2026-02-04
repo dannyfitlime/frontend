@@ -248,7 +248,8 @@
         "extra2": "Tailored supplement plan",
         "extra3": "Hydration plan",
         "extra4": "Diet preferences & restrictions",
-        "extra5": "Adjustable macronutrients"
+        "extra5": "Adjustable macronutrients",
+        "extra6": "Daily summary of energy and macronutrient intake"
       },
       "cta": "Start questionnaire",
       "note": "Non-binding - you choose during checkout."
@@ -614,6 +615,7 @@
     "premium_detail11": "Selected diet preferences",
     "premium_detail12": "Exclusion of specific foods",
     "premium_detail13": "Customizable macronutrients",
+    "premium_detail14": "Daily summary of energy and macronutrient intake",
     "standard_warning_title": "Changes will not apply in the Standard plan",
     "standard_warning_text": "In the Standard plan, your own diet, meal choices, and macro adjustments are not saved. Do you still want to continue?",
     "total_label": "Total price:"
