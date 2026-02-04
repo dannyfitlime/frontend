@@ -226,7 +226,14 @@ export function validateSport(sport, t){
 
 /* ===== Step 5 – Diet & Exclusions ===== */
 export function validateDiet(nutrition, t){
-  return {};
+  const e = {};
+  const n = nutrition || {};
+
+  if (!n.diet || n.diet === 'none'){
+    e['diet'] = reqMsg(t);
+  }
+
+  return e;
 }
 
 /* ===== Step 4 – MACROS ===== */
