@@ -538,9 +538,10 @@
     "dislike_olives": "Olivy",
     "dislike_chilli": "Chilli",
     "dislike_coriander": "Koriandr",
-    "dislike_fish": "Ryby",
+    "dislike_fish": "Ryby", 
     "dislike_seafood": "Mořské plody",
     "dislike_eggs": "Vejce",
+    "dislike_meat_alternatives": "Tofu, tempeh",
     "help_diet": "Vyberte typ stravy, který běžně dodržujete.",
     "help_dislikes": "Označte suroviny, kterým se chcete v jídelníčku vyhnout.",
     "premium_note": "Úprava diet a vyloučení potravin jsou dostupné pouze u Premium plánu."

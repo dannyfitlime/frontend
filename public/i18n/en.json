@@ -541,6 +541,7 @@
     "dislike_fish": "Fish",
     "dislike_seafood": "Seafood",
     "dislike_eggs": "Eggs",
+    "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Choose your usual dietary style.",
     "help_dislikes": "Select ingredients you want to exclude from your plan.",
     "premium_note": "Diet adjustments and exclusions are available only in the Premium plan."
