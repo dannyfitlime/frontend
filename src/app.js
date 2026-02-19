@@ -48,6 +48,20 @@ const stepFiles = [
   '/steps/07-plan.html',
   '/steps/08-review.html'
 ];
+
+function persistFormDraft(step = currentStep) {
+  const safeStep = Math.max(0, Math.min(stepFiles.length - 1, Number(step) || 0));
+  try {
+    const payload = {
+      ...formState,
+      locale: i18n?.lang || formState?.locale || 'cs'
+    };
+    localStorage.setItem('formState', JSON.stringify(payload));
+    localStorage.setItem('formStep', String(safeStep));
+  } catch (err) {
+    console.warn('Draft persist failed:', err);
+  }
+}
 /* ===== Topbar – přepnutí do compact po odskrolování od vrchu ===== */
 (function(){
   const topbar = document.getElementById('topbar');
@@ -436,8 +450,9 @@ async function loadStep(idx){
     }
     
     dbg('step ready', idx);
+    persistFormDraft(idx);
 
-    // Chytrý reset scrollu – funguje i na mobilech a při reflow
+    // Chytrý reset scrollu - funguje i na mobilech a při reflow
     scrollToTopSmart('after-loadStep');
     
   }catch(e){

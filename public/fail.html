@@ -343,7 +343,15 @@
 
     async function initFailPage() {
       const formStateRaw = localStorage.getItem("formState");
-      const formState = JSON.parse(formStateRaw || "{}");
+      let formState = {};
+      let hasValidFormState = false;
+      try {
+        formState = JSON.parse(formStateRaw || "{}");
+        hasValidFormState = !!formState && typeof formState === "object" && Object.keys(formState).length > 0;
+      } catch (e) {
+        formState = {};
+        hasValidFormState = false;
+      }
       const lang = resolveLang(formState);
       document.documentElement.lang = lang;
 
@@ -386,7 +394,7 @@
       }
 
       // Blok pro obnovení formuláře
-      if (formStateRaw) {
+      if (hasValidFormState) {
         const block = document.getElementById("resume-block");
         block.hidden = false;
         const resumeBtn = document.getElementById("resume-btn");

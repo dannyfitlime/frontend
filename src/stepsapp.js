@@ -1482,8 +1482,19 @@ export async function handlePurchase() {
   const langParam = i18n?.lang || "cs";
   const thanksUrl = `/thanks.html?lang=${encodeURIComponent(langParam)}`;
   const failUrl = `/fail.html?resume=true&lang=${encodeURIComponent(langParam)}`;
+  const draftForResume = {
+    ...formState,
+    locale: langParam
+  };
 
   const SKIP_PAYMENT = true;
+
+  try {
+    localStorage.setItem("formState", JSON.stringify(draftForResume));
+    localStorage.setItem("formStep", "7");
+  } catch (e) {
+    console.warn("Draft save before purchase failed:", e);
+  }
 
   try {
     const v = formState.plan?.variant;
@@ -1589,6 +1600,12 @@ export async function handlePurchase() {
     console.group("❌ PURCHASE DEBUG");
     console.error("Chyba při vytváření objednávky:", err);
     console.groupEnd();
+    try {
+      localStorage.setItem("formState", JSON.stringify(draftForResume));
+      localStorage.setItem("formStep", "7");
+    } catch (e) {
+      console.warn("Draft save after purchase error failed:", e);
+    }
     window.location.href = failUrl;
   }
 }
