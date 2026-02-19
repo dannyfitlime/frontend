@@ -674,8 +674,8 @@
     "heading": "Platba se nezdařila",
     "message": "Bohužel se platbu nepodařilo dokončit.",
     "resume_text": "Formulář jsme vám zachovali – můžete pokračovat tam, kde jste skončili.",
-    "resume_btn": "? Vrátit se k formuláři",
-    "back_home": "‹ Zpět na hlavní stránku",
+    "resume_btn": "↩ Vrátit se k formuláři",
+    "back_home": "← Zpět na hlavní stránku",
     "note": "Platba neproběhla. Zkuste ji prosím zopakovat nebo použít jinou kartu.",
     "tips": [
       "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",

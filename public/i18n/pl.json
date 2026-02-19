@@ -676,8 +676,8 @@
     "heading": "Płatność nie powiodła się",
     "message": "Niestety płatność nie została zrealizowana.",
     "resume_text": "Formularz został zachowany – możesz kontynuować od miejsca, w którym przerwałeś.",
-    "resume_btn": "? Powrót do formularza",
-    "back_home": "‹ Powrót na stronę główną",
+    "resume_btn": "↩ Powrót do formularza",
+    "back_home": "← Powrót na stronę główną",
     "note": "Płatność nie została dokonana. Spróbuj ponownie lub użyj innej karty.",
     "tips": [
       "Sprawdź, czy masz wystarczające środki lub włączone płatności online.",

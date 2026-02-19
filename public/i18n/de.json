@@ -674,8 +674,8 @@
     "heading": "Zahlung fehlgeschlagen",
     "message": "Leider konnte die Zahlung nicht abgeschlossen werden.",
     "resume_text": "Wir haben das Formular für Sie gespeichert – Sie können dort weitermachen, wo Sie aufgehört haben.",
-    "resume_btn": "? Zurück zum Formular",
-    "back_home": "‹ Zurück zur Startseite",
+    "resume_btn": "↩ Zurück zum Formular",
+    "back_home": "← Zurück zur Startseite",
     "note": "Die Zahlung wurde nicht ausgeführt. Bitte versuchen Sie es erneut oder verwenden Sie eine andere Karte.",
     "tips": [
       "Bitte prüfen Sie, ob genügend Guthaben vorhanden ist oder Online-Zahlungen aktiviert sind.",

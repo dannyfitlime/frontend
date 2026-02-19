@@ -1523,7 +1523,7 @@ export async function handlePurchase() {
   const cleanState = structuredClone(formState);
   if (cleanState.balance) delete cleanState.balance;
 
-  const resp = await fetch("/orders", {
+  const resp = await fetch("/orders/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
