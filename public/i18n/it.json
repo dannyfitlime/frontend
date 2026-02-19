@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Funghi",
     "dislike_olives": "Olive",
     "dislike_paprika_pepper": "Peperoni",
-    "dislike_tomato": "Pomodoro",
+    "dislike_tomatoes": "Pomodoro",
     "dislike_onion": "Cipolla",
     "dislike_garlic": "Aglio",
     "dislike_chilli": "Peperoncino",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Scegli il tipo di alimentazione che segui di solito.",
     "help_dislikes": "Seleziona gli ingredienti che vuoi evitare nel piano.",
+    "error_dislikes_max4": "Puoi selezionare al massimo 4 elementi.",
     "premium_note": "La personalizzazione della dieta e l'esclusione di alimenti sono disponibili solo nel piano Premium."
   },
   "step6": {

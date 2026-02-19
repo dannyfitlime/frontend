@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Pilze",
     "dislike_olives": "Oliven",
     "dislike_paprika_pepper": "Paprika",
-    "dislike_tomato": "Tomaten",
+    "dislike_tomatoes": "Tomaten",
     "dislike_onion": "Zwiebeln",
     "dislike_garlic": "Knoblauch",
     "dislike_chilli": "Chili",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Wählen Sie den Ernährungstyp, den Sie normalerweise einhalten.",
     "help_dislikes": "Markieren Sie Zutaten, die Sie im Ernährungsplan vermeiden möchten.",
+    "error_dislikes_max4": "Sie können maximal 4 Einträge auswählen.",
     "premium_note": "Anpassung der Ernährungsformen und Ausschluss von Lebensmitteln sind nur im Premium-Plan verfügbar."
   },
       "step6": {

@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Mushrooms",
     "dislike_olives": "Olives",
     "dislike_paprika_pepper": "Bell peppers",
-    "dislike_tomato": "Tomatoes",
+    "dislike_tomatoes": "Tomatoes",
     "dislike_onion": "Onions",
     "dislike_garlic": "Garlic",
     "dislike_chilli": "Chili",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Choose your usual dietary style.",
     "help_dislikes": "Select ingredients you want to exclude from your plan.",
+    "error_dislikes_max4": "You can select up to 4 items.",
     "premium_note": "Diet adjustments and exclusions are available only in the Premium plan."
   },
       "step6": {

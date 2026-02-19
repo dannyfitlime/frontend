@@ -627,26 +627,45 @@ export async function bindSportStep(){
 
     const noneWrap = $('#none_suggestions');
 
-  // --- klikání na chipy "Co by tě lákalo" (bez možnosti Jiné) ---
+  // --- klikání na chipy "Co by tě lákalo" (max 3 položky) ---
+  const MAX_FUTURE_SPORTS = 3;
+  const futureErrEl = document.getElementById('err-future');
+  const clearFutureError = () => {
+    if (futureErrEl) futureErrEl.textContent = '';
+  };
+  const showFutureMaxError = () => {
+    if (futureErrEl) {
+      futureErrEl.textContent = t?.('step3.error_future_max3') || 'Můžeš vybrat maximálně 3 sporty.';
+    }
+  };
+
+  const selected = new Set((formState.sport?.futureMulti || []).slice(0, MAX_FUTURE_SPORTS));
+  formState.sport.futureMulti = Array.from(selected);
+
   noneWrap?.querySelectorAll('.chip').forEach(btn => {
     btn.onclick = () => {
-      btn.classList.toggle('selected');
+      const id = btn.dataset.value;
 
-      const set = new Set(formState.sport?.futureMulti || []);
-
-      if (btn.classList.contains('selected')) {
-        set.add(btn.dataset.value);
+      if (selected.has(id)) {
+        selected.delete(id);
+        btn.classList.remove('selected');
+        clearFutureError();
       } else {
-        set.delete(btn.dataset.value);
+        if (selected.size >= MAX_FUTURE_SPORTS) {
+          showFutureMaxError();
+          return;
+        }
+        selected.add(id);
+        btn.classList.add('selected');
+        clearFutureError();
       }
 
-      formState.sport.futureMulti = Array.from(set);
-      //formState.sport.future = btn.dataset.value; // poslední kliknutý, klidně jen jako info
+      formState.sport.futureMulti = Array.from(selected);
+      //formState.sport.future = id; // poslední kliknutý, klidně jen jako info
     };
   });
 
   // --- re-inicializace vybraných chipů při návratu na step 3 ---
-  const selected = new Set(formState.sport?.futureMulti || []);
   noneWrap?.querySelectorAll('.chip').forEach(btn => {
     if (selected.has(btn.dataset.value)) {
       btn.classList.add('selected');
@@ -813,8 +832,21 @@ export function bindDietStep() {
   });
 
   // Dislikes (BEZ "Jiné")
-  const selected = new Set(formState.nutrition.dislikes || []);
+  const MAX_DISLIKES = 4;
+  const selected = new Set((formState.nutrition.dislikes || []).slice(0, MAX_DISLIKES));
+  formState.nutrition.dislikes = Array.from(selected);
   const wrap = $('#dislikes');
+  const dislikesErrEl = document.getElementById('err-dislikes');
+
+  const clearDislikesError = () => {
+    if (dislikesErrEl) dislikesErrEl.textContent = '';
+  };
+
+  const showDislikesMaxError = () => {
+    if (dislikesErrEl) {
+      dislikesErrEl.textContent = t('step5.error_dislikes_max4') || 'Můžete vybrat maximálně 4 položky.';
+    }
+  };
 
   wrap?.querySelectorAll('.chip').forEach(btn => {
     const id = btn.dataset.id;
@@ -824,9 +856,15 @@ export function bindDietStep() {
       if (selected.has(id)) {
         selected.delete(id);
         btn.classList.remove('selected');
+        clearDislikesError();
       } else {
+        if (selected.size >= MAX_DISLIKES) {
+          showDislikesMaxError();
+          return;
+        }
         selected.add(id);
         btn.classList.add('selected');
+        clearDislikesError();
       }
 
       formState.nutrition.dislikes = Array.from(selected);

@@ -530,7 +530,7 @@
     "diet_gluten_free": "Bezlepková",
     "diet_lactose_free": "Bez laktózy",
     "dislikes_title": "Potraviny k vyloučení z jídelníčku (volitelné)",
-    "dislike_tomato": "Rajčata",
+    "dislike_tomatoes": "Rajčata",
     "dislike_paprika_pepper": "Paprika",
     "dislike_onion": "Cibule",
     "dislike_garlic": "Česnek",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, tempeh",
     "help_diet": "Vyberte typ stravy, který běžně dodržujete.",
     "help_dislikes": "Označte suroviny, kterým se chcete v jídelníčku vyhnout.",
+    "error_dislikes_max4": "Můžete vybrat maximálně 4 položky.",
     "premium_note": "Úprava diet a vyloučení potravin jsou dostupné pouze u Premium plánu."
   },
   "step6": {

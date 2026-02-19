@@ -534,7 +534,7 @@
     "dislike_mushrooms": "Grzyby",
     "dislike_olives": "Oliwki",
     "dislike_paprika_pepper": "Papryka",
-    "dislike_tomato": "Pomidory",
+    "dislike_tomatoes": "Pomidory",
     "dislike_onion": "Cebula",
     "dislike_garlic": "Czosnek",
     "dislike_chilli": "Chili",
@@ -545,6 +545,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Proszę wybrać typ diety, który zwykle Państwo stosują.",
     "help_dislikes": "Proszę zaznaczyć składniki, których chcą Państwo unikać w planie.",
+    "error_dislikes_max4": "Można wybrać maksymalnie 4 pozycje.",
     "premium_note": "Personalizacja diety i wykluczanie produktów jest dostępne tylko w planie Premium."
     
   },

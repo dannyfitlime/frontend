@@ -228,9 +228,14 @@ export function validateSport(sport, t){
 export function validateDiet(nutrition, t){
   const e = {};
   const n = nutrition || {};
+  const dislikes = Array.isArray(n.dislikes) ? n.dislikes : [];
 
   if (!n.diet || n.diet === 'none'){
     e['diet'] = reqMsg(t);
+  }
+
+  if (dislikes.length > 4){
+    e['dislikes'] = t?.('step5.error_dislikes_max4') || 'Můžete vybrat maximálně 4 položky.';
   }
 
   return e;

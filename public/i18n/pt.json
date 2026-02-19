@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Cogumelos",
     "dislike_olives": "Azeitonas",
     "dislike_paprika_pepper": "Pimentão",
-    "dislike_tomato": "Tomate",
+    "dislike_tomatoes": "Tomate",
     "dislike_onion": "Cebola",
     "dislike_garlic": "Alho",
     "dislike_chilli": "Pimenta chili",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Escolha o tipo de alimentação que normalmente segue.",
     "help_dislikes": "Assinale os ingredientes que quer evitar no plano.",
+    "error_dislikes_max4": "Pode selecionar no máximo 4 itens.",
     "premium_note": "A personalização da dieta e a exclusão de alimentos estão disponíveis apenas no plano Premium."
   },
 "step6": {

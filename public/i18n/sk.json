@@ -530,7 +530,7 @@
     "diet_gluten_free": "Bezlepková",
     "diet_lactose_free": "Bez laktózy",
     "dislikes_title": "Potraviny na vylúčenie z jedálnička",
-    "dislike_tomato": "Paradajky",
+    "dislike_tomatoes": "Paradajky",
     "dislike_paprika_pepper": "Paprika",
     "dislike_onion": "Cibuľa",
     "dislike_garlic": "Cesnak",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Vyberte typ stravy, ktorý bežne dodržiavate.",
     "help_dislikes": "Označte suroviny, ktorým sa chcete v jedálničku vyhnúť.",
+    "error_dislikes_max4": "Môžete vybrať maximálne 4 položky.",
     "premium_note": "Úprava diét a vylúčenie potravín sú dostupné len pri pláne Premium."
   },
       "step6": {

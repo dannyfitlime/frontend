@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Setas",
     "dislike_olives": "Aceitunas",
     "dislike_paprika_pepper": "Pimiento",
-    "dislike_tomato": "Tomate",
+    "dislike_tomatoes": "Tomate",
     "dislike_onion": "Cebolla",
     "dislike_garlic": "Ajo",
     "dislike_chilli": "Chile",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Elige el tipo de alimentación que sigues normalmente.",
     "help_dislikes": "Marca los ingredientes que quieres evitar en tu menú.",
+    "error_dislikes_max4": "Puedes seleccionar como máximo 4 elementos.",
     "premium_note": "La personalización de dietas y exclusión de alimentos solo está disponible en el plan Premium."
   },
   "step6": {

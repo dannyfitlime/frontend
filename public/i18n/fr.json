@@ -533,7 +533,7 @@
     "dislike_mushrooms": "Champignons",
     "dislike_olives": "Olives",
     "dislike_paprika_pepper": "Poivron",
-    "dislike_tomato": "Tomates",
+    "dislike_tomatoes": "Tomates",
     "dislike_onion": "Oignons",
     "dislike_garlic": "Ail",
     "dislike_chilli": "Piment",
@@ -544,6 +544,7 @@
     "dislike_meat_alternatives": "Tofu, Tempeh",
     "help_diet": "Choisissez le type d’alimentation que vous suivez habituellement.",
     "help_dislikes": "Cochez les ingrédients que vous souhaitez éviter dans votre menu.",
+    "error_dislikes_max4": "Vous pouvez sélectionner au maximum 4 éléments.",
     "premium_note": "Les adaptations de régime et l’exclusion d’aliments ne sont disponibles qu’avec le plan Premium."
   },
  "step6": {
