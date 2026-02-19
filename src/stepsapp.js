@@ -1589,8 +1589,6 @@ export async function handlePurchase() {
     console.group("❌ PURCHASE DEBUG");
     console.error("Chyba při vytváření objednávky:", err);
     console.groupEnd();
-
-    alert("❌ Chyba při vytvoření objednávky – podívej se do konzole pro detaily!");
     window.location.href = failUrl;
   }
 }
