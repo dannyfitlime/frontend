@@ -1,6 +1,6 @@
-import { renderMacroCharts} from './charts.js';
+import { renderMacroCharts } from './charts.js';
 import { formState } from './state.js';
-import { $, applyI18n, showErrors} from './app.js';
+import { $, applyI18n, showErrors } from './app.js';
 import {
   validateProfile, validateGoal, validateSport, BMR_LIMITS,
   validateMacros, validateDiet, validatePlan, validateReview
@@ -9,46 +9,46 @@ import { i18n as I18N, SUPPORTED as SUPPORTED_LANGS, t as T, bootI18n, loadLang 
 
 // === I18N aliases (so the rest of app.js can stay unchanged) ===
 const i18n = I18N;
-const t = (path)=> T(path);
+const t = (path) => T(path);
 const SUPPORTED = SUPPORTED_LANGS;
 
 /* ============== STEP 1 – PROFILE ============== */
-export function bindProfileStep(){
+export function bindProfileStep() {
   const bindNum = (id, key) => {
     const el = document.getElementById(id);
-    if(!el) return;
+    if (!el) return;
     el.value = formState.profile[key] ?? '';
     el.oninput = () => {
-      formState.profile[key] = el.value ? parseInt(el.value,10) : null;
+      formState.profile[key] = el.value ? parseInt(el.value, 10) : null;
     };
   };
   const bindChoice = (groupId, key) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
-    chips.forEach(ch=>{
-      if (formState.profile[key]===ch.dataset.value) ch.classList.add('selected');
-      ch.onclick = ()=>{
-        chips.forEach(x=>x.classList.remove('selected'));
+    chips.forEach(ch => {
+      if (formState.profile[key] === ch.dataset.value) ch.classList.add('selected');
+      ch.onclick = () => {
+        chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
         formState.profile[key] = ch.dataset.value;
       };
     });
   };
 
-  bindChoice('sex_group','sex');
-  bindNum('age','age');
-  bindNum('height_cm','height_cm');
-  bindNum('weight_kg','weight_kg');
-  bindChoice('activity_group','activity');
-  bindChoice('steps_bucket','steps_bucket');
+  bindChoice('sex_group', 'sex');
+  bindNum('age', 'age');
+  bindNum('height_cm', 'height_cm');
+  bindNum('weight_kg', 'weight_kg');
+  bindChoice('activity_group', 'activity');
+  bindChoice('steps_bucket', 'steps_bucket');
 }
 /* ============== STEP 2 – GOAL & BMR ============== */
 const KCAL_TO_KJ = 4.184;
-const toKJ   = (kcal)=> kcal * KCAL_TO_KJ;
-const toKcal = (kj)=>   kj / KCAL_TO_KJ;
+const toKJ = (kcal) => kcal * KCAL_TO_KJ;
+const toKcal = (kj) => kj / KCAL_TO_KJ;
 
-const roundKcal = (v)=> Math.round(v / 10) * 10;  // kcal → 10
-const roundKJ   = (v)=> Math.round(v / 50) * 50;  // kJ → 50
-const roundByUnit = (v, u)=> (u === 'kcal' ? roundKcal(v) : roundKJ(v));
+const roundKcal = (v) => Math.round(v / 10) * 10;  // kcal → 10
+const roundKJ = (v) => Math.round(v / 50) * 50;  // kJ → 50
+const roundByUnit = (v, u) => (u === 'kcal' ? roundKcal(v) : roundKJ(v));
 
 
 function activeUnit() {
@@ -56,25 +56,25 @@ function activeUnit() {
   return unit === 'kJ' ? 'kJ' : 'kcal';
 }
 
-function toActiveUnitFromKcal(kcal){
+function toActiveUnitFromKcal(kcal) {
   const u = activeUnit();
   const raw = (u === 'kcal') ? kcal : toKJ(kcal);
   return roundByUnit(raw, u);
 }
 
-function toActiveUnitFromKJ(kj){
+function toActiveUnitFromKJ(kj) {
   const u = activeUnit();
   const raw = (u === 'kcal') ? toKcal(kj) : kj;
   return roundByUnit(raw, u);
 }
 
-function calcBMR(sex, age, height, weight){
-  if(sex==='male')   return Math.round(10*weight + 6.25*height - 5*age + 5);
-  if(sex==='female') return Math.round(10*weight + 6.25*height - 5*age - 161);
-  return Math.round(((10*weight + 6.25*height - 5*age + 5) + (10*weight + 6.25*height - 5*age - 161))/2);
+function calcBMR(sex, age, height, weight) {
+  if (sex === 'male') return Math.round(10 * weight + 6.25 * height - 5 * age + 5);
+  if (sex === 'female') return Math.round(10 * weight + 6.25 * height - 5 * age - 161);
+  return Math.round(((10 * weight + 6.25 * height - 5 * age + 5) + (10 * weight + 6.25 * height - 5 * age - 161)) / 2);
 }
 
-function ensureBmrFromProfile(){
+function ensureBmrFromProfile() {
   const { sex, age, height_cm, weight_kg } = formState.profile || {};
   if (sex && age && height_cm && weight_kg) {
     const calc = calcBMR(sex, age, height_cm, weight_kg);
@@ -85,18 +85,18 @@ function ensureBmrFromProfile(){
   }
 }
 
-export function bindGoalStep(){
+export function bindGoalStep() {
   ensureBmrFromProfile();
 
-  const bindChipGroup = (groupId, key, cb)=>{
+  const bindChipGroup = (groupId, key, cb) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
-    chips.forEach(ch=>{
-      if ((formState.goal?.[key])===ch.dataset.value) ch.classList.add('selected');
-      ch.onclick = ()=>{
-        chips.forEach(x=>x.classList.remove('selected'));
+    chips.forEach(ch => {
+      if ((formState.goal?.[key]) === ch.dataset.value) ch.classList.add('selected');
+      ch.onclick = () => {
+        chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
         formState.goal ||= {};
-        formState.goal[key]=ch.dataset.value;
+        formState.goal[key] = ch.dataset.value;
         cb && cb(ch.dataset.value);
       };
     });
@@ -109,9 +109,9 @@ export function bindGoalStep(){
     formState.goal.energy_unit = 'kcal';
   }
 
-  bindChipGroup('target_group','target', (val)=>{
+  bindChipGroup('target_group', 'target', (val) => {
     const map = { lose: t('step2.help_lose'), maintain: t('step2.help_maintain'), gain: t('step2.help_gain') };
-    const el = document.getElementById('target_help'); 
+    const el = document.getElementById('target_help');
     if (el) el.textContent = map[val] || '';
   });
 
@@ -128,17 +128,17 @@ export function bindGoalStep(){
 
 
 
-  function renderBmr(){
-    const input   = document.getElementById('bmr_value');
-    const unitEl  = document.getElementById('bmr_unit');
-    const kcal    = formState.goal.bmr_override ?? formState.goal.bmr_kcal ?? 1800;
-    const u       = activeUnit();
+  function renderBmr() {
+    const input = document.getElementById('bmr_value');
+    const unitEl = document.getElementById('bmr_unit');
+    const kcal = formState.goal.bmr_override ?? formState.goal.bmr_kcal ?? 1800;
+    const u = activeUnit();
     if (unitEl) unitEl.textContent = u;
-    if (input)  input.value = String(toActiveUnitFromKcal(kcal));
+    if (input) input.value = String(toActiveUnitFromKcal(kcal));
   }
 
 
-  function updateBmrHelp(){
+  function updateBmrHelp() {
     const helpEl = document.getElementById('bmr_help');
     if (!helpEl) return;
 
@@ -152,8 +152,8 @@ export function bindGoalStep(){
     const minStr = Number(min).toLocaleString(locale);
     const maxStr = Number(max).toLocaleString(locale);
 
-    const base = (unit==='kJ'
-      ? (t('step2.bmr_help_kj')   || 'Vypočítáno z profilu (kJ/den). Můžete upravit ručně.')
+    const base = (unit === 'kJ'
+      ? (t('step2.bmr_help_kj') || 'Vypočítáno z profilu (kJ/den). Můžete upravit ručně.')
       : (t('step2.bmr_help_kcal') || 'Vypočítáno z profilu (kcal/den). Můžete upravit ručně.')
     );
     const rangeWord = t('common.range') || 'Rozsah';
@@ -168,21 +168,21 @@ export function bindGoalStep(){
 
 
   const bmrInput = document.getElementById('bmr_value');
-  if (bmrInput){
-    bmrInput.oninput = ()=>{
+  if (bmrInput) {
+    bmrInput.oninput = () => {
       const raw = bmrInput.value.trim();
-      if (raw===''){ 
-        formState.goal.bmr_override = null; 
+      if (raw === '') {
+        formState.goal.bmr_override = null;
         console.log("[DBG oninput] empty -> bmr_override=null");
-        return; 
+        return;
       }
       const num = Number(raw.replace(',', '.'));
-      if (!Number.isFinite(num)) { 
-        formState.goal.bmr_override = null; 
+      if (!Number.isFinite(num)) {
+        formState.goal.bmr_override = null;
         console.log("[DBG oninput] not finite -> bmr_override=null", raw);
-        return; 
+        return;
       }
-      const kcalVal = (activeUnit()==='kJ') ? toKcal(num) : num;
+      const kcalVal = (activeUnit() === 'kJ') ? toKcal(num) : num;
       formState.goal.bmr_override = roundKcal(kcalVal);
       console.log("[DBG oninput] saved override kcal =", formState.goal.bmr_override, "unit=", activeUnit(), "raw=", raw);
     };
@@ -192,7 +192,7 @@ export function bindGoalStep(){
 /* ============== STEP 3 – SPORT ================= */
 const OWN_BLOCKS_LIMIT = 10;
 function updateAddOwnBlockControls() {
-  const btn  = document.getElementById('add_own_block');
+  const btn = document.getElementById('add_own_block');
   const hint = document.getElementById('add_own_block_limit_hint');
 
   if (!btn) return;
@@ -215,13 +215,13 @@ function updateAddOwnBlockControls() {
   }
 }
 
-function ensureSportState(){
+function ensureSportState() {
   formState.sport ||= {};
-  formState.sport.ownBlocks     ||= [];
-  formState.sport.pickedOwn     ||= [];
-  formState.sport.mainSportOwn   = formState.sport.mainSportOwn ?? null;
-  formState.sport.picked        ||= [];
-  formState.sport.mainSportId    = formState.sport.mainSportId ?? null;
+  formState.sport.ownBlocks ||= [];
+  formState.sport.pickedOwn ||= [];
+  formState.sport.mainSportOwn = formState.sport.mainSportOwn ?? null;
+  formState.sport.picked ||= [];
+  formState.sport.mainSportId = formState.sport.mainSportId ?? null;
 
   // UPDATED: pokud je nastavené "sportuji", vždy používáme vlastní plán
   if (formState.sport.level === 'sport') {
@@ -231,26 +231,26 @@ function ensureSportState(){
   }
 }
 
-function ensureOwnDefaults(){
+function ensureOwnDefaults() {
   formState.sport ||= {};
   formState.sport.ownBlocks ||= [];
-  if (formState.sport.ownBlocks.length === 0){
+  if (formState.sport.ownBlocks.length === 0) {
     formState.sport.ownBlocks.push({ sportId: '', sessions: 3, minutes: 45, intensity: 'medium' });
   }
-  formState.sport.ownBlocks.forEach(b=>{
-    if (!b.sportId)    b.sportId = '';
-    if (!b.sessions)   b.sessions = 3;
-    if (!b.minutes)    b.minutes = 45;
-    if (!b.intensity)  b.intensity = 'medium';
+  formState.sport.ownBlocks.forEach(b => {
+    if (!b.sportId) b.sportId = '';
+    if (!b.sessions) b.sessions = 3;
+    if (!b.minutes) b.minutes = 45;
+    if (!b.intensity) b.intensity = 'medium';
   });
   recomputePickedOwnFromBlocks();
-  if (!formState.sport.mainSportOwn && (formState.sport.pickedOwn||[]).length>0){
+  if (!formState.sport.mainSportOwn && (formState.sport.pickedOwn || []).length > 0) {
     formState.sport.mainSportOwn = formState.sport.pickedOwn[0];
   }
   syncAliasToActive();
 }
 
-async function loadCatalog(){
+async function loadCatalog() {
   if (window._sportCatalog) return window._sportCatalog;
   const res = await fetch('/sports/catalog.json');
   if (!res.ok) { console.warn('catalog fetch failed', res.status); return {}; }
@@ -259,13 +259,13 @@ async function loadCatalog(){
   return data;
 }
 
-function sportLabel(rec, lang){ 
-  return rec?.labels?.[lang] || rec?.labels?.en || rec?.id || ''; 
+function sportLabel(rec, lang) {
+  return rec?.labels?.[lang] || rec?.labels?.en || rec?.id || '';
 }
 
-function groupCatalogByGroup(catalog){
+function groupCatalogByGroup(catalog) {
   const groups = {};
-  for (const [id, rec] of Object.entries(catalog || {})){
+  for (const [id, rec] of Object.entries(catalog || {})) {
     const g = rec.group || 'other';
     (groups[g] ||= []).push({ id, ...rec });
   }
@@ -277,10 +277,10 @@ function groupCatalogByGroup(catalog){
 const activePlan = () => (formState.sport?.level === 'sport' ? 'own' : null);
 
 // UPDATED: aliasy se řídí jen vlastním plánem
-function syncAliasToActive(){
+function syncAliasToActive() {
   const plan = activePlan();
-  if (plan === 'own'){
-    formState.sport.picked = [...(formState.sport.pickedOwn||[])];
+  if (plan === 'own') {
+    formState.sport.picked = [...(formState.sport.pickedOwn || [])];
     formState.sport.mainSportId = formState.sport.mainSportOwn || null;
   } else {
     formState.sport.picked = [];
@@ -289,13 +289,13 @@ function syncAliasToActive(){
 }
 
 // UPDATED: řešíme jen mainSportOwn
-function ensureMainForActive(){
+function ensureMainForActive() {
   const picked = formState.sport.pickedOwn || [];
-  if (picked.length === 0){
+  if (picked.length === 0) {
     formState.sport.mainSportOwn = null;
   } else {
     const cur = formState.sport.mainSportOwn;
-    if (!cur || !picked.includes(cur)){
+    if (!cur || !picked.includes(cur)) {
       formState.sport.mainSportOwn = picked[0];
     }
   }
@@ -303,7 +303,7 @@ function ensureMainForActive(){
 }
 
 // UPDATED: nastavuje hlavní sport jen pro vlastní plán
-function setMainForActive(id){
+function setMainForActive(id) {
   if (!id) return;
   if (formState.sport.level === 'sport') {
     formState.sport.mainSportOwn = id;
@@ -311,31 +311,31 @@ function setMainForActive(id){
   }
 }
 
-function buildSportsSelectOptions(byGroup, lang, selectedId){
+function buildSportsSelectOptions(byGroup, lang, selectedId) {
   const labels = {
     endurance: t('step3.groups.title_endurance') || 'Vytrvalostní sporty',
-    individual:t('step3.groups.title_individual')|| 'Individuální sporty',
-    team:      t('step3.groups.title_team')      || 'Kolektivní sporty',
-    fitness:   t('step3.groups.title_fitness')   || 'Fitness & tělocvična',
-    water:     t('step3.groups.title_water')     || 'Vodní sporty',
-    winter:    t('step3.groups.title_winter')    || 'Zimní sporty',    
-    combat:    t('step3.groups.title_combat')    || 'Bojové sporty',
-    other:     t('step3.groups.title_other')     || 'Ostatní sporty'
+    individual: t('step3.groups.title_individual') || 'Individuální sporty',
+    team: t('step3.groups.title_team') || 'Kolektivní sporty',
+    fitness: t('step3.groups.title_fitness') || 'Fitness & tělocvična',
+    water: t('step3.groups.title_water') || 'Vodní sporty',
+    winter: t('step3.groups.title_winter') || 'Zimní sporty',
+    combat: t('step3.groups.title_combat') || 'Bojové sporty',
+    other: t('step3.groups.title_other') || 'Ostatní sporty'
   };
-  const order = ['endurance','individual','team','fitness','water','winter','combat','other'];
+  const order = ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other'];
 
   // 🩵 tahle volba je vidět jako placeholder, ale NE v nabídce
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
                 ${t('step3.select_sport_placeholder') || 'Vyber sport'}
               </option>`;
 
-  for (const g of order){
+  for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
     html += `<optgroup label="${labels[g]}">`;
-    list.slice().sort((a,b)=> sportLabel(a,lang).localeCompare(sportLabel(b,lang)))
-      .forEach(rec=>{
+    list.slice().sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+      .forEach(rec => {
         const lbl = sportLabel(rec, lang);
-        html += `<option value="${rec.id}" ${rec.id===selectedId?'selected':''}>${lbl}</option>`;
+        html += `<option value="${rec.id}" ${rec.id === selectedId ? 'selected' : ''}>${lbl}</option>`;
       });
     html += `</optgroup>`;
   }
@@ -343,18 +343,18 @@ function buildSportsSelectOptions(byGroup, lang, selectedId){
 }
 
 
-function emptyOwnBlock(){
+function emptyOwnBlock() {
   return { sportId: '', sessions: 3, minutes: 45, intensity: 'medium' };
 }
 
-function recomputePickedOwnFromBlocks(){
+function recomputePickedOwnFromBlocks() {
   const set = new Set();
-  (formState.sport.ownBlocks||[]).forEach(b=>{ if (b.sportId) set.add(b.sportId); });
+  (formState.sport.ownBlocks || []).forEach(b => { if (b.sportId) set.add(b.sportId); });
   formState.sport.pickedOwn = Array.from(set);
 }
 
 // stále stejná logika pro vlastní bloky
-function renderOwnBlocks(){
+function renderOwnBlocks() {
   const host = document.getElementById('own_blocks_container');
   if (!host) return;
 
@@ -362,19 +362,19 @@ function renderOwnBlocks(){
   const lang = i18n.lang || 'en';
   const byGroup = groupCatalogByGroup(catalog);
 
-  if (!Array.isArray(formState.sport.ownBlocks) || formState.sport.ownBlocks.length === 0){
-    formState.sport.ownBlocks = [ emptyOwnBlock() ];
+  if (!Array.isArray(formState.sport.ownBlocks) || formState.sport.ownBlocks.length === 0) {
+    formState.sport.ownBlocks = [emptyOwnBlock()];
   }
 
 
   recomputePickedOwnFromBlocks();
-  if (!formState.sport.mainSportOwn && formState.sport.pickedOwn.length > 0){
+  if (!formState.sport.mainSportOwn && formState.sport.pickedOwn.length > 0) {
     formState.sport.mainSportOwn = formState.sport.pickedOwn[0];
   }
   syncAliasToActive();
 
   host.innerHTML = '';
-  formState.sport.ownBlocks.forEach((b, idx)=>{
+  formState.sport.ownBlocks.forEach((b, idx) => {
     const card = document.createElement('div');
     card.className = 'own-block-card';
     card.innerHTML = `
@@ -396,9 +396,9 @@ function renderOwnBlocks(){
         <div class="field">
           <label data-i18n="step3.intensity">Intenzita</label>
           <select class="own-intensity" data-idx="${idx}">
-            <option value="low"    ${b.intensity==='low'?'selected':''}    data-i18n="step3.intensity_low">Nízká</option>
-            <option value="medium" ${b.intensity==='medium'?'selected':''} data-i18n="step3.intensity_medium">Střední</option>
-            <option value="high"   ${b.intensity==='high'?'selected':''}   data-i18n="step3.intensity_high">Vysoká</option>
+            <option value="low"    ${b.intensity === 'low' ? 'selected' : ''}    data-i18n="step3.intensity_low">Nízká</option>
+            <option value="medium" ${b.intensity === 'medium' ? 'selected' : ''} data-i18n="step3.intensity_medium">Střední</option>
+            <option value="high"   ${b.intensity === 'high' ? 'selected' : ''}   data-i18n="step3.intensity_high">Vysoká</option>
           </select>
           <div class="error" id="err-intensity_${idx}"></div>
         </div>
@@ -417,48 +417,48 @@ function renderOwnBlocks(){
     host.appendChild(card);
   });
 
-  host.querySelectorAll('.own-sport-select').forEach(sel=>{
-    sel.onchange = ()=>{
+  host.querySelectorAll('.own-sport-select').forEach(sel => {
+    sel.onchange = () => {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].sportId = sel.value;
       recomputePickedOwnFromBlocks();
-      if (activePlan()==='own') ensureMainForActive();
+      if (activePlan() === 'own') ensureMainForActive();
       renderMainSportChips();
       onLevelOrPlanChanged();
     };
   });
 
-  host.querySelectorAll('.own-sessions').forEach(inp=>{
-    inp.oninput = ()=>{
+  host.querySelectorAll('.own-sessions').forEach(inp => {
+    inp.oninput = () => {
       const i = +inp.dataset.idx;
       formState.sport.ownBlocks[i].sessions = +inp.value || null;
       if (i === 0) formState.sport.sessions_per_week = formState.sport.ownBlocks[0].sessions;
     };
   });
 
-  host.querySelectorAll('.own-intensity').forEach(sel=>{
-    sel.onchange = ()=>{
+  host.querySelectorAll('.own-intensity').forEach(sel => {
+    sel.onchange = () => {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].intensity = sel.value;
       if (i === 0) formState.sport.intensity = formState.sport.ownBlocks[0].intensity;
     };
   });
 
-  host.querySelectorAll('.own-minutes').forEach(inp=>{
-    inp.oninput = ()=>{
+  host.querySelectorAll('.own-minutes').forEach(inp => {
+    inp.oninput = () => {
       const i = +inp.dataset.idx;
       formState.sport.ownBlocks[i].minutes = +inp.value || null;
       if (i === 0) formState.sport.minutes = formState.sport.ownBlocks[0].minutes;
     };
   });
 
-  host.querySelectorAll('.btn-del-block').forEach(btn=>{
-    btn.onclick = ()=>{
+  host.querySelectorAll('.btn-del-block').forEach(btn => {
+    btn.onclick = () => {
       const i = +btn.dataset.idx;
       if (formState.sport.ownBlocks.length <= 1) return;
-      formState.sport.ownBlocks.splice(i,1);
+      formState.sport.ownBlocks.splice(i, 1);
       recomputePickedOwnFromBlocks();
-      if (activePlan()==='own') ensureMainForActive();
+      if (activePlan() === 'own') ensureMainForActive();
       renderOwnBlocks();
       renderMainSportChips();
       onLevelOrPlanChanged();
@@ -467,45 +467,45 @@ function renderOwnBlocks(){
 
   const first = formState.sport.ownBlocks[0] || {};
   formState.sport.sessions_per_week = first.sessions ?? null;
-  formState.sport.minutes           = first.minutes ?? null;
-  formState.sport.intensity         = first.intensity || 'medium';
+  formState.sport.minutes = first.minutes ?? null;
+  formState.sport.intensity = first.intensity || 'medium';
 
-  
+
   if (typeof applyI18n === 'function') applyI18n();
   updateAddOwnBlockControls();
 }
 
 // Ponecháváme, i když need_plan už v UI nevyužiješ – můžeš případně smazat celý blok.
-function renderNeedSportsCollapsible(containerId, byGroup){
+function renderNeedSportsCollapsible(containerId, byGroup) {
   const host = document.getElementById(containerId);
   if (!host) return;
   const lang = i18n.lang || 'en';
   const groupLabels = {
     endurance: t('step3.groups.title_endurance') || 'Vytrvalostní sporty',
-    winter:    t('step3.groups.title_winter')    || 'Zimní sporty',
-    team:      t('step3.groups.title_team')      || 'Kolektivní sporty',
-    individual:t('step3.groups.title_individual')|| 'Individuální sporty',
-    fitness:   t('step3.groups.title_fitness')   || 'Fitness & tělocvična',
-    water:     t('step3.groups.title_water')     || 'Vodní sporty',
-    combat:    t('step3.groups.title_combat')    || 'Bojové sporty',
-    other:     t('step3.groups.title_other')     || 'Ostatní sporty'
+    winter: t('step3.groups.title_winter') || 'Zimní sporty',
+    team: t('step3.groups.title_team') || 'Kolektivní sporty',
+    individual: t('step3.groups.title_individual') || 'Individuální sporty',
+    fitness: t('step3.groups.title_fitness') || 'Fitness & tělocvična',
+    water: t('step3.groups.title_water') || 'Vodní sporty',
+    combat: t('step3.groups.title_combat') || 'Bojové sporty',
+    other: t('step3.groups.title_other') || 'Ostatní sporty'
   };
   host.innerHTML = '';
   const grid = document.createElement('div');
   grid.className = 'need-groups-grid';
-  const order = ['endurance','winter','team','individual','fitness','water','combat','other'];
-  for (const g of order){
+  const order = ['endurance', 'winter', 'team', 'individual', 'fitness', 'water', 'combat', 'other'];
+  for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
-    const details = document.createElement('details'); details.className='sport-accordion';
+    const details = document.createElement('details'); details.className = 'sport-accordion';
     const summary = document.createElement('summary'); summary.textContent = groupLabels[g];
-    const chips = document.createElement('div'); chips.className='chips';
-    list.slice().sort((a,b)=> sportLabel(a,lang).localeCompare(sportLabel(b,lang)))
-      .forEach(rec=>{
+    const chips = document.createElement('div'); chips.className = 'chips';
+    list.slice().sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+      .forEach(rec => {
         const btn = document.createElement('button');
-        btn.type='button'; btn.className='chip'; btn.dataset.value=rec.id;
+        btn.type = 'button'; btn.className = 'chip'; btn.dataset.value = rec.id;
         btn.textContent = sportLabel(rec, lang);
-        if ((formState.sport.pickedNeed||[]).includes(rec.id)) btn.classList.add('selected');
-        btn.onclick = ()=>{
+        if ((formState.sport.pickedNeed || []).includes(rec.id)) btn.classList.add('selected');
+        btn.onclick = () => {
           const set = new Set(formState.sport.pickedNeed || []);
           if (set.has(rec.id)) { set.delete(rec.id); btn.classList.remove('selected'); }
           else { set.add(rec.id); btn.classList.add('selected'); }
@@ -520,7 +520,7 @@ function renderNeedSportsCollapsible(containerId, byGroup){
 }
 
 // UPDATED: používá jen pickedOwn / mainSportOwn
-function renderMainSportChips(){
+function renderMainSportChips() {
   const wrap = document.getElementById('main_sport_chips');
   if (!wrap) return;
   ensureMainForActive();
@@ -532,38 +532,38 @@ function renderMainSportChips(){
   const lang = i18n.lang || 'en';
   const cur = formState.sport.mainSportOwn;
 
-  picked.forEach(id=>{
+  picked.forEach(id => {
     const rec = window._sportCatalog?.[id];
     const lbl = sportLabel(rec, lang) || id;
     const btn = document.createElement('button');
-    btn.type='button'; btn.className='chip'; btn.dataset.value=id; btn.textContent = lbl;
+    btn.type = 'button'; btn.className = 'chip'; btn.dataset.value = id; btn.textContent = lbl;
     if (cur === id) btn.classList.add('selected');
-    btn.onclick = ()=>{ setMainForActive(id); renderMainSportChips(); };
+    btn.onclick = () => { setMainForActive(id); renderMainSportChips(); };
     wrap.appendChild(btn);
   });
 }
 
-export function onLevelOrPlanChanged(){
+export function onLevelOrPlanChanged() {
   ensureSportState();
-  const lvl  = formState.sport.level;
+  const lvl = formState.sport.level;
   const noneBlock = $('#sport_none_block');
   const planBlock = $('#sport_plan_block');
-  const ownBlock  = $('#own_plan_block');
+  const ownBlock = $('#own_plan_block');
   const needBlock = $('#need_plan_block');
-  const hoursBlk  = $('#hours_block');
-  const mainBlk   = $('#main_sport_block');
+  const hoursBlk = $('#hours_block');
+  const mainBlk = $('#main_sport_block');
 
-  if (!lvl){ 
-    [noneBlock, planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x=> x && (x.style.display='none')); 
-    return; 
+  if (!lvl) {
+    [noneBlock, planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x => x && (x.style.display = 'none'));
+    return;
   }
 
   // lvl === 'none' => Nesportuji
-  if (lvl === 'none'){
-    formState.sport.plan_choice = null; 
+  if (lvl === 'none') {
+    formState.sport.plan_choice = null;
     syncAliasToActive();
     if (noneBlock) noneBlock.style.display = '';
-    [planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x=> x && (x.style.display='none'));
+    [planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x => x && (x.style.display = 'none'));
     return;
   }
 
@@ -572,31 +572,31 @@ export function onLevelOrPlanChanged(){
   if (noneBlock) noneBlock.style.display = 'none';
   if (planBlock) planBlock.style.display = '';
 
-  if (ownBlock)  ownBlock.style.display  = '';
+  if (ownBlock) ownBlock.style.display = '';
   if (needBlock) needBlock.style.display = 'none';
 
-  renderOwnBlocks(); 
-  ensureMainForActive(); 
+  renderOwnBlocks();
+  ensureMainForActive();
   renderMainSportChips();
 
   if (hoursBlk) hoursBlk.style.display = 'none'; // u vlastního plánu hodiny neřešíme
   const hasPickedOwn = (formState.sport.pickedOwn || []).length > 0;
-  if (mainBlk) mainBlk.style.display  = hasPickedOwn ? '' : 'none';
+  if (mainBlk) mainBlk.style.display = hasPickedOwn ? '' : 'none';
 }
 
-export async function bindSportStep(){
+export async function bindSportStep() {
   ensureSportState();
   const catalog = await loadCatalog();
   const byGroup = groupCatalogByGroup(catalog);
-  
-  const bindChipGroup = (groupId, target, key, cb)=>{
+
+  const bindChipGroup = (groupId, target, key, cb) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
-    chips.forEach(ch=>{
-      if (target[key]===ch.dataset.value) ch.classList.add('selected');
-      ch.onclick = ()=>{
-        chips.forEach(x=>x.classList.remove('selected'));
+    chips.forEach(ch => {
+      if (target[key] === ch.dataset.value) ch.classList.add('selected');
+      ch.onclick = () => {
+        chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
-        target[key]=ch.dataset.value;
+        target[key] = ch.dataset.value;
         cb && cb();
       };
     });
@@ -608,7 +608,7 @@ export async function bindSportStep(){
   const levelHelpEl = document.getElementById('activity_help');
   const updateLevelHelp = (val) => {
     const map = {
-      none:  t('step3.help_none'),
+      none: t('step3.help_none'),
       sport: t('step3.help_sport')
     };
     if (levelHelpEl) levelHelpEl.textContent = map[val] || '';
@@ -625,7 +625,7 @@ export async function bindSportStep(){
     ch.addEventListener('click', () => updateLevelHelp(ch.dataset.value));
   });
 
-    const noneWrap = $('#none_suggestions');
+  const noneWrap = $('#none_suggestions');
 
   // --- klikání na chipy "Co by tě lákalo" (max 3 položky) ---
   const MAX_FUTURE_SPORTS = 3;
@@ -681,13 +681,13 @@ export async function bindSportStep(){
   // pokud chceš úplně vypnout část s "potřebuji plán", můžeš zrušit renderNeedSportsCollapsible
   // renderNeedSportsCollapsible('need_sports_list', byGroup);
 
-  if (formState.sport.level === 'sport'){ 
-    ensureOwnDefaults(); 
-    renderOwnBlocks(); 
-    renderMainSportChips(); 
+  if (formState.sport.level === 'sport') {
+    ensureOwnDefaults();
+    renderOwnBlocks();
+    renderMainSportChips();
   }
 
-    $('#add_own_block')?.addEventListener('click', ()=> {
+  $('#add_own_block')?.addEventListener('click', () => {
     formState.sport ||= {};
     formState.sport.ownBlocks ||= [];
 
@@ -704,13 +704,13 @@ export async function bindSportStep(){
   });
 
   const hpw = $('#hours_per_week');
-  if (hpw){
-    const save = ()=>{
+  if (hpw) {
+    const save = () => {
       formState.sport.preferences ||= {};
       formState.sport.preferences.hours_per_week = +hpw.value || null;
     };
     hpw.value = formState.sport.preferences?.hours_per_week ?? '';
-    hpw.oninput = save; 
+    hpw.oninput = save;
     hpw.onchange = save;
   }
 
@@ -731,7 +731,7 @@ export function cleanupSportStateBeforeNext() {
       futureMulti: formState.sport.futureMulti || [],
       // future: formState.sport.future || null
     };
-  } 
+  }
   else if (lvl === 'sport') {
     // uživatel sportuje – vždy jen vlastní plán
     formState.sport = {
@@ -977,9 +977,9 @@ export function bindBalanceStep() {
   }
 
   const cEl = $('#macro_c'),
-        fEl = $('#macro_f'),
-        pEl = $('#macro_p'),
-        sumEl = $('#macro_sum');
+    fEl = $('#macro_f'),
+    pEl = $('#macro_p'),
+    sumEl = $('#macro_sum');
 
   const syncUI = () => {
     const c = +formState.nutrition.macros?.c || 0;
@@ -1195,7 +1195,7 @@ function showConfirmPremiumLoss() {
       <div class="confirm-modal">
         <h3>${t('step7.standard_warning_title') || 'Změny se neprojeví ve Standard plánu'}</h3>
         <p>${t('step7.standard_warning_text') ||
-          'Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chceš pokračovat i přesto?'}</p>
+      'Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chceš pokračovat i přesto?'}</p>
         <div class="confirm-actions">
           <button type="button" class="btn-secondary" id="confirmCancel">${t('common.back') || 'Zpět'}</button>
           <button type="button" class="btn-primary" id="confirmOk">${t('common.continue') || 'Pokračovat'}</button>
@@ -1240,7 +1240,7 @@ function buildReviewSummary() {
   };
 
   const variantKey = plan?.variant ? `step7.${plan.variant}_title` : null;
-  const periodKey  = plan?.period ? `step7.period_${plan.period}` : null;
+  const periodKey = plan?.period ? `step7.period_${plan.period}` : null;
 
   // --- energie + BMR ---
   const targetTxt = t('step2.target_' + goal?.target) || '—';
@@ -1248,13 +1248,13 @@ function buildReviewSummary() {
   let bmrVal = null;
   if (bmrKcal) {
     const unit = activeUnit();
-    const val  = toActiveUnitFromKcal(bmrKcal);
+    const val = toActiveUnitFromKcal(bmrKcal);
     const locale = i18n?.lang || 'cs';
     bmrVal = `${val.toLocaleString(locale)} ${unit}`;
   }
   const goalFull = bmrVal ? `${targetTxt} · BMR: ${bmrVal}` : targetTxt;
 
-    // --- sportovní část ---
+  // --- sportovní část ---
   let sportsSummary = '—';
 
   if (!sport || !sport.level) {
@@ -1350,7 +1350,7 @@ export function bindReviewStep() {
     rev_dislikes: summary.dislikes,
     rev_repeats: summary.repeats,
     rev_show_grams: summary.show_grams,
-    rev_macros: summary.macros    
+    rev_macros: summary.macros
   };
 
   for (const [id, text] of Object.entries(map)) {
@@ -1411,7 +1411,7 @@ export function bindReviewStep() {
       const sendingText = t("buttons.sending") || "Sending...";
       btn.innerHTML = `<span class="spinner"></span>${sendingText}`;
 
-      try {        
+      try {
         console.log("🗞️ Newsletter opt-in:", formState.customer.newsletter);
 
         await handlePurchase(); // tvoje funkce, která řeší nákup
@@ -1425,10 +1425,10 @@ export function bindReviewStep() {
   }
 
 
-    // --- 💸 Slevový kód ---
+  // --- 💸 Slevový kód ---
   const discountBtn = document.getElementById("apply-discount");
   if (discountBtn) {
-    discountBtn.addEventListener("click", function() {
+    discountBtn.addEventListener("click", function () {
       const input = document.getElementById("discount_code");
       const code = input.value.trim().toUpperCase();
       const priceEl = document.getElementById("reviewPrice");
@@ -1516,52 +1516,58 @@ export async function handlePurchase() {
     /* ----------------------------------------------------
    🔧 NORMALIZACE BMR – uložit jen jeden klíč bmr_kcal
    ---------------------------------------------------- */
-  if (formState.goal) {
-    const finalBmr =
-      formState.goal.bmr_override ??
-      formState.goal.bmr_kcal ??
-      formState.goal.bmrKcal ?? // fallback, kdyby někde zůstalo staré pole
-      null;
+    if (formState.goal) {
+      const finalBmr =
+        formState.goal.bmr_override ??
+        formState.goal.bmr_kcal ??
+        formState.goal.bmrKcal ?? // fallback, kdyby někde zůstalo staré pole
+        null;
 
-    formState.goal.bmr_kcal = finalBmr;
+      formState.goal.bmr_kcal = finalBmr;
 
-    // uklidíme staré klíče
-    delete formState.goal.bmr_override;
-    delete formState.goal.bmrKcal;
-  }
+      // uklidíme staré klíče
+      delete formState.goal.bmr_override;
+      delete formState.goal.bmrKcal;
+    }
 
-  // --- vytvoření čisté kopie pro uložení
-  const cleanState = structuredClone(formState);
-  if (cleanState.balance) delete cleanState.balance;
+    // --- vytvoření čisté kopie pro uložení
+    const cleanState = structuredClone(formState);
+    if (cleanState.balance) delete cleanState.balance;
 
-  const resp = await fetch("/orders/", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: cleanState.customer?.name,
-      email: cleanState.customer?.email,
-      locale: langParam,
-      plan_variant: v,
-      plan_period: p,
+    const resp = await fetch("/orders/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: cleanState.customer?.name,
+        email: cleanState.customer?.email,
+        locale: langParam,
+        plan_variant: v,
+        plan_period: p,
 
-      // 👉 nové pole pro DB sloupec energy_unit
-      energy_unit: cleanState.goal?.energy_unit || null,
+        // 👉 nové pole pro DB sloupec energy_unit
+        energy_unit: cleanState.goal?.energy_unit || null,
 
-      // 👉 nové pole pro DB sloupec bmr_kcal
-      bmr_kcal: cleanState.goal?.bmr_kcal ?? null,
+        // 👉 nové pole pro DB sloupec bmr_kcal
+        bmr_kcal: cleanState.goal?.bmr_kcal ?? null,
 
-      // když už tam máš i další sloupce v modelu, můžeš posílat i ty:
-      sex: cleanState.profile?.sex || null,
-      age: cleanState.profile?.age ?? null,
-      height_cm: cleanState.profile?.height_cm ?? null,
-      weight_kg: cleanState.profile?.weight_kg ?? null,
-      activity: cleanState.profile?.activity || null,
+        // když už tam máš i další sloupce v modelu, můžeš posílat i ty:
+        sex: cleanState.profile?.sex || null,
+        age: cleanState.profile?.age ?? null,
+        height_cm: cleanState.profile?.height_cm ?? null,
+        weight_kg: cleanState.profile?.weight_kg ?? null,
+        activity: cleanState.profile?.activity || null,
 
-      // celý zbytek stavu zůstává v params
-      params: cleanState,
-    }),
-  });
+        // celý zbytek stavu zůstává v params
+        params: cleanState,
+      }),
+    });
 
+    if (!resp.ok) {
+      let errBody = {};
+      try { errBody = await resp.json(); } catch (_) { }
+      const detail = errBody?.detail || resp.statusText || "Unknown error";
+      throw new Error(`Order API error ${resp.status}: ${detail}`);
+    }
 
     const orderRes = await resp.json().catch(() => ({}));
     if (!orderRes?.order_id) throw new Error("Order creation failed");
@@ -1598,7 +1604,7 @@ export async function handlePurchase() {
 
   } catch (err) {
     console.group("❌ PURCHASE DEBUG");
-    console.error("Chyba při vytváření objednávky:", err);
+    console.error("Chyba při vytváření objednávky:", err?.message || err);
     console.groupEnd();
     try {
       localStorage.setItem("formState", JSON.stringify(draftForResume));
