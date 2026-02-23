@@ -12,6 +12,22 @@ const i18n = I18N;
 const t = (path) => T(path);
 const SUPPORTED = SUPPORTED_LANGS;
 
+function getApiBaseUrl() {
+  const fromEnv = (import.meta.env?.VITE_API_BASE_URL || '').trim();
+  if (fromEnv) return fromEnv.replace(/\/+$/, '');
+
+  const fromWindow = (window.__FITLIME_API_BASE_URL__ || window.FITLIME_API_BASE_URL || '').trim();
+  if (fromWindow) return fromWindow.replace(/\/+$/, '');
+
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') return '';
+  if (host === 'fitlime.cz' || host === 'www.fitlime.cz') return 'https://api.fitlime.cz';
+  return '';
+}
+
+const API_BASE_URL = getApiBaseUrl();
+const apiUrl = (path) => `${API_BASE_URL}${path}`;
+
 /* ============== STEP 1 – PROFILE ============== */
 export function bindProfileStep() {
   const bindNum = (id, key) => {
@@ -1534,7 +1550,7 @@ export async function handlePurchase() {
     const cleanState = structuredClone(formState);
     if (cleanState.balance) delete cleanState.balance;
 
-    const resp = await fetch("/orders/", {
+    const resp = await fetch(apiUrl("/orders/"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1588,7 +1604,7 @@ export async function handlePurchase() {
       return;
     }
 
-    const payRes = await fetch("/payments/create", {
+    const payRes = await fetch(apiUrl("/payments/create"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
