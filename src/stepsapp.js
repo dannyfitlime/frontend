@@ -1106,10 +1106,18 @@ export function bindPlanStep() {
   window.formState ||= {};
   formState.plan ||= {};
   if (!formState.plan.variant) formState.plan.variant = 'standard';
+  if (!formState.plan.period) formState.plan.period = 'week';
 
   // Pokud má uživatel prémiové chování (např. dieta, dislikes, makra)
   if (formState.plan.autoPremium) {
     formState.plan.variant = 'premium';
+  }
+
+  const initialPriceNode = document.querySelector(
+    `.plan-card--select[data-variant="${formState.plan.variant}"] .price--${formState.plan.period}`
+  );
+  if (!initialPriceNode) {
+    formState.plan.period = 'week';
   }
 
   // Kliknutí na kartu
@@ -1631,4 +1639,6 @@ export async function handlePurchase() {
     window.location.href = failUrl;
   }
 }
+
+
 
