@@ -1,4 +1,4 @@
-const ACCESS_PASSWORD = 'jahudky'; // Change this value to your desired password
+const ACCESS_PASSWORD = 'limetky'; // Change this value to your desired password
 const STORAGE_KEY = 'fitlime.password.ok';
 
 const overlayStyle = `
