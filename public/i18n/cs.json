@@ -258,59 +258,59 @@
       "title": "FAQ - Často kladené dotazy",
       "q1": {
         "q": "Jak jídelníček obdržím?",
-        "a": "Jídelníček Vám zašleme na e-mail ve formátu PDF, včetně přehledných tabulek a grafů."
+        "a": "Jídelníček Vám doručíme e-mailem ve formátu PDF. Součástí jsou přehledné tabulky, grafy a strukturované informace, aby se Vám s plánem dobře pracovalo v praxi."
       },
       "q2": {
         "q": "Budu potřebovat speciální potraviny?",
-        "a": "Ne, recepty stavíme na běžně dostupných surovinách ze supermarketu. Ke každé surovině navíc dostanete odkaz na Rohlík.cz pro rychlý online nákup."
+        "a": "Ne, jídelníčky stavíme primárně z běžně dostupných surovin, které bez problému pořídíte v běžném supermarketu. Pro větší pohodlí navíc u vybraných položek přidáváme odkazy na Rohlík.cz pro rychlý online nákup."
       },
       "q3": {
         "q": "Jak dlouho jídelníček vydrží?",
-        "a": "Standardně sestavujeme plán na 7 dní, obsahující 35 unikátních jídel. A proto jej můžete dle potřeby opakovat či upravovat."
+        "a": "Standardní varianta jídelníčku je připravována na 5 dní, Premium varianta na 7 dní. Na základě Vašich preferencí může plán obsahovat až 40 unikátních jídel, přičemž výsledný rozsah vždy záleží na zadaných požadavcích a omezeních."
       },
       "q4": {
         "q": "Jsou součástí i nákupní seznamy?",
-        "a": "Ano, připravíme přehledný seznam surovin pro celý týden – včetně přímých odkazů na nákup jednotlivých položek na Rohlík.cz."
+        "a": "Ano, součástí jídelníčku je přehledný nákupní seznam surovin pro celý týden. U vybraných položek navíc přikládáme přímé odkazy na nákup na Rohlík.cz, aby bylo plánování i nákup co nejrychlejší."
       },
       "q5": {
         "q": "Co když nemám kuchyňské váhy?",
-        "a": "Gramáže uvádíme, ale často stačí orientační míry (lžíce, hrnek, kusy). Není nutné jídlo neustále vážit – důležitější je pestrost a zdravý přístup."
+        "a": "Gramáže v jídelníčku uvádíme pro přesnější orientaci, ale ve většině případů postačí i běžné domácí míry (hrst, miska, kusy). Není nutné jídlo neustále vážit do posledního gramu, důležitější je dlouhodobá udržitelnost a celková pestrost stravy."
       },
       "q6": {
-        "q": "Přizpůsobíte jídelníček alergiím a intolerancím?",
-        "a": "Ano, stačí uvést své preference a omezení při objednávce ve formuláři."
-      },
-      "q7": {
+  "q": "Přizpůsobíte jídelníček alergiím a intolerancím?",
+  "a": "Jídelníček primárně připravujeme podle vašich dietních preferencí (např. vegetariánská, bezlepková či bezlaktózová strava). Pokud máte konkrétní potraviny, kterým se chcete vyhnout, můžete je uvést ve formuláři."
+  },    
+  "q7": {
         "q": "Můžete jídelníček přizpůsobit konkrétním cílům?",
-        "a": "Samozřejmě – ať už jde o hubnutí, nabírání svalů či udržení své tělesné hmotnosti. Stačí to uvést ve formuláři."
+        "a": "Ano, jídelníček přizpůsobujeme i konkrétním cílům, například redukci hmotnosti, nabírání svalové hmoty nebo dlouhodobému udržení váhy. Vaše cíle stačí uvést ve formuláři a promítneme je do celkového nastavení plánu."
       },
       "q8": {
         "q": "Mohu jídelníček použít dlouhodobě?",
-        "a": "Plán je navržen tak, aby byl udržitelný dlouhodobě. Jednotlivé týdny můžete opakovat, kombinovat nebo jemně upravovat."
+        "a": "Ano, plán připravujeme tak, aby byl dlouhodobě udržitelný a dobře zapadl do běžného života. Jednotlivé týdny můžete opakovat, vzájemně kombinovat nebo průběžně jemně upravovat podle aktuálních potřeb."
       },
       "q9": {
         "q": "Kdo jídelníčky sestavuje?",
-        "a": "Na plánech se podílejí odborníci na výživu s praxí ve sportovní medicíně."
+        "a": "Na tvorbě jídelníčků se podílejí odborníci na výživu s praxí ve sportovní medicíně a práci s aktivní populací. Díky tomu propojujeme praktickou použitelnost jídelníčku s odborným pohledem na výživu."
       },
       "q10": {
         "q": "Odkud čerpáte nutriční hodnoty?",
-        "a": "Čerpáme z ověřených zdrojů — především z databáze USDA (United States Department of Agriculture) a doplňujeme ji vlastními výpočetními modely."
+        "a": "Nutriční hodnoty čerpáme z ověřených zdrojů, především z databáze USDA (United States Department of Agriculture). Tyto údaje dále doplňujeme a zpracováváme pomocí vlastních výpočetních modelů, aby výsledný plán odpovídal zadaným cílům."
       },
       "q11": {
         "q": "Co když mi některý recept nechutná?",
-        "a": "Jídelníček obsahuje více variant, takže si vždy vyberete podle chuti. Navíc, vyloučení konkrétních potravin nabízíme v rámci Premium balíčku."
+        "a": "Jídelníček obsahuje více jídel a variant, takže si zpravidla můžete vybrat podle svých chutí a preferencí. Pokud víte, že některé potraviny nechcete zařazovat vůbec, v rámci Premium balíčku nabízíme i možnost jejich cíleného vyloučení."
       },
       "q12": {
         "q": "Můžete mi jídelníček později upravit?",
-        "a": "V tuto chvíli úpravy jídelníčků po doručení nenabízíme. Do budoucna ale plánujeme přidat možnost průběžných úprav podle Vaší zpětné vazby."
+        "a": "V tuto chvíli následné úpravy již doručených jídelníčků standardně nenabízíme. Pracujeme však na tom, abychom do budoucna mohli nabídnout průběžné úpravy na základě Vaší zpětné vazby a změn ve Vašem režimu."
       },
       "q13": {
         "q": "Jak rychle jídelníček obdržím?",
-        "a": "U standardního balíčku garantujeme doručení do 3 pracovních dnů, u Premium balíčku do 2 pracovních dnů. Pokud bychom termín nedodrželi, vrátíme Vám peníze."
+        "a": "U Standard balíčku garantujeme doručení do 3 pracovních dnů, u Premium balíčku do 2 pracovních dnů od potvrzení objednávky. Pokud bychom garantovaný termín nedodrželi, vrátíme Vám peníze."
       },
       "q14": {
         "q": "Musím si instalovat nějakou aplikaci?",
-        "a": "Ne. Jídelníček přijde v PDF a můžete si ho otevřít v mobilu, počítači nebo vytisknout."
+        "a": "Ne, není potřeba instalovat žádnou aplikaci. Jídelníček obdržíte v PDF formátu, takže si jej můžete pohodlně otevřít v mobilu, na počítači nebo vytisknout."
       }
     },
     "about": {
