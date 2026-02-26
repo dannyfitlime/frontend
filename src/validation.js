@@ -228,7 +228,7 @@ export function validateDiet(nutrition, t){
   const n = nutrition || {};
   const dislikes = Array.isArray(n.dislikes) ? n.dislikes : [];
 
-  if (!n.diet || n.diet === 'none'){
+  if (!n.diet){
     e['diet'] = reqMsg(t);
   }
 

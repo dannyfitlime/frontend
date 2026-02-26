@@ -697,6 +697,8 @@
     "order_id": "Číslo objednávky",
     "name": "Jméno",
     "plan": "Plán",
+    "plan_premium": "Prémiový plán",
+    "plan_standard": "Standardní plán",
     "period": "Období",
     "support_note": "Potřebujete něco upravit? Odpovězte nám na email, který jsme Vám právě poslali, či napište na {{email}} a rádi Vám pomůžeme.",
     "next_premium": "Váš jídelníček připravíme a odešleme do 2 pracovních dnů.",

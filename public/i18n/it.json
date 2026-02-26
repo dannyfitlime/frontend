@@ -697,6 +697,8 @@
     "order_id": "Numero d'ordine",
     "name": "Nome",
     "plan": "Piano",
+    "plan_premium": "Piano Premium",
+    "plan_standard": "Piano Standard",
     "period": "Periodo",
     "support_note": "Ha bisogno di modificare qualcosa? Risponda semplicemente all’e-mail che Le abbiamo appena inviato oppure scriva a {{email}} — saremo lieti di aiutarLa.",
     "next_premium": "Prepareremo il Suo piano alimentare e glielo invieremo entro 2 giorni lavorativi.",

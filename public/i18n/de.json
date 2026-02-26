@@ -636,6 +636,8 @@
     "repeats": "Wiederholung von Gerichten",
     "macros": "Verteilung der Makronährstoffe",
     "plan": "Gewählter Plan",
+    "plan_premium": "Premium-Plan",
+    "plan_standard": "Standard-Plan",
     "repeats_1": "Einmal pro Tag",
     "repeats_2": "Zweimal pro Tag",
     "repeats_3": "Dreimal pro Tag",

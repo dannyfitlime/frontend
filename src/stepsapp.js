@@ -771,7 +771,7 @@ function checkIfPremiumNeeded() {
   const customized = !!formState?.nutrition?._customized;
 
   const needsPremium =
-    (diet && diet !== 'none') ||
+    (diet && diet !== 'no_restrictions') ||
     (Array.isArray(dislikes) && dislikes.length > 0) ||
     customized;
 
@@ -783,7 +783,7 @@ function checkIfPremiumNeeded() {
 // --- Reset values when switching back to the standard plan ---
 function resetToStandardDefaults() {
   formState.nutrition ||= {};
-  formState.nutrition.diet = 'none';
+  formState.nutrition.diet = 'no_restrictions';
   formState.nutrition.dislikes = [];
   formState.nutrition.other_dislike = ''; // Can stay; it is simply no longer filled
 
@@ -805,7 +805,7 @@ function resetToStandardDefaults() {
 /* ===== Main step function ===== */
 export function bindDietStep() {
   formState.nutrition ||= {};
-  if (!formState.nutrition.diet) formState.nutrition.diet = 'none';
+  if (!formState.nutrition.diet) formState.nutrition.diet = 'no_restrictions';
   if (!formState.nutrition.dislikes) formState.nutrition.dislikes = [];
 
   const bindChipGroup = (groupId, target, key) => {
@@ -892,8 +892,8 @@ export function bindDietStep() {
   function updatePremiumNote() {
     let note = document.getElementById('premium_note');
     const dislikes = formState.nutrition.dislikes || [];
-    const diet = formState.nutrition.diet || 'none';
-    const needsPremium = (diet !== 'none') || dislikes.length > 0;
+    const diet = formState.nutrition.diet || 'no_restrictions';
+    const needsPremium = (diet !== 'no_restrictions') || dislikes.length > 0;
 
     if (needsPremium) {
       if (!note) {
@@ -1199,7 +1199,7 @@ function hasPremiumFeatures() {
   const dislikes = formState?.nutrition?.dislikes || [];
   const customized = !!formState?.nutrition?._customized;
   return (
-    (diet && diet !== 'none') ||
+    (diet && diet !== 'no_restrictions') ||
     (Array.isArray(dislikes) && dislikes.length > 0) ||
     customized
   );

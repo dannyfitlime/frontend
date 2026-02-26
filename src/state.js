@@ -60,7 +60,7 @@ export function createInitialState() {
 
     // ===== STEP 5+6 – NUTRICE =====
     nutrition: {
-      diet: 'none',
+      diet: 'no_restrictions',
       dislikes: [],
       other_dislike: '',
       repeats: '2',
@@ -141,6 +141,9 @@ export function hydrateFormState(saved) {
   // nutriční volby
   if (saved.nutrition) {
     formState.nutrition = { ...formState.nutrition, ...saved.nutrition };
+    if (formState.nutrition.diet === 'none') {
+      formState.nutrition.diet = 'no_restrictions';
+    }
   }
 
   // plán

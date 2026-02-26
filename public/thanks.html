@@ -349,7 +349,12 @@
       const fallback = "-";
       const labels = { orderId: "Order ID", name: "Name", plan: "Plan", period: "Period" };
 
-      const planLabel = translate(`step6.${formState?.plan?.variant}_title`) || formState?.plan?.variant || fallback;
+      const planVariant = (formState?.plan?.variant || "").toLowerCase();
+      const planLabel =
+        translate(`thanks.plan_${planVariant}`) ||
+        translate(`step6.${planVariant}_title`) ||
+        formState?.plan?.variant ||
+        fallback;
       const periodLabel = translate(`step6.period_${formState?.plan?.period}`) || formState?.plan?.period || fallback;
       const orderBox = document.getElementById("orderBox");
 

@@ -699,6 +699,8 @@
     "order_id": "Numer zamówienia",
     "name": "Imię",
     "plan": "Plan",
+    "plan_premium": "Premiowy plan",
+    "plan_standard": "Standardowy plan",
     "period": "Okres",
     "support_note": "Czy trzeba coś zmienić? Proszę odpowiedzieć na wiadomość e-mail, którą właśnie wysłaliśmy, lub napisać na {{email}} — chętnie pomożemy.",
     "next_premium": "Przygotujemy Państwa jadłospis i wyślemy go w ciągu 2 dni roboczych.",
