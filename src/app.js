@@ -194,11 +194,11 @@ function confirmLeaveForm(){
     back.className = 'leave-backdrop';
     back.innerHTML = `
       <div class="leave-card" role="dialog" aria-modal="true" aria-labelledby="leave_t" aria-describedby="leave_d">
-        <h3 id="leave_t">${t('common.leave_title') || 'Opustit formulář?'}</h3>
-        <p id="leave_d">${t('common.leave_text') || 'Pokud odejdete, můžete přijít o neuložené změny. Chcete pokračovat na hlavní stránku?'}</p>
+        <h3 id="leave_t">${t('common.leave_title') || 'Leave form?'}</h3>
+        <p id="leave_d">${t('common.leave_text') || 'If you leave, you may lose unsaved changes. Do you want to continue to the home page?'}</p>
         <div class="leave-actions">
-          <button class="btn-stay"  id="btn-stay">${t('common.leave_stay') || 'Zůstat'}</button>
-          <button class="btn-leave" id="btn-leave">${t('common.leave_leave') || 'Odejít'}</button>
+          <button class="btn-stay"  id="btn-stay">${t('common.leave_stay') || 'Stay'}</button>
+          <button class="btn-leave" id="btn-leave">${t('common.leave_leave') || 'Leave'}</button>
         </div>
       </div>`;
     document.body.appendChild(back);
@@ -377,7 +377,7 @@ function renderStepper(idx){
               class="${cls}"
               data-step="${i}"
               aria-current="${i===idx?'step':'false'}"
-              aria-label="${(t('common.step')||'Krok')} ${i+1}">
+              aria-label="${(t('common.step')||'Step')} ${i+1}">
         ${i+1}
       </button>`;
   }).join('');
@@ -435,7 +435,7 @@ async function loadStep(idx){
         nextBtn.style.display = 'none';
       } else {
         nextBtn.style.display = '';
-        nextBtn.textContent = t('common.next') || 'Další';
+        nextBtn.textContent = t('common.next') || 'Next';
       }
     }
 
@@ -445,7 +445,7 @@ async function loadStep(idx){
       backBtn.disabled = false;
       backBtn.setAttribute('aria-disabled','false');
       // volitelné: jiný text na prvním kroku
-      const backLabel = (idx === 0) ? (t('common.home') || 'Domů') : (t('common.back') || 'Zpět');
+      const backLabel = (idx === 0) ? (t('common.home') || 'Home') : (t('common.back') || 'Back');
       backBtn.innerHTML = `${backLabel}`;
     }
     
@@ -458,7 +458,7 @@ async function loadStep(idx){
   }catch(e){
     console.error('Step load failed:', e);
     const host = $('#step-container');
-    if (host) host.innerHTML = `<section><h1>Chyba načítání kroku</h1><pre style="white-space:pre-wrap">${String(e)}</pre></section>`;
+    if (host) host.innerHTML = `<section><h1>Step loading error</h1><pre style="white-space:pre-wrap">${String(e)}</pre></section>`;
     dbg('loadStep error', String(e));
   }
 }

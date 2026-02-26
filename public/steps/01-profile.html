@@ -1,11 +1,11 @@
 <section>
-  <h1 data-i18n="step1.title">Základní údaje</h1>
+  <h1 data-i18n="step1.title">Basic information</h1>
 
     <!-- Věk / výška / váha (3 sloupce nahoře) -->
   <div class="row row--3">
     <div class="field">
       <label for="age">
-        <strong data-i18n="step1.age">Věk (let)</strong>
+        <strong data-i18n="step1.age">Age (years)</strong>
       </label>
       <input id="age" type="number" inputmode="numeric" min="12" max="100" placeholder="—" data-i18n-placeholder="step1.age_placeholder" />
       <div class="error" id="err-age"></div>
@@ -13,7 +13,7 @@
 
     <div class="field">
       <label for="height_cm">
-        <strong data-i18n="step1.height">Výška (cm)</strong>
+        <strong data-i18n="step1.height">Height (cm)</strong>
       </label>
       <input id="height_cm" type="number" inputmode="numeric" min="100" max="230" step="5" placeholder="—" data-i18n-placeholder="step1.height_placeholder" />
       <div class="error" id="err-height_cm"></div>
@@ -21,7 +21,7 @@
 
     <div class="field">
       <label for="weight_kg">
-        <strong data-i18n="step1.weight">Váha (kg)</strong>
+        <strong data-i18n="step1.weight">Weight (kg)</strong>
       </label>
       <input id="weight_kg" type="number" inputmode="numeric" min="35" max="250" step="1" placeholder="—" data-i18n-placeholder="step1.weight_placeholder" />
       <div class="error" id="err-weight_kg"></div>
@@ -32,27 +32,27 @@
   <!-- Pohlaví / Denní režim / Denní kroky (3 sloupce dole) -->
   <div class="row row--3">
     <div class="field">
-      <label><strong data-i18n="step1.sex">Pohlaví</strong></label>
-      <div id="sex_group" class="chips" role="group" aria-label="Pohlaví">
-        <button type="button" class="chip" data-value="male"   data-i18n="step1.sex_male">Muž</button>
-        <button type="button" class="chip" data-value="female" data-i18n="step1.sex_female">Žena</button>        
+      <label><strong data-i18n="step1.sex">Sex</strong></label>
+      <div id="sex_group" class="chips" role="group" aria-label="Sex">
+        <button type="button" class="chip" data-value="male"   data-i18n="step1.sex_male">Male</button>
+        <button type="button" class="chip" data-value="female" data-i18n="step1.sex_female">Female</button>        
       </div>
       <div class="error" id="err-sex"></div>
     </div>
 
     <div class="field">
-      <label><strong data-i18n="step1.activity">Denní režim</strong></label>
-      <div id="activity_group" class="chips" role="group" aria-label="Denní režim">
-        <button type="button" class="chip" data-value="sedentary"          data-i18n="step1.activity_sedentary">Sedavý</button>
-        <button type="button" class="chip" data-value="moderately_active"  data-i18n="step1.activity_moderately_active">Středně aktivní</button>
-        <button type="button" class="chip" data-value="very_active"        data-i18n="step1.activity_very_active">Velmi aktivní</button>
+      <label><strong data-i18n="step1.activity">Daily activity</strong></label>
+      <div id="activity_group" class="chips" role="group" aria-label="Daily activity">
+        <button type="button" class="chip" data-value="sedentary"          data-i18n="step1.activity_sedentary">Sedentary</button>
+        <button type="button" class="chip" data-value="moderately_active"  data-i18n="step1.activity_moderately_active">Moderately active</button>
+        <button type="button" class="chip" data-value="very_active"        data-i18n="step1.activity_very_active">Very active</button>
       </div>
       <div class="error" id="err-activity"></div>
     </div>
 
     <div class="field">
-      <label><strong data-i18n="step1.steps">Denní kroky</strong></label>
-      <div id="steps_bucket" class="chips" role="group" aria-label="Denní kroky">
+      <label><strong data-i18n="step1.steps">Daily steps</strong></label>
+      <div id="steps_bucket" class="chips" role="group" aria-label="Daily steps">
         <button type="button" class="chip" data-value="0_4k">0 – 4k</button>
         <button type="button" class="chip" data-value="4_8k">4 – 8k</button>
         <button type="button" class="chip" data-value="8_12k">8 – 12k</button>
@@ -65,7 +65,7 @@
   
   <!-- Informační text -->
   <div class="info-text" data-i18n="step1.info_text">
-    Tyto údaje potřebujeme, abychom mohli správně vypočítat váš bazální metabolismus, 
-    běžné denní aktivity a vytvořit tak jídelníček, který odpovídá vašim potřebám.
+    We need this information to correctly calculate your basal metabolism,
+    daily activity level, and create a meal plan that matches your needs.
   </div>
 </section>

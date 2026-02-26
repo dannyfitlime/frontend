@@ -1,16 +1,16 @@
 <section class="layout-step5">
-  <h1 data-i18n="step5.title">Stravování & makra</h1>
+  <h1 data-i18n="step5.title">Nutrition & macros</h1>
 
   <!-- Typ diety -->
   <div class="field">
-    <label><strong data-i18n="step5.diet">Typ diety</strong></label>
-    <div class="help" data-i18n="step5.help_diet">Vyberte typ stravy, který běžně dodržujete.</div>
-    <div id="diet_group" class="chips chips-hero" role="group" aria-label="Typ diety">
-      <button type="button" class="chip" data-value="no_restrictions" data-i18n="step5.diet_no_restrictions">Bez omezení</button>
-      <button type="button" class="chip" data-value="vegetarian"   data-i18n="step5.diet_vegetarian">Vegetarián</button>
-      <button type="button" class="chip" data-value="pescatarian"  data-i18n="step5.diet_pescetarian">Pescetarián</button>
-      <button type="button" class="chip" data-value="gluten_free"  data-i18n="step5.diet_gluten_free">Bezlepkové</button>
-      <button type="button" class="chip" data-value="lactose_free" data-i18n="step5.diet_lactose_free">Bez laktózy</button>
+    <label><strong data-i18n="step5.diet">Diet type</strong></label>
+    <div class="help" data-i18n="step5.help_diet">Choose the type of diet you usually follow.</div>
+    <div id="diet_group" class="chips chips-hero" role="group" aria-label="Diet type">
+      <button type="button" class="chip" data-value="no_restrictions" data-i18n="step5.diet_no_restrictions">No restrictions</button>
+      <button type="button" class="chip" data-value="vegetarian"   data-i18n="step5.diet_vegetarian">Vegetarian</button>
+      <button type="button" class="chip" data-value="pescatarian"  data-i18n="step5.diet_pescetarian">Pescatarian</button>
+      <button type="button" class="chip" data-value="gluten_free"  data-i18n="step5.diet_gluten_free">Gluten-free</button>
+      <button type="button" class="chip" data-value="lactose_free" data-i18n="step5.diet_lactose_free">Lactose-free</button>
     </div>
     <div class="error" id="err-diet"></div>
   </div>
@@ -18,22 +18,22 @@
   <!-- Nejím -->
   <div class="field" id="dislikes_block">
     <label>
-      <strong class="dislikes_title" data-i18n="step5.dislikes_title">Potraviny k vyloučení z jídelníčku (volitelné)</strong>
+      <strong class="dislikes_title" data-i18n="step5.dislikes_title">Foods to exclude from the meal plan (optional)</strong>
     </label>
-    <div class="help" data-i18n="step5.help_dislikes">Označte suroviny, kterým se chcete v jídelníčku vyhnout.</div>
-    <div id="dislikes" class="chips" role="group" aria-label="Nejím">
-      <button type="button" class="chip" data-id="tomatoes"    data-i18n="step5.dislike_tomatoes">Rajčata</button>
-      <button type="button" class="chip" data-id="paprika_pepper"    data-i18n="step5.dislike_paprika_pepper">Paprika</button>
-      <button type="button" class="chip" data-id="onion"     data-i18n="step5.dislike_onion">Cibule</button>
-      <button type="button" class="chip" data-id="garlic"    data-i18n="step5.dislike_garlic">Česnek</button>
-      <button type="button" class="chip" data-id="mushrooms" data-i18n="step5.dislike_mushrooms">Houby</button>
-      <button type="button" class="chip" data-id="olives"    data-i18n="step5.dislike_olives">Olivy</button>
+    <div class="help" data-i18n="step5.help_dislikes">Mark ingredients you want to avoid in your meal plan.</div>
+    <div id="dislikes" class="chips" role="group" aria-label="Foods I do not eat">
+      <button type="button" class="chip" data-id="tomatoes"    data-i18n="step5.dislike_tomatoes">Tomatoes</button>
+      <button type="button" class="chip" data-id="paprika_pepper"    data-i18n="step5.dislike_paprika_pepper">Bell pepper</button>
+      <button type="button" class="chip" data-id="onion"     data-i18n="step5.dislike_onion">Onion</button>
+      <button type="button" class="chip" data-id="garlic"    data-i18n="step5.dislike_garlic">Garlic</button>
+      <button type="button" class="chip" data-id="mushrooms" data-i18n="step5.dislike_mushrooms">Mushrooms</button>
+      <button type="button" class="chip" data-id="olives"    data-i18n="step5.dislike_olives">Olives</button>
       <button type="button" class="chip" data-id="chilli"   data-i18n="step5.dislike_chilli">Chilli</button>
-      <button type="button" class="chip" data-id="coriander"     data-i18n="step5.dislike_coriander">Koriandr</button>    
-      <button type="button" class="chip" data-id="fish"      data-i18n="step5.dislike_fish">Ryby</button>
-      <button type="button" class="chip" data-id="seafood"   data-i18n="step5.dislike_seafood">Mořské plody</button>
-      <button type="button" class="chip" data-id="eggs"      data-i18n="step5.dislike_eggs">Vejce</button>
-      <button type="button" class="chip" data-id="meat_alternatives" data-i18n="step5.dislike_meat_alternatives">Alternativy masa</button>
+      <button type="button" class="chip" data-id="coriander"     data-i18n="step5.dislike_coriander">Coriander</button>    
+      <button type="button" class="chip" data-id="fish"      data-i18n="step5.dislike_fish">Fish</button>
+      <button type="button" class="chip" data-id="seafood"   data-i18n="step5.dislike_seafood">Seafood</button>
+      <button type="button" class="chip" data-id="eggs"      data-i18n="step5.dislike_eggs">Eggs</button>
+      <button type="button" class="chip" data-id="meat_alternatives" data-i18n="step5.dislike_meat_alternatives">Meat alternatives</button>
     </div>
     <div class="error" id="err-dislikes"></div>
   </div>

@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="cs">
+﻿<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
     .policy-card p { margin: 0 0 12px; }
     .checklist { padding-left: 0; list-style: none; margin: 10px 0 0; }
     .checklist li { padding-left: 26px; position: relative; margin-bottom: 10px; }
-    .checklist li::before { content: "✓"; position: absolute; left: 0; top: 2px; color: #0f6b28; font-weight: 800; font-size: 0.95em; }
+    .checklist li::before { content: "-"; position: absolute; left: 0; top: 2px; color: #0f6b28; font-weight: 800; font-size: 0.95em; }
     .type-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
     .type-list li { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: #f9fafb; }
     .type-list strong { display: block; }
@@ -51,81 +51,81 @@
 
   <main class="container policy-page" aria-labelledby="pageTitle">
     <section class="policy-hero">
-      <p class="eyebrow" data-i18n="cookiesPage.hero.eyebrow">Transparentnost</p>
+      <p class="eyebrow" data-i18n="cookiesPage.hero.eyebrow">Transparency</p>
       <h1 id="pageTitle" data-i18n="cookiesPage.hero.title">Cookies</h1>
-      <p class="lead" data-i18n="cookiesPage.hero.lead">Na webu FitLime používáme cookies, aby stránky správně fungovaly, byly bezpečné a mohli jsme je postupně zlepšovat. Níže najdete přehled typů, důvodů i způsobů, jak svůj souhlas upravit.</p>
+      <p class="lead" data-i18n="cookiesPage.hero.lead">We use cookies on FitLime so the site works correctly, stays secure, and we can keep improving it. Below is a summary of the cookie types, why we use them, and how to manage your consent.</p>
       <div class="pill-row">
-        <span class="pill" data-i18n="cookiesPage.hero.pill1">Souhlas lze kdykoli změnit</span>
-        <span class="pill" data-i18n="cookiesPage.hero.pill2">Používáme jen nezbytné minimum</span>
-        <span class="pill" data-i18n="cookiesPage.hero.pill3">Data jsou uchovávána v EU</span>
+        <span class="pill" data-i18n="cookiesPage.hero.pill1">Consent can be changed anytime</span>
+        <span class="pill" data-i18n="cookiesPage.hero.pill2">We use only the essentials</span>
+        <span class="pill" data-i18n="cookiesPage.hero.pill3">Data stored in the EU</span>
       </div>
     </section>
 
     <div class="policy-grid">
       <article class="policy-card">
-        <h2 data-i18n="cookiesPage.cards.how.title">Jak cookies fungují</h2>
-        <p data-i18n="cookiesPage.cards.how.text">Cookies jsou malé textové soubory, které se uloží ve vašem prohlížeči. Díky nim si web zapamatuje základní nastavení, aby vše běželo plynule a bezpečně.</p>
+        <h2 data-i18n="cookiesPage.cards.how.title">How cookies work</h2>
+        <p data-i18n="cookiesPage.cards.how.text">Cookies are small text files saved in your browser. They let the site remember basic settings so everything runs smoothly and securely.</p>
         <ul class="checklist">
-          <li data-i18n="cookiesPage.cards.how.li1">Udrží jazyk, obsah formulářů a další nezbytné volby.</li>
-          <li data-i18n="cookiesPage.cards.how.li2">Pomáhají zajistit bezpečný provoz a ochranu proti zneužití.</li>
-          <li data-i18n="cookiesPage.cards.how.li3">Dobrovolně sbírají anonymizovaná data o návštěvnosti pro další zlepšování webu.</li>
+          <li data-i18n="cookiesPage.cards.how.li1">Keep language, form content, and other essential choices.</li>
+          <li data-i18n="cookiesPage.cards.how.li2">Help maintain secure operation and protect against abuse.</li>
+          <li data-i18n="cookiesPage.cards.how.li3">Optionally collect anonymized traffic data to improve the site.</li>
         </ul>
       </article>
 
       <article class="policy-card">
-        <h2 data-i18n="cookiesPage.cards.types.title">Jaké typy používáme</h2>
+        <h2 data-i18n="cookiesPage.cards.types.title">Which types we use</h2>
         <ul class="type-list">
           <li data-i18n="cookiesPage.cards.types.essential">
-            <strong>Nezbytné</strong>
-            Umožňují chod webu (volba jazyka, stav formuláře). Nelze je vypnout, protože by stránky nefungovaly.
+            <strong>Essential</strong>
+            Power the site (language choice, form state). They cannot be turned off because the site would not work.
           </li>
           <li data-i18n="cookiesPage.cards.types.analytics">
-            <strong>Analytické</strong>
-            Anonymní měření návštěvnosti a výkonu. Aktivují se jen po vašem souhlasu.
+            <strong>Analytics</strong>
+            Anonymous measurement of traffic and performance. Enabled only after your consent.
           </li>
           <li data-i18n="cookiesPage.cards.types.marketing">
-            <strong>Marketingové</strong>
-            Personalizace a kampaně třetích stran. Používáme je pouze, pokud je výslovně povolíte.
+            <strong>Marketing</strong>
+            Personalization and third-party campaigns. Used only if you explicitly allow them.
           </li>
         </ul>
       </article>
     </div>
 
     <section class="policy-section">
-      <h2 data-i18n="cookiesPage.manage.title">Jak změnit nebo odvolat souhlas</h2>
+      <h2 data-i18n="cookiesPage.manage.title">How to change or withdraw consent</h2>
       <ol class="steps">
-        <li data-i18n="cookiesPage.manage.step1">Na hlavní stránce se při první návštěvě zobrazí lišta s možností přijmout nebo odmítnout volitelné cookies.</li>
-        <li data-i18n="cookiesPage.manage.step2">Svůj výběr můžete kdykoli obnovit kliknutím na tlačítko níže nebo vymazáním cookies v prohlížeči.</li>
-        <li data-i18n="cookiesPage.manage.step3">Technické cookies zůstávají aktivní, aby web mohl fungovat a zobrazit vám novou volbu.</li>
+        <li data-i18n="cookiesPage.manage.step1">On the homepage, a banner appears on first visit so you can accept or decline optional cookies.</li>
+        <li data-i18n="cookiesPage.manage.step2">You can reset your choice anytime via the button below or by clearing cookies in your browser.</li>
+        <li data-i18n="cookiesPage.manage.step3">Technical cookies stay active so the site can run and show you the consent banner again.</li>
       </ol>
       <div class="reset-row">
-        <button id="resetCookies" class="btn outline" data-i18n="cookiesPage.manage.resetBtn">Resetovat volbu cookies</button>
-        <p class="muted" style="max-width:520px;" data-i18n="cookiesPage.manage.resetHint">Smaže předchozí souhlas v prohlížeči a při další návštěvě znovu zobrazí cookie lištu.</p>
+        <button id="resetCookies" class="btn outline" data-i18n="cookiesPage.manage.resetBtn">Reset cookie choice</button>
+        <p class="muted" style="max-width:520px;" data-i18n="cookiesPage.manage.resetHint">Removes your previous consent in this browser and will show the cookie banner on your next visit.</p>
       </div>
     </section>
 
     <section class="policy-section">
-      <h2 data-i18n="cookiesPage.contacts.title">Správce a kontakty</h2>
+      <h2 data-i18n="cookiesPage.contacts.title">Controller &amp; contacts</h2>
       <dl class="data-list">
         <div>
-          <dt data-i18n="cookiesPage.contacts.controllerLabel">Správce</dt>
+          <dt data-i18n="cookiesPage.contacts.controllerLabel">Controller</dt>
           <dd data-i18n="cookiesPage.contacts.controller">Sportvital-Pro s.r.o.</dd>
-          <dd data-i18n="cookiesPage.contacts.ico">IČO: 04528930</dd>
+          <dd data-i18n="cookiesPage.contacts.ico">ID: 04528930</dd>
         </div>
         <div>
           <dt data-i18n="cookiesPage.contacts.emailLabel">E-mail</dt>
           <dd><a href="mailto:info@fitlime.com" data-i18n="cookiesPage.contacts.email">info@fitlime.com</a></dd>
         </div>
         <div>
-          <dt data-i18n="cookiesPage.contacts.docsLabel">Další dokumenty</dt>
-          <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs" data-keep-lang>Zásady ochrany osobních údajů</a></dd>
-          <dd><a href="/terms.html" data-i18n="cookiesPage.contacts.terms" data-keep-lang>Obchodní podmínky</a></dd>
+          <dt data-i18n="cookiesPage.contacts.docsLabel">More documents</dt>
+          <dd><a href="/gdpr.html" data-i18n="cookiesPage.contacts.docs" data-keep-lang>Privacy Policy</a></dd>
+          <dd><a href="/terms.html" data-i18n="cookiesPage.contacts.terms" data-keep-lang>Terms &amp; Conditions</a></dd>
         </div>
       </dl>
     </section>
 
     <div style="margin-top: 30px;">
-      <a class="btn" href="/index.html" data-i18n="cookiesPage.back" data-keep-lang>Zpět na hlavní stránku</a>
+      <a class="btn" href="/index.html" data-i18n="cookiesPage.back" data-keep-lang>Back to homepage</a>
     </div>
   </main>
 
@@ -160,5 +160,3 @@
   </script>
 </body>
 </html>
-
-

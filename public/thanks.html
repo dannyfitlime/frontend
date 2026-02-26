@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="/images/logotucne.png">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/home.css">
-  <title data-i18n="thanks.title">Děkujeme za objednávku | FitLime</title>
+  <title data-i18n="thanks.title">Thank you | FitLime</title>
   <style>
     :root {
       --success: #0f7c2d;
@@ -222,14 +222,14 @@
           </svg>
         </div>
         <div>
-          <p class="eyebrow" data-i18n="thanks.eyebrow">Objednávka potvrzena</p>
-          <h1 data-i18n="thanks.header">Objednávka úspěšně dokončena</h1>
+          <p class="eyebrow" data-i18n="thanks.eyebrow">Order Confirmed</p>
+          <h1 data-i18n="thanks.header">Order Successfully Completed</h1>
         </div>
       </div>
       <div class="lead-block">
-        <p class="lead" data-i18n="thanks.subtitle_1">Děkujeme, tvůj plán je na cestě.</p>
+        <p class="lead" data-i18n="thanks.subtitle_1">Thank you for your order!</p>
         <p class="lead email-line">
-          <span data-i18n="thanks.subtitle_2_prefix">Potvrzení jsme právě odeslali na e-mail</span>
+          <span data-i18n="thanks.subtitle_2_prefix">We've just sent the confirmation to your email</span>
           <span id="custEmail"></span>
         </p>
       </div>
@@ -237,16 +237,16 @@
       <div class="summary" id="orderBox"></div>
 
       <div class="steps">
-        <p class="title" id="nextStepsTitle">Co se bude dát dál</p>
+        <p class="title" id="nextStepsTitle">What happens next</p>
         <div id="nextSteps"></div>
       </div>
 
       <div class="buttons">
-        <a href="/index.html" class="btn" data-i18n="thanks.btn_home">Zpět na hlavní stránku</a>
-        <a href="https://www.sportvitalpro.cz/clanky" class="btn outline" data-i18n="thanks.btn_tips">Tipy na výživu</a>
+        <a href="/index.html" class="btn" data-i18n="thanks.btn_home">Back to Homepage</a>
+        <a href="https://www.sportvitalpro.cz/clanky" class="btn outline" data-i18n="thanks.btn_tips">Nutrition Tips</a>
       </div>
 
-      <p class="support" id="supportNote">Potřebujete něco upravit? Odpovězte nám na email, který jsme Vám právě poslali, či napište na plan@fitlime.cz.</p>
+      <p class="support" id="supportNote">Need to make a change? Reply to the email we've just sent you or write to plan@fitlime.cz, and we'll be happy to help.</p>
     </section>
   </main>
 
@@ -347,9 +347,7 @@
       }
 
       const fallback = "-";
-      const labels = lang === "en"
-        ? { orderId: "Order ID", name: "Name", plan: "Plan", period: "Period" }
-        : { orderId: "Číslo objednávky", name: "Jméno", plan: "Plán", period: "Období" };
+      const labels = { orderId: "Order ID", name: "Name", plan: "Plan", period: "Period" };
 
       const planLabel = translate(`step6.${formState?.plan?.variant}_title`) || formState?.plan?.variant || fallback;
       const periodLabel = translate(`step6.period_${formState?.plan?.period}`) || formState?.plan?.period || fallback;
@@ -374,14 +372,14 @@
       `;
 
       const stepsTitle = document.getElementById("nextStepsTitle");
-      stepsTitle.textContent = translate("thanks.next_title") || (lang === "en" ? "What happens next" : "Co se bude dít dál");
+      stepsTitle.textContent = translate("thanks.next_title") || "What happens next";
 
       const nextSteps = document.getElementById("nextSteps");
       const isPremium = (formState?.plan?.variant || "").toLowerCase() === "premium";
-      const premiumText = translate("thanks.next_premium") || (lang === "en" ? "We will prepare your meal plan within 2 business days." : "Váš jídelníček připravíme do 2 pracovních dnů.");
-      const basicText = translate("thanks.next_basic") || (lang === "en" ? "We will prepare your meal plan within 3 business days." : "Váš jídelníček připravíme do 3 pracovních dnů.");
-      const emailText = translate("thanks.next_email") || (lang === "en" ? "Check spam/promotions if the e-mail is missing." : "Když e-mail nepřijde, zkontrolujte spam a promo.");
-      const tipsText = translate("thanks.next_tips") || (lang === "en" ? "Meanwhile, browse our nutrition tips." : "Mezitím můžete projít naše tipy o výživě.");
+      const premiumText = translate("thanks.next_premium") || "We will prepare your meal plan within 2 business days.";
+      const basicText = translate("thanks.next_basic") || "We will prepare your meal plan within 3 business days.";
+      const emailText = translate("thanks.next_email") || "Check spam/promotions if the e-mail is missing.";
+      const tipsText = translate("thanks.next_tips") || "Meanwhile, browse our nutrition tips.";
 
       nextSteps.innerHTML = `
         <div class="step">
@@ -401,9 +399,7 @@
       const supportTemplate = translate("thanks.support_note");
       const supportNote = supportTemplate
         ? supportTemplate.replace(/\{\{email\}\}/g, contactEmail)
-        : (lang === "en"
-          ? `Need to adjust your details? Write us at ${contactEmail} and we'll help.`
-          : `Potřebujete něco upravit? Napište nám na ${contactEmail} a rádi pomůžeme.`);
+        : `Need to adjust your details? Write us at ${contactEmail} and we'll help.`;
       document.getElementById("supportNote").textContent = supportNote;
     }
 

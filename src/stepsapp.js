@@ -169,11 +169,11 @@ export function bindGoalStep() {
     const maxStr = Number(max).toLocaleString(locale);
 
     const base = (unit === 'kJ'
-      ? (t('step2.bmr_help_kj') || 'Vypočítáno z profilu (kJ/den). Můžete upravit ručně.')
-      : (t('step2.bmr_help_kcal') || 'Vypočítáno z profilu (kcal/den). Můžete upravit ručně.')
+      ? (t('step2.bmr_help_kj') || 'Calculated from your profile (kJ/day). You can adjust it manually.')
+      : (t('step2.bmr_help_kcal') || 'Calculated from your profile (kcal/day). You can adjust it manually.')
     );
-    const rangeWord = t('common.range') || 'Rozsah';
-    const perDay = t('common.per_day_short') || 'den';
+    const rangeWord = t('common.range') || 'Range';
+    const perDay = t('common.per_day_short') || 'day';
 
     helpEl.textContent = `${base} ${rangeWord}: ${minStr}–${maxStr} ${unit}/${perDay}.`;
   }
@@ -220,13 +220,13 @@ function updateAddOwnBlockControls() {
   btn.classList.toggle('limit-reached', limitReached);
   if (limitReached) {
     // pokud chceš překládat, můžeš použít t('step3.add_own_block_full') atd.
-    btn.textContent = t?.('step3.add_own_block_full') || 'Kapacita vyčerpána';
+    btn.textContent = t?.('step3.add_own_block_full') || 'Capacity reached';
     if (hint) {
       hint.textContent = t?.('step3.add_own_block_limit_hint')
-        || 'Můžeš přidat maximálně 10 sportů. Pro přidání nového nejdřív nějaký odeber.';
+        || 'You can add up to 10 sports. Remove one before adding a new one.';
     }
   } else {
-    btn.textContent = t?.('step3.add_own_block') || 'Přidat další sport';
+    btn.textContent = t?.('step3.add_own_block') || 'Add another sport';
     if (hint) hint.textContent = '';
   }
 }
@@ -329,20 +329,20 @@ function setMainForActive(id) {
 
 function buildSportsSelectOptions(byGroup, lang, selectedId) {
   const labels = {
-    endurance: t('step3.groups.title_endurance') || 'Vytrvalostní sporty',
-    individual: t('step3.groups.title_individual') || 'Individuální sporty',
-    team: t('step3.groups.title_team') || 'Kolektivní sporty',
-    fitness: t('step3.groups.title_fitness') || 'Fitness & tělocvična',
-    water: t('step3.groups.title_water') || 'Vodní sporty',
-    winter: t('step3.groups.title_winter') || 'Zimní sporty',
-    combat: t('step3.groups.title_combat') || 'Bojové sporty',
-    other: t('step3.groups.title_other') || 'Ostatní sporty'
+    endurance: t('step3.groups.title_endurance') || 'Endurance sports',
+    individual: t('step3.groups.title_individual') || 'Individual sports',
+    team: t('step3.groups.title_team') || 'Team sports',
+    fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
+    water: t('step3.groups.title_water') || 'Water sports',
+    winter: t('step3.groups.title_winter') || 'Winter sports',
+    combat: t('step3.groups.title_combat') || 'Combat sports',
+    other: t('step3.groups.title_other') || 'Other sports'
   };
   const order = ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other'];
 
   // 🩵 tahle volba je vidět jako placeholder, ale NE v nabídce
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
-                ${t('step3.select_sport_placeholder') || 'Vyber sport'}
+                ${t('step3.select_sport_placeholder') || 'Select a sport'}
               </option>`;
 
   for (const g of order) {
@@ -497,14 +497,14 @@ function renderNeedSportsCollapsible(containerId, byGroup) {
   if (!host) return;
   const lang = i18n.lang || 'en';
   const groupLabels = {
-    endurance: t('step3.groups.title_endurance') || 'Vytrvalostní sporty',
-    winter: t('step3.groups.title_winter') || 'Zimní sporty',
-    team: t('step3.groups.title_team') || 'Kolektivní sporty',
-    individual: t('step3.groups.title_individual') || 'Individuální sporty',
-    fitness: t('step3.groups.title_fitness') || 'Fitness & tělocvična',
-    water: t('step3.groups.title_water') || 'Vodní sporty',
-    combat: t('step3.groups.title_combat') || 'Bojové sporty',
-    other: t('step3.groups.title_other') || 'Ostatní sporty'
+    endurance: t('step3.groups.title_endurance') || 'Endurance sports',
+    winter: t('step3.groups.title_winter') || 'Winter sports',
+    team: t('step3.groups.title_team') || 'Team sports',
+    individual: t('step3.groups.title_individual') || 'Individual sports',
+    fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
+    water: t('step3.groups.title_water') || 'Water sports',
+    combat: t('step3.groups.title_combat') || 'Combat sports',
+    other: t('step3.groups.title_other') || 'Other sports'
   };
   host.innerHTML = '';
   const grid = document.createElement('div');
@@ -651,7 +651,7 @@ export async function bindSportStep() {
   };
   const showFutureMaxError = () => {
     if (futureErrEl) {
-      futureErrEl.textContent = t?.('step3.error_future_max3') || 'Můžeš vybrat maximálně 3 sporty.';
+      futureErrEl.textContent = t?.('step3.error_future_max3') || 'You can select up to 3 sports.';
     }
   };
 
@@ -860,7 +860,7 @@ export function bindDietStep() {
 
   const showDislikesMaxError = () => {
     if (dislikesErrEl) {
-      dislikesErrEl.textContent = t('step5.error_dislikes_max4') || 'Můžete vybrat maximálně 4 položky.';
+      dislikesErrEl.textContent = t('step5.error_dislikes_max4') || 'You can select up to 4 items.';
     }
   };
 
@@ -905,7 +905,7 @@ export function bindDietStep() {
         note = document.createElement('div');
         note.id = 'premium_note';
         note.className = 'premium-note';
-        note.textContent = t('step4.premium_note') || 'Tato volba je dostupná jen v Premium plánu.';
+        note.textContent = t('step4.premium_note') || 'This option is available only in the Premium plan.';
         const dislikesBlock = document.getElementById('dislikes_block');
         dislikesBlock?.insertAdjacentElement('afterend', note);
       }
@@ -1098,8 +1098,8 @@ export function bindPlanStep() {
 
   // Slovník textů podle období
   const periodMap = {
-    week: t('step7.help_week') || 'Vytvoříme ti jeden nutriční plán.',
-    month: t('step7.help_month') || 'Vytvoříme ti 4 nutriční plány.'
+    week: t('step7.help_week') || 'We will create one nutrition plan for you.',
+    month: t('step7.help_month') || 'We will create 4 nutrition plans for you.'
   };
 
   // Výchozí stav
@@ -1217,12 +1217,12 @@ function showConfirmPremiumLoss() {
     overlay.className = 'confirm-overlay';
     overlay.innerHTML = `
       <div class="confirm-modal">
-        <h3>${t('step7.standard_warning_title') || 'Změny se neprojeví ve Standard plánu'}</h3>
+        <h3>${t('step7.standard_warning_title') || 'Changes will not apply in the Standard plan'}</h3>
         <p>${t('step7.standard_warning_text') ||
-      'Ve Standard plánu se neuloží vlastní dieta, výběr jídel ani úpravy makronutrientů. Chceš pokračovat i přesto?'}</p>
+      'In the Standard plan, your custom diet, meal selections, and macronutrient changes will not be saved. Do you want to continue anyway?'}</p>
         <div class="confirm-actions">
-          <button type="button" class="btn-secondary" id="confirmCancel">${t('common.back') || 'Zpět'}</button>
-          <button type="button" class="btn-primary" id="confirmOk">${t('common.continue') || 'Pokračovat'}</button>
+          <button type="button" class="btn-secondary" id="confirmCancel">${t('common.back') || 'Back'}</button>
+          <button type="button" class="btn-primary" id="confirmOk">${t('common.continue') || 'Continue'}</button>
         </div>
       </div>
     `;
@@ -1286,14 +1286,14 @@ function buildReviewSummary() {
   }
 
   else if (sport.level === 'none') {
-    sportsSummary = `${t('step8.want_sport') || 'Zatím nesportuji'}`;
+    sportsSummary = `${t('step8.want_sport') || 'I am not doing sports yet'}`;
 
     if (sport.futureMulti?.length) {
       const futureSports = sport.futureMulti
         .map(id => t('step3.suggest_' + id) || id)
         .join(', ');
 
-      sportsSummary += `<br>${t('step8.future_sport') || 'Láká mě'}: ${futureSports}`;
+      sportsSummary += `<br>${t('step8.future_sport') || 'I am interested in'}: ${futureSports}`;
     }
   }
 
@@ -1306,7 +1306,7 @@ function buildReviewSummary() {
       sportsSummary = sport.ownBlocks.map(b => {
         const lbl = window._sportCatalog?.[b.sportId]?.labels?.[lang] || b.sportId;
         const intensityLabel = t('step3.intensity_' + b.intensity) || b.intensity;
-        const intensityWord = t('step3.intensity') || 'Intenzita';
+        const intensityWord = t('step3.intensity') || 'Intensity';
 
         return `${lbl}: ${b.sessions}×/týden, ${b.minutes} min, ${intensityLabel} ${intensityWord.toLowerCase()}`;
       }).join('<br>');
@@ -1316,7 +1316,7 @@ function buildReviewSummary() {
     const mainId = sport.mainSportOwn || sport.mainSportId;
     if (mainId) {
       const mainLbl = window._sportCatalog?.[mainId]?.labels?.[lang] || mainId;
-      sportsSummary += `<br>${t('step8.main_sport') || t('step3.main_sport') || 'Hlavní sport'}: ${mainLbl}`;
+      sportsSummary += `<br>${t('step8.main_sport') || t('step3.main_sport') || 'Main sport'}: ${mainLbl}`;
     }
   }
 
@@ -1324,7 +1324,7 @@ function buildReviewSummary() {
     plan: `${variantKey ? t(variantKey) : '—'}`,
     // původně tu bylo: plan: `${variantKey ? t(variantKey) : '—'} · ${periodKey ? t(periodKey) : '—'}`,
 
-    basic: `${t('step1.sex_' + profile.sex) || '?'} · ${profile.age || '?'} ${t('common.years') || 'let'} · ${profile.height_cm || '?'} cm · ${profile.weight_kg || '?'} kg`,
+    basic: `${t('step1.sex_' + profile.sex) || '?'} · ${profile.age || '?'} ${t('common.years') || 'years'} · ${profile.height_cm || '?'} cm · ${profile.weight_kg || '?'} kg`,
     activity: `${t('step1.activity_' + profile.activity) || '—'} · ${t('step1.steps')}: ${t('step1.steps_' + profile.steps_bucket) || '—'}`,
 
     goal: goalFull,
@@ -1346,9 +1346,9 @@ function buildReviewSummary() {
       const f = nutrition?.macros?.f ?? '—';
       const p = nutrition?.macros?.p ?? '—';
 
-      const carbLabel = t('step8.macros_carbs') || 'Sacharidy';
-      const fatLabel = t('step8.macros_fats') || 'Tuky';
-      const proteinLabel = t('step8.macros_proteins') || 'Bílkoviny';
+      const carbLabel = t('step8.macros_carbs') || 'Carbs';
+      const fatLabel = t('step8.macros_fats') || 'Fats';
+      const proteinLabel = t('step8.macros_proteins') || 'Protein';
 
       // vrací HTML – bez nadpisu, jen hodnoty pod sebou
       return `
@@ -1479,7 +1479,7 @@ export function bindReviewStep() {
 
         // 💬 Aktualizovat UI
         priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
-        infoEl.textContent = `${t("step8.discount_applied") || "Slevový kód"}: ${code} (−${discount}%)`;
+        infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (−${discount}%)`;
         errorEl.textContent = "";
 
         console.log("✅ Discount applied:", code, `-${discount}%`);
@@ -1489,7 +1489,7 @@ export function bindReviewStep() {
         delete formState.plan.discount_percent;
         delete formState.plan.price.final;
 
-        errorEl.textContent = t("step7.discount_invalid") || "Neplatný slevový kód.";
+        errorEl.textContent = t("step7.discount_invalid") || "Invalid discount code.";
         infoEl.textContent = "";
       }
     });

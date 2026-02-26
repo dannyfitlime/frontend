@@ -3,8 +3,8 @@
 /* ===== Helpers ===== */
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const reqMsg   = (t)=> t?.('common.error_required') || 'Toto pole je povinné.';
-const numMsg   = (t)=> t?.('common.error_number')   || 'Zadejte platné číslo.';
+const reqMsg   = (t)=> t?.('common.error_required') || 'This field is required.';
+const numMsg   = (t)=> t?.('common.error_number')   || 'Enter a valid number.';
 
 // Range message – nahradí {{min}} a {{max}} ve stringu, nebo fallback
 const rangeMsg = (t, min, max, key)=> {
@@ -12,7 +12,7 @@ const rangeMsg = (t, min, max, key)=> {
   if (tpl && typeof tpl === 'string') {
     return tpl.replace('{{min}}', min).replace('{{max}}', max);
   }
-  return `Hodnota musí být mezi ${min} a ${max}.`;
+  return `Value must be between ${min} and ${max}.`;
 };
 
 // převody pro validaci
@@ -129,7 +129,7 @@ export function validateSport(sport, t){
 
     // ✅ NOVĚ: maximálně 3 sporty
     if (list.length > 3){
-      e['future'] = t?.('step3.error_future_max3') || 'Můžeš vybrat maximálně 3 sporty.';
+      e['future'] = t?.('step3.error_future_max3') || 'You can select up to 3 sports.';
       return e;
     }
 
@@ -162,7 +162,7 @@ export function validateSport(sport, t){
       blocks.forEach((b, i) => {
         // sportId nesmí být prázdné
         if (!b.sportId || b.sportId === '') {
-          e[`picked_own_${i}`] = t?.('step3.error_select_sport') || 'Vyber sport.';
+          e[`picked_own_${i}`] = t?.('step3.error_select_sport') || 'Select a sport.';
         }
 
         // sessions
@@ -193,7 +193,7 @@ export function validateSport(sport, t){
             // ✅ NOVĚ: globální limit na počet sessions za týden
       if (totalSessions > 18){
         e['sessions_total'] = t?.('step3.error_sessions_total') 
-          || 'Celkový počet tréninků za týden nesmí překročit 18.';
+          || 'Total trainings per week cannot exceed 18.';
 
         // zároveň označíme všechny sessions inputy jako chybné,
         // pokud už nemají vlastní chybu
@@ -201,7 +201,7 @@ export function validateSport(sport, t){
           const key = `sessions_per_week_${i}`;
           if (!e[key]) {
             e[key] = t?.('step3.error_sessions_total_field') 
-              || 'Uprav počet tréninků (celkem max 18 za týden).';
+              || 'Adjust the number of trainings (total max 18 per week).';
           }
         });
       }
@@ -235,7 +235,7 @@ export function validateDiet(nutrition, t){
   }
 
   if (dislikes.length > 4){
-    e['dislikes'] = t?.('step5.error_dislikes_max4') || 'Můžete vybrat maximálně 4 položky.';
+    e['dislikes'] = t?.('step5.error_dislikes_max4') || 'You can select up to 4 items.';
   }
 
   return e;
@@ -263,7 +263,7 @@ export function validateMacros(nutrition, t){
   if (Number.isFinite(c) && Number.isFinite(f) && Number.isFinite(p)){
     const sum = c + f + p;
     if (sum !== 100){
-      e['macro_sum'] = t?.('common.error_macro_sum') || 'Součet maker musí být 100 %.';
+      e['macro_sum'] = t?.('common.error_macro_sum') || 'Macro total must be 100%.';
     }
   }
 
@@ -309,7 +309,7 @@ export function validateReview(state, t){
 
   if (!name.trim())  e['customer_name']  = reqMsg(t);
   if (!email.trim()) e['customer_email'] = reqMsg(t);
-  else if (!emailRe.test(email)) e['customer_email'] = t?.('common.error_email') || 'Zadejte platný e-mail.';
+  else if (!emailRe.test(email)) e['customer_email'] = t?.('common.error_email') || 'Enter a valid email.';
 
   if (!terms) e['consent_terms']   = reqMsg(t);
   if (!priv)  e['consent_privacy'] = reqMsg(t);
