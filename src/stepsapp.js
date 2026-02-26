@@ -391,22 +391,22 @@ function renderOwnBlocks() {
     card.innerHTML = `
       <div class="own-block-grid">
         <div class="field">
-          <label><strong data-i18n="step3.sports">Sport</strong></label>
-          <select class="own-sport-select" data-idx="${idx}">
+          <label for="own_sport_${idx}"><strong data-i18n="step3.sports">Sport</strong></label>
+          <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}">
             ${buildSportsSelectOptions(byGroup, lang, b.sportId)}
           </select>
           <div class="error" id="err-picked_own_${idx}"></div>
         </div>
 
         <div class="field">
-          <label data-i18n="step3.sessions_per_week">Trainings/week</label>
-          <input type="number" class="own-sessions" data-idx="${idx}" min="1" max="18" value="${b.sessions ?? ''}" />
+          <label for="own_sessions_${idx}" data-i18n="step3.sessions_per_week">Trainings/week</label>
+          <input id="own_sessions_${idx}" name="own_blocks[${idx}][sessions]" type="number" class="own-sessions" data-idx="${idx}" min="1" max="18" value="${b.sessions ?? ''}" />
           <div class="error" id="err-sessions_per_week_${idx}"></div>
         </div>
 
         <div class="field">
-          <label data-i18n="step3.intensity">Intensity</label>
-          <select class="own-intensity" data-idx="${idx}">
+          <label for="own_intensity_${idx}" data-i18n="step3.intensity">Intensity</label>
+          <select id="own_intensity_${idx}" name="own_blocks[${idx}][intensity]" class="own-intensity" data-idx="${idx}">
             <option value="low"    ${b.intensity === 'low' ? 'selected' : ''}    data-i18n="step3.intensity_low">Low</option>
             <option value="medium" ${b.intensity === 'medium' ? 'selected' : ''} data-i18n="step3.intensity_medium">Medium</option>
             <option value="high"   ${b.intensity === 'high' ? 'selected' : ''}   data-i18n="step3.intensity_high">High</option>
@@ -415,8 +415,8 @@ function renderOwnBlocks() {
         </div>
 
         <div class="field">
-          <label data-i18n="step3.minutes">Duration (min)</label>
-          <input type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
+          <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration (min)</label>
+          <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
           <div class="error" id="err-minutes_${idx}"></div>
         </div>
       </div>

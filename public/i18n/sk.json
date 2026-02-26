@@ -524,7 +524,7 @@
   "step5": {
     "title": "Stravovanie",
     "diet": "Typ diéty",
-    "diet_none": "Bez obmedzení",
+    "diet_no_restrictions": "Bez obmedzení",
     "diet_vegetarian": "Vegetarián",
     "diet_pescetarian": "Pescetarián",
     "diet_gluten_free": "Bezlepková",

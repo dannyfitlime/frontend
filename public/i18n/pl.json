@@ -525,7 +525,7 @@
   "step5": {
     "title": "Odżywianie",
     "diet": "Rodzaj diety",
-    "diet_none": "Bez ograniczeń",
+    "diet_no_restrictions": "Bez ograniczeń",
     "diet_vegetarian": "Wegetariańska",
     "diet_pescetarian": "Peskariańska",
     "diet_gluten_free": "Bezglutenowa",

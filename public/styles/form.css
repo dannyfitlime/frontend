@@ -20,7 +20,8 @@
 .field { display: flex; flex-direction: column; gap: 4px; }
 
 /* Nadpisy polí */
-.field > label {
+.field > label,
+.field > .field-label {
   font-size: clamp(16px, 1.6vw, 18px);
   font-weight: 750;
   color: #111827;
@@ -427,7 +428,8 @@ button:focus-visible {
     gap: 14px;
   }
 
-  .own-block-grid label {
+  .own-block-grid label,
+  .own-block-grid .field-label {
     font-weight: 600;
     margin-bottom: 4px;
     display: block;

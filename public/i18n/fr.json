@@ -524,7 +524,7 @@
   "step5": {
     "title": "Alimentation",
     "diet": "Type de régime",
-    "diet_none": "Sans restriction",
+    "diet_no_restrictions": "Sans restriction",
     "diet_vegetarian": "Végétarien",
     "diet_pescetarian": "Pescétarien",
     "diet_gluten_free": "Sans gluten",
