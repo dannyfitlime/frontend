@@ -1,4 +1,4 @@
-import { renderMacroCharts } from './charts.js';
+﻿import { renderMacroCharts } from './charts.js';
 import { formState } from './state.js';
 import { $, applyI18n, showErrors } from './app.js';
 import {
@@ -28,7 +28,7 @@ function getApiBaseUrl() {
 const API_BASE_URL = getApiBaseUrl();
 const apiUrl = (path) => `${API_BASE_URL}${path}`;
 
-/* ============== STEP 1 – PROFILE ============== */
+/* ============== STEP 1 - PROFILE ============== */
 export function bindProfileStep() {
   const bindNum = (id, key) => {
     const el = document.getElementById(id);
@@ -57,13 +57,13 @@ export function bindProfileStep() {
   bindChoice('activity_group', 'activity');
   bindChoice('steps_bucket', 'steps_bucket');
 }
-/* ============== STEP 2 – GOAL & BMR ============== */
+/* ============== STEP 2 - GOAL & BMR ============== */
 const KCAL_TO_KJ = 4.184;
 const toKJ = (kcal) => kcal * KCAL_TO_KJ;
 const toKcal = (kj) => kj / KCAL_TO_KJ;
 
-const roundKcal = (v) => Math.round(v / 10) * 10;  // kcal → 10
-const roundKJ = (v) => Math.round(v / 50) * 50;  // kJ → 50
+const roundKcal = (v) => Math.round(v / 10) * 10;  // kcal -> 10
+const roundKJ = (v) => Math.round(v / 50) * 50;  // kJ -> 50
 const roundByUnit = (v, u) => (u === 'kcal' ? roundKcal(v) : roundKJ(v));
 
 
@@ -131,12 +131,10 @@ export function bindGoalStep() {
     if (el) el.textContent = map[val] || '';
   });
 
-  // ⭐ KEY CHANGE: 'energy_unit' místo 'energyUnit'
+  // KEY CHANGE: use 'energy_unit' instead of 'energyUnit'
   bindChipGroup('energy_unit_group', 'energy_unit', (val) => {
     formState.goal ||= {};
     formState.goal.energy_unit = val;
-
-    console.log("[DBG unit switch]", val);
 
     renderBmr();
     updateBmrHelp();
@@ -189,23 +187,20 @@ export function bindGoalStep() {
       const raw = bmrInput.value.trim();
       if (raw === '') {
         formState.goal.bmr_override = null;
-        console.log("[DBG oninput] empty -> bmr_override=null");
         return;
       }
       const num = Number(raw.replace(',', '.'));
       if (!Number.isFinite(num)) {
         formState.goal.bmr_override = null;
-        console.log("[DBG oninput] not finite -> bmr_override=null", raw);
         return;
       }
       const kcalVal = (activeUnit() === 'kJ') ? toKcal(num) : num;
       formState.goal.bmr_override = roundKcal(kcalVal);
-      console.log("[DBG oninput] saved override kcal =", formState.goal.bmr_override, "unit=", activeUnit(), "raw=", raw);
     };
   }
 }
 
-/* ============== STEP 3 – SPORT ================= */
+/* ============== STEP 3 - SPORT ================= */
 const OWN_BLOCKS_LIMIT = 10;
 function updateAddOwnBlockControls() {
   const btn = document.getElementById('add_own_block');
@@ -219,7 +214,7 @@ function updateAddOwnBlockControls() {
   btn.disabled = limitReached || formState.sport?.level !== 'sport';
   btn.classList.toggle('limit-reached', limitReached);
   if (limitReached) {
-    // pokud chceš překládat, můžeš použít t('step3.add_own_block_full') atd.
+    // If you want translations here, use t('step3.add_own_block_full'), etc.
     btn.textContent = t?.('step3.add_own_block_full') || 'Capacity reached';
     if (hint) {
       hint.textContent = t?.('step3.add_own_block_limit_hint')
@@ -239,7 +234,7 @@ function ensureSportState() {
   formState.sport.picked ||= [];
   formState.sport.mainSportId = formState.sport.mainSportId ?? null;
 
-  // UPDATED: pokud je nastavené "sportuji", vždy používáme vlastní plán
+  // UPDATED: if user is set to 'sport', always use own plan
   if (formState.sport.level === 'sport') {
     formState.sport.plan_choice = 'own';
   } else if (!formState.sport.level) {
@@ -289,10 +284,10 @@ function groupCatalogByGroup(catalog) {
 }
 
 
-// UPDATED: aktivní plán = own, když uživatel sportuje
+// UPDATED: active plan = own when the user does sports
 const activePlan = () => (formState.sport?.level === 'sport' ? 'own' : null);
 
-// UPDATED: aliasy se řídí jen vlastním plánem
+// UPDATED: aliases are driven only by the own plan
 function syncAliasToActive() {
   const plan = activePlan();
   if (plan === 'own') {
@@ -304,7 +299,7 @@ function syncAliasToActive() {
   }
 }
 
-// UPDATED: řešíme jen mainSportOwn
+// UPDATED: handle only mainSportOwn
 function ensureMainForActive() {
   const picked = formState.sport.pickedOwn || [];
   if (picked.length === 0) {
@@ -318,7 +313,7 @@ function ensureMainForActive() {
   syncAliasToActive();
 }
 
-// UPDATED: nastavuje hlavní sport jen pro vlastní plán
+// UPDATED: set main sport only for the own plan
 function setMainForActive(id) {
   if (!id) return;
   if (formState.sport.level === 'sport') {
@@ -340,7 +335,7 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
   };
   const order = ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other'];
 
-  // 🩵 tahle volba je vidět jako placeholder, ale NE v nabídce
+  // This option is shown as a placeholder, but not in the dropdown list
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
                 ${t('step3.select_sport_placeholder') || 'Select a sport'}
               </option>`;
@@ -369,7 +364,7 @@ function recomputePickedOwnFromBlocks() {
   formState.sport.pickedOwn = Array.from(set);
 }
 
-// stále stejná logika pro vlastní bloky
+// Same logic for own blocks
 function renderOwnBlocks() {
   const host = document.getElementById('own_blocks_container');
   if (!host) return;
@@ -404,23 +399,23 @@ function renderOwnBlocks() {
         </div>
 
         <div class="field">
-          <label data-i18n="step3.sessions_per_week">Tréninky/týden</label>
+          <label data-i18n="step3.sessions_per_week">Trainings/week</label>
           <input type="number" class="own-sessions" data-idx="${idx}" min="1" max="18" value="${b.sessions ?? ''}" />
           <div class="error" id="err-sessions_per_week_${idx}"></div>
         </div>
 
         <div class="field">
-          <label data-i18n="step3.intensity">Intenzita</label>
+          <label data-i18n="step3.intensity">Intensity</label>
           <select class="own-intensity" data-idx="${idx}">
-            <option value="low"    ${b.intensity === 'low' ? 'selected' : ''}    data-i18n="step3.intensity_low">Nízká</option>
-            <option value="medium" ${b.intensity === 'medium' ? 'selected' : ''} data-i18n="step3.intensity_medium">Střední</option>
-            <option value="high"   ${b.intensity === 'high' ? 'selected' : ''}   data-i18n="step3.intensity_high">Vysoká</option>
+            <option value="low"    ${b.intensity === 'low' ? 'selected' : ''}    data-i18n="step3.intensity_low">Low</option>
+            <option value="medium" ${b.intensity === 'medium' ? 'selected' : ''} data-i18n="step3.intensity_medium">Medium</option>
+            <option value="high"   ${b.intensity === 'high' ? 'selected' : ''}   data-i18n="step3.intensity_high">High</option>
           </select>
           <div class="error" id="err-intensity_${idx}"></div>
         </div>
 
         <div class="field">
-          <label data-i18n="step3.minutes">Délka (min)</label>
+          <label data-i18n="step3.minutes">Duration (min)</label>
           <input type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
           <div class="error" id="err-minutes_${idx}"></div>
         </div>
@@ -491,7 +486,7 @@ function renderOwnBlocks() {
   updateAddOwnBlockControls();
 }
 
-// Ponecháváme, i když need_plan už v UI nevyužiješ – můžeš případně smazat celý blok.
+// Keep this even if need_plan is no longer used in the UI - you can remove the whole block if needed.
 function renderNeedSportsCollapsible(containerId, byGroup) {
   const host = document.getElementById(containerId);
   if (!host) return;
@@ -526,7 +521,7 @@ function renderNeedSportsCollapsible(containerId, byGroup) {
           if (set.has(rec.id)) { set.delete(rec.id); btn.classList.remove('selected'); }
           else { set.add(rec.id); btn.classList.add('selected'); }
           formState.sport.pickedNeed = Array.from(set);
-          // activePlan už nikdy nebude 'need_plan', takže se UI neaktualizuje do "plánu na míru"
+          // activePlan will never be 'need_plan' now, so the UI is not updated to 'custom plan'
         };
         chips.appendChild(btn);
       });
@@ -535,7 +530,7 @@ function renderNeedSportsCollapsible(containerId, byGroup) {
   host.appendChild(grid);
 }
 
-// UPDATED: používá jen pickedOwn / mainSportOwn
+// UPDATED: uses only pickedOwn / mainSportOwn
 function renderMainSportChips() {
   const wrap = document.getElementById('main_sport_chips');
   if (!wrap) return;
@@ -583,7 +578,7 @@ export function onLevelOrPlanChanged() {
     return;
   }
 
-  // cokoliv jiného (nově lvl === 'sport') => Sportuji a MÁM VŽDY VLASTNÍ PLÁN
+  // Any other case (new lvl === 'sport') => user does sports and ALWAYS HAS OWN PLAN
   formState.sport.plan_choice = 'own';
   if (noneBlock) noneBlock.style.display = 'none';
   if (planBlock) planBlock.style.display = '';
@@ -595,7 +590,7 @@ export function onLevelOrPlanChanged() {
   ensureMainForActive();
   renderMainSportChips();
 
-  if (hoursBlk) hoursBlk.style.display = 'none'; // u vlastního plánu hodiny neřešíme
+  if (hoursBlk) hoursBlk.style.display = 'none'; // Hours are not used for the own plan
   const hasPickedOwn = (formState.sport.pickedOwn || []).length > 0;
   if (mainBlk) mainBlk.style.display = hasPickedOwn ? '' : 'none';
 }
@@ -620,7 +615,7 @@ export async function bindSportStep() {
 
   bindChipGroup('sport_level_group', formState.sport, 'level', onLevelOrPlanChanged);
 
-  // --- Dynamický text pro vysvětlení úrovně aktivity ---
+  // --- Dynamic help text for activity level explanation ---
   const levelHelpEl = document.getElementById('activity_help');
   const updateLevelHelp = (val) => {
     const map = {
@@ -630,12 +625,12 @@ export async function bindSportStep() {
     if (levelHelpEl) levelHelpEl.textContent = map[val] || '';
   };
 
-  // zobrazí text při načtení (např. při návratu zpět do stepu)
+  // Show text on load (e.g. when returning to this step)
   if (formState.sport?.level) {
     updateLevelHelp(formState.sport.level);
   }
 
-  // sleduj změny výběru
+  // Watch selection changes
   const levelChips = document.querySelectorAll('#sport_level_group .chip');
   levelChips.forEach(ch => {
     ch.addEventListener('click', () => updateLevelHelp(ch.dataset.value));
@@ -643,7 +638,7 @@ export async function bindSportStep() {
 
   const noneWrap = $('#none_suggestions');
 
-  // --- klikání na chipy "Co by tě lákalo" (max 3 položky) ---
+  // --- Chip clicks for 'What sports interest you' (max 3 items) ---
   const MAX_FUTURE_SPORTS = 3;
   const futureErrEl = document.getElementById('err-future');
   const clearFutureError = () => {
@@ -677,24 +672,24 @@ export async function bindSportStep() {
       }
 
       formState.sport.futureMulti = Array.from(selected);
-      //formState.sport.future = id; // poslední kliknutý, klidně jen jako info
+      // formState.sport.future = id; // last clicked item, optionally informational
     };
   });
 
-  // --- re-inicializace vybraných chipů při návratu na step 3 ---
+  // --- Re-initialize selected chips when returning to step 3 ---
   noneWrap?.querySelectorAll('.chip').forEach(btn => {
     if (selected.has(btn.dataset.value)) {
       btn.classList.add('selected');
     }
   });
 
-  // UPDATED: žádný výběr plan_choice_group – pro sport vždy own
+  // UPDATED: no plan_choice_group selection - for sport always own
   if (formState.sport.level === 'sport') {
     formState.sport.plan_choice = 'own';
     ensureOwnDefaults();
   }
 
-  // pokud chceš úplně vypnout část s "potřebuji plán", můžeš zrušit renderNeedSportsCollapsible
+  // If you want to fully disable the 'need plan' section, you can remove renderNeedSportsCollapsible
   // renderNeedSportsCollapsible('need_sports_list', byGroup);
 
   if (formState.sport.level === 'sport') {
@@ -707,7 +702,7 @@ export async function bindSportStep() {
     formState.sport ||= {};
     formState.sport.ownBlocks ||= [];
 
-    // tvrdý limit – nic nepřidá, když už je 10
+    // Hard limit - do not add anything if there are already 10
     if (formState.sport.ownBlocks.length >= OWN_BLOCKS_LIMIT) {
       return;
     }
@@ -735,13 +730,13 @@ export async function bindSportStep() {
   if (typeof attachLiveErrorClearing === 'function') attachLiveErrorClearing($('#step-container'));
 }
 
-// Cleanup sport state před přechodem na další krok
+// Cleanup sport state before moving to the next step
 export function cleanupSportStateBeforeNext() {
   if (!formState.sport) return;
   const lvl = formState.sport.level;
 
   if (lvl === 'none') {
-    // uživatel nesportuje – necháme jen výběr z chipů
+    // User does not do sports - keep only the chip selection
     formState.sport = {
       level: 'none',
       futureMulti: formState.sport.futureMulti || [],
@@ -749,7 +744,7 @@ export function cleanupSportStateBeforeNext() {
     };
   }
   else if (lvl === 'sport') {
-    // uživatel sportuje – vždy jen vlastní plán
+    // User does sports - always keep only the own plan
     formState.sport = {
       level: 'sport',
       plan_choice: 'own',
@@ -766,10 +761,10 @@ export function cleanupSportStateBeforeNext() {
 
 
 /* ============================================================
-   STEP 4 – DIETA & DISLIKES (s autoPremium logikou)
+   STEP 4 - DIET & DISLIKES (with autoPremium logic)
    ============================================================ */
 
-// --- Pomocná funkce: zkontroluje, zda uživatel aktivoval prémiové volby ---
+// --- Helper: check whether the user enabled premium options ---
 function checkIfPremiumNeeded() {
   const diet = formState?.nutrition?.diet;
   const dislikes = formState?.nutrition?.dislikes || [];
@@ -785,14 +780,14 @@ function checkIfPremiumNeeded() {
   return needsPremium;
 }
 
-// --- Reset hodnot při přechodu zpět na standardní plán ---
+// --- Reset values when switching back to the standard plan ---
 function resetToStandardDefaults() {
   formState.nutrition ||= {};
   formState.nutrition.diet = 'none';
   formState.nutrition.dislikes = [];
-  formState.nutrition.other_dislike = ''; // <- tohle může klidně zůstat, jen už se nikdy neplní
+  formState.nutrition.other_dislike = ''; // Can stay; it is simply no longer filled
 
-  // obnoví makra podle katalogu nebo výchozích hodnot
+  // Restore macros from catalog or default values
   const fromCatalog = (() => {
     const id = formState.sport?.mainSportId;
     const rec = window._sportCatalog?.[id];
@@ -807,7 +802,7 @@ function resetToStandardDefaults() {
   }
 }
 
-/* ===== Hlavní funkce kroku ===== */
+/* ===== Main step function ===== */
 export function bindDietStep() {
   formState.nutrition ||= {};
   if (!formState.nutrition.diet) formState.nutrition.diet = 'none';
@@ -822,7 +817,7 @@ export function bindDietStep() {
         ch.classList.add('selected');
         target[key] = ch.dataset.value;
         updatePremiumNote();
-        checkIfPremiumNeeded(); // ✅ po každé změně diety/repeats
+        checkIfPremiumNeeded(); // After each diet/repeats change
       };
     });
   };
@@ -830,7 +825,7 @@ export function bindDietStep() {
   // Dieta
   bindChipGroup('diet_group', formState.nutrition, 'diet');
 
-  // Repeat (opakování jídel)
+  // Repeat (meal repetitions)
   bindChipGroup('repeat_group', formState.nutrition, 'repeats');
 
   // Repeat hints
@@ -847,7 +842,7 @@ export function bindDietStep() {
     });
   });
 
-  // Dislikes (BEZ "Jiné")
+  // Dislikes (WITHOUT 'Other')
   const MAX_DISLIKES = 4;
   const selected = new Set((formState.nutrition.dislikes || []).slice(0, MAX_DISLIKES));
   formState.nutrition.dislikes = Array.from(selected);
@@ -885,15 +880,15 @@ export function bindDietStep() {
 
       formState.nutrition.dislikes = Array.from(selected);
 
-      // žádná specialita pro "other", jen čistý seznam enumů
+      // No special handling for 'other', just a clean enum list
       updatePremiumNote();
-      checkIfPremiumNeeded(); // ✅ po změně dislikes
+      checkIfPremiumNeeded(); // After dislikes change
     };
   });
 
-  // žádný #other_dislike input, žádný other_dislike text
+  // No #other_dislike input and no other_dislike text
 
-  // --- Premium poznámka ---
+  // --- Premium note ---
   function updatePremiumNote() {
     let note = document.getElementById('premium_note');
     const dislikes = formState.nutrition.dislikes || [];
@@ -915,7 +910,7 @@ export function bindDietStep() {
   }
 
   updatePremiumNote();
-  checkIfPremiumNeeded(); // ✅ zkontroluj hned po načtení
+  checkIfPremiumNeeded(); // Check immediately after load
 }
 
 export function bindMenuSettingsStep() {
@@ -955,10 +950,10 @@ export function bindMenuSettingsStep() {
 
 
 /* ============================================================
-   STEP 5 – MAKRA + BALANCE (autoPremium + reset detekce)
+   STEP 5 - MACROS + BALANCE (autoPremium + reset detection)
    ============================================================ */
 
-// --- Pomocná funkce: zjistí, zda makra odpovídají výchozím hodnotám ---
+// --- Helper: check whether macros match default values ---
 function checkMacrosCustomized() {
   const defaults = (() => {
     const id = formState.sport?.mainSportId;
@@ -973,7 +968,7 @@ function checkMacrosCustomized() {
     +user.p === +defaults.p;
 
   formState.nutrition._customized = !same;
-  checkIfPremiumNeeded(); // ✅ zkontroluje, jestli má být Premium
+  checkIfPremiumNeeded(); // Checks whether Premium should be required
 }
 
 export function bindBalanceStep() {
@@ -987,7 +982,7 @@ export function bindBalanceStep() {
     return rec?.macros ? { ...rec.macros } : null;
   };
 
-  // pokud uživatel nikdy neupravoval, nastavíme defaulty / katalog
+  // If the user never edited them, set defaults / catalog values
   if (!formState.nutrition._customized) {
     formState.nutrition.macros = fromCatalog() || defaultMacros;
   }
@@ -1019,7 +1014,7 @@ export function bindBalanceStep() {
 
   const onMacroChange = (key, el) => {
     formState.nutrition.macros[key] = +el.value || 0;
-    checkMacrosCustomized(); // ✅ kontrola, zda se makra liší od defaultů
+    checkMacrosCustomized(); // Check whether macros differ from defaults
     syncUI();
   };
 
@@ -1028,21 +1023,21 @@ export function bindBalanceStep() {
   pEl?.addEventListener('input', () => onMacroChange('p', pEl));
 
   syncUI();
-  checkMacrosCustomized(); // ✅ zkontroluj hned při načtení
+  checkMacrosCustomized(); // Check immediately after load
 }
 
 
 /* ============================================================
-   STEP 6 – PLAN SELECTION (autoPremium + reset logika)
+   STEP 6 - PLAN SELECTION (autoPremium + reset logic)
    ============================================================ */
 
-// Zjištění měny podle jazyka
+// Detect currency by language
 function currentCurrency() {
   const lang = (i18n?.lang || 'cs').toLowerCase();
   return lang === 'cs' ? 'CZK' : 'EUR';
 }
 
-// Formátování ceny
+// Price formatting
 function formatPrice(czk, eur) {
   const currency = currentCurrency();
   return currency === 'EUR'
@@ -1071,7 +1066,7 @@ function populatePlanPriceData() {
   });
 }
 
-// Dosazení cen do karet z data-atributů
+// Apply prices to cards from data attributes
 function updatePlanPrices() {
   const prices = document.querySelectorAll('.plan-card--select .price');
   prices.forEach(priceEl => {
@@ -1088,7 +1083,7 @@ function updatePlanPrices() {
   });
 }
 
-// Výběr plánu a období
+// Plan and period selection
 export function bindPlanStep() {
   populatePlanPriceData();
   const planCards = document.querySelectorAll('.plan-card--select');
@@ -1096,19 +1091,19 @@ export function bindPlanStep() {
   const periodButtons = document.querySelectorAll('.plan-period .chip');
   const periodHelp = document.getElementById('periodHelp');
 
-  // Slovník textů podle období
+  // Text dictionary by period
   const periodMap = {
     week: t('step7.help_week') || 'We will create one nutrition plan for you.',
     month: t('step7.help_month') || 'We will create 4 nutrition plans for you.'
   };
 
-  // Výchozí stav
+  // Initial state
   window.formState ||= {};
   formState.plan ||= {};
   if (!formState.plan.variant) formState.plan.variant = 'standard';
   if (!formState.plan.period) formState.plan.period = 'week';
 
-  // Pokud má uživatel prémiové chování (např. dieta, dislikes, makra)
+  // If user has premium behavior (e.g. diet, dislikes, macros)
   if (formState.plan.autoPremium) {
     formState.plan.variant = 'premium';
   }
@@ -1120,18 +1115,18 @@ export function bindPlanStep() {
     formState.plan.period = 'week';
   }
 
-  // Kliknutí na kartu
+  // Card click
   planCards.forEach(card => {
     card.addEventListener('click', () => {
       formState.plan.variant = card.dataset.variant;
 
-      // ❌ NEresetuj hned teď, jen nastav variantu a obnov UI
+      // Do not reset immediately; just set variant and refresh UI
       updateSelections();
     });
   });
 
 
-  // Kliknutí na tlačítko varianty
+  // Variant button click
   planButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       formState.plan.variant = btn.dataset.variant;
@@ -1143,7 +1138,7 @@ export function bindPlanStep() {
     });
   });
 
-  // Kliknutí na období
+  // Period click
   periodButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       formState.plan.period = btn.dataset.value;
@@ -1163,12 +1158,12 @@ export function bindPlanStep() {
       b.classList.toggle('selected', b.dataset.value === formState.plan.period)
     );
 
-    // Help text podle zvoleného období
+    // Help text based on selected period
     if (periodHelp) {
       periodHelp.textContent = periodMap[formState.plan.period] || '';
     }
 
-    // Aktualizace celkové ceny
+    // Update total price
     const priceEl = document.querySelector(
       `.plan-card--select[data-variant="${formState.plan.variant}"] .price--${formState.plan.period}`
     );
@@ -1195,10 +1190,10 @@ export function bindPlanStep() {
 }
 
 /* ============================================================
-   STEP 8 – REVIEW & PURCHASE (s kontrolou před vstupem)
+   STEP 8 - REVIEW & PURCHASE (with pre-entry validation)
    ============================================================ */
 
-// === Pomocné funkce pro kontrolu ===
+// === Helper functions for checks ===
 function hasPremiumFeatures() {
   const diet = formState?.nutrition?.diet;
   const dislikes = formState?.nutrition?.dislikes || [];
@@ -1210,7 +1205,7 @@ function hasPremiumFeatures() {
   );
 }
 
-// --- Modal potvrzení při přechodu dál se Standardem ---
+// --- Confirmation modal when continuing with Standard plan ---
 function showConfirmPremiumLoss() {
   return new Promise(resolve => {
     const overlay = document.createElement('div');
@@ -1233,9 +1228,9 @@ function showConfirmPremiumLoss() {
   });
 }
 
-// --- Funkce, která se zavolá před přechodem na Step 7 ---
+// --- Function called before moving to Step 7 ---
 export async function beforeGoToStep7() {
-  // 💡 počkáme, až se zvaliduje krok 6 (např. 100ms)
+  // Wait until step 6 validation completes (e.g. 100ms)
   await new Promise(r => setTimeout(r, 150));
 
   const plan = formState?.plan?.variant;
@@ -1298,8 +1293,8 @@ function buildReviewSummary() {
   }
 
   else {
-    // Sportuji – vždy vlastní plán (ownBlocks)
-    // Podporujeme i staré hodnoty typu "recreational" atd. jako fallback.
+    // User does sports - always own plan (ownBlocks)
+    // Older values like 'recreational' are still supported as fallback.
     sportsSummary = '';
 
     if (sport.ownBlocks?.length) {
@@ -1312,7 +1307,7 @@ function buildReviewSummary() {
       }).join('<br>');
     }
 
-    // hlavní sport (pokud existuje)
+    // Main sport (if available)
     const mainId = sport.mainSportOwn || sport.mainSportId;
     if (mainId) {
       const mainLbl = window._sportCatalog?.[mainId]?.labels?.[lang] || mainId;
@@ -1350,7 +1345,7 @@ function buildReviewSummary() {
       const fatLabel = t('step8.macros_fats') || 'Fats';
       const proteinLabel = t('step8.macros_proteins') || 'Protein';
 
-      // vrací HTML – bez nadpisu, jen hodnoty pod sebou
+      // Using innerHTML in the review step is generally safe since we control the content and it allows us to format macros in a more readable way. Just ensure that the values (c, f, p) are sanitized or come from a trusted source to avoid any potential XSS issues.
       return `
         ${carbLabel} ${c}%<br>
         ${fatLabel} ${f}%<br>
@@ -1381,14 +1376,14 @@ export function bindReviewStep() {
     const el = document.getElementById(id);
     if (!el) continue;
     if (id === 'rev_sports' || id === 'rev_macros') {
-      el.innerHTML = text;   // 👈 umožní <br> a další HTML
+      el.innerHTML = text;   // Allows <br> and other HTML
     } else {
       el.textContent = text;
     }
   }
 
 
-  // cena podle vybraného plánu + období
+  // Price based on selected plan + period
   const priceBox = document.getElementById('reviewPrice');
   if (priceBox) {
     if (formState.plan?.price) {
@@ -1431,16 +1426,15 @@ export function bindReviewStep() {
       const originalHTML = btn.innerHTML;
       btn.disabled = true;
 
-      // 🌀 spinner + překlad
+      // Spinner + translation
       const sendingText = t("buttons.sending") || "Sending...";
       btn.innerHTML = `<span class="spinner"></span>${sendingText}`;
 
       try {
-        console.log("🗞️ Newsletter opt-in:", formState.customer.newsletter);
 
-        await handlePurchase(); // tvoje funkce, která řeší nákup
+        await handlePurchase(); // Your function that handles the purchase
       } catch (err) {
-        console.error("❌ Chyba při nákupu:", err);
+        console.error("❌ Purchase error:", err);
       } finally {
         btn.disabled = false;
         btn.innerHTML = originalHTML;
@@ -1449,7 +1443,7 @@ export function bindReviewStep() {
   }
 
 
-  // --- 💸 Slevový kód ---
+  // --- Discount code ---
   const discountBtn = document.getElementById("apply-discount");
   if (discountBtn) {
     discountBtn.addEventListener("click", function () {
@@ -1470,21 +1464,19 @@ export function bindReviewStep() {
         const isEur = (currentCurrency() === "EUR");
         const newPrice = (originalPrice * (1 - discount / 100)).toFixed(2);
 
-        // 💾 Uložit do stavu
+        // Save to state
         formState.plan.discount_code = code;
         formState.plan.discount_percent = discount;
         formState.plan.price.final = parseFloat(newPrice);
         formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
 
 
-        // 💬 Aktualizovat UI
+        // 💬 update UI
         priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
         infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (−${discount}%)`;
         errorEl.textContent = "";
-
-        console.log("✅ Discount applied:", code, `-${discount}%`);
       } else {
-        // ❌ Neplatný kód
+        // Invalid code
         delete formState.plan.discount_code;
         delete formState.plan.discount_percent;
         delete formState.plan.price.final;
@@ -1538,23 +1530,23 @@ export async function handlePurchase() {
     const amountInHalers = Math.round(amountCZK * 100);
 
     /* ----------------------------------------------------
-   🔧 NORMALIZACE BMR – uložit jen jeden klíč bmr_kcal
+   BMR NORMALIZATION - keep only one bmr_kcal key
    ---------------------------------------------------- */
     if (formState.goal) {
       const finalBmr =
         formState.goal.bmr_override ??
         formState.goal.bmr_kcal ??
-        formState.goal.bmrKcal ?? // fallback, kdyby někde zůstalo staré pole
+        formState.goal.bmrKcal ?? // fallback in case the old field still exists somewhere
         null;
 
       formState.goal.bmr_kcal = finalBmr;
 
-      // uklidíme staré klíče
+      // Clean up old keys
       delete formState.goal.bmr_override;
       delete formState.goal.bmrKcal;
     }
 
-    // --- vytvoření čisté kopie pro uložení
+    // --- Create a clean copy for saving ---
     const cleanState = structuredClone(formState);
     if (cleanState.balance) delete cleanState.balance;
 
@@ -1568,20 +1560,20 @@ export async function handlePurchase() {
         plan_variant: v,
         plan_period: p,
 
-        // 👉 nové pole pro DB sloupec energy_unit
+        // New field for DB column energy_unit
         energy_unit: cleanState.goal?.energy_unit || null,
 
-        // 👉 nové pole pro DB sloupec bmr_kcal
+        // New field for DB column bmr_kcal
         bmr_kcal: cleanState.goal?.bmr_kcal ?? null,
 
-        // když už tam máš i další sloupce v modelu, můžeš posílat i ty:
+        // If you already have more columns in the model, you can send them too:
         sex: cleanState.profile?.sex || null,
         age: cleanState.profile?.age ?? null,
         height_cm: cleanState.profile?.height_cm ?? null,
         weight_kg: cleanState.profile?.weight_kg ?? null,
         activity: cleanState.profile?.activity || null,
 
-        // celý zbytek stavu zůstává v params
+        // The rest of the state stays in params
         params: cleanState,
       }),
     });
@@ -1596,8 +1588,6 @@ export async function handlePurchase() {
     const orderRes = await resp.json().catch(() => ({}));
     if (!orderRes?.order_id) throw new Error("Order creation failed");
 
-    console.log("✅ Order created:", orderRes.order_id);
-
     // --- save to localStorage
     const formStateWithId = {
       ...formState,
@@ -1607,7 +1597,6 @@ export async function handlePurchase() {
     localStorage.setItem("formState", JSON.stringify(formStateWithId));
 
     if (SKIP_PAYMENT) {
-      console.log("🧪 Payment skipped, redirecting to thanks.html");
       window.location.href = thanksUrl;
       return;
     }
@@ -1627,9 +1616,7 @@ export async function handlePurchase() {
     window.location.href = payRes.redirect_url;
 
   } catch (err) {
-    console.group("❌ PURCHASE DEBUG");
-    console.error("Chyba při vytváření objednávky:", err?.message || err);
-    console.groupEnd();
+    console.error("Error creating order:", err?.message || err);
     try {
       localStorage.setItem("formState", JSON.stringify(draftForResume));
       localStorage.setItem("formStep", "7");
@@ -1639,6 +1626,7 @@ export async function handlePurchase() {
     window.location.href = failUrl;
   }
 }
+
 
 
 

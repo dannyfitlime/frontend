@@ -1,4 +1,4 @@
-// frontend/src/validation.js
+﻿// frontend/src/validation.js
 
 /* ===== Helpers ===== */
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -6,7 +6,7 @@ const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const reqMsg   = (t)=> t?.('common.error_required') || 'This field is required.';
 const numMsg   = (t)=> t?.('common.error_number')   || 'Enter a valid number.';
 
-// Range message – nahradí {{min}} a {{max}} ve stringu, nebo fallback
+// Range message: replace {{min}} and {{max}} in the string, or use fallback
 const rangeMsg = (t, min, max, key)=> {
   const tpl = key ? t?.(key) : t?.('common.error_range');
   if (tpl && typeof tpl === 'string') {
@@ -15,7 +15,7 @@ const rangeMsg = (t, min, max, key)=> {
   return `Value must be between ${min} and ${max}.`;
 };
 
-// převody pro validaci
+// Conversions used by validation
 function toKcal(kj) { return kj / 4.184; }
 function toKJ(kcal) { return kcal * 4.184; }
 
@@ -48,7 +48,7 @@ export function validateProfile(profile, t){
 /* ===== Goal (step 2) ===== */
 export const BMR_LIMITS = {
   kcal: { min: 900,  max: 3500 },
-  kJ:   { min: 4000, max: 15000 }   // klíč "kJ" velké J
+  kJ:   { min: 4000, max: 15000 }   // key "kJ" uses uppercase J
 };
 
 const UNIT_LABELS = {
@@ -60,15 +60,15 @@ export function validateGoal(goal, t) {
   const e = {};
   const g = goal || {};
 
-  // 1) Cíl je povinný
+  // 1) Target is required
   if (!g.target) {
     e['target'] = reqMsg(t);
   }
 
-  // 2) BMR v kcal – nejdřív override, jinak null
+  // 2) BMR in kcal - prefer override, otherwise null
   let valKcal = g.bmr_override != null ? +g.bmr_override : null;
 
-  // 3) Zkusit načíst z inputu, pokud user něco přepsal ručně
+  // 3) Try to read from the input if the user manually changed it
   const input = document.getElementById('bmr_value');
   if (input) {
     const raw = input.value.trim();
@@ -82,24 +82,22 @@ export function validateGoal(goal, t) {
     }
   }
 
-  // 4) Pokud máme nějakou BMR hodnotu → zkontrolovat rozsah
+  // 4) If we have a BMR value, validate its range
   if (valKcal != null) {
     const unitRaw = g.energy_unit || 'kcal';
     const unit = (unitRaw && unitRaw.toLowerCase() === 'kj') ? 'kJ' : 'kcal';
     const limits = BMR_LIMITS[unit];
     const label  = UNIT_LABELS[unit];
 
-    // hranice převedené do kcal
+    // Limits converted to kcal
     const minKcal = unit === 'kJ' ? toKcal(limits.min) : limits.min;
     const maxKcal = unit === 'kJ' ? toKcal(limits.max) : limits.max;
-
-    console.log("[DBG validateGoal]", { unitRaw, unit, valKcal, minKcal, maxKcal, limits });
 
     if (valKcal < minKcal || valKcal > maxKcal) {
       e['bmr'] = `${rangeMsg(t, limits.min, limits.max)} [${label}]`;
     }
   } else if (!g.bmr_kcal && !g.bmr_override) {
-    // nic v override ani v bmr_kcal → chyba
+    // No override and no bmr_kcal -> error
     e['bmr'] = reqMsg(t);
   }
 
@@ -117,23 +115,23 @@ export function validateSport(sport, t){
     return e;
   }
 
-  // === VARIANTA: UŽIVATEL NESPORTUJE (level = none) ===
+  // === CASE: user does not do sports (level = none) ===
   if (s.level === 'none'){
     const list = Array.isArray(s.futureMulti) ? s.futureMulti : [];
 
-    // Musí vybrat aspoň 1 sport
+    // Must select at least 1 sport
     if (list.length === 0){
       e['future'] = reqMsg(t);
       return e;
     }
 
-    // ✅ NOVĚ: maximálně 3 sporty
+    // New: maximum 3 sports
     if (list.length > 3){
       e['future'] = t?.('step3.error_future_max3') || 'You can select up to 3 sports.';
       return e;
     }
 
-    // Pokud je mezi nimi "other", musí vyplnit text
+    // If "other" is selected, text input is required
     if (list.includes('other') && !(s.future_text||'').trim()){
       e['future'] = reqMsg(t);
     }
@@ -141,7 +139,7 @@ export function validateSport(sport, t){
     return e;
   }
 
-  // === ODSUD DÁL: UŽIVATEL SPORTUJE (level = sport) ===
+  // === FROM HERE ON: user does sports (level = sport) ===
 
   if (!s.plan_choice){
     e['plan_choice'] = reqMsg(t);
@@ -157,10 +155,10 @@ export function validateSport(sport, t){
     if (blocks.length === 0) {
       e['ownBlocks'] = reqMsg(t);
     } else {
-      let totalSessions = 0; // ✅ budeme sčítat sessions napříč sporty
+      let totalSessions = 0; // Total sessions across all selected sports
 
       blocks.forEach((b, i) => {
-        // sportId nesmí být prázdné
+        // sportId must not be empty
         if (!b.sportId || b.sportId === '') {
           e[`picked_own_${i}`] = t?.('step3.error_select_sport') || 'Select a sport.';
         }
@@ -173,7 +171,7 @@ export function validateSport(sport, t){
         } else if (b.sessions < 1 || b.sessions > 18) {
           e[`sessions_per_week_${i}`] = rangeMsg(t, 1, 18);
         } else {
-          // pokud je validní, přičteme do součtu
+          // If valid, add it to the total
           totalSessions += +b.sessions;
         }
 
@@ -190,13 +188,13 @@ export function validateSport(sport, t){
         if (!b.intensity) e[`intensity_${i}`] = reqMsg(t);
       });
 
-            // ✅ NOVĚ: globální limit na počet sessions za týden
+            // New: global limit for sessions per week
       if (totalSessions > 18){
         e['sessions_total'] = t?.('step3.error_sessions_total') 
           || 'Total trainings per week cannot exceed 18.';
 
-        // zároveň označíme všechny sessions inputy jako chybné,
-        // pokud už nemají vlastní chybu
+        // Also mark all session inputs as invalid
+        // if they do not already have their own error
         blocks.forEach((b, i) => {
           const key = `sessions_per_week_${i}`;
           if (!e[key]) {
@@ -224,7 +222,7 @@ export function validateSport(sport, t){
 }
 
 
-/* ===== Step 5 – Diet & Exclusions ===== */
+/* ===== Step 5 - Diet & Exclusions ===== */
 export function validateDiet(nutrition, t){
   const e = {};
   const n = nutrition || {};
@@ -241,7 +239,7 @@ export function validateDiet(nutrition, t){
   return e;
 }
 
-/* ===== Step 4 – MACROS ===== */
+/* ===== Step 4 - MACROS ===== */
 export function validateMacros(nutrition, t){
   const e = {};
   const c = Number(nutrition?.macros?.c);
@@ -270,17 +268,17 @@ export function validateMacros(nutrition, t){
   return e;
 }
 
-/* ===== Step 6 – Menu settings ===== */
+/* ===== Step 6 - Menu settings ===== */
 export function validateMenuSettings(nutrition, t){
   const e = {};
   const d = nutrition || {};
 
-  // Kontrola výběru počtu opakování jídel
+  // Validate meal repetition count selection
   if (!d.repeats || d.repeats === '' || d.repeats === 'none') {
     e['repeats'] = reqMsg(t);
   }
 
-  // Kontrola výběru zobrazení gramáží
+  // Validate grams display selection
   if (!d.show_grams || d.show_grams === '') {
     e['show_grams'] = reqMsg(t);
   }
@@ -316,3 +314,4 @@ export function validateReview(state, t){
 
   return e;
 }
+

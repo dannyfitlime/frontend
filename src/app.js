@@ -1,4 +1,4 @@
-// frontend/src/app.js — cleaned up & fixed i18n + locale-based detection
+﻿// frontend/src/app.js - cleaned up and fixed i18n + locale-based detection
 import { formState } from './state.js';
 import {
   validateProfile, validateGoal, validateSport, BMR_LIMITS,
@@ -15,26 +15,12 @@ const t = (path)=> T(path);
 const SUPPORTED = SUPPORTED_LANGS;
 
 /* ================= DEBUG ================= */
-const DEBUG = true;
-function dbg(...a){
-  if (!DEBUG) return;
-  console.log('[DBG]', ...a);
-  let b = document.getElementById('__dbg');
-  if (!b) {
-    b = document.createElement('div');
-    b.id = '__dbg';
-    b.style.cssText = 'position:fixed;top:6px;right:6px;z-index:9999;background:rgba(0,0,0,.75);color:#fff;padding:6px 10px;border-radius:8px;font:6px/1.2 system-ui,sans-serif;max-width:40vw';
-    document.body.appendChild(b);
-  }
-  try { b.textContent = a.map(x => typeof x === 'string' ? x : JSON.stringify(x)).join(' '); }
-  catch { b.textContent = a.join(' '); }
-}
-window.addEventListener('error', (ev)=> dbg('Runtime error:', ev?.error || ev?.message));
+const dbg = () => {};
 
 /* ================ GLOBALS ================= */
 export const $ = (sel) => document.querySelector(sel);
 let currentStep = 0;
-let furthestStep = 0; // nejdál odemčený krok (index)
+let furthestStep = 0; // Furthest unlocked step (index)
 
 
 // HTML steps served from public/
@@ -62,7 +48,7 @@ function persistFormDraft(step = currentStep) {
     console.warn('Draft persist failed:', err);
   }
 }
-/* ===== Topbar – přepnutí do compact po odskrolování od vrchu ===== */
+/* ===== Topbar: switch to compact after scrolling down ===== */
 (function(){
   const topbar = document.getElementById('topbar');
   if(!topbar) return;
@@ -70,7 +56,7 @@ function persistFormDraft(step = currentStep) {
   let ticking = false;
   function onScroll(){
     const y = window.scrollY || window.pageYOffset || 0;
-    // compact, jakmile nejsme úplně nahoře (např. > 10 px)
+    // Compact mode once we are no longer at the very top (e.g. > 10 px)
     if (y > 10) topbar.classList.add('compact');
     else        topbar.classList.remove('compact');
     ticking = false;
@@ -79,16 +65,16 @@ function persistFormDraft(step = currentStep) {
     if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
   }, { passive: true });
 
-  // počáteční stav (když přijdeme na stránku uprostřed)
+  // Initial state (when landing in the middle of the page)
   onScroll();
 })();
 
-// --- cookies bar init (dejte do app.js, třeba pod GLOBALS) ---
+// --- Cookies bar init (place in app.js, e.g. below GLOBALS) ---
 function initCookiesBar(){
   const bar     = document.getElementById('cookiesBar');
   const accept  = document.getElementById('cookiesAccept');
   const decline = document.getElementById('cookiesDecline');
-  if (!bar) return; // stránka lištu nemá
+  if (!bar) return; // Page does not have the bar
 
   const show = () => bar.classList.add('show');
   const hide = () => bar.classList.remove('show');
@@ -98,7 +84,7 @@ function initCookiesBar(){
   }
   accept?.addEventListener('click', () => {
     localStorage.setItem('cookiesChoice', 'accept');
-    // TODO: sem později inicializaci analytiky/marketingu
+    // TODO: initialize analytics/marketing here later
     hide();
   });
   decline?.addEventListener('click', () => {
@@ -106,50 +92,50 @@ function initCookiesBar(){
     hide();
   });
 
-  // volitelně vystavit globálně
+  // Optionally expose globally
   window.showCookiesBar = show;
   window.hideCookiesBar = hide;
 }
 
 
-/* ===== Cookies bottom sheet (jen na homepage) ===== */
+/* ===== Cookies bottom sheet (homepage only) ===== */
 (function initCookiesBar(){
-  // Podmínka: jen na home – buď podle značky na body, nebo cesty
+  // Condition: only on home page, by body marker or path
   const isHome = document.body?.dataset?.page === 'home' || location.pathname === '/' || location.pathname.endsWith('/index.html');
   const bar = document.getElementById('cookiesBar');
   if(!isHome || !bar) return;
 
   const ACCEPT_KEY = 'cookieConsent';
-  if(localStorage.getItem(ACCEPT_KEY)) return; // už odkliknuto
+  if(localStorage.getItem(ACCEPT_KEY)) return; // Already acknowledged
 
   const accept = document.getElementById('cookiesAccept');
   const decline = document.getElementById('cookiesDecline');
 
-  // zobrazit s animací
+  // Show with animation
   bar.classList.add('is-open');
   bar.setAttribute('aria-hidden', 'false');
 
   function closeBar(status){
     try { localStorage.setItem(ACCEPT_KEY, status); } catch(e){}
     bar.classList.remove('is-open');
-    // po animaci jen skryjeme pro SR
+    // After animation, hide only for screen readers
     setTimeout(()=> bar.setAttribute('aria-hidden','true'), 240);
   }
 
   accept?.addEventListener('click', () => closeBar('accepted'));
   decline?.addEventListener('click', () => closeBar('declined'));
 
-  // ESC zavře
+  // ESC closes the sheet
   window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeBar('dismissed'); });
 
-  // Fokus na tlačítko (přístupnost)
+  // Focus the button (accessibility)
   setTimeout(()=> accept?.focus(), 50);
 })();
 
-/* ===== Sticky footer layout nic dalšího nepotřebuje ===== */
-// Ujisti se, že v CSS nemáš žádné zbytky: main{ padding-bottom: ... } a footer{ position: fixed; } – to už jsme nahradili flexem.
+/* ===== Sticky footer layout needs nothing else ===== */
+// Make sure CSS has no leftovers: main{ padding-bottom: ... } and footer{ position: fixed; } - replaced by flex layout.
 
-/* ===== Aktualizace roku ve footeru (můžeš ponechat) ===== */
+/* ===== Footer year sync (optional) ===== */
 (function syncYear(){
   const el = document.getElementById('year');
   if(el) el.textContent = new Date().getFullYear();
@@ -210,7 +196,7 @@ function confirmLeaveForm(){
     document.addEventListener('keydown', function onEsc(ev){
       if (ev.key === 'Escape'){ document.removeEventListener('keydown', onEsc); cleanup(false); }
     });
-    // Focus na primární akci:
+    // Focus primary action:
     back.querySelector('#btn-leave').focus();
   });
 }
@@ -244,22 +230,22 @@ function __candidates(){
 function detectScroller(){
   const cands = __candidates();
   const infos = cands.map(c => ({ ...__scrollInfo(c.el, c.label), el: c.el }));
-  // Preferuj ten, který REALNĚ může scrollovat (scrollHeight > clientHeight)
+  // Prefer the element that can actually scroll (scrollHeight > clientHeight)
   const capable = infos.filter(i => i.scrollHeight > i.clientHeight + 2);
-  // Malý fallback: když nic “nescrolluje”, vezmi scrollingElement
+  // Small fallback: if nothing scrolls, use scrollingElement
   const pick = capable[0] || infos.find(i => i.who === 'scrollingElement') || infos[0];  
   return pick?.el || window;
 }
 /**
- * Chytrý scroll nahoru – i na mobilech vytáhne úplně na začátek stránky (<html> nebo <body>).
+ * Smart scroll-to-top: works on mobile too and goes to the true page top (<html> or <body>).
  */
 function scrollToTopSmart(reason = '') {
-  const tries = [0, 120, 300]; // postupné pokusy po reflow
+  const tries = [0, 120, 300]; // Retry after reflow
 
   tries.forEach(delay => {
     setTimeout(() => {
       requestAnimationFrame(() => {
-        // 💡 Detekce skutečného scrolleru
+        // Detect the real scroller
         const scroller = detectScroller();
         const target =
           document.scrollingElement || document.documentElement || document.body;
@@ -268,7 +254,7 @@ function scrollToTopSmart(reason = '') {
         const smooth = delay === tries[tries.length - 1];
 
         try {
-          // 🧭 Scrolluj vždy přes hlavní dokumentový scroller
+          // Always scroll via the main document scroller
           target.scrollTo({
             top: 0,
             left: 0,
@@ -281,12 +267,12 @@ function scrollToTopSmart(reason = '') {
         setTimeout(() => {
           const after = target.scrollTop;          
 
-          // 🧩 Fallback: pokud se nic nestalo, proveď tvrdý scroll ke <html> nebo <body>
+          // Fallback: if nothing happened, force-scroll to <html> or <body>
           if (delay === tries[tries.length - 1] && Math.abs(after - before) < 5) {            
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
 
-            // Jistota – scrollIntoView na úplný začátek dokumentu
+            // Safety net: scrollIntoView to the top of the document
             const htmlEl = document.documentElement;
             if (htmlEl && htmlEl.scrollIntoView) {
               htmlEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -320,7 +306,7 @@ export function applyI18n(){
     const translated = t(key);
     if (translated && translated !== key) {
       if (el.tagName === 'OPTION') {
-        el.textContent = translated; // <== umožní překlad i pro <option>
+        el.textContent = translated; // Allows translation also for <option>
       } else {
         el.textContent = translated;
       }
@@ -403,7 +389,7 @@ function renderStepbar(idx=currentStep){
 async function loadStep(idx){
   try{
     dbg('loadStep', idx, 'url', stepFiles[idx]);
-    // 💨 posuň stránku nahoru HNED (ještě před fetch)
+    // Scroll to top immediately (before fetch)
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     const res = await fetch(stepFiles[idx], { cache: 'no-store' });
@@ -428,7 +414,7 @@ async function loadStep(idx){
     if (idx===6) { dbg('bindPlanStep');    bindPlanStep(); }
     if (idx===7) { dbg('bindReviewStep');  bindReviewStep(); }
     
-    // Next: na posledním kroku skryté, jinde „Další“
+    // Next: hidden on the last step, otherwise 'Next'
     const nextBtn = $('#btn-next');
     if (nextBtn) {
       if (idx === stepFiles.length - 1) {
@@ -439,12 +425,12 @@ async function loadStep(idx){
       }
     }
 
-    // Zpět je vždy povolené; na kroku 1 pouze otevře confirmLeaveForm()
+    // Back is always allowed; on step 1 it only opens confirmLeaveForm()
     const backBtn = $('#btn-back');
     if (backBtn) {
       backBtn.disabled = false;
       backBtn.setAttribute('aria-disabled','false');
-      // volitelné: jiný text na prvním kroku
+      // Optional: different label on the first step
       const backLabel = (idx === 0) ? (t('common.home') || 'Home') : (t('common.back') || 'Back');
       backBtn.innerHTML = `${backLabel}`;
     }
@@ -452,7 +438,7 @@ async function loadStep(idx){
     dbg('step ready', idx);
     persistFormDraft(idx);
 
-    // Chytrý reset scrollu - funguje i na mobilech a při reflow
+    // Smart scroll reset - works on mobile and after reflow
     scrollToTopSmart('after-loadStep');
     
   }catch(e){
@@ -468,51 +454,42 @@ async function validateCurrent(){
   let errs = {};
 
   switch (currentStep) {
-    case 0: // Profil
+    case 0: // Profile
       errs = validateProfile(formState.profile, t);
-      console.log("[DBG] validateProfile", errs, formState.profile);
       break;
 
-    case 1: // Cíl
+    case 1: // Goal
       errs = validateGoal(formState.goal, t);
-      console.log("[DBG] validateGoal result:", errs, "goal=", formState.goal);
       break;
 
 
     case 2: // Sport
       errs = validateSport(formState.sport, t);
-      console.log("[DBG] validateSport", errs, formState.sport);
       break;
 
-    case 3: // Makra (nutrition)
+    case 3: // Macros (nutrition)
       errs = validateMacros(formState.nutrition, t);
-      console.log("[DBG] validateMacros", errs, formState.nutrition);
       break;
 
     case 4: // Diet (nutrition)
       errs = validateDiet(formState.nutrition, t);
-      console.log("[DBG] validateDiet", errs, formState.nutrition);
       break;
     case 5: // Menu settings
       errs = validateMenuSettings(formState.nutrition, t);
-      console.log("[DBG] validateMenuSettings", errs, formState.nutrition);
       break;
 
     case 6: // Plan
       errs = validatePlan?.(formState.plan, t) || {};
-      console.log("[DBG] validatePlan", errs, formState.plan);
       break;
 
     case 7: // Review
       errs = validateReview?.(formState, t) || {};
-      console.log("[DBG] validateReview", errs, formState);
       break;
   }
 
   showErrors(errs);
 
   const ok = Object.keys(errs).length === 0;
-  console.log(`[DBG] validateCurrent step=${currentStep} ok=${ok}`);
   return ok;
 }
 
@@ -570,26 +547,21 @@ export function showErrors(errs) {
     const y = scrollY + rect.top - topbarH - 12;
     const targetY = Math.max(0, y);
 
-    console.log('[ERR_SCROLL_FIXED]', {
-      y, targetY, rectTop: rect.top, scrollY, topbarH, block: firstErrorBlock
-    });
-
-    // nastav rezervu pro header
+    // Reserve space for the header
     firstErrorBlock.style.scrollMarginTop = `${topbarH + 12}px`;
 
-    // pokus o klasický scrollTo
+    // Try regular scrollTo
     window.scrollTo({ top: targetY, behavior: 'smooth' });
 
-    // fallback – pokud se stránka nepohnula, použij scrollIntoView
+    // Fallback: if the page did not move, use scrollIntoView
     setTimeout(() => {
       const after = window.scrollY || document.documentElement.scrollTop;
       if (Math.abs(after - targetY) < 5) {
-        console.log('[ERR_SCROLL_FALLBACK] Using scrollIntoView, after=', after);
         firstErrorBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }, 200);
 
-    // focus na první input (bez posunu)
+    // Focus first input (without scrolling)
     const focusable = firstErrorBlock.querySelector('input, select, textarea, .chip');
     if (focusable) focusable.focus({ preventScroll: true });
   }
@@ -599,7 +571,7 @@ export function showErrors(errs) {
 const btnBack = $('#btn-back');
 if (btnBack) btnBack.onclick = async () => {
 
-  // Pokud jsme na stepu 0 → chovej se stejně jako browser back
+  // If we are on step 0, behave like browser back
   if (currentStep === 0) {
     const ok = await confirmLeaveForm();
     if (ok) {
@@ -609,32 +581,29 @@ if (btnBack) btnBack.onclick = async () => {
     return;
   }
 
-  // Jinak jen použij historii:
+  // Otherwise just use history:
   history.back();
 };
 
-/* ✅ 1) Jediná pravda – sjednocené Next chování */
+/* 1) Single source of truth - unified Next behavior */
 async function goNextStep(){
-  console.log("[DBG] goNextStep triggered");
-
-  // ✅ validace aktuálního kroku
+  // Validate current step
   if (!(await validateCurrent())) {
-    console.log("[DBG] Next blocked by validation");
     return false;
   }
 
-  // ✅ speciální čistící logika
+  // Special cleanup logic
   cleanupSportStateBeforeNext?.();
 
   const last = stepFiles.length - 1;
 
-  // ✅ kontrola před Review (Step 7)
+  // Check before Review (Step 7)
   if (currentStep === 6) {
     const ok = await beforeGoToStep7();
     if (!ok) return false;
   }
 
-  // ✅ odemkneme další krok
+  // Unlock the next step
   furthestStep = Math.max(furthestStep, currentStep + 1);
 
   if (currentStep < last) {
@@ -644,56 +613,55 @@ async function goNextStep(){
     return true;
   } 
   
-  // ✅ poslední krok → nákup
+  // Last step -> purchase
   handlePurchase?.();
   return true;
 }
 
 
-/* ✅ 2) btnNext používá jednotnou funkci */
+/* 2) btnNext uses the unified function */
 const btnNext = $('#btn-next');
 if (btnNext) btnNext.onclick = async ()=>{
-  console.log("[DBG] Kliknuto na DALŠÍ");
     // Use wrapper so history is updated when user clicks the UI button
    await window.goNextStep();
 };
 
 
-// Klik na brand: potvrdit odchod z formuláře
+// Click on brand: confirm leaving the form
 document.querySelector('.brand.header-logo')?.addEventListener('click', async (e)=>{
   e.preventDefault();
   const ok = await confirmLeaveForm();
   if (ok) {
-    sessionStorage.removeItem('formStarted'); // <– smažeme flag
+    sessionStorage.removeItem('formStarted'); // Remove the flag
     window.location.href = '/index.html';
   }
 });
-// Klik na odkazy ve footeru: potvrdit odchod z formuláře
+// Click on footer links: confirm leaving the form
 document.querySelectorAll('.footer-links a').forEach(link => {
   link.addEventListener('click', async (e) => {
     e.preventDefault();
     const ok = await confirmLeaveForm();
     if (ok) {
-      window.location.href = link.href; // přesměruje na konkrétní odkaz
+      window.location.href = link.href; // Redirect to the selected link
     }
   });
 });
 
 /* ============================================================
-   BROWSER HISTORY SUPPORT FOR WIZARD — FINAL STABLE VERSION
+   BROWSER HISTORY SUPPORT FOR WIZARD - FINAL STABLE VERSION
    ============================================================ */
 
 /* ========== UTILS ========== */
 
-// Vytvoří URL se zachováním ostatních paramů (např. lang=cs)
+// Create URL while preserving other params (e.g. lang=cs)
 function makeStepUrl(step) {
   const url = new URL(window.location);
   url.searchParams.set("step", String(step));
-  // RETURN RELATIVE URL -> bezpečnější pro pushState/replaceState
+  // Return relative URL -> safer for pushState/replaceState
   return url.pathname + url.search + url.hash;
 }
 
-// Přesun na krok (bez validací)
+// Move to a step (without validation)
 async function applyStep(step) {
   currentStep = Math.max(0, Math.min(stepFiles.length - 1, step));
   renderStepbar(currentStep);
@@ -705,23 +673,23 @@ async function applyStep(step) {
 window.addEventListener("popstate", async (ev) => {
   const state = ev.state;
 
-  // Pokud chybí state nebo není step → pokus o „opustit“ wizard (back do předchozí stránky)
+  // If state is missing or has no step -> attempt to leave the wizard (back to previous page)
   if (!state || state.step === undefined) {
-    // Když jsme na první stránce formuláře, ukaž vlastní modal místo okamžitého opuštění
+    // If we are on the first form page, show a custom modal instead of leaving immediately
     if (currentStep === 0) {
       const ok = await confirmLeaveForm();
       if (ok) {
-        // uživatel potvrdil opuštění → necheme prohlížeč jít dál (zpět)
-        // Použij history.back() / go(-1) pro skutečné opuštění
+        // User confirmed leaving -> let the browser continue back navigation
+        // Use history.back() / go(-1) to actually leave
         history.back();
       } else {
-        // zrušeno → obnovíme validní stav aplikace aby zůstal v místě
+        // Cancelled -> restore valid app state so the user stays in place
         history.pushState({ step: currentStep }, "", makeStepUrl(currentStep));
       }
       return;
     }
 
-    // Default fallback: udržet uživatele na místě a opravit URL/stav
+    // Default fallback: keep user in place and repair URL/state
     history.replaceState(
       { step: currentStep },
       "",
@@ -732,18 +700,18 @@ window.addEventListener("popstate", async (ev) => {
 
   const target = Number(state.step);
 
-  /* ← Pohyb zpět */
+  /* Backward navigation */
   if (target < currentStep) {
     await applyStep(target); 
     return;
   }
 
-  /* → Pohyb dopředu */
+  /* Forward navigation */
   if (target > currentStep) {
     while (currentStep < target) {
       const ok = await goNextStep();
       if (!ok) {
-        // Validace zablokovala → vrátíme historii na poslední validní krok
+        // Validation blocked progress -> return history to the last valid step
         history.replaceState(
           { step: currentStep },
           "",
@@ -783,7 +751,7 @@ async function goToStep(i) {
   await loadStep(currentStep);
 }
 
-// Postupné "proklikáni" next až na target
+// Advance step-by-step with Next until target
 async function goForwardToStep(target) {
   while (currentStep < target) {
     const ok = await goNextStep();
@@ -839,7 +807,7 @@ function bindStepperClicks() {
 
     const params = new URLSearchParams(location.search);
 
-    // === RESUME LOGIKA ===
+    // === Resume logic ===
     if (params.get("resume") === "true") {
       const savedForm = localStorage.getItem("formState");
       const savedStep = parseInt(localStorage.getItem("formStep") || "6", 10);
@@ -850,11 +818,9 @@ function bindStepperClicks() {
           currentStep = Math.max(0, Math.min(savedStep, stepFiles.length - 1));
           furthestStep = currentStep;
 
-          console.log("[DBG] ✅ Resume → step", currentStep);
-
           await loadStep(currentStep);
 
-          // ✅ NE replaceState, ale pushState → přidáme validní záznam pro popstate
+          // Do NOT use replaceState; pushState adds a valid popstate entry
           history.pushState({ step: currentStep }, "", makeStepUrl(currentStep));
           renderStepbar(currentStep);
         } catch (err) {
@@ -876,8 +842,8 @@ function bindStepperClicks() {
 
       await loadStep(0);
 
-      // ✅ První krok musí být PUSH, NE replace,
-      // jinak popstate nemá žádný validní stav
+      // First step must be PUSH, not replace,
+      // otherwise popstate has no valid state
       history.pushState({ step: 0 }, "", makeStepUrl(0));
     }
 
@@ -885,6 +851,7 @@ function bindStepperClicks() {
     console.error('BOOT failed:', e);
   }
 })();
+
 
 
 
