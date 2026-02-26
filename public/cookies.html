@@ -130,7 +130,7 @@
   </main>
 
   <script type="module">
-    import { bootI18n, i18n } from '/i18n-core.js';
+    import { bootI18n, i18n, t } from '/i18n-core.js';
 
     const KEEP_LANG_SELECTOR = '[data-keep-lang]';
     function applyLangToLinks(lang){
@@ -144,19 +144,18 @@
     (async () => {
       await bootI18n();
       applyLangToLinks(i18n.lang);
-    })();
-  </script>
-  <script>
-    document.getElementById('resetCookies')?.addEventListener('click', () => {
-      ['cookiesChoice', 'cookieConsent'].forEach((key) => {
-        try { localStorage.removeItem(key); } catch (_) {}
+
+      document.getElementById('resetCookies')?.addEventListener('click', () => {
+        ['cookiesChoice', 'cookieConsent'].forEach((key) => {
+          try { localStorage.removeItem(key); } catch (_) {}
+        });
+        const translated = t('cookiesPage.manage.resetAlert');
+        const msg = translated && translated !== 'cookiesPage.manage.resetAlert'
+          ? translated
+          : 'Cookie settings were cleared. After returning to the homepage, the consent banner will appear again.';
+        alert(msg);
       });
-      const t = window?.i18n?.t?.('cookiesPage.manage.resetAlert');
-      const msg = t && t !== 'cookiesPage.manage.resetAlert'
-        ? t
-        : 'Cookie settings were cleared. After returning to the homepage, the consent banner will appear again.';
-      alert(msg);
-    });
+    })();
   </script>
 </body>
 </html>
