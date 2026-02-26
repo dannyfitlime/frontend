@@ -21,6 +21,7 @@ const dbg = () => {};
 export const $ = (sel) => document.querySelector(sel);
 let currentStep = 0;
 let furthestStep = 0; // Furthest unlocked step (index)
+let lastTrackedWizardStep = null;
 
 
 // HTML steps served from public/
@@ -69,67 +70,145 @@ function persistFormDraft(step = currentStep) {
   onScroll();
 })();
 
-// --- Cookies bar init (place in app.js, e.g. below GLOBALS) ---
-function initCookiesBar(){
-  const bar     = document.getElementById('cookiesBar');
-  const accept  = document.getElementById('cookiesAccept');
-  const decline = document.getElementById('cookiesDecline');
-  if (!bar) return; // Page does not have the bar
+const GA_MEASUREMENT_ID = 'G-EM0R7B35P2';
 
-  const show = () => bar.classList.add('show');
-  const hide = () => bar.classList.remove('show');
+function ensureAnalyticsBootstrap() {
+  if (!GA_MEASUREMENT_ID) return;
+  if (window.__gaConsentBootstrapped) return;
+  window.__gaConsentBootstrapped = true;
 
-  if (localStorage.getItem('cookiesChoice') === null) {
-    requestAnimationFrame(show);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+
+  window.gtag('js', new Date());
+  window.gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied'
+  });
+  window.gtag('config', GA_MEASUREMENT_ID);
+
+  if (!document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"]`)) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
   }
-  accept?.addEventListener('click', () => {
-    localStorage.setItem('cookiesChoice', 'accept');
-    // TODO: initialize analytics/marketing here later
-    hide();
-  });
-  decline?.addEventListener('click', () => {
-    localStorage.setItem('cookiesChoice', 'decline');
-    hide();
-  });
 
-  // Optionally expose globally
-  window.showCookiesBar = show;
-  window.hideCookiesBar = hide;
+  try {
+    const legacyChoice = localStorage.getItem('cookiesChoice');
+    const sheetChoice = localStorage.getItem('cookieConsent');
+    if (legacyChoice === 'accept' || sheetChoice === 'accepted') {
+      updateTrackingConsent(true);
+    } else if (legacyChoice === 'decline' || sheetChoice === 'declined') {
+      updateTrackingConsent(false);
+    }
+  } catch (err) {
+    console.warn('Consent restore skipped:', err);
+  }
 }
 
+function updateTrackingConsent(granted) {
+  if (!GA_MEASUREMENT_ID) return;
+  ensureAnalyticsBootstrap();
+  const storage = granted ? 'granted' : 'denied';
 
-/* ===== Cookies bottom sheet (homepage only) ===== */
+  try {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'cookie_consent_update',
+      analytics_storage: storage,
+      ad_storage: storage
+    });
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: storage,
+        ad_storage: storage
+      });
+    }
+    if (typeof window.fbq === 'function') {
+      window.fbq('consent', granted ? 'grant' : 'revoke');
+    }
+    window.dispatchEvent(new CustomEvent('cookie-consent', {
+      detail: { status: granted ? 'accepted' : 'declined' }
+    }));
+  } catch (err) {
+    console.warn('Analytics/marketing consent update skipped:', err);
+  }
+}
+
+function trackWizardStepView(idx) {
+  if (!GA_MEASUREMENT_ID) return;
+  if (lastTrackedWizardStep === idx) return;
+  if (typeof window.gtag !== 'function') return;
+
+  lastTrackedWizardStep = idx;
+  window.gtag('event', 'wizard_step_view', {
+    step_index: idx + 1,
+    step_file: stepFiles[idx],
+    step_name: getStepTitle(idx),
+    language: i18n?.lang || 'cs'
+  });
+}
+
+ensureAnalyticsBootstrap();
+
+/* ===== Cookies bar / bottom sheet (unified) ===== */
 (function initCookiesBar(){
-  // Condition: only on home page, by body marker or path
   const isHome = document.body?.dataset?.page === 'home' || location.pathname === '/' || location.pathname.endsWith('/index.html');
   const bar = document.getElementById('cookiesBar');
-  if(!isHome || !bar) return;
-
-  const ACCEPT_KEY = 'cookieConsent';
-  if(localStorage.getItem(ACCEPT_KEY)) return; // Already acknowledged
+  if (!isHome || !bar) return;
 
   const accept = document.getElementById('cookiesAccept');
   const decline = document.getElementById('cookiesDecline');
+  const LEGACY_KEY = 'cookiesChoice';
+  const SHEET_KEY = 'cookieConsent';
 
-  // Show with animation
-  bar.classList.add('is-open');
-  bar.setAttribute('aria-hidden', 'false');
-
-  function closeBar(status){
-    try { localStorage.setItem(ACCEPT_KEY, status); } catch(e){}
-    bar.classList.remove('is-open');
-    // After animation, hide only for screen readers
-    setTimeout(()=> bar.setAttribute('aria-hidden','true'), 240);
+  function setConsentChoice(accepted) {
+    try {
+      localStorage.setItem(LEGACY_KEY, accepted ? 'accept' : 'decline');
+      localStorage.setItem(SHEET_KEY, accepted ? 'accepted' : 'declined');
+    } catch (err) {
+      console.warn('Cookie consent persist failed:', err);
+    }
   }
+
+  function showBar() {
+    bar.classList.add('show', 'is-open');
+    bar.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideBar() {
+    bar.classList.remove('show', 'is-open');
+    setTimeout(() => bar.setAttribute('aria-hidden', 'true'), 240);
+  }
+
+  function closeBar(status) {
+    if (status === 'accepted') {
+      setConsentChoice(true);
+      updateTrackingConsent(true);
+    } else if (status === 'declined') {
+      setConsentChoice(false);
+      updateTrackingConsent(false);
+    } else {
+      try { localStorage.setItem(SHEET_KEY, status); } catch (err) {}
+    }
+    hideBar();
+  }
+
+  try {
+    if (localStorage.getItem(LEGACY_KEY) || localStorage.getItem(SHEET_KEY)) return;
+  } catch (err) {}
+
+  requestAnimationFrame(showBar);
 
   accept?.addEventListener('click', () => closeBar('accepted'));
   decline?.addEventListener('click', () => closeBar('declined'));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBar('dismissed'); });
+  setTimeout(() => accept?.focus(), 50);
 
-  // ESC closes the sheet
-  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeBar('dismissed'); });
-
-  // Focus the button (accessibility)
-  setTimeout(()=> accept?.focus(), 50);
+  window.showCookiesBar = showBar;
+  window.hideCookiesBar = hideBar;
 })();
 
 /* ===== Sticky footer layout needs nothing else ===== */
@@ -437,6 +516,7 @@ async function loadStep(idx){
     
     dbg('step ready', idx);
     persistFormDraft(idx);
+    trackWizardStepView(idx);
 
     // Smart scroll reset - works on mobile and after reflow
     scrollToTopSmart('after-loadStep');
