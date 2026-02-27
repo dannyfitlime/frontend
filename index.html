@@ -4,15 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" type="image/png" href="/public/images/logotucne.png">
-  <title data-i18n="home.meta.title"></title>
+  <title data-i18n="home.meta.title">FitLime – zdravý jídelníček na míru</title>
 
   <!-- SEO -->
-  <meta name="description" content="" data-i18n="home.meta.description">
-  <meta property="og:title" content="" data-i18n="home.meta.title">
-  <meta property="og:description" content="" data-i18n="home.meta.description">
+  <meta name="description" content="Kompletní dietní jídelníčky na míru. Zdravý životní styl, pestrá jídla, edukace a podpora sportu." data-i18n="home.meta.description">
+  <meta property="og:title" content="FitLime – zdravý jídelníček na míru" data-i18n="home.meta.title">
+  <meta property="og:description" content="Kompletní dietní jídelníčky na míru. Zdravý životní styl, pestrá jídla, edukace a podpora sportu." data-i18n="home.meta.description">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/public/images/logo.png">
   <link rel="icon" href="/favicon.ico">
+
+  <!-- Hreflang Tagy - Pro správné indexování na různých doménách -->
+  <link rel="alternate" hreflang="cs" href="https://fitlime.cz/" />
+  <link rel="alternate" hreflang="sk" href="https://fitlime.sk/" />
+  <link rel="alternate" hreflang="en" href="https://fitlime.eu/" />
+  <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/" />
+
+  <script>
+    // Dynamické nastavení kanonické URL podle aktuální domény, 
+    // aby Google nebral .sk jako duplicitní obsah vůči .cz
+    const canonicalURL = location.origin + location.pathname;
+    document.write('<link rel="canonical" href="' + canonicalURL + '" />');
+  </script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/base.css" />
@@ -83,8 +96,8 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="home-container hero-wrap">
-        <h1 data-i18n="home.hero.title"></h1>
-        <p class="lead" data-i18n="home.hero.lead"></p>
+        <h1 data-i18n="home.hero.title">Jídelníček na míru během pár minut</h1>
+        <p class="lead" data-i18n="home.hero.lead">Vyplňte krátký dotazník a získejte plán, který pokrývá všechny Vaše potřeby.</p>
         <div class="cta-row">
           <a class="btn btn-xl" href="/form.html" data-i18n="home.hero.cta"></a>
         </div>
@@ -786,35 +799,42 @@
     <div class="site-footer__inner">
       <div class="footer-left">
         <div>
+          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+        </div>
+        <div>
           <span class="brandline" data-i18n="home.footer.brand"></span>
         </div>
         <div>
-          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+          <span data-i18n="home.footer.company"></span>
         </div>
       </div>
 
       <!-- Uprostřed -->
     <div class="footer-center">
     <div id="langSwitch" class="lang-switch"></div>
-    <div>
+    <div class="footer-credit-wrap">
         <a href="https://www.sportvitalpro.cz" 
         class="footer-credit" 
         target="_blank" 
         rel="noopener noreferrer">
         Powered by sportvitalpro.cz
         </a>
+        <a href="https://www.instagram.com/sportvitalpro" 
+        class="footer-instagram" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Instagram">
+        <span class="footer-instagram__text">Instagram</span>
+        </a>
     </div>
     </div>
 
 
       <div class="footer-right">
-        <div>
-          <span class="payments muted" data-i18n="home.footer.payments"></span>
-        </div>
         <nav class="footer-links">
+          <a href="/cookies.html" data-i18n="home.footer.cookies"></a>
           <a href="/terms.html" data-i18n="home.footer.terms"></a>
           <a href="/gdpr.html" data-i18n="home.footer.privacy"></a>
-          <a href="/cookies.html" data-i18n="home.footer.cookies"></a>
         </nav>
       </div>
     </div>

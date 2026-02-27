@@ -771,7 +771,7 @@ function checkIfPremiumNeeded() {
   const customized = !!formState?.nutrition?._customized;
 
   const needsPremium =
-    (diet && diet !== 'no_restrictions') ||
+    (diet && diet !== 'no_restrictions' && diet !== 'none') ||
     (Array.isArray(dislikes) && dislikes.length > 0) ||
     customized;
 
@@ -1446,43 +1446,68 @@ export function bindReviewStep() {
   // --- Discount code ---
   const discountBtn = document.getElementById("apply-discount");
   if (discountBtn) {
-    discountBtn.addEventListener("click", function () {
+    discountBtn.addEventListener("click", async function () {
       const input = document.getElementById("discount_code");
       const code = input.value.trim().toUpperCase();
       const priceEl = document.getElementById("reviewPrice");
       const infoEl = document.getElementById("discount-info");
       const errorEl = document.getElementById("err-discount");
 
-      const validCodes = {
-        "FIT10": 10,
-        "VIP20": 20
-      };
+      if (!code) {
+        errorEl.textContent = t("step7.discount_invalid") || "Please enter a discount code.";
+        return;
+      }
 
-      if (validCodes[code]) {
-        const discount = validCodes[code];
-        const originalPrice = parseFloat(priceEl.dataset.original);
-        const isEur = (currentCurrency() === "EUR");
-        const newPrice = (originalPrice * (1 - discount / 100)).toFixed(2);
+      const originalHTML = discountBtn.innerHTML;
+      discountBtn.disabled = true;
+      const sendingText = t("buttons.sending") || "Verifying...";
+      discountBtn.innerHTML = `<span class="spinner"></span>${sendingText}`;
 
-        // Save to state
-        formState.plan.discount_code = code;
-        formState.plan.discount_percent = discount;
-        formState.plan.price.final = parseFloat(newPrice);
-        formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
+      try {
+        const res = await fetch(apiUrl("/discounts/validate"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code })
+        });
 
+        if (!res.ok) {
+          throw new Error("API error");
+        }
 
-        // 💬 update UI
-        priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
-        infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (−${discount}%)`;
-        errorEl.textContent = "";
-      } else {
-        // Invalid code
-        delete formState.plan.discount_code;
-        delete formState.plan.discount_percent;
-        delete formState.plan.price.final;
+        const data = await res.json();
 
-        errorEl.textContent = t("step7.discount_invalid") || "Invalid discount code.";
+        if (data.valid) {
+          const discount = data.discount_pct;
+          const originalPrice = parseFloat(priceEl.dataset.original);
+          const isEur = (currentCurrency() === "EUR");
+          const newPrice = (originalPrice * (1 - discount / 100)).toFixed(2);
+
+          // Save to state
+          formState.plan.discount_code = code;
+          formState.plan.discount_percent = discount;
+          formState.plan.price.final = parseFloat(newPrice);
+          formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
+
+          // 💬 update UI
+          priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
+          infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (−${discount}%)`;
+          errorEl.textContent = "";
+        } else {
+          // Invalid code
+          delete formState.plan.discount_code;
+          delete formState.plan.discount_percent;
+          delete formState.plan.price.final;
+
+          errorEl.textContent = t("step7.discount_invalid") || "Invalid discount code.";
+          infoEl.textContent = "";
+        }
+      } catch (err) {
+        errorEl.textContent = t("step7.discount_error") || "Error verifying discount code.";
         infoEl.textContent = "";
+        console.error(err);
+      } finally {
+        discountBtn.disabled = false;
+        discountBtn.innerHTML = originalHTML;
       }
     });
   }
