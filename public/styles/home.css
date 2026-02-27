@@ -1905,23 +1905,34 @@ PRO KOHO JE JÍDELNÍČEK
   gap: 20px;
   padding: 16px 20px;
 }
-.footer-left, .footer-center, .footer-right { color: var(--muted); }
+.footer-left, .footer-center, .footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer-left { align-items: flex-start; }
+.footer-center { align-items: center; }
+.footer-right { align-items: flex-end; }
 .footer-left a, .footer-right a {
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
 }
 .footer-left a:hover, .footer-right a:hover { text-decoration: underline; }
-.footer-center { text-align: center; font-weight: 600; }
 .footer-right {
+  text-align: right;
+}
+.footer-links {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 6px;
-  text-align: right;
 }
 @media (max-width: 640px) {
   .site-footer__inner { grid-template-columns: 1fr; text-align: center; }
+  .footer-left, .footer-center, .footer-right { align-items: center; }
   .footer-right { text-align: center; }
+  .footer-links { align-items: center; }
 }
 .footer-credit {
   color: #52460a;
@@ -1929,6 +1940,29 @@ PRO KOHO JE JÍDELNÍČEK
   font-weight: 600;
 }
 .footer-credit:hover { text-decoration: underline; }
+.footer-credit-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.footer-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  text-decoration: none;
+}
+.footer-instagram:hover { text-decoration: underline; }
+.footer-instagram__text {
+  display: inline;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--fg);
+  font-size: 0.85rem;
+}
 
 
 /* =========================
