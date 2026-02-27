@@ -666,6 +666,8 @@
     "trust": "Pagamenti elaborati da Comgate",
     "use": "Usa",
     "discount_invalid": "Codice non valido",
+    "discount_error": "Errore nella convalida del codice sconto",
+    "discount_rate_limit": "Troppi tentativi. Aspetta un momento e riprova.",
     "missing_fields": "Compila nome, e-mail e i consensi obbligatori.",
     "purchase_failed": "Non è stato possibile completare l'ordine. Riprova per favore."
   },

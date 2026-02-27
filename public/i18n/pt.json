@@ -509,7 +509,7 @@
     "error_future_max3": "Pode selecionar no máximo 3 desportos.",
     "select_sport_placeholder": "Escolha um desporto"
   },
-    "step4": {
+  "step4": {
     "title": "Macros & gráficos",
     "subtitle": "Os valores de macronutrientes são pré-preenchidos com base nas suas atividades. O algoritmo de otimização procura segui-los com a maior precisão possível, no entanto podem ocorrer pequenos desvios.",
     "macros_title": "Macronutrientes",
@@ -547,7 +547,7 @@
     "error_dislikes_max4": "Pode selecionar no máximo 4 itens.",
     "premium_note": "A personalização da dieta e a exclusão de alimentos estão disponíveis apenas no plano Premium."
   },
-"step6": {
+  "step6": {
     "title": "Configuração do plano alimentar",
     "repeats_title": "Repetição de refeições",
     "help_repeats": "Escolha quantas vezes as refeições se podem repetir durante a semana.",
@@ -666,6 +666,8 @@
     "trust": "Pagamentos processados pela Comgate",
     "use": "Usar",
     "discount_invalid": "Código inválido",
+    "discount_error": "Erro ao validar o código de desconto",
+    "discount_rate_limit": "Muitas tentativas. Aguarde um momento e tente novamente.",
     "missing_fields": "Preencha o nome, e-mail e os consentimentos obrigatórios.",
     "purchase_failed": "Não foi possível concluir a encomenda. Tente novamente, por favor."
   },

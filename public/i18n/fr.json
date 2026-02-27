@@ -509,7 +509,7 @@
     "error_future_max3": "Vous pouvez sélectionner au maximum 3 sports.",
     "select_sport_placeholder": "Choisissez un sport"
   },
-   "step4": {
+  "step4": {
     "title": "Macros & graphiques",
     "subtitle": "Les valeurs des macronutriments sont préremplies en fonction de vos activités. L’algorithme d’optimisation cherche à les respecter le plus précisément possible, mais de légers écarts peuvent survenir.",
     "macros_title": "Macronutriments",
@@ -547,7 +547,7 @@
     "error_dislikes_max4": "Vous pouvez sélectionner au maximum 4 éléments.",
     "premium_note": "Les adaptations de régime et l’exclusion d’aliments ne sont disponibles qu’avec le plan Premium."
   },
- "step6": {
+  "step6": {
     "title": "Configuration du menu",
     "repeats_title": "Répétition des repas",
     "help_repeats": "Choisissez combien de fois les repas peuvent se répéter au cours de la semaine.",
@@ -666,6 +666,8 @@
     "trust": "Paiements assurés par Comgate",
     "use": "Utiliser",
     "discount_invalid": "Code invalide",
+    "discount_error": "Erreur lors de la validation du code de réduction",
+    "discount_rate_limit": "Trop de tentatives. Veuillez patienter un moment et réessayer.",
     "missing_fields": "Veuillez compléter votre nom, votre e-mail et les consentements obligatoires.",
     "purchase_failed": "La commande n’a pas pu être finalisée. Veuillez réessayer."
   },

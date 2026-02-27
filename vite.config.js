@@ -9,7 +9,8 @@ export default defineConfig({
     proxy: {
       '/orders': 'http://localhost:8000',
       '/payments': 'http://localhost:8000',
-      '/mail': 'http://localhost:8000'
+      '/mail': 'http://localhost:8000',
+      '/discounts': 'http://localhost:8000'
     }
   },
   resolve: {

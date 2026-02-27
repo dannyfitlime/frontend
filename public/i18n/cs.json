@@ -277,10 +277,10 @@
         "a": "Gramáže v jídelníčku uvádíme pro přesnější orientaci, ale ve většině případů postačí i běžné domácí míry (hrst, miska, kusy). Není nutné jídlo neustále vážit do posledního gramu, důležitější je dlouhodobá udržitelnost a celková pestrost stravy."
       },
       "q6": {
-  "q": "Přizpůsobíte jídelníček alergiím a intolerancím?",
-  "a": "Jídelníček primárně připravujeme podle vašich dietních preferencí (např. vegetariánská, bezlepková či bezlaktózová strava). Pokud máte konkrétní potraviny, kterým se chcete vyhnout, můžete je uvést ve formuláři."
-  },    
-  "q7": {
+        "q": "Přizpůsobíte jídelníček alergiím a intolerancím?",
+        "a": "Jídelníček primárně připravujeme podle vašich dietních preferencí (např. vegetariánská, bezlepková či bezlaktózová strava). Pokud máte konkrétní potraviny, kterým se chcete vyhnout, můžete je uvést ve formuláři."
+      },
+      "q7": {
         "q": "Můžete jídelníček přizpůsobit konkrétním cílům?",
         "a": "Ano, jídelníček přizpůsobujeme i konkrétním cílům, například redukci hmotnosti, nabírání svalové hmoty nebo dlouhodobému udržení váhy. Vaše cíle stačí uvést ve formuláři a promítneme je do celkového nastavení plánu."
       },
@@ -539,7 +539,7 @@
     "dislike_olives": "Olivy",
     "dislike_chilli": "Chilli",
     "dislike_coriander": "Koriandr",
-    "dislike_fish": "Ryby", 
+    "dislike_fish": "Ryby",
     "dislike_seafood": "Mořské plody",
     "dislike_eggs": "Vejce",
     "dislike_meat_alternatives": "Tofu, tempeh",
@@ -667,6 +667,8 @@
     "trust": "Platby zprostředkovává Comgate",
     "use": "Použít",
     "discount_invalid": "Neplatný kód",
+    "discount_error": "Chyba při ověřování slevového kódu",
+    "discount_rate_limit": "Příliš mnoho pokusů. Chvíli počkejte a zkuste to znovu.",
     "missing_fields": "Doplňte prosím jméno, e-mail a povinné souhlasy.",
     "purchase_failed": "Objednávku se nepodařilo dokončit. Zkuste to prosím znovu."
   },
@@ -682,9 +684,9 @@
       "Zkontrolujte prosím, zda máte dostatek prostředků nebo aktivní online platby.",
       "Zkuste platbu zopakovat později nebo na jiném zařízení/prohlížeči.",
       "Pokud problém přetrvává, napište nám a vše vyřešíme ručně."
-      ],
+    ],
     "support": "Pokud platba znovu selže, napište nám na {{email}} a objednávku dokončíme ručně."
-      },
+  },
   "buttons": {
     "sending": "Probíhá odesílání..."
   },
@@ -983,7 +985,3 @@
     "back": "Zpět na hlavní stránku"
   }
 }
-
-
-
-

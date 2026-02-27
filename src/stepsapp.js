@@ -1470,6 +1470,12 @@ export function bindReviewStep() {
           body: JSON.stringify({ code })
         });
 
+        if (res.status === 429) {
+          errorEl.textContent = t("step8.discount_rate_limit") || "Too many attempts. Please wait a moment and try again.";
+          infoEl.textContent = "";
+          return;
+        }
+
         if (!res.ok) {
           throw new Error("API error");
         }
@@ -1498,11 +1504,11 @@ export function bindReviewStep() {
           delete formState.plan.discount_percent;
           delete formState.plan.price.final;
 
-          errorEl.textContent = t("step7.discount_invalid") || "Invalid discount code.";
+          errorEl.textContent = t("step8.discount_invalid") || "Invalid discount code.";
           infoEl.textContent = "";
         }
       } catch (err) {
-        errorEl.textContent = t("step7.discount_error") || "Error verifying discount code.";
+        errorEl.textContent = t("step8.discount_error") || "Error verifying discount code.";
         infoEl.textContent = "";
         console.error(err);
       } finally {
@@ -1532,7 +1538,7 @@ export async function handlePurchase() {
 
   try {
     localStorage.setItem("formState", JSON.stringify(draftForResume));
-    localStorage.setItem("formStep", "7");
+    localStorage.setItem("formStep", "8");
   } catch (e) {
     console.warn("Draft save before purchase failed:", e);
   }

@@ -547,7 +547,7 @@
     "error_dislikes_max4": "You can select up to 4 items.",
     "premium_note": "Diet adjustments and exclusions are available only in the Premium plan."
   },
-      "step6": {
+  "step6": {
     "title": "Meal plan settings",
     "repeats_title": "Meal repetition count",
     "help_repeats": "Choose how many times meals can repeat during the week.",
@@ -666,6 +666,8 @@
     "trust": "Payments processed by Comgate",
     "use": "Apply",
     "discount_invalid": "Invalid code",
+    "discount_error": "Error validating discount code",
+    "discount_rate_limit": "Too many attempts. Please wait a moment and try again.",
     "missing_fields": "Please fill in your name, email, and required consents.",
     "purchase_failed": "The order could not be completed. Please try again."
   },
@@ -981,5 +983,3 @@
     "back": "Back to homepage"
   }
 }
-
-

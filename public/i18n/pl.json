@@ -1,4 +1,3 @@
-
 {
   "home": {
     "meta": {
@@ -510,7 +509,7 @@
     "error_future_max3": "Można wybrać maksymalnie 3 sporty.",
     "select_sport_placeholder": "Proszę wybrać sport"
   },
-    "step4": {
+  "step4": {
     "title": "Makroskładniki i wykresy",
     "subtitle": "Wartości makroskładników są wstępnie uzupełnione na podstawie Twoich aktywności. Algorytm optymalizacyjny stara się je jak najdokładniej zachować, jednak mogą wystąpić drobne odchylenia.",
     "macros_title": "Makroskładniki",
@@ -547,9 +546,8 @@
     "help_dislikes": "Proszę zaznaczyć składniki, których chcą Państwo unikać w planie.",
     "error_dislikes_max4": "Można wybrać maksymalnie 4 pozycje.",
     "premium_note": "Personalizacja diety i wykluczanie produktów jest dostępne tylko w planie Premium."
-    
   },
-      "step6": {
+  "step6": {
     "title": "Ustawienia jadłospisu",
     "repeats_title": "Liczba powtórzeń posiłków",
     "help_repeats": "Wybierz, ile razy posiłki mogą się powtarzać w ciągu tygodnia.",
@@ -668,6 +666,8 @@
     "trust": "Płatności przetwarzane przez Comgate",
     "use": "Użyj",
     "discount_invalid": "Nieprawidłowy kod",
+    "discount_error": "Błąd walidacji kodu rabatowego",
+    "discount_rate_limit": "Zbyt wiele prób. Poczekaj chwilę i spróbuj ponownie.",
     "missing_fields": "Proszę uzupełnić imię i nazwisko, e-mail oraz wymagane zgody.",
     "purchase_failed": "Nie udało się dokończyć zamówienia. Proszę spróbować ponownie."
   },
@@ -983,5 +983,3 @@
     "back": "Powrót na stronę główną"
   }
 }
-
-

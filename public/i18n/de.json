@@ -521,7 +521,7 @@
     "help_macros": "Die Werte sind auf Grundlage deiner Aktivitäten vorausgefüllt.",
     "premium_note": "Die Anpassung der Makronährstoffe wird nur im Premium-Plan berücksichtigt."
   },
-    "step5": {
+  "step5": {
     "title": "Ernährung",
     "diet": "Ernährungstyp",
     "diet_no_restrictions": "Ohne Einschränkung",
@@ -547,7 +547,7 @@
     "error_dislikes_max4": "Sie können maximal 4 Einträge auswählen.",
     "premium_note": "Anpassung der Ernährungsformen und Ausschluss von Lebensmitteln sind nur im Premium-Plan verfügbar."
   },
-      "step6": {
+  "step6": {
     "title": "Einstellungen des Speiseplans",
     "repeats_title": "Anzahl der Wiederholungen von Mahlzeiten",
     "help_repeats": "Wählen Sie, wie oft sich Mahlzeiten innerhalb der Woche wiederholen dürfen.",
@@ -668,6 +668,8 @@
     "trust": "Zahlungen werden über Comgate abgewickelt",
     "use": "Anwenden",
     "discount_invalid": "Ungültiger Code",
+    "discount_error": "Fehler bei der Überprüfung des Rabattcodes",
+    "discount_rate_limit": "Zu viele Versuche. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
     "missing_fields": "Bitte füllen Sie Name, E-Mail und die erforderlichen Zustimmungen aus.",
     "purchase_failed": "Die Bestellung konnte nicht abgeschlossen werden. Bitte versuchen Sie es erneut."
   },
@@ -981,4 +983,3 @@
     "back": "Zurück zur Startseite"
   }
 }
-

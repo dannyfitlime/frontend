@@ -187,7 +187,7 @@
         },
         "minerals": {
           "title": "Minerály",
-                   "subtitle": "Nezbytné prvky pre zdravé telo aj správnu funkciu svalov.",
+          "subtitle": "Nezbytné prvky pre zdravé telo aj správnu funkciu svalov.",
           "items": {
             "sodium": "<b>Sodík</b> – rovnováha tekutín",
             "iron": "<b>Železo</b> – krv a kyslík",
@@ -547,7 +547,7 @@
     "error_dislikes_max4": "Môžete vybrať maximálne 4 položky.",
     "premium_note": "Úprava diét a vylúčenie potravín sú dostupné len pri pláne Premium."
   },
-      "step6": {
+  "step6": {
     "title": "Nastavenie jedálnička",
     "repeats_title": "Počet opakovaní jedál",
     "help_repeats": "Vyberte, koľkokrát sa môžu jedlá počas týždňa opakovať.",
@@ -666,6 +666,8 @@
     "trust": "Platby sprostredkúva Comgate",
     "use": "Použiť",
     "discount_invalid": "Neplatný kód",
+    "discount_error": "Chyba pri overovaní zľavového kódu",
+    "discount_rate_limit": "Príliš veľa pokusov. Chvíľu počkajte a skúste to znova.",
     "missing_fields": "Doplňte prosím meno, e-mail a povinné súhlasy.",
     "purchase_failed": "Objednávku sa nepodarilo dokončiť. Skúste to prosím znova."
   },
@@ -980,5 +982,4 @@
     },
     "back": "Späť na hlavnú stránku"
   }
-
 }

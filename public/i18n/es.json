@@ -666,6 +666,8 @@
     "trust": "Pagos gestionados por Comgate",
     "use": "Aplicar",
     "discount_invalid": "Código no válido",
+    "discount_error": "Error al validar el código de descuento",
+    "discount_rate_limit": "Demasiados intentos. Espere un momento e inténtelo de nuevo.",
     "missing_fields": "Rellena el nombre, correo y los consentimientos obligatorios.",
     "purchase_failed": "No se pudo completar el pedido. Inténtalo de nuevo."
   },
