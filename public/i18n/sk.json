@@ -361,7 +361,8 @@
       "note": "Vyberiete si až v objednávke. Zaberie to len pár minút."
     },
     "footer": {
-      "brand": "FitLime s.r.o. © 2026",
+      "company": "FitLime je projekt spoločnosti Sportvital-Pro s.r.o.",
+      "brand": "© 2026 Sportvital-Pro s.r.o.",
       "powered": "powered by sportvitalpro.cz",
       "payments": "Platby sprostredkúva Comgate",
       "terms": "Obchodné podmienky",

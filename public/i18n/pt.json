@@ -361,7 +361,8 @@
       "note": "Escolhe mais tarde na encomenda. Demora apenas alguns minutos."
     },
     "footer": {
-      "brand": "FitLime s.r.o. © 2026",
+      "company": "FitLime é um projeto da Sportvital-Pro s.r.o.",
+      "brand": "© 2026 Sportvital-Pro s.r.o.",
       "powered": "powered by sportvitalpro.cz",
       "payments": "Pagamentos processados pela Comgate",
       "terms": "Condições gerais",
