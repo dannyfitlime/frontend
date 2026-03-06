@@ -2111,6 +2111,27 @@ PRO KOHO JE JÍDELNÍČEK
    ========================= */
 .carousel-section { padding: 60px 0; }
 .carousel-section h2 { text-align: center; margin-bottom: 20px; }
+.carousel-section#reference .card.quote {
+  text-align: center;
+}
+.carousel-section#reference .avatar {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 14px;
+}
+.carousel-section#reference blockquote {
+  margin: 0 0 12px;
+}
+.carousel-section#reference .author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
 .carousel {
   position: relative;
   overflow: hidden;
@@ -2163,7 +2184,18 @@ PRO KOHO JE JÍDELNÍČEK
 .bounce-left { animation: bounce-left 0.3s ease-out; }
 .bounce-right { animation: bounce-right 0.3s ease-out; }
 
+@media (max-width: 1023px) {
+  .carousel-section#reference .carousel {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 1024px) {
+  .carousel-section#reference .avatar {
+    width: min(100%, 300px);
+    height: auto;
+  }
   .carousel-track {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

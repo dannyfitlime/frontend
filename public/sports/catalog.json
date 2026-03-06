@@ -57,7 +57,7 @@
       "pl": "Turystyka piesza",
       "fr": "Randonnée"
     },
-    "macros": { "c": 55, "f": 15, "p": 30 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "walking": {
     "group": "endurance",
@@ -72,7 +72,7 @@
       "pl": "Chodzenie",
       "fr": "Marche"
     },
-    "macros": { "c": 55, "f": 15, "p": 30 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "inline_skating": {
     "group": "endurance",
@@ -87,7 +87,7 @@
       "pl": "Jazda na rolkach",
       "fr": "Roller en ligne"
     },
-    "macros": { "c": 60, "f": 16, "p": 24 }
+    "macros": { "c": 60, "f": 20, "p": 20 }
   },
   "roller_skiing": {
     "group": "endurance",
@@ -102,7 +102,7 @@
       "pl": "Nartorolki",
       "fr": "Ski-roues"
     },
-    "macros": { "c": 62, "f": 16, "p": 22 }
+    "macros": { "c": 60, "f": 20, "p": 20 }
   },
   "triathlon": {
     "group": "endurance",
@@ -117,7 +117,7 @@
       "pl": "Triathlon",
       "fr": "Triathlon"
     },
-    "macros": { "c": 60, "f": 17, "p": 23 }
+    "macros": { "c": 60, "f": 20, "p": 20 }
   },  
   "alpine_skiing": {
     "group": "winter",
@@ -132,7 +132,7 @@
       "pl": "Narciarstwo alpejskie",
       "fr": "Ski alpin"
     },
-    "macros": { "c": 52, "f": 20, "p": 28 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "snowboarding": {
     "group": "winter",
@@ -147,7 +147,7 @@
       "pl": "Snowboarding",
       "fr": "Snowboard"
     },
-    "macros": { "c": 52, "f": 20, "p": 28 }
+    "macros": { "c": 56, "f": 25, "p": 19 }
   },
   "cross_country_skiing": {
     "group": "winter",
@@ -162,7 +162,7 @@
       "pl": "Biegi narciarskie",
       "fr": "Ski de fond"
     },
-    "macros": { "c": 62, "f": 16, "p": 22 }
+    "macros": { "c": 62, "f": 20, "p": 18 }
   },
   "ice_hockey": {
     "group": "winter",
@@ -192,7 +192,7 @@
       "pl": "Biatlon",
       "fr": "Biathlon"
     },
-    "macros": { "c": 60, "f": 17, "p": 23 }
+    "macros": { "c": 60, "f": 20, "p": 20 }
   },
   "figure_skating": {
     "group": "winter",
@@ -222,7 +222,7 @@
       "pl": "Skoki narciarskie",
       "fr": "Saut à ski"
     },
-    "macros": { "c": 50, "f": 20, "p": 30 }
+    "macros": { "c": 50, "f": 25, "p": 25 }
   },
   "curling": {
     "group": "winter",
@@ -237,7 +237,7 @@
       "pl": "Curling",
       "fr": "Curling"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 52, "f": 25, "p": 23 }
   },
   "bobsleigh": {
     "group": "winter",
@@ -252,7 +252,7 @@
       "pl": "Saneczkarstwo / bobsleje / skeleton",
       "fr": "Luge / bobsleigh / skeleton"
     },
-    "macros": { "c": 52, "f": 20, "p": 28 }
+    "macros": { "c": 52, "f": 25, "p": 23 }
   },
   "ski_mountaineering": {
     "group": "winter",
@@ -267,7 +267,7 @@
       "pl": "Skialpinizm",
       "fr": "Ski-alpinisme"
     },
-    "macros": { "c": 62, "f": 16, "p": 22 }
+    "macros": { "c": 62, "f": 20, "p": 18 }
   },  
   "football": {
     "group": "team",
@@ -282,7 +282,7 @@
       "pl": "Piłka nożna",
       "fr": "Football"
     },
-    "macros": { "c": 58, "f": 20, "p": 22 }
+    "macros": { "c": 58, "f": 22, "p": 20 }
   },
   "basketball": {
     "group": "team",
@@ -372,7 +372,7 @@
       "pl": "Baseball / Softball",
       "fr": "Baseball / Softball"
     },
-    "macros": { "c": 53, "f": 20, "p": 27 }
+    "macros": { "c": 53, "f": 23, "p": 24 }
   },
   "cricket": {
     "group": "team",
@@ -387,7 +387,7 @@
       "pl": "Krykiet",
       "fr": "Cricket"
     },
-    "macros": { "c": 53, "f": 19, "p": 28 }
+    "macros": { "c": 53, "f": 23, "p": 24 }
   },
   "lacrosse": {
     "group": "team",
@@ -477,7 +477,7 @@
       "pl": "Golf",
       "fr": "Golf"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 54, "f": 23, "p": 23 }
   },
   "climbing_wall": {
     "group": "individual",
@@ -492,7 +492,22 @@
       "pl": "Wspinaczka na ściance",
       "fr": "Escalade en salle"
     },
-    "macros": { "c": 50, "f": 22, "p": 28 }
+    "macros": { "c": 55, "f": 24, "p": 21 }
+  },
+  "bouldering": {
+    "group": "individual",
+    "labels": {
+      "cs": "Bouldering",
+      "sk": "Bouldering",
+      "en": "Bouldering",
+      "de": "Bouldern",
+      "pt": "Boulder",
+      "es": "Boulder",
+      "it": "Boulder",
+      "pl": "Bouldering",
+      "fr": "Bouldering"
+    },
+    "macros": { "c": 54, "f": 24, "p": 22 }
   },
   "mountaineering": {
     "group": "individual",
@@ -507,7 +522,7 @@
       "pl": "Alpinizm / Wspinaczka",
       "fr": "Alpinisme / Escalade"
     },
-    "macros": { "c": 55, "f": 20, "p": 25 }
+    "macros": { "c": 55, "f": 24, "p": 21 }
   },
   "horse_riding": {
     "group": "individual",
@@ -522,7 +537,7 @@
       "pl": "Jazda konna",
       "fr": "Équitation"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 54, "f": 24, "p": 22 }
   },
   "parkour": {
     "group": "individual",
@@ -541,18 +556,18 @@
   },
   "shooting": {
     "group": "individual",
-    "labels":{
-      "cs": "Sportovní střelba",
-      "sk": "Športová streľba",
-      "en": "Sport shooting",
-      "de": "Sportschießen",
-      "pt": "Tiro esportivo",
-      "es": "Tiro deportivo",
-      "it": "Tiro sportivo",
-      "pl": "Strzelectwo sportowe",
-      "fr": "Tir sportif"
-      },
-  "macros": { "c": 52, "f": 18, "p": 30 }
+    "labels": {
+      "cs": "Střelba",
+      "sk": "Streľba",
+      "en": "Shooting",
+      "de": "Schießen",
+      "pt": "Tiro",
+      "es": "Tiro",
+      "it": "Tiro a segno",
+      "pl": "Strzelectwo",
+      "fr": "Tir"
+    },
+    "macros": { "c": 56, "f": 23, "p": 21 }
   },
   "squash": {
     "group": "individual",
@@ -582,7 +597,7 @@
       "pl": "Badminton",
       "fr": "Badminton"
     },
-    "macros": { "c": 58, "f": 19, "p": 23 }
+    "macros": { "c": 58, "f": 22, "p": 20 }
   },  
   "gym": {
     "group": "fitness",
@@ -627,7 +642,7 @@
       "pl": "Joga",
       "fr": "Yoga"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 52, "f": 25, "p": 23 }
   },
   "stretching": {
   "group": "fitness",
@@ -642,7 +657,7 @@
     "pl": "Rozciąganie",
     "fr": "Étirements"
   },
-  "macros": { "c": 50, "f": 18, "p": 32 }
+  "macros": { "c": 55, "f": 24, "p": 21 }
   },
   "conditioning": {
   "group": "fitness",
@@ -657,7 +672,7 @@
     "pl": "Trening kondycyjny",
     "fr": "Entraînement de condition physique"
   },
-  "macros": { "c": 54, "f": 22, "p": 24 }
+  "macros": { "c": 54, "f": 24, "p": 22 }
 },
 
   "pilates": {
@@ -673,7 +688,7 @@
       "pl": "Pilates",
       "fr": "Pilates"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 56, "f": 24, "p": 20 }
   },
   "gymnastics": {
     "group": "fitness",
@@ -688,7 +703,7 @@
       "pl": "Gimnastyka",
       "fr": "Gymnastique"
     },
-    "macros": { "c": 54, "f": 22, "p": 24 }
+    "macros": { "c": 54, "f": 24, "p": 22 }
   },
   "dance": {
     "group": "fitness",
@@ -703,7 +718,7 @@
       "pl": "Taniec",
       "fr": "Danse"
     },
-    "macros": { "c": 56, "f": 20, "p": 24 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "zumba": {
     "group": "fitness",
@@ -853,7 +868,7 @@
       "pl": "Skoki do wody",
       "fr": "Plongeon"
     },
-    "macros": { "c": 52, "f": 20, "p": 28 }
+    "macros": { "c": 55, "f": 24, "p": 21 }
   },
   "surfing": {
     "group": "water",
@@ -868,7 +883,7 @@
       "pl": "Surfing",
       "fr": "Surf"
     },
-    "macros": { "c": 55, "f": 20, "p": 25 }
+    "macros": { "c": 55, "f": 24, "p": 21 }
   },
   "windsurfing": {
     "group": "water",
@@ -883,7 +898,7 @@
       "pl": "Windsurfing",
       "fr": "Planche à voile"
     },
-    "macros": { "c": 56, "f": 20, "p": 24 }
+    "macros": { "c": 56, "f": 24, "p": 20 }
   },
   "kitesurfing": {
     "group": "water",
@@ -898,7 +913,7 @@
       "pl": "Kitesurfing",
       "fr": "Kitesurf"
     },
-    "macros": { "c": 56, "f": 20, "p": 24 }
+    "macros": { "c": 56, "f": 23, "p": 21 }
   },
   "paddleboarding": {
     "group": "water",
@@ -913,7 +928,7 @@
       "pl": "SUP / Deska z wiosłem",
       "fr": "Paddle (SUP)"
     },
-    "macros": { "c": 54, "f": 18, "p": 28 }
+    "macros": { "c": 54, "f": 24, "p": 22 }
   },
   "rafting": {
     "group": "water",
@@ -928,7 +943,7 @@
       "pl": "Rafting",
       "fr": "Rafting"
     },
-    "macros": { "c": 56, "f": 19, "p": 25 }
+    "macros": { "c": 56, "f": 22, "p": 22 }
   },
   "freediving": {
     "group": "water",
@@ -943,7 +958,7 @@
       "pl": "Nurkowanie / Freediving",
       "fr": "Plongée / Apnée"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "sailing": {
     "group": "water",
@@ -958,7 +973,7 @@
       "pl": "Żeglarstwo",
       "fr": "Voile / Yachting"
     },
-    "macros": { "c": 52, "f": 18, "p": 30 }
+    "macros": { "c": 55, "f": 25, "p": 20 }
   },
   "wakeboarding": {
     "group": "water",
@@ -973,7 +988,7 @@
       "pl": "Wakeboarding",
       "fr": "Wakeboard"
     },
-    "macros": { "c": 54, "f": 20, "p": 26 }
+    "macros": { "c": 54, "f": 25, "p": 21 }
   },
   "rowing": {
     "group": "water",
@@ -1003,7 +1018,7 @@
       "pl": "Pływanie synchroniczne",
       "fr": "Natation synchronisée"
     },
-    "macros": { "c": 57, "f": 20, "p": 23 }
+    "macros": { "c": 57, "f": 23, "p": 20 }
   },  
   "boxing": {
     "group": "combat",
@@ -1093,7 +1108,7 @@
     "pl": "Brazylijskie jiu-jitsu",
     "fr": "Jiu-jitsu brésilien"
   },
-  "macros": { "c": 48, "f": 25, "p": 27 }
+  "macros": { "c": 52, "f": 25, "p": 23 }
 },
 
   "aikido": {
@@ -1171,10 +1186,5 @@
     },
     "macros": { "c": 50, "f": 25, "p": 25 }
   }
-
-
-
-
 }
-
 

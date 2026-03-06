@@ -32,6 +32,7 @@
   "table_tennis": { "low": 3.5, "medium": 5, "high": 8 },
   "golf": { "low": 3, "medium": 4.5, "high": 5.5 },
   "climbing_wall": { "low": 6, "medium": 8, "high": 11 },
+  "bouldering": { "low": 6, "medium": 8, "high": 11 },
   "mountaineering": { "low": 8, "medium": 10, "high": 14 },
   "horse_riding": { "low": 4, "medium": 6, "high": 7 },
   "parkour": { "low": 8, "medium": 10, "high": 12 },
