@@ -1,4 +1,4 @@
-﻿import { renderMacroCharts } from './charts.js';
+import { renderMacroCharts } from './charts.js';
 import { formState } from './state.js';
 import { $, applyI18n, showErrors } from './app.js';
 import {
@@ -343,7 +343,9 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
   for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
     html += `<optgroup label="${labels[g]}">`;
-    list.slice().sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+    list.slice()
+      .filter(rec => rec.id !== 'triathlon')
+      .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
       .forEach(rec => {
         const lbl = sportLabel(rec, lang);
         html += `<option value="${rec.id}" ${rec.id === selectedId ? 'selected' : ''}>${lbl}</option>`;
@@ -361,6 +363,11 @@ function emptyOwnBlock() {
 function recomputePickedOwnFromBlocks() {
   const set = new Set();
   (formState.sport.ownBlocks || []).forEach(b => { if (b.sportId) set.add(b.sportId); });
+
+  if (set.has('swimming') || set.has('running') || set.has('cycling')) {
+    set.add('triathlon');
+  }
+
   formState.sport.pickedOwn = Array.from(set);
 }
 
