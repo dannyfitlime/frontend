@@ -82,6 +82,12 @@ export function applyI18n(root=document){
     const key = el.getAttribute('data-i18n-aria-label');
     el.setAttribute('aria-label', t(key));
   });
+  root.querySelectorAll('[data-i18n-preview]').forEach(el=>{
+    const file = el.getAttribute('data-i18n-preview');
+    const path = `/images/preview/${i18n.lang}/${file}`;
+    if (el.tagName === 'A') el.setAttribute('href', path);
+    else if (el.tagName === 'IMG') el.setAttribute('src', path);
+  });
   // nastaví <html lang="..">
   document.documentElement.lang = i18n.lang;
   applyContactEmail(root, i18n.lang);
@@ -246,4 +252,3 @@ document.querySelectorAll(".carousel").forEach(carousel => {
 
   update();
 });
-
