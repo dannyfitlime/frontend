@@ -18,10 +18,10 @@
       "reference": "Referencie"
     },
     "hero": {
-      "title": "Jedálniček na mieru v priebehu pár minút",
+      "title": "Zdravý jedálniček na mieru",
       "lead": "Vyplňte krátky dotazník a získajte plán, ktorý pokrýva všetky Vaše potreby.",
-      "cta": "Spustiť formulár",
-      "note": "Nezáväzne, zaberie to len pár minút."
+      "cta": "Získať jedálniček",
+      "note": "Zaberie to len pár minút."
     },
     "why": {
       "title": "FitLime - viac než len jedálniček.",
@@ -36,7 +36,7 @@
         "nutrition": {
           "title": "Výživa na mieru",
           "point1": "Unikátne a pestré jedlá každý deň",
-          "point2": "Rešpektujeme alergie a preferencie",
+          "point2": "Rešpektujeme dietní a preferenčné potreby",
           "point3": "Vyladené makro aj mikroživiny"
         },
         "practical": {
