@@ -19,6 +19,34 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/form.html" />
     <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/form.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/form.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/form.html" />
+  <url>
+    <loc>https://fitlime.cz/cookies.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/cookies.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.cz/gdpr.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/gdpr.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.cz/terms.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/terms.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/terms.html" />
   </url>
 </urlset>
