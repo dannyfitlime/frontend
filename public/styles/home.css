@@ -2361,6 +2361,19 @@ PRO KOHO JE JÍDELNÍČEK
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 649px) {
+  .drawer__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 40px 20px;
+  }
+  .drawer__image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 @media (min-width: 650px) {
   .drawer__content {
     flex-direction: row-reverse;
