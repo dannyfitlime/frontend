@@ -81,6 +81,21 @@ const overlayStyle = `
   font-size: 0.9rem;
 }
 
+.pw-lock-back {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.pw-lock-back:hover {
+  color: #e2e8f0;
+  text-decoration: underline;
+}
+
 body.pw-locked {
   overflow: hidden;
 }
@@ -105,6 +120,7 @@ function buildOverlay() {
         <button type="submit" class="pw-lock-button">Odemknout</button>
       </form>
       <div class="pw-lock-error" role="alert" aria-live="polite" hidden>Heslo nesedi, zkus to znovu.</div>
+      <a href="/index.html" class="pw-lock-back">&larr; Zpět na domovskou stránku</a>
     </div>
   `;
 
