@@ -11,6 +11,7 @@
     "chart.js": "^4.4.1"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^5.0.0"
   }
 }

@@ -1,0 +1,23 @@
+# FitLime
+
+> FitLime is a personalized nutrition service providing tailored meal plans for weight loss, sports performance, and a healthy lifestyle.
+
+## O službě (About the Service)
+FitLime poskytuje zdravé jídelníčky na míru. Vyplněním krátkého dotazníku uživatel získá plán, který pokrývá všechny jeho nutriční potřeby. 
+Služba zohledňuje, zda je klient:
+- Výkonnostní a vrcholový sportovec.
+- Hobby sportovec.
+- Běžný člověk bez pravidelného sportu (hubnutí či stabilní energie).
+
+## Co jídelníček obsahuje (What the Meal Plan Covers)
+- **Energie a makroživiny:** Bílkoviny, sacharidy, tuky, vláknina.
+- **Skupiny potravin:** Ovoce, zelenina, mléčné výrobky, ryby a další.
+- **Vitamíny a minerály:** B-komplex, vitamíny C, D, E a základní minerály (hořčík, draslík, atd.).
+
+## Ceník a fungování (Pricing & Workflow)
+- **Tvorba plánu:** Výpočet energie na základě dotazníku. Odeslání výsledků na e-mail klienta.
+- **Plány:** Koupě zahrnuje úpravy a personalizaci (Standard, Premium).
+
+## Kontakt (Contact)
+- Web: https://fitlime.cz/
+- E-mail: info@fitlime.cz
