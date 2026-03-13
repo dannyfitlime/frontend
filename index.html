@@ -34,17 +34,31 @@
   <link rel="alternate" hreflang="en" href="https://fitlime.eu/">
   <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/">
 
+  <link id="canonical-link" rel="canonical" href="https://fitlime.cz/">
   <script>
-    // Dynamické nastavení kanonické URL podle aktuální domény, 
-    // aby Google nebral .sk jako duplicitní obsah vůči .cz
-    const canonicalURL = location.origin + location.pathname;
-    document.write('<link rel="canonical" href="' + canonicalURL + '" />');
+    // Dynamické nastavení kanonické URL podle aktuální domény.
+    // Pro SEO nástroje je výše defaultní .cz, zde přepíšeme pro .sk a .eu.
+    if (location.origin !== 'https://fitlime.cz') {
+      document.getElementById('canonical-link').href = location.origin + location.pathname;
+    }
   </script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles/base.css" />
   <link rel="stylesheet" href="/styles/home.css" />
   <script src="/pricing.js"></script>
+  <!-- Schema.org strukturovaná data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FitLime",
+    "url": "https://fitlime.cz/",
+    "logo": "https://fitlime.cz/images/og-fitlime.jpg",
+    "description": "Personalizovaný jídelníček od FitLime. Pomůžeme vám zhubnout, zlepšit výkon nebo nastavit zdravé stravování.",
+    "sameAs": []
+  }
+  </script>
 </head>
 
 <body data-page="home">
