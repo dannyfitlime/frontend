@@ -109,18 +109,18 @@ function buildOverlay() {
   overlay.className = 'pw-lock-overlay';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Uzamcena stranka');
+  overlay.setAttribute('aria-label', 'Locked page');
 
   overlay.innerHTML = `
     <div class="pw-lock-card">
-      <h2>FitLime web je chranen heslem</h2>
-      <p>Zadej heslo, ktere jsi dostal/a od autora.</p>
-      <form class="pw-lock-form" aria-label="Formular pro odemknuti">
-        <input class="pw-lock-input" type="password" name="password" autocomplete="current-password" placeholder="Zadej heslo" aria-label="Heslo" required />
-        <button type="submit" class="pw-lock-button">Odemknout</button>
+      <h2>FitLime is in Beta</h2>
+      <p>The website is currently in beta. Please enter the administrator password to continue.</p>
+      <form class="pw-lock-form" aria-label="Unlock form">
+        <input class="pw-lock-input" type="password" name="password" autocomplete="current-password" placeholder="Enter password" aria-label="Password" required />
+        <button type="submit" class="pw-lock-button">Unlock</button>
       </form>
-      <div class="pw-lock-error" role="alert" aria-live="polite" hidden>Heslo nesedi, zkus to znovu.</div>
-      <a href="/index.html" class="pw-lock-back">&larr; Zpět na domovskou stránku</a>
+      <div class="pw-lock-error" role="alert" aria-live="polite" hidden>Incorrect password, please try again.</div>
+      <a href="/index.html" class="pw-lock-back">&larr; Back to Home</a>
     </div>
   `;
 
