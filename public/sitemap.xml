@@ -51,4 +51,32 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/terms.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/terms.html" />
   </url>
+  <url>
+    <loc>https://fitlime.cz/jidelnicek-na-hubnuti/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/jidelnicek-na-hubnuti/" />
+  </url>
+  <url>
+    <loc>https://fitlime.cz/zdravy-jidelnicek/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/zdravy-jidelnicek/" />
+  </url>
+  <url>
+    <loc>https://fitlime.cz/sportovni-jidelnicek/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/sportovni-jidelnicek/" />
+  </url>
+  <url>
+    <loc>https://fitlime.cz/jak-fitlime-funguje/</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/jak-fitlime-funguje/" />
+  </url>
 </urlset>

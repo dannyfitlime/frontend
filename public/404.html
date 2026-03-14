@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 | FitLime</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-light.png?v=2" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-dark.png?v=2" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/styles/base.css">
+  <style>
+    :root {
+      --accent: #86d54f;
+      --accent-dark: #5a9d2e;
+      --surface: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(134, 213, 79, 0.22), transparent 30%),
+        radial-gradient(circle at right, rgba(15, 23, 42, 0.08), transparent 28%),
+        linear-gradient(180deg, #f8fdf3 0%, #f7f7f5 100%);
+      color: var(--fg);
+    }
+
+    .notfound-shell {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .brand-link {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, #111, #2a2a2a);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+    }
+
+    .brand-link img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      padding: 6px;
+    }
+
+    .brand-link strong {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-card {
+      margin-top: 28px;
+      background: var(--surface);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .hero-copy {
+      padding: 40px;
+    }
+
+    .code-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(134, 213, 79, 0.16);
+      color: #23420e;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 4.8rem);
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #132106;
+    }
+
+    .btn.primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #fff;
+    }
+
+    .help-box {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 320px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(134, 213, 79, 0.45), transparent 22%),
+        radial-gradient(circle at 72% 35%, rgba(15, 23, 42, 0.12), transparent 24%),
+        linear-gradient(145deg, #ffffff 0%, #eff8e7 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .plate {
+      width: min(280px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #ffffff 0 42%, #edf3e7 42% 57%, #dce7d1 57% 100%);
+      box-shadow:
+        inset 0 0 0 18px rgba(255, 255, 255, 0.8),
+        0 24px 44px rgba(15, 23, 42, 0.12);
+      position: relative;
+    }
+
+    .plate::before,
+    .plate::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .plate::before {
+      width: 68px;
+      height: 68px;
+      background: linear-gradient(145deg, #86d54f, #5a9d2e);
+      top: 42px;
+      left: 56px;
+      box-shadow:
+        112px 28px 0 0 #111,
+        56px 124px 0 0 #f0c94a;
+    }
+
+    .plate::after {
+      width: 22px;
+      height: 22px;
+      background: #fff;
+      top: 74px;
+      left: 88px;
+      box-shadow:
+        112px 28px 0 0 #fff,
+        56px 124px 0 0 #fff;
+    }
+
+    @media (max-width: 800px) {
+      .hero-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 28px 22px;
+      }
+
+      .hero-art {
+        min-height: 240px;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="notfound-shell">
+    <a class="brand-link" href="/index.html" aria-label="FitLime">
+      <img src="/images/logo_pruhledne.png" alt="FitLime logo">
+      <strong>FitLime</strong>
+    </a>
+
+    <section class="hero-card">
+      <div class="hero-copy">
+        <div class="code-badge">404</div>
+        <h1 id="title">Tahle stránka neexistuje.</h1>
+        <p class="lead" id="lead">Adresa je špatně, stránka byla přesunuta, nebo už není dostupná.</p>
+
+        <div class="actions">
+          <a class="btn primary" href="/index.html" id="home-link">Zpět na úvod</a>
+          <a class="btn outline" href="/form.html" id="form-link">Přejít na formulář</a>
+        </div>
+
+        <div class="help-box" id="help-text">
+          Pokud ses sem dostal přes odkaz na webu, je to chyba na naší straně.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="plate"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const TRANSLATIONS = {
+      cs: {
+        title: "Tahle stránka neexistuje.",
+        lead: "Adresa je špatně, stránka byla přesunuta, nebo už není dostupná.",
+        home: "Zpět na úvod",
+        form: "Přejít na formulář",
+        help: "Pokud ses sem dostal přes odkaz na webu, je to chyba na naší straně."
+      },
+      sk: {
+        title: "Táto stránka neexistuje.",
+        lead: "Adresa je nesprávna, stránka bola presunutá alebo už nie je dostupná.",
+        home: "Späť na úvod",
+        form: "Prejsť na formulár",
+        help: "Ak si sa sem dostal cez odkaz na webe, je to chyba na našej strane."
+      },
+      en: {
+        title: "This page does not exist.",
+        lead: "The address is wrong, the page was moved, or it is no longer available.",
+        home: "Back to homepage",
+        form: "Open the form",
+        help: "If you reached this page from a link on the site, the issue is on our side."
+      },
+      de: {
+        title: "Diese Seite existiert nicht.",
+        lead: "Die Adresse ist falsch, die Seite wurde verschoben oder ist nicht mehr verfügbar.",
+        home: "Zur Startseite",
+        form: "Zum Formular",
+        help: "Wenn du über einen Link auf der Website hier gelandet bist, liegt der Fehler bei uns."
+      },
+      es: {
+        title: "Esta página no existe.",
+        lead: "La dirección es incorrecta, la página se movió o ya no está disponible.",
+        home: "Volver al inicio",
+        form: "Ir al formulario",
+        help: "Si llegaste aquí desde un enlace del sitio, el problema está de nuestro lado."
+      },
+      it: {
+        title: "Questa pagina non esiste.",
+        lead: "L'indirizzo non è corretto, la pagina è stata spostata o non è più disponibile.",
+        home: "Torna alla home",
+        form: "Vai al modulo",
+        help: "Se sei arrivato qui da un link del sito, il problema è da parte nostra."
+      },
+      pl: {
+        title: "Ta strona nie istnieje.",
+        lead: "Adres jest nieprawidłowy, strona została przeniesiona albo nie jest już dostępna.",
+        home: "Wróć na start",
+        form: "Przejdź do formularza",
+        help: "Jeśli trafiłeś tu z linku na stronie, błąd jest po naszej stronie."
+      },
+      pt: {
+        title: "Esta página não existe.",
+        lead: "O endereço está errado, a página foi movida ou já não está disponível.",
+        home: "Voltar ao início",
+        form: "Abrir formulário",
+        help: "Se você chegou aqui por um link do site, o problema está do nosso lado."
+      },
+      fr: {
+        title: "Cette page n'existe pas.",
+        lead: "L'adresse est incorrecte, la page a été déplacée ou n'est plus disponible.",
+        home: "Retour à l'accueil",
+        form: "Ouvrir le formulaire",
+        help: "Si vous êtes arrivé ici via un lien du site, le problème vient de notre côté."
+      }
+    };
+
+    const SUPPORTED = Object.keys(TRANSLATIONS);
+    const HOST_LANG_RULES = [
+      { suffix: "fitlime.sk", lang: "sk" },
+      { suffix: "fitlime.eu", lang: "en" },
+      { suffix: "fitlime.cz", lang: "cs" }
+    ];
+    const IS_PROD_HOST = /fitlime\.(cz|sk|eu)$/i.test(location.hostname);
+
+    function hostPreferredLang(hostname = location.hostname) {
+      const host = (hostname || "").toLowerCase();
+      const rule = HOST_LANG_RULES.find((entry) =>
+        host === entry.suffix ||
+        host.endsWith("." + entry.suffix) ||
+        host.endsWith(entry.suffix)
+      );
+      return rule ? rule.lang : null;
+    }
+
+    function resolveLang() {
+      const urlLang = new URLSearchParams(location.search).get("lang");
+      if (urlLang && SUPPORTED.includes(urlLang)) {
+        localStorage.setItem("lang", urlLang);
+        return urlLang;
+      }
+
+      const stored = localStorage.getItem("lang");
+      if (stored && SUPPORTED.includes(stored)) {
+        return stored;
+      }
+
+      const hostLang = IS_PROD_HOST ? hostPreferredLang() : null;
+      if (hostLang && SUPPORTED.includes(hostLang)) {
+        return hostLang;
+      }
+
+      const navLang = (navigator.language || "").slice(0, 2).toLowerCase();
+      if (SUPPORTED.includes(navLang)) {
+        return navLang;
+      }
+
+      return "en";
+    }
+
+    const lang = resolveLang();
+    const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+    document.documentElement.lang = lang;
+    document.title = "404 | FitLime";
+    document.getElementById("title").textContent = t.title;
+    document.getElementById("lead").textContent = t.lead;
+    document.getElementById("home-link").textContent = t.home;
+    document.getElementById("form-link").textContent = t.form;
+    document.getElementById("help-text").textContent = t.help;
+  </script>
+</body>
+</html>
