@@ -50,6 +50,8 @@
     "how": {
       "title": "Jak to funguje",
       "subtitle": "Vytvoření jídelního plánu je jednoduché a rychlé. Stačí nám pár základních informací o Vás a Vašich cílech. Na základě nich Vám během několika minut vygenerujeme personalizovaný jídelníček na míru.",
+      "moreInfoLabel": "Více informací zde:",
+      "moreInfoLink": "Zjistit více",
       "step1": {
         "title": "Dotazník",
         "text": "Vyplníte několik jednoduchých otázek o sobě, svém životním stylu a jídelních preferencích. Díky nim pochopíme Vaše cíle, oblíbené potraviny, případná omezení i to, jaký typ stravování Vám dlouhodobě vyhovuje."

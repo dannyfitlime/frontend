@@ -50,6 +50,8 @@
     "how": {
       "title": "Ako to funguje",
       "subtitle": "Vytvorenie jedálničného plánu je jednoduché a rýchle. Stačí nám pár základných informácií o Vás a Vašich cieľoch. Na ich základe Vám v priebehu niekoľkých minút vygenerujeme personalizovaný jedálniček na mieru.",
+      "moreInfoLabel": "Viac informácií tu:",
+      "moreInfoLink": "Zistiť viac",
       "step1": {
         "title": "Dotazník",
         "text": "Vyplníte niekoľko jednoduchých otázok o sebe, svojom životnom štýle a stravovacích preferenciách. Vďaka nim pochopíme Vaše ciele, obľúbené potraviny, prípadné obmedzenia aj to, aký typ stravovania Vám dlhodobo vyhovuje."

@@ -736,6 +736,23 @@ body.menu-open {
   line-height: 1.7;
 }
 
+.how-more-info {
+  margin: -16px auto 32px;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.how-more-info-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.how-more-info-link:hover,
+.how-more-info-link:focus-visible {
+  text-decoration: underline;
+}
+
 /* --------------------------- */
 /* LABELY KROKŮ (NAD LINKOU)   */
 /* --------------------------- */
@@ -1924,6 +1941,24 @@ PRO KOHO JE JÍDELNÍČEK
   margin-bottom: 14px;
   color: #111;
   text-align: center;
+}
+
+.audience-more-info {
+  margin: 0;
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
+}
+
+.audience-more-info-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.audience-more-info-link:hover,
+.audience-more-info-link:focus-visible {
+  text-decoration: underline;
 }
 
 

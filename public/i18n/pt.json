@@ -50,6 +50,8 @@
     "how": {
       "title": "Como funciona",
       "subtitle": "Criar o seu plano alimentar é simples e rápido. Só precisamos de algumas informações básicas sobre si e os seus objetivos. Com base nelas, geramos em poucos minutos um plano alimentar personalizado.",
+      "moreInfoLabel": "Mais informações aqui:",
+      "moreInfoLink": "Saiba mais",
       "step1": {
         "title": "Questionário",
         "text": "Responde a algumas perguntas simples sobre si, o seu estilo de vida e as suas preferências alimentares. Com elas percebemos os seus objetivos, alimentos favoritos, possíveis restrições e o tipo de alimentação que lhe convém a longo prazo."

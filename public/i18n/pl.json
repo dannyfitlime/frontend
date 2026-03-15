@@ -50,6 +50,8 @@
     "how": {
       "title": "Jak to działa",
       "subtitle": "Stworzenie Państwa planu żywieniowego jest proste i szybkie. Potrzebujemy tylko kilku podstawowych informacji o Państwu i Państwa celach. Na ich podstawie w kilka minut generujemy spersonalizowany plan żywieniowy.",
+      "moreInfoLabel": "Więcej informacji tutaj:",
+      "moreInfoLink": "Dowiedz się więcej",
       "step1": {
         "title": "Formularz",
         "text": "Proszę odpowiedzieć na kilka prostych pytań o sobie, swoim stylu życia i preferencjach żywieniowych. Dzięki temu poznamy Państwa cele, ulubione produkty, ewentualne ograniczenia oraz typ odżywiania, który będzie odpowiedni w dłuższej perspektywie."

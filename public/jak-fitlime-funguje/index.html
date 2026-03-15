@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jak FitLime funguje | Personalizovany jidelnicek na miru</title>
-  <meta name="description" content="Zjistete, jak FitLime funguje: od vyplneni formulare po personalizovany jidelnicek na miru. Jednoduchy proces, ktery pomaha premenit cil na konkretni plan.">
+  <title>Jak FitLime funguje | Algoritmus, personalizace a tvorba plánu</title>
+  <meta name="description" content="Technologické vysvětlení toho, jak FitLime funguje: práce s daty z formuláře, optimalizace živin, proces tvorby plánu a důvody, proč personalizace funguje lépe než obecné šablony.">
   <link rel="canonical" href="https://fitlime.cz/jak-fitlime-funguje/">
-  <meta property="og:title" content="Jak FitLime funguje | Personalizovany jidelnicek na miru">
-  <meta property="og:description" content="Od vyplneni formulare po hotovy personalizovany plan. Podivej se, jak FitLime funguje.">
+  <meta property="og:title" content="Jak FitLime funguje | Algoritmus, personalizace a tvorba plánu">
+  <meta property="og:description" content="Jak FitLime převádí vstupní data na konkrétní jídelní plán: algoritmus, optimalizace živin a logika personalizace.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.cz/jak-fitlime-funguje/">
   <meta property="og:image" content="https://fitlime.cz/images/og-fitlime.jpg">
@@ -20,115 +20,204 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Jak FitLime funguje",
-    "step": [
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@type": "HowToStep",
-        "name": "Vyplneni formulare",
-        "text": "Uzivatel vyplni vstupni formular s informacemi o cili, rezimu dne, pohybu a preferencich."
+        "@type": "Question",
+        "name": "Je FitLime jen jednoduchá kalkulačka kalorií?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ne. FitLime nepracuje jen s kalorickým číslem, ale kombinuje cíl, režim dne, pohyb, preference a praktická omezení do struktury jídelního plánu."
+        }
       },
       {
-        "@type": "HowToStep",
-        "name": "Vyhodnoceni zadani",
-        "text": "Ze zadanych informaci se pripravi podklad pro personalizovany plan."
+        "@type": "Question",
+        "name": "Co znamená optimalizace živin v praxi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jde o hledání rozumného rozložení energie a živin tak, aby plán podporoval zadaný cíl a zároveň byl proveditelný v běžném dni."
+        }
       },
       {
-        "@type": "HowToStep",
-        "name": "Vytvoreni planu",
-        "text": "Vznikne individualne pripraveny jidelnicek s ohledem na cile a prakticke moznosti cloveka."
+        "@type": "Question",
+        "name": "Proč je personalizace důležitější než obecná šablona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Protože jiný plán potřebuje člověk se sedavým režimem, jiný aktivní sportovec a jiný člověk v nepravidelném provozu. Stejná šablona proto často selhává v praxi."
+        }
       },
       {
-        "@type": "HowToStep",
-        "name": "Doruceni planu",
-        "text": "Hotovy jidelnicek je dorucen na email uzivatele."
+        "@type": "Question",
+        "name": "Jak probíhá tvorba plánu od zadání po výstup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vstupní data se nejdřív vyhodnotí, následně se vytvoří návrh vhodné struktury a ten se převádí do konkrétního jídelního plánu s ohledem na použitelnost."
+        }
       }
     ]
   }
   </script>
 </head>
-<body class="seo-page">
+  <body class="seo-page seo-how-page">
   <main class="seo-shell">
     <header class="seo-topbar">
       <a class="seo-brand" href="/index.html" aria-label="FitLime domov">
         <img src="/images/logo_pruhledne.png" alt="FitLime logo">
         <strong>FitLime</strong>
       </a>
-      <a class="btn outline" href="/form.html">Prejit na formular</a>
+      <a class="btn outline" href="/form.html">Přejít na formulář</a>
     </header>
 
     <section class="seo-hero">
-      <article class="seo-card">
-        <div class="seo-eyebrow">Jednoduchy proces</div>
-        <h1>Jak FitLime funguje a co od toho cekat</h1>
-        <p class="seo-lead">FitLime stavi na jednoduchosti. Nejdriv vyplnis formular, ve kterem popises cil, rezim dne, pohyb a preference. Na zaklade toho vznikne personalizovany plan, ktery ma byt prakticky, srozumitelny a uzitecny v realnem zivote.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Vyplnit formular</a>
-          <a class="btn outline" href="/zdravy-jidelnicek/">Zdravy jidelnicek</a>
+      <article class="seo-card seo-hero-card">
+        <div class="seo-eyebrow">Technologie za personalizací</div>
+        <h1>Jak FitLime funguje pod povrchem</h1>
+        <p class="seo-lead">Tahle stránka nevysvětluje jen to, že vyplníte formulář a dostanete plán. Zaměřuje se na to, co se děje mezi tím: jak FitLime pracuje se vstupními daty, jak přemýšlí o optimalizaci živin, jak vzniká struktura plánu a proč personalizace funguje lépe než univerzální šablona.</p>
+        <div class="seo-stat-row">
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Vstupy</span>
+            <strong>cíl, režim, preference</strong>
+          </div>
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Jádro</span>
+            <strong>optimalizace v prostoru podmínek</strong>
+          </div>
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Výstup</span>
+            <strong>nutričně i prakticky použitelný plán</strong>
+          </div>
         </div>
-        <p class="seo-note">Cilem neni te zahlit komplikovanymi teoriemi, ale prevest tvoje zadani do konkretniho a lepe pouzitelneho planu.</p>
+        <div class="seo-actions">
+          <a class="btn" href="/form.html">Vyplnit formulář</a>
+          <a class="btn outline" href="/zdravy-jidelnicek/index.html">Zdravý jídelníček</a>
+        </div>
+        <p class="seo-note">Cílem není opakovat obecné informace o jídelníčku, ale ukázat logiku systému, který převádí zadání na použitelný výstup.</p>
       </article>
 
-      <aside class="seo-panel">
-        <h2>Zakladni kroky</h2>
-        <ul>
-          <li>vyplnis vstupni formular</li>
-          <li>upresnis cil, rezim, pohyb a preference</li>
-          <li>na zaklade dat vznikne plan na miru</li>
-          <li>hotovy vystup dostanes na email</li>
-        </ul>
+      <aside class="seo-panel seo-visual-panel">
+        <div class="seo-visual-shell" aria-hidden="true">
+          <div class="seo-orbit seo-orbit-a"></div>
+          <div class="seo-orbit seo-orbit-b"></div>
+          <div class="seo-core-node">FitLime</div>
+          <div class="seo-node seo-node-a">Energie</div>
+          <div class="seo-node seo-node-b">Makronutrienty</div>
+          <div class="seo-node seo-node-c">Mikronutrienty</div>
+          <div class="seo-node seo-node-d">Časování</div>
+          <div class="seo-node seo-node-e">Proveditelnost</div>
+        </div>
+        <p class="seo-visual-caption">Algoritmus vybírá řešení v prostoru více podmínek tak, aby výsledný plán dával smysl nutričně i prakticky.</p>
+        <div class="seo-panel-callout">
+          <strong>Co stránka vysvětluje</strong>
+          <p>Hlubší vysvětlení algoritmu, optimalizaci živin, proces tvorby plánu i logiku personalizace bez opakování obecných benefitů.</p>
+        </div>
       </aside>
     </section>
 
     <div class="seo-stack">
       <section class="seo-section">
-        <h2>Co vyplnuji lide ve formulari</h2>
+        <h2>Hlubší vysvětlení algoritmu</h2>
         <div class="seo-grid">
           <article class="seo-mini-card">
-            <h3>Cil</h3>
-            <p>Jiny pristup je vhodny pro hubnuti, jiny pro lepsi energii a jiny pro sportovni vykon.</p>
+            <h3>Vstupní vrstva</h3>
+            <p>Algoritmus začíná zpracováním dat z formuláře. Nejde jen o cíl, ale i o režim dne, aktivitu, preferované potraviny a omezení, která ovlivňují proveditelnost plánu.</p>
           </article>
           <article class="seo-mini-card">
-            <h3>Rezim dne</h3>
-            <p>Rozhoduje, jak ma plan fungovat v praxi. Jinak vypada den v kancelari, jinak smenny provoz a jinak aktivni rezim.</p>
+            <h3>Rozhodovací logika</h3>
+            <p>V další vrstvě se hledá vhodná struktura: kolik jídel dává smysl, jak rozložit energii během dne a které priority mají největší vliv na výsledek.</p>
           </article>
           <article class="seo-mini-card">
-            <h3>Preference a pohyb</h3>
-            <p>Bez techto informaci by plan neodpovidal realite. Prave ony casto rozhoduji o tom, jestli je vystup dlouhodobe pouzitelny.</p>
+            <h3>Kontrola použitelnosti</h3>
+            <p>Výstup nesmí být správný jen teoreticky. Algoritmus musí dojít k řešení, které je realistické i v pracovním rytmu, při sportu nebo v nepravidelném režimu.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seo-section seo-example-section">
+        <div class="seo-section-heading">
+          <div>
+            <div class="seo-kicker">Zjednodušený příklad</div>
+            <h2>Jak si to představit v praxi</h2>
+          </div>
+        </div>
+        <p>Představme si, že systém hledá denní plán pro člověka, který chce redukovat hmotnost, udržet dostatek bílkovin a zároveň zvládat běžný pracovní den bez složité přípravy jídel.</p>
+        <p>Možností existuje mnoho, ale většina selže alespoň v jednom bodě:</p>
+        <div class="seo-example-grid">
+          <article class="seo-mini-card seo-problem-card">
+            <h3>Někde nesedí energie</h3>
+            <p>Plán vypadá dobře na papíře, ale energeticky míří mimo skutečný cíl.</p>
+          </article>
+          <article class="seo-mini-card seo-problem-card">
+            <h3>Jinde je málo bílkovin</h3>
+            <p>Energeticky může být plán přijatelný, ale výživově nepodporuje to, co má.</p>
+          </article>
+          <article class="seo-mini-card seo-problem-card">
+            <h3>Nebo je neudržitelný</h3>
+            <p>Teoreticky správné řešení často selže v praxi, protože je příliš složité na běžný pracovní den.</p>
+          </article>
+        </div>
+        <div class="seo-example-result">
+          <strong>FitLime proto nehledá náhodný „zdravý jídelníček“.</strong>
+          <p>Hledá řešení uvnitř prostoru podmínek, kde současně dává smysl celkový energetický příjem, rozložení makroživin, časování jídel během dne i reálná proveditelnost.</p>
+        </div>
+      </section>
+
+      <section class="seo-section seo-care-section">
+        <h2>Optimalizace živin</h2>
+        <div class="seo-grid seo-care-grid seo-grid-four">
+          <article class="seo-mini-card">
+            <h3>Energie podle cíle</h3>
+            <p>Každý plán začíná vymezením vhodného energetického rámce. Jiný rozsah dává smysl pro redukci, jiný pro výkon a jiný pro stabilizaci režimu. FitLime proto nepracuje s jednou univerzální šablonou, ale hledá řešení odpovídající konkrétnímu cíli.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Hledání řešení v prostoru podmínek</h3>
+            <p>Výživa není o jedné hodnotě. Každý plán vzniká uvnitř soustavy podmínek, kde se současně zohledňuje energie, makroživiny, rozložení jídel během dne, preference i reálná použitelnost. Cílem není najít první možné řešení, ale takové, které funguje jako celek.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Rozložení makroživin</h3>
+            <p>Optimalizace makroživin znamená hledat poměr, který podporuje cíl a zároveň odpovídá dennímu rytmu. Důležité není jen kolik živin plán obsahuje, ale i jak jsou rozložené v průběhu dne.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Praktičnost nad extrémem</h3>
+            <p>Teoreticky přesný plán nemusí být dlouhodobě udržitelný. FitLime proto nehledá extrémní varianty, ale řešení, které je odborně smysluplné a zároveň proveditelné v běžném životě.</p>
           </article>
         </div>
       </section>
 
       <section class="seo-section">
-        <h2>Proc to funguje lepe nez obecna sablona</h2>
-        <p>Obecny plan casto ignoruje, kdo ho ma skutecne dodrzovat. FitLime se snazi vyjit z konkretni situace, protoze prave ta urcuje, co je realne. Kdyz plan respektuje tvuj cil, denni rytmus a pohyb, ma vetsi sanci byt opravdu uzitecny.</p>
+        <h2>Proces tvorby plánu</h2>
+        <p>Tvorba plánu probíhá ve třech logických fázích. Nejprve se vyhodnotí vstupní data a stanoví se výživový směr. Potom se navrhne vhodná struktura dne, tedy rozložení jídel, energie a priorit. Nakonec se vše převádí do konkrétního jídelního plánu tak, aby výsledkem nebyla jen správná teorie, ale použitelný systém pro běžný život.</p>
+      </section>
+
+      <section class="seo-section">
+        <h2>Proč personalizace funguje</h2>
+        <p>Obecná šablona často selhává, protože ignoruje rozdíly mezi lidmi. Jiný plán potřebuje člověk s kancelářským režimem, jiný rodič s rozbitým dnem a jiný sportovec s pravidelnou zátěží. Personalizace funguje proto, že propojuje cíl, živiny, denní rytmus a praktická omezení do jednoho řešení. Tím se zvyšuje šance, že plán bude nejen odborně smysluplný, ale i skutečně dodržitelný.</p>
       </section>
 
       <section class="seo-faq">
         <h2>FAQ</h2>
         <div class="seo-faq-item">
-          <h3>Je FitLime jen pro hubnuti?</h3>
-          <p>Ne. FitLime muze byt vhodny pro hubnuti, zdravejsi stravovani i sportovnejsi rezim. Podle cilu se odviji i samotny plan.</p>
+          <h3>Je FitLime jen jednoduchá kalkulačka kalorií?</h3>
+          <p>Ne. Kalorie jsou jen jedna část logiky. FitLime pracuje i s cílem, rozložením dne, pohybem, preferencemi a tím, co je dlouhodobě proveditelné.</p>
         </div>
         <div class="seo-faq-item">
-          <h3>Musim byt sportovec?</h3>
-          <p>Ne. Plan muze davat velky smysl i lidem bez pravidelneho sportu, kteri chteji jist lepe a mit vic jasnosti ve stravovani.</p>
+          <h3>Co znamená optimalizace živin v praxi?</h3>
+          <p>Znamená to hledat takové rozložení energie a makroživin, které sedí cíli a zároveň jde fungovat v realitě. Nestačí správná čísla, pokud plán nejde běžně žít.</p>
         </div>
         <div class="seo-faq-item">
-          <h3>Kde zjistim vic o zamereni jednotlivych planu?</h3>
-          <p>Podivej se na stranky <a href="/jidelnicek-na-hubnuti/">jidelnicek na hubnuti</a>, <a href="/zdravy-jidelnicek/">zdravy jidelnicek</a> a <a href="/sportovni-jidelnicek/">sportovni jidelnicek</a>.</p>
+          <h3>Proč nestačí jeden univerzální jídelníček pro všechny?</h3>
+          <p>Protože stejné doporučení nebude stejně fungovat u člověka se sedavým režimem, u sportovce ani u někoho s nepravidelnou pracovní dobou. Personalizace řeší právě tento rozdíl.</p>
         </div>
       </section>
 
       <section class="seo-cta">
-        <h2>Chces vedet, jaky plan muze vzniknout z tveho zadani?</h2>
-        <p>Vypln formular a nech si pripravit personalizovany jidelnicek podle tveho cile, rezimu dne a preferenci.</p>
+        <h2>Chcete vidět, jak může technologie pracovat i pro váš cíl?</h2>
+        <p>Vyplňte formulář a nechte FitLime převést vaše zadání do plánu, který bude odpovídat cíli, dennímu rytmu i praktickým možnostem.</p>
         <div class="seo-actions">
-          <a class="btn" href="/form.html">Prejit na formular</a>
-          <a class="btn outline" href="/jidelnicek-na-hubnuti/">Hubnuti</a>
-          <a class="btn outline" href="/sportovni-jidelnicek/">Sport</a>
+          <a class="btn" href="/form.html">Přejít na formulář</a>
+          <a class="btn outline" href="/jidelnicek-na-hubnuti/index.html">Hubnutí</a>
+          <a class="btn outline" href="/sportovni-jidelnicek/index.html">Sport</a>
         </div>
-        <p class="seo-footer">Pokud chces obecnejsi vstup, podivej se take na <a href="/zdravy-jidelnicek/">zdravy jidelnicek</a>.</p>
+        <p class="seo-footer">Pro obsah zaměřený víc na výsledek a použití se podívejte také na <a href="/zdravy-jidelnicek/index.html">zdravý jídelníček</a>.</p>
       </section>
     </div>
   </main>

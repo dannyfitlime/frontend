@@ -50,6 +50,8 @@
     "how": {
       "title": "Comment ça marche",
       "subtitle": "Créer votre plan alimentaire est simple et rapide. Il nous suffit de quelques informations de base sur vous et vos objectifs. À partir de cela, nous générons en quelques minutes un menu personnalisé sur mesure.",
+      "moreInfoLabel": "Plus d'informations ici :",
+      "moreInfoLink": "En savoir plus",
       "step1": {
         "title": "Questionnaire",
         "text": "Vous remplissez quelques questions simples sur vous, votre mode de vie et vos préférences alimentaires. Elles nous aident à comprendre vos objectifs, vos aliments favoris, vos éventuelles restrictions et le type d’alimentation qui vous convient sur le long terme."

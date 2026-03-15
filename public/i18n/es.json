@@ -50,6 +50,8 @@
     "how": {
       "title": "Cómo funciona",
       "subtitle": "Crear tu plan de alimentación es rápido y sencillo. Solo necesitamos algunos datos básicos sobre ti y tus objetivos. Con ellos generamos en pocos minutos un menú personalizado a tu medida.",
+      "moreInfoLabel": "Más información aquí:",
+      "moreInfoLink": "Más información",
       "step1": {
         "title": "Cuestionario",
         "text": "Responderás a unas sencillas preguntas sobre ti, tu estilo de vida y tus preferencias alimentarias. Gracias a ellas conocemos tus objetivos, alimentos favoritos, posibles restricciones y qué tipo de alimentación te encaja mejor a largo plazo."

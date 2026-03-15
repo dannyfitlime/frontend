@@ -50,6 +50,8 @@
     "how": {
       "title": "Wie es funktioniert",
       "subtitle": "Die Erstellung des Ernährungsplans ist einfach und schnell. Wir benötigen nur ein paar grundlegende Informationen über Sie und Ihre Ziele. Auf dieser Basis generieren wir innerhalb weniger Minuten einen personalisierten Ernährungsplan.",
+      "moreInfoLabel": "Mehr Informationen hier:",
+      "moreInfoLink": "Mehr erfahren",
       "step1": {
         "title": "Fragebogen",
         "text": "Sie füllen einige einfache Fragen zu sich selbst, Ihrem Lebensstil und Ihren Ernährungspräferenzen aus. So verstehen wir Ihre Ziele, Lieblingslebensmittel, eventuelle Einschränkungen und welche Ernährungsweise langfristig zu Ihnen passt."

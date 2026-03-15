@@ -50,6 +50,8 @@
     "how": {
       "title": "Come funziona",
       "subtitle": "Creare il tuo piano alimentare è semplice e veloce. Abbiamo solo bisogno di alcune informazioni di base su di te e sui tuoi obiettivi. In base a questi dati, generiamo in pochi minuti un piano alimentare personalizzato.",
+      "moreInfoLabel": "Maggiori informazioni qui:",
+      "moreInfoLink": "Scopri di più",
       "step1": {
         "title": "Questionario",
         "text": "Rispondi ad alcune domande semplici su di te, il tuo stile di vita e le tue preferenze alimentari. Grazie a queste capiamo i tuoi obiettivi, i cibi preferiti, le eventuali restrizioni e il tipo di alimentazione che fa per te a lungo termine."

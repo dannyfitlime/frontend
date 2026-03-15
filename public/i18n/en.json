@@ -50,6 +50,8 @@
     "how": {
       "title": "How it works",
       "subtitle": "Creating a meal plan is simple and fast. We just need a few basic details about you and your goals. Based on them, we will generate a personalized meal plan within a few minutes.",
+      "moreInfoLabel": "More information here:",
+      "moreInfoLink": "Learn more",
       "step1": {
         "title": "Questionnaire",
         "text": "Fill in a few simple questions about yourself, your lifestyle, and your meal preferences. It helps us understand your goals, favorite foods, possible restrictions, and what style of eating suits you long term."
