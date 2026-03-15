@@ -36,6 +36,9 @@
   <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/">
 
   <link id="canonical-link" rel="canonical" href="https://fitlime.cz/">
+  <link rel="preload" as="image" href="/images/optimized/hero-bg-1600.jpg"
+    imagesrcset="/images/optimized/hero-bg-800.jpg 800w, /images/optimized/hero-bg-1600.jpg 1600w"
+    imagesizes="100vw">
   <script>
     // Dynamické nastavení kanonické URL podle aktuální domény.
     // Pro SEO nástroje je výše defaultní .cz, zde přepíšeme pro .sk a .eu.
@@ -82,7 +85,7 @@
 
       <!-- Logo -->
       <a class="home-brand" href="." aria-label="FitLime domů">
-        <img class="logo" src="/public/images/logo_pruhledne.png" alt="Fit Lime logo" />
+        <img class="logo" src="/public/images/logo_pruhledne.png" alt="Fit Lime logo" width="150" height="150" />
         <span class="text">Fit Lime</span>
       </a>
 
@@ -120,7 +123,8 @@
       <div class="drawer__image">
         <picture>
           <source media="(max-width: 649px)" srcset="/public/images/drawer_rotated.jpg">
-          <img src="/public/images/drawer.jpg" alt="Zdravá výživa" data-i18n-aria-label="home.drawer.imageAlt" />
+          <img src="/public/images/drawer.jpg" alt="Zdravá výživa" data-i18n-aria-label="home.drawer.imageAlt"
+            width="800" height="533" loading="lazy" decoding="async" />
         </picture>
       </div>
     </div>
@@ -129,6 +133,14 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero">
+      <picture class="hero-media" aria-hidden="true">
+        <source media="(max-width: 768px)"
+          srcset="/images/optimized/hero-bg-800.jpg 800w, /images/optimized/hero-bg-1600.jpg 1600w"
+          sizes="100vw">
+        <img class="hero-bg" src="/images/optimized/hero-bg-1600.jpg"
+          srcset="/images/optimized/hero-bg-800.jpg 800w, /images/optimized/hero-bg-1600.jpg 1600w"
+          sizes="100vw" alt="" fetchpriority="high" decoding="async" width="1600" height="1067">
+      </picture>
       <div class="home-container hero-wrap">
         <h1 data-i18n="home.hero.title">Jídelníček na míru během pár minut</h1>
         <p class="lead" data-i18n="home.hero.lead">Vyplňte krátký dotazník a získejte plán, který pokrývá všechny Vaše
@@ -150,7 +162,8 @@
           <div class="why-columns">
             <!-- 1 -->
             <div class="why-item">
-              <img src="/public/images/why1.png" alt="Zdravý životní styl" loading="lazy">
+              <img src="/public/images/why1.png" alt="Zdravý životní styl" width="500" height="500" loading="lazy"
+                decoding="async">
               <h3 data-i18n="home.why.items.lifestyle.title"></h3>
               <ul>
                 <li data-i18n="home.why.items.lifestyle.point1"></li>
@@ -161,7 +174,8 @@
 
             <!-- 2 -->
             <div class="why-item">
-              <img src="/public/images/why2.png" alt="Výživa na míru" loading="lazy">
+              <img src="/public/images/why2.png" alt="Výživa na míru" width="500" height="500" loading="lazy"
+                decoding="async">
               <h3 data-i18n="home.why.items.nutrition.title"></h3>
               <ul>
                 <li data-i18n="home.why.items.nutrition.point1"></li>
@@ -172,7 +186,8 @@
 
             <!-- 3 -->
             <div class="why-item">
-              <img src="/public/images/why3.png" alt="Praktický přístup" loading="lazy">
+              <img src="/public/images/why3.png" alt="Praktický přístup" width="500" height="500" loading="lazy"
+                decoding="async">
               <h3 data-i18n="home.why.items.practical.title"></h3>
               <ul>
                 <li data-i18n="home.why.items.practical.point1"></li>
@@ -265,7 +280,8 @@
             <!-- 1) Výkonnostní a vrcholoví sportovci -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/elite_sport.jpg" alt="Vrcholový sportovec při tréninku">
+                <img src="/public/images/elite_sport.jpg" alt="Vrcholový sportovec při tréninku" width="800"
+                  height="800" loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
                 <h3 data-i18n="home.audience.pro.title">
@@ -285,7 +301,8 @@
             <!-- 2) Hobby sportovci -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/sport.jpg" alt="Hobby sportovec při cvičení">
+                <img src="/public/images/sport.jpg" alt="Hobby sportovec při cvičení" width="800" height="800"
+                  loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
                 <h3 data-i18n="home.audience.hobby.title">
@@ -305,7 +322,8 @@
             <!-- 3) Nesportovci / běžná populace -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/no_sport.jpg" alt="Běžný člověk u zdravého jídla">
+                <img src="/public/images/no_sport.jpg" alt="Běžný člověk u zdravého jídla" width="800"
+                  height="800" loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
                 <h3 data-i18n="home.audience.everyday.title">
@@ -350,28 +368,36 @@
 
         <div id="lightgallery" class="preview-grid">
           <a href="/images/preview/cs/preview0.jpg" data-tag="0" data-i18n-preview="preview0.jpg">
-            <img src="/images/preview/cs/preview0.jpg" alt="Ukázka PDF 0" data-i18n-preview="preview0.jpg">
+            <img src="/images/preview/cs/thumbs/preview0.jpg" alt="Ukázka PDF 0" data-i18n-preview-thumb="preview0.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview1.jpg" data-tag="1" data-i18n-preview="preview1.jpg">
-            <img src="/images/preview/cs/preview1.jpg" alt="Ukázka PDF 1" data-i18n-preview="preview1.jpg">
+            <img src="/images/preview/cs/thumbs/preview1.jpg" alt="Ukázka PDF 1" data-i18n-preview-thumb="preview1.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview2.jpg" data-tag="2" data-i18n-preview="preview2.jpg">
-            <img src="/images/preview/cs/preview2.jpg" alt="Ukázka PDF 2" data-i18n-preview="preview2.jpg">
+            <img src="/images/preview/cs/thumbs/preview2.jpg" alt="Ukázka PDF 2" data-i18n-preview-thumb="preview2.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview3.jpg" data-tag="3" data-i18n-preview="preview3.jpg">
-            <img src="/images/preview/cs/preview3.jpg" alt="Ukázka PDF 3" data-i18n-preview="preview3.jpg">
+            <img src="/images/preview/cs/thumbs/preview3.jpg" alt="Ukázka PDF 3" data-i18n-preview-thumb="preview3.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview4.jpg" data-tag="3" data-i18n-preview="preview4.jpg">
-            <img src="/images/preview/cs/preview4.jpg" alt="Ukázka PDF 4" data-i18n-preview="preview4.jpg">
+            <img src="/images/preview/cs/thumbs/preview4.jpg" alt="Ukázka PDF 4" data-i18n-preview-thumb="preview4.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview5.jpg" data-tag="4" data-i18n-preview="preview5.jpg">
-            <img src="/images/preview/cs/preview5.jpg" alt="Ukázka PDF 5" data-i18n-preview="preview5.jpg">
+            <img src="/images/preview/cs/thumbs/preview5.jpg" alt="Ukázka PDF 5" data-i18n-preview-thumb="preview5.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview6.jpg" data-tag="5" data-i18n-preview="preview6.jpg">
-            <img src="/images/preview/cs/preview6.jpg" alt="Ukázka PDF 6" data-i18n-preview="preview6.jpg">
+            <img src="/images/preview/cs/thumbs/preview6.jpg" alt="Ukázka PDF 6" data-i18n-preview-thumb="preview6.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
           <a href="/images/preview/cs/preview7.jpg" data-tag="5" data-i18n-preview="preview7.jpg">
-            <img src="/images/preview/cs/preview7.jpg" alt="Ukázka PDF 7" data-i18n-preview="preview7.jpg">
+            <img src="/images/preview/cs/thumbs/preview7.jpg" alt="Ukázka PDF 7" data-i18n-preview-thumb="preview7.jpg"
+              width="1241" height="1755" loading="lazy" decoding="async">
           </a>
         </div>
 
@@ -429,8 +455,10 @@
       </section>
 
       <section id="home-coverage" class="coverage-alt">
-        <img src="images/coverage-desktop.jpg" alt="Co jídelníček pokrývá - pozadí" class="bg-img bg-img--desktop">
-        <img src="images/coverage-mobile.jpg" alt="Co jídelníček pokrývá - pozadí mobil" class="bg-img bg-img--mobile">
+        <img src="images/coverage-desktop.jpg" alt="Co jídelníček pokrývá - pozadí" class="bg-img bg-img--desktop"
+          width="1536" height="1024" loading="lazy" decoding="async">
+        <img src="images/coverage-mobile.jpg" alt="Co jídelníček pokrývá - pozadí mobil" class="bg-img bg-img--mobile"
+          width="1024" height="1536" loading="lazy" decoding="async">
 
         <div class="container">
           <h2 data-i18n="home.coverage.title">Co jídelníček pokrývá</h2>
@@ -698,7 +726,7 @@
           <div class="team">
             <article class="team-card">
               <img class="avatar" src="/public/images/lee.jpg" alt="Libor - nutriční terapeut" loading="lazy"
-                decoding="async" />
+                decoding="async" width="373" height="373" />
               <div>
                 <h3 data-i18n="home.about.libor.name"></h3>
                 <ul class="features">
@@ -709,7 +737,8 @@
               </div>
             </article>
             <article class="team-card">
-              <img class="avatar" src="/public/images/danny.jpg" alt="Danny - trenér" loading="lazy" decoding="async" />
+              <img class="avatar" src="/public/images/danny.jpg" alt="Danny - trenér" loading="lazy" decoding="async"
+                width="1478" height="1478" />
               <div>
                 <h3 data-i18n="home.about.danny.name"></h3>
                 <ul class="features">
@@ -732,7 +761,8 @@
             <div class="carousel-track">
 
               <article class="card quote">
-                <img src="/public/images/client1.jpg" alt="Mati – client" class="avatar" />
+                <img src="/public/images/client1.jpg" alt="Mati – client" class="avatar" width="750" height="938"
+                  loading="lazy" decoding="async" />
                 <blockquote data-i18n="home.reference.client1.text"></blockquote>
                 <div class="author">
                   <span data-i18n="home.reference.client1.author"></span>
@@ -742,7 +772,8 @@
               </article>
 
               <article class="card quote">
-                <img src="/public/images/client2.jpg" alt="Hana – client" class="avatar" />
+                <img src="/public/images/client2.jpg" alt="Hana – client" class="avatar" width="1095" height="1369"
+                  loading="lazy" decoding="async" />
                 <blockquote data-i18n="home.reference.client2.text"></blockquote>
                 <div class="author">
                   <span data-i18n="home.reference.client2.author"></span>
@@ -751,7 +782,8 @@
               </article>
 
               <article class="card quote">
-                <img src="/public/images/client3.jpg" alt="David – client" class="avatar" />
+                <img src="/public/images/client3.jpg" alt="David – client" class="avatar" width="2406" height="3008"
+                  loading="lazy" decoding="async" />
                 <blockquote data-i18n="home.reference.client3.text"></blockquote>
                 <div class="author">
                   <span data-i18n="home.reference.client3.author"></span>
@@ -767,7 +799,8 @@
     </div>
     <!-- ===== CALL TO ACTION ===== -->
     <section class="footer-cta" id="cta-final">
-      <img src="images/ready.jpg" alt="Jste připraveni začít? - pozadí" class="footer-cta__bg">
+      <img src="images/ready.jpg" alt="Jste připraveni začít? - pozadí" class="footer-cta__bg" width="1536"
+        height="1024" loading="lazy" decoding="async">
       <div class="footer-cta__overlay"></div>
       <div class="home-container footer-cta__wrap">
         <h2 data-i18n="home.cta.title"></h2>

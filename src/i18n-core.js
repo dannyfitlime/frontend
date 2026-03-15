@@ -88,6 +88,11 @@ export function applyI18n(root=document){
     if (el.tagName === 'A') el.setAttribute('href', path);
     else if (el.tagName === 'IMG') el.setAttribute('src', path);
   });
+  root.querySelectorAll('[data-i18n-preview-thumb]').forEach(el=>{
+    const file = el.getAttribute('data-i18n-preview-thumb');
+    const path = `/images/preview/${i18n.lang}/thumbs/${file}`;
+    if (el.tagName === 'IMG') el.setAttribute('src', path);
+  });
   // nastaví <html lang="..">
   document.documentElement.lang = i18n.lang;
   applyContactEmail(root, i18n.lang);
