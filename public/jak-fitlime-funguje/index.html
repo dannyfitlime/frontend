@@ -193,6 +193,52 @@
         <p>Obecná šablona často selhává, protože ignoruje rozdíly mezi lidmi. Jiný plán potřebuje člověk s kancelářským režimem, jiný rodič s rozbitým dnem a jiný sportovec s pravidelnou zátěží. Personalizace funguje proto, že propojuje cíl, živiny, denní rytmus a praktická omezení do jednoho řešení. Tím se zvyšuje šance, že plán bude nejen odborně smysluplný, ale i skutečně dodržitelný.</p>
       </section>
 
+
+      <section id="diet-simulator" class="seo-section diet-sim">
+        <div id="seo-plan-coverage"></div>
+        <div class="seo-section-heading">
+          <div>
+            <div class="seo-kicker">Interaktivn&#237; uk&#225;zka</div>
+            <h2 class="diet-title" data-i18n="home.diet.title"></h2>
+          </div>
+        </div>
+        <p class="diet-subtitle" data-i18n="home.diet.subtitle"></p>
+        <button type="button" class="btn diet-auto-btn" id="dietAutoSelect" data-i18n="home.diet.autoSelect"></button>
+
+        <div class="diet-food-list" id="dietFoodList">
+          <label><input type="checkbox" value="avocado"> <span data-i18n="home.diet.food.avocado"></span></label>
+          <label><input type="checkbox" value="donut"> <span data-i18n="home.diet.food.donut"></span></label>
+          <label><input type="checkbox" value="burger"> <span data-i18n="home.diet.food.burger"></span></label>
+          <label><input type="checkbox" value="fries"> <span data-i18n="home.diet.food.fries"></span></label>
+          <label><input type="checkbox" value="apple"> <span data-i18n="home.diet.food.apple"></span></label>
+          <label><input type="checkbox" value="chicken"> <span data-i18n="home.diet.food.chicken"></span></label>
+          <label><input type="checkbox" value="hotdog"> <span data-i18n="home.diet.food.hotdog"></span></label>
+          <label><input type="checkbox" value="rice"> <span data-i18n="home.diet.food.rice"></span></label>
+          <label><input type="checkbox" value="salad"> <span data-i18n="home.diet.food.salad"></span></label>
+          <label><input type="checkbox" value="icecream"> <span data-i18n="home.diet.food.icecream"></span></label>
+        </div>
+
+        <div class="diet-chart-container">
+          <canvas id="dietChart"></canvas>
+        </div>
+
+        <p class="diet-info-text">Tento simul&#225;tor ukazuje jednoduch&#253; princip toho, jak FitLime skl&#225;d&#225; rozumn&#253; ob&#283;d. Ve skute&#269;nosti je proces &#353;ir&#353;&#237;, proto&#382;e pracujeme s mnoha potravinami, cel&#253;mi j&#237;dly a soub&#283;&#382;n&#283; optimalizujeme des&#237;tky &#382;ivin i praktickou pou&#382;itelnost pl&#225;nu. D&#225;v&#225; proto smysl &#269;&#237;st tuto uk&#225;zku spolu se sekc&#237; <a href="#seo-plan-coverage" class="diet-link">Optimalizace &#382;ivin</a>.</p>
+
+        <div class="diet-stats">
+          <div class="diet-stat-box">
+            <h3 data-i18n="home.diet.stats.stat1.title"></h3>
+            <p data-i18n="home.diet.stats.stat1.text"></p>
+          </div>
+
+          <div class="diet-stat-box">
+            <h3 data-i18n="home.diet.stats.stat2.title"></h3>
+            <p data-i18n="home.diet.stats.stat2.text"></p>
+          </div>
+        </div>
+
+        <p class="diet-info-text" data-i18n="home.diet.bottomNote"></p>
+      </section>
+
       <section class="seo-faq">
         <h2>FAQ</h2>
         <div class="seo-faq-item">
@@ -221,5 +267,11 @@
       </section>
     </div>
   </main>
+  <script type="module" src="/src/charts.js"></script>
+  <script type="module">
+    import { bootI18n } from '/src/i18n-core.js';
+
+    bootI18n();
+  </script>
 </body>
 </html>
