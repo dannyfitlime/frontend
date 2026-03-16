@@ -71,7 +71,7 @@ export function createInitialState() {
 
     // ===== STEP 7 – PLÁN =====
     plan: {
-      variant: 'standard',
+      variant: 'premium',
       period: 'week',
       autoPremium: false,
 

@@ -1107,7 +1107,7 @@ export function bindPlanStep() {
   // Initial state
   window.formState ||= {};
   formState.plan ||= {};
-  if (!formState.plan.variant) formState.plan.variant = 'standard';
+  if (!formState.plan.variant) formState.plan.variant = 'premium';
   if (!formState.plan.period) formState.plan.period = 'week';
 
   // If user has premium behavior (e.g. diet, dislikes, macros)
@@ -1189,6 +1189,9 @@ export function bindPlanStep() {
         final: currency === 'EUR' ? eur : czk,
         currency
       };
+    } else {
+      if (totalEl) totalEl.textContent = '';
+      formState.plan.price = null;
     }
   }
 
