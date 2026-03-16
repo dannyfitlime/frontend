@@ -83,9 +83,9 @@ body.seo-page {
 .seo-kicker {
   display: inline-block;
   margin: 0 0 12px;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--seo-accent);
 }
@@ -234,7 +234,7 @@ body.seo-page {
   background: #f3f7f3;
 }
 
-.seo-faq-item + .seo-faq-item {
+.seo-faq-item+.seo-faq-item {
   margin-top: 22px;
   padding-top: 22px;
   border-top: 1px solid var(--seo-line);
@@ -317,6 +317,7 @@ body.seo-page {
   width: 180px;
   height: 180px;
 }
+
 .diet-sim {
   padding-top: 28px;
 }
@@ -446,6 +447,7 @@ body.seo-page {
   font-size: 1.05rem;
   line-height: 1.8;
 }
+
 @media (max-width: 900px) {
   .seo-shell {
     width: min(var(--seo-maxw), calc(100% - 28px));

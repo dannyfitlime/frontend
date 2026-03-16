@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,289 +11,150 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-light.png?v=2" media="(prefers-color-scheme: light)">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-dark.png?v=2" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="/styles/base.css">
-  <style>
-    :root {
-      --accent: #86d54f;
-      --accent-dark: #5a9d2e;
-      --surface: rgba(255, 255, 255, 0.9);
-    }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      background:
-        radial-gradient(circle at top left, rgba(134, 213, 79, 0.22), transparent 30%),
-        radial-gradient(circle at right, rgba(15, 23, 42, 0.08), transparent 28%),
-        linear-gradient(180deg, #f8fdf3 0%, #f7f7f5 100%);
-      color: var(--fg);
-    }
-
-    .notfound-shell {
-      width: min(960px, 100%);
-      margin: 0 auto;
-      padding: 32px 20px 48px;
-    }
-
-    .brand-link {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 16px;
-      border-radius: 18px;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg, #111, #2a2a2a);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
-    }
-
-    .brand-link img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      border-radius: 14px;
-      background: #fff;
-      padding: 6px;
-    }
-
-    .brand-link strong {
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .hero-card {
-      margin-top: 28px;
-      background: var(--surface);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: 28px;
-      box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-    }
-
-    .hero-copy {
-      padding: 40px;
-    }
-
-    .code-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(134, 213, 79, 0.16);
-      color: #23420e;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 7vw, 4.8rem);
-      margin: 0 0 14px;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 34rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #132106;
-    }
-
-    .btn.primary:hover {
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      color: #fff;
-    }
-
-    .help-box {
-      margin-top: 22px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 320px;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(134, 213, 79, 0.45), transparent 22%),
-        radial-gradient(circle at 72% 35%, rgba(15, 23, 42, 0.12), transparent 24%),
-        linear-gradient(145deg, #ffffff 0%, #eff8e7 100%);
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    .plate {
-      width: min(280px, 100%);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at center, #ffffff 0 42%, #edf3e7 42% 57%, #dce7d1 57% 100%);
-      box-shadow:
-        inset 0 0 0 18px rgba(255, 255, 255, 0.8),
-        0 24px 44px rgba(15, 23, 42, 0.12);
-      position: relative;
-    }
-
-    .plate::before,
-    .plate::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-    }
-
-    .plate::before {
-      width: 68px;
-      height: 68px;
-      background: linear-gradient(145deg, #86d54f, #5a9d2e);
-      top: 42px;
-      left: 56px;
-      box-shadow:
-        112px 28px 0 0 #111,
-        56px 124px 0 0 #f0c94a;
-    }
-
-    .plate::after {
-      width: 22px;
-      height: 22px;
-      background: #fff;
-      top: 74px;
-      left: 88px;
-      box-shadow:
-        112px 28px 0 0 #fff,
-        56px 124px 0 0 #fff;
-    }
-
-    @media (max-width: 800px) {
-      .hero-card {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        padding: 28px 22px;
-      }
-
-      .hero-art {
-        min-height: 240px;
-      }
-
-      .actions .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/seo-pages.css">
 </head>
-<body>
-  <main class="notfound-shell">
-    <a class="brand-link" href="/index.html" aria-label="FitLime">
-      <img src="/images/logo_pruhledne.png" alt="FitLime logo">
-      <strong>FitLime</strong>
-    </a>
 
-    <section class="hero-card">
-      <div class="hero-copy">
-        <div class="code-badge">404</div>
-        <h1 id="title">Tahle stránka neexistuje.</h1>
-        <p class="lead" id="lead">Adresa je špatně, stránka byla přesunuta, nebo už není dostupná.</p>
+<body class="seo-page">
+  <main class="seo-shell">
+    <header class="seo-topbar">
+      <a class="seo-brand" href="/index.html" aria-label="FitLime domov">
+        <img src="/images/logo_pruhledne.png" alt="FitLime logo">
+        <strong>FitLime</strong>
+      </a>
+    </header>
 
-        <div class="actions">
-          <a class="btn primary" href="/index.html" id="home-link">Zpět na úvod</a>
-          <a class="btn outline" href="/form.html" id="form-link">Přejít na formulář</a>
+    <section class="seo-card 404-card">
+      <div class="notfound-layout">
+        <div class="notfound-copy">
+          <div class="seo-eyebrow">Chyba 404</div>
+          <h1 id="title">Stránka nenalezena</h1>
+          <p class="seo-lead" id="lead">Zdá se, že tahle stránka zmizela z databáze.<br>Asi stejně rychle jako fast food
+            z Vašeho nového jídelníčku.</p>
+
+          <div class="seo-actions">
+            <a class="btn" href="/index.html" id="home-link">Zpět na úvod</a>
+            <a class="btn outline" href="/form.html" id="form-link-2">Přejít na formulář</a>
+          </div>
+
+          <p class="seo-note" id="help-text">Pokud jste se sem dostali přes odkaz na webu, je to chyba na naší straně.
+          </p>
         </div>
-
-        <div class="help-box" id="help-text">
-          Pokud ses sem dostal přes odkaz na webu, je to chyba na naší straně.
+        <div class="notfound-visual">
+          <img src="/images/lime.png" alt="" aria-hidden="true" class="notfound-lime">
         </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="plate"></div>
       </div>
     </section>
   </main>
 
+  <style>
+    .notfound-layout {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      text-align: left;
+    }
+
+    .notfound-copy {
+      flex: 1;
+    }
+
+    .notfound-visual {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .notfound-lime {
+      width: clamp(160px, 15vw, 240px);
+      height: auto;
+      transform: rotate(270deg);
+      opacity: 0.9;
+      filter: drop-shadow(0 10px 20px rgba(134, 213, 79, 0.2));
+    }
+
+    @media (max-width: 768px) {
+      .notfound-layout {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+      }
+
+      .seo-actions {
+        justify-content: center;
+      }
+    }
+  </style>
+
   <script>
     const TRANSLATIONS = {
       cs: {
-        title: "Tahle stránka neexistuje.",
-        lead: "Adresa je špatně, stránka byla přesunuta, nebo už není dostupná.",
+        eyebrow: "Chyba 404",
+        title: "Stránka nenalezena",
+        lead: "Zdá se, že tahle stránka zmizela z databáze.\nAsi stejně rychle jako fast food z Vašeho nového jídelníčku.",
         home: "Zpět na úvod",
         form: "Přejít na formulář",
-        help: "Pokud ses sem dostal přes odkaz na webu, je to chyba na naší straně."
+        help: "Pokud jste se sem dostali přes odkaz na webu, je to chyba na naší straně."
       },
       sk: {
-        title: "Táto stránka neexistuje.",
-        lead: "Adresa je nesprávna, stránka bola presunutá alebo už nie je dostupná.",
+        eyebrow: "Chyba 404",
+        title: "Stránka nenájdená",
+        lead: "Zdá sa, že táto stránka zmizla z databázy.\nAsi rovnako rýchlo ako fast food z Vášho nového jedálnička.",
         home: "Späť na úvod",
         form: "Prejsť na formulár",
-        help: "Ak si sa sem dostal cez odkaz na webe, je to chyba na našej strane."
+        help: "Ak ste sa sem dostali cez odkaz na webe, je to chyba na našej strane."
       },
       en: {
-        title: "This page does not exist.",
-        lead: "The address is wrong, the page was moved, or it is no longer available.",
+        eyebrow: "Error 404",
+        title: "Page not found",
+        lead: "It seems this page has vanished from the database.\nProbably as fast as fast food from your new meal plan.",
         home: "Back to homepage",
         form: "Open the form",
         help: "If you reached this page from a link on the site, the issue is on our side."
       },
       de: {
-        title: "Diese Seite existiert nicht.",
-        lead: "Die Adresse ist falsch, die Seite wurde verschoben oder ist nicht mehr verfügbar.",
+        eyebrow: "Fehler 404",
+        title: "Seite nicht gefunden",
+        lead: "Es scheint, dass diese Seite aus der Datenbank verschwunden ist.\nWahrscheinlich genauso schnell wie Fast Food aus Ihrem neuen Ernährungsplan.",
         home: "Zur Startseite",
         form: "Zum Formular",
-        help: "Wenn du über einen Link auf der Website hier gelandet bist, liegt der Fehler bei uns."
+        help: "Wenn Sie über einen Link auf der Website hier gelandet sind, liegt der Fehler bei uns."
       },
       es: {
-        title: "Esta página no existe.",
-        lead: "La dirección es incorrecta, la página se movió o ya no está disponible.",
+        eyebrow: "Error 404",
+        title: "Página no encontrada",
+        lead: "Parece que esta página desapareció de la base de datos.\nProbablemente tan rápido como la comida rápida de su nuevo plan alimenticio.",
         home: "Volver al inicio",
         form: "Ir al formulario",
-        help: "Si llegaste aquí desde un enlace del sitio, el problema está de nuestro lado."
+        help: "Si llegó aquí desde un enlace del sitio, el problema está de nuestro lado."
       },
       it: {
-        title: "Questa pagina non esiste.",
-        lead: "L'indirizzo non è corretto, la pagina è stata spostata o non è più disponibile.",
+        eyebrow: "Errore 404",
+        title: "Pagina non trovata",
+        lead: "Sembra che questa pagina sia scomparsa dal database.\nProbabilmente veloce quanto il fast food dal Suo nuovo piano alimentare.",
         home: "Torna alla home",
         form: "Vai al modulo",
-        help: "Se sei arrivato qui da un link del sito, il problema è da parte nostra."
+        help: "Se è arrivato qui da un link del sito, il problema è da parte nostra."
       },
       pl: {
-        title: "Ta strona nie istnieje.",
-        lead: "Adres jest nieprawidłowy, strona została przeniesiona albo nie jest już dostępna.",
+        eyebrow: "Błąd 404",
+        title: "Strona nie znaleziona",
+        lead: "Wygląda na to, że ta strona zniknęła z bazy danych.\nPrawdopodobnie tak szybko jak fast food z Państwa nowego jadłospisu.",
         home: "Wróć na start",
         form: "Przejdź do formularza",
-        help: "Jeśli trafiłeś tu z linku na stronie, błąd jest po naszej stronie."
+        help: "Jeśli trafili Państwo tu z linku na stronie, błąd jest po naszej stronie."
       },
       pt: {
-        title: "Esta página não existe.",
-        lead: "O endereço está errado, a página foi movida ou já não está disponível.",
+        eyebrow: "Erro 404",
+        title: "Página não encontrada",
+        lead: "Parece que esta página desapareceu da base de dados.\nProvavelmente tão rápido quanto fast food do seu novo plano alimentar.",
         home: "Voltar ao início",
         form: "Abrir formulário",
         help: "Se você chegou aqui por um link do site, o problema está do nosso lado."
       },
       fr: {
-        title: "Cette page n'existe pas.",
-        lead: "L'adresse est incorrecte, la page a été déplacée ou n'est plus disponible.",
+        eyebrow: "Erreur 404",
+        title: "Page introuvable",
+        lead: "Il semble que cette page ait disparu de la base de données.\nProbablement aussi vite que le fast-food de votre nouveau régime.",
         home: "Retour à l'accueil",
         form: "Ouvrir le formulaire",
         help: "Si vous êtes arrivé ici via un lien du site, le problème vient de notre côté."
@@ -346,11 +208,22 @@
     const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
     document.documentElement.lang = lang;
     document.title = "404 | FitLime";
+
+    document.querySelector(".seo-eyebrow").textContent = t.eyebrow;
     document.getElementById("title").textContent = t.title;
-    document.getElementById("lead").textContent = t.lead;
+
+    /* preserve the line break in the lead */
+    const leadEl = document.getElementById("lead");
+    leadEl.innerHTML = "";
+    t.lead.split("\n").forEach((line, i, arr) => {
+      leadEl.appendChild(document.createTextNode(line));
+      if (i < arr.length - 1) leadEl.appendChild(document.createElement("br"));
+    });
+
     document.getElementById("home-link").textContent = t.home;
-    document.getElementById("form-link").textContent = t.form;
+    document.getElementById("form-link-2").textContent = t.form;
     document.getElementById("help-text").textContent = t.help;
   </script>
 </body>
+
 </html>
