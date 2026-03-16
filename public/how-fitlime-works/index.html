@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How FitLime Works | Algorithm and personalization</title>
+  <meta name="description" content="How FitLime works with input data, nutrient optimization, and personalized plan creation.">
+  <link rel="canonical" href="https://fitlime.eu/how-fitlime-works/">
+  <meta property="og:title" content="How FitLime Works | Algorithm and personalization">
+  <meta property="og:description" content="How FitLime turns input data into a usable meal plan.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fitlime.eu/how-fitlime-works/">
+  <meta property="og:image" content="https://fitlime.eu/images/og-fitlime.jpg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-light.png?v=2" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-dark.png?v=2" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/seo-pages.css">
+</head>
+<body class="seo-page seo-how-page">
+  <main class="seo-shell">
+    <header class="seo-topbar">
+      <a class="seo-brand" href="/index.html" aria-label="FitLime home">
+        <img src="/images/logo_pruhledne.png" alt="FitLime logo">
+        <strong>FitLime</strong>
+      </a>
+      <a class="btn outline" href="/form.html">Go to questionnaire</a>
+    </header>
+
+    <section class="seo-hero">
+      <article class="seo-card seo-hero-card">
+        <div class="seo-eyebrow">Technology behind personalization</div>
+        <h1>How FitLime works under the surface</h1>
+        <p class="seo-lead">FitLime does not rely on a generic template. It works with questionnaire data, goals, daily routine, and preferences so the final plan makes sense both nutritionally and practically.</p>
+        <div class="seo-stat-row">
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Inputs</span>
+            <strong>goal, routine, preferences</strong>
+          </div>
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Core</span>
+            <strong>constraint optimization</strong>
+          </div>
+          <div class="seo-stat-chip">
+            <span class="seo-stat-label">Output</span>
+            <strong>a usable plan</strong>
+          </div>
+        </div>
+        <div class="seo-actions">
+          <a class="btn" href="/form.html">Fill out the questionnaire</a>
+          <a class="btn outline" href="/healthy-meal-plan/index.html">Healthy meal plan</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="seo-stack">
+      <section class="seo-section">
+        <h2>What the algorithm solves</h2>
+        <div class="seo-grid">
+          <article class="seo-mini-card">
+            <h3>Input data</h3>
+            <p>The system evaluates goals, daily rhythm, sports activity, preferred foods, and restrictions.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Decision logic</h3>
+            <p>It looks for the right balance of energy, macros, and meal timing during the day.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Real life</h3>
+            <p>The result must work not just on paper, but in everyday life.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="seo-section seo-care-section">
+        <h2>Why personalization works</h2>
+        <div class="seo-grid seo-care-grid seo-grid-four">
+          <article class="seo-mini-card">
+            <h3>Energy by goal</h3>
+            <p>Fat loss, performance, and maintenance each need a different nutritional range.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Macro balance</h3>
+            <p>What matters is not only the amount of nutrients, but how they are distributed through the day.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>Practical usability</h3>
+            <p>The plan has to work at home, at work, and around training.</p>
+          </article>
+          <article class="seo-mini-card">
+            <h3>One complete solution</h3>
+            <p>FitLime combines goals, routine, and preferences into one coherent plan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="diet-simulator" class="seo-section diet-sim">
+        <div id="seo-plan-coverage"></div>
+        <div class="seo-section-heading">
+          <div>
+            <div class="seo-kicker">Interactive demo</div>
+            <h2 class="diet-title" data-i18n="home.diet.title"></h2>
+          </div>
+        </div>
+        <p class="diet-subtitle" data-i18n="home.diet.subtitle"></p>
+        <button type="button" class="btn diet-auto-btn" id="dietAutoSelect" data-i18n="home.diet.autoSelect"></button>
+
+        <div class="diet-food-list" id="dietFoodList">
+          <label><input type="checkbox" value="avocado"> <span data-i18n="home.diet.food.avocado"></span></label>
+          <label><input type="checkbox" value="donut"> <span data-i18n="home.diet.food.donut"></span></label>
+          <label><input type="checkbox" value="burger"> <span data-i18n="home.diet.food.burger"></span></label>
+          <label><input type="checkbox" value="fries"> <span data-i18n="home.diet.food.fries"></span></label>
+          <label><input type="checkbox" value="apple"> <span data-i18n="home.diet.food.apple"></span></label>
+          <label><input type="checkbox" value="chicken"> <span data-i18n="home.diet.food.chicken"></span></label>
+          <label><input type="checkbox" value="hotdog"> <span data-i18n="home.diet.food.hotdog"></span></label>
+          <label><input type="checkbox" value="rice"> <span data-i18n="home.diet.food.rice"></span></label>
+          <label><input type="checkbox" value="salad"> <span data-i18n="home.diet.food.salad"></span></label>
+          <label><input type="checkbox" value="icecream"> <span data-i18n="home.diet.food.icecream"></span></label>
+        </div>
+
+        <div class="diet-chart-container">
+          <canvas id="dietChart"></canvas>
+        </div>
+
+        <p class="diet-info-text">This demo shows the principle behind building a sensible meal. In the real plan, FitLime works with a broader space of foods, nutrients, and practical constraints.</p>
+      </section>
+
+      <section class="seo-faq">
+        <h2>FAQ</h2>
+        <div class="seo-faq-item">
+          <h3>Is FitLime just a calorie calculator?</h3>
+          <p>No. Calories are only one part of the logic. Daily routine, movement, and long-term usability matter too.</p>
+        </div>
+        <div class="seo-faq-item">
+          <h3>Why is a universal template not enough?</h3>
+          <p>Because different goals and lifestyles need different solutions.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/diet-simulator.js"></script>
+  <script type="module">
+    import { bootI18n } from '/i18n-core.js';
+
+    bootI18n();
+  </script>
+</body>
+</html>

@@ -1004,6 +1004,34 @@
       return url.pathname + url.search + url.hash;
     }
 
+    function seoPathFor(lang, key) {
+      const paths = {
+        how: {
+          cs: '/jak-fitlime-funguje/index.html',
+          sk: '/ako-fitlime-funguje/index.html',
+          en: '/how-fitlime-works/index.html',
+        },
+        sports: {
+          cs: '/sportovni-jidelnicek/index.html',
+          sk: '/sportovy-jedalnicek/index.html',
+          en: '/sports-meal-plan/index.html',
+        },
+        healthy: {
+          cs: '/zdravy-jidelnicek/index.html',
+          sk: '/zdravy-jedalnicek/index.html',
+          en: '/healthy-meal-plan/index.html',
+        },
+        weightLoss: {
+          cs: '/jidelnicek-na-hubnuti/index.html',
+          sk: '/jedalnicek-na-chudnutie/index.html',
+          en: '/weight-loss-meal-plan/index.html',
+        },
+      };
+
+      const byKey = paths[key] || {};
+      return byKey[lang] || byKey.en || byKey.cs || '/index.html';
+    }
+
     // Upraví důležité odkazy, aby nesly ?lang=xx
     function updateLangLinks(lang) {
       const selectors = [
@@ -1014,6 +1042,18 @@
       ];
       document.querySelectorAll(selectors.join(',')).forEach(a => {
         a.href = setLangParam(a.getAttribute('href'), lang);
+      });
+      document.querySelectorAll('.how-more-info-link').forEach(a => {
+        a.href = seoPathFor(lang, 'how');
+      });
+      document.querySelectorAll('.audience-card:nth-of-type(1) .audience-more-info-link').forEach(a => {
+        a.href = seoPathFor(lang, 'sports');
+      });
+      document.querySelectorAll('.audience-card:nth-of-type(2) .audience-more-info-link').forEach(a => {
+        a.href = seoPathFor(lang, 'healthy');
+      });
+      document.querySelectorAll('.audience-card:nth-of-type(3) .audience-more-info-link').forEach(a => {
+        a.href = seoPathFor(lang, 'weightLoss');
       });
     }
 
