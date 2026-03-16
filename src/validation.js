@@ -47,8 +47,8 @@ export function validateProfile(profile, t){
 
 /* ===== Goal (step 2) ===== */
 export const BMR_LIMITS = {
-  kcal: { min: 900,  max: 3500 },
-  kJ:   { min: 4000, max: 15000 }   // key "kJ" uses uppercase J
+  kcal: { min: 1100, max: 3000 },
+  kJ:   { min: 4500, max: 12500 }   // key "kJ" uses uppercase J
 };
 
 const UNIT_LABELS = {
