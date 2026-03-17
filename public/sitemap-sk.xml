@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://fitlime.sk/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/form.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/form.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/form.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/form.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/form.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/cookies.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/cookies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/cookies.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/gdpr.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/gdpr.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/gdpr.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/terms.html</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/terms.html" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/terms.html" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/jedalnicek-na-chudnutie/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/jidelnicek-na-hubnuti/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/jedalnicek-na-chudnutie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/weight-loss-meal-plan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/weight-loss-meal-plan/" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/zdravy-jedalnicek/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/zdravy-jidelnicek/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/zdravy-jedalnicek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/healthy-meal-plan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/healthy-meal-plan/" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/sportovy-jedalnicek/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/sportovni-jidelnicek/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/sportovy-jedalnicek/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/sports-meal-plan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/sports-meal-plan/" />
+  </url>
+  <url>
+    <loc>https://fitlime.sk/ako-fitlime-funguje/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://fitlime.cz/jak-fitlime-funguje/" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://fitlime.sk/ako-fitlime-funguje/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitlime.eu/how-fitlime-works/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitlime.eu/how-fitlime-works/" />
+  </url>
+</urlset>

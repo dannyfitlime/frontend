@@ -22,3 +22,5 @@ Disallow: /
 
 # Sitemap
 Sitemap: https://fitlime.cz/sitemap.xml
+Sitemap: https://fitlime.sk/sitemap-sk.xml
+Sitemap: https://fitlime.eu/sitemap-eu.xml
