@@ -93,6 +93,12 @@ export function applyI18n(root=document){
     const path = `/images/preview/${i18n.lang}/thumbs/${file}`;
     if (el.tagName === 'IMG') el.setAttribute('src', path);
   });
+  root.querySelectorAll('[data-i18n-og-image]').forEach(el => {
+    // Sestavíme URL podle aktuálního jazyka (cs, sk, en)
+    // location.origin zajistí, že to bude na .sk doméně brát obrázek z .sk atd.
+    const path = `${location.origin}/images/og-fitlime_${i18n.lang}.jpg`;
+    el.setAttribute('content', path);
+  });
   // nastaví <html lang="..">
   document.documentElement.lang = i18n.lang;
   applyContactEmail(root, i18n.lang);
