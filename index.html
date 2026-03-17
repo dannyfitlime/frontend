@@ -63,6 +63,18 @@
     "sameAs": []
   }
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM0R7B35P2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied'
+    });
+    gtag('config', 'G-EM0R7B35P2');
+  </script>
 </head>
 
 <body data-page="home">
@@ -775,11 +787,22 @@
       if (!isHome) return;
 
       const ACCEPT_KEY = 'cookieConsent';
+      const updateConsent = (granted) => {
+        const storage = granted ? 'granted' : 'denied';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'analytics_storage': storage,
+            'ad_storage': storage
+          });
+        }
+      };
       const acceptBtn = document.getElementById('cookiesAccept');
       const declineBtn = document.getElementById('cookiesDecline');
 
       const hideBar = (state) => {
         try { localStorage.setItem(ACCEPT_KEY, state); } catch (_) { }
+        if (state === 'accepted') updateConsent(true);
+        if (state === 'declined') updateConsent(false);
         bar.classList.remove('is-open');
         bar.setAttribute('aria-hidden', 'true');
         setTimeout(() => bar.setAttribute('hidden', ''), 220);
@@ -792,12 +815,15 @@
       };
 
       let stored = null;
-      try { stored = localStorage.getItem(ACCEPT_KEY); } catch (_) { }
+      try { 
+        stored = localStorage.getItem(ACCEPT_KEY) || localStorage.getItem('cookiesChoice'); 
+      } catch (_) { }
       if (!stored) {
         showBar();
       } else {
         bar.setAttribute('hidden', '');
         bar.setAttribute('aria-hidden', 'true');
+        if (stored === 'accepted' || stored === 'accept') updateConsent(true);
       }
 
       acceptBtn?.addEventListener('click', () => hideBar('accepted'));
