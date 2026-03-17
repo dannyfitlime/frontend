@@ -2311,7 +2311,56 @@ PRO KOHO JE JÍDELNÍČEK
   gap: 6px;
 }
 
-.footer-instagram {
+.footer-social-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social-sep {
+  color: var(--fg);
+  opacity: 0.3;
+  font-size: 0.8rem;
+}
+
+.footer-instagram,
+.footer-facebook {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-instagram:hover,
+.footer-facebook:hover {
+  text-decoration: underline;
+  text-decoration-color: #000;
+}
+
+.footer-instagram__text,
+.footer-facebook__text {
+  display: inline;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 650px) {
+  .footer-social-wrap {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .footer-social-sep {
+    display: none;
+  }
+}
+
+/* Old style was here */
+.old-style-placeholder {
   display: inline-flex;
   align-items: center;
   justify-content: center;

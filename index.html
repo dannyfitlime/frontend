@@ -97,7 +97,7 @@
 
       <!-- Logo -->
       <a class="home-brand" href="." aria-label="FitLime domů">
-        <img class="logo" src="/public/images/logo_pruhledne.png" alt="Fit Lime logo" width="150" height="150" />
+        <img class="logo" src="/public/images/logo_pruhledne.png" data-i18n-alt="home.logo.alt" width="150" height="150" />
         <span class="text">Fit Lime</span>
       </a>
 
@@ -135,7 +135,7 @@
       <div class="drawer__image">
         <picture>
           <source media="(max-width: 649px)" srcset="/public/images/drawer_rotated.jpg">
-          <img src="/public/images/drawer.jpg" alt="Zdravá výživa" data-i18n-aria-label="home.drawer.imageAlt"
+          <img src="/public/images/drawer.jpg" data-i18n-alt="home.drawer.imageAlt"
             width="800" height="533" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -145,13 +145,13 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero">
-      <picture class="hero-media" aria-hidden="true">
+      <picture class="hero-media">
         <source media="(max-width: 768px)"
           srcset="/images/optimized/hero-bg-800.jpg 800w, /images/optimized/hero-bg-1600.jpg 1600w"
           sizes="100vw">
         <img class="hero-bg" src="/images/optimized/hero-bg-1600.jpg"
           srcset="/images/optimized/hero-bg-800.jpg 800w, /images/optimized/hero-bg-1600.jpg 1600w"
-          sizes="100vw" alt="" fetchpriority="high" decoding="async" width="1600" height="1067">
+          sizes="100vw" data-i18n-alt="home.hero.hero_alt" fetchpriority="high" decoding="async" width="1600" height="1067">
       </picture>
       <div class="home-container hero-wrap">
         <h1 data-i18n="home.hero.title">Jídelníček na míru během pár minut</h1>
@@ -174,7 +174,7 @@
           <div class="why-columns">
             <!-- 1 -->
             <div class="why-item">
-              <img src="/public/images/why1.png" alt="Zdravý životní styl" width="500" height="500" loading="lazy"
+              <img src="/public/images/why1.png" data-i18n-alt="home.why.items.lifestyle.imageAlt" width="500" height="500" loading="lazy"
                 decoding="async">
               <h3 data-i18n="home.why.items.lifestyle.title"></h3>
               <ul>
@@ -186,7 +186,7 @@
 
             <!-- 2 -->
             <div class="why-item">
-              <img src="/public/images/why2.png" alt="Výživa na míru" width="500" height="500" loading="lazy"
+              <img src="/public/images/why2.png" data-i18n-alt="home.why.items.nutrition.imageAlt" width="500" height="500" loading="lazy"
                 decoding="async">
               <h3 data-i18n="home.why.items.nutrition.title"></h3>
               <ul>
@@ -198,7 +198,7 @@
 
             <!-- 3 -->
             <div class="why-item">
-              <img src="/public/images/why3.png" alt="Praktický přístup" width="500" height="500" loading="lazy"
+              <img src="/public/images/why3.png" data-i18n-alt="home.why.items.practical.imageAlt" width="500" height="500" loading="lazy"
                 decoding="async">
               <h3 data-i18n="home.why.items.practical.title"></h3>
               <ul>
@@ -292,7 +292,7 @@
             <!-- 1) Výkonnostní a vrcholoví sportovci -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/elite_sport.jpg" alt="Vrcholový sportovec při tréninku" width="800"
+                <img src="/public/images/elite_sport.jpg" data-i18n-alt="home.audience.pro.imageAlt" width="800"
                   height="800" loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
@@ -313,7 +313,7 @@
             <!-- 2) Hobby sportovci -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/sport.jpg" alt="Hobby sportovec při cvičení" width="800" height="800"
+                <img src="/public/images/sport.jpg" data-i18n-alt="home.audience.hobby.imageAlt" width="800" height="800"
                   loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
@@ -334,7 +334,7 @@
             <!-- 3) Nesportovci / běžná populace -->
             <article class="audience-card">
               <div class="audience-image">
-                <img src="/public/images/no_sport.jpg" alt="Běžný člověk u zdravého jídla" width="800"
+                <img src="/public/images/no_sport.jpg" data-i18n-alt="home.audience.everyday.imageAlt" width="800"
                   height="800" loading="lazy" decoding="async">
               </div>
               <div class="audience-body">
@@ -359,6 +359,7 @@
             <a class="btn btn-xl" href="/form.html" data-i18n="home.audience.cta">
               Zjisti, jaký plán je pro tebe
             </a>
+          </div>
           </div>
         </div>
       </section>
@@ -689,7 +690,7 @@
           <h2 data-i18n="home.about.title"></h2>
           <div class="team">
             <article class="team-card">
-              <img class="avatar" src="/public/images/lee.jpg" alt="Libor - nutriční terapeut" loading="lazy"
+              <img class="avatar" src="/public/images/lee.jpg" data-i18n-alt="home.about.libor.imageAlt" loading="lazy"
                 decoding="async" width="373" height="373" />
               <div>
                 <h3 data-i18n="home.about.libor.name"></h3>
@@ -701,7 +702,7 @@
               </div>
             </article>
             <article class="team-card">
-              <img class="avatar" src="/public/images/danny.jpg" alt="Danny - trenér" loading="lazy" decoding="async"
+              <img class="avatar" src="/public/images/danny.jpg" data-i18n-alt="home.about.danny.imageAlt" loading="lazy" decoding="async"
                 width="1478" height="1478" />
               <div>
                 <h3 data-i18n="home.about.danny.name"></h3>
@@ -866,10 +867,17 @@
           <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer">
             Powered by sportvitalpro.cz
           </a>
-          <a href="https://www.instagram.com/sportvitalpro" class="footer-instagram" target="_blank"
+          <div class="footer-social-wrap">
+            <a href="https://www.instagram.com/sportvitalpro" class="footer-instagram" target="_blank"
             rel="noopener noreferrer" aria-label="Instagram">
             <span class="footer-instagram__text">Instagram</span>
           </a>
+            <span class="footer-social-sep">|</span>
+            <a href="https://www.facebook.com/sportvitalpro" class="footer-facebook" target="_blank"
+              rel="noopener noreferrer" aria-label="Facebook">
+              <span class="footer-facebook__text">Facebook</span>
+            </a>
+          </div>
         </div>
       </div>
 

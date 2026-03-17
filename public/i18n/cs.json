@@ -4,6 +4,9 @@
       "title": "FitLime – zdravý jídelníček na míru",
       "description": "Kompletní dietní jídelníčky na míru. Zdravý životní styl, pestrá jídla, edukace a podpora sportu."
     },
+    "logo": {
+      "alt": "FitLime logo - zdravý jídelníček na míru"
+    },
     "cookies": {
       "text": "Používáme cookies pro správné fungování webu a analytiku. <a href='/cookies.html'>Více informací</a>.",
       "decline": "Odmítnout",
@@ -21,7 +24,8 @@
       "title": "Zdravý jídelníček na míru",
       "lead": "Získejte stravovací plán přizpůsobený Vašemu tělu a cílům. Stačí vyplnit krátký dotazník.",
       "cta": "Získat jídelníček",
-      "note": "Zabere to jen pár minut."
+      "note": "Zabere to jen pár minut.",
+      "hero_alt": "Pohled shora na dva talíře s pestrým a zdravým jídlem – ukázka jídelníčku FitLime"
     },
     "why": {
       "title": "FitLime - víc než jen jídelníček.",
@@ -31,19 +35,22 @@
           "title": "Zdravý životní styl",
           "point1": "Edukace a dlouhodobý přístup ke zdraví",
           "point2": "Reálné výsledky bez extrémů",
-          "point3": "Udržitelná změna návyků"
+          "point3": "Udržitelná změna návyků",
+          "imageAlt": "Ilustrace zdravého životního stylu a wellness"
         },
         "nutrition": {
           "title": "Výživa na míru",
           "point1": "Unikátní a pestrá jídla na míru každý den",
           "point2": "Respektujeme dietní a preferenčné potreby",
-          "point3": "Vyladěné makro i mikroživiny"
+          "point3": "Vyladěné makro i mikroživiny",
+          "imageAlt": "Ilustrace nutričně vyváženého jídla"
         },
         "practical": {
           "title": "Praktický přístup",
           "point1": "Přehledný jídelníček, recepty a nákupní seznam",
           "point2": "Podpora sportu, regenerace a výkonu",
-          "point3": "Snadné dodržování díky chytrému systému"
+          "point3": "Snadné dodržování díky chytrému systému",
+          "imageAlt": "Ilustrace efektivního plánování jídelníčku"
         }
       }
     },
@@ -130,7 +137,7 @@
       "coverage": "Co pokrývá",
       "pricing": "Ceník",
       "about": "O nás",
-      "imageAlt": "Zdravá výživa"
+      "imageAlt": "Variace čerstvé zeleniny a ovoce pro zdravý plán"
     },
     "coverage": {
       "title": "Co jídelníček pokrývá",
@@ -207,17 +214,20 @@
       "pro": {
         "title": "Vrcholoví sportovci",
         "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.",
-        "tag": "Výkon"
+        "tag": "Výkon",
+        "imageAlt": "Vrcholový sportovec při intenzivním tréninku"
       },
       "hobby": {
         "title": "Aktivní životní styl",
         "text": "Běháte, chodíte do fitka, na kolo nebo skupinové lekce a chcete se cítit lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.",
-        "tag": "Balance"
+        "tag": "Balance",
+        "imageAlt": "Hobby sportovec při rekreačním běhu v přírodě"
       },
       "everyday": {
         "title": "Běžný život",
         "text": "Nejste „sportovec“, ale chcete jíst zdravěji, mít energii během dne nebo zhubnout? Postavíme jídelníček, který je realistický a dlouhodobě udržitelný.",
-        "tag": "Začínám"
+        "tag": "Začínám",
+        "imageAlt": "Spokojený člověk u zdravého a čerstvého pokrmu"
       },
       "cta": "Zjistěte, jaký plán je pro Vás"
     },
@@ -321,13 +331,15 @@
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Klinický biochemik, lékař internista ve VFN a 1. LF UK",
         "item2": "Odborný konzultant v oblasti sportovní výživy",
-        "item3": "Spolupráce s Českým olympijským týmem"
+        "item3": "Spolupráce s Českým olympijským týmem",
+        "imageAlt": "Libor Vítek - expert na nutriční terapii"
       },
       "danny": {
         "name": "Ing. Daniel Vítek",
         "item1": "Absolvent oboru Bioinformatika na ČVUT FEL",
         "item2": "Studium na Fakultě tělovýchovy a sportu (Madrid)",
-        "item3": "Bioinformatika a technologie ve výživě"
+        "item3": "Bioinformatika a technologie ve výživě",
+        "imageAlt": "Daniel Vítek - odborník na bioinformatiku a sport"
       }
     },
     "reference": {

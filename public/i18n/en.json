@@ -4,6 +4,9 @@
       "title": "FitLime - Personalized Meal & Training Plans",
       "description": "Complete personalized meal and training plans. Healthy lifestyle, diverse meals, education, and sports support."
     },
+    "logo": {
+      "alt": "FitLime logo - personalized meal and training plans"
+    },
     "cookies": {
       "text": "We use cookies for proper website functionality and analytics. <a href='/cookies.html'>Learn more</a>.",
       "decline": "Decline",
@@ -21,7 +24,8 @@
       "title": "Personalized meal & training plan",
       "lead": "Fill out a short questionnaire and get a plan tailored to your needs.",
       "cta": "Start questionnaire",
-      "note": "It only takes a few minutes."
+      "note": "It only takes a few minutes.",
+      "hero_alt": "Top view of two plates with colorful and healthy food – FitLime meal plan preview"
     },
     "why": {
       "title": "FitLime - more than just a meal plan.",
@@ -31,19 +35,22 @@
           "title": "Healthy lifestyle",
           "point1": "Education and a long-term approach to health",
           "point2": "Real results without extremes",
-          "point3": "Sustainable habit change"
+          "point3": "Sustainable habit change",
+          "imageAlt": "Illustration of a healthy lifestyle and wellness"
         },
         "nutrition": {
           "title": "Nutrition tailored",
           "point1": "Unique and varied meals every day",
           "point2": "We respect allergies and preferences",
-          "point3": "Tuned macro and micronutrients"
+          "point3": "Tuned macro and micronutrients",
+          "imageAlt": "Illustration of a nutritionally balanced meal"
         },
         "practical": {
           "title": "Practical approach",
           "point1": "Clear meal plan, recipes, and list",
           "point2": "Support for sport, recovery, and performance",
-          "point3": "Easy adherence thanks to a smart system"
+          "point3": "Easy adherence thanks to a smart system",
+          "imageAlt": "Illustration of efficient meal planning"
         }
       }
     },
@@ -130,7 +137,7 @@
       "coverage": "What it covers",
       "pricing": "Pricing",
       "about": "About us",
-      "imageAlt": "Healthy nutrition"
+      "imageAlt": "Variety of fresh vegetables and fruits for a healthy plan"
     },
     "coverage": {
       "title": "What the meal plan covers",
@@ -207,17 +214,20 @@
       "pro": {
         "title": "Elite athletes",
         "text": "Do you have a training plan, season, or races? We tune the meal plan to daily load so it matches performance, recovery, and body weight.",
-        "tag": "Performance"
+        "tag": "Performance",
+        "imageAlt": "Elite athlete during intense training"
       },
       "hobby": {
         "title": "Active lifestyle",
         "text": "Do you run, go to the gym, cycle, or take classes and want to feel lighter, stronger, and have more energy? The meal plan fits into work, school, and family life.",
-        "tag": "Balance"
+        "tag": "Balance",
+        "imageAlt": "Hobby athlete during a recreational run in nature"
       },
       "everyday": {
         "title": "Everyday life",
         "text": "Not a \"sporty type\" but want to eat healthier, have energy during the day, or lose weight? We build a meal plan that is realistic and sustainable long term.",
-        "tag": "Starting out"
+        "tag": "Starting out",
+        "imageAlt": "Happy person with a healthy and fresh meal"
       },
       "cta": "Find out which plan suits you"
     },
@@ -321,13 +331,15 @@
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Clinical biochemist, internal medicine specialist at VFN and 1st Faculty of Medicine, Charles University",
         "item2": "Expert consultant in sports nutrition",
-        "item3": "Collaboration with the Czech Olympic Team"
+        "item3": "Collaboration with the Czech Olympic Team",
+        "imageAlt": "Libor Vítek - nutrition therapy expert"
       },
       "danny": {
         "name": "Ing. Daniel Vítek",
         "item1": "Graduate in Bioinformatics at CTU FEE",
         "item2": "Studies at the Faculty of Physical Education and Sport (Madrid)",
-        "item3": "Bioinformatics & technology in nutrition"
+        "item3": "Bioinformatics & technology in nutrition",
+        "imageAlt": "Daniel Vítek - bioinformatics and sports professional"
       }
     },
     "reference": {
