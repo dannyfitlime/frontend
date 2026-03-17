@@ -96,7 +96,7 @@
       <!-- Pravý blok: platby -->
       <div class="footer-right">
         <div>
-          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+          <a data-contact-email data-user="info" data-domain="fitlime.cz"></a>
         </div>
       </div>
     </div>
@@ -120,10 +120,23 @@
     // Nastavit rok ve footeru
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    function renderContactEmails() {
+      document.querySelectorAll('[data-contact-email]').forEach(el => {
+        const u = el.dataset.user;
+        const d = el.dataset.domain;
+        if (u && d) {
+          const mail = u + '@' + d;
+          el.href = 'mailto:' + mail;
+          el.textContent = mail;
+        }
+      });
+    }
+
     // Načíst jazyk podle priority (?lang → localStorage → browser → fallback)
     (async () => {
       await bootI18n();
       applyLangToLinks(i18n.lang);
+      renderContactEmails();
     })();
 
     // Intro krok (mezikrok)

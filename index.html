@@ -850,7 +850,7 @@
     <div class="site-footer__inner">
       <div class="footer-left">
         <div>
-          <a data-contact-email href="mailto:info@fitlime.cz">info@fitlime.cz</a>
+          <a data-contact-email data-user="info" data-domain="fitlime.cz"></a>
         </div>
         <div>
           <span class="brandline" data-i18n="home.footer.brand"></span>
@@ -1131,11 +1131,25 @@
     // -----------------------
     // Inicializace po načtení
     // -----------------------
+    // Obfuscate emails to prevent simple scrapers from seeing info@fitlime.cz
+    function renderContactEmails() {
+      document.querySelectorAll('[data-contact-email]').forEach(el => {
+        const u = el.dataset.user;
+        const d = el.dataset.domain;
+        if (u && d) {
+          const mail = u + '@' + d;
+          el.href = 'mailto:' + mail;
+          el.textContent = mail;
+        }
+      });
+    }
+
     (async () => {
       const INIT_LANG = getCurrentLang();     // zjistí jazyk
       renderLangSwitcher(INIT_LANG);          // vykreslí switcher
       updateLangLinks(INIT_LANG);             // aktualizuje odkazy na formulář i právní stránky
-      applyPrices(INIT_LANG);                 // nastaví ceny
+      applyPrices(INIT_LANG);
+      renderContactEmails();                 // nastaví ceny
     })();
 
     // Přepočítá ceny při přepnutí období (pokud existuje přepínač)
