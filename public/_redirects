@@ -1,0 +1,41 @@
+# --- CZ DOMÉNA ---
+# Přesměrování cizojazyčných URL na odpovídající českou verzi
+https://fitlime.cz/sports-meal-plan/* https://fitlime.cz/sportovni-jidelnicek/:splat 301
+https://fitlime.cz/sportovy-jedalnicek/* https://fitlime.cz/sportovni-jidelnicek/:splat 301
+
+https://fitlime.cz/weight-loss-meal-plan/* https://fitlime.cz/jidelnicek-na-hubnuti/:splat 301
+https://fitlime.cz/jedalnicek-na-chudnutie/* https://fitlime.cz/jidelnicek-na-hubnuti/:splat 301
+
+https://fitlime.cz/healthy-meal-plan/* https://fitlime.cz/zdravy-jidelnicek/:splat 301
+https://fitlime.cz/zdravy-jedalnicek/* https://fitlime.cz/zdravy-jidelnicek/:splat 301
+
+https://fitlime.cz/how-fitlime-works/* https://fitlime.cz/jak-fitlime-funguje/:splat 301
+https://fitlime.cz/ako-fitlime-funguje/* https://fitlime.cz/jak-fitlime-funguje/:splat 301
+
+# --- SK DOMÉNA ---
+# Přesměrování cizojazyčných URL na odpovídající slovenskou verzi
+https://fitlime.sk/sports-meal-plan/* https://fitlime.sk/sportovy-jedalnicek/:splat 301
+https://fitlime.sk/sportovni-jidelnicek/* https://fitlime.sk/sportovy-jedalnicek/:splat 301
+
+https://fitlime.sk/weight-loss-meal-plan/* https://fitlime.sk/jedalnicek-na-chudnutie/:splat 301
+https://fitlime.sk/jidelnicek-na-hubnuti/* https://fitlime.sk/jedalnicek-na-chudnutie/:splat 301
+
+https://fitlime.sk/healthy-meal-plan/* https://fitlime.sk/zdravy-jedalnicek/:splat 301
+https://fitlime.sk/zdravy-jidelnicek/* https://fitlime.sk/zdravy-jedalnicek/:splat 301
+
+https://fitlime.sk/how-fitlime-works/* https://fitlime.sk/ako-fitlime-funguje/:splat 301
+https://fitlime.sk/jak-fitlime-funguje/* https://fitlime.sk/ako-fitlime-funguje/:splat 301
+
+# --- EU DOMÉNA (EN) ---
+# Přesměrování cizojazyčných URL na odpovídající anglickou verzi
+https://fitlime.eu/sportovni-jidelnicek/* https://fitlime.eu/sports-meal-plan/:splat 301
+https://fitlime.eu/sportovy-jedalnicek/* https://fitlime.eu/sports-meal-plan/:splat 301
+
+https://fitlime.eu/jidelnicek-na-hubnuti/* https://fitlime.eu/weight-loss-meal-plan/:splat 301
+https://fitlime.eu/jedalnicek-na-chudnutie/* https://fitlime.eu/weight-loss-meal-plan/:splat 301
+
+https://fitlime.eu/zdravy-jidelnicek/* https://fitlime.eu/healthy-meal-plan/:splat 301
+https://fitlime.eu/zdravy-jedalnicek/* https://fitlime.eu/healthy-meal-plan/:splat 301
+
+https://fitlime.eu/jak-fitlime-funguje/* https://fitlime.eu/how-fitlime-works/:splat 301
+https://fitlime.eu/ako-fitlime-funguje/* https://fitlime.eu/how-fitlime-works/:splat 301
