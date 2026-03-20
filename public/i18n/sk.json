@@ -326,6 +326,16 @@
       }
     },
     "about": {
+      "articles": {
+        "title": "Články",
+        "lead": "Pozrite si stručné články k najčastejším témam okolo jedálnička a fungovania FitLime.",
+        "links": {
+          "how": "Ako FitLime funguje",
+          "sports": "Športový jedálniček",
+          "weightLoss": "Jedálniček na chudnutie",
+          "healthy": "Zdravý jedálniček"
+        }
+      },
       "title": "O nás",
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",

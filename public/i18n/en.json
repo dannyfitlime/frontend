@@ -326,6 +326,16 @@
       }
     },
     "about": {
+      "articles": {
+        "title": "Articles",
+        "lead": "Browse quick reads covering the most common meal-planning topics and how FitLime works.",
+        "links": {
+          "how": "How FitLime works",
+          "sports": "Sports meal plan",
+          "weightLoss": "Weight loss meal plan",
+          "healthy": "Healthy meal plan"
+        }
+      },
       "title": "About us",
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",

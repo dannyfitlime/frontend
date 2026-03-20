@@ -2132,6 +2132,49 @@ PRO KOHO JE JÍDELNÍČEK
   font-size: 1.1rem;
 }
 
+.about-articles {
+  margin-top: 28px;
+  padding: 24px;
+  background: linear-gradient(180deg, #f8fcfa 0%, #ffffff 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-articles__copy h3 {
+  margin: 0;
+}
+
+.about-articles__copy p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.about-articles__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.about-articles__link {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.about-articles__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand);
+  box-shadow: 0 12px 30px rgba(18, 61, 41, 0.08);
+}
+
 @media (max-width: 360px) {
   #about.features {
     padding: 48px 10px 16px;
@@ -2145,6 +2188,10 @@ PRO KOHO JE JÍDELNÍČEK
   .team {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .about-articles {
+    padding: 18px;
   }
 
   .team-card {
@@ -2343,8 +2390,6 @@ PRO KOHO JE JÍDELNÍČEK
 .footer-facebook__text {
   display: inline;
   font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
   color: inherit;
   font-size: 0.85rem;
 }
@@ -2375,8 +2420,6 @@ PRO KOHO JE JÍDELNÍČEK
 .footer-instagram__text {
   display: inline;
   font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
   color: var(--fg);
   font-size: 0.85rem;
 }
@@ -3097,6 +3140,10 @@ h2 {
 
   .team ul.features {
     font-size: 1rem;
+  }
+
+  .about-articles__grid {
+    grid-template-columns: 1fr;
   }
 
   /* FAQ */

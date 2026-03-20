@@ -361,7 +361,6 @@
             </a>
           </div>
           </div>
-        </div>
       </section>
 
       <!-- ===== UKÁZKA ===== -->
@@ -713,6 +712,22 @@
                 </ul>
               </div>
             </article>
+          </div>
+          <div class="about-articles">
+            <div class="about-articles__copy">
+              <h3 data-i18n="home.about.articles.title"></h3>
+              <p data-i18n="home.about.articles.lead"></p>
+            </div>
+            <div class="about-articles__grid">
+              <a class="about-articles__link" href="/jak-fitlime-funguje/index.html" data-seo-link="how"
+                data-i18n="home.about.articles.links.how"></a>
+              <a class="about-articles__link" href="/sportovni-jidelnicek/index.html" data-seo-link="sports"
+                data-i18n="home.about.articles.links.sports"></a>
+              <a class="about-articles__link" href="/jidelnicek-na-hubnuti/index.html" data-seo-link="weightLoss"
+                data-i18n="home.about.articles.links.weightLoss"></a>
+              <a class="about-articles__link" href="/zdravy-jidelnicek/index.html" data-seo-link="healthy"
+                data-i18n="home.about.articles.links.healthy"></a>
+            </div>
           </div>
         </div>
       </section>
@@ -1088,6 +1103,10 @@
       });
       document.querySelectorAll('.audience-card:nth-of-type(3) .audience-more-info-link').forEach(a => {
         a.href = seoPathFor(lang, 'weightLoss');
+      });
+      document.querySelectorAll('[data-seo-link]').forEach(a => {
+        const key = a.getAttribute('data-seo-link');
+        if (key) a.href = seoPathFor(lang, key);
       });
     }
 
