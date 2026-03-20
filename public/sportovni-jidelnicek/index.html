@@ -54,7 +54,6 @@
         <img src="/images/logo_pruhledne.png" alt="FitLime logo">
         <strong>FitLime</strong>
       </a>
-      <a class="btn outline" href="/form.html">Přejít na formulář</a>
     </header>
 
     <section class="seo-hero">
@@ -139,9 +138,62 @@
             <a href="/jidelnicek-na-hubnuti/index.html" class="ps-elegant-link">Jídelníček na hubnutí</a>
             <a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a>
           </div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;">
+              <a href="/index.html" class="ps-elegant-link" >Návrat na hlavní stránku</a>
+            </div>
         </div>
       </section>
     </div>
   </main>
+  <footer class="site-footer" role="contentinfo"
+    style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+      <div class="footer-left">
+        <div style="margin-bottom: 12px;">
+          <a data-contact-email data-user="info" data-domain="fitlime.cz"
+            style="color: var(--fg); text-decoration: none; font-weight: 600;"></a>
+        </div>
+        <div style="margin-bottom: 8px;">
+          <span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span>
+        </div>
+        <div style="font-size: 0.85rem; opacity: 0.8;">
+          <span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span>
+        </div>
+      </div>
+
+      <div class="footer-center" style="text-align: center;">
+        <div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer"
+            style="color: #52460a; text-decoration: none; font-weight: 600;">
+            Powered by sportvitalpro.cz
+          </a>
+          <div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;">
+            <a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
+              target="_blank" rel="noopener noreferrer">Instagram</a>
+            <span style="opacity: 0.3;">|</span>
+            <a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
+              target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right" style="text-align: right;">
+        <nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
+          <a href="/cookies.html" style="color: var(--muted); text-decoration: none;"
+            data-i18n="home.footer.cookies">Cookies</a>
+          <a href="/terms.html" style="color: var(--muted); text-decoration: none;"
+            data-i18n="home.footer.terms">Obchodní podmínky</a>
+          <a href="/gdpr.html" style="color: var(--muted); text-decoration: none;"
+            data-i18n="home.footer.privacy">Ochrana soukromí</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script type="module">
+    import { bootI18n } from '/i18n-core.js';
+
+    bootI18n();
+  </script>
 </body>
 </html>
