@@ -1,4 +1,4 @@
-﻿import { t } from './i18n-core.js';
+import { t } from './i18n-core.js';
 
 /* =======================================================================
    charts.js
@@ -23,10 +23,10 @@ function animate({ duration = 800, delay = 0, easing = 'outCubic', onUpdate, onD
       if (start === null) start = ts + delay;
       const elapsed = ts - start;
       if (elapsed < 0) { requestAnimationFrame(tick); return; }
-      const t = clamp(elapsed / duration, 0, 1);
-      const k = ease(t);
+      const tParam = clamp(elapsed / duration, 0, 1);
+      const k = ease(tParam);
       onUpdate && onUpdate(k);
-      if (t < 1) requestAnimationFrame(tick);
+      if (tParam < 1) requestAnimationFrame(tick);
       else { onDone && onDone(); resolve(); }
     }
     requestAnimationFrame(tick);
@@ -147,18 +147,13 @@ export async function renderMacroCharts({ c = 0, f = 0, p = 0 } = {}) {
   });
 }
 
-
-
 /* =======================================================================
    DIET SIMULATOR – 0–150 %, makra = shoda s ideálem (55/20/25), ostatní absolutně
    Jednoduchý, realistický, edukativní výstup pro laiky
    ======================================================================= */
 
 /* --- 1) DATA POTRAVIN (procentuální „příspěvky k obědu“) --- */
-/* Pozn.: hodnoty u makro polí (carbs/protein/fat) slouží jako „makro tokeny“,
-   ze kterých se počítá poměr v rámci vybraných jídel. */
 const DIET_FOODS = {
-
   /* === ZDRAVÉ === */
   chicken: { energy: 28.2, protein: 79.7, fat: 25.0, carbs: 0.0, fiber: 0.0,  cholesterol: 60.0, sodium: 52.5  },
   rice: { energy: 33.3, protein: 10.3, fat: 3.5, carbs: 55.3, fiber: 5.0, cholesterol: 0.0, sodium: 12.0  },
@@ -166,20 +161,17 @@ const DIET_FOODS = {
   avocado: { energy: 19.1, protein: 3.6, fat: 69.4, carbs: 7.9, fiber: 41.3, cholesterol: 0.0,sodium: 4.9 },
   apple: { energy: 13.3, protein: 1.3, fat: 2.1, carbs: 27.6, fiber: 33.1, cholesterol: 0.0, sodium: 1.0 },
 
-
   // NEZDRAVÉ
   fries:    { energy:55, protein:8,  fat:45, carbs:30, fiber:4, cholesterol:50,  sodium:80 },
   burger:   { energy:80, protein:65, fat:55, carbs:35, fiber:5, cholesterol:130, sodium:140 },
   icecream: { energy:40, protein:3,  fat:35, carbs:40, fiber:0, cholesterol:25,  sodium:15 },
   hotdog:   { energy:50, protein:55, fat:40, carbs:18, fiber:0, cholesterol:70,  sodium:120 },
   donut:    { energy:50, protein:2,  fat:30, carbs:45, fiber:0, cholesterol:20,  sodium:25 }
-  };
+};
 
 const DIET_HEALTHY_DEFAULT = ["chicken", "rice", "salad", "avocado", "apple"];
 
-
 /* -------------------- 2) NUTRIENTY -------------------- */
-
 const DIET_NUTS = [
   { key: "energy",      label: () => t("home.diet.chart.nutrients.energy") },
   { key: "carbs",       label: () => t("home.diet.chart.nutrients.carbs") },
@@ -190,86 +182,173 @@ const DIET_NUTS = [
   { key: "sodium",      label: () => t("home.diet.chart.nutrients.sodium") }
 ];
 
-
 const MAX_DISPLAY = 150;
-const BASE_RED_RATIO = 0.05; // 5 % grafu
-
-
-/* -------------------- 4) Součet -------------------- */
 
 function diet_sumSelected() {
-  const t = { energy:0, protein:0, fat:0, carbs:0, fiber:0, cholesterol:0, sodium:0 };
-
+  const tot = { energy:0, protein:0, fat:0, carbs:0, fiber:0, cholesterol:0, sodium:0 };
   document.querySelectorAll(".diet-food-list input[type=checkbox]")
     .forEach(cb => {
       if (!cb.checked) return;
       const f = DIET_FOODS[cb.value];
       if (!f) return;
-      for (const k in t) t[k] += f[k];
+      for (const k in tot) tot[k] += f[k];
     });
 
-  // korektní maximum
-  for (const k in t) t[k] = clamp(t[k], 0, MAX_DISPLAY);
-
-  return t;
+  for (const k in tot) tot[k] = clamp(tot[k], 0, MAX_DISPLAY);
+  return tot;
 }
 
-
-/* -------------------- 5) Barvy podle zón -------------------- */
-
-function diet_getColor(nut, val) {
-  const v = val;
-
-  // cholesterol / sodium → speciální škála
-  if (nut === "cholesterol" || nut === "sodium") {
-    if (v <= 100) return "#007618ff"; // zelená
-    if (v <= 120) return "#F59E0B"; // oranžová
-    return "#a90000ff";               // červená
-  }
-
-  // klasická zóna
-  if (v <= 70)  return "#a90000ff"; // červená
-  if (v <= 85)  return "#F59E0B"; // oranžová
-  if (v <= 115) return "#007618ff"; // zelená
-  if (v <= 130) return "#F59E0B"; // oranžová
-  return "#a90000ff";               // červená
+function diet_getColor(val, nut = "") {
+    const isReverse = nut === "cholesterol" || nut === "sodium" || nut === "c12" || nut === "c23" || nut === "c9" || nut.startsWith("c9") || nut.startsWith("Nasycené");
+    if (isReverse) {
+        if (val <= 100) return "#10b981";
+        if (val <= 120) return "#f59e0b";
+        return "#ef4444";
+    }
+    const isInfinite = nut === "fiber" || nut === "c4" || nut === "Vláknina";
+    if (isInfinite) {
+        if (val <= 70) return "#ef4444";
+        if (val <= 85) return "#f59e0b";
+        return "#10b981";
+    }
+    if (val <= 70) return "#ef4444";
+    if (val <= 85) return "#f59e0b";
+    if (val <= 115) return "#10b981";
+    if (val <= 130) return "#f59e0b";
+    return "#ef4444";
 }
 
-
-/* -------------------- 6) Kreslení grafu -------------------- */
 function diet_isAnySelected() {
   return [...document.querySelectorAll(".diet-food-list input[type=checkbox]")]
     .some(cb => cb.checked);
 }
+
 function wrapText(ctx, text, maxWidth) {
   const words = text.split(" ");
   let line = "";
   let lines = [];
-
   for (let w of words) {
     const testLine = line + w + " ";
     if (ctx.measureText(testLine).width > maxWidth) {
-      lines.push(line.trim());
+      if (line) lines.push(line.trim());
       line = w + " ";
     } else {
       line = testLine;
     }
   }
-  lines.push(line.trim());
+  if (line) lines.push(line.trim());
   return lines;
 }
 
+function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS) {
+    const cx = Wcss / 2; const cy = Hcss / 2;
+    const maxR = Math.min(cx, cy) - (isInteractive ? 70 : 35);
+    const numAngles = definitions.length;
+
+    const getXY = (value, index) => {
+        const angle = -Math.PI / 2 + (Math.PI * 2 * index) / numAngles;
+        const r = (Math.min(value, MAX_DISPLAY) / MAX_DISPLAY) * maxR;
+        return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
+    };
+
+    [50, 100, MAX_DISPLAY].forEach(v => {
+        ctx.beginPath();
+        for (let i = 0; i < numAngles; i++) {
+            const { x, y } = getXY(v, i);
+            if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        if (v === 100) {
+            ctx.strokeStyle = "rgba(16, 185, 129, 0.6)";
+            ctx.lineWidth = 1.5; ctx.setLineDash([4, 6]);
+        } else {
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.06)";
+            ctx.lineWidth = 1; ctx.setLineDash([]);
+        }
+        ctx.stroke();
+    });
+    ctx.setLineDash([]);
+
+    for (let i = 0; i < numAngles; i++) {
+        const { x: xMax, y: yMax } = getXY(MAX_DISPLAY, i);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy); ctx.lineTo(xMax, yMax);
+        ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
+        ctx.lineWidth = 1; ctx.stroke();
+
+        const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + (isInteractive ? 55 : 20), i);
+        const nutLabel = definitions[i].label;
+        const labelText = typeof nutLabel === "function" ? nutLabel() : nutLabel;
+
+        ctx.fillStyle = isInteractive ? "#475569" : "rgba(71, 85, 105, 0.7)";
+        ctx.font = isInteractive ? "600 12px system-ui" : "500 10px system-ui";
+        ctx.letterSpacing = "1px";
+
+        const angle = -Math.PI / 2 + (Math.PI * 2 * i) / numAngles;
+        if (Math.abs(Math.cos(angle)) < 0.1) ctx.textAlign = "center";
+        else if (Math.cos(angle) > 0) ctx.textAlign = "left";
+        else ctx.textAlign = "right";
+
+        if (Math.abs(Math.sin(angle)) < 0.1) ctx.textBaseline = "middle";
+        else if (Math.sin(angle) > 0) ctx.textBaseline = "top";
+        else ctx.textBaseline = "bottom";
+
+        const text = isInteractive ? labelText.toUpperCase() : labelText.substring(0, 3).toUpperCase();
+        ctx.fillText(text, xLabel, yLabel);
+    }
+
+    ctx.beginPath();
+    const points = [];
+    for (let i = 0; i < numAngles; i++) {
+        const nut = definitions[i];
+        const val = totals[nut.key] || 0;
+        const pt = getXY(val, i);
+        points.push({ pt, val, key: nut.key });
+        if (i === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.closePath();
+
+    const sumColors = points.reduce((acc, p) => acc + (diet_getColor(p.val, p.key) === "#10b981" ? 1 : 0), 0);
+    let dominantColor = sumColors >= (numAngles / 2) ? "#10b981" : (sumColors >= (numAngles / 4) ? "#111111" : "#f59e0b");
+    if (points.some(p => p.val > 140 && (p.key === 'fat' || p.key === 'sodium' || p.key === 'cholesterol'))) dominantColor = "#ef4444";
+    if (numAngles > 10) dominantColor = "#10b981";
+
+    const gradient = ctx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
+    const rbgMap = { "#10b981": "16, 185, 129", "#111111": "17, 17, 17", "#f59e0b": "245, 158, 11", "#ef4444": "239, 68, 68" };
+    const rgb = rbgMap[dominantColor] || "15, 23, 42";
+
+    gradient.addColorStop(0, `rgba(${rgb}, ${isInteractive ? 0.2 : 0.15})`);
+    gradient.addColorStop(1, `rgba(${rgb}, ${isInteractive ? 0.05 : 0.02})`);
+    ctx.fillStyle = gradient; ctx.fill();
+    ctx.lineWidth = isInteractive ? 3 : 2;
+    ctx.strokeStyle = dominantColor;
+    ctx.stroke();
+
+    const dotSize = numAngles > 10 ? 3 : (isInteractive ? 6 : 4);
+    points.forEach(({ pt, val, key }, i) => {
+        const color = diet_getColor(val, key);
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, dotSize, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff"; ctx.fill();
+        ctx.strokeStyle = numAngles > 10 ? dominantColor : color;
+        ctx.lineWidth = numAngles > 10 ? 1 : (isInteractive ? 2 : 1.5);
+        ctx.stroke();
+
+        if (isInteractive && numAngles <= 10) {
+            ctx.fillStyle = "#0f172a"; ctx.font = "800 15px system-ui";
+            ctx.textAlign = "center"; ctx.textBaseline = "middle";
+            const angle = -Math.PI / 2 + (Math.PI * 2 * i) / numAngles;
+            const offset = val > 100 ? -24 : 26;
+            ctx.fillText(Math.round(val) + "%", pt.x + Math.cos(angle) * offset, pt.y + Math.sin(angle) * offset);
+        }
+    });
+}
+
 function diet_drawChart(canvas, totals) {
-
   const ratio = dpr();
-  let Wcss = canvas.parentElement.clientWidth || 900;
-
-  /* mobilní režim → širší graf */
-  if (window.innerWidth < 600) {
-    Wcss = 600;  // můžeš upravit např. na 1300, 1500…
-  }
-
-  const Hcss = 420;
+  let Wcss = canvas.parentElement.clientWidth || 550;
+  if (Wcss > 900) Wcss = 900;
+  const Hcss = Wcss > 600 ? 500 : 360;
 
   canvas.width  = Wcss * ratio;
   canvas.height = Hcss * ratio;
@@ -280,132 +359,32 @@ function diet_drawChart(canvas, totals) {
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   ctx.clearRect(0, 0, Wcss, Hcss);
 
-  const pad = { top: 30, right: 20, bottom: 70, left: 20 };
-  const chartW = Wcss - pad.left - pad.right;
-  const chartH = Hcss - pad.top - pad.bottom;
-  const baseH = chartH * BASE_RED_RATIO;
-  const usableH = chartH - baseH;
-
- // --- GRID --- //
-
-  ctx.strokeStyle = "#E5E7EB";
-  [0, 50, 100, 150].forEach(v => {
-    const y = pad.top + chartH - baseH - usableH * (v / MAX_DISPLAY);
-    ctx.beginPath();
-    ctx.moveTo(pad.left, y);
-    ctx.lineTo(pad.left + chartW, y);
-    ctx.stroke();
-  });
-
-  // pokud nic není vybráno → zobraz text s animací
-if (!diet_isAnySelected()) {
-
-  let phase = (performance.now() / 1000) % (Math.PI * 2);
-  let scale = 1 + Math.sin(phase * 2) * 0.01; // jemné 3% pulzování
-
-  ctx.save();
-  ctx.translate(Wcss / 2, Hcss / 2);
-  ctx.scale(scale, scale);
-
-  const message = t("home.diet.chart.noSelection");
-  ctx.fillStyle = "#005003df";
-  ctx.font = "600 40px system-ui";
-  ctx.textAlign = "center";
-
-  const maxTextWidth = Wcss * 1;
-  const lines = wrapText(ctx, message, maxTextWidth);
-  const yOffset = -90;
-  lines.forEach((line, i) => {
-    ctx.fillText(line, 0, yOffset + i * 52);
-  });
-
-  ctx.restore();
-
-  requestAnimationFrame(() => diet_drawChart(canvas, totals));
-  return;
-}
-
-  // ==================== Sloupce ====================
-  const groups = DIET_NUTS.length;
-  const gap = window.innerWidth > 900 ? 30 : 14;
-  const barW = (chartW - gap * (groups - 1)) / groups;
-
-  DIET_NUTS.forEach((nut, i) => {
-    const x = pad.left + i * (barW + gap);
-    const val = totals[nut.key];
-    const r = val / MAX_DISPLAY;
-    const barH = usableH * r;
-    const baseY = pad.top + chartH;
-
-    // --- 1) základní proužek (stejná barva jako sloupec, bez průhlednosti) ---
-    const baseH = chartH * BASE_RED_RATIO;
-    const color = diet_getColor(nut.key, val);
-
-    ctx.fillStyle = color;
-    ctx.fillRect(x, baseY - baseH, barW, baseH);
-
-    // --- 2) skutečný sloupec ---
-    ctx.fillStyle = color;
-    ctx.fillRect(x, baseY - baseH - barH, barW, barH);
-
-    // --- 3) text nad vrchní částí sloupce ---
-    ctx.fillStyle = "#111";
-    ctx.font = "600 15px system-ui";
+  if (!diet_isAnySelected()) {
+    let phase = (performance.now() / 1000) % (Math.PI * 2);
+    let scale = 1 + Math.sin(phase * 2) * 0.01;
+    ctx.save();
+    ctx.translate(Wcss / 2, Hcss / 2);
+    ctx.scale(scale, scale);
+    ctx.fillStyle = "#94a3b8";
+    ctx.font = "800 24px system-ui";
     ctx.textAlign = "center";
-    ctx.fillText(Math.round(val) + "%", x + barW/2, baseY - baseH - barH - 6);
-
-    // --- 4) popisek pod sloupcem ---
-    const labelText = typeof nut.label === "function" ? nut.label() : nut.label;
-    ctx.fillStyle = "#000000ff";
-    ctx.font = "600 15px system-ui";
-    ctx.fillText(labelText, x + barW/2, baseY + 30);
-    ctx.fillStyle = "#111";
-
-    // --- 100% line --- //
-    const y100 = pad.top + chartH - baseH - usableH * (100 / MAX_DISPLAY);
-    ctx.strokeStyle = "#007618ae";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(pad.left, y100);
-    ctx.lineTo(pad.left + chartW, y100);
-    ctx.stroke();
     
-    // === popisek 100% s pozadím a zaoblenými rohy ===
-    const label = t("home.diet.chart.recommended");
-    ctx.font = "600 15px system-ui";
-    ctx.textAlign = "right";
+    const message = t("home.diet.chart.noSelection");
+    const lines = wrapText(ctx, message || "Klepněte na jídlo vlevo", Wcss * 0.8);
+    lines.forEach((line, i) => {
+      ctx.fillText(line, 0, -30 + i * 30);
+    });
 
-    const tw = ctx.measureText(label).width;
-    const tx = pad.left + chartW;
-    const ty = y100;
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.05)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(0, 0, 150, 0 + phase, Math.PI + phase); ctx.stroke();
+    ctx.restore();
 
-    const padX = 6;
-    const padY = 4;
-    const boxWidth  = tw + padX * 2;
-    const boxHeight = 20 + padY * 2;
-    const radius = 8; // ← poloměr zaoblení rohů
-
-    ctx.fillStyle = "rgba(255, 255, 255, 1)";
-    ctx.beginPath();
-    ctx.roundRect(
-      tx - boxWidth,      // x
-      ty - 15 - padY,     // y
-      boxWidth,           // width
-      boxHeight,          // height
-      radius              // zaoblení rohů
-    );
-    ctx.fill();
-
-    // text navrch
-    ctx.fillStyle = "#111";
-    ctx.fillText(label, tx, ty);
-
-  });
+    requestAnimationFrame(() => diet_drawChart(canvas, totals));
+    return;
+  }
+  
+  drawRadar(ctx, totals, Wcss, Hcss, true, DIET_NUTS);
 }
-
-
-
-/* -------------------- 7) Animace -------------------- */
 
 let DIET_prevTotals = null;
 
@@ -416,26 +395,22 @@ function diet_animateTo(totals) {
 
   animate({
     duration: 600,
-    easing: t => 1 - Math.pow(1 - t, 3),
+    easing: 'outCubic',
     onUpdate: k => {
       const step = {};
       for (const kk in totals) step[kk] = start[kk] + delta[kk] * k;
       diet_drawChart(document.getElementById("dietChart"), step);
     },
-    onDone: () => DIET_prevTotals = totals
+    onDone: () => { DIET_prevTotals = totals; }
   });
 }
 
-
-/* -------------------- 8) Health score -------------------- */
-
 function diet_computeScore(t) {
+  if (!diet_isAnySelected()) return 0;
   let s = 100;
-
   if (t.fat > 115) s -= 15;
   if (t.cholesterol > 100) s -= 15;
   if (t.sodium > 150) s -= 15;
-
   s += Math.min(t.fiber, 60) * 0.2;
   return clamp(s, 0, 100);
 }
@@ -446,23 +421,18 @@ function diet_updateTotals() {
 
   const scoreEl = document.getElementById("dietScore");
   if (scoreEl) scoreEl.textContent = Math.round(diet_computeScore(totals));
-
   return totals;
 }
 
-
-/* -------------------- 9) INIT -------------------- */
-
 function initDietSimulator() {
-
   const cv = document.getElementById("dietChart");
   if (!cv) return;
 
-  DIET_prevTotals = {
-    energy:0, protein:0, fat:0, carbs:0, fiber:0, cholesterol:0, sodium:0
-  };
-
+  DIET_prevTotals = { energy:0, protein:0, fat:0, carbs:0, fiber:0, cholesterol:0, sodium:0 };
   diet_drawChart(cv, DIET_prevTotals);
+
+  const scoreEl = document.getElementById("dietScore");
+  if (scoreEl) scoreEl.textContent = "0";
 
   document
     .querySelectorAll(".diet-food-list input[type=checkbox]")
@@ -480,17 +450,7 @@ function initDietSimulator() {
     });
   }
 
-  window.addEventListener("resize", () =>
-    diet_drawChart(cv, DIET_prevTotals)
-  );
+  window.addEventListener("resize", () => diet_drawChart(cv, DIET_prevTotals));
 }
 
 document.addEventListener("DOMContentLoaded", initDietSimulator);
-
-
-
-
-
-
-
-

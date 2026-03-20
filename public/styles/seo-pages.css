@@ -16,7 +16,7 @@ body.seo-page {
 .seo-shell {
   width: min(var(--seo-maxw), calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 72px;
+  padding: 28px 0 10px;
 }
 
 .seo-topbar {
@@ -67,7 +67,7 @@ body.seo-page {
 }
 
 .seo-card {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .seo-panel,
