@@ -82,8 +82,25 @@ function diet_sumSelected() {
 
 function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS) {
     const cx = Wcss / 2; const cy = Hcss / 2;
-    const maxR = Math.max(0, Math.min(cx, cy) - (isInteractive ? 70 : 35));
     const numAngles = definitions.length;
+    const isCompactInteractive = isInteractive && numAngles > 10 && window.innerWidth < 900;
+    const padding = numAngles > 10
+        ? (isInteractive ? (isCompactInteractive ? Math.max(58, Math.round(Wcss * 0.08)) : Math.max(110, Math.round(Wcss * 0.14))) : 35)
+        : (isInteractive ? 70 : 35);
+    const maxR = Math.max(0, Math.min(cx, cy) - padding);
+
+    const getCompactLabel = (labelText) => {
+        if (labelText.startsWith("Vit.")) return labelText.replace("Vit. ", "").toUpperCase();
+        const compactMap = {
+            "Energie": "EN",
+            "Cholesterol": "CHOL",
+            "Ovoce": "OVO",
+            "Zelenina": "ZEL",
+            "Ryby": "RYB"
+        };
+        if (compactMap[labelText]) return compactMap[labelText];
+        return labelText.slice(0, 3).toUpperCase();
+    };
 
     const getXY = (value, index) => {
         const angle = -Math.PI / 2 + (Math.PI * 2 * index) / numAngles;
@@ -117,11 +134,12 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
         ctx.lineWidth = 1; ctx.stroke();
 
-        const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + (isInteractive ? 55 : 20), i);
+        const labelOffset = numAngles > 10 ? (isCompactInteractive ? 18 : 55) : (isInteractive ? 55 : 20);
+        const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + labelOffset, i);
         const labelText = definitions[i].label;
 
         ctx.fillStyle = isInteractive ? "#475569" : "rgba(71, 85, 105, 0.7)";
-        ctx.font = isInteractive ? "600 12px system-ui" : "500 10px system-ui";
+        ctx.font = isInteractive ? `${isCompactInteractive ? 700 : 600} ${isCompactInteractive ? 10 : 12}px system-ui` : "500 10px system-ui";
         ctx.letterSpacing = "1px";
 
         const angle = -Math.PI / 2 + (Math.PI * 2 * i) / numAngles;
@@ -132,7 +150,9 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         else if (Math.sin(angle) > 0) ctx.textBaseline = "top";
         else ctx.textBaseline = "bottom";
 
-        const text = isInteractive ? labelText.toUpperCase() : labelText.substring(0, 3).toUpperCase();
+        const text = isInteractive
+            ? (isCompactInteractive ? getCompactLabel(labelText) : labelText.toUpperCase())
+            : labelText.substring(0, 3).toUpperCase();
         ctx.fillText(text, xLabel, yLabel);
     }
 
@@ -286,10 +306,14 @@ function renderComplexChart() {
     const canvas = document.getElementById("complexChart");
     if (!canvas) return;
     const ratio = dpr();
-    let Wcss = (canvas.parentElement.clientWidth || 800) - 80;
+    const isMobile = window.innerWidth < 900;
+    const isWideDesktop = window.innerWidth >= 1400;
+    const isDesktop = window.innerWidth >= 1100;
+    const maxChartWidth = isMobile ? 900 : (isWideDesktop ? 940 : (isDesktop ? 840 : 840));
+    let Wcss = (canvas.parentElement.clientWidth || maxChartWidth) - (isMobile ? 0 : 8);
     if (Wcss < 300) Wcss = 300;
-    if (Wcss > 800) Wcss = 800;
-    const Hcss = 420;
+    if (Wcss > maxChartWidth) Wcss = maxChartWidth;
+    const Hcss = isMobile ? (Wcss > 600 ? 500 : 360) : Math.round(Wcss * 0.8);
     canvas.style.width = Wcss + "px"; canvas.style.height = Hcss + "px";
     canvas.width = Wcss * ratio; canvas.height = Hcss * ratio;
     const ctx = canvas.getContext("2d"); ctx.setTransform(ratio, 0, 0, ratio, 0, 0);

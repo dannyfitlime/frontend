@@ -234,6 +234,13 @@
     padding: 0.5rem;
 }
 
+.ps-chart-panel--complex {
+    width: 100%;
+    overflow: visible;
+    padding-inline: 1.5rem;
+    box-sizing: border-box;
+}
+
 .ps-score-display {
     position: absolute;
     top: 0;
@@ -430,12 +437,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     background: transparent;
     border: none;
     border-radius: 0;
-    padding: 0 0 1.5rem 0;
     box-shadow: none;
     margin-top: 1rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 900px) {
+    .ps-complex-chart-container {
+        width: min(860px, calc(100vw - 96px));
+        max-width: none;
+        height: 500px;
+    }
 }
 
 .ps-complex-meal-title {
@@ -557,6 +573,43 @@
     .ps-mini-portion-box {
         width: 140px;
         padding: 0.5rem 0.8rem;
+    }
+}
+
+.ps-complex-meal-title-mini {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--brand);
+    padding: 0.75rem 1rem;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    width: min(280px, 46%);
+    line-height: 1.25;
+    pointer-events: none;
+}
+
+@media (max-width: 899px) {
+    .ps-complex-chart-container {
+        width: 100%;
+        height: auto;
+        min-height: 360px;
+        padding-inline: 0;
+        padding-top: 0.5rem;
+    }
+
+    .ps-complex-meal-title-mini {
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92%, 420px);
+        font-size: 0.95rem;
+        padding: 0.55rem 0.85rem;
     }
 }
 
