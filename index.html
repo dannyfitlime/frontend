@@ -948,14 +948,23 @@
 
     function buildUrlForLang(lang) {
       const url = new URL(location.href);
-      url.searchParams.set('lang', lang);
       if (IS_PROD_HOST) {
         const targetHost = domainForLang(lang);
         if (targetHost) {
           url.hostname = targetHost;
           url.protocol = 'https:';
           url.port = '';
+          // Pokud cílová doména odpovídá vybranému jazyku, parametr nepotřebujeme
+          if (hostPreferredLang(targetHost) === lang) {
+            url.searchParams.delete('lang');
+          } else {
+            url.searchParams.set('lang', lang);
+          }
+        } else {
+          url.searchParams.set('lang', lang);
         }
+      } else {
+        url.searchParams.set('lang', lang);
       }
       return url.toString();
     }
@@ -972,6 +981,13 @@
           const targetHost = domainForLang(qs);
           if (targetHost && !location.hostname.toLowerCase().endsWith(targetHost)) {
             location.replace(buildUrlForLang(qs));
+          } else if (targetHost && hostPreferredLang(targetHost) === qs) {
+            // Jsme na správném hostiteli a jazyk odpovídá defaultu -> odstraníme ?lang= (čisté URL)
+            const url = new URL(location.href);
+            url.searchParams.delete('lang');
+            if (url.toString() !== location.href) {
+              history.replaceState(null, '', url.toString());
+            }
           }
         }
         return qs;

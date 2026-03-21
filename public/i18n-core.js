@@ -104,9 +104,20 @@ export function applyI18n(root=document){
 // ===============================
 export async function detectLang(){
   // 1) z URL
-  const urlLang = new URLSearchParams(location.search).get('lang');
+  const params = new URLSearchParams(location.search);
+  const urlLang = params.get('lang');
   if (urlLang && SUPPORTED.includes(urlLang)) {
     localStorage.setItem('lang', urlLang);
+    
+    // Čistka redundantního ?lang= pokud odpovídá doméně (SEO friendly)
+    const hostLang = hostPreferredLang();
+    if (hostLang === urlLang) {
+      params.delete('lang');
+      const newSearch = params.toString();
+      const newUrl = location.pathname + (newSearch ? '?' + newSearch : '') + location.hash;
+      history.replaceState(null, '', newUrl);
+    }
+    
     return urlLang;
   }
 
