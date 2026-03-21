@@ -2160,7 +2160,7 @@ PRO KOHO JE JÍDELNÍČEK
 .about-articles__link {
   display: block;
   padding: 14px 16px;
-  border: 1px solid var(--line);
+  border: 2px solid var(--line);
   border-radius: 16px;
   background: #fff;
   color: var(--text);
@@ -2399,6 +2399,7 @@ PRO KOHO JE JÍDELNÍČEK
     flex-direction: column;
     gap: 4px;
   }
+
   .footer-social-sep {
     display: none;
   }
@@ -2516,6 +2517,7 @@ PRO KOHO JE JÍDELNÍČEK
     align-items: center;
     padding: 0 20px 40px 20px;
   }
+
   .drawer__image img {
     width: 100%;
     height: auto;
