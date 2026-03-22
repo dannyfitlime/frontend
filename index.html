@@ -166,7 +166,7 @@
 
     <div class="background-soft">
       <!-- ===== PROČ ===== -->
-      <section id="why" class="why-section">
+      <section id="why" class="why-section fade-in">
         <div class="home-container">
           <h2 class="why-title" data-i18n="home.why.title"></h2>
           <p class="why-subtitle" data-i18n="home.why.subtitle"></p>
@@ -213,7 +213,7 @@
 
 
       <!-- ===== JAK TO FUNGUJE ===== -->
-      <section id="how" class="how-steps">
+      <section id="how" class="how-steps fade-in">
         <div class="home-container">
           <h2 class="how-title" data-i18n="home.how.title"></h2>
           <p class="how-subtitle" data-i18n="home.how.subtitle"></p>
@@ -274,7 +274,7 @@
       </section>
 
       <!-- ===== PRO KOHO JE JÍDELNÍČEK ===== -->
-      <section id="for-whom" class="audience">
+      <section id="for-whom" class="audience fade-in">
         <div class="home-container">
           <!-- Hlavička sekce -->
           <div class="audience-header">
@@ -364,7 +364,7 @@
       </section>
 
       <!-- ===== UKÁZKA ===== -->
-      <section id="preview" class="preview">
+      <section id="preview" class="preview fade-in">
         <div class="home-container">
           <h2 data-i18n="home.preview.title"></h2>
           <p class="lead" data-i18n="home.preview.lead"></p>
@@ -418,7 +418,7 @@
           <p class="muted" data-i18n="home.pricing.note"></p>
         </div>
       </section>
-      <section id="home-coverage" class="coverage-alt">
+      <section id="home-coverage" class="coverage-alt fade-in">
         <img src="images/coverage-desktop.jpg" alt="Co jídelníček pokrývá - pozadí" class="bg-img bg-img--desktop"
           width="1536" height="1024" loading="lazy" decoding="async">
         <img src="images/coverage-mobile.jpg" alt="Co jídelníček pokrývá - pozadí mobil" class="bg-img bg-img--mobile"
@@ -543,7 +543,7 @@
       </section>
 
       <!-- ===== CENÍK ===== -->
-      <section id="pricing" class="pricing">
+      <section id="pricing" class="pricing fade-in">
         <div class="home-container">
           <h2 data-i18n="home.pricing.title"></h2>
           <div class="price-grid">
@@ -618,7 +618,7 @@
       </section>
 
       <!-- ===== FAQ ===== -->
-      <section id="faq" class="features">
+      <section id="faq" class="features fade-in">
         <div class="home-container">
           <h2 data-i18n="home.faq.title"></h2>
           <div class="faq">
@@ -684,7 +684,7 @@
 
 
       <!-- ===== O NÁS ===== -->
-      <section id="about" class="features">
+      <section id="about" class="features fade-in">
         <div class="home-container">
           <h2 data-i18n="home.about.title"></h2>
           <div class="team">
@@ -733,7 +733,7 @@
       </section>
 
       <!-- ===== REFERENCE ===== -->
-      <section id="reference" class="carousel-section">
+      <section id="reference" class="carousel-section fade-in">
         <div class="home-container">
           <h2 data-i18n="home.reference.title"></h2>
 
@@ -778,7 +778,7 @@
       </section>
     </div>
     <!-- ===== CALL TO ACTION ===== -->
-    <section class="footer-cta" id="cta-final">
+    <section class="footer-cta fade-in" id="cta-final">
       <img src="images/ready.jpg" alt="Jste připraveni začít? - pozadí" class="footer-cta__bg" width="1536"
         height="1024" loading="lazy" decoding="async">
       <div class="footer-cta__overlay"></div>
@@ -1437,5 +1437,18 @@
 
     bootI18n().then(() => {
       setStep(0);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '40px' });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     });
   </script>
