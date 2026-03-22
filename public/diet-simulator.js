@@ -117,8 +117,8 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         ctx.closePath();
 
         if (v === 100) {
-            ctx.strokeStyle = "rgba(16, 185, 129, 0.6)";
-            ctx.lineWidth = 1.5; ctx.setLineDash([4, 6]);
+            ctx.strokeStyle = (isInteractive && numAngles <= 10) ? "rgba(16, 185, 129, 0.8)" : "rgba(16, 185, 129, 0.6)";
+            ctx.lineWidth = (isInteractive && numAngles <= 10) ? 2.5 : 1.5; ctx.setLineDash([4, 6]);
         } else {
             ctx.strokeStyle = "rgba(0, 0, 0, 0.06)";
             ctx.lineWidth = 1; ctx.setLineDash([]);
