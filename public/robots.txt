@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Ochrana před AI scrapingem pro trénování (bez chybových direktiv)
+# Protection against AI scraping for training
 User-agent: GPTBot
 Disallow: /
 
