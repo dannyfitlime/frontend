@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +50,8 @@
   }
   </script>
 </head>
-<body class="seo-page">
+
+<body class="seo-page seo-how-page">
   <main class="seo-shell">
     <header class="seo-topbar">
       <a class="seo-brand" href="/index.html" aria-label="FitLime domov">
@@ -58,144 +60,183 @@
       </a>
     </header>
 
-    <section class="seo-hero">
-      <article class="seo-card">
-        <div class="seo-eyebrow">Výživa pro pohyb</div>
-        <h1>Sportovní jídelníček, který sedí tréninku i běžnému dni</h1>
-        <p class="seo-lead">Sportovní jídelníček by měl podporovat výkon, regeneraci i dlouhodobou udržitelnost. FitLime připravuje plán podle typu pohybu, cíle, objemu zátěže a denního režimu, aby stravování dávalo smysl nejen na papíře, ale hlavně v praxi.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Získat sportovní plán</a>
-          <a class="btn outline" href="/jak-fitlime-funguje/index.html">Jak FitLime funguje</a>
-        </div>
-        <p class="seo-note">Ať už běháte, cvičíte, jezdíte na kole nebo se připravujete na výkon, plán musí sedět Vašemu režimu, ne jen teorii.</p>
-      </article>
+    <style>
+      .edu-chart-lg { width: 100%; height: 350px; margin: 20px 0; }
+      .edu-chart-md { width: 100%; height: 280px; }
+      .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+      @media (min-width: 768px) {
+        .edu-flex-row { flex-direction: row; align-items: center; }
+        .edu-flex-row > * { flex: 1; min-width: 0; }
+      }
+      .edu-fact-box { background: var(--seo-soft); padding: 20px 24px; border-radius: 12px; border: 1px solid var(--seo-line); margin-top: 16px; }
+      .edu-warning-box { background: #fff7ed; border: 1.5px solid #f97316; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+      .edu-warning-box strong { display: block; color: #c2410c; margin-bottom: 8px; }
+      .edu-supp-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1.5px solid #86efac; border-radius: 14px; padding: 24px; margin-top: 20px; }
+      .edu-supp-box a { color: #15803d; font-weight: 700; }
+      .checklist { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+      .checklist li { padding: 14px 16px; border: 1px solid var(--seo-line); border-radius: 12px; background: #fff; }
+      .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+      .compare-table th, .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--seo-line); text-align: left; }
+      .compare-table th { background: var(--seo-soft); }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 
-      <aside class="seo-panel">
-        <h2>Co sportovní plán zohlední</h2>
-        <ul>
-          <li>úroveň a frekvenci pohybu</li>
-          <li>výkonnostní nebo tělesný cíl</li>
-          <li>regeneraci a rozložení dne</li>
-          <li>praktičnost vedle práce, školy nebo rodiny</li>
-        </ul>
-      </aside>
+    <section class="seo-hero">
+      <article class="seo-card seo-hero-card fade-in">
+        <div class="seo-eyebrow">Výživa pro výkon</div>
+        <h1>Sportovní jídelníček, který sedí tréninku i běžnému dni</h1>
+        <p class="seo-lead">Sportovní jídelníček má podporovat výkon, regeneraci i dlouhodobou udržitelnost. Nestačí jen přidat víc jídla. Rozhoduje načasování, objem zátěže, typ sportu i to, jak zvládáte běžný pracovní den.</p>
+      </article>
     </section>
 
     <div class="seo-stack">
-      <section class="seo-section">
-        <h2>Pro koho má sportovní jídelníček smysl</h2>
+      <section class="seo-section fade-in">
+        <h2>Timing jídla kolem výkonu</h2>
+        <p>Jídlo před, během a po výkonu neřeší jen hlad. Ovlivňuje energii, schopnost držet tempo i to, jak rychle se vrátíte zpět do tréninku další den.</p>
+        <div class="edu-chart-lg"><canvas id="timingChart"></canvas></div>
+        <div class="edu-fact-box">Nejčastější chyba není špatná potravina, ale špatný čas. Těžké jídlo těsně před výkonem zatíží trávení, příliš dlouhé hladovění zase srazí výkon a koncentraci.</div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Co jíst před a po tréninku</h2>
         <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Hobby sportovci</h3>
-            <p>Pokud pravidelně běháte, cvičíte nebo máte jiný pohyb a chcete lépe jíst kolem aktivity, plán Vám může pomoct s orientací i konzistencí.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Výkonnostní sport</h3>
-            <p>Když závodíte nebo řešíte výkon, je ještě důležitější sladit stravu s objemem zátěže a regenerací.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Kombinace sport a běžný život</h3>
-            <p>Většina lidí nesportuje v laboratorních podmínkách. Proto plán musí fungovat i vedle práce a ostatních povinností.</p>
-          </article>
+          <article class="seo-mini-card"><h3>Před tréninkem</h3><p>1 až 2 hodiny před výkonem se obvykle hodí lehce stravitelné sacharidy a menší dávka bílkovin. Cílem je energie bez těžkého žaludku.</p><div class="edu-fact-box" style="padding: 12px 16px;">Příklady: jogurt s banánem, toast se šunkou, kaše, rýžové chlebíčky</div></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>Po tréninku</h3><p>Do 45 minut po náročnějším výkonu dává smysl doplnit bílkoviny a podle typu zátěže také sacharidy pro rychlejší obnovu glykogenu.</p><div class="edu-fact-box" style="padding: 12px 16px;">Příklady: protein + ovoce, rýže s kuřetem, skyr a müsli, tortila s masem</div></article>
         </div>
       </section>
 
-      <section class="seo-section">
-        <h2>Proč nestačí jen přidat více jídla</h2>
-        <p>Sportovní výživa není jen o tom, že člověk s pohybem automaticky jí víc. Důležité je kdy, proč a v jakém kontextu. Jiné potřeby má člověk při redukci, jiné při udržení výkonu a jiné při náročném tréninkovém týdnu. Dobrý plán má podpořit sport i běžný život, ne vytvářet další stres navíc.</p>
+      <section class="seo-section fade-in">
+        <h2>Tréninkový den vs. rest day</h2>
+        <div class="seo-grid">
+          <article class="seo-mini-card"><h3>Tréninkový den</h3><p>Vyšší důraz na sacharidy kolem výkonu, lepší rozložení energie během dne a dostatek tekutin i sodíku.</p></article>
+          <article class="seo-mini-card"><h3>Rest day</h3><p>Méně rychlých sacharidů kolem tréninku, ale ne nula. Důležitá zůstává regenerace, bílkoviny a celkový energetický rámec týdne.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>Společný jmenovatel</h3><p>Není nutné každý volný den dramaticky škrtat. Výživa má podporovat adaptaci na trénink, ne ji sabotovat.</p></article>
+        </div>
       </section>
 
-      <section class="seo-faq">
+      <section class="seo-section fade-in">
+        <h2>Carb loading</h2>
+        <p>Navýšení sacharidů před dlouhým závodem nebo velmi náročným výkonem má smysl hlavně tam, kde rozhodují zásoby svalového glykogenu. Není to nástroj pro každý běžný trénink.</p>
+        <div class="seo-grid">
+          <article class="seo-mini-card"><h3>Kdy ano</h3><p>Před půlmaratonem, maratonem, dlouhým cyklistickým závodem nebo vícehodinovým výkonem.</p></article>
+          <article class="seo-mini-card"><h3>Kdy ne</h3><p>Pro 60minutový trénink v posilovně nebo běžný výklus obvykle není potřeba dělat speciální sacharidové manévry.</p></article>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Hydratace a elektrolyty</h2>
+        <p>Při pocení neztrácíte jen vodu, ale i sodík a další minerály. Proto někdy nestačí pouze pít víc, ale pít chytřeji.</p>
+        <div class="seo-grid">
+          <article class="seo-mini-card"><h3>Před výkonem</h3><p>Nepřicházejte na trénink už dehydrovaní. Začněte doplňovat tekutiny průběžně během dne.</p></article>
+          <article class="seo-mini-card"><h3>Během výkonu</h3><p>U delší nebo horké zátěže dává smysl voda se sodíkem, případně ionťák s jednoduchými sacharidy.</p></article>
+          <article class="seo-mini-card"><h3>Po výkonu</h3><p>Pokud jste hodně propocení, zaměřte se nejen na vodu, ale i na jídlo nebo nápoj, který doplní elektrolyty.</p></article>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Silový vs. vytrvalostní sport</h2>
+        <table class="compare-table">
+          <thead><tr><th>Parametr</th><th>Silový sport</th><th>Vytrvalostní sport</th></tr></thead>
+          <tbody>
+            <tr><td>Bílkoviny</td><td>1,6 až 2,2 g/kg</td><td>1,4 až 1,8 g/kg</td></tr>
+            <tr><td>Sacharidy</td><td>střední podíl dle objemu</td><td>vyšší podíl kvůli glykogenu</td></tr>
+            <tr><td>Tuky</td><td>spíš stabilní základ</td><td>spíš stabilní základ</td></tr>
+            <tr><td>Priorita</td><td>regenerace, síla, růst</td><td>výdrž, doplnění energie</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Co mít v batohu na trénink</h2>
+        <p>Dobrá příprava snižuje riziko, že po tréninku skončíte bez jídla, bez pití a s první náhodnou volbou po cestě.</p>
+        <ul class="checklist">
+          <li>Banán nebo jiné snadno stravitelné ovoce</li>
+          <li>Proteinová tyčinka nebo shaker s odměrkou</li>
+          <li>Ionťák nebo tablety s elektrolyty</li>
+          <li>Oříšky nebo menší snack do rezervy</li>
+          <li>Láhev s vodou a náhradní porce na delší den</li>
+        </ul>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Důležité upozornění</h2>
+        <div class="edu-warning-box"><strong>Nikdy se nesnažte hubnout v nejtvrdším tréninkovém bloku.</strong>Když je objem nebo intenzita na vrcholu, tělo potřebuje energii na adaptaci a regeneraci. Agresivní deficit v této fázi zvyšuje únavu, riziko zranění i pravděpodobnost přetrénování.</div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Doplňky stravy</h2>
+        <p>Doplňky nenahradí stravu, ale někdy umí podpořit regeneraci nebo zvládání náročného tréninkového období. Smysl dávají tam, kde řeší konkrétní potřebu, ne jako automatická výbava každého sportovce.</p>
+        <div class="edu-supp-box">Curanz s extraktem z černého rybízu může být zajímavou volbou pro podporu regenerace a práce se zánětlivou zátěží. Pokud chcete projít další doplňky bez zbytečného chaosu, podívejte se na <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</div>
+      </section>
+
+      <section class="seo-faq fade-in">
         <h2>FAQ</h2>
-        <div class="seo-faq-item">
-          <h3>Je to jen pro vrcholové sportovce?</h3>
-          <p>Ne. Velkou hodnotu má i pro hobby sportovce, kteří chtějí jíst smysluplněji a lépe se cítit při pohybu i po něm.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Může plán pomoct i když chcete sportem hubnout?</h3>
-          <p>Ano. Právě tehdy má smysl skloubit výkon a redukci rozumně. Pokud je Vaším primárním cílem hubnutí, navazuje na to i stránka <a href="/jidelnicek-na-hubnuti/index.html">jídelníček na hubnutí</a>.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Řeší se i časování jídla kolem pohybu?</h3>
-          <p>Smyslem je postavit plán tak, aby odpovídal skutečnému režimu a podporoval aktivitu, ne aby byl odtržený od Vašeho dne.</p>
-        </div>
+        <div class="seo-faq-item"><h3>Je to jen pro vrcholové sportovce?</h3><p>Ne. Velkou hodnotu má i pro hobby sportovce, kteří chtějí jíst smysluplněji a lépe se cítit při pohybu i po něm.</p></div>
+        <div class="seo-faq-item"><h3>Může plán pomoct i když chcete sportem hubnout?</h3><p>Ano, ale redukce musí respektovat objem tréninku. Pokud je hlavním cílem hubnutí, navazuje na to i stránka <a href="/jidelnicek-na-hubnuti/index.html">jídelníček na hubnutí</a>.</p></div>
+        <div class="seo-faq-item"><h3>Řeší se i časování jídel?</h3><p>Ano. Právě timing je často rozdíl mezi tréninkem, který zvládnete dobře, a tréninkem, který odtrpíte.</p></div>
       </section>
 
-      <section class="seo-section seo-action" style="padding: 30px 24px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: none;">Chcete stravování, které podpoří Váš pohyb a nebude komplikovat život?</h2>
-        <p
-          style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
-          FitLime připraví plán podle Vašeho cíle a aktivity. Vyplňte formulář a zjistěte, jaký přístup může sedět právě Vám.</p>
-        <div style="display: flex; justify-content: center; margin-bottom: 60px;">
-          <a href="/form.html" class="seo-btn seo-btn-primary"
-            style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Otevřít formulář</a>
-        </div>
-
+      <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Chcete stravování, které podpoří Váš pohyb a nebude komplikovat život?</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">FitLime připraví plán podle Vašeho cíle a aktivity. Vyplňte formulář a zjistěte, jaký přístup může sedět právě Vám.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Otevřít formulář</a></div>
         <div class="ps-related-articles">
-          <h3
-            style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">
-            Další články:</h3>
-          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
-            <a href="/zdravy-jidelnicek/index.html" class="ps-elegant-link">Zdravý jídelníček</a>
-            <a href="/jidelnicek-na-hubnuti/index.html" class="ps-elegant-link">Jídelníček na hubnutí</a>
-            <a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a>
-          </div>
-          <div style="display: flex; justify-content: center; margin-top: 28px;">
-              <a href="/index.html" class="ps-elegant-link" >Návrat na hlavní stránku</a>
-            </div>
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Další články:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/zdravy-jidelnicek/index.html" class="ps-elegant-link">Zdravý jídelníček</a><a href="/jidelnicek-na-hubnuti/index.html" class="ps-elegant-link">Jídelníček na hubnutí</a><a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Návrat na hlavní stránku</a></div>
         </div>
       </section>
     </div>
   </main>
-  <footer class="site-footer" role="contentinfo"
-    style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
-    <div class="ps-section-container"
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
-      <div class="footer-left">
-        <div style="margin-bottom: 12px;">
-          <a data-contact-email data-user="info" data-domain="fitlime.cz"
-            style="color: var(--fg); text-decoration: none; font-weight: 600;"></a>
-        </div>
-        <div style="margin-bottom: 8px;">
-          <span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span>
-        </div>
-        <div style="font-size: 0.85rem; opacity: 0.8;">
-          <span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span>
-        </div>
-      </div>
 
-      <div class="footer-center" style="text-align: center;">
-        <div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-          <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer"
-            style="color: #52460a; text-decoration: none; font-weight: 600;">
-            Powered by sportvitalpro.cz
-          </a>
-          <div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;">
-            <a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Instagram</a>
-            <span style="opacity: 0.3;">|</span>
-            <a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Facebook</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-right" style="text-align: right;">
-        <nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="/cookies.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.cookies">Cookies</a>
-          <a href="/terms.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.terms">Obchodní podmínky</a>
-          <a href="/gdpr.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.privacy">Ochrana soukromí</a>
-        </nav>
-      </div>
+  <footer class="site-footer" role="contentinfo" style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+      <div class="footer-left"><div style="margin-bottom: 12px;"><a data-contact-email data-user="info" data-domain="fitlime.cz" style="color: var(--fg); text-decoration: none; font-weight: 600;"></a></div><div style="margin-bottom: 8px;"><span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span></div><div style="font-size: 0.85rem; opacity: 0.8;"><span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span></div></div>
+      <div class="footer-center" style="text-align: center;"><div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer" style="color: #52460a; text-decoration: none; font-weight: 600;">Powered by sportvitalpro.cz</a><div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;"><a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Instagram</a><span style="opacity: 0.3;">|</span><a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Facebook</a></div></div></div>
+      <div class="footer-right" style="text-align: right;"><nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;"><a href="/cookies.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.cookies">Cookies</a><a href="/terms.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.terms">Obchodní podmínky</a><a href="/gdpr.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.privacy">Ochrana soukromí</a></nav></div>
     </div>
   </footer>
-  <script type="module">
-    import { bootI18n } from '/i18n-core.js';
 
-    bootI18n();
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.Chart) return;
+      Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+      Chart.defaults.color = '#4b5563';
+      new Chart(document.getElementById('timingChart'), {
+        type: 'line',
+        data: { labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00'], datasets: [{ label: 'Energie / výkon', data: [55, 78, 70, 62, 88, 96, 74, 58], borderColor: '#0f5132', backgroundColor: 'rgba(15,81,50,0.12)', fill: true, tension: 0.35, borderWidth: 3, pointRadius: 4 }] },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                afterLabel(context) {
+                  const notes = { 1: 'Snídaně / první větší jídlo', 4: 'Předtréninkové jídlo', 5: 'Trénink', 6: 'Potréninkové jídlo' };
+                  return notes[context.dataIndex] || '';
+                }
+              }
+            }
+          },
+          scales: { y: { min: 40, max: 100, title: { display: true, text: 'subjektivní energie' } } }
+        }
+      });
+    });
   </script>
+  <script type="module">import { bootI18n } from '/i18n-core.js'; bootI18n();</script>
 </body>
+
 </html>

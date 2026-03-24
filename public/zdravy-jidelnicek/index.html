@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,12 +45,21 @@
           "@type": "Answer",
           "text": "Ne. Může sloužit pro lepší energii, orientaci ve stravování, podporu výkonu i lepší organizaci běžného dne."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Jak spánek ovlivňuje jídelníček?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nedostatek spánku zvyšuje hladinu ghrelinu a snižuje leptin. Výsledkem je větší chuť k jídlu, preference kaloricky hutných jídel a obtížnější kontrola příjmu."
+        }
       }
     ]
   }
   </script>
 </head>
-<body class="seo-page">
+
+<body class="seo-page seo-how-page">
   <main class="seo-shell">
     <header class="seo-topbar">
       <a class="seo-brand" href="/index.html" aria-label="FitLime domov">
@@ -58,144 +68,257 @@
       </a>
     </header>
 
-    <section class="seo-hero">
-      <article class="seo-card">
-        <div class="seo-eyebrow">Praktické stravování</div>
-        <h1>Zdravý jídelníček na míru pro reálný život</h1>
-        <p class="seo-lead">Zdravý jídelníček není o tom jíst dokonale. Má fungovat v práci, doma i při běžném tempu dne. FitLime připraví plán, který zohledňuje Váš cíl, režim, preferovaná jídla i úroveň pohybu, aby zdravé stravování nebylo jen krátkodobý experiment.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Zjistit svůj plán</a>
-          <a class="btn outline" href="/jak-fitlime-funguje/index.html">Jak FitLime funguje</a>
-        </div>
-        <p class="seo-note">Vhodné pro lidi, kteří chtějí jíst lépe, mít více energie a přestat tápat mezi náhodnými radami.</p>
-      </article>
+    <style>
+      .edu-chart-lg { width: 100%; height: 350px; margin: 20px 0; }
+      .edu-chart-md { width: 100%; height: 280px; }
+      .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+      @media (min-width: 768px) {
+        .edu-flex-row { flex-direction: row; align-items: center; }
+        .edu-flex-row > * { flex: 1; min-width: 0; }
+      }
+      .edu-fact-box { background: var(--seo-soft); padding: 20px 24px; border-radius: 12px; border: 1px solid var(--seo-line); margin-top: 16px; }
+      .edu-shop-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1.5px solid #86efac; border-radius: 14px; padding: 24px; margin-top: 20px; display: flex; align-items: flex-start; gap: 16px; }
+      .edu-shop-box a { color: #15803d; font-weight: 700; }
+      .edu-icon { color: var(--seo-accent); margin-bottom: 12px; }
+      .edu-icon svg { width: 32px; height: 32px; }
+      .bmr-calc { background: var(--seo-soft); border: 1px solid var(--seo-line); border-radius: 16px; padding: 28px; margin-top: 20px; }
+      .bmr-calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
+      @media (max-width: 600px) { .bmr-calc-grid { grid-template-columns: 1fr; } }
+      .bmr-calc label { display: flex; flex-direction: column; font-size: 0.9rem; font-weight: 600; color: var(--muted); gap: 6px; }
+      .bmr-calc input, .bmr-calc select { border: 1px solid var(--seo-line); border-radius: 8px; padding: 10px 12px; font-size: 1rem; background: #fff; color: var(--fg); }
+      .bmr-calc-btn { background: #005003; color: #fff; border: none; border-radius: 10px; padding: 13px 28px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: 4px; }
+      .bmr-calc-note { margin-top: 12px; color: var(--muted); font-size: 0.9rem; }
+      .bmr-result { display: none; margin-top: 20px; border-radius: 12px; overflow: hidden; }
+      .bmr-result.visible { display: block; }
+      .bmr-result-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--seo-line); background: #fff; }
+      .bmr-result-row:last-child { border-bottom: none; }
+      .bmr-result-row.highlighted { background: #f0fdf4; }
+      .bmr-result-label { font-size: 0.9rem; color: var(--muted); }
+      .bmr-result-value { font-weight: 800; font-size: 1.1rem; color: var(--seo-accent); }
+      .macro-card { padding: 24px; border-radius: 14px; border: 1px solid var(--seo-line); background: #fff; }
+      .macro-card h3 { margin-bottom: 8px; }
+      .macro-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
 
-      <aside class="seo-panel">
-        <h2>Co zdravý plán řeší</h2>
-        <ul>
-          <li>chaos v tom, co a kdy jíst</li>
-          <li>nepravidelnost a ztrátu energie během dne</li>
-          <li>potřebu plánu, který jde skutečně dodržovat</li>
-          <li>sladění stravy s Vaším životem, ne obráceně</li>
-        </ul>
-      </aside>
+    <section class="seo-hero">
+      <article class="seo-card seo-hero-card fade-in">
+        <div class="seo-eyebrow">Edukativní průvodce</div>
+        <h1>Zdravý jídelníček a výživa do hloubky</h1>
+        <p class="seo-lead">Zdravý jídelníček není o dokonalosti. Má fungovat v práci, doma i při běžném tempu dne. Pochopte, kolik energie skutečně potřebujete, jak fungují makroživiny, co dělá spánek Vašemu hladu a proč stres nebo alkohol ovlivňují plán víc, než se zdá.</p>
+      </article>
     </section>
 
     <div class="seo-stack">
-      <section class="seo-section">
-        <h2>Kdy má zdravý jídelníček největší smysl</h2>
-        <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Když chcete řád</h3>
-            <p>Máte pocit, že o výživě slýcháte pořád něco jiného. Plán Vám dá konkrétní směr a ubere zmatku.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Když chcete energii</h3>
-            <p>Lépe nastavené stravování může zjednodušit den a pomoct s výkyvy energie i hladu.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Když chcete systém</h3>
-            <p>Místo náhodných rozhodnutí dostanete jasnější strukturu, která pomáhá i dlouhodobě.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="seo-section">
-        <h2>Proč má personalizace větší hodnotu než obecný seznam pravidel</h2>
-        <p>Obecné rady často ignorují to nejdůležitější: jinak jí student, jinak rodič, jinak člověk v kanceláři a jinak někdo, kdo často sportuje. Zdravý jídelníček má smysl tehdy, když respektuje, co opravdu zvládáte, co Vám chutná a jak vypadá Váš den. Právě proto FitLime nestaví na univerzálních šablonách, ale na praktickém přístupu na míru.</p>
-      </section>
-
-      <section class="seo-faq">
-        <h2>Otázky, které dává smysl si položit</h2>
-        <div class="seo-faq-item">
-          <h3>Je zdravý jídelníček jen pro sportovce?</h3>
-          <p>Ne. Naopak často nejvíce pomůže lidem, kteří jen chtějí jíst rozumněji a cítit se během dne stabilněji.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Můžu chtít zdravý jídelníček i bez hubnutí?</h3>
-          <p>Ano. Cílem může být lepší energie, pravidelnost, jednodušší rozhodování nebo podpora aktivního životního stylu.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Co když máte vlastní chuťové preference?</h3>
-          <p>Právě proto se vyplňuje vstupní formulář. Praktický plán musí odpovídat tomu, co jste schopni dlouhodobě dodržovat.</p>
-        </div>
-      </section>
-
-      <section class="seo-section seo-action" style="padding: 30px 24px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: none;">Chcete zdravý jídelníček, který bude dávat smysl i v běžném dni?</h2>
-        <p
-          style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
-          FitLime připraví plán podle Vaší situace, ne podle idealizované šablony. Vyplňte formulář a zjistěte víc.</p>
-        <div style="display: flex; justify-content: center; margin-bottom: 60px;">
-          <a href="/form.html" class="seo-btn seo-btn-primary"
-            style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Vyplnit formulář</a>
-        </div>
-
-        <div class="ps-related-articles">
-          <h3
-            style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">
-            Další články:</h3>
-          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
-            <a href="/jidelnicek-na-hubnuti/index.html" class="ps-elegant-link">Jídelníček na hubnutí</a>
-            <a href="/sportovni-jidelnicek/index.html" class="ps-elegant-link">Sportovní jídelníček</a>
-            <a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a>
+      <section class="seo-section fade-in">
+        <h2>Kam mizí Vaše energie během dne?</h2>
+        <p>Lidé často přeceňují roli samotného tréninku a podceňují energii, kterou tělo pálí jen tím, že funguje, tráví, pohybuje se po bytě nebo sedí v kanceláři.</p>
+        <div class="edu-flex-row">
+          <div><div class="edu-chart-md"><canvas id="bmrChart"></canvas></div></div>
+          <div>
+            <ul>
+              <li><strong>BMR asi 65 %:</strong> základní chod orgánů, dýchání, termoregulace a fungování nervového systému.</li>
+              <li><strong>NEAT asi 20 %:</strong> běžný pohyb mimo trénink, chůze, práce doma, stání, přenášení věcí.</li>
+              <li><strong>Termický efekt jídla asi 10 %:</strong> část energie spotřebujete už samotným trávením.</li>
+              <li><strong>Sport asi 5 %:</strong> cílený trénink je důležitý, ale není jediným hráčem v celkové bilanci.</li>
+            </ul>
           </div>
-          <div style="display: flex; justify-content: center; margin-top: 28px;">
-              <a href="/index.html" class="ps-elegant-link" >Návrat na hlavní stránku</a>
-            </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>BMR a BDA kalkulačka</h2>
+        <p><strong>BMR</strong> je energie, kterou spotřebujete v klidu. <strong>BDA</strong>, tedy běžný denní energetický výdej, už zahrnuje Vaši aktivitu. Právě od těchto hodnot se odvíjí, kolik má dávat smysl jíst při hubnutí, udržení nebo nabírání.</p>
+        <div class="bmr-calc">
+          <div class="bmr-calc-grid">
+            <label>Pohlaví<select id="calc-gender"><option value="m">Muž</option><option value="f">Žena</option></select></label>
+            <label>Věk (roky)<input type="number" id="calc-age" value="30" min="15" max="90"></label>
+            <label>Výška (cm)<input type="number" id="calc-height" value="175" min="140" max="220"></label>
+            <label>Váha (kg)<input type="number" id="calc-weight" value="75" min="40" max="220"></label>
+            <label>Aktivita<select id="calc-activity"><option value="1.2">Sedavý den</option><option value="1.375">Mírně aktivní</option><option value="1.55" selected>Středně aktivní</option><option value="1.725">Velmi aktivní</option><option value="1.9">Extrémně aktivní</option></select></label>
+            <label>Cíl<select id="calc-goal"><option value="deficit">Hubnutí</option><option value="maintenance" selected>Udržení</option><option value="surplus">Nabírání</option></select></label>
+            <label>Jednotky<select id="calc-unit"><option value="kcal" selected>kcal</option><option value="kj">kJ</option></select></label>
+          </div>
+          <button type="button" class="bmr-calc-btn" id="bmr-calc-btn">Spočítat doporučení</button>
+          <p class="bmr-calc-note">Výchozí zobrazení je v kcal, přepnout ho můžete na kJ.</p>
+          <div id="bmr-result" class="bmr-result">
+            <div class="bmr-result-row"><span class="bmr-result-label">BMR</span><span class="bmr-result-value" id="res-bmr">–</span></div>
+            <div class="bmr-result-row"><span class="bmr-result-label">BDA / TDEE</span><span class="bmr-result-value" id="res-tdee">–</span></div>
+            <div class="bmr-result-row highlighted"><span class="bmr-result-label" id="res-goal-label">Doporučený příjem</span><span class="bmr-result-value" id="res-goal">–</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Makroživiny jednoduše</h2>
+        <p>Nemusíte znát všechna čísla nazpaměť. Stačí chápat, co která makroživina dělá a jak ji dostat do běžného dne v praktické podobě.</p>
+        <div class="seo-grid" style="margin-top: 20px;">
+          <article class="macro-card"><span class="macro-badge" style="background:#dbeafe; color:#1d4ed8;">1 g = 17 kJ</span><h3>Bílkoviny</h3><p>Pomáhají se sytostí, regenerací a ochranou svalové hmoty. Jsou důležité při hubnutí i v běžném režimu.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> vejce, skyr, tvaroh, maso, ryby, tofu, luštěniny</div></article>
+          <article class="macro-card"><span class="macro-badge" style="background:#fef3c7; color:#92400e;">1 g = 38 kJ</span><h3>Tuky</h3><p>Podporují hormony, vstřebávání vitaminů i nervový systém. Problém není tuk sám o sobě, ale nehlídané množství a nízká kvalita zdrojů.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> olivový olej, ořechy, avokádo, losos, semínka</div></article>
+          <article class="macro-card"><span class="macro-badge" style="background:#dcfce7; color:#166534;">1 g = 17 kJ</span><h3>Sacharidy</h3><p>Slouží jako rychle dostupné palivo pro mozek i svaly. Nejsou nepřítel, pokud dávají smysl v množství i čase.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> vločky, rýže, brambory, ovoce, celozrnné přílohy</div></article>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Jak si sestavit zdravý jídelníček</h2>
+        <p>Neexistuje jedno univerzální rozložení pro všechny. Jako výchozí model pro běžné udržení se ale často hodí jednoduchý poměr, který pak upravíte podle cíle, sportu a režimu dne.</p>
+        <div class="edu-flex-row">
+          <div><div class="edu-chart-md"><canvas id="macroChart"></canvas></div></div>
+          <div>
+            <ul>
+              <li><strong>30 % bílkovin:</strong> pomáhají sytosti a drží strukturu jídel.</li>
+              <li><strong>25 % tuků:</strong> zajišťují hormonální a neurologickou rovnováhu.</li>
+              <li><strong>45 % sacharidů:</strong> kryjí běžnou energii a výkon během dne.</li>
+            </ul>
+            <div class="edu-fact-box"><strong style="display:block; margin-bottom:6px;">Prakticky:</strong>Každé větší jídlo si zkuste představit jako bílkovinu, zeleninu a přílohu. Tím přirozeně držíte rozumný rámec bez neustálého počítání.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Zásady pro praxi</h2>
+        <div class="seo-grid">
+          <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3>Pravidelnost</h3><p>Nemusíte jíst každé dvě hodiny, ale dlouhé hladové bloky často vedou k večernímu dojíždění energie i disciplíny.</p></article>
+          <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg></div><h3>Pestrost</h3><p>Čím širší spektrum potravin během týdne, tím větší šance, že pokryjete mikroživiny i bez složitého plánování.</p></article>
+          <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><h3>Flexibilita</h3><p>Zdravý jídelníček musí počítat i s restaurací, oslavou nebo horším dnem. Rigidita dlouhodobě nefunguje.</p></article>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Spánek a jeho vliv</h2>
+        <div class="edu-flex-row">
+          <div><div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div></div>
+          <div>
+            <p>Cílovou zónou je <strong>7 až 9 hodin kvalitního spánku</strong>. Nedostatek odpočinku mění hormony hladu a sytosti a zvyšuje chuť na sladké nebo kaloricky hutná jídla.</p>
+            <p>Spánek je možná nejpodceňovanější nástroj v jídelníčku. Když je dlouhodobě špatný, nepomůže ani přesně spočítané menu.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Alkohol a jídelníček</h2>
+        <div class="edu-flex-row">
+          <div>
+            <p>Alkohol nese energii sám o sobě a zároveň zhoršuje kontrolu nad dalším jídlem. Navíc zhoršuje regeneraci, spánek a hormonální prostředí.</p>
+            <ul>
+              <li><strong>Kalorie:</strong> i pár drinků snadno přidá 1 000 až 2 000 kJ navíc.</li>
+              <li><strong>Hormony:</strong> alkohol zvyšuje stresovou zátěž a brzdí obnovu po náročném dni.</li>
+              <li><strong>Spánek:</strong> usnutí po alkoholu neznamená kvalitní spánek, REM fáze bývá rozbitá.</li>
+            </ul>
+          </div>
+          <div><div class="edu-chart-md"><canvas id="alcoholChart"></canvas></div></div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Psychika a stres</h2>
+        <div class="seo-grid">
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><h3 style="color:#b91c1c;">Kortizol a přejídání</h3><p>Dlouhodobý stres zvyšuje chuť na rychlou odměnu, tedy typicky sladké, slané a kaloricky hutné potraviny.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3 style="color:var(--seo-accent);">Emoční jídlo</h3><p>Jíst ze stresu nebo nudy není slabost. Je to naučený vzorec, který se dá zlepšit, když ho začnete poznávat.</p></article>
+          <article class="seo-mini-card"><h3>Co pomáhá</h3><p>Krátká chůze, dechové zklidnění, pravidelný režim a jídlo bez obrazovky často udělají víc než další zákaz.</p></article>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Omega-3 a imunita</h2>
+        <p>Omega-3 mastné kyseliny patří mezi nejlépe podložené doplňky ve výživě. Podporují srdce, mozek, klouby i regulaci zánětlivých procesů, které souvisí s regenerací i imunitou.</p>
+        <div class="seo-grid" style="margin-top: 16px;">
+          <article class="seo-mini-card"><h3>Kdy mají smysl</h3><p>Pokud nejíte pravidelně tučné ryby, je doplnění EPA a DHA praktický a rozumný krok.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>Co sledovat</h3><p>Důležitá je čistota suroviny, obsah aktivních látek a dlouhodobá konzistence, ne marketing na etiketě.</p></article>
+        </div>
+        <div class="edu-shop-box">
+          <span>Omega-3</span>
+          <div><strong style="display:block; margin-bottom:6px;">Nenápadný tip na doplnění jídelníčku</strong>Pokud hledáte ověřené doplňky pro podporu imunity a regenerace, podívejte se na nabídku <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</div>
+        </div>
+      </section>
+
+      <section class="seo-faq fade-in">
+        <h2>Otázky, které dávají smysl</h2>
+        <div class="seo-faq-item"><h3>Je zdravý jídelníček jen pro sportovce?</h3><p>Ne. Největší hodnotu často přinese lidem, kteří chtějí víc energie, méně chaosu a praktičtější rozhodování.</p></div>
+        <div class="seo-faq-item"><h3>Musím počítat kalorie nebo kJ?</h3><p>Ne nutně. Pomáhá znát orientační rámec, ale dlouhodobý cíl je postavit si funkční zvyky, ne počítat každý gram.</p></div>
+        <div class="seo-faq-item"><h3>Co když mám vlastní preference a omezení?</h3><p>Právě proto má personalizace smysl. Dobrý plán musí sedět člověku, ne jen modelovému případu.</p></div>
+      </section>
+
+      <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Chcete zdravý jídelníček, který bude dávat smysl i v běžném dni?</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">FitLime připraví plán podle Vaší situace, ne podle idealizované šablony. Vyplňte formulář a zjistěte víc.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Vyplnit formulář</a></div>
+        <div class="ps-related-articles">
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Další články:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/jidelnicek-na-hubnuti/index.html" class="ps-elegant-link">Jídelníček na hubnutí</a><a href="/sportovni-jidelnicek/index.html" class="ps-elegant-link">Sportovní jídelníček</a><a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Návrat na hlavní stránku</a></div>
         </div>
       </section>
     </div>
   </main>
-  <footer class="site-footer" role="contentinfo"
-    style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
-    <div class="ps-section-container"
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
-      <div class="footer-left">
-        <div style="margin-bottom: 12px;">
-          <a data-contact-email data-user="info" data-domain="fitlime.cz"
-            style="color: var(--fg); text-decoration: none; font-weight: 600;"></a>
-        </div>
-        <div style="margin-bottom: 8px;">
-          <span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span>
-        </div>
-        <div style="font-size: 0.85rem; opacity: 0.8;">
-          <span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span>
-        </div>
-      </div>
 
-      <div class="footer-center" style="text-align: center;">
-        <div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-          <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer"
-            style="color: #52460a; text-decoration: none; font-weight: 600;">
-            Powered by sportvitalpro.cz
-          </a>
-          <div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;">
-            <a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Instagram</a>
-            <span style="opacity: 0.3;">|</span>
-            <a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Facebook</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-right" style="text-align: right;">
-        <nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="/cookies.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.cookies">Cookies</a>
-          <a href="/terms.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.terms">Obchodní podmínky</a>
-          <a href="/gdpr.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.privacy">Ochrana soukromí</a>
-        </nav>
-      </div>
+  <footer class="site-footer" role="contentinfo" style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+      <div class="footer-left"><div style="margin-bottom: 12px;"><a data-contact-email data-user="info" data-domain="fitlime.cz" style="color: var(--fg); text-decoration: none; font-weight: 600;"></a></div><div style="margin-bottom: 8px;"><span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span></div><div style="font-size: 0.85rem; opacity: 0.8;"><span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span></div></div>
+      <div class="footer-center" style="text-align: center;"><div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer" style="color: #52460a; text-decoration: none; font-weight: 600;">Powered by sportvitalpro.cz</a><div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;"><a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Instagram</a><span style="opacity: 0.3;">|</span><a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Facebook</a></div></div></div>
+      <div class="footer-right" style="text-align: right;"><nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;"><a href="/cookies.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.cookies">Cookies</a><a href="/terms.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.terms">Obchodní podmínky</a><a href="/gdpr.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.privacy">Ochrana soukromí</a></nav></div>
     </div>
   </footer>
-  <script type="module">
-    import { bootI18n } from '/i18n-core.js';
 
-    bootI18n();
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    function formatEnergy(valueKcal, unit) {
+      if (unit === 'kj') {
+        return `${Math.round(valueKcal * 4.184).toLocaleString('cs-CZ')} kJ`;
+      }
+      return `${Math.round(valueKcal).toLocaleString('cs-CZ')} kcal`;
+    }
+
+    function calcBMR() {
+      const gender = document.getElementById('calc-gender').value;
+      const age = Number(document.getElementById('calc-age').value);
+      const height = Number(document.getElementById('calc-height').value);
+      const weight = Number(document.getElementById('calc-weight').value);
+      const activity = Number(document.getElementById('calc-activity').value);
+      const goal = document.getElementById('calc-goal').value;
+      const unit = document.getElementById('calc-unit').value;
+      if (!age || !height || !weight) return;
+      const bmrKcal = gender === 'm' ? 10 * weight + 6.25 * height - 5 * age + 5 : 10 * weight + 6.25 * height - 5 * age - 161;
+      const tdeeKcal = bmrKcal * activity;
+      let goalKcal = tdeeKcal;
+      let goalLabel = 'Doporučený příjem pro udržení';
+      if (goal === 'deficit') { goalKcal = Math.max(tdeeKcal - (2000 / 4.184), bmrKcal * 1.1); goalLabel = 'Doporučený příjem pro hubnutí'; }
+      if (goal === 'surplus') { goalKcal = tdeeKcal + (1500 / 4.184); goalLabel = 'Doporučený příjem pro nabírání'; }
+      document.getElementById('res-bmr').textContent = formatEnergy(bmrKcal, unit);
+      document.getElementById('res-tdee').textContent = formatEnergy(tdeeKcal, unit);
+      document.getElementById('res-goal').textContent = formatEnergy(goalKcal, unit);
+      document.getElementById('res-goal-label').textContent = goalLabel;
+      document.getElementById('bmr-result').classList.add('visible');
+    }
+    document.getElementById('bmr-calc-btn').addEventListener('click', calcBMR);
+    document.getElementById('calc-unit').addEventListener('change', () => {
+      if (document.getElementById('bmr-result').classList.contains('visible')) {
+        calcBMR();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.Chart) return;
+      Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+      Chart.defaults.color = '#4b5563';
+      new Chart(document.getElementById('bmrChart'), { type: 'doughnut', data: { labels: ['BMR 65 %', 'NEAT 20 %', 'Termický efekt 10 %', 'Sport 5 %'], datasets: [{ data: [65, 20, 10, 5], backgroundColor: ['#2563eb', '#059669', '#d97706', '#dc2626'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 15, font: { size: 12 } } } }, cutout: '65%' } });
+      new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Bílkoviny 30 %', 'Tuky 25 %', 'Sacharidy 45 %'], datasets: [{ data: [30, 25, 45], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
+      new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánek (8 h)', 'Bdělost (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
+      new Chart(document.getElementById('alcoholChart'), { type: 'bar', data: { labels: ['Pivo 500 ml', 'Víno 175 ml', 'Panák 40 ml', 'Cider 330 ml', 'Koktejl 250 ml'], datasets: [{ label: 'kJ', data: [700, 540, 300, 620, 980], backgroundColor: ['#8b5cf6', '#7c3aed', '#6d28d9', '#a78bfa', '#4c1d95'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: 'kJ' } } } } });
+    });
   </script>
+  <script type="module">import { bootI18n } from '/i18n-core.js'; bootI18n();</script>
 </body>
+
 </html>

@@ -61,7 +61,7 @@
         "name": "Co mám dělat, když mám pořád na něco chuť?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Chuť na sladké nebo neustálé „uzobávání“ během dne často nesouvisí jen s vůlí. Velkou roli hraje kolísání hladiny glukózy v krvi. Pokud během dne dochází k prudkým výkyvům, tělo reaguje rychlým poklesem energie, což se projeví chutí na další jídlo. Pomáhá kombinovat sacharidy s bílkovinami a tuky, nezačínat den pouze sladkým jídlem, jíst v pravidelných intervalech a vyhnout se velkým výkyvům mezi hladem a přejedením."
+          "text": "Chuť na sladké nebo neustálé uzobávání během dne často nesouvisí jen s vůlí. Velkou roli hraje kolísání hladiny glukózy v krvi. Pomáhá kombinovat sacharidy s bílkovinami a tuky, jíst pravidelně a vyhnout se velkým výkyvům mezi hladem a přejedením."
         }
       }
     ]
@@ -79,335 +79,240 @@
     </header>
 
     <style>
-      .edu-chart-lg {
-        width: 100%;
-        height: 350px;
-        margin: 20px 0;
-      }
-
-      .edu-chart-md {
-        width: 100%;
-        height: 280px;
-      }
-
-      .edu-flex-row {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        margin-top: 24px;
-      }
-
+      .edu-chart-lg { width: 100%; height: 350px; margin: 20px 0; }
+      .edu-chart-md { width: 100%; height: 280px; }
+      .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
       @media (min-width: 768px) {
-        .edu-flex-row {
-          flex-direction: row;
-          align-items: center;
-        }
-
-        .edu-flex-row>* {
-          flex: 1;
-          min-width: 0;
-        }
+        .edu-flex-row { flex-direction: row; align-items: center; }
+        .edu-flex-row > * { flex: 1; min-width: 0; }
       }
-
-      .edu-icon {
-        color: var(--seo-accent);
-        margin-bottom: 12px;
-      }
-
-      .edu-icon svg {
-        width: 32px;
-        height: 32px;
-      }
-
-      .edu-fact-box {
-        background: var(--seo-soft);
-        padding: 24px;
-        border-radius: 12px;
-        border: 1px solid var(--seo-line);
-        margin-top: 16px;
-      }
-
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      .edu-icon { color: var(--seo-accent); margin-bottom: 12px; }
+      .edu-icon svg { width: 32px; height: 32px; }
+      .edu-fact-box { background: var(--seo-soft); padding: 24px; border-radius: 12px; border: 1px solid var(--seo-line); margin-top: 16px; }
+      .balance-lab { display: grid; gap: 24px; margin-top: 24px; }
+      .balance-playground { background: linear-gradient(180deg, #f8fafc 0%, #ecfdf5 100%); border: 1px solid var(--seo-line); border-radius: 20px; padding: 24px; }
+      .balance-stage { position: relative; min-height: 300px; display: grid; place-items: center; overflow: hidden; }
+      .balance-ground { position: absolute; left: 8%; right: 8%; bottom: 38px; height: 8px; border-radius: 999px; background: #d1d5db; }
+      .balance-pillar { position: absolute; bottom: 46px; width: 22px; height: 120px; background: linear-gradient(180deg, #14532d 0%, #0f5132 100%); border-radius: 12px; }
+      .balance-pillar::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: -18px; width: 48px; height: 24px; background: #166534; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+      .balance-beam { position: absolute; bottom: 150px; width: min(560px, 82%); height: 12px; border-radius: 999px; background: #166534; transform-origin: center center; transition: transform 0.35s ease; box-shadow: 0 12px 24px rgba(15, 81, 50, 0.18); }
+      .balance-pan { position: absolute; bottom: 102px; width: 170px; display: grid; justify-items: center; transition: transform 0.35s ease; }
+      .balance-pan.left { left: 12%; }
+      .balance-pan.right { right: 12%; }
+      .balance-pan-line { width: 2px; height: 48px; background: #166534; }
+      .balance-pan-bowl { width: 100%; min-height: 88px; padding: 16px 14px; border-radius: 18px 18px 24px 24px; background: rgba(255, 255, 255, 0.94); border: 2px solid #bbf7d0; box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08); text-align: center; }
+      .balance-pan-bowl strong { display: block; font-size: 0.95rem; margin-bottom: 6px; }
+      .balance-pan-bowl span { display: block; color: var(--muted); font-size: 0.9rem; }
+      .balance-pointer { position: absolute; bottom: 162px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 999px; background: #f59e0b; box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.16); }
+      .balance-controls { display: grid; gap: 20px; }
+      .balance-control-grid { display: grid; gap: 16px; }
+      @media (min-width: 860px) { .balance-control-grid { grid-template-columns: 1fr 1fr; } }
+      .balance-choice-group h3 { margin-bottom: 10px; }
+      .balance-choice-group p { margin-bottom: 12px; color: var(--muted); }
+      .balance-choice-list { display: grid; gap: 10px; }
+      .balance-chip { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--seo-line); background: #fff; cursor: pointer; transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease; text-align: left; }
+      .balance-chip:hover { transform: translateY(-1px); border-color: #86efac; }
+      .balance-chip.active { border-color: #15803d; box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12); background: #f0fdf4; }
+      .balance-chip-label { font-weight: 700; color: var(--fg); }
+      .balance-chip-meta { font-size: 0.88rem; color: var(--muted); }
+      .balance-readout { display: grid; gap: 14px; }
+      .balance-summary { display: grid; gap: 12px; padding: 18px; border-radius: 16px; background: #fff; border: 1px solid var(--seo-line); }
+      .balance-summary-row { display: flex; justify-content: space-between; gap: 16px; font-size: 0.96rem; }
+      .balance-outcome { padding: 16px 18px; border-radius: 16px; font-weight: 800; font-size: 1rem; }
+      .balance-outcome.deficit { background: #ecfdf5; color: #166534; border: 1px solid #86efac; }
+      .balance-outcome.balance { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+      .balance-outcome.surplus { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 
     <section class="seo-hero">
       <article class="seo-card seo-hero-card fade-in">
-        <div class="seo-eyebrow">Edukativní Průvodce</div>
+        <div class="seo-eyebrow">Edukativní průvodce</div>
         <h1>Hubnutí bez chaosu</h1>
-        <p class="seo-lead">Je snadné se ztratit v záplavě drastických diet a zaručených rad. Vysvětlíme si, jak funguje
-          stabilní, racionální a hlavně udržitelný přístup k hubnutí – bez zázraků, jen s použitím selského rozumu a
-          biologie.</p>
+        <p class="seo-lead">Je snadné se ztratit v záplavě drastických diet a zaručených rad. Vysvětlíme si, jak funguje stabilní, racionální a hlavně udržitelný přístup k hubnutí bez zázraků, jen s použitím selského rozumu a biologie.</p>
       </article>
     </section>
 
     <div class="seo-stack">
-
       <section class="seo-section fade-in">
         <h2>Jak hubnutí reálně funguje</h2>
-        <p>Základním principem dlouhodobého úspěchu je pochopení energetické bilance. Místo extrémních diet jde o
-          nalezení mírného, ale dlouhodobě udržitelného režimu.</p>
-
-        <div class="edu-chart-lg"><canvas id="energyChart"></canvas></div>
-
-        <div class="seo-stat-row">
-          <div class="seo-stat-chip">
-            <span class="seo-stat-label">1. Rovnováha</span>
-            <strong>Příjem a výdej jsou v harmonii. Tělo si drží hmotnost.</strong>
+        <p>Základním principem dlouhodobého úspěchu je energetická bilance. Když příjem z jídla převáží výdej z pohybu a běžného dne, váha se překlápí nahoru. Když je výdej mírně vyšší, vzniká prostor pro hubnutí.</p>
+        <div class="balance-lab">
+          <div class="balance-playground">
+            <div class="balance-stage">
+              <div class="balance-beam" id="balanceBeam"></div>
+              <div class="balance-pointer"></div>
+              <div class="balance-pan left" id="foodPan">
+                <div class="balance-pan-line"></div>
+                <div class="balance-pan-bowl">
+                  <strong>Jídlo</strong>
+                  <span id="foodTotal">0 kcal</span>
+                </div>
+              </div>
+              <div class="balance-pan right" id="activityPan">
+                <div class="balance-pan-line"></div>
+                <div class="balance-pan-bowl">
+                  <strong>Aktivity</strong>
+                  <span id="activityTotal">0 kcal</span>
+                </div>
+              </div>
+              <div class="balance-pillar"></div>
+              <div class="balance-ground"></div>
+            </div>
           </div>
-          <div class="seo-stat-chip" style="background:#fffcfc; border-color:#fee2e2;">
-            <span class="seo-stat-label" style="color:#b91c1c;">2. Nadbytek</span>
-            <strong>Dlouhodobý přebytek energie se ukládá do tuku.</strong>
-          </div>
-          <div class="seo-stat-chip" style="background:var(--seo-soft);">
-            <span class="seo-stat-label" style="color:var(--seo-accent);">3. Deficit</span>
-            <strong>Mírný nedostatek donutí tělo čerpat energii ze zásob (hubnutí).</strong>
+
+          <div class="balance-controls">
+            <div class="balance-control-grid">
+              <div class="balance-choice-group">
+                <h3>Zaklikněte jídla</h3>
+                <p>Vlevo přidávejte kalorie, které během dne sníte.</p>
+                <div class="balance-choice-list" id="foodChoices">
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="180"><span><span class="balance-chip-label">Snídaně: ovesná kaše</span><span class="balance-chip-meta">vločky, jogurt, ovoce</span></span><strong>180 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="420"><span><span class="balance-chip-label">Oběd: kuře a rýže</span><span class="balance-chip-meta">běžná porce</span></span><strong>420 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="260"><span><span class="balance-chip-label">Bageta nebo sendvič</span><span class="balance-chip-meta">rychlé jídlo v práci</span></span><strong>260 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="190"><span><span class="balance-chip-label">Sladká káva a snack</span><span class="balance-chip-meta">nenápadný bonus navíc</span></span><strong>190 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="520"><span><span class="balance-chip-label">Večeře: pizza nebo burger</span><span class="balance-chip-meta">větší kalorická porce</span></span><strong>520 kcal</strong></button>
+                </div>
+              </div>
+
+              <div class="balance-choice-group">
+                <h3>Zaklikněte aktivity</h3>
+                <p>Vpravo přidávejte běžný pohyb i cílený výdej.</p>
+                <div class="balance-choice-list" id="activityChoices">
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="80"><span><span class="balance-chip-label">20 min svižná chůze</span><span class="balance-chip-meta">rychlý přesun nebo pauza</span></span><strong>80 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="140"><span><span class="balance-chip-label">6 000 kroků navíc</span><span class="balance-chip-meta">běžný aktivní den</span></span><strong>140 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="220"><span><span class="balance-chip-label">45 min silový trénink</span><span class="balance-chip-meta">udržení svalů</span></span><strong>220 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="260"><span><span class="balance-chip-label">40 min běh nebo kolo</span><span class="balance-chip-meta">vyšší výdej</span></span><strong>260 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="110"><span><span class="balance-chip-label">Schody a pochůzky</span><span class="balance-chip-meta">malé věci během dne</span></span><strong>110 kcal</strong></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="balance-readout">
+              <div class="balance-summary">
+                <div class="balance-summary-row"><span>Zvolené jídlo</span><strong id="foodSummary">0 kcal</strong></div>
+                <div class="balance-summary-row"><span>Zvolené aktivity</span><strong id="activitySummary">0 kcal</strong></div>
+                <div class="balance-summary-row"><span>Rozdíl</span><strong id="balanceDelta">0 kcal</strong></div>
+              </div>
+              <div class="balance-outcome balance" id="balanceOutcome">Zatím je to vyrovnané. Přidejte jídla nebo aktivity a uvidíte, kam se váha překlopí.</div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Kam mizí vaše energie během dne?</h2>
-        <p>Lidé často přeceňují roli samotného cvičení ve fitku a podceňují energii, kterou pálíme pouhou existencí a
-          běžným fungováním přes den.</p>
-
+        <h2>Jak rychle hubnout?</h2>
         <div class="edu-flex-row">
           <div>
-            <div class="edu-chart-md"><canvas id="bmrChart"></canvas></div>
+            <p>Realistické a udržitelné tempo hubnutí je <strong>0,3 až 0,7 kg za týden</strong>. To odpovídá deficitu přibližně 1 000 až 2 500 kJ denně. Rychlejší postup vypadá atraktivně, ale často končí ztrátou svalů, únavou a návratem hmotnosti.</p>
+            <p>Silné výsledky obvykle nevznikají během 10 dnů, ale během měsíců konzistentního režimu. Krátké stagnace přitom neznamenají selhání, hmotnost běžně kolísá podle vody, stresu i cyklu.</p>
+            <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">Největší chyba:</strong>Snažit se zrychlit proces extrémem. Příliš agresivní dieta zvyšuje hlad, snižuje spontánní pohyb a zvyšuje pravděpodobnost jojo efektu.</div>
           </div>
-          <div>
-            <ul>
-              <li><strong>BMR (Bazální metabolismus) ~ 65%</strong>: Největší část energie padne na chod orgánů a
-                dýchání zkrátka tím, že žijeme.</li>
-              <li><strong>NEAT (Běžný pohyb) ~ 20%</strong>: Chůze po kanceláři, úklid, vaření, dokonce i postávání nebo
-                podupávání nohou.</li>
-              <li><strong>Termický efekt ~ 10%</strong>: Tělo po jídle pálí kalorie samotným trávením potravy (nejvyšší
-                termický efekt mají bílkoviny).</li>
-              <li><strong>Sport a trénink ~ 5%</strong>: Čisté kalorie spálené hodinou aktivního cvičení tvoří nečekaně
-                malý dílek koláče.</li>
-            </ul>
-          </div>
+          <div><div class="edu-chart-md"><canvas id="weightLossChart"></canvas></div></div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
         <h2>Proč nefunguje lokální hubnutí</h2>
-        <p>Dělat denně stovky sklapovaček nepovede k úbytku tuku izolovaně pouze na břiše. Tělo spaluje tyto tukové
-          zásoby kompletně po celém těle na základě genetických proporcí.</p>
+        <p>Dělat denně stovky sklapovaček nepovede k úbytku tuku izolovaně pouze na břiše. Tělo spaluje tukové zásoby komplexně po celém těle a pořadí je z velké části dáno genetikou a hormonálním nastavením.</p>
         <div class="seo-grid">
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;">
-            <h3 style="color:#b91c1c;">Mýtus: Extrémní důraz na partii</h3>
-            <p>Očekávání, že posilováním jedné oblasti přesně "vycvičíte" lokální tuk. Ve skutečnosti jen posilujete
-              sval pod vrstvou tuku.</p>
-          </article>
-          <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">Fakt: Komplexní redukce</h3>
-            <p>Tuku se zbavujete především nastavením mírného kalorického deficitu. Cvičením tělo celkově zpevňujete,
-              ale samotný úbytek centimetrů se týká celého těla plošně.</p>
-          </article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><h3 style="color:#b91c1c;">Mýtus: Stačí cílit na partii</h3><p>Posilováním jedné oblasti trénujete sval pod tukem, ne konkrétní zásobní tuk. Proto samy sklapovačky břicho nespálí.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3 style="color:var(--seo-accent);">Fakt: Rozhoduje celek</h3><p>Tuku se zbavujete hlavně přes mírný deficit, dostatek bílkovin, běžný pohyb a silový trénink, který chrání svalovou hmotu.</p></article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Zásady pro praxi</h2>
+        <h2>Nejčastější chyby při hubnutí</h2>
+        <p>Většina lidí nedělá jednu obrovskou chybu. Spíš se opakovaně vrací k několika návykům, které průběžně brzdí výsledek.</p>
         <div class="seo-grid">
-          <article class="seo-mini-card">
-            <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg></div>
-            <h3>Plánování jídla</h3>
-            <p>Rámcový přehled s předstihem omezuje impulzivní rozhodování ve chvíli už existujícího velkého hladu.</p>
-          </article>
-          <article class="seo-mini-card">
-            <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16v0Z" />
-                <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4v0Z" />
-                <path d="M12 2v2" />
-              </svg></div>
-            <h3>Záchranné potraviny</h3>
-            <p>Tuňák, vejce, sýry nebo tvaroh. Rychlé bílkoviny perfektně zachytí výpadek, když není čas po práci vařit.
-            </p>
-          </article>
-          <article class="seo-mini-card">
-            <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M8 6h13" />
-                <path d="M8 12h13" />
-                <path d="M8 18h13" />
-                <path d="M3 6h.01" />
-                <path d="M3 12h.01" />
-                <path d="M3 18h.01" />
-              </svg></div>
-            <h3>Jednoduchá příprava</h3>
-            <p>Zdravé jídlo si nežádá 15 exotických surovin. Libová bílkovina, kvalitní zelenina a příloha úplně stačí
-              ke spokojenosti.</p>
-          </article>
-          <article class="seo-mini-card">
-            <div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg></div>
-            <h3>Realističnost pro život</h3>
-            <p>Začít hubnout na extrémních restrikcích často končí jojo efektem. Důležitá je udržitelnost po celý život.
-            </p>
-          </article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3 style="color:#b91c1c;">Příliš velký deficit</h3><p>Drastické seškrtání příjmu rychle zvedne hlad, únavu a zhorší schopnost plán držet déle než pár dnů.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3 style="color:#b91c1c;">Vynechávání jídel</h3><p>Když den začíná dlouhým hladem, odpoledne a večer často přichází přejedení a ztráta kontroly.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><h3 style="color:#b91c1c;">Málo bílkovin</h3><p>Bez dostatku bílkovin se hůř drží sytost a při redukci roste riziko, že tělo bude hubnout i ze svalů.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg></div><h3 style="color:#b91c1c;">Jen cardio</h3><p>Kardio je užitečné, ale bez rozumného příjmu a silového tréninku se výsledek často zastaví dřív, než čekáte.</p></article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Neustálá chuť na sladké (Glukóza)</h2>
+        <h2>Proč nehubnu, i když jím málo?</h2>
+        <p>Častým problémem není jen množství jídla, ale <strong>energetická hustota</strong>. Stejných 1 000 kJ může mít úplně jiný objem, jinou sytivost a jiný dopad na další hlad během dne.</p>
+        <div class="edu-chart-lg" style="height: 380px;"><canvas id="foodCompareChart"></canvas></div>
+        <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">Co z toho plyne:</strong>Salát, brambory nebo ovoce mohou při stejném energetickém obsahu zaplnit talíř i žaludek výrazně víc než cola, čokoláda nebo bílá rýže. Hubnutí proto není jen o tom jíst méně, ale jíst chytřeji.</div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Neustálá chuť na sladké</h2>
         <div class="edu-flex-row">
           <div>
-            <p>Proč nás neustále přepadají chutě? Viníkem často nebývá slabá vůle, nýbrž prudké kolísání glukózy
-              (krevního cukru).</p>
-            <p>Extrémní vzestup např. po sladké kávě a prázdných sacharidech vyvolá vlnu inzulínu. Ten srazí glukózu
-              strmě dolů – v tu chvíli pocítíte únavu, úpadek energie a nekontrolovatelný hlad po dalším cukru.</p>
-            <div class="edu-fact-box">
-              <strong style="display:block; margin-bottom: 8px;">Doporučení pro stabilitu:</strong>
-              Kombinujte sacharidy zásadně se zdrojem bílkovin a tuků. To vstřebávání prudce zpomalí a zbaví Vás
-              neustálého hladu. Detailně tento princip populárně popisuje například kniha <a
-                href="https://share.google/FJCsCvnairuMLP7Uc" target="_blank" rel="noopener noreferrer"
-                class="diet-link">Glucose Revolution</a>.
-            </div>
+            <p>Viníkem často nebývá slabá vůle, ale prudké kolísání glukózy v krvi. Typicky po sladké snídani nebo rychlém snacku vystřelí energie nahoru a krátce nato přijde propad.</p>
+            <p>Ten se projeví únavou, zhoršeným soustředěním a chutí na další rychlý cukr. Tělo si neříká o disciplínu, ale o stabilnější zdroj energie.</p>
+            <div class="edu-fact-box"><strong style="display:block; margin-bottom: 8px;">Jak výkyvy zklidnit:</strong>Kombinujte sacharidy se zdrojem bílkovin a tuků. Tak se vstřebávání zpomalí a pocit sytosti vydrží déle.</div>
           </div>
-          <div>
-            <div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div>
-          </div>
+          <div><div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div></div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
         <h2>Když slevíte na spánku, budete jíst</h2>
         <div class="edu-flex-row">
+          <div><div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div></div>
           <div>
-            <div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div>
-          </div>
-          <div>
-            <p>Cílovou zónou je <strong>7–9 hodin kvalitního spánku</strong>. Nedostatek odpočinku razantně přepisuje
-              hormonální mapu chování.</p>
-            <p>Hormon sytosti (leptin) při nevyspání klesá na dno, zatímco hormon hladu (ghrelin) stoupá. Mozek celkově
-              vyčerpaného člověka proto přirozeně vyhledává co nejrychlejší zdroje rychlé energie – sladká a velmi
-              kaloricky hutná jídla.</p>
+            <p>Cílovou zónou je <strong>7 až 9 hodin kvalitního spánku</strong>. Nedostatek odpočinku mění hlad, sytost i schopnost rozhodovat se rozumně během dne.</p>
+            <p>Leptin klesá, ghrelin roste a mozek unaveného člověka přirozeně sahá po rychlé energii. Proto je spánek v redukci mnohem důležitější, než si většina lidí připouští.</p>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
         <h2>Rozumný pohled na zdravý pohyb</h2>
-        <p>Pro spalování kalorií a kardiovaskulární zdraví nemusíte každý den běžet maraton. Nejdůležitější je najít
-          aktivitu, u které reálně dokážete s radostí vytrvat.</p>
+        <p>Pro spalování kalorií a kardiovaskulární zdraví nemusíte každý den běžet maraton. Důležité je najít aktivitu, kterou zvládnete držet dlouhodobě a která nezvýší stres ještě víc.</p>
         <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Obyčejná chůze denně</h3>
-            <p>Nenamáhá klouby, masivně snižuje míru stresu a nebuduje bezprostředně extrémní pocit prázdného žaludku
-              jako některé náročné kardio.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Schody místo výtahu</h3>
-            <p>Běžný pohyb během práce (stání) nebo do schodů se masivně střádá v rámci celého dne (systém NEAT).</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Silový trénink</h3>
-            <p>Posilování zachová životně důležitou aktivní svalovou hmotu, která navíc udržuje Váš klidový metabolismus
-              ve výkonu.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Plavání a sporty</h3>
-            <p>Ať už je to kolo, padel či plavání - všechny jsou šetrné a nejlepší formou je vždy to, co Vás vyloženě
-              naplňuje a baví.</p>
-          </article>
+          <article class="seo-mini-card"><h3>Obyčejná chůze</h3><p>Je dostupná, nenáročná na regeneraci a při pravidelnosti udělá pro výdej více, než se často čeká.</p></article>
+          <article class="seo-mini-card"><h3>Schody a běžný pohyb</h3><p>NEAT, tedy běžná aktivita během dne, bývá podceňovaný. Přitom právě ten často rozhoduje o rozdílu mezi stagnací a pokrokem.</p></article>
+          <article class="seo-mini-card"><h3>Silový trénink</h3><p>Pomáhá chránit svalovou hmotu, zlepšuje tvar postavy a podporuje udržitelnost redukce.</p></article>
+          <article class="seo-mini-card"><h3>Sport pro radost</h3><p>Kolo, plavání nebo raketové sporty dávají smysl tehdy, když se k nim chcete vracet i po prvním nadšení.</p></article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Realita vs. Sociální sítě</h2>
-        <p>Algoritmy na fotkách nás neustále konfrontují s nerealistickými, na milimetry přesně vyrýsovanými proporcemi.
-          Mějte ale na paměti, že to často neodráží plnohodnotné zdraví.</p>
+        <h2>Realita vs. sociální sítě</h2>
+        <p>Algoritmy na fotkách neustále ukazují extrémně vyrýsované proporce, ale to často neodpovídá běžnému zdraví ani udržitelnému životnímu stylu.</p>
         <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Nedosažitelné limity</h3>
-            <p>Studené nasvícení v hale, napumpování svalu a často lehká dehydratace před fotografováním. Vidíte iluzi
-              vytvořenou po přípravě na pár okamžiků, nikoli pro celoroční běžné bytí a život.</p>
-          </article>
-          <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">Extrém podkopává vitalitu</h3>
-            <p>Zejména pro těla mnoha žen znamená příliš nízké procento zachovaného tuku problémy s hormonální
-              rovnováhou, ztrátu přirozeného cyklu, pocity zimnice a podvědomé podrážděností.</p>
-          </article>
+          <article class="seo-mini-card"><h3>Nedosažitelné podmínky</h3><p>Světlo, pumpa, dehydratace i úhel fotky umí vytvořit iluzi výsledku, který ve skutečnosti netrvá celý rok.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3 style="color:var(--seo-accent);">Extrém není zdraví</h3><p>Příliš nízké procento tuku může podkopat energii, hormony, náladu i regeneraci. Dobrý cíl je takový, který jde opravdu žít.</p></article>
         </div>
       </section>
 
       <section class="seo-faq fade-in">
         <h2>Často kladené otázky k hubnutí</h2>
-        <div class="seo-faq-item">
-          <h3>Musím držet přísnou keto dietu / low carb pro dosažení cílů?</h3>
-          <p>Rozhodně ne. Extrémní redukce jedné makroživiny (např. sacharidů) není magická metoda. Fungují nejčastěji
-            tak, že po omezení spousty potravin tělo automaticky vstoupí do kalorického deficitu. Dlouhodobá volnost na
-            klasickém vyváženém jídelníčku dává stabilnější výsledky a psychický komfort.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Co když pracuji na noční a ranní směny?</h3>
-          <p>Lidské tělo neřídí metabolismus podle pevných hodinek na stěně. Rozhodující je celkový průměrný denní nebo
-            týdenní energetický součet. Racionální režim stravy se dá velmi snadno adaptovat i na proměnlivou bdělost a
-            noční režim, jen se posunou „okna“ pro jednotlivá jídla.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Musím trávit hodiny v posilovně?</h3>
-          <p>Drsný trénink hubnutí opravdu výrazně urychluje a tvaruje celkovou postavu. Pokud ale chcete razantní
-            úbytek zásobního tuku, v prvé řadě si ujasněte a sjednoťte kuchyni a následně postačí jen zvýšený standardní
-            pohyb – třeba chůze nebo schody.</p>
-        </div>
+        <div class="seo-faq-item"><h3>Musím držet přísnou keto dietu nebo low carb?</h3><p>Ne. Funguje především dlouhodobě udržitelný deficit a rozumná skladba jídel. Extrémní omezení často jen krátkodobě sníží příjem, ale hůř se drží.</p></div>
+        <div class="seo-faq-item"><h3>Co když pracuji na směny?</h3><p>Metabolismus neřídí jen hodinky na stěně. Důležitý je celkový příjem a to, zda plán sedí Vašemu reálnému režimu během dne i týdne.</p></div>
+        <div class="seo-faq-item"><h3>Musím trávit hodiny v posilovně?</h3><p>Ne. Pokud chcete hlavně zhubnout, klíč je v kuchyni. Posilovna pomáhá, ale dobré výsledky často stojí na kombinaci stravy, chůze a základního silového tréninku.</p></div>
       </section>
 
-      <!-- Akční sekce -->
       <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center; margin-top: 40px;">
         <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Srozumitelné hubnutí pod kontrolou</h2>
-        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
-          Už Vás nebaví dietní chaos? Získejte svůj personalizovaný jídelníček na míru a otestujte náš FitLime systém
-          naplno.</p>
-        <div style="display: flex; justify-content: center; margin-bottom: 60px;">
-          <a href="/form.html" class="seo-btn seo-btn-primary"
-            style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Vypočítat
-            jídelníček na míru</a>
-        </div>
-
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">Už Vás nebaví dietní chaos? Získejte svůj personalizovaný jídelníček na míru a otestujte FitLime systém naplno.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Vypočítat jídelníček na míru</a></div>
         <div class="ps-related-articles">
-          <h3
-            style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">
-            Další články:</h3>
-          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
-            <a href="/zdravy-jidelnicek/index.html" class="ps-elegant-link">Zdravé stravování</a>
-            <a href="/sportovni-jidelnicek/index.html" class="ps-elegant-link">Sportovní výživa</a>
-            <a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a>
-          </div>
-          <div style="display: flex; justify-content: center; margin-top: 28px;">
-            <a href="/index.html" class="ps-elegant-link">Návrat na hlavní stránku</a>
-          </div>
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Další články:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/zdravy-jidelnicek/index.html" class="ps-elegant-link">Zdravé stravování</a><a href="/sportovni-jidelnicek/index.html" class="ps-elegant-link">Sportovní výživa</a><a href="/jak-fitlime-funguje/index.html" class="ps-elegant-link">Jak FitLime funguje</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Návrat na hlavní stránku</a></div>
         </div>
       </section>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1, rootMargin: '40px' });
-      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
       document.addEventListener('DOMContentLoaded', () => {
         if (!window.Chart) return;
@@ -415,97 +320,93 @@
         Chart.defaults.color = '#4b5563';
         const brandAccent = '#0f5132';
 
-        new Chart(document.getElementById('energyChart'), {
-          type: 'line',
-          data: {
-            labels: ['Den 1', 'Den 2', 'Den 3', 'Den 4', 'Den 5', 'Den 6'],
-            datasets: [
-              { label: 'Přijatá (kcal)', data: [2200, 2200, 2600, 2600, 1800, 1800], borderColor: '#b91c1c', backgroundColor: '#b91c1c', stepped: true, tension: 0.1, borderWidth: 3 },
-              { label: 'Vydaná celkem (kcal)', data: [2200, 2200, 2200, 2200, 2200, 2200], borderColor: brandAccent, backgroundColor: brandAccent, tension: 0.3, borderWidth: 3 }
-            ]
-          },
-          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { suggestedMin: 1500, suggestedMax: 3000 } } }
+        const beam = document.getElementById('balanceBeam');
+        const foodPan = document.getElementById('foodPan');
+        const activityPan = document.getElementById('activityPan');
+        const foodTotalEl = document.getElementById('foodTotal');
+        const activityTotalEl = document.getElementById('activityTotal');
+        const foodSummaryEl = document.getElementById('foodSummary');
+        const activitySummaryEl = document.getElementById('activitySummary');
+        const balanceDeltaEl = document.getElementById('balanceDelta');
+        const balanceOutcomeEl = document.getElementById('balanceOutcome');
+        const choiceButtons = document.querySelectorAll('.balance-chip');
+
+        const renderBalance = () => {
+          let foodKcal = 0;
+          let activityKcal = 0;
+
+          choiceButtons.forEach((button) => {
+            if (!button.classList.contains('active')) return;
+            const kcal = Number(button.dataset.kcal || 0);
+            if (button.dataset.group === 'food') foodKcal += kcal;
+            if (button.dataset.group === 'activity') activityKcal += kcal;
+          });
+
+          const delta = foodKcal - activityKcal;
+          const clampedTilt = Math.max(-14, Math.min(14, delta / 35));
+          const leftOffset = Math.max(-18, Math.min(18, clampedTilt * 1.15));
+          const rightOffset = -leftOffset;
+
+          beam.style.transform = `rotate(${clampedTilt}deg)`;
+          foodPan.style.transform = `translateY(${leftOffset}px)`;
+          activityPan.style.transform = `translateY(${rightOffset}px)`;
+
+          const foodText = `${foodKcal} kcal`;
+          const activityText = `${activityKcal} kcal`;
+          foodTotalEl.textContent = foodText;
+          activityTotalEl.textContent = activityText;
+          foodSummaryEl.textContent = foodText;
+          activitySummaryEl.textContent = activityText;
+
+          const deltaPrefix = delta > 0 ? '+' : '';
+          balanceDeltaEl.textContent = `${deltaPrefix}${delta} kcal`;
+
+          if (delta > 120) {
+            balanceOutcomeEl.className = 'balance-outcome surplus';
+            balanceOutcomeEl.textContent = 'Příjem převažuje. Tohle nastavení spíš drží váhu nebo vede k ukládání energie navíc.';
+          } else if (delta < -120) {
+            balanceOutcomeEl.className = 'balance-outcome deficit';
+            balanceOutcomeEl.textContent = 'Výdej převažuje. Tady už vzniká deficit, ve kterém může docházet k hubnutí.';
+          } else {
+            balanceOutcomeEl.className = 'balance-outcome balance';
+            balanceOutcomeEl.textContent = 'Skoro rovnováha. Váha je poblíž udržení a rozhodují detaily během dne i týdne.';
+          }
+        };
+
+        choiceButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            button.classList.toggle('active');
+            renderBalance();
+          });
         });
 
-        new Chart(document.getElementById('bmrChart'), {
-          type: 'doughnut',
-          data: {
-            labels: ['BMR (65%)', 'NEAT - Běžný pohyb (20%)', 'Termický efekt jídla (10%)', 'Sport a trénink (5%)'],
-            datasets: [{ data: [65, 20, 10, 5], backgroundColor: ['#2563eb', '#059669', '#d97706', '#dc2626'], borderWidth: 0 }]
-          },
-          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 15, font: { size: 12 } } } }, cutout: '65%' }
-        });
-
-        new Chart(document.getElementById('glucoseChart'), {
-          type: 'line',
-          data: {
-            labels: ['08:00', '09:00', '10:00', '11:00', '12:00'],
-            datasets: [{ label: 'Glukóza', data: [85, 165, 65, 80, 85], borderColor: '#d97706', tension: 0.4, borderWidth: 3 }]
-          },
-          options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 50, suggestedMax: 180 } } }
-        });
-
-        new Chart(document.getElementById('sleepChart'), {
-          type: 'doughnut',
-          data: {
-            labels: ['Spánek', 'Bdělost'],
-            datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }]
-          },
-          options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: false } }, rotation: -90, circumference: 180 }
-        });
+        renderBalance();
+        new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Týden 0', 'Týden 2', 'Týden 4', 'Týden 6', 'Týden 8', 'Týden 10', 'Týden 12'], datasets: [{ label: 'Mírný deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Drastická dieta a jojo efekt', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Hmotnost (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
+        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salát', 'Brambory', 'Ovoce', 'Rýže', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množství jídla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'gramy jídla' } } } } });
+        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [85, 165, 68, 82, 88], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 50, suggestedMax: 180, title: { display: true, text: 'mg/dl' } } } } });
+        new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánek (8 h)', 'Bdělost (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       });
     </script>
   </main>
-  <footer class="site-footer" role="contentinfo"
-    style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
-    <div class="ps-section-container"
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+  <footer class="site-footer" role="contentinfo" style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
       <div class="footer-left">
-        <div style="margin-bottom: 12px;">
-          <a data-contact-email data-user="info" data-domain="fitlime.cz"
-            style="color: var(--fg); text-decoration: none; font-weight: 600;"></a>
-        </div>
-        <div style="margin-bottom: 8px;">
-          <span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span>
-        </div>
-        <div style="font-size: 0.85rem; opacity: 0.8;">
-          <span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span>
-        </div>
+        <div style="margin-bottom: 12px;"><a data-contact-email data-user="info" data-domain="fitlime.cz" style="color: var(--fg); text-decoration: none; font-weight: 600;"></a></div>
+        <div style="margin-bottom: 8px;"><span class="brandline" data-i18n="home.footer.brand">FitLime – Chytrý jídelníček</span></div>
+        <div style="font-size: 0.85rem; opacity: 0.8;"><span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span></div>
       </div>
-
       <div class="footer-center" style="text-align: center;">
         <div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-          <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer"
-            style="color: #52460a; text-decoration: none; font-weight: 600;">
-            Powered by sportvitalpro.cz
-          </a>
-          <div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;">
-            <a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Instagram</a>
-            <span style="opacity: 0.3;">|</span>
-            <a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;"
-              target="_blank" rel="noopener noreferrer">Facebook</a>
-          </div>
+          <a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer" style="color: #52460a; text-decoration: none; font-weight: 600;">Powered by sportvitalpro.cz</a>
+          <div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;"><a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Instagram</a><span style="opacity: 0.3;">|</span><a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Facebook</a></div>
         </div>
       </div>
-
       <div class="footer-right" style="text-align: right;">
-        <nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="/cookies.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.cookies">Cookies</a>
-          <a href="/terms.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.terms">Obchodní podmínky</a>
-          <a href="/gdpr.html" style="color: var(--muted); text-decoration: none;"
-            data-i18n="home.footer.privacy">Ochrana soukromí</a>
-        </nav>
+        <nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;"><a href="/cookies.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.cookies">Cookies</a><a href="/terms.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.terms">Obchodní podmínky</a><a href="/gdpr.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.privacy">Ochrana soukromí</a></nav>
       </div>
     </div>
   </footer>
-  <script type="module">
-    import { bootI18n } from '/i18n-core.js';
-
-    bootI18n();
-  </script>
+  <script type="module">import { bootI18n } from '/i18n-core.js'; bootI18n();</script>
 </body>
 
 </html>
