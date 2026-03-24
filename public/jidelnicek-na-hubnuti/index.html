@@ -63,6 +63,14 @@
           "@type": "Answer",
           "text": "Chuť na sladké nebo neustálé uzobávání během dne často nesouvisí jen s vůlí. Velkou roli hraje kolísání hladiny glukózy v krvi. Pomáhá kombinovat sacharidy s bílkovinami a tuky, jíst pravidelně a vyhnout se velkým výkyvům mezi hladem a přejedením."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Proč je při hubnutí důležitý silový trénink a ne jen kardio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Silový trénink pomáhá chránit svalovou hmotu, která je při hubnutí klíčová pro vzhled postavy i dlouhodobý energetický výdej. Kardio samo o sobě sice spaluje energii, ale bez silového tréninku je vyšší riziko, že tělo bude při redukci ztrácet i svaly."
+        }
       }
     ]
   }
@@ -89,39 +97,65 @@
       .edu-icon { color: var(--seo-accent); margin-bottom: 12px; }
       .edu-icon svg { width: 32px; height: 32px; }
       .edu-fact-box { background: var(--seo-soft); padding: 24px; border-radius: 12px; border: 1px solid var(--seo-line); margin-top: 16px; }
-      .balance-lab { display: grid; gap: 24px; margin-top: 24px; }
-      .balance-playground { background: linear-gradient(180deg, #f8fafc 0%, #ecfdf5 100%); border: 1px solid var(--seo-line); border-radius: 20px; padding: 24px; }
-      .balance-stage { position: relative; min-height: 300px; display: grid; place-items: center; overflow: hidden; }
-      .balance-ground { position: absolute; left: 8%; right: 8%; bottom: 38px; height: 8px; border-radius: 999px; background: #d1d5db; }
-      .balance-pillar { position: absolute; bottom: 46px; width: 22px; height: 120px; background: linear-gradient(180deg, #14532d 0%, #0f5132 100%); border-radius: 12px; }
-      .balance-pillar::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: -18px; width: 48px; height: 24px; background: #166534; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
-      .balance-beam { position: absolute; bottom: 150px; width: min(560px, 82%); height: 12px; border-radius: 999px; background: #166534; transform-origin: center center; transition: transform 0.35s ease; box-shadow: 0 12px 24px rgba(15, 81, 50, 0.18); }
-      .balance-pan { position: absolute; bottom: 102px; width: 170px; display: grid; justify-items: center; transition: transform 0.35s ease; }
-      .balance-pan.left { left: 12%; }
-      .balance-pan.right { right: 12%; }
-      .balance-pan-line { width: 2px; height: 48px; background: #166534; }
-      .balance-pan-bowl { width: 100%; min-height: 88px; padding: 16px 14px; border-radius: 18px 18px 24px 24px; background: rgba(255, 255, 255, 0.94); border: 2px solid #bbf7d0; box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08); text-align: center; }
+      .balance-lab { display: grid; gap: 10px; margin-top: 24px; }
+      .balance-playground { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1px solid var(--seo-line); border-radius: 24px; padding: 10px; }
+      .balance-stage { position: relative; min-height: 380px; display: grid; place-items: center; overflow: hidden; }
+      .balance-ground { position: absolute; left: 10%; right: 10%; bottom: 26px; height: 6px; border-radius: 999px; background: #e5e7eb; }
+      .balance-base { position: absolute; left: 50%; bottom: 34px; width: 150px; height: 36px; transform: translateX(-50%); border-radius: 50%; background: linear-gradient(180deg, #f8fafc 0%, #d1d5db 100%); border: 1px solid #cbd5e1; box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08); }
+      .balance-base::before { content: ''; position: absolute; left: 50%; top: -18px; transform: translateX(-50%); width: 88px; height: 26px; border-radius: 50%; background: linear-gradient(180deg, #ffffff 0%, #dbe4ee 100%); border: 1px solid #cbd5e1; }
+      .balance-pillar { position: absolute; bottom: 66px; width: 12px; height: 190px; background: linear-gradient(180deg, #334155 0%, #64748b 100%); border-radius: 999px; }
+      .balance-pillar::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: -18px; width: 18px; height: 24px; background: linear-gradient(180deg, #334155 0%, #64748b 100%); clip-path: polygon(50% 0, 90% 75%, 68% 100%, 32% 100%, 10% 75%); }
+      .balance-pivot { position: absolute; left: 50%; bottom: 252px; transform: translateX(-50%); width: 30px; height: 38px; border-radius: 10px; background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%); border: 1px solid #94a3b8; z-index: 2; }
+      .balance-pivot::after { content: ''; position: absolute; inset: 10px; border-radius: 999px; background: #64748b; }
+      .balance-beam { position: absolute; bottom: 266px; width: min(560px, 82%); height: 10px; border-radius: 999px; background: linear-gradient(90deg, #475569 0%, #94a3b8 50%, #475569 100%); transform-origin: center center; transition: transform 0.35s ease; box-shadow: 0 8px 18px rgba(15, 23, 42, 0.10); }
+      .balance-pan { position: absolute; left: 50%; bottom: 118px; width: 190px; display: grid; justify-items: center; transition: transform 0.35s ease; }
+      .balance-pan.left,
+      .balance-pan.right { margin-left: -95px; }
+      .balance-pan-bowl { width: 168px; min-height: 100px; padding: 26px 16px 18px; border-radius: 50% 50% 44% 44% / 28% 28% 72% 72%; background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%); border: 1px solid #cbd5e1; box-shadow: inset 0 8px 12px rgba(255,255,255,0.45), 0 12px 18px rgba(15, 23, 42, 0.08); text-align: center; position: relative; }
+      .balance-pan-bowl::before { content: ''; position: absolute; left: 50%; top: -28px; transform: translateX(-50%); width: 2px; height: 28px; background: #94a3b8; }
+      .balance-pan-bowl::after { content: ''; position: absolute; left: 50%; top: -36px; transform: translateX(-50%); width: 12px; height: 12px; border-radius: 999px; background: #64748b; }
       .balance-pan-bowl strong { display: block; font-size: 0.95rem; margin-bottom: 6px; }
       .balance-pan-bowl span { display: block; color: var(--muted); font-size: 0.9rem; }
-      .balance-pointer { position: absolute; bottom: 162px; left: 50%; transform: translateX(-50%); width: 18px; height: 18px; border-radius: 999px; background: #f59e0b; box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.16); }
+      .balance-pan-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; min-height: 28px; margin-top: 10px; }
+      .balance-pan-item { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; background: rgba(255,255,255,0.72); border: 1px solid rgba(148, 163, 184, 0.45); font-size: 1rem; }
+      .balance-pointer { position: absolute; bottom: 278px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 999px; background: #0f5132; box-shadow: 0 0 0 8px rgba(15, 81, 50, 0.10); z-index: 3; }
+      .balance-overlay-outcome { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: min(440px, calc(100% - 24px)); padding: 14px 16px; border-radius: 16px; font-weight: 800; font-size: 0.98rem; text-align: center; z-index: 4; box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08); }
+      .balance-overlay-outcome.deficit { background: #ecfdf5; color: #166534; border: 1px solid #86efac; }
+      .balance-overlay-outcome.balance { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+      .balance-overlay-outcome.surplus { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
       .balance-controls { display: grid; gap: 20px; }
       .balance-control-grid { display: grid; gap: 16px; }
-      @media (min-width: 860px) { .balance-control-grid { grid-template-columns: 1fr 1fr; } }
+      @media (min-width: 1100px) { .balance-control-grid { gap: 18px; } }
       .balance-choice-group h3 { margin-bottom: 10px; }
       .balance-choice-group p { margin-bottom: 12px; color: var(--muted); }
       .balance-choice-list { display: grid; gap: 10px; }
       .balance-chip { display: flex; justify-content: space-between; gap: 12px; width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--seo-line); background: #fff; cursor: pointer; transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease; text-align: left; }
       .balance-chip:hover { transform: translateY(-1px); border-color: #86efac; }
       .balance-chip.active { border-color: #15803d; box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12); background: #f0fdf4; }
+      .balance-chip-main { display: flex; gap: 10px; align-items: flex-start; width: 100%; }
+      .balance-chip-title { display: inline-flex; align-items: center; gap: 8px; }
+      .balance-chip-emoji { font-size: 1rem; line-height: 1; }
       .balance-chip-label { font-weight: 700; color: var(--fg); }
       .balance-chip-meta { font-size: 0.88rem; color: var(--muted); }
+      @media (min-width: 1100px) {
+        .balance-choice-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        .balance-chip { min-height: 92px; padding: 12px; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 10px; }
+        .balance-chip-main { width: 100%; flex-direction: column; align-items: flex-start; gap: 8px; }
+        .balance-chip-meta { display: none; }
+        .balance-chip strong { font-size: 0.95rem; }
+      }
       .balance-readout { display: grid; gap: 14px; }
-      .balance-summary { display: grid; gap: 12px; padding: 18px; border-radius: 16px; background: #fff; border: 1px solid var(--seo-line); }
-      .balance-summary-row { display: flex; justify-content: space-between; gap: 16px; font-size: 0.96rem; }
       .balance-outcome { padding: 16px 18px; border-radius: 16px; font-weight: 800; font-size: 1rem; }
       .balance-outcome.deficit { background: #ecfdf5; color: #166534; border: 1px solid #86efac; }
       .balance-outcome.balance { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
       .balance-outcome.surplus { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
+      .balance-note { margin-top: 12px; font-size: 0.88rem; color: var(--muted); text-align: center; }
+      @media (min-width: 761px) {
+        .balance-readout .balance-outcome { display: none; }
+      }
+      @media (max-width: 760px) {
+        .balance-overlay-outcome { display: none; }
+      }
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
@@ -137,65 +171,59 @@
     <div class="seo-stack">
       <section class="seo-section fade-in">
         <h2>Jak hubnutí reálně funguje</h2>
-        <p>Základním principem dlouhodobého úspěchu je energetická bilance. Když příjem z jídla převáží výdej z pohybu a běžného dne, váha se překlápí nahoru. Když je výdej mírně vyšší, vzniká prostor pro hubnutí.</p>
+        <p>Základním principem dlouhodobého úspěchu je energetická bilance. Když příjem z jídla převáží výdej z pohybu a běžného dne, váha se překlápí nahoru. Když je výdej mírně vyšší, vzniká prostor pro hubnutí. Jedná se o velmi zjednodušenou ilustraci energetické bilance.</p>
         <div class="balance-lab">
-          <div class="balance-playground">
-            <div class="balance-stage">
-              <div class="balance-beam" id="balanceBeam"></div>
-              <div class="balance-pointer"></div>
-              <div class="balance-pan left" id="foodPan">
-                <div class="balance-pan-line"></div>
-                <div class="balance-pan-bowl">
-                  <strong>Jídlo</strong>
-                  <span id="foodTotal">0 kcal</span>
-                </div>
-              </div>
-              <div class="balance-pan right" id="activityPan">
-                <div class="balance-pan-line"></div>
-                <div class="balance-pan-bowl">
-                  <strong>Aktivity</strong>
-                  <span id="activityTotal">0 kcal</span>
-                </div>
-              </div>
-              <div class="balance-pillar"></div>
-              <div class="balance-ground"></div>
-            </div>
-          </div>
-
           <div class="balance-controls">
             <div class="balance-control-grid">
               <div class="balance-choice-group">
-                <h3>Zaklikněte jídla</h3>
-                <p>Vlevo přidávejte kalorie, které během dne sníte.</p>
                 <div class="balance-choice-list" id="foodChoices">
-                  <button type="button" class="balance-chip" data-group="food" data-kcal="180"><span><span class="balance-chip-label">Snídaně: ovesná kaše</span><span class="balance-chip-meta">vločky, jogurt, ovoce</span></span><strong>180 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="food" data-kcal="420"><span><span class="balance-chip-label">Oběd: kuře a rýže</span><span class="balance-chip-meta">běžná porce</span></span><strong>420 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="food" data-kcal="260"><span><span class="balance-chip-label">Bageta nebo sendvič</span><span class="balance-chip-meta">rychlé jídlo v práci</span></span><strong>260 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="food" data-kcal="190"><span><span class="balance-chip-label">Sladká káva a snack</span><span class="balance-chip-meta">nenápadný bonus navíc</span></span><strong>190 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="food" data-kcal="520"><span><span class="balance-chip-label">Večeře: pizza nebo burger</span><span class="balance-chip-meta">větší kalorická porce</span></span><strong>520 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="180" data-emoji="🥣"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🥣</span><span class="balance-chip-label">Ovesná kaše</span></span></span><strong>180 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="420" data-emoji="🍗"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍗</span><span class="balance-chip-label">Kuře s rýží</span></span></span><strong>420 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="260" data-emoji="🥪"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🥪</span><span class="balance-chip-label">Bageta</span></span></span><strong>260 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="190" data-emoji="☕"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">☕</span><span class="balance-chip-label">Sladká káva</span></span></span><strong>190 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="food" data-kcal="520" data-emoji="🍕"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍕</span><span class="balance-chip-label">Pizza</span></span></span><strong>520 kcal</strong></button>
                 </div>
               </div>
 
               <div class="balance-choice-group">
-                <h3>Zaklikněte aktivity</h3>
-                <p>Vpravo přidávejte běžný pohyb i cílený výdej.</p>
                 <div class="balance-choice-list" id="activityChoices">
-                  <button type="button" class="balance-chip" data-group="activity" data-kcal="80"><span><span class="balance-chip-label">20 min svižná chůze</span><span class="balance-chip-meta">rychlý přesun nebo pauza</span></span><strong>80 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="activity" data-kcal="140"><span><span class="balance-chip-label">6 000 kroků navíc</span><span class="balance-chip-meta">běžný aktivní den</span></span><strong>140 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="activity" data-kcal="220"><span><span class="balance-chip-label">45 min silový trénink</span><span class="balance-chip-meta">udržení svalů</span></span><strong>220 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="activity" data-kcal="260"><span><span class="balance-chip-label">40 min běh nebo kolo</span><span class="balance-chip-meta">vyšší výdej</span></span><strong>260 kcal</strong></button>
-                  <button type="button" class="balance-chip" data-group="activity" data-kcal="110"><span><span class="balance-chip-label">Schody a pochůzky</span><span class="balance-chip-meta">malé věci během dne</span></span><strong>110 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="80" data-emoji="🚶"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🚶</span><span class="balance-chip-label">20 min svižná chůze</span></span></span><strong>80 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="140" data-emoji="👣"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">👣</span><span class="balance-chip-label">6 000 kroků navíc</span></span></span><strong>140 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="220" data-emoji="🏋️"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🏋️</span><span class="balance-chip-label">45 min silový trénink</span></span></span><strong>220 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="260" data-emoji="🚴"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🚴</span><span class="balance-chip-label">40 min běh nebo kolo</span></span></span><strong>260 kcal</strong></button>
+                  <button type="button" class="balance-chip" data-group="activity" data-kcal="110" data-emoji="🪜"><span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🪜</span><span class="balance-chip-label">Schody a pochůzky</span></span></span><strong>110 kcal</strong></button>
                 </div>
               </div>
             </div>
 
             <div class="balance-readout">
-              <div class="balance-summary">
-                <div class="balance-summary-row"><span>Zvolené jídlo</span><strong id="foodSummary">0 kcal</strong></div>
-                <div class="balance-summary-row"><span>Zvolené aktivity</span><strong id="activitySummary">0 kcal</strong></div>
-                <div class="balance-summary-row"><span>Rozdíl</span><strong id="balanceDelta">0 kcal</strong></div>
-              </div>
               <div class="balance-outcome balance" id="balanceOutcome">Zatím je to vyrovnané. Přidejte jídla nebo aktivity a uvidíte, kam se váha překlopí.</div>
+            </div>
+          </div>
+
+          <div class="balance-playground">
+            <div class="balance-stage">
+              <div class="balance-overlay-outcome balance" id="balanceOverlayOutcome">Zatím je to vyrovnané. Přidejte jídla nebo aktivity a uvidíte, kam se váha překlopí.</div>
+              <div class="balance-beam" id="balanceBeam"></div>
+              <div class="balance-pointer"></div>
+              <div class="balance-pan left" id="foodPan">
+                <div class="balance-pan-bowl">
+                  <strong>Jídlo</strong>
+                  <span id="foodTotal">0 kcal</span>
+                  <div class="balance-pan-items" id="foodIcons"></div>
+                </div>
+              </div>
+              <div class="balance-pan right" id="activityPan">
+                <div class="balance-pan-bowl">
+                  <strong>Aktivity</strong>
+                  <span id="activityTotal">0 kcal</span>
+                  <div class="balance-pan-items" id="activityIcons"></div>
+                </div>
+              </div>
+              <div class="balance-pivot"></div>
+              <div class="balance-pillar"></div>
+              <div class="balance-base"></div>
+              <div class="balance-ground"></div>
             </div>
           </div>
         </div>
@@ -229,7 +257,17 @@
           <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3 style="color:#b91c1c;">Příliš velký deficit</h3><p>Drastické seškrtání příjmu rychle zvedne hlad, únavu a zhorší schopnost plán držet déle než pár dnů.</p></article>
           <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3 style="color:#b91c1c;">Vynechávání jídel</h3><p>Když den začíná dlouhým hladem, odpoledne a večer často přichází přejedení a ztráta kontroly.</p></article>
           <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><h3 style="color:#b91c1c;">Málo bílkovin</h3><p>Bez dostatku bílkovin se hůř drží sytost a při redukci roste riziko, že tělo bude hubnout i ze svalů.</p></article>
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg></div><h3 style="color:#b91c1c;">Jen cardio</h3><p>Kardio je užitečné, ale bez rozumného příjmu a silového tréninku se výsledek často zastaví dřív, než čekáte.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;">
+  <div style="display:flex; align-items:center; gap:10px;">
+    <div class="edu-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </div>
+    <h3 style="color:#b91c1c; margin:0;">Jen cardio</h3>
+  </div>
+  <p>Kardio je užitečné, ale bez rozumného příjmu a silového tréninku se výsledek často zastaví dřív, než čekáte.</p>
+</article>
         </div>
       </section>
 
@@ -287,6 +325,7 @@
         <h2>Často kladené otázky k hubnutí</h2>
         <div class="seo-faq-item"><h3>Musím držet přísnou keto dietu nebo low carb?</h3><p>Ne. Funguje především dlouhodobě udržitelný deficit a rozumná skladba jídel. Extrémní omezení často jen krátkodobě sníží příjem, ale hůř se drží.</p></div>
         <div class="seo-faq-item"><h3>Co když pracuji na směny?</h3><p>Metabolismus neřídí jen hodinky na stěně. Důležitý je celkový příjem a to, zda plán sedí Vašemu reálnému režimu během dne i týdne.</p></div>
+        <div class="seo-faq-item"><h3>Proč je při hubnutí důležitý silový trénink a ne jen kardio?</h3><p>Silový trénink pomáhá udržet svalovou hmotu i ve chvíli, kdy jste v deficitu. Díky tomu nevypadá výsledek jen jako nižší číslo na váze, ale i pevnější postava a lepší dlouhodobá udržitelnost. Kardio je užitečné, ale samo o sobě nestačí.</p></div>
         <div class="seo-faq-item"><h3>Musím trávit hodiny v posilovně?</h3><p>Ne. Pokud chcete hlavně zhubnout, klíč je v kuchyni. Posilovna pomáhá, ale dobré výsledky často stojí na kombinaci stravy, chůze a základního silového tréninku.</p></div>
       </section>
 
@@ -325,52 +364,66 @@
         const activityPan = document.getElementById('activityPan');
         const foodTotalEl = document.getElementById('foodTotal');
         const activityTotalEl = document.getElementById('activityTotal');
-        const foodSummaryEl = document.getElementById('foodSummary');
-        const activitySummaryEl = document.getElementById('activitySummary');
-        const balanceDeltaEl = document.getElementById('balanceDelta');
         const balanceOutcomeEl = document.getElementById('balanceOutcome');
+        const balanceOverlayOutcomeEl = document.getElementById('balanceOverlayOutcome');
+        const foodIconsEl = document.getElementById('foodIcons');
+        const activityIconsEl = document.getElementById('activityIcons');
         const choiceButtons = document.querySelectorAll('.balance-chip');
 
         const renderBalance = () => {
           let foodKcal = 0;
           let activityKcal = 0;
+          const foodIcons = [];
+          const activityIcons = [];
 
           choiceButtons.forEach((button) => {
             if (!button.classList.contains('active')) return;
             const kcal = Number(button.dataset.kcal || 0);
-            if (button.dataset.group === 'food') foodKcal += kcal;
-            if (button.dataset.group === 'activity') activityKcal += kcal;
+            const emoji = button.dataset.emoji || '';
+            if (button.dataset.group === 'food') {
+              foodKcal += kcal;
+              foodIcons.push(emoji);
+            }
+            if (button.dataset.group === 'activity') {
+              activityKcal += kcal;
+              activityIcons.push(emoji);
+            }
           });
 
           const delta = foodKcal - activityKcal;
           const clampedTilt = Math.max(-14, Math.min(14, delta / 35));
-          const leftOffset = Math.max(-18, Math.min(18, clampedTilt * 1.15));
-          const rightOffset = -leftOffset;
+          const visualAngle = -clampedTilt;
+          const angleRad = (visualAngle * Math.PI) / 180;
+          const halfBeam = beam.offsetWidth / 2;
+          const panAnchorOffset = Math.max(halfBeam - 30, 80);
+          const verticalShift = -Math.sin(angleRad) * panAnchorOffset;
 
-          beam.style.transform = `rotate(${clampedTilt}deg)`;
-          foodPan.style.transform = `translateY(${leftOffset}px)`;
-          activityPan.style.transform = `translateY(${rightOffset}px)`;
+          beam.style.transform = `rotate(${visualAngle}deg)`;
+          foodPan.style.transform = `translate(${-panAnchorOffset}px, ${verticalShift}px)`;
+          activityPan.style.transform = `translate(${panAnchorOffset}px, ${-verticalShift}px)`;
 
           const foodText = `${foodKcal} kcal`;
           const activityText = `${activityKcal} kcal`;
           foodTotalEl.textContent = foodText;
           activityTotalEl.textContent = activityText;
-          foodSummaryEl.textContent = foodText;
-          activitySummaryEl.textContent = activityText;
+          foodIconsEl.innerHTML = foodIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
+          activityIconsEl.innerHTML = activityIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
 
-          const deltaPrefix = delta > 0 ? '+' : '';
-          balanceDeltaEl.textContent = `${deltaPrefix}${delta} kcal`;
+          let outcomeClass = 'balance';
+          let outcomeText = 'Udržování váhy.';
 
           if (delta > 120) {
-            balanceOutcomeEl.className = 'balance-outcome surplus';
-            balanceOutcomeEl.textContent = 'Příjem převažuje. Tohle nastavení spíš drží váhu nebo vede k ukládání energie navíc.';
+            outcomeClass = 'surplus';
+            outcomeText = 'Přibírání na váze.';
           } else if (delta < -120) {
-            balanceOutcomeEl.className = 'balance-outcome deficit';
-            balanceOutcomeEl.textContent = 'Výdej převažuje. Tady už vzniká deficit, ve kterém může docházet k hubnutí.';
-          } else {
-            balanceOutcomeEl.className = 'balance-outcome balance';
-            balanceOutcomeEl.textContent = 'Skoro rovnováha. Váha je poblíž udržení a rozhodují detaily během dne i týdne.';
+            outcomeClass = 'deficit';
+            outcomeText = 'Hubnutí.';
           }
+
+          balanceOutcomeEl.className = `balance-outcome ${outcomeClass}`;
+          balanceOutcomeEl.textContent = outcomeText;
+          balanceOverlayOutcomeEl.className = `balance-overlay-outcome ${outcomeClass}`;
+          balanceOverlayOutcomeEl.textContent = outcomeText;
         };
 
         choiceButtons.forEach((button) => {
