@@ -421,12 +421,14 @@
             outcomeText = 'Vyber alespoň jedno jídlo nebo aktivitu.';
           } else if (delta > 120) {
             outcomeClass = 'surplus';
-            outcomeText = 'Přibírání na váze.';
+            outcomeText = 'Přibírání na váze';
           } else if (delta < -120) {
             outcomeClass = 'deficit';
-            outcomeText = 'Hubnutí.';
+            outcomeText = 'Hubnutí';
+          } else if (delta < 0) {
+            outcomeText = 'Mírné hubnutí';
           } else {
-            outcomeText = 'Udržování váhy.';
+            outcomeText = 'Mírné přibírání';
           }
 
           balanceOutcomeEl.className = `balance-outcome ${outcomeClass}`;
