@@ -133,10 +133,9 @@
           <div><div class="edu-chart-md"><canvas id="bmrChart"></canvas></div></div>
           <div>
             <ul>
-              <li><strong>BMR asi 65 %:</strong> základní chod orgánů, dýchání, termoregulace a fungování nervového systému.</li>
-              <li><strong>NEAT asi 20 %:</strong> běžný pohyb mimo trénink, chůze, práce doma, stání, přenášení věcí.</li>
-              <li><strong>Termický efekt jídla asi 10 %:</strong> část energie spotřebujete už samotným trávením.</li>
-              <li><strong>Sport asi 5 %:</strong> cílený trénink je důležitý, ale není jediným hráčem v celkové bilanci.</li>
+              <li><strong>BMR (včetně termického efektu) 50-80 %:</strong> základní chod orgánů, dýchání, termoregulace, fungování nervového systému a trávení jídla.</li>
+              <li><strong>BDA/NEAT 5-20 %:</strong> běžný pohyb mimo trénink, chůze, práce doma, stání, přenášení věcí.</li>
+              <li><strong>Sport 5-40 %:</strong> podíl na celkovém výdeji energie závisí na intenzitě a typu aktivity – od minimálního pohybu po vysoký výdej u profesionálních sportovců (až 8000 kJ denně).</li>
             </ul>
           </div>
         </div>
@@ -151,16 +150,16 @@
             <label>Věk (roky)<input type="number" id="calc-age" value="30" min="15" max="90"></label>
             <label>Výška (cm)<input type="number" id="calc-height" value="175" min="140" max="220"></label>
             <label>Váha (kg)<input type="number" id="calc-weight" value="75" min="40" max="220"></label>
-            <label>Aktivita<select id="calc-activity"><option value="1.2">Sedavý den</option><option value="1.375">Mírně aktivní</option><option value="1.55" selected>Středně aktivní</option><option value="1.725">Velmi aktivní</option><option value="1.9">Extrémně aktivní</option></select></label>
-            <label>Cíl<select id="calc-goal"><option value="deficit">Hubnutí</option><option value="maintenance" selected>Udržení</option><option value="surplus">Nabírání</option></select></label>
+            <label>Aktivita<select id="calc-activity-level"><option value="low">Málo aktivní</option><option value="medium" selected>Středně aktivní</option><option value="high">Hodně aktivní</option></select></label>
+            <label>Počet kroků<select id="calc-steps"><option value="2000">0–4000 kroků</option><option value="6000" selected>4000–8000 kroků</option><option value="10000">8000–12000 kroků</option><option value="15000">12000+ kroků</option></select></label>
             <label>Jednotky<select id="calc-unit"><option value="kcal" selected>kcal</option><option value="kj">kJ</option></select></label>
           </div>
           <button type="button" class="bmr-calc-btn" id="bmr-calc-btn">Spočítat doporučení</button>
-          <p class="bmr-calc-note">Výchozí zobrazení je v kcal, přepnout ho můžete na kJ.</p>
+          <p class="bmr-calc-note">Aktivita se spočítá automaticky na základě úrovně aktivity a počtu kroků. Výchozí zobrazení je v kcal, přepnout ho můžete na kJ.</p>
           <div id="bmr-result" class="bmr-result">
             <div class="bmr-result-row"><span class="bmr-result-label">BMR</span><span class="bmr-result-value" id="res-bmr">–</span></div>
-            <div class="bmr-result-row"><span class="bmr-result-label">BDA / TDEE</span><span class="bmr-result-value" id="res-tdee">–</span></div>
-            <div class="bmr-result-row highlighted"><span class="bmr-result-label" id="res-goal-label">Doporučený příjem</span><span class="bmr-result-value" id="res-goal">–</span></div>
+            <div class="bmr-result-row"><span class="bmr-result-label">BDA</span><span class="bmr-result-value" id="res-tdee">–</span></div>
+            <div class="bmr-result-row highlighted"><span class="bmr-result-label" id="res-goal-label">Doporučený denní příjem</span><span class="bmr-result-value" id="res-goal">–</span></div>
           </div>
         </div>
       </section>
@@ -299,9 +298,9 @@
 
     function formatEnergy(valueKcal, unit) {
       if (unit === 'kj') {
-        return `${Math.round(valueKcal * 4.184).toLocaleString('cs-CZ')} kJ`;
+        return `${(Math.round((valueKcal * 4.184) / 10) * 10).toLocaleString('cs-CZ')} kJ`;
       }
-      return `${Math.round(valueKcal).toLocaleString('cs-CZ')} kcal`;
+      return `${(Math.round(valueKcal / 10) * 10).toLocaleString('cs-CZ')} kcal`;
     }
 
     function calcBMR() {
@@ -309,18 +308,21 @@
       const age = Number(document.getElementById('calc-age').value);
       const height = Number(document.getElementById('calc-height').value);
       const weight = Number(document.getElementById('calc-weight').value);
-      const activity = Number(document.getElementById('calc-activity').value);
-      const goal = document.getElementById('calc-goal').value;
+      const activityLevel = document.getElementById('calc-activity-level').value;
+      const steps = Number(document.getElementById('calc-steps').value);
       const unit = document.getElementById('calc-unit').value;
       if (!age || !height || !weight) return;
       const bmrKcal = gender === 'm' ? 10 * weight + 6.25 * height - 5 * age + 5 : 10 * weight + 6.25 * height - 5 * age - 161;
-      const tdeeKcal = bmrKcal * activity;
-      let goalKcal = tdeeKcal;
-      let goalLabel = 'Doporučený příjem pro udržení';
-      if (goal === 'deficit') { goalKcal = Math.max(tdeeKcal - (2000 / 4.184), bmrKcal * 1.1); goalLabel = 'Doporučený příjem pro hubnutí'; }
-      if (goal === 'surplus') { goalKcal = tdeeKcal + (1500 / 4.184); goalLabel = 'Doporučený příjem pro nabírání'; }
+      let baseBdaKj = 500;
+      if (activityLevel === 'medium') baseBdaKj = 1500;
+      if (activityLevel === 'high') baseBdaKj = 2500;
+      const bdaKj = baseBdaKj + (steps / 1000) * 25 + (weight - 60) * 1.5;
+      const bdaKcal = bdaKj / 4.184;
+      const tdeeKcal = bmrKcal + bdaKcal;
+      const goalKcal = tdeeKcal;
+      const goalLabel = 'Doporučený denní příjem';
       document.getElementById('res-bmr').textContent = formatEnergy(bmrKcal, unit);
-      document.getElementById('res-tdee').textContent = formatEnergy(tdeeKcal, unit);
+      document.getElementById('res-tdee').textContent = formatEnergy(bdaKcal, unit);
       document.getElementById('res-goal').textContent = formatEnergy(goalKcal, unit);
       document.getElementById('res-goal-label').textContent = goalLabel;
       document.getElementById('bmr-result').classList.add('visible');
@@ -336,7 +338,7 @@
       if (!window.Chart) return;
       Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
       Chart.defaults.color = '#4b5563';
-      new Chart(document.getElementById('bmrChart'), { type: 'doughnut', data: { labels: ['BMR 65 %', 'NEAT 20 %', 'Termický efekt 10 %', 'Sport 5 %'], datasets: [{ data: [65, 20, 10, 5], backgroundColor: ['#2563eb', '#059669', '#d97706', '#dc2626'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 15, font: { size: 12 } } } }, cutout: '65%' } });
+      new Chart(document.getElementById('bmrChart'), { type: 'bar', data: { labels: ['BMR', 'BDA/NEAT', 'Sport'], datasets: [{ label: '%', data: [67, 16, 17], backgroundColor: ['#2563eb', '#059669', '#d97706'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: '% z celkového výdeje' }, max: 100 } } } });
       new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Bílkoviny 10 až 20 %', 'Tuky 25 až 35 %', 'Sacharidy 50 až 60 %'], datasets: [{ data: [15, 30, 55], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
       new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánek (8 h)', 'Bdělost (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       new Chart(document.getElementById('alcoholChart'), { type: 'bar', data: { labels: ['Pivo 500 ml', 'Víno 175 ml', 'Panák 40 ml', 'Cider 330 ml', 'Koktejl 250 ml'], datasets: [{ label: 'kJ', data: [700, 540, 300, 620, 980], backgroundColor: ['#8b5cf6', '#7c3aed', '#6d28d9', '#a78bfa', '#4c1d95'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: 'kJ' } } } } });
