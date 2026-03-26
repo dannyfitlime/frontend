@@ -113,8 +113,14 @@
       @media (max-width: 900px) { .macro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (max-width: 640px) { .macro-grid { grid-template-columns: 1fr; } }
       .macro-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; }
+      .seo-mini-card { display: grid; grid-template-columns: auto 1fr; gap: 12px; }
+      .seo-mini-card .edu-icon { grid-row: 1; margin-bottom: 0; margin-top: 2px; }
+      .seo-mini-card h3 { grid-row: 1; grid-column: 2; margin: 0; align-self: center; }
+      .seo-mini-card p { grid-column: 1 / -1; margin: 0; }
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .principles-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 900px) { .principles-grid { grid-template-columns: 1fr; } }
     </style>
 
     <section class="seo-hero">
@@ -199,8 +205,8 @@
 
       <section class="seo-section fade-in">
         <h2>Zásady pro praxi</h2>
-        <div class="seo-grid">
-          <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3>Pravidelnost</h3><p>Nemusíte jíst každé dvě hodiny, ale dlouhé hladové bloky často vedou k večernímu dojíždění energie i disciplíny.</p></article>
+        <div class="seo-grid principles-grid">
+          <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3>Pravidelnost</h3><p>Nemusíte jíst každé dvě hodiny, ale dlouhé hladové bloky často vedou k večernímu dojíždění energia i disciplíny.</p></article>
           <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg></div><h3>Pestrost</h3><p>Čím širší spektrum potravin během týdne, tím větší šance, že pokryjete mikroživiny i bez složitého plánování.</p></article>
           <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></div><h3>Flexibilita</h3><p>Zdravý jídelníček musí počítat i s restaurací, oslavou nebo horším dnem. Rigidita dlouhodobě nefunguje.</p></article>
         </div>
@@ -234,7 +240,7 @@
 
       <section class="seo-section fade-in">
         <h2>Psychika a stres</h2>
-        <div class="seo-grid">
+        <div class="seo-grid principles-grid">
           <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><h3 style="color:#b91c1c;">Kortizol a přejídání</h3><p>Dlouhodobý stres zvyšuje chuť na rychlou odměnu, tedy typicky sladké, slané a kaloricky hutné potraviny.</p></article>
           <article class="seo-mini-card" style="background:var(--seo-soft);"><h3 style="color:var(--seo-accent);">Emoční jídlo</h3><p>Jíst ze stresu nebo nudy není slabost. Je to naučený vzorec, který se dá zlepšit, když ho začnete poznávat.</p></article>
           <article class="seo-mini-card"><h3>Co pomáhá</h3><p>Krátká chůze, dechové zklidnění, pravidelný režim a jídlo bez obrazovky často udělají víc než další zákaz.</p></article>
@@ -320,7 +326,7 @@
       const bdaKcal = bdaKj / 4.184;
       const tdeeKcal = bmrKcal + bdaKcal;
       const goalKcal = tdeeKcal;
-      const goalLabel = 'Doporučený denní příjem';
+      const goalLabel = 'Denní výdej bez sportovní aktivity';
       document.getElementById('res-bmr').textContent = formatEnergy(bmrKcal, unit);
       document.getElementById('res-tdee').textContent = formatEnergy(bdaKcal, unit);
       document.getElementById('res-goal').textContent = formatEnergy(goalKcal, unit);
