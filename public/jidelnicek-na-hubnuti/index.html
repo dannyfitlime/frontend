@@ -250,7 +250,7 @@
         position: absolute;
         left: 50%;
         bottom: 118px;
-        width: 190px;
+        width: 170px;
         display: grid;
         justify-items: center;
         transition: transform 0.35s ease;
@@ -258,13 +258,13 @@
 
       .balance-pan.left,
       .balance-pan.right {
-        margin-left: -95px;
+        margin-left: -85px;
       }
 
       .balance-pan-bowl {
-        width: 168px;
+        width: 148px;
         min-height: 100px;
-        padding: 26px 16px 18px;
+        padding: 24px 12px 18px;
         border-radius: 50% 50% 44% 44% / 28% 28% 72% 72%;
         background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
         border: 1px solid #cbd5e1;
@@ -392,12 +392,11 @@
       .balance-choice-list {
         display: flex;
         gap: 10px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 5px 20px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px 0;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .balance-choice-list::-webkit-scrollbar {
@@ -406,7 +405,6 @@
 
       @media (min-width: 768px) {
         .balance-choice-list {
-          justify-content: center;
           padding: 10px;
         }
       }
@@ -417,7 +415,8 @@
         justify-content: center;
         gap: 8px;
         min-width: 110px;
-        flex: 0 0 auto;
+        max-width: 100%;
+        flex: 1 1 140px;
         padding: 6px 14px;
         border-radius: 100px;
         border: 1px solid var(--seo-line);
@@ -496,6 +495,123 @@
         }
       }
 
+      @media (max-width: 560px) {
+        .balance-stage {
+          min-height: 320px;
+        }
+
+        .balance-ground {
+          left: 7%;
+          right: 7%;
+          bottom: 22px;
+        }
+
+        .balance-base {
+          bottom: 30px;
+          width: 116px;
+          height: 30px;
+        }
+
+        .balance-base::before {
+          top: -14px;
+          width: 68px;
+          height: 20px;
+        }
+
+        .balance-pillar {
+          bottom: 56px;
+          width: 10px;
+          height: 150px;
+        }
+
+        .balance-pivot {
+          bottom: 198px;
+          width: 24px;
+          height: 30px;
+        }
+
+        .balance-pivot::after {
+          inset: 8px;
+        }
+
+        .balance-beam {
+          bottom: 210px;
+          width: min(360px, 88%);
+          height: 8px;
+        }
+
+        .balance-pan {
+          bottom: 92px;
+          width: 118px;
+        }
+
+        .balance-pan.left,
+        .balance-pan.right {
+          margin-left: -59px;
+        }
+
+        .balance-pan-bowl {
+          width: 104px;
+          min-height: 74px;
+          padding: 18px 8px 12px;
+        }
+
+        .balance-pan-bowl::before {
+          top: -22px;
+          height: 22px;
+        }
+
+        .balance-pan-bowl::after {
+          top: -30px;
+          width: 10px;
+          height: 10px;
+        }
+
+        .balance-pan-bowl strong {
+          font-size: 0.86rem;
+        }
+
+        .balance-pan-bowl span {
+          font-size: 0.8rem;
+        }
+
+        .balance-pan-items {
+          gap: 5px;
+          min-height: 24px;
+          margin-top: 8px;
+        }
+
+        .balance-pan-item {
+          width: 24px;
+          height: 24px;
+          font-size: 0.9rem;
+        }
+
+        .balance-pointer {
+          bottom: 220px;
+          width: 12px;
+          height: 12px;
+          box-shadow: 0 0 0 6px rgba(15, 81, 50, 0.10);
+        }
+
+        .balance-overlay-outcome {
+          top: 14px;
+          width: min(320px, calc(100% - 20px));
+          padding: 10px 12px;
+          font-size: 0.88rem;
+        }
+
+        .balance-choice-list {
+          gap: 8px;
+        }
+
+        .balance-chip {
+          min-width: 0;
+          flex-basis: calc(50% - 4px);
+          padding-inline: 12px;
+        }
+      }
+
       .balance-readout {
         display: grid;
         gap: 14px;
@@ -570,9 +686,11 @@
     <div class="seo-stack">
       <section class="seo-section fade-in">
         <h2>Jak hubnutí reálně funguje</h2>
-        <p>Základním principem dlouhodobého úspěchu je energetická bilance. Když příjem z jídla převáží výdej z pohybu a
-          běžného dne, váha se překlápí nahoru. Když je výdej mírně vyšší, vzniká prostor pro hubnutí. Jedná se o velmi
-          zjednodušenou ilustraci energetické bilance.</p>
+        <p>Energetická bilance je základem dlouhodobého úspěchu při hubnutí. Pokud příjem z jídla převyšuje výdej
+          energie během dne, váha roste. Naopak když je výdej o něco vyšší než příjem, vzniká prostor pro hubnutí.
+          Tato ukázka je zjednodušeným příkladem, který vychází z běžného dne, kdy jsou základní energetické potřeby
+          těla (BMR) pokryty. Více o energetických potřebách těla se dozvíte v článku <a
+            href="/zdravy-jidelnicek/index.html">Zdravý jídelníček</a>.</p>
         <div class="balance-lab">
           <div class="balance-controls">
             <div class="balance-choice-list" id="balanceChoices">
@@ -928,10 +1046,10 @@
           activityIconsEl.innerHTML = activityIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
 
           let outcomeClass = 'balance';
-          let outcomeText = 'Vyber alespoň jedno jídlo nebo aktivitu.';
+          let outcomeText = 'Vyberte alespoň jedno jídlo nebo aktivitu.';
 
           if (foodIcons.length === 0 && activityIcons.length === 0) {
-            outcomeText = 'Vyber alespoň jedno jídlo nebo aktivitu.';
+            outcomeText = 'Vyberte alespoň jedno jídlo nebo aktivitu.';
           } else if (delta > 120) {
             outcomeClass = 'surplus';
             outcomeText = 'Přibírání na váze';

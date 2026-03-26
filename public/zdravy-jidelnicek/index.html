@@ -77,8 +77,11 @@
         .edu-flex-row > * { flex: 1; min-width: 0; }
       }
       .edu-fact-box { background: var(--seo-soft); padding: 20px 24px; border-radius: 12px; border: 1px solid var(--seo-line); margin-top: 16px; }
-      .edu-shop-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1.5px solid #86efac; border-radius: 14px; padding: 24px; margin-top: 20px; display: flex; align-items: flex-start; gap: 16px; }
+      .edu-shop-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1.5px solid #008230; border-radius: 14px; padding: 24px; margin-top: 20px; display: flex; align-items: flex-start; gap: 16px; }
       .edu-shop-box a { color: #15803d; font-weight: 700; }
+      .edu-shop-box-media { flex: 0 0 88px; width: 88px; height: 88px; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(21, 128, 61, 0.12); }
+      .edu-shop-box-media img { width: 100%; height: 100%; display: block; object-fit: cover; }
+      @media (max-width: 600px) { .edu-shop-box-media { flex-basis: 72px; width: 72px; height: 72px; } }
       .edu-icon { color: var(--seo-accent); margin-bottom: 12px; }
       .edu-icon svg { width: 32px; height: 32px; }
       .bmr-calc { background: var(--seo-soft); border: 1px solid var(--seo-line); border-radius: 16px; padding: 28px; margin-top: 20px; }
@@ -95,8 +98,20 @@
       .bmr-result-row.highlighted { background: #f0fdf4; }
       .bmr-result-label { font-size: 0.9rem; color: var(--muted); }
       .bmr-result-value { font-weight: 800; font-size: 1.1rem; color: var(--seo-accent); }
-      .macro-card { padding: 24px; border-radius: 14px; border: 1px solid var(--seo-line); background: #fff; }
+      .macro-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .macro-card { padding: 24px; border-radius: 14px; border: 1px solid var(--seo-line); background: #fff; display: flex; flex-wrap: wrap; align-items: center; column-gap: 12px; }
+      .macro-card .macro-badge { order: 2; margin-bottom: 0; margin-left: auto; }
+      .macro-card h3 { order: 1; margin-bottom: 0; }
+      .macro-card > p { order: 3; width: 100%; margin-top: 12px; }
+      .macro-card .edu-fact-box { order: 4; width: 100%; }
       .macro-card h3 { margin-bottom: 8px; }
+      .macro-balance-section > p { display: none; }
+      .macro-balance-copy { margin-bottom: 16px; }
+      .macro-balance-section .macro-balance-copy + ul + .edu-fact-box { margin-top: 16px; }
+      .macro-balance-section .edu-flex-row > div:last-child > ul:not(.macro-balance-list) { display: none; }
+      .macro-balance-section .edu-flex-row > div:last-child > .edu-fact-box:not(.macro-balance-note) { display: none; }
+      @media (max-width: 900px) { .macro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 640px) { .macro-grid { grid-template-columns: 1fr; } }
       .macro-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px; }
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -153,19 +168,26 @@
       <section class="seo-section fade-in">
         <h2>Makroživiny jednoduše</h2>
         <p>Nemusíte znát všechna čísla nazpaměť. Stačí chápat, co která makroživina dělá a jak ji dostat do běžného dne v praktické podobě.</p>
-        <div class="seo-grid" style="margin-top: 20px;">
+        <div class="seo-grid macro-grid" style="margin-top: 20px;">
           <article class="macro-card"><span class="macro-badge" style="background:#dbeafe; color:#1d4ed8;">1 g = 17 kJ</span><h3>Bílkoviny</h3><p>Pomáhají se sytostí, regenerací a ochranou svalové hmoty. Jsou důležité při hubnutí i v běžném režimu.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> vejce, skyr, tvaroh, maso, ryby, tofu, luštěniny</div></article>
           <article class="macro-card"><span class="macro-badge" style="background:#fef3c7; color:#92400e;">1 g = 38 kJ</span><h3>Tuky</h3><p>Podporují hormony, vstřebávání vitaminů i nervový systém. Problém není tuk sám o sobě, ale nehlídané množství a nízká kvalita zdrojů.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> olivový olej, ořechy, avokádo, losos, semínka</div></article>
           <article class="macro-card"><span class="macro-badge" style="background:#dcfce7; color:#166534;">1 g = 17 kJ</span><h3>Sacharidy</h3><p>Slouží jako rychle dostupné palivo pro mozek i svaly. Nejsou nepřítel, pokud dávají smysl v množství i čase.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Co jíst:</strong> vločky, rýže, brambory, ovoce, celozrnné přílohy</div></article>
         </div>
       </section>
 
-      <section class="seo-section fade-in">
+      <section class="seo-section fade-in macro-balance-section">
         <h2>Jak si sestavit zdravý jídelníček</h2>
         <p>Neexistuje jedno univerzální rozložení pro všechny. Jako výchozí model pro běžné udržení se ale často hodí jednoduchý poměr, který pak upravíte podle cíle, sportu a režimu dne.</p>
         <div class="edu-flex-row">
           <div><div class="edu-chart-md"><canvas id="macroChart"></canvas></div></div>
           <div>
+            <p class="macro-balance-copy">Neexistuje jedno univerzální rozložení pro všechny. Lepší je pracovat s rozmezím, které pak upravíte podle cíle, sportu a režimu dne.</p>
+            <ul class="macro-balance-list">
+              <li><strong>Sacharidy 50 až 60 %:</strong> kryjí běžnou energii, výkon během dne a doplnění zásob glykogenu.</li>
+              <li><strong>Tuky 25 až 35 %:</strong> podporují hormonální rovnováhu, nervový systém a vstřebávání vitaminů.</li>
+              <li><strong>Bílkoviny 10 až 20 %:</strong> pomáhají sytosti, regeneraci a drží strukturu jídel.</li>
+            </ul>
+            <div class="edu-fact-box macro-balance-note"><strong style="display:block; margin-bottom:6px;">Prakticky:</strong>Každé větší jídlo si zkuste představit jako zdroj sacharidů, bílkovinu a menší podíl kvalitních tuků. Tím přirozeně držíte rozumný rámec bez neustálého počítání.</div>
             <ul>
               <li><strong>30 % bílkovin:</strong> pomáhají sytosti a drží strukturu jídel.</li>
               <li><strong>25 % tuků:</strong> zajišťují hormonální a neurologickou rovnováhu.</li>
@@ -228,7 +250,9 @@
           <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>Co sledovat</h3><p>Důležitá je čistota suroviny, obsah aktivních látek a dlouhodobá konzistence, ne marketing na etiketě.</p></article>
         </div>
         <div class="edu-shop-box">
-          <span>Omega-3</span>
+          <div class="edu-shop-box-media">
+            <img src="/images/omega.jpg" alt="Omega-3 doplněk">
+          </div>
           <div><strong style="display:block; margin-bottom:6px;">Nenápadný tip na doplnění jídelníčku</strong>Pokud hledáte ověřené doplňky pro podporu imunity a regenerace, podívejte se na nabídku <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</div>
         </div>
       </section>
@@ -313,7 +337,7 @@
       Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
       Chart.defaults.color = '#4b5563';
       new Chart(document.getElementById('bmrChart'), { type: 'doughnut', data: { labels: ['BMR 65 %', 'NEAT 20 %', 'Termický efekt 10 %', 'Sport 5 %'], datasets: [{ data: [65, 20, 10, 5], backgroundColor: ['#2563eb', '#059669', '#d97706', '#dc2626'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 15, font: { size: 12 } } } }, cutout: '65%' } });
-      new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Bílkoviny 30 %', 'Tuky 25 %', 'Sacharidy 45 %'], datasets: [{ data: [30, 25, 45], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
+      new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Bílkoviny 10 až 20 %', 'Tuky 25 až 35 %', 'Sacharidy 50 až 60 %'], datasets: [{ data: [15, 30, 55], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
       new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánek (8 h)', 'Bdělost (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       new Chart(document.getElementById('alcoholChart'), { type: 'bar', data: { labels: ['Pivo 500 ml', 'Víno 175 ml', 'Panák 40 ml', 'Cider 330 ml', 'Koktejl 250 ml'], datasets: [{ label: 'kJ', data: [700, 540, 300, 620, 980], backgroundColor: ['#8b5cf6', '#7c3aed', '#6d28d9', '#a78bfa', '#4c1d95'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: 'kJ' } } } } });
     });
