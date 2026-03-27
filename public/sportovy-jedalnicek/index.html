@@ -1,12 +1,17 @@
 <!doctype html>
 <html lang="sk">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Športový jedálniček | FitLime</title>
-  <meta name="description" content="Športový jedálniček od FitLime zohľadňuje tréning, výkonnostný cieľ, regeneráciu aj bežný režim dňa.">
+  <title>Športový jedálniček na mieru | FitLime</title>
+  <meta name="description" content="Športový jedálniček od FitLime zohľadňuje typ pohybu, tréning, výkonnostný cieľ aj bežný režim dňa. Praktický plán pre hobby aj výkonnejších športovcov.">
   <link rel="canonical" href="https://fitlime.sk/sportovy-jedalnicek/">
-  <meta property="og:title" content="Športový jedálniček | FitLime">
+  <link rel="alternate" hreflang="cs" href="https://fitlime.cz/sportovni-jidelnicek/">
+  <link rel="alternate" hreflang="sk" href="https://fitlime.sk/sportovy-jedalnicek/">
+  <link rel="alternate" hreflang="en" href="https://fitlime.eu/sports-meal-plan/">
+  <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/sports-meal-plan/">
+  <meta property="og:title" content="Športový jedálniček na mieru | FitLime">
   <meta property="og:description" content="Praktický športový jedálniček podľa tréningu, cieľa a denného režimu.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.sk/sportovy-jedalnicek/">
@@ -19,90 +24,554 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-dark.png?v=2" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/seo-pages.css">
+  <link rel="stylesheet" href="/styles/premium-simulator.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Je športový jedálniček len pre vrcholových športovcov?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nie. Hodí sa pre hobby športovcov aj pre ľudí, ktorí sa pravidelne hýbu a chcú lepšie zladiť stravu s aktivitou."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Zohľadňuje plán druh športu a záťaž?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Áno, cieľom je postaviť plán s ohľadom na cieľ, pohybovú aktivitu, denný režim a praktické možnosti človeka."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="seo-page">
+
+<body class="seo-page seo-how-page">
   <main class="seo-shell">
     <header class="seo-topbar">
       <a class="seo-brand" href="/index.html" aria-label="FitLime domov">
         <img src="/images/logo_pruhledne.png" alt="FitLime logo">
         <strong>FitLime</strong>
       </a>
-      <a class="btn outline" href="/form.html">Prejsť na formulár</a>
     </header>
 
-    <section class="seo-hero">
-      <article class="seo-card">
-        <div class="seo-eyebrow">Výživa pre pohyb</div>
-        <h1>Športový jedálniček, ktorý sedí tréningu aj bežnému dňu</h1>
-        <p class="seo-lead">Športový jedálniček by mal podporovať výkon, regeneráciu aj dlhodobú udržateľnosť. FitLime pripravuje plán podľa typu pohybu, cieľa, objemu záťaže a denného režimu tak, aby stravovanie dávalo zmysel nielen na papieri, ale hlavne v praxi.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Získať športový plán</a>
-          <a class="btn outline" href="/ako-fitlime-funguje/index.html">Ako FitLime funguje</a>
-        </div>
-        <p class="seo-note">Či už beháš, cvičíš, jazdíš na bicykli alebo sa pripravuješ na výkon, plán musí sedieť tvojmu režimu, nielen teórii.</p>
-      </article>
+    <style>
+      .edu-chart-lg { width: 100%; height: 420px; margin: 24px 0 0; }
+      @media (max-width: 767px) { .edu-chart-lg { height: 320px; } }
+      .edu-chart-md { width: 100%; height: 280px; }
+      .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+      @media (min-width: 768px) {
+        .edu-flex-row { flex-direction: row; align-items: center; }
+        .edu-flex-row > * { flex: 1; min-width: 0; }
+      }
+      .timing-visual { margin: 28px 0 22px; padding: 24px; border-radius: 20px; border: 1px solid rgba(15, 81, 50, 0.12); background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); box-shadow: 0 20px 50px rgba(15, 81, 50, 0.08); }
+      .timing-visual-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .timing-visual-header { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr); } }
+      .timing-visual-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(22, 163, 74, 0.1); color: #166534; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+      .timing-visual-header h3 { margin: 12px 0 8px; font-size: clamp(1.35rem, 2vw, 1.8rem); color: #111827; }
+      .timing-visual-header p { margin: 0; color: #4b5563; }
+      .timing-visual-meta { padding: 16px 18px; border-radius: 16px; background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%); border: 1px solid rgba(22, 163, 74, 0.16); }
+      .timing-visual-meta strong { display: block; margin-bottom: 6px; color: #14532d; }
+      .timing-chart-stage-list { display: grid; gap: 14px; margin-top: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .timing-chart-stage-list { grid-template-columns: 1fr; } }
+      .timing-stage-card { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid rgba(17, 24, 39, 0.08); min-width: 0; }
+      .timing-stage-card strong { display: block; margin-bottom: 6px; color: #111827; }
+      .timing-stage-card p { margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.55; }
+      .timing-stage-card.pre { border-top: 4px solid #2563eb; }
+      .timing-stage-card.performance { border-top: 4px solid #16a34a; }
+      .timing-stage-card.recovery { border-top: 4px solid #92400e; }
+      .timing-stage-tag { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+      .timing-stage-card.pre .timing-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .timing-stage-card.performance .timing-stage-tag { background: rgba(22, 163, 74, 0.12); color: #15803d; }
+      .timing-stage-card.recovery .timing-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .edu-fact-box { padding: 20px 24px; border-radius: 12px; border: 1px solid #005003; margin-top: 16px; }
+      .edu-warning-box { background: #fff7ed; border: 1.5px solid #f97316; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+      .edu-warning-box strong { display: block; color: #c2410c; margin-bottom: 8px; }
+      .edu-supp-box { background: #f5fdf6; border: 2px solid #007f2f; border-radius: 14px; padding: 24px; margin-top: 20px; }
+      .edu-supp-box a { color: #15803d; font-weight: 700; }
+      .edu-callout { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #16a34a; padding: 24px; border-radius: 12px; margin: 24px 0; }
+      .edu-callout strong { display: block; font-size: 1.1em; margin-bottom: 8px; }
+      .checklist { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+      @media (max-width: 767px) { .checklist { grid-template-columns: 1fr; } }
+      .checklist li { padding: 8px 12px; border: 2px solid #005003; border-radius: 8px; background: #fff; transition: transform 0.2s ease; display: flex; align-items: center; gap: 8px; }
+      .checklist li:hover { transform: translateY(-1px); }
+      .timing-meal-grid { align-items: stretch; }
+      .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+      .compare-table th, .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--seo-line); text-align: left; }
+      .compare-table th { background: var(--seo-soft); }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .meal-card { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); padding: 28px; border-radius: 18px; border: 1px solid rgba(17, 24, 39, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.08); position: relative; overflow: hidden; }
+      .meal-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 6px; background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%); }
+      .meal-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.12); }
+      .meal-card h3 { margin: 0 0 10px; color: #111827; }
+      .meal-card p { margin: 0; color: #4b5563; }
+      .meal-card-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+      .meal-card-kicker { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; background: rgba(37, 99, 235, 0.12); color: #1d4ed8; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .meal-card-goal { margin: 0 0 18px; padding: 14px 16px; border-radius: 14px; background: rgba(37, 99, 235, 0.08); color: #1e3a8a; }
+      .meal-card-goal strong { color: #1e3a8a; }
+      .meal-card.recovery::before { background: linear-gradient(180deg, #92400e 0%, #d97706 100%); }
+      .meal-card.recovery .meal-card-kicker { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .meal-card.recovery .meal-card-goal { background: rgba(146, 64, 14, 0.08); color: #78350f; }
+      .meal-card.recovery .meal-card-goal strong { color: #78350f; }
+      .hydration-panel { margin-top: 30px; padding: 28px; border-radius: 22px; background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 1px solid rgba(14, 165, 233, 0.16); box-shadow: 0 18px 44px rgba(14, 165, 233, 0.08); }
+      .hydration-panel-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .hydration-panel-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .hydration-panel-header h4 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #0f172a; }
+      .hydration-panel-header p { margin: 0; color: #475569; }
+      .hydration-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(14, 165, 233, 0.12); color: #0369a1; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-highlight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px solid rgba(14, 165, 233, 0.14); }
+      .hydration-highlight strong { display: block; margin-bottom: 6px; color: #0c4a6e; }
+      .hydration-stage-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .hydration-stage-grid { grid-template-columns: 1fr; } }
+      .hydration-stage { padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.88); border: 1px solid rgba(14, 165, 233, 0.12); min-width: 0; }
+      .hydration-stage h5 { margin: 0 0 8px; color: #0f172a; font-size: 1.02rem; }
+      .hydration-stage p { margin: 0; color: #475569; line-height: 1.6; }
+      .hydration-stage-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-stage.pre .hydration-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .hydration-stage.during .hydration-stage-tag { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+      .hydration-stage.post .hydration-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .hydration-stage-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(148, 163, 184, 0.25); color: #334155; font-weight: 600; font-size: 0.92rem; }
+      .carb-loading-panel { margin-top: 24px; padding: 28px; border-radius: 22px; border: 1px solid rgba(217, 119, 6, 0.14); box-shadow: 0 18px 44px rgba(146, 64, 14, 0.08); }
+      .carb-loading-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .carb-loading-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .carb-loading-kicker { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: rgba(217, 119, 6, 0.12); color: #b45309; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-header h3 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #111827; }
+      .carb-loading-header p { margin: 0; color: #4b5563; }
+      .carb-loading-insight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(217, 119, 6, 0.16); }
+      .carb-loading-insight strong { display: block; margin-bottom: 6px; color: #92400e; }
+      .carb-loading-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .carb-loading-grid { grid-template-columns: 1fr; } }
+      .carb-loading-card { padding: 22px; border-radius: 18px; background: rgba(255,255,255,0.9); border: 1px solid rgba(148, 163, 184, 0.16); }
+      .carb-loading-card h4 { margin: 0 0 10px; color: #111827; }
+      .carb-loading-card p { margin: 0; color: #4b5563; line-height: 1.6; }
+      .carb-loading-card.yes { border-top: 4px solid #d97706; }
+      .carb-loading-card.no { border-top: 4px solid #64748b; }
+      .carb-loading-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-card.yes .carb-loading-tag { background: rgba(217, 119, 6, 0.12); color: #b45309; }
+      .carb-loading-card.no .carb-loading-tag { background: rgba(100, 116, 139, 0.12); color: #475569; }
+      .training-bag-grid { align-items: stretch; gap: 28px; }
+      .training-bag-copy { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 24px; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.06); }
+      @media (min-width: 768px) { .training-bag-copy { flex: 1.2; } }
+      .training-bag-copy .checklist { margin-top: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .training-bag-copy .checklist { grid-template-columns: 1fr; } }
+      .training-bag-copy .checklist li { min-height: 54px; }
+      .training-bag-media { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 18px; box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06); }
+      @media (min-width: 768px) { .training-bag-media { flex: 0 0 min(320px, 34%); } }
+      .training-bag-media img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px; }
+      .training-bag-note { margin-top: 12px; color: #475569; font-size: 0.94rem; line-height: 1.55; }
+    </style>
 
-      <aside class="seo-panel">
-        <h2>Čo plán zohľadní</h2>
-        <ul>
-          <li>úroveň a frekvenciu pohybu</li>
-          <li>výkonnostný alebo telesný cieľ</li>
-          <li>regeneráciu a rozloženie dňa</li>
-          <li>praktickosť popri práci, škole alebo rodine</li>
-        </ul>
-      </aside>
+    <section class="seo-hero">
+      <article class="seo-card seo-hero-card fade-in">
+        <div class="seo-eyebrow">Výživa pre výkon</div>
+        <h1>Športový jedálniček, ktorý sedí tréningu aj bežnému dňu</h1>
+        <p class="seo-lead">Športový jedálniček má podporovať výkon, regeneráciu aj dlhodobú udržateľnosť. Nestačí len pridať viac jedla. Rozhoduje načasovanie, objem záťaže, typ športu aj to, ako zvládaš bežný pracovný deň.</p>
+      </article>
     </section>
 
     <div class="seo-stack">
-      <section class="seo-section">
-        <h2>Pre koho má športový jedálniček zmysel</h2>
-        <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Hobby športovci</h3>
-            <p>Ak pravidelne športuješ a chceš jesť lepšie okolo aktivity, plán ti pomôže s orientáciou aj konzistenciou.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Výkonnostný šport</h3>
-            <p>Keď riešiš výkon, je ešte dôležitejšie zladiť stravu s objemom záťaže a regeneráciou.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Šport a bežný život</h3>
-            <p>Väčšina ľudí netrénuje v ideálnych podmienkach. Preto musí plán fungovať aj vedľa práce a ďalších povinností.</p>
-          </article>
+      <section class="seo-section fade-in">
+        <h2>Timing jedla okolo výkonu</h2>
+        <p>Jedlo pred, počas a po výkone nerieši len hlad. Ovplyvňuje energiu, schopnosť držať tempo aj to, ako rýchlo sa vrátiš späť do tréningu ďalší deň.</p>
+        <div class="timing-visual">
+          <div class="timing-visual-header">
+            <div>
+              <span class="timing-visual-kicker">Modelový tréningový deň</span>
+              <h3>Ako rozložiť energiu okolo výkonu</h3>
+              <p>Ideálny priebeh nie je o jednom perfektnom jedle, ale o správnom rytme. Pred výkonom doplniť energiu, počas záťaže nepreťažiť žalúdok a po tréningu rýchlo naštartovať obnovu.</p>
+            </div>
+            <div class="timing-visual-meta">
+              <strong>Čo ten graf hovorí v praxi</strong>
+              <span>Ak necháš pred tréningom príliš dlhú pauzu alebo si dáš ťažké jedlo na poslednú chvíľu, výkon aj regenerácia idú dole.</span>
+            </div>
+          </div>
+          <div class="edu-chart-lg"><canvas id="timingChart"></canvas></div>
+          <div class="timing-chart-stage-list" aria-label="Fázy jedla okolo výkonu">
+            <article class="timing-stage-card pre">
+              <span class="timing-stage-tag">Pred výkonom</span>
+              <strong>1-2 hodiny pred štartom</strong>
+              <p>Ľahké sacharidy, menšia dávka bielkovín a minimum tuku alebo vlákniny pomôžu dodať energiu včas a nechať žalúdok v pokoji.</p>
+            </article>
+            <article class="timing-stage-card performance">
+              <span class="timing-stage-tag">Výkon</span>
+              <strong>Počas záťaže podľa dĺžky</strong>
+              <p>Krátky tréning často zvládneš len s tekutinami. Pri dlhšej alebo intenzívnej záťaži dáva zmysel doplniť sodík a rýchle sacharidy.</p>
+            </article>
+            <article class="timing-stage-card recovery">
+              <span class="timing-stage-tag">Regenerácia</span>
+              <strong>Do 45 minút po výkone</strong>
+              <p>Sacharidy, bielkoviny a tekutiny pomáhajú rýchlejšie doplniť zásoby, znížiť únavu a pripraviť telo na ďalší tréning.</p>
+            </article>
+          </div>
+        </div>
+        <div class="edu-callout">
+          <strong>Kľúčový insight:</strong> Chybou nie je len nesprávna potravina, ale aj nesprávny čas. Ťažké jedlo tesne pred výkonom zaťaží trávenie, príliš dlhé hladovanie zasa zníži výkon a koncentráciu.
+        </div>
+        <div class="edu-flex-row timing-meal-grid">
+          <div class="meal-card">
+            <div class="meal-card-head">
+              <div>
+                <h3>Pred tréningom</h3>
+              </div>
+              <span class="meal-card-kicker">1-2 hodiny pred výkonom</span>
+            </div>
+            <p class="meal-card-goal"><strong>Cieľ:</strong> dodať rýchlo dostupnú energiu bez ťažkého žalúdka a bez výkyvu, ktorý ťa po štarte spomalí.</p>
+            <p>Najlepšie fungujú ľahko stráviteľné sacharidy a menšia dávka bielkovín. Tuk a väčšie množstvo vlákniny si nechaj skôr ďalej od tréningu.</p>
+            <ul class="checklist">
+              <li>Jogurt s banánom</li>
+              <li>Toast so syrom a šunkou</li>
+              <li>Ovsená kaša</li>
+              <li>Ryžové chlebíčky</li>
+              <li>Ovocie alebo smoothie</li>
+              <li>Müsli tyčinka</li>
+            </ul>
+          </div>
+          <div class="meal-card recovery">
+            <div class="meal-card-head">
+              <div>
+                <h3>Po tréningu</h3>
+              </div>
+              <span class="meal-card-kicker">Po výkone</span>
+            </div>
+            <p class="meal-card-goal"><strong>Cieľ:</strong> vrátiť telu sacharidy, bielkoviny a tekutiny skôr, než únava zbytočne predĺži regeneráciu.</p>
+            <p>Po náročnejšom výkone má zmysel nečakať na veľké jedlo neskôr, ale poslať telu jednoduchý prvý krok k obnove hneď po tréningu.</p>
+            <ul class="checklist">
+              <li>Cestoviny s paradajkami a tuniakom</li>
+              <li>Tvaroh s ovocím a medom</li>
+              <li>Vajcia s chlebom a zeleninou</li>
+              <li>Toast so šunkou a syrom</li>
+              <li>Zemiaky s kuracím mäsom</li>
+              <li>Bagel s arašidovým maslom</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hydration-panel">
+          <div class="hydration-panel-header">
+            <div>
+              <span class="hydration-kicker">Hydratácia a elektrolyty</span>
+              <h4>Nestačí len piť viac. Potrebuješ piť v správny moment.</h4>
+              <p>Pri potení nestrácaš len vodu, ale aj sodík a ďalšie minerály. Ak dopĺňaš tekutiny bez kontextu, môžeš byť stále unavený, ťažký alebo spomalený, aj keď máš pocit, že piješ dosť.</p>
+            </div>
+            <div class="hydration-highlight">
+              <strong>Najčastejšia chyba</strong>
+              <span>Celý deň piť málo a potom to doháňať tesne pred tréningom alebo až po ňom. Telo funguje lepšie, keď hydratácia beží priebežne.</span>
+            </div>
+          </div>
+          <div class="hydration-stage-grid">
+            <article class="hydration-stage pre">
+              <span class="hydration-stage-tag">Pred výkonom</span>
+              <h5>Príď už pripravený</h5>
+              <p>Neprichádzaj na tréning dehydrovaný. Tekutiny dopĺňaj priebežne počas dňa a pred štartom už len dolaďuj, nie nerieš deficit na poslednú chvíľu.</p>
+              <div class="hydration-stage-note">Pre väčšinu ľudí funguje najlepšie pravidelný pitný režim, nie veľká dávka naraz.</div>
+            </article>
+            <article class="hydration-stage during">
+              <span class="hydration-stage-tag">Počas výkonu</span>
+              <h5>Dĺžka a podmienky rozhodujú</h5>
+              <p>Pri dlhšej, intenzívnej alebo horúcej záťaži dáva zmysel voda so sodíkom, prípadne ionťák s jednoduchými sacharidmi. Kratší tréning často zvládneš aj bez špeciálneho riešenia.</p>
+              <div class="hydration-stage-note">Čím viac sa potíš, tým viac je dôležitý sodík, nielen samotná voda.</div>
+            </article>
+            <article class="hydration-stage post">
+              <span class="hydration-stage-tag">Po výkone</span>
+              <h5>Obnova nezačína až večer</h5>
+              <p>Ak si sa výrazne spotil, zameraj sa nielen na vodu, ale aj na jedlo alebo nápoj, ktorý doplní elektrolyty. Len čistá voda po ťažkej záťaži často nestačí.</p>
+              <div class="hydration-stage-note">Kombinácia tekutín, sodíka a jedla vráti telo rýchlejšie do normálu.</div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="seo-section">
-        <h2>Prečo nestačí len pridať viac jedla</h2>
-        <p>Športová výživa nie je len o tom, že človek s pohybom automaticky je viac. Dôležité je kedy, prečo a v akom kontexte. Iné potreby má človek pri redukcii, iné pri udržaní výkonu a iné pri náročnom tréningovom týždni. Dobrý plán má podporiť šport aj bežný život, nie vytvárať ďalší stres navyše.</p>
+      <section class="seo-section fade-in">
+        <h2>Tréningový deň vs. rest day</h2>
+        <div class="edu-flex-row">
+          <div style="background: #fffcfb; padding: 24px; border-radius: 12px; border-left: 4px solid #510f0f;">
+            <h3>Tréningový deň</h3>
+            <p>V deň tréningu má telo vyššie nároky na energiu aj regeneráciu. Správne nastavená strava ti pomôže podať lepší výkon a zároveň urýchli obnovu svalov.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 16px;">
+              <li style="margin-bottom: 12px;"><strong>Sacharidy sú kľúčové</strong> a dodávajú energiu pre výkon. Zameraj sa hlavne na obdobie pred a po tréningu.</li>
+              <li style="margin-bottom: 12px;"><strong>Bielkoviny</strong> podporujú regeneráciu rovnomerne počas dňa.</li>
+              <li style="margin-bottom: 12px;"><strong>Hydratácia a sodík</strong> sú dôležité pre výkon, prevenciu kŕčov aj celkovú výkonnosť.</li>
+              <li><strong>Lepšie rozloženie energie</strong> znamená nejesť všetko večer, ale podporiť výkon počas dňa.</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 600; color: #0f5132;">Cieľ: maximalizovať výkon a podporiť regeneráciu</p>
+          </div>
+
+          <div style="background: #fafffc; padding: 24px; border-radius: 12px; border-left: 4px solid #15803d;">
+            <h3>Rest day (netréningový deň)</h3>
+            <p>Aj keď netrénuješ, telo stále regeneruje a adaptuje sa. Výživa preto zostáva dôležitá.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 16px;">
+              <li style="margin-bottom: 12px;"><strong>Menej rýchlych sacharidov</strong> je často dosť, pretože nepotrebuješ toľko rýchlej energie ako pri náročnom tréningu.</li>
+              <li style="margin-bottom: 12px;"><strong>Bielkoviny zostávajú kľúčové</strong> lebo regenerácia svalov stále prebieha.</li>
+              <li style="margin-bottom: 12px;"><strong>Zdravé tuky a mikronutrienty</strong> podporujú hormóny a celkové zdravie.</li>
+              <li><strong>Stabilný príjem energie</strong> je dôležitejší než agresívne škrtanie kalórií.</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 600; color: #0f5132;">Cieľ: podporiť regeneráciu a dlhodobý progres</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; background: none; border: none;"><strong>Odporúčanie:</strong> vyhni sa extrémom. Upravuj detaily podľa aktivity, ale celkový príjem drž v rámci týždňa relatívne stabilný.</div>
       </section>
 
-      <section class="seo-faq">
+      <section class="seo-section fade-in">
+        <h2>Carb loading</h2>
+        <div class="carb-loading-panel">
+          <div class="carb-loading-header">
+            <div>
+              <span class="carb-loading-kicker">Pred dlhým výkonom</span>
+              <h3>Carb loading dáva zmysel len vtedy, keď naozaj rozhodujú zásoby glykogénu</h3>
+              <p>Navýšenie sacharidov pred dlhým pretekom alebo veľmi náročným výkonom môže pomôcť oddialiť únavu a lepšie udržať tempo. Nie je to však univerzálny trik pre každý tréningový deň.</p>
+            </div>
+            <div class="carb-loading-insight">
+              <strong>Praktický princíp</strong>
+              <span>Ak výkon netrvá dostatočne dlho, telo extra sacharidy často ani nevyužije. V takom prípade si zbytočne komplikuješ jedálniček bez reálneho prínosu.</span>
+            </div>
+          </div>
+          <div class="carb-loading-grid">
+            <article class="carb-loading-card yes">
+              <span class="carb-loading-tag">Kedy áno</span>
+              <h4>Keď ťa čaká dlhá alebo extrémna záťaž</h4>
+              <p>Pred polmaratónom, maratónom, dlhými cyklistickými pretekmi alebo viac hodinovým výkonom, kde zásoby svalového glykogénu skutočne ovplyvňujú výsledok.</p>
+            </article>
+            <article class="carb-loading-card no">
+              <span class="carb-loading-tag">Kedy nie</span>
+              <h4>Na bežný tréning je to zbytočné</h4>
+              <p>Pri 60-minútovom tréningu v posilňovni, bežnom výkluse alebo kratšej športovej jednotke zvyčajne netreba robiť špeciálne sacharidové manévre.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Silový vs. vytrvalostný šport</h2>
+        <table class="compare-table">
+          <thead><tr><th>Parameter</th><th>Silový šport</th><th>Vytrvalostný šport</th></tr></thead>
+          <tbody>
+            <tr><td>Bielkoviny</td><td>1,2 až 2,0 g/kg</td><td>1,0 až 1,7 g/kg</td></tr>
+            <tr><td>Sacharidy</td><td>stredný podiel podľa objemu</td><td>vyšší podiel kvôli glykogénu</td></tr>
+            <tr><td>Tuky</td><td>skôr stabilný základ</td><td>skôr stabilný základ</td></tr>
+            <tr><td>Priorita</td><td>regenerácia, sila, rast</td><td>výdrž a doplnenie energie</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Čo mať v taške na tréning</h2>
+        <p>Dobrá príprava znižuje riziko, že po tréningu skončíš bez jedla, bez pitia a s prvou náhodnou voľbou po ceste domov.</p>
+        <div class="edu-flex-row training-bag-grid">
+          <div class="training-bag-copy">
+            <ul class="checklist">
+              <li>Jablko alebo iné ľahko stráviteľné ovocie</li>
+              <li>Müsli tyčinka pre rýchle cukry</li>
+              <li>Fľaša s vodou a náhradná porcia na dlhší deň</li>
+              <li>Ionťák alebo tablety s elektrolytmi</li>
+              <li>Orechy ako zdroj bielkovín a zdravých tukov</li>
+              <li>Lyžička, aby si mohol jesť čokoľvek a kdekoľvek</li>
+            </ul>
+          </div>
+          <div class="training-bag-media">
+            <img src="/images/sports_bag.jpg" alt="Športová taška s jedlom a pitím na tréning">
+            <p class="training-bag-note">Keď máš základ po ruke, nemusíš po tréningu improvizovať ani siahať po prvej náhodnej možnosti cestou domov.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Dôležité upozornenie</h2>
+        <div class="edu-warning-box"><strong>Nesnaž sa chudnúť v najtvrdšom tréningovom bloku.</strong> Keď je objem alebo intenzita na vrchole, telo potrebuje energiu na adaptáciu a regeneráciu. Agresívny deficit v tejto fáze zvyšuje únavu, riziko zranenia aj pravdepodobnosť pretrénovania.</div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Doplnky stravy</h2>
+        <p>Doplnky nenahradia stravu, ale niekedy môžu podporiť regeneráciu alebo zvládanie náročného tréningového obdobia. Zmysel dávajú tam, kde riešia konkrétnu potrebu, nie ako automatická výbava každého športovca. Detailnejšie odporúčania k výžive a suplementácii získaš v rámci <a href="/form.html" style="color: #0f5132; font-weight: 600; text-decoration: none; border-bottom: 2px solid #0f5132;">premium plánu</a>.</p>
+        <div class="edu-supp-box" style="display: flex; gap: 24px; align-items: flex-start;">
+          <img src="/images/curra_nz.jpg" alt="CurraNZ suplement" style="height: 70px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div>
+            <p style="margin: 0;">Extrakt z čiernych ríbezlí môže byť zaujímavou voľbou na podporu regenerácie a prácu so zápalovou záťažou. Ak si chceš prejsť ďalšie doplnky bez zbytočného chaosu, pozri sa na <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-faq fade-in">
         <h2>FAQ</h2>
-        <div class="seo-faq-item">
-          <h3>Je to len pre vrcholových športovcov?</h3>
-          <p>Nie. Veľkú hodnotu má aj pre hobby športovcov, ktorí chcú jesť zmysluplnejšie a cítiť sa lepšie pri pohybe aj po ňom.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Môže plán pomôcť aj keď chcem športom chudnúť?</h3>
-          <p>Áno. Práve vtedy má zmysel skĺbiť výkon a redukciu rozumne. Ak je tvojím hlavným cieľom chudnutie, pozri aj <a href="/jedalnicek-na-chudnutie/index.html">jedálniček na chudnutie</a>.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Rieši sa aj časovanie jedla okolo pohybu?</h3>
-          <p>Cieľom je postaviť plán tak, aby zodpovedal skutočnému režimu a podporoval aktivitu, nie aby bol odtrhnutý od tvojho dňa.</p>
-        </div>
+        <div class="seo-faq-item"><h3>Je to len pre vrcholových športovcov?</h3><p>Nie. Veľkú hodnotu má aj pre hobby športovcov, ktorí chcú jesť zmysluplnejšie a cítiť sa lepšie pri pohybe aj po ňom.</p></div>
+        <div class="seo-faq-item"><h3>Môže plán pomôcť aj keď chceš športom chudnúť?</h3><p>Áno, ale redukcia musí rešpektovať objem tréningu. Ak je hlavným cieľom chudnutie, nadväzuje na to aj stránka <a href="/jedalnicek-na-chudnutie/index.html">jedálniček na chudnutie</a>.</p></div>
+        <div class="seo-faq-item"><h3>Rieši sa aj časovanie jedál?</h3><p>Áno. Práve timing je často rozdiel medzi tréningom, ktorý zvládneš dobre, a tréningom, ktorý len odtrpíš.</p></div>
       </section>
 
-      <section class="seo-cta">
-        <h2>Chceš stravovanie, ktoré podporí tvoj pohyb a nebude komplikovať život?</h2>
-        <p>FitLime pripraví plán podľa tvojho cieľa a aktivity. Vyplň formulár a zisti, aký prístup môže sedieť práve tebe.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Otvoriť formulár</a>
-          <a class="btn outline" href="/zdravy-jedalnicek/index.html">Zdravý jedálniček</a>
-          <a class="btn outline" href="/ako-fitlime-funguje/index.html">Ako FitLime funguje</a>
+      <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Chceš stravovanie, ktoré podporí tvoj pohyb a nebude komplikovať život?</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">FitLime pripraví plán podľa tvojho cieľa a aktivity. Vyplň formulár a zisti, aký prístup môže sedieť práve tebe.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Otvoriť formulár</a></div>
+        <div class="ps-related-articles">
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Ďalšie články:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/zdravy-jedalnicek/index.html" class="ps-elegant-link">Zdravý jedálniček</a><a href="/jedalnicek-na-chudnutie/index.html" class="ps-elegant-link">Jedálniček na chudnutie</a><a href="/ako-fitlime-funguje/index.html" class="ps-elegant-link">Ako FitLime funguje</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Návrat na hlavnú stránku</a></div>
         </div>
       </section>
     </div>
   </main>
+
+  <footer class="site-footer" role="contentinfo" style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+      <div class="footer-left"><div style="margin-bottom: 12px;"><a data-contact-email data-user="info" data-domain="fitlime.cz" style="color: var(--fg); text-decoration: none; font-weight: 600;"></a></div><div style="margin-bottom: 8px;"><span class="brandline" data-i18n="home.footer.brand">FitLime - Chytrý jedálniček</span></div><div style="font-size: 0.85rem; opacity: 0.8;"><span data-i18n="home.footer.company">&copy; 2026 SportVital Pro s.r.o.</span></div></div>
+      <div class="footer-center" style="text-align: center;"><div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer" style="color: #52460a; text-decoration: none; font-weight: 600;">Powered by sportvitalpro.cz</a><div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;"><a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Instagram</a><span style="opacity: 0.3;">|</span><a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Facebook</a></div></div></div>
+      <div class="footer-right" style="text-align: right;"><nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;"><a href="/cookies.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.cookies">Cookies</a><a href="/terms.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.terms">Obchodné podmienky</a><a href="/gdpr.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.privacy">Ochrana súkromia</a></nav></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.Chart) return;
+      Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+      Chart.defaults.color = '#4b5563';
+      new Chart(document.getElementById('timingChart'), {
+        type: 'line',
+        data: {
+          labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00'],
+          datasets: [{
+            label: 'Energia / výkon',
+            data: [55, 78, 70, 62, 88, 96, 74, 58],
+            borderColor: '#0f5132',
+            backgroundColor: 'rgba(15,81,50,0.12)',
+            fill: true,
+            tension: 0.35,
+            borderWidth: 3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            pointBackgroundColor: '#ffffff',
+            pointBorderWidth: 3,
+            pointBorderColor: '#0f5132'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: { top: 16, right: 18, bottom: 8, left: 8 }
+          },
+          interaction: {
+            mode: 'index',
+            intersect: false
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              backgroundColor: '#111827',
+              padding: 12,
+              callbacks: {
+                afterLabel(context) {
+                  const notes = {
+                    1: 'Raňajky / prvé väčšie jedlo',
+                    4: 'Predtréningové jedlo',
+                    5: 'Tréning',
+                    6: 'Potréningové jedlo'
+                  };
+                  return notes[context.dataIndex] || '';
+                }
+              }
+            },
+            annotation: {
+              annotations: {
+                preWindow: {
+                  type: 'box',
+                  xMin: 0.5,
+                  xMax: 4.5,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                  borderColor: 'rgba(37, 99, 235, 0.16)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Pred výkonom',
+                    enabled: true,
+                    position: 'start',
+                    yAdjust: 10,
+                    backgroundColor: 'rgba(37, 99, 235, 0.9)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                },
+                trainingWindow: {
+                  type: 'box',
+                  xMin: 4.5,
+                  xMax: 5.5,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(22, 163, 74, 0.12)',
+                  borderColor: 'rgba(22, 163, 74, 0.3)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Výkon',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(22, 163, 74, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                },
+                recoveryWindow: {
+                  type: 'box',
+                  xMin: 5.5,
+                  xMax: 7,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(146, 64, 14, 0.08)',
+                  borderColor: 'rgba(146, 64, 14, 0.2)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Regenerácia',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(146, 64, 14, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 40,
+              max: 100,
+              title: { display: true, text: 'pripravenosť / energia' },
+              ticks: { stepSize: 10 },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            x: {
+              title: { display: true, text: 'čas dňa' },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            }
+          }
+        }
+      });
+    });
+  </script>
+  <script type="module">import { bootI18n } from '/i18n-core.js'; bootI18n();</script>
 </body>
+
 </html>

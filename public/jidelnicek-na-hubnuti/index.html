@@ -135,6 +135,27 @@
         margin-top: 16px;
       }
 
+      .seo-text-link {
+        color: #0f5132;
+        font-weight: 700;
+        text-decoration-line: underline;
+        text-decoration-color: rgba(15, 81, 50, 0.35);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.22em;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+      }
+
+      .seo-text-link:hover {
+        color: #0b3d27;
+        text-decoration-color: rgba(11, 61, 39, 0.7);
+      }
+
+      .seo-text-link:focus-visible {
+        outline: 2px solid rgba(15, 81, 50, 0.22);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
       .balance-lab {
         display: grid;
         gap: 10px;
@@ -690,7 +711,7 @@
           energie během dne, váha roste. Naopak když je výdej o něco vyšší než příjem, vzniká prostor pro hubnutí.
           Tato ukázka je zjednodušeným příkladem, který vychází z běžného dne, kdy jsou základní energetické potřeby
           těla (BMR) pokryty. Více o energetických potřebách těla se dozvíte v článku <a
-            href="/zdravy-jidelnicek/index.html">Zdravý jídelníček</a>.</p>
+            href="/zdravy-jidelnicek/index.html" class="seo-text-link">Zdravý jídelníček</a>.</p>
         <div class="balance-lab">
           <div class="balance-controls">
             <div class="balance-choice-list" id="balanceChoices">
@@ -867,6 +888,9 @@
               Kombinujte sacharidy se zdrojem bílkovin a tuků. Tak se vstřebávání zpomalí a pocit
               sytosti vydrží déle.
             </div>
+            <p><strong>Doporučená literatura:</strong> <a href="https://share.google/qRSN5eN642gmVtwXP"
+                class="seo-text-link" target="_blank" rel="noopener noreferrer">Glucose Revolution (Pravda o cukru)</a>
+              od Jessie Inchauspé.</p>
           </div>
             <div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div>
           </div>

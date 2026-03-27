@@ -1,12 +1,17 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sports Meal Plan | FitLime</title>
-  <meta name="description" content="A sports meal plan from FitLime that reflects training load, performance goals, recovery, and everyday routine.">
+  <title>Sports Meal Plan Tailored to You | FitLime</title>
+  <meta name="description" content="A sports meal plan from FitLime that reflects training type, workload, performance goals, and everyday routine. A practical setup for recreational and more advanced athletes.">
   <link rel="canonical" href="https://fitlime.eu/sports-meal-plan/">
-  <meta property="og:title" content="Sports Meal Plan | FitLime">
+  <link rel="alternate" hreflang="cs" href="https://fitlime.cz/sportovni-jidelnicek/">
+  <link rel="alternate" hreflang="sk" href="https://fitlime.sk/sportovy-jedalnicek/">
+  <link rel="alternate" hreflang="en" href="https://fitlime.eu/sports-meal-plan/">
+  <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/sports-meal-plan/">
+  <meta property="og:title" content="Sports Meal Plan Tailored to You | FitLime">
   <meta property="og:description" content="A practical sports meal plan built around training, goals, and daily routine.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.eu/sports-meal-plan/">
@@ -19,90 +24,554 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-dark.png?v=2" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/seo-pages.css">
+  <link rel="stylesheet" href="/styles/premium-simulator.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a sports meal plan only for elite athletes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It is useful for recreational athletes and for anyone who moves regularly and wants nutrition that matches their activity better."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the plan take the type of sport and workload into account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The point is to build the plan around your goal, physical activity, daily routine, and practical real-life constraints."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="seo-page">
+
+<body class="seo-page seo-how-page">
   <main class="seo-shell">
     <header class="seo-topbar">
       <a class="seo-brand" href="/index.html" aria-label="FitLime home">
         <img src="/images/logo_pruhledne.png" alt="FitLime logo">
         <strong>FitLime</strong>
       </a>
-      <a class="btn outline" href="/form.html">Go to questionnaire</a>
     </header>
 
-    <section class="seo-hero">
-      <article class="seo-card">
-        <div class="seo-eyebrow">Nutrition for movement</div>
-        <h1>A sports meal plan that fits training and real life</h1>
-        <p class="seo-lead">A sports meal plan should support performance, recovery, and long-term consistency. FitLime builds it around the type of activity, training load, goals, and daily routine so the plan works not just in theory, but in real life.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Get a sports plan</a>
-          <a class="btn outline" href="/how-fitlime-works/index.html">How FitLime works</a>
-        </div>
-        <p class="seo-note">Whether you run, lift, cycle, or train for performance, the plan should fit your routine rather than force a generic template on top of it.</p>
-      </article>
+    <style>
+      .edu-chart-lg { width: 100%; height: 420px; margin: 24px 0 0; }
+      @media (max-width: 767px) { .edu-chart-lg { height: 320px; } }
+      .edu-chart-md { width: 100%; height: 280px; }
+      .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+      @media (min-width: 768px) {
+        .edu-flex-row { flex-direction: row; align-items: center; }
+        .edu-flex-row > * { flex: 1; min-width: 0; }
+      }
+      .timing-visual { margin: 28px 0 22px; padding: 24px; border-radius: 20px; border: 1px solid rgba(15, 81, 50, 0.12); background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); box-shadow: 0 20px 50px rgba(15, 81, 50, 0.08); }
+      .timing-visual-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .timing-visual-header { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr); } }
+      .timing-visual-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(22, 163, 74, 0.1); color: #166534; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+      .timing-visual-header h3 { margin: 12px 0 8px; font-size: clamp(1.35rem, 2vw, 1.8rem); color: #111827; }
+      .timing-visual-header p { margin: 0; color: #4b5563; }
+      .timing-visual-meta { padding: 16px 18px; border-radius: 16px; background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%); border: 1px solid rgba(22, 163, 74, 0.16); }
+      .timing-visual-meta strong { display: block; margin-bottom: 6px; color: #14532d; }
+      .timing-chart-stage-list { display: grid; gap: 14px; margin-top: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .timing-chart-stage-list { grid-template-columns: 1fr; } }
+      .timing-stage-card { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid rgba(17, 24, 39, 0.08); min-width: 0; }
+      .timing-stage-card strong { display: block; margin-bottom: 6px; color: #111827; }
+      .timing-stage-card p { margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.55; }
+      .timing-stage-card.pre { border-top: 4px solid #2563eb; }
+      .timing-stage-card.performance { border-top: 4px solid #16a34a; }
+      .timing-stage-card.recovery { border-top: 4px solid #92400e; }
+      .timing-stage-tag { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+      .timing-stage-card.pre .timing-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .timing-stage-card.performance .timing-stage-tag { background: rgba(22, 163, 74, 0.12); color: #15803d; }
+      .timing-stage-card.recovery .timing-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .edu-fact-box { padding: 20px 24px; border-radius: 12px; border: 1px solid #005003; margin-top: 16px; }
+      .edu-warning-box { background: #fff7ed; border: 1.5px solid #f97316; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+      .edu-warning-box strong { display: block; color: #c2410c; margin-bottom: 8px; }
+      .edu-supp-box { background: #f5fdf6; border: 2px solid #007f2f; border-radius: 14px; padding: 24px; margin-top: 20px; }
+      .edu-supp-box a { color: #15803d; font-weight: 700; }
+      .edu-callout { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #16a34a; padding: 24px; border-radius: 12px; margin: 24px 0; }
+      .edu-callout strong { display: block; font-size: 1.1em; margin-bottom: 8px; }
+      .checklist { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
+      @media (max-width: 767px) { .checklist { grid-template-columns: 1fr; } }
+      .checklist li { padding: 8px 12px; border: 2px solid #005003; border-radius: 8px; background: #fff; transition: transform 0.2s ease; display: flex; align-items: center; gap: 8px; }
+      .checklist li:hover { transform: translateY(-1px); }
+      .timing-meal-grid { align-items: stretch; }
+      .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+      .compare-table th, .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--seo-line); text-align: left; }
+      .compare-table th { background: var(--seo-soft); }
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .meal-card { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); padding: 28px; border-radius: 18px; border: 1px solid rgba(17, 24, 39, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.08); position: relative; overflow: hidden; }
+      .meal-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 6px; background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%); }
+      .meal-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.12); }
+      .meal-card h3 { margin: 0 0 10px; color: #111827; }
+      .meal-card p { margin: 0; color: #4b5563; }
+      .meal-card-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+      .meal-card-kicker { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; background: rgba(37, 99, 235, 0.12); color: #1d4ed8; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .meal-card-goal { margin: 0 0 18px; padding: 14px 16px; border-radius: 14px; background: rgba(37, 99, 235, 0.08); color: #1e3a8a; }
+      .meal-card-goal strong { color: #1e3a8a; }
+      .meal-card.recovery::before { background: linear-gradient(180deg, #92400e 0%, #d97706 100%); }
+      .meal-card.recovery .meal-card-kicker { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .meal-card.recovery .meal-card-goal { background: rgba(146, 64, 14, 0.08); color: #78350f; }
+      .meal-card.recovery .meal-card-goal strong { color: #78350f; }
+      .hydration-panel { margin-top: 30px; padding: 28px; border-radius: 22px; background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 1px solid rgba(14, 165, 233, 0.16); box-shadow: 0 18px 44px rgba(14, 165, 233, 0.08); }
+      .hydration-panel-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .hydration-panel-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .hydration-panel-header h4 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #0f172a; }
+      .hydration-panel-header p { margin: 0; color: #475569; }
+      .hydration-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(14, 165, 233, 0.12); color: #0369a1; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-highlight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px solid rgba(14, 165, 233, 0.14); }
+      .hydration-highlight strong { display: block; margin-bottom: 6px; color: #0c4a6e; }
+      .hydration-stage-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .hydration-stage-grid { grid-template-columns: 1fr; } }
+      .hydration-stage { padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.88); border: 1px solid rgba(14, 165, 233, 0.12); min-width: 0; }
+      .hydration-stage h5 { margin: 0 0 8px; color: #0f172a; font-size: 1.02rem; }
+      .hydration-stage p { margin: 0; color: #475569; line-height: 1.6; }
+      .hydration-stage-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-stage.pre .hydration-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .hydration-stage.during .hydration-stage-tag { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+      .hydration-stage.post .hydration-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .hydration-stage-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(148, 163, 184, 0.25); color: #334155; font-weight: 600; font-size: 0.92rem; }
+      .carb-loading-panel { margin-top: 24px; padding: 28px; border-radius: 22px; border: 1px solid rgba(217, 119, 6, 0.14); box-shadow: 0 18px 44px rgba(146, 64, 14, 0.08); }
+      .carb-loading-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .carb-loading-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .carb-loading-kicker { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: rgba(217, 119, 6, 0.12); color: #b45309; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-header h3 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #111827; }
+      .carb-loading-header p { margin: 0; color: #4b5563; }
+      .carb-loading-insight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(217, 119, 6, 0.16); }
+      .carb-loading-insight strong { display: block; margin-bottom: 6px; color: #92400e; }
+      .carb-loading-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .carb-loading-grid { grid-template-columns: 1fr; } }
+      .carb-loading-card { padding: 22px; border-radius: 18px; background: rgba(255,255,255,0.9); border: 1px solid rgba(148, 163, 184, 0.16); }
+      .carb-loading-card h4 { margin: 0 0 10px; color: #111827; }
+      .carb-loading-card p { margin: 0; color: #4b5563; line-height: 1.6; }
+      .carb-loading-card.yes { border-top: 4px solid #d97706; }
+      .carb-loading-card.no { border-top: 4px solid #64748b; }
+      .carb-loading-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-card.yes .carb-loading-tag { background: rgba(217, 119, 6, 0.12); color: #b45309; }
+      .carb-loading-card.no .carb-loading-tag { background: rgba(100, 116, 139, 0.12); color: #475569; }
+      .training-bag-grid { align-items: stretch; gap: 28px; }
+      .training-bag-copy { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 24px; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.06); }
+      @media (min-width: 768px) { .training-bag-copy { flex: 1.2; } }
+      .training-bag-copy .checklist { margin-top: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .training-bag-copy .checklist { grid-template-columns: 1fr; } }
+      .training-bag-copy .checklist li { min-height: 54px; }
+      .training-bag-media { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 18px; box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06); }
+      @media (min-width: 768px) { .training-bag-media { flex: 0 0 min(320px, 34%); } }
+      .training-bag-media img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px; }
+      .training-bag-note { margin-top: 12px; color: #475569; font-size: 0.94rem; line-height: 1.55; }
+    </style>
 
-      <aside class="seo-panel">
-        <h2>What the plan takes into account</h2>
-        <ul>
-          <li>activity level and training frequency</li>
-          <li>performance or body-composition goals</li>
-          <li>recovery and meal timing</li>
-          <li>practicality alongside work, school, or family</li>
-        </ul>
-      </aside>
+    <section class="seo-hero">
+      <article class="seo-card seo-hero-card fade-in">
+        <div class="seo-eyebrow">Nutrition for performance</div>
+        <h1>A sports meal plan that fits training and normal life</h1>
+        <p class="seo-lead">A sports meal plan should support performance, recovery, and long-term sustainability. It is not enough to simply eat more. Timing, training volume, sport type, and the reality of your workday all matter.</p>
+      </article>
     </section>
 
     <div class="seo-stack">
-      <section class="seo-section">
-        <h2>Who a sports meal plan is for</h2>
-        <div class="seo-grid">
-          <article class="seo-mini-card">
-            <h3>Recreational athletes</h3>
-            <p>If you train regularly and want nutrition that supports your activity better, a structured plan can improve consistency and make eating around training easier.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Performance-focused sport</h3>
-            <p>When performance matters, it becomes even more important to align food intake with workload and recovery.</p>
-          </article>
-          <article class="seo-mini-card">
-            <h3>Sport plus everyday life</h3>
-            <p>Most people do not train in laboratory conditions. The plan has to work alongside a normal schedule and daily obligations.</p>
-          </article>
+      <section class="seo-section fade-in">
+        <h2>Meal timing around performance</h2>
+        <p>Food before, during, and after exercise is not just about hunger. It affects energy, the ability to hold pace, and how quickly you are ready to train again the next day.</p>
+        <div class="timing-visual">
+          <div class="timing-visual-header">
+            <div>
+              <span class="timing-visual-kicker">Sample training day</span>
+              <h3>How to distribute energy around exercise</h3>
+              <p>The ideal setup is not one perfect meal. It is the right rhythm. Top up energy before training, avoid overloading the stomach during the session, and start recovery quickly afterwards.</p>
+            </div>
+            <div class="timing-visual-meta">
+              <strong>What this chart means in practice</strong>
+              <span>If you leave too long a gap before training or eat a heavy meal at the last minute, both performance and recovery tend to drop.</span>
+            </div>
+          </div>
+          <div class="edu-chart-lg"><canvas id="timingChart"></canvas></div>
+          <div class="timing-chart-stage-list" aria-label="Meal phases around exercise">
+            <article class="timing-stage-card pre">
+              <span class="timing-stage-tag">Before exercise</span>
+              <strong>1-2 hours before the session</strong>
+              <p>Light carbohydrates, a smaller portion of protein, and minimal fat or fiber help energy arrive on time while keeping the stomach calm.</p>
+            </article>
+            <article class="timing-stage-card performance">
+              <span class="timing-stage-tag">Performance</span>
+              <strong>During exercise depends on duration</strong>
+              <p>A short session often only needs fluids. Longer or more intense training may benefit from sodium and fast carbohydrates.</p>
+            </article>
+            <article class="timing-stage-card recovery">
+              <span class="timing-stage-tag">Recovery</span>
+              <strong>Within 45 minutes after exercise</strong>
+              <p>Carbohydrates, protein, and fluids help restore stores faster, reduce fatigue, and prepare the body for the next session.</p>
+            </article>
+          </div>
+        </div>
+        <div class="edu-callout">
+          <strong>Key insight:</strong> The mistake is not only the wrong food, but also the wrong timing. A heavy meal right before exercise burdens digestion, while fasting too long pulls down performance and concentration.
+        </div>
+        <div class="edu-flex-row timing-meal-grid">
+          <div class="meal-card">
+            <div class="meal-card-head">
+              <div>
+                <h3>Before training</h3>
+              </div>
+              <span class="meal-card-kicker">1-2 hours before exercise</span>
+            </div>
+            <p class="meal-card-goal"><strong>Goal:</strong> provide quick-usable energy without a heavy stomach or a crash that slows you down after the start.</p>
+            <p>Easily digestible carbohydrates and a smaller portion of protein usually work best. Leave fats and large amounts of fiber further away from the session.</p>
+            <ul class="checklist">
+              <li>Yogurt with banana</li>
+              <li>Toast with cheese and ham</li>
+              <li>Oatmeal</li>
+              <li>Rice cakes</li>
+              <li>Fruit or a smoothie</li>
+              <li>Muesli bar</li>
+            </ul>
+          </div>
+          <div class="meal-card recovery">
+            <div class="meal-card-head">
+              <div>
+                <h3>After training</h3>
+              </div>
+              <span class="meal-card-kicker">After exercise</span>
+            </div>
+            <p class="meal-card-goal"><strong>Goal:</strong> return carbohydrates, protein, and fluids to the body before fatigue unnecessarily prolongs recovery.</p>
+            <p>After a harder session it makes sense not to wait too long for a big meal later, but to send the body a simple first recovery step soon after training.</p>
+            <ul class="checklist">
+              <li>Pasta with tomatoes and tuna</li>
+              <li>Cottage cheese with fruit and honey</li>
+              <li>Eggs with bread and vegetables</li>
+              <li>Toast with ham and cheese</li>
+              <li>Potatoes with chicken</li>
+              <li>Bagel with peanut butter</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hydration-panel">
+          <div class="hydration-panel-header">
+            <div>
+              <span class="hydration-kicker">Hydration and electrolytes</span>
+              <h4>It is not enough to drink more. You need to drink at the right time.</h4>
+              <p>When you sweat, you do not lose only water but also sodium and other minerals. If you replace fluids without context, you can still feel heavy, tired, or slow even when you think you are drinking plenty.</p>
+            </div>
+            <div class="hydration-highlight">
+              <strong>Most common mistake</strong>
+              <span>Drinking too little all day and then trying to catch up right before training or only afterwards. The body works better when hydration is steady through the day.</span>
+            </div>
+          </div>
+          <div class="hydration-stage-grid">
+            <article class="hydration-stage pre">
+              <span class="hydration-stage-tag">Before exercise</span>
+              <h5>Arrive prepared</h5>
+              <p>Do not show up dehydrated. Build fluids steadily through the day and use the pre-session window only for fine-tuning, not for fixing a large deficit at the last minute.</p>
+              <div class="hydration-stage-note">For most people, a regular drinking rhythm works better than one large dose at once.</div>
+            </article>
+            <article class="hydration-stage during">
+              <span class="hydration-stage-tag">During exercise</span>
+              <h5>Duration and conditions decide</h5>
+              <p>During longer, more intense, or hot sessions, water with sodium or a sports drink with simple carbohydrates can make sense. A shorter workout often does not need anything special.</p>
+              <div class="hydration-stage-note">The more you sweat, the more sodium matters, not just plain water.</div>
+            </article>
+            <article class="hydration-stage post">
+              <span class="hydration-stage-tag">After exercise</span>
+              <h5>Recovery does not start in the evening</h5>
+              <p>If you sweated heavily, focus not only on water but also on food or a drink that helps replace electrolytes. After hard training, plain water alone is often not enough.</p>
+              <div class="hydration-stage-note">Fluids, sodium, and food together help the body return to normal faster.</div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="seo-section">
-        <h2>Why adding more food is not enough</h2>
-        <p>Sports nutrition is not just about eating more because you exercise. What matters is when, why, and in what context. Fat loss, maintenance, and a demanding training week all require different approaches. A good plan should support both sport and everyday life instead of creating more friction.</p>
+      <section class="seo-section fade-in">
+        <h2>Training day vs. rest day</h2>
+        <div class="edu-flex-row">
+          <div style="background: #fffcfb; padding: 24px; border-radius: 12px; border-left: 4px solid #510f0f;">
+            <h3>Training day</h3>
+            <p>On training days the body faces higher demands for energy and recovery. Proper nutrition can improve performance while also speeding up muscle repair.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 16px;">
+              <li style="margin-bottom: 12px;"><strong>Carbohydrates are key</strong> because they fuel performance. Focus especially on the period before and after training.</li>
+              <li style="margin-bottom: 12px;"><strong>Protein</strong> should support recovery consistently across the day.</li>
+              <li style="margin-bottom: 12px;"><strong>Hydration and sodium</strong> matter for performance, cramp prevention, and overall output.</li>
+              <li><strong>Better energy distribution</strong> means not eating everything in the evening, but supporting performance earlier in the day.</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 600; color: #0f5132;">Goal: maximize performance and support recovery</p>
+          </div>
+
+          <div style="background: #fafffc; padding: 24px; border-radius: 12px; border-left: 4px solid #15803d;">
+            <h3>Rest day</h3>
+            <p>Even when you are not training, the body is still recovering and adapting. Nutrition therefore stays important.</p>
+            <ul style="list-style: none; padding: 0; margin-top: 16px;">
+              <li style="margin-bottom: 12px;"><strong>Less fast carbohydrate</strong> is often enough because you do not need the same amount of quick fuel as on a hard session day.</li>
+              <li style="margin-bottom: 12px;"><strong>Protein stays important</strong> because muscle recovery is still happening.</li>
+              <li style="margin-bottom: 12px;"><strong>Healthy fats and micronutrients</strong> support hormones and general health.</li>
+              <li><strong>Stable energy intake</strong> matters more than aggressive calorie cutting.</li>
+            </ul>
+            <p style="margin-top: 16px; font-weight: 600; color: #0f5132;">Goal: support recovery and long-term progress</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; background: none; border: none;"><strong>Recommendation:</strong> avoid extremes. Adjust details to your activity, but keep overall intake relatively stable across the week.</div>
       </section>
 
-      <section class="seo-faq">
+      <section class="seo-section fade-in">
+        <h2>Carb loading</h2>
+        <div class="carb-loading-panel">
+          <div class="carb-loading-header">
+            <div>
+              <span class="carb-loading-kicker">Before long performance</span>
+              <h3>Carb loading only makes sense when glycogen stores really decide the outcome</h3>
+              <p>Increasing carbohydrate intake before a long race or very demanding performance can help delay fatigue and hold pace better. It is not a universal trick for every training day.</p>
+            </div>
+            <div class="carb-loading-insight">
+              <strong>Practical principle</strong>
+              <span>If the event does not last long enough, the body often will not use those extra carbohydrates anyway. In that case, you only make your meal plan more complicated without real benefit.</span>
+            </div>
+          </div>
+          <div class="carb-loading-grid">
+            <article class="carb-loading-card yes">
+              <span class="carb-loading-tag">When yes</span>
+              <h4>When a long or extreme effort is ahead</h4>
+              <p>Before a half marathon, marathon, long cycling race, or another multi-hour event where muscle glycogen stores genuinely influence the result.</p>
+            </article>
+            <article class="carb-loading-card no">
+              <span class="carb-loading-tag">When no</span>
+              <h4>For normal training it is unnecessary</h4>
+              <p>For a 60-minute gym session, a normal run, or a shorter sports session, special carbohydrate maneuvers are usually not needed.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Strength vs. endurance sport</h2>
+        <table class="compare-table">
+          <thead><tr><th>Parameter</th><th>Strength sport</th><th>Endurance sport</th></tr></thead>
+          <tbody>
+            <tr><td>Protein</td><td>1.2 to 2.0 g/kg</td><td>1.0 to 1.7 g/kg</td></tr>
+            <tr><td>Carbohydrates</td><td>moderate share based on workload</td><td>higher share because of glycogen use</td></tr>
+            <tr><td>Fat</td><td>rather a stable baseline</td><td>rather a stable baseline</td></tr>
+            <tr><td>Priority</td><td>recovery, strength, growth</td><td>endurance and energy replenishment</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>What to keep in your training bag</h2>
+        <p>Good preparation lowers the chance that after training you end up without food, without water, and forced into the first random option on the way home.</p>
+        <div class="edu-flex-row training-bag-grid">
+          <div class="training-bag-copy">
+            <ul class="checklist">
+              <li>Apple or another easy-to-digest fruit</li>
+              <li>Muesli bar for quick carbs</li>
+              <li>Water bottle and an extra serving for a long day</li>
+              <li>Sports drink or electrolyte tablets</li>
+              <li>Nuts as a source of protein and healthy fats</li>
+              <li>A spoon so you can eat anywhere if needed</li>
+            </ul>
+          </div>
+          <div class="training-bag-media">
+            <img src="/images/sports_bag.jpg" alt="Sports bag with food and drinks for training">
+            <p class="training-bag-note">When you have the basics on hand, you do not need to improvise after training or reach for the first random option on the way home.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Important warning</h2>
+        <div class="edu-warning-box"><strong>Do not try to lose weight during your hardest training block.</strong> When volume or intensity is peaking, the body needs energy for adaptation and recovery. An aggressive deficit in that phase increases fatigue, injury risk, and the chance of overtraining.</div>
+      </section>
+
+      <section class="seo-section fade-in">
+        <h2>Supplements</h2>
+        <p>Supplements do not replace real food, but they can sometimes support recovery or help through a demanding training period. They make sense when they solve a specific need, not as automatic gear for every athlete. More detailed recommendations for nutrition and supplementation are part of the <a href="/form.html" style="color: #0f5132; font-weight: 600; text-decoration: none; border-bottom: 2px solid #0f5132;">premium plan</a>.</p>
+        <div class="edu-supp-box" style="display: flex; gap: 24px; align-items: flex-start;">
+          <img src="/images/curra_nz.jpg" alt="CurraNZ supplement" style="height: 70px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div>
+            <p style="margin: 0;">Blackcurrant extract can be an interesting option for recovery support and for handling inflammatory stress. If you want to explore supplements without unnecessary chaos, take a look at <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-faq fade-in">
         <h2>FAQ</h2>
-        <div class="seo-faq-item">
-          <h3>Is this only for elite athletes?</h3>
-          <p>No. It is also valuable for hobby athletes who want eating that makes more sense around activity and recovery.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Can it help if I want to lose weight through sport?</h3>
-          <p>Yes. That is exactly when it helps to combine performance and fat loss sensibly. If fat loss is your primary goal, see also <a href="/weight-loss-meal-plan/index.html">weight loss meal plan</a>.</p>
-        </div>
-        <div class="seo-faq-item">
-          <h3>Does it account for meal timing around training?</h3>
-          <p>The goal is to build the plan around your real schedule so it supports movement instead of ignoring it.</p>
-        </div>
+        <div class="seo-faq-item"><h3>Is this only for elite athletes?</h3><p>No. It is also highly valuable for recreational athletes who want nutrition that makes more sense around movement and recovery.</p></div>
+        <div class="seo-faq-item"><h3>Can the plan help if you want to lose weight through sport?</h3><p>Yes, but the calorie deficit has to respect training volume. If fat loss is the main goal, see also <a href="/weight-loss-meal-plan/index.html">weight loss meal plan</a>.</p></div>
+        <div class="seo-faq-item"><h3>Does the plan also deal with meal timing?</h3><p>Yes. Timing is often the difference between a training session you handle well and one you simply suffer through.</p></div>
       </section>
 
-      <section class="seo-cta">
-        <h2>Want nutrition that supports your training without complicating your life?</h2>
-        <p>FitLime prepares a plan based on your goals and activity. Fill out the questionnaire and see what approach fits you.</p>
-        <div class="seo-actions">
-          <a class="btn" href="/form.html">Open questionnaire</a>
-          <a class="btn outline" href="/healthy-meal-plan/index.html">Healthy meal plan</a>
-          <a class="btn outline" href="/how-fitlime-works/index.html">How FitLime works</a>
+      <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Want nutrition that supports your training without complicating life?</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">FitLime prepares a plan around your goal and activity. Fill out the questionnaire and see what kind of approach fits you best.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Open questionnaire</a></div>
+        <div class="ps-related-articles">
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Related articles:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/healthy-meal-plan/index.html" class="ps-elegant-link">Healthy meal plan</a><a href="/weight-loss-meal-plan/index.html" class="ps-elegant-link">Weight loss meal plan</a><a href="/how-fitlime-works/index.html" class="ps-elegant-link">How FitLime works</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Back to homepage</a></div>
         </div>
       </section>
     </div>
   </main>
+
+  <footer class="site-footer" role="contentinfo" style="padding: 20px 0; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); background: #fff;">
+    <div class="ps-section-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1400px; margin: 0 auto; padding: 0 24px;">
+      <div class="footer-left"><div style="margin-bottom: 12px;"><a data-contact-email data-user="info" data-domain="fitlime.cz" style="color: var(--fg); text-decoration: none; font-weight: 600;"></a></div><div style="margin-bottom: 8px;"><span class="brandline" data-i18n="home.footer.brand">FitLime - Smart meal plan</span></div><div style="font-size: 0.85rem; opacity: 0.8;"><span data-i18n="home.footer.company">&copy; 2026 SportVital Pro s.r.o.</span></div></div>
+      <div class="footer-center" style="text-align: center;"><div class="footer-credit-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><a href="https://www.sportvitalpro.cz" class="footer-credit" target="_blank" rel="noopener noreferrer" style="color: #52460a; text-decoration: none; font-weight: 600;">Powered by sportvitalpro.cz</a><div class="footer-social-wrap" style="display: flex; align-items: center; gap: 15px;"><a href="https://www.instagram.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Instagram</a><span style="opacity: 0.3;">|</span><a href="https://www.facebook.com/sportvitalpro" class="ps-elegant-link" style="font-size: 0.85rem;" target="_blank" rel="noopener noreferrer">Facebook</a></div></div></div>
+      <div class="footer-right" style="text-align: right;"><nav class="footer-links" style="display: flex; flex-direction: column; gap: 8px;"><a href="/cookies.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.cookies">Cookies</a><a href="/terms.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.terms">Terms and conditions</a><a href="/gdpr.html" style="color: var(--muted); text-decoration: none;" data-i18n="home.footer.privacy">Privacy policy</a></nav></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.Chart) return;
+      Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
+      Chart.defaults.color = '#4b5563';
+      new Chart(document.getElementById('timingChart'), {
+        type: 'line',
+        data: {
+          labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00'],
+          datasets: [{
+            label: 'Energy / performance',
+            data: [55, 78, 70, 62, 88, 96, 74, 58],
+            borderColor: '#0f5132',
+            backgroundColor: 'rgba(15,81,50,0.12)',
+            fill: true,
+            tension: 0.35,
+            borderWidth: 3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            pointBackgroundColor: '#ffffff',
+            pointBorderWidth: 3,
+            pointBorderColor: '#0f5132'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: { top: 16, right: 18, bottom: 8, left: 8 }
+          },
+          interaction: {
+            mode: 'index',
+            intersect: false
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              backgroundColor: '#111827',
+              padding: 12,
+              callbacks: {
+                afterLabel(context) {
+                  const notes = {
+                    1: 'Breakfast / first larger meal',
+                    4: 'Pre-workout meal',
+                    5: 'Training',
+                    6: 'Post-workout meal'
+                  };
+                  return notes[context.dataIndex] || '';
+                }
+              }
+            },
+            annotation: {
+              annotations: {
+                preWindow: {
+                  type: 'box',
+                  xMin: 0.5,
+                  xMax: 4.5,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                  borderColor: 'rgba(37, 99, 235, 0.16)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Before exercise',
+                    enabled: true,
+                    position: 'start',
+                    yAdjust: 10,
+                    backgroundColor: 'rgba(37, 99, 235, 0.9)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                },
+                trainingWindow: {
+                  type: 'box',
+                  xMin: 4.5,
+                  xMax: 5.5,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(22, 163, 74, 0.12)',
+                  borderColor: 'rgba(22, 163, 74, 0.3)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Performance',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(22, 163, 74, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                },
+                recoveryWindow: {
+                  type: 'box',
+                  xMin: 5.5,
+                  xMax: 7,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(146, 64, 14, 0.08)',
+                  borderColor: 'rgba(146, 64, 14, 0.2)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Recovery',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(146, 64, 14, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 40,
+              max: 100,
+              title: { display: true, text: 'readiness / energy' },
+              ticks: { stepSize: 10 },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            x: {
+              title: { display: true, text: 'time of day' },
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            }
+          }
+        }
+      });
+    });
+  </script>
+  <script type="module">import { bootI18n } from '/i18n-core.js'; bootI18n();</script>
 </body>
+
 </html>

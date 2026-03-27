@@ -1,4 +1,4 @@
-import { t } from '/i18n-core.js';
+﻿import { t } from '/i18n-core.js';
 
 const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 const dpr = () => window.devicePixelRatio || 1;
@@ -17,30 +17,30 @@ function animate({ id = "def", duration, easing, onUpdate, onDone }) {
 }
 
 const DIET_FOODS = {
-    chicken: { emoji: "🍗", energy: 28.2, protein: 79.7, fat: 25.0, carbs: 0.0, fiber: 0.0, cholesterol: 100.0, sodium: 75.5, isHealthy: true, name: "Kuřecí" },
-    rice: { emoji: "🍚", energy: 33.3, protein: 10.3, fat: 3.5, carbs: 55.3, fiber: 5.0, cholesterol: 0.0, sodium: 12.0, isHealthy: true, name: "Rýže" },
-    salad: { emoji: "🥗", energy: 6.0, protein: 5.1, fat: 0.0, carbs: 9.2, fiber: 20.7, cholesterol: 0.0, sodium: 6.6, isHealthy: true, name: "Salát" },
-    avocado: { emoji: "🥑", energy: 19.1, protein: 3.6, fat: 69.4, carbs: 7.9, fiber: 41.3, cholesterol: 0.0, sodium: 4.9, isHealthy: true, name: "Avokádo" },
-    apple: { emoji: "🍎", energy: 13.3, protein: 1.3, fat: 2.1, carbs: 27.6, fiber: 33.1, cholesterol: 0.0, sodium: 1.0, isHealthy: true, name: "Jablko" },
-    fries: { emoji: "🍟", energy: 55, protein: 8, fat: 45, carbs: 30, fiber: 4, cholesterol: 50, sodium: 80, isHealthy: false, name: "Hranolky" },
-    burger: { emoji: "🍔", energy: 80, protein: 65, fat: 55, carbs: 35, fiber: 5, cholesterol: 130, sodium: 140, isHealthy: false, name: "Burger" },
-    icecream: { emoji: "🍦", energy: 40, protein: 3, fat: 35, carbs: 40, fiber: 0, cholesterol: 25, sodium: 15, isHealthy: false, name: "Zmrzlina" },
-    hotdog: { emoji: "🌭", energy: 50, protein: 55, fat: 40, carbs: 18, fiber: 0, cholesterol: 70, sodium: 120, isHealthy: false, name: "Párek" },
-    donut: { emoji: "🍩", energy: 50, protein: 2, fat: 30, carbs: 45, fiber: 0, cholesterol: 20, sodium: 25, isHealthy: false, name: "Kobliha" }
+    chicken: { emoji: "\u{1F357}", energy: 28.2, protein: 79.7, fat: 25.0, carbs: 0.0, fiber: 0.0, cholesterol: 100.0, sodium: 75.5, isHealthy: true, name: "Ku\u0159ec\u00ed" },
+    rice: { emoji: "\u{1F35A}", energy: 33.3, protein: 10.3, fat: 3.5, carbs: 55.3, fiber: 5.0, cholesterol: 0.0, sodium: 12.0, isHealthy: true, name: "R\u00fd\u017ee" },
+    salad: { emoji: "\u{1F957}", energy: 6.0, protein: 5.1, fat: 0.0, carbs: 9.2, fiber: 20.7, cholesterol: 0.0, sodium: 6.6, isHealthy: true, name: "Sal\u00e1t" },
+    avocado: { emoji: "\u{1F951}", energy: 19.1, protein: 3.6, fat: 69.4, carbs: 7.9, fiber: 41.3, cholesterol: 0.0, sodium: 4.9, isHealthy: true, name: "Avok\u00e1do" },
+    apple: { emoji: "\u{1F34E}", energy: 13.3, protein: 1.3, fat: 2.1, carbs: 27.6, fiber: 33.1, cholesterol: 0.0, sodium: 1.0, isHealthy: true, name: "Jablko" },
+    fries: { emoji: "\u{1F35F}", energy: 55, protein: 8, fat: 45, carbs: 30, fiber: 4, cholesterol: 50, sodium: 80, isHealthy: false, name: "Hranolky" },
+    burger: { emoji: "\u{1F354}", energy: 80, protein: 65, fat: 55, carbs: 35, fiber: 5, cholesterol: 130, sodium: 140, isHealthy: false, name: "Burger" },
+    icecream: { emoji: "\u{1F366}", energy: 40, protein: 3, fat: 35, carbs: 40, fiber: 0, cholesterol: 25, sodium: 15, isHealthy: false, name: "Zmrzlina" },
+    hotdog: { emoji: "\u{1F32D}", energy: 50, protein: 55, fat: 40, carbs: 18, fiber: 0, cholesterol: 70, sodium: 120, isHealthy: false, name: "P\u00e1rek" },
+    donut: { emoji: "\u{1F369}", energy: 50, protein: 2, fat: 30, carbs: 45, fiber: 0, cholesterol: 20, sodium: 25, isHealthy: false, name: "Kobliha" }
 };
 
 const DIET_HEALTHY_DEFAULT = ["chicken", "rice", "salad", "avocado", "apple"];
 const DIET_NUTS = [
     { key: "energy", label: "Energie" }, { key: "carbs", label: "Sacharidy" },
-    { key: "fat", label: "Tuky" }, { key: "protein", label: "Bílkoviny" },
-    { key: "fiber", label: "Vláknina" }, { key: "cholesterol", label: "Cholesterol" },
-    { key: "sodium", label: "Sodík" }
+    { key: "fat", label: "Tuky" }, { key: "protein", label: "B\u00edlkoviny" },
+    { key: "fiber", label: "Vl\u00e1knina" }, { key: "cholesterol", label: "Cholesterol" },
+    { key: "sodium", label: "Sod\u00edk" }
 ];
 
 const COMPLEX_CATEGORIES = [
-    "Energie", "Bílkoviny", "Tuky", "Sacharidy", "Vláknina", "Ovoce", "Zelenina", "Mléčné výrobky", "Ryby",
-    "Nasycené tuky", "Mononenasycené tuky", "Polynenasycené tuky", "Cholesterol", "Vit. B1", "Vit. B2", "Vit. B6",
-    "Vit. B12", "Vit. C", "Vit. D", "Vit. E", "Kyselina listová", "Hořčík", "Draslík", "Sodík", "Vápník", "Železo"
+    "Energie", "B\u00edlkoviny", "Tuky", "Sacharidy", "Vl\u00e1knina", "Ovoce", "Zelenina", "Ml\u00e9\u010dn\u00e9 v\u00fdrobky", "Ryby",
+    "Nasycen\u00e9 tuky", "Mononenasycen\u00e9 tuky", "Polynenasycen\u00e9 tuky", "Cholesterol", "Vit. B1", "Vit. B2", "Vit. B6",
+    "Vit. B12", "Vit. C", "Vit. D", "Vit. E", "Kyselina listov\u00e1", "Ho\u0159\u010d\u00edk", "Drasl\u00edk", "Sod\u00edk", "V\u00e1pn\u00edk", "\u017delezo"
 ].map((lbl, idx) => ({ key: "c" + idx, label: lbl }));
 
 const MAX_DISPLAY = 150;
@@ -53,13 +53,13 @@ const STATE = {
 };
 
 function diet_getColor(val, key = "") {
-    const isReverse = key === "cholesterol" || key === "sodium" || key === "c12" || key === "c23" || key === "c9" || key.startsWith("c9") || key.startsWith("Nasycené");
+    const isReverse = key === "cholesterol" || key === "sodium" || key === "c12" || key === "c23" || key === "c9";
     if (isReverse) {
         if (val <= 100) return "#10b981";
         if (val <= 120) return "#f59e0b";
         return "#ef4444";
     }
-    const isInfinite = key === "fiber" || key === "c4" || key === "Vláknina";
+    const isInfinite = key === "fiber" || key === "c4";
     if (isInfinite) {
         if (val <= 70) return "#ef4444";
         if (val <= 85) return "#f59e0b";
@@ -221,7 +221,7 @@ function renderMainChart(canvas, totals) {
         let phase = (performance.now() / 1000) % (Math.PI * 2);
         ctx.save(); ctx.translate(cx, cy); ctx.scale(1 + Math.sin(phase * 3) * 0.02, 1 + Math.sin(phase * 3) * 0.02);
         ctx.fillStyle = "#3c424bff"; ctx.font = "800 24px system-ui, sans-serif"; ctx.textAlign = "center";
-        ctx.fillText("Klepněte na jídlo", 0, 0);
+        ctx.fillText(EMPTY_CHART_PROMPT, 0, 0);
         ctx.strokeStyle = "rgba(0, 0, 0, 0.05)"; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(0, 0, 150, 0 + phase, Math.PI + phase); ctx.stroke();
         ctx.restore();
@@ -233,40 +233,168 @@ function renderMainChart(canvas, totals) {
 
 const STATIC_DATA = {
     day: [
-        { id: "s-break", name: "Snídaně", desc: "Ovesná kaše, ovoce", data: { energy: 30, carbs: 130, fat: 40, protein: 60, fiber: 80, cholesterol: 10, sodium: 5 } },
-        { id: "s-snk1", name: "Dopolední Svačina", desc: "Jogurt a oříšky", data: { energy: 20, carbs: 40, fat: 60, protein: 50, fiber: 20, cholesterol: 15, sodium: 10 } },
-        { id: "s-snk2", name: "Odpolední Svačina", desc: "Sýr a jablko", data: { energy: 25, carbs: 50, fat: 50, protein: 40, fiber: 40, cholesterol: 40, sodium: 30 } },
-        { id: "s-din", name: "Večeře", desc: "Pizza (velká)", data: { energy: 120, carbs: 140, fat: 150, protein: 80, fiber: 10, cholesterol: 130, sodium: 150 } }
+        { id: "s-break", name: "Sn\u00eddan\u011b", desc: "Ovesn\u00e1 ka\u0161e, ovoce", data: { energy: 30, carbs: 130, fat: 40, protein: 60, fiber: 80, cholesterol: 10, sodium: 5 } },
+        { id: "s-snk1", name: "Dopoledn\u00ed Sva\u010dina", desc: "Jogurt a o\u0159\u00ed\u0161ky", data: { energy: 20, carbs: 40, fat: 60, protein: 50, fiber: 20, cholesterol: 15, sodium: 10 } },
+        { id: "s-snk2", name: "Odpoledn\u00ed Sva\u010dina", desc: "S\u00fdr a jablko", data: { energy: 25, carbs: 50, fat: 50, protein: 40, fiber: 40, cholesterol: 40, sodium: 30 } },
+        { id: "s-din", name: "Ve\u010de\u0159e", desc: "Pizza (velk\u00e1)", data: { energy: 120, carbs: 140, fat: 150, protein: 80, fiber: 10, cholesterol: 130, sodium: 150 } }
     ],
     week: [
-        { id: "w-mon", name: "Pondělí", desc: "Start do týdne zdravě", data: { energy: 95, carbs: 100, fat: 90, protein: 110, fiber: 100, cholesterol: 80, sodium: 90 } },
-        { id: "w-wed", name: "Úterý", desc: "Jídlo v práci bez ovoce", data: { energy: 110, carbs: 120, fat: 130, protein: 80, fiber: 40, cholesterol: 110, sodium: 130 } },
-        { id: "w-thu", name: "Středa", desc: "Ideální balanc", data: { energy: 100, carbs: 105, fat: 95, protein: 105, fiber: 110, cholesterol: 85, sodium: 80 } },
-        { id: "w-fri", name: "Čtvrtek", desc: "Večerní pivo a chipsy", data: { energy: 140, carbs: 130, fat: 120, protein: 60, fiber: 30, cholesterol: 50, sodium: 140 } },
-        { id: "w-sat", name: "Pátek", desc: "Cheat Day - Burger a Cola", data: { energy: 150, carbs: 150, fat: 150, protein: 140, fiber: 20, cholesterol: 150, sodium: 150 } },
-        { id: "w-sun", name: "Sobota", desc: "Rodinný oběd ke kachně", data: { energy: 130, carbs: 110, fat: 140, protein: 90, fiber: 40, cholesterol: 140, sodium: 120 } }
+        { id: "w-mon", name: "Pond\u011bl\u00ed", desc: "Start do t\u00fddne zdrav\u011b", data: { energy: 95, carbs: 100, fat: 90, protein: 110, fiber: 100, cholesterol: 80, sodium: 90 } },
+        { id: "w-wed", name: "\u00dater\u00fd", desc: "J\u00eddlo v pr\u00e1ci bez ovoce", data: { energy: 110, carbs: 120, fat: 130, protein: 80, fiber: 40, cholesterol: 110, sodium: 130 } },
+        { id: "w-thu", name: "St\u0159eda", desc: "Ide\u00e1ln\u00ed balanc", data: { energy: 100, carbs: 105, fat: 95, protein: 105, fiber: 110, cholesterol: 85, sodium: 80 } },
+        { id: "w-fri", name: "\u010ctvrtek", desc: "Ve\u010dern\u00ed pivo a chipsy", data: { energy: 140, carbs: 130, fat: 120, protein: 60, fiber: 30, cholesterol: 50, sodium: 140 } },
+        { id: "w-sat", name: "P\u00e1tek", desc: "Cheat Day - Burger a Cola", data: { energy: 150, carbs: 150, fat: 150, protein: 140, fiber: 20, cholesterol: 150, sodium: 150 } },
+        { id: "w-sun", name: "Sobota", desc: "Rodinn\u00fd ob\u011bd ke kachn\u011b", data: { energy: 130, carbs: 110, fat: 140, protein: 90, fiber: 40, cholesterol: 140, sodium: 120 } }
     ]
 };
 
 const COMPLEX_MEALS = [
-    { name: "Losos s quinoou a pečenou brokolicí", seed: 1 },
-    { name: "Hovězí steak s batátovým pyré a chřestem", seed: 2 },
-    { name: "Středomořský cizrnový salát s fetou a olivami", seed: 3 },
-    { name: "Kuřecí plátek s rýží a mandlemi", seed: 4 },
-    { name: "Tuňákový tatarák s avokádem a sezamem", seed: 5 },
-    { name: "Pohankové rizoto s houbami", seed: 6 },
-    { name: "Krůtí ragú s celozrnnými těstovinami a parmezánem", seed: 7 },
-    { name: "Veganské kari tofu s kokosovým mlékem", seed: 8 },
-    { name: "Pečený pstruh s restovanými fazolkami", seed: 9 },
-    { name: "Pestrá miska: černé fazole, kukuřice, grilované kuře", seed: 10 }
+    { name: "Losos s quinoou a pe\u010denou brokolic\u00ed", seed: 1 },
+    { name: "Hov\u011bz\u00ed steak s bat\u00e1tov\u00fdm pyr\u00e9 a ch\u0159estem", seed: 2 },
+    { name: "St\u0159edomo\u0159sk\u00fd cizrnov\u00fd sal\u00e1t s fetou a olivami", seed: 3 },
+    { name: "Ku\u0159ec\u00ed pl\u00e1tek s r\u00fd\u017e\u00ed a mandlemi", seed: 4 },
+    { name: "Tu\u0148\u00e1kov\u00fd tatar\u00e1k s avok\u00e1dem a sezamem", seed: 5 },
+    { name: "Pohankov\u00e9 rizoto s houbami", seed: 6 },
+    { name: "Kr\u016ft\u00ed rag\u00fa s celozrnn\u00fdmi t\u011bstovinami a parmez\u00e1nem", seed: 7 },
+    { name: "Vegansk\u00e9 kari tofu s kokosov\u00fdm ml\u00e9kem", seed: 8 },
+    { name: "Pe\u010den\u00fd pstruh s restovan\u00fdmi fazolkami", seed: 9 },
+    { name: "Pestr\u00e1 miska: \u010dern\u00e9 fazole, kuku\u0159ice, grilovan\u00e9 ku\u0159e", seed: 10 }
 ];
+
+const PAGE_LANG = (document.documentElement.lang || "cs").toLowerCase();
+const LOCALE = PAGE_LANG.startsWith("en") ? "en" : PAGE_LANG.startsWith("sk") ? "sk" : "cs";
+const LOCALE_COPY = {
+    sk: {
+        emptyChartPrompt: "Kliknite na jedlo",
+        foods: {
+            chicken: "Kuracie",
+            rice: "Ryza",
+            salad: "Salat",
+            avocado: "Avokado",
+            apple: "Jablko",
+            fries: "Hranolky",
+            burger: "Burger",
+            icecream: "Zmrzlina",
+            hotdog: "Parek",
+            donut: "Siska"
+        },
+        nuts: ["Energia", "Sacharidy", "Tuky", "Bielkoviny", "Vlaknina", "Cholesterol", "Sodik"],
+        categories: [
+            "Energia", "Bielkoviny", "Tuky", "Sacharidy", "Vlaknina", "Ovocie", "Zelenina", "Mliecne vyrobky", "Ryby",
+            "Nasytene tuky", "Mononenasytene tuky", "Polynenasytene tuky", "Cholesterol", "Vit. B1", "Vit. B2", "Vit. B6",
+            "Vit. B12", "Vit. C", "Vit. D", "Vit. E", "Kyselina listova", "Horcik", "Draslik", "Sodik", "Vapnik", "Zelezo"
+        ],
+        day: [
+            { name: "Ranajky", desc: "Ovsenna kasa, ovocie" },
+            { name: "Dopoludnajsia desiata", desc: "Jogurt a orechy" },
+            { name: "Popoludnajsia olovrant", desc: "Syr a jablko" },
+            { name: "Vecera", desc: "Pizza (velka)" }
+        ],
+        week: [
+            { name: "Pondelok", desc: "Zdravy start do tyzdna" },
+            { name: "Utorok", desc: "Jedlo v praci bez ovocia" },
+            { name: "Streda", desc: "Idealna rovnovaha" },
+            { name: "Stvrtok", desc: "Vecerne pivo a chipsy" },
+            { name: "Piatok", desc: "Cheat day - burger a cola" },
+            { name: "Sobota", desc: "Rodinny obed s kacicou" }
+        ],
+        complexMeals: [
+            "Losos s quinoou a pecenou brokolicou",
+            "Hovadzi steak so sladkym zemiakovym pyre a sparglou",
+            "Stredomorsky cicerovy salat s fetou a olivami",
+            "Kuraci filet s ryzou a mandlami",
+            "Tuniakovy tatarak s avokadom a sezamom",
+            "Pohankove rizoto s hubami",
+            "Morcacie ragu s celozrnnymi cestovinami a parmezanom",
+            "Veganske tofu kari s kokosovym mliekom",
+            "Peceny pstruh s restovanou zelenou fazulkou",
+            "Pestrofarebna miska: cierna fazula, kukurica, grilovane kura"
+        ]
+    },
+    en: {
+        emptyChartPrompt: "Click a food",
+        foods: {
+            chicken: "Chicken",
+            rice: "Rice",
+            salad: "Salad",
+            avocado: "Avocado",
+            apple: "Apple",
+            fries: "Fries",
+            burger: "Burger",
+            icecream: "Ice cream",
+            hotdog: "Hot dog",
+            donut: "Donut"
+        },
+        nuts: ["Energy", "Carbs", "Fats", "Protein", "Fiber", "Cholesterol", "Sodium"],
+        categories: [
+            "Energy", "Protein", "Fat", "Carbs", "Fiber", "Fruit", "Vegetables", "Dairy", "Fish",
+            "Saturated fat", "Monounsaturated fat", "Polyunsaturated fat", "Cholesterol", "Vit. B1", "Vit. B2", "Vit. B6",
+            "Vit. B12", "Vit. C", "Vit. D", "Vit. E", "Folate", "Magnesium", "Potassium", "Sodium", "Calcium", "Iron"
+        ],
+        day: [
+            { name: "Breakfast", desc: "Oatmeal, fruit" },
+            { name: "Morning snack", desc: "Yogurt and nuts" },
+            { name: "Afternoon snack", desc: "Cheese and apple" },
+            { name: "Dinner", desc: "Pizza (large)" }
+        ],
+        week: [
+            { name: "Monday", desc: "Healthy start to the week" },
+            { name: "Tuesday", desc: "Work meal without fruit" },
+            { name: "Wednesday", desc: "Ideal balance" },
+            { name: "Thursday", desc: "Evening beer and chips" },
+            { name: "Friday", desc: "Cheat day - burger and cola" },
+            { name: "Saturday", desc: "Family roast duck lunch" }
+        ],
+        complexMeals: [
+            "Salmon with quinoa and roasted broccoli",
+            "Beef steak with sweet potato puree and asparagus",
+            "Mediterranean chickpea salad with feta and olives",
+            "Chicken fillet with rice and almonds",
+            "Tuna tartare with avocado and sesame",
+            "Buckwheat risotto with mushrooms",
+            "Turkey ragout with wholegrain pasta and parmesan",
+            "Vegan tofu curry with coconut milk",
+            "Baked trout with sauteed green beans",
+            "Colorful bowl: black beans, corn, grilled chicken"
+        ]
+    }
+};
+const ACTIVE_LOCALE_COPY = LOCALE_COPY[LOCALE] || null;
+const EMPTY_CHART_PROMPT = ACTIVE_LOCALE_COPY?.emptyChartPrompt || "Klepn\u011bte na j\u00eddlo";
+
+if (ACTIVE_LOCALE_COPY) {
+    Object.entries(ACTIVE_LOCALE_COPY.foods).forEach(([key, value]) => {
+        if (DIET_FOODS[key]) DIET_FOODS[key].name = value;
+    });
+    ACTIVE_LOCALE_COPY.nuts.forEach((value, idx) => {
+        if (DIET_NUTS[idx]) DIET_NUTS[idx].label = value;
+    });
+    ACTIVE_LOCALE_COPY.categories.forEach((value, idx) => {
+        if (COMPLEX_CATEGORIES[idx]) COMPLEX_CATEGORIES[idx].label = value;
+    });
+    ACTIVE_LOCALE_COPY.day.forEach((value, idx) => {
+        if (STATIC_DATA.day[idx]) {
+            STATIC_DATA.day[idx].name = value.name;
+            STATIC_DATA.day[idx].desc = value.desc;
+        }
+    });
+    ACTIVE_LOCALE_COPY.week.forEach((value, idx) => {
+        if (STATIC_DATA.week[idx]) {
+            STATIC_DATA.week[idx].name = value.name;
+            STATIC_DATA.week[idx].desc = value.desc;
+        }
+    });
+    ACTIVE_LOCALE_COPY.complexMeals.forEach((value, idx) => {
+        if (COMPLEX_MEALS[idx]) COMPLEX_MEALS[idx].name = value;
+    });
+}
 
 function generateComplexData(seed) {
     const data = {};
     COMPLEX_CATEGORIES.forEach((cat, idx) => {
         let v = 90 + Math.sin(idx * 7 + seed) * 20 + Math.cos(idx * 3 + seed * 2) * 10 + (Math.sin(seed * idx) * 15);
-        if (cat.label === "Cholesterol" || cat.label === "Sodík" || cat.label === "Nasycené tuky") v = 50 + Math.abs(Math.sin(seed + idx)) * 40;
-        if (cat.label === "Vit. C" || cat.label === "Zelenina" || cat.label === "Ovoce") v = 100 + Math.abs(Math.sin(seed * 2)) * 40;
+        if (cat.key === "c9" || cat.key === "c12" || cat.key === "c23") v = 50 + Math.abs(Math.sin(seed + idx)) * 40;
+        if (cat.key === "c5" || cat.key === "c6" || cat.key === "c17") v = 100 + Math.abs(Math.sin(seed * 2)) * 40;
         data[cat.key] = v;
     });
     return data;
@@ -427,6 +555,8 @@ export function initDietSimulator() {
     if (weekGrid) { weekGrid.innerHTML = ''; STATIC_DATA.week.forEach(item => renderStaticCard(weekGrid, item)); }
 
     if (document.getElementById("complexChart")) {
+        const titleEl = document.getElementById("complexMealNameDisplay");
+        if (titleEl) titleEl.textContent = COMPLEX_MEALS[currentComplexMealIdx].name;
         renderComplexChart();
         requestAnimationFrame(loopStaticCanvases);
         if (!window.__complexMealInterval) {
