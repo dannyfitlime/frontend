@@ -61,13 +61,34 @@
     </header>
 
     <style>
-      .edu-chart-lg { width: 100%; height: 400px; margin: 32px 0 16px; }
+      .edu-chart-lg { width: 100%; height: 420px; margin: 24px 0 0; }
+      @media (max-width: 767px) { .edu-chart-lg { height: 320px; } }
       .edu-chart-md { width: 100%; height: 280px; }
       .edu-flex-row { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
       @media (min-width: 768px) {
         .edu-flex-row { flex-direction: row; align-items: center; }
         .edu-flex-row > * { flex: 1; min-width: 0; }
       }
+      .timing-visual { margin: 28px 0 22px; padding: 24px; border-radius: 20px; border: 1px solid rgba(15, 81, 50, 0.12); background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); box-shadow: 0 20px 50px rgba(15, 81, 50, 0.08); }
+      .timing-visual-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .timing-visual-header { grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.9fr); } }
+      .timing-visual-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(22, 163, 74, 0.1); color: #166534; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; }
+      .timing-visual-header h3 { margin: 12px 0 8px; font-size: clamp(1.35rem, 2vw, 1.8rem); color: #111827; }
+      .timing-visual-header p { margin: 0; color: #4b5563; }
+      .timing-visual-meta { padding: 16px 18px; border-radius: 16px; background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%); border: 1px solid rgba(22, 163, 74, 0.16); }
+      .timing-visual-meta strong { display: block; margin-bottom: 6px; color: #14532d; }
+      .timing-chart-stage-list { display: grid; gap: 14px; margin-top: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .timing-chart-stage-list { grid-template-columns: 1fr; } }
+      .timing-stage-card { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid rgba(17, 24, 39, 0.08); min-width: 0; }
+      .timing-stage-card strong { display: block; margin-bottom: 6px; color: #111827; }
+      .timing-stage-card p { margin: 0; color: #4b5563; font-size: 0.95rem; line-height: 1.55; }
+      .timing-stage-card.pre { border-top: 4px solid #2563eb; }
+      .timing-stage-card.performance { border-top: 4px solid #16a34a; }
+      .timing-stage-card.recovery { border-top: 4px solid #92400e; }
+      .timing-stage-tag { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+      .timing-stage-card.pre .timing-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .timing-stage-card.performance .timing-stage-tag { background: rgba(22, 163, 74, 0.12); color: #15803d; }
+      .timing-stage-card.recovery .timing-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
       .edu-fact-box {padding: 20px 24px; border-radius: 12px; border: 1px solid #005003; margin-top: 16px; }
       .edu-warning-box { background: #fff7ed; border: 1.5px solid #f97316; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
       .edu-warning-box strong { display: block; color: #c2410c; margin-bottom: 8px; }
@@ -80,15 +101,74 @@
       @media (max-width: 767px) { .checklist { grid-template-columns: 1fr; } }
       .checklist li { padding: 8px 12px; border: 2px solid #005003; border-radius: 8px; background: #fff; transition: transform 0.2s ease; display: flex; align-items: center; gap: 8px; }
       .checklist li:hover { transform: translateY(-1px); }
+      .timing-meal-grid { align-items: stretch; }
       .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
       .compare-table th, .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--seo-line); text-align: left; }
       .compare-table th { background: var(--seo-soft); }
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
-      .meal-card { background: var(--seo-soft); padding: 24px; border-radius: 12px; border: 1px solid var(--seo-line); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-      .meal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-      .meal-card h3 { margin-top: 0; }
+      .meal-card { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); padding: 28px; border-radius: 18px; border: 1px solid rgba(17, 24, 39, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.08); position: relative; overflow: hidden; }
+      .meal-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 6px; background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%); }
+      .meal-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.12); }
+      .meal-card h3 { margin: 0 0 10px; color: #111827; }
       .meal-card .macro-logic { font-weight: 600; color: #16a34a; margin-bottom: 16px; }
+      .meal-card p { margin: 0; color: #4b5563; }
+      .meal-card-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+      .meal-card-kicker { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; background: rgba(37, 99, 235, 0.12); color: #1d4ed8; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .meal-card-window { color: #1d4ed8; font-weight: 700; white-space: nowrap; }
+      .meal-card-goal { margin: 0 0 18px; padding: 14px 16px; border-radius: 14px; background: rgba(37, 99, 235, 0.08); color: #1e3a8a; }
+      .meal-card-goal strong { color: #1e3a8a; }
+      .meal-card.recovery::before { background: linear-gradient(180deg, #92400e 0%, #d97706 100%); }
+      .meal-card.recovery .meal-card-kicker { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .meal-card.recovery .meal-card-window { color: #92400e; }
+      .meal-card.recovery .meal-card-goal { background: rgba(146, 64, 14, 0.08); color: #78350f; }
+      .meal-card.recovery .meal-card-goal strong { color: #78350f; }
+      .hydration-panel { margin-top: 30px; padding: 28px; border-radius: 22px; background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 1px solid rgba(14, 165, 233, 0.16); box-shadow: 0 18px 44px rgba(14, 165, 233, 0.08); }
+      .hydration-panel-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .hydration-panel-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .hydration-panel-header h4 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #0f172a; }
+      .hydration-panel-header p { margin: 0; color: #475569; }
+      .hydration-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(14, 165, 233, 0.12); color: #0369a1; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-highlight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.7); border: 1px solid rgba(14, 165, 233, 0.14); }
+      .hydration-highlight strong { display: block; margin-bottom: 6px; color: #0c4a6e; }
+      .hydration-stage-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .hydration-stage-grid { grid-template-columns: 1fr; } }
+      .hydration-stage { padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.88); border: 1px solid rgba(14, 165, 233, 0.12); min-width: 0; }
+      .hydration-stage h5 { margin: 0 0 8px; color: #0f172a; font-size: 1.02rem; }
+      .hydration-stage p { margin: 0; color: #475569; line-height: 1.6; }
+      .hydration-stage-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+      .hydration-stage.pre .hydration-stage-tag { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+      .hydration-stage.during .hydration-stage-tag { background: rgba(14, 165, 233, 0.12); color: #0369a1; }
+      .hydration-stage.post .hydration-stage-tag { background: rgba(146, 64, 14, 0.12); color: #92400e; }
+      .hydration-stage-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(148, 163, 184, 0.25); color: #334155; font-weight: 600; font-size: 0.92rem; }
+      .carb-loading-panel { margin-top: 24px; padding: 28px; border-radius: 22px; border: 1px solid rgba(217, 119, 6, 0.14); box-shadow: 0 18px 44px rgba(146, 64, 14, 0.08); }
+      .carb-loading-header { display: grid; gap: 18px; align-items: start; }
+      @media (min-width: 900px) { .carb-loading-header { grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr); } }
+      .carb-loading-kicker { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; background: rgba(217, 119, 6, 0.12); color: #b45309; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-header h3 { margin: 10px 0 10px; font-size: clamp(1.3rem, 2vw, 1.7rem); color: #111827; }
+      .carb-loading-header p { margin: 0; color: #4b5563; }
+      .carb-loading-insight { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(217, 119, 6, 0.16); }
+      .carb-loading-insight strong { display: block; margin-bottom: 6px; color: #92400e; }
+      .carb-loading-grid { display: grid; gap: 16px; margin-top: 22px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .carb-loading-grid { grid-template-columns: 1fr; } }
+      .carb-loading-card { padding: 22px; border-radius: 18px; background: rgba(255,255,255,0.9); border: 1px solid rgba(148, 163, 184, 0.16); }
+      .carb-loading-card h4 { margin: 0 0 10px; color: #111827; }
+      .carb-loading-card p { margin: 0; color: #4b5563; line-height: 1.6; }
+      .carb-loading-card.yes { border-top: 4px solid #d97706; }
+      .carb-loading-card.no { border-top: 4px solid #64748b; }
+      .carb-loading-tag { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+      .carb-loading-card.yes .carb-loading-tag { background: rgba(217, 119, 6, 0.12); color: #b45309; }
+      .carb-loading-card.no .carb-loading-tag { background: rgba(100, 116, 139, 0.12); color: #475569; }
+      .training-bag-grid { align-items: stretch; gap: 28px; }
+      .training-bag-copy { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 24px; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.06); }
+      @media (min-width: 768px) { .training-bag-copy { flex: 1.2; } }
+      .training-bag-copy .checklist { margin-top: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      @media (max-width: 767px) { .training-bag-copy .checklist { grid-template-columns: 1fr; } }
+      .training-bag-copy .checklist li { min-height: 54px; }
+      .training-bag-media { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border: 1px solid rgba(17, 24, 39, 0.08); border-radius: 20px; padding: 18px; box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06); }
+      @media (min-width: 768px) { .training-bag-media { flex: 0 0 min(320px, 34%); } }
+      .training-bag-media img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px; }
+      .training-bag-note { margin-top: 12px; color: #475569; font-size: 0.94rem; line-height: 1.55; }
       .mistakes-card { background: #fef2f2; border: 2px solid #dc2626; border-radius: 12px; padding: 24px; margin: 24px 0; }
       .mistakes-card h4 { color: #dc2626; margin-top: 0; }
       .mistakes-card ul { list-style: none; padding: 0; }
@@ -114,39 +194,109 @@
       <section class="seo-section fade-in">
         <h2>Timing jídla kolem výkonu</h2>
         <p>Jídlo před, během a po výkonu neřeší jen hlad. Ovlivňuje energii, schopnost držet tempo i to, jak rychle se vrátíte zpět do tréninku další den.</p>
-        <div class="edu-chart-lg"><canvas id="timingChart"></canvas></div>
+        <div class="timing-visual">
+          <div class="timing-visual-header">
+            <div>
+              <span class="timing-visual-kicker">Modelový tréninkový den</span>
+              <h3>Jak rozložit energii kolem výkonu</h3>
+              <p>Ideální průběh není o jednom perfektním jídle, ale o správném rytmu. Před výkonem doplnit energii, během zátěže nepřestřelit žaludek a po tréninku rychle nastartovat obnovu.</p>
+            </div>
+            <div class="timing-visual-meta">
+              <strong>Co ten graf říká v praxi</strong>
+              <span>Když necháte před tréninkem příliš dlouhou pauzu nebo dáte těžké jídlo na poslední chvíli, výkon i regenerace jdou dolů.</span>
+            </div>
+          </div>
+          <div class="edu-chart-lg"><canvas id="timingChart"></canvas></div>
+          <div class="timing-chart-stage-list" aria-label="Fáze jídla kolem výkonu">
+            <article class="timing-stage-card pre">
+              <span class="timing-stage-tag">Před výkonem</span>
+              <strong>1-2 hodiny před startem</strong>
+              <p>Lehké sacharidy, menší dávka bílkovin a minimum tuku nebo vlákniny, aby energie přišla včas a žaludek zůstal v klidu.</p>
+            </article>
+            <article class="timing-stage-card performance">
+              <span class="timing-stage-tag">Výkon</span>
+              <strong>Během zátěže podle délky</strong>
+              <p>Krátký trénink často vystačí s tekutinami. U delší nebo intenzivní zátěže dává smysl doplnit sodík a rychlé sacharidy.</p>
+            </article>
+            <article class="timing-stage-card recovery">
+              <span class="timing-stage-tag">Regenerace</span>
+              <strong>Do 45 minut po výkonu</strong>
+              <p>Sacharidy, bílkoviny a tekutiny pomáhají rychleji doplnit zásoby, snížit únavu a připravit tělo na další trénink.</p>
+            </article>
+          </div>
+        </div>
         <div class="edu-callout">
           <strong>💡 Klíčový insight:</strong> Chybou není pouze špatná potravina, ale i špatný čas. Těžké jídlo těsně před výkonem zatíží trávení, příliš dlouhé hladovění zase srazí výkon a koncentraci.
         </div>
-        <div class="edu-flex-row">
+        <div class="edu-flex-row timing-meal-grid">
           <div class="meal-card">
-            <h3>🕒 Před tréninkem (1-2 hodiny)</h3>
-            <p>Lehce stravitelné sacharidy a menší dávka bílkovin pro energii bez těžkého žaludku.</p>
+            <div class="meal-card-head">
+              <div>
+                <h3>🕒 Před tréninkem</h3>
+              </div>
+              <span class="meal-card-kicker">1-2 hodiny před výkonem</span>
+            </div>
+            <p class="meal-card-goal"><strong>Cíl:</strong> dodat rychle dostupnou energii bez těžkého žaludku a bez výkyvu, který vás po startu zbrzdí.</p>
+            <p>Lehce stravitelné sacharidy a menší dávka bílkovin fungují nejlépe. Tuk a velké množství vlákniny nechte spíš dál od tréninku.</p>
             <ul class="checklist">
-              <li>Jogurt s banánem</li>
-              <li>Toast se šunkou</li>
-              <li>Kaše</li>
-              <li>Rýžové chlebíčky</li>
+              <li>🍌 Jogurt s banánem</li>
+              <li>🍞 Toast se sýrem a šunkou</li>
+              <li>🥣 Ovesná kaše</li>
+              <li>🍘 Rýžové chlebíčky</li>
+              <li>🍎 Ovoce či smoothie</li>
+              <li>🥜 Müsli tyčinka</li>
             </ul>
           </div>
-          <div class="meal-card">
-            <h3>🏃 Po tréninku (do 45 min)</h3>
-            <p>Doplnit bílkoviny a sacharidy pro rychlejší obnovu glykogenu po náročnějším výkonu.</p>
+          <div class="meal-card recovery">
+            <div class="meal-card-head">
+              <div>
+                <h3>🏃 Po tréninku</h3>
+              </div>
+              <span class="meal-card-kicker">Po výkonu</span>
+            </div>
+            <p class="meal-card-goal"><strong>Cíl:</strong> vrátit tělu sacharidy, bílkoviny a tekutiny dřív, než únava zbytečně prodlouží regeneraci.</p>
+            <p>Po náročnějším výkonu má smysl nečekat na velké jídlo později, ale poslat tělu jednoduchý první krok k obnově hned po tréninku.</p>
             <ul class="checklist">
-              <li>Peanut butter + ovoce</li>
-              <li>Rýže s kuřetem</li>
-              <li>Skyr a müsli</li>
-              <li>Tortila s masem</li>
+              <li>🍝 Těstoviny s rajčaty a tuňákem</li>
+              <li>🥣 Tvaroh s ovocem a medem</li>
+              <li>🍳 Vejce s chlebem a zeleninou</li>
+              <li>🥪 Toast se šunkou a sýrem</li>
+              <li>🥔 Brambory s kuřecím masem</li>
+              <li>🥯 Bagel s araš. máslem</li>
             </ul>
           </div>
         </div>
-        <div style="margin-top: 24px;">
-          <h4>Hydratace a elektrolyty</h4>
-          <p>Při pocení neztrácíte jen vodu, ale i sodík a další minerály. Proto někdy nestačí pouze pít víc, ale pít chytřeji.</p>
-          <div class="seo-grid" style="margin-top: 16px;">
-            <article class="seo-mini-card"><h5>Před výkonem</h5><p>Nepřicházejte na trénink už dehydrovaní. Začněte doplňovat tekutiny průběžně během dne.</p></article>
-            <article class="seo-mini-card"><h5>Během výkonu</h5><p>U delší nebo horké zátěže dává smysl voda se sodíkem, případně ionťák s jednoduchými sacharidy.</p></article>
-            <article class="seo-mini-card"><h5>Po výkonu</h5><p>Pokud jste hodně propocení, zaměřte se nejen na vodu, ale i na jídlo nebo nápoj, který doplní elektrolyty.</p></article>
+        <div class="hydration-panel">
+          <div class="hydration-panel-header">
+            <div>
+              <span class="hydration-kicker">Hydratace a elektrolyty</span>
+              <h4>Nestačí jen pít víc. Potřebujete pít ve správný moment.</h4>
+              <p>Při pocení neztrácíte jen vodu, ale i sodík a další minerály. Když doplňujete tekutiny bez kontextu, můžete být pořád unavení, těžcí nebo zpomalení, i když “hodně pijete”.</p>
+            </div>
+            <div class="hydration-highlight">
+              <strong>Nejčastější chyba</strong>
+              <span>Celý den pít málo a pak to dohánět těsně před tréninkem nebo až po něm. Tělo funguje lépe, když hydratace běží průběžně.</span>
+            </div>
+          </div>
+          <div class="hydration-stage-grid">
+            <article class="hydration-stage pre">
+              <span class="hydration-stage-tag">Před výkonem</span>
+              <h5>Přijďte už připravení</h5>
+              <p>Nepřicházejte na trénink dehydrovaní. Tekutiny doplňujte průběžně během dne a před startem už jen dolaďujte, nehaste deficit na poslední chvíli.</p>
+              <div class="hydration-stage-note">Pro většinu lidí funguje nejlépe pravidelný pitný režim, ne velká dávka naráz.</div>
+            </article>
+            <article class="hydration-stage during">
+              <span class="hydration-stage-tag">Během výkonu</span>
+              <h5>Délka a podmínky rozhodují</h5>
+              <p>U delší, intenzivní nebo horké zátěže dává smysl voda se sodíkem, případně ionťák s jednoduchými sacharidy. Kratší trénink často zvládnete i bez speciálního řešení.</p>
+              <div class="hydration-stage-note">Čím víc se potíte, tím víc je důležitý sodík, ne jen samotná voda.</div>
+            </article>
+            <article class="hydration-stage post">
+              <span class="hydration-stage-tag">Po výkonu</span>
+              <h5>Obnova nezačíná až večer</h5>
+              <p>Pokud jste hodně propocení, zaměřte se nejen na vodu, ale i na jídlo nebo nápoj, který doplní elektrolyty. Jen čistá voda po těžké zátěži často nestačí.</p>
+              <div class="hydration-stage-note">Kombinace tekutin, sodíku a jídla vrátí tělo rychleji do normálu.</div>
+            </article>
           </div>
         </div>
       </section>
@@ -185,10 +335,30 @@
 
       <section class="seo-section fade-in">
         <h2>Carb loading</h2>
-        <p>Navýšení sacharidů před dlouhým závodem nebo velmi náročným výkonem má smysl hlavně tam, kde rozhodují zásoby svalového glykogenu. Není to nástroj pro každý běžný trénink.</p>
-        <div class="seo-grid">
-          <article class="seo-mini-card"><h3>Kdy ano</h3><p>Před půlmaratonem, maratonem, dlouhým cyklistickým závodem nebo vícehodinovým výkonem.</p></article>
-          <article class="seo-mini-card"><h3>Kdy ne</h3><p>Pro 60minutový trénink v posilovně nebo běžný výklus obvykle není potřeba dělat speciální sacharidové manévry.</p></article>
+        <div class="carb-loading-panel">
+          <div class="carb-loading-header">
+            <div>
+              <span class="carb-loading-kicker">Před dlouhým výkonem</span>
+              <h3>Carb loading dává smysl jen tehdy, když opravdu rozhodují zásoby glykogenu</h3>
+              <p>Navýšení sacharidů před dlouhým závodem nebo velmi náročným výkonem může pomoct oddálit únavu a lépe podržet tempo. Není to ale univerzální trik pro každý tréninkový den.</p>
+            </div>
+            <div class="carb-loading-insight">
+              <strong>Praktický princip</strong>
+              <span>Když výkon netrvá dost dlouho, tělo extra sacharidy často ani nevyužije. V takovém případě zbytečně komplikujete jídelníček bez reálného přínosu.</span>
+            </div>
+          </div>
+          <div class="carb-loading-grid">
+            <article class="carb-loading-card yes">
+              <span class="carb-loading-tag">Kdy ano</span>
+              <h4>Když vás čeká dlouhá nebo extrémní zátěž</h4>
+              <p>Před půlmaratonem, maratonem, dlouhým cyklistickým závodem nebo vícehodinovým výkonem, kde zásoby svalového glykogenu skutečně ovlivňují výsledek.</p>
+            </article>
+            <article class="carb-loading-card no">
+              <span class="carb-loading-tag">Kdy ne</span>
+              <h4>Pro běžný trénink je to zbytečné</h4>
+              <p>Pro 60minutový trénink v posilovně, běžný výklus nebo kratší sportovní jednotku obvykle není potřeba dělat speciální sacharidové manévry.</p>
+            </article>
+          </div>
         </div>
       </section>
       <section class="seo-section fade-in">
@@ -207,14 +377,22 @@
       <section class="seo-section fade-in">
         <h2>Co mít v batohu na trénink</h2>
         <p>Dobrá příprava snižuje riziko, že po tréninku skončíte bez jídla, bez pití a s první náhodnou volbou po cestě.</p>
-        <ul class="checklist">
-          <li>Jablko nebo jiné snadno stravitelné ovoce</li>
-          <li>Musli tyčinka pro rychlé cukry</li>
-          <li>Láhev s vodou a náhradní porce na delší den</li>
-          <li>Ionťák nebo tablety s elektrolyty</li>
-          <li>Oříšky jako zdroj bílkovin a zdravých tuků</li>
-          <li>Lžičku, abyste mohli jíst cokoli a kdykoli</li>
-        </ul>
+        <div class="edu-flex-row training-bag-grid">
+          <div class="training-bag-copy">
+            <ul class="checklist">
+              <li>🍎 Jablko nebo jiné snadno stravitelné ovoce</li>
+              <li>🍫 Musli tyčinka pro rychlé cukry</li>
+              <li>💧 Láhev s vodou a náhradní porce na delší den</li>
+              <li>⚡ Ionťák nebo tablety s elektrolyty</li>
+              <li>🥜 Oříšky jako zdroj bílkovin a zdravých tuků</li>
+              <li>🥄 Lžičku, abyste mohli jíst cokoli a kdykoli</li>
+            </ul>
+          </div>
+          <div class="training-bag-media">
+            <img src="/images/sports_bag.jpg" alt="Sportovní batoh s jídlem a pitím na trénink">
+            <p class="training-bag-note">Když máte základ po ruce, nemusíte po tréninku improvizovat ani sahat po první náhodné variantě cestou domů.</p>
+          </div>
+        </div>
       </section>
 
       <section class="seo-section fade-in">
@@ -280,13 +458,39 @@
       Chart.defaults.color = '#4b5563';
       new Chart(document.getElementById('timingChart'), {
         type: 'line',
-        data: { labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00'], datasets: [{ label: 'Energie / výkon', data: [55, 78, 70, 62, 88, 96, 74, 58], borderColor: '#0f5132', backgroundColor: 'rgba(15,81,50,0.12)', fill: true, tension: 0.35, borderWidth: 3, pointRadius: 4 }] },
+        data: {
+          labels: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00', '21:00'],
+          datasets: [{
+            label: 'Energie / výkon',
+            data: [55, 78, 70, 62, 88, 96, 74, 58],
+            borderColor: '#0f5132',
+            backgroundColor: 'rgba(15,81,50,0.12)',
+            fill: true,
+            tension: 0.35,
+            borderWidth: 3,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            pointBackgroundColor: '#ffffff',
+            pointBorderWidth: 3,
+            pointBorderColor: '#0f5132'
+          }]
+        },
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: {
+            padding: { top: 16, right: 18, bottom: 8, left: 8 }
+          },
+          interaction: {
+            mode: 'index',
+            intersect: false
+          },
           plugins: {
             legend: { display: false },
             tooltip: {
+              displayColors: false,
+              backgroundColor: '#111827',
+              padding: 12,
               callbacks: {
                 afterLabel(context) {
                   const notes = { 1: 'Snídaně / první větší jídlo', 4: 'Předtréninkové jídlo', 5: 'Trénink', 6: 'Potréninkové jídlo' };
@@ -296,58 +500,66 @@
             },
             annotation: {
               annotations: {
-                trainingWindow: {
+                preWindow: {
                   type: 'box',
-                  xMin: 4.5,
-                  xMax: 5.5,
+                  xMin: 0.5,
+                  xMax: 4.5,
                   yMin: 40,
                   yMax: 100,
-                  backgroundColor: 'rgba(22, 163, 74, 0.1)',
-                  borderColor: 'rgba(22, 163, 74, 0.3)',
+                  backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                  borderColor: 'rgba(37, 99, 235, 0.16)',
                   borderWidth: 1,
                   label: {
-                    content: 'Tréninkové okno',
+                    content: 'Před výkonem',
                     enabled: true,
-                    position: 'center',
-                    backgroundColor: 'rgba(22, 163, 74, 0.9)',
+                    position: 'start',
+                    yAdjust: 10,
+                    backgroundColor: 'rgba(37, 99, 235, 0.9)',
                     color: 'white',
                     font: { size: 12, weight: 'bold' },
                     padding: 6,
                     cornerRadius: 4
                   }
                 },
-                beforeLabel: {
-                  type: 'label',
-                  xValue: 2,
-                  yValue: 85,
-                  content: 'Před',
-                  backgroundColor: 'rgba(59, 130, 246, 0.9)',
-                  color: 'white',
-                  font: { size: 11, weight: 'bold' },
-                  padding: 4,
-                  cornerRadius: 3
+                trainingWindow: {
+                  type: 'box',
+                  xMin: 4.5,
+                  xMax: 5.5,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(22, 163, 74, 0.12)',
+                  borderColor: 'rgba(22, 163, 74, 0.3)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Výkon',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(22, 163, 74, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
                 },
-                performanceLabel: {
-                  type: 'label',
-                  xValue: 5,
-                  yValue: 92,
-                  content: 'Výkon',
-                  backgroundColor: 'rgba(22, 163, 74, 0.9)',
-                  color: 'white',
-                  font: { size: 11, weight: 'bold' },
-                  padding: 4,
-                  cornerRadius: 3
-                },
-                recoveryLabel: {
-                  type: 'label',
-                  xValue: 7,
-                  yValue: 75,
-                  content: 'Regenerace',
-                  backgroundColor: 'rgba(139, 69, 19, 0.9)',
-                  color: 'white',
-                  font: { size: 11, weight: 'bold' },
-                  padding: 4,
-                  cornerRadius: 3
+                recoveryWindow: {
+                  type: 'box',
+                  xMin: 5.5,
+                  xMax: 7,
+                  yMin: 40,
+                  yMax: 100,
+                  backgroundColor: 'rgba(146, 64, 14, 0.08)',
+                  borderColor: 'rgba(146, 64, 14, 0.2)',
+                  borderWidth: 1,
+                  label: {
+                    content: 'Regenerace',
+                    enabled: true,
+                    position: 'center',
+                    backgroundColor: 'rgba(146, 64, 14, 0.92)',
+                    color: 'white',
+                    font: { size: 12, weight: 'bold' },
+                    padding: 6,
+                    cornerRadius: 4
+                  }
                 }
               }
             }
@@ -356,10 +568,12 @@
             y: { 
               min: 40, 
               max: 100, 
-              title: { display: true, text: 'subjektivní energie' },
+              title: { display: true, text: 'připravenost / energie' },
+              ticks: { stepSize: 10 },
               grid: { color: 'rgba(0,0,0,0.05)' }
             },
             x: {
+              title: { display: true, text: 'čas dne' },
               grid: { color: 'rgba(0,0,0,0.05)' }
             }
           }
