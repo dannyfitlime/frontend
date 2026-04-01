@@ -39,6 +39,11 @@ function get(obj, path){
   return path.split('.').reduce((o,k)=>o?.[k], obj); 
 }
 
+function resolvePreviewLang(lang, override){
+  if (override) return override;
+  return ['cs','sk','en'].includes(lang) ? lang : 'en';
+}
+
 // NaŽÖtenÆí EN fallbacku pro p‘teklad
 async function ensureFallback(){
   if (i18n.fallback) return;
@@ -88,13 +93,15 @@ export function applyI18n(root=document){
   });
   root.querySelectorAll('[data-i18n-preview]').forEach(el=>{
     const file = el.getAttribute('data-i18n-preview');
-    const path = `/images/preview/${i18n.lang}/${file}`;
+    const previewLang = resolvePreviewLang(i18n.lang, el.getAttribute('data-i18n-preview-lang'));
+    const path = `/images/preview/${previewLang}/${file}`;
     if (el.tagName === 'A') el.setAttribute('href', path);
     else if (el.tagName === 'IMG') el.setAttribute('src', path);
   });
   root.querySelectorAll('[data-i18n-preview-thumb]').forEach(el=>{
     const file = el.getAttribute('data-i18n-preview-thumb');
-    const path = `/images/preview/${i18n.lang}/thumbs/${file}`;
+    const previewLang = resolvePreviewLang(i18n.lang, el.getAttribute('data-i18n-preview-thumb-lang'));
+    const path = `/images/preview/${previewLang}/thumbs/${file}`;
     if (el.tagName === 'IMG') el.setAttribute('src', path);
   });
   root.querySelectorAll('[data-i18n-og-image]').forEach(el => {

@@ -78,14 +78,14 @@
     },
     "preview": {
       "title": "Sports meal plan preview",
-      "lead": "The purchased plan includes a detailed PDF delivered after completion. This document guides you through the plan and offers clear instructions on how to use it. It contains these main parts:",
+      "lead": "Your order includes a detailed PDF document that will be delivered to you once it is completed. This document will guide you through the entire plan and provide clear instructions on how to use it.",
       "tags": {
-        "tag0": "1) Intro overview explaining how to use the plan",
-        "tag1": "2) Charts of intake vs. expenditure including the training plan",
-        "tag2": "3) Meal plan tailored to your parameters (sample of 1 day only)",
-        "tag3": "4) Complete nutritional overview of all tracked nutrients",
-        "tag4": "5) Smart shopping list with links to Rohlik.cz",
-        "tag5": "6) Recipes and recommendations on how to work with the plan correctly"
+        "tag0": "0) Information on how to use the plan",
+        "tag1": "1) Energy balance charts",
+        "tag2": "2) Daily meal plan",
+        "tag3": "3) Overall overview of nutritional values",
+        "tag4": "4) Grocery shopping list",
+        "tag5": "5) Recipe cookbook"
       }
     },
     "diet": {

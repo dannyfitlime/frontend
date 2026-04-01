@@ -73,12 +73,12 @@
       "title": "Esempio di piano alimentare sportivo",
       "lead": "Il piano ordinato include un file PDF dettagliato che ti verrà inviato dopo il completamento. Questo documento ti guida attraverso l'intero piano e ti dà istruzioni chiare su come utilizzarlo. Contiene le seguenti parti principali:",
       "tags": {
-        "tag0": "1) Riepilogo introduttivo con spiegazione su come usare il piano",
-        "tag1": "2) Grafici dell'apporto energetico vs. dispendio, incluso piano di allenamento",
-        "tag2": "3) Piano alimentare su misura dei tuoi parametri (esempio di 1 solo giorno)",
-        "tag3": "4) Riepilogo nutrizionale completo di tutti i nutrienti monitorati",
-        "tag4": "5) Lista della spesa intelligente con link a Rohlík.cz",
-        "tag5": "6) Ricette e raccomandazioni su come lavorare correttamente con il piano"
+        "tag0": "0) Informazioni su come usare il piano",
+        "tag1": "1) Grafici del bilancio energetico",
+        "tag2": "2) Piano alimentare per ogni giorno",
+        "tag3": "3) Panoramica generale dei valori nutrizionali",
+        "tag4": "4) Lista della spesa degli alimenti",
+        "tag5": "5) Ricettario con ricette"
       }
     },
     "diet": {

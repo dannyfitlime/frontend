@@ -73,12 +73,12 @@
       "title": "Ejemplo de menú deportivo",
       "lead": "El plan que pidas incluye un archivo PDF detallado que recibirás tras su elaboración. Este documento te guía por todo el plan y te ofrece instrucciones claras para usarlo. Contiene las siguientes partes principales:",
       "tags": {
-        "tag0": "1) Resumen inicial con explicación de cómo usar el plan",
-        "tag1": "2) Gráficos de ingesta vs. gasto energético, incluyendo el plan de entrenamiento",
-        "tag2": "3) Menú ajustado a tus parámetros (ejemplo de solo 1 día)",
-        "tag3": "4) Resumen nutricional completo de todos los nutrientes monitorizados",
-        "tag4": "5) Lista de la compra inteligente con enlaces a Rohlík.cz",
-        "tag5": "6) Recetas y recomendaciones sobre cómo trabajar con el plan"
+        "tag0": "0) Información sobre cómo trabajar con el plan",
+        "tag1": "1) Gráficos del balance energético",
+        "tag2": "2) Plan de comidas para cada día",
+        "tag3": "3) Resumen general de los valores nutricionales",
+        "tag4": "4) Lista de compra de alimentos",
+        "tag5": "5) Recetario con recetas"
       }
     },
     "diet": {

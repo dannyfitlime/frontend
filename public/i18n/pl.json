@@ -73,12 +73,12 @@
       "title": "Przykładowy sportowy plan żywieniowy",
       "lead": "Zamówiony plan zawiera szczegółowy plik PDF, który zostanie wysłany po jego przygotowaniu. Dokument ten przeprowadzi Państwa przez cały plan i da jasne instrukcje, jak z niego korzystać. Zawiera następujące główne części:",
       "tags": {
-        "tag0": "1) Wstępne podsumowanie z wyjaśnieniem, jak korzystać z planu",
-        "tag1": "2) Wykresy podaży a wydatku energetycznego, włącznie z planem treningowym",
-        "tag2": "3) Plan żywieniowy dostosowany do Państwa parametrów (przykład tylko 1 dnia)",
-        "tag3": "4) Pełne podsumowanie żywieniowe wszystkich monitorowanych składników",
-        "tag4": "5) Inteligentna lista zakupów z linkami do Rohlík.cz",
-        "tag5": "6) Przepisy i zalecenia dotyczące właściwej pracy z planem"
+        "tag0": "0) Informacje, jak korzystać z planu",
+        "tag1": "1) Wykresy bilansu energetycznego",
+        "tag2": "2) Jadłospis na każdy dzień",
+        "tag3": "3) Ogólny przegląd wartości odżywczych",
+        "tag4": "4) Lista zakupów produktów spożywczych",
+        "tag5": "5) Książka kucharska z przepisami"
       }
     },
     "diet": {

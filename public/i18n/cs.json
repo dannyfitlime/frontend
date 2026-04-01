@@ -78,14 +78,14 @@
     },
     "preview": {
       "title": "Ukázka sportovního jídelníčku",
-      "lead": "Objednaný plán zahrnuje detailně zpracovaný PDF soubor, který Vám bude doručen po jeho dokončení. Tento dokument Vás provede celým plánem a nabídne jasné pokyny k jeho používání. Obsahuje tyto hlavní části:",
+      "lead": "Objednaný plán zahrnuje detailně zpracovaný PDF soubor, který Vám bude doručen po jeho dokončení. Tento dokument Vás provede celým plánem a nabídne jasné pokyny k jeho používání.",
       "tags": {
-        "tag0": "1) Úvodní přehled s vysvětlením, jak plán používat",
-        "tag1": "2) Grafy příjmu vs. výdeje energie včetně tréninkového plánu",
-        "tag2": "3) Jídelníček na míru Vaším parametrům (ukázka pouze 1 dne)",
-        "tag3": "4) Kompletní nutriční přehled všech sledovaných živin",
-        "tag4": "5) Chytrý nákupní seznam s odkazy na Rohlík.cz",
-        "tag5": "6) Kuchařka s se zdravými recepty, které jsou v plánu použity"
+        "tag0": "0) Informace, jak s plánem pracovat",
+        "tag1": "1) Grafy energetické bilance",
+        "tag2": "2) Jídelníček na každý den",
+        "tag3": "3) Celkový přehled výživových hodnot",
+        "tag4": "4) Nákupní seznam potravin",
+        "tag5": "5) Kuchačka s recepty"
       }
     },
     "diet": {

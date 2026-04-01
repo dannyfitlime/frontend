@@ -73,12 +73,12 @@
       "title": "Beispiel eines Sporternährungsplans",
       "lead": "Der bestellte Plan umfasst eine detailliert ausgearbeitete PDF-Datei, die Ihnen nach Fertigstellung zugesendet wird. Dieses Dokument führt Sie durch den gesamten Plan und bietet klare Anweisungen zu seiner Anwendung. Es enthält folgende Hauptteile:",
       "tags": {
-        "tag0": "1) Einleitende Übersicht mit Erklärung, wie der Plan zu verwenden ist",
-        "tag1": "2) Grafiken von Energieaufnahme vs. -verbrauch inklusive Trainingsplan",
-        "tag2": "3) Ernährungsplan, maßgeschneidert auf Ihre Parameter (Beispiel nur eines Tages)",
-        "tag3": "4) Vollständige Nährstoffübersicht aller verfolgten Nährstoffe",
-        "tag4": "5) Intelligente Einkaufsliste mit Links zu Rohlík.cz",
-        "tag5": "6) Rezepte und Empfehlungen, wie Sie mit dem Plan richtig arbeiten"
+        "tag0": "0) Informationen zur Arbeit mit dem Plan",
+        "tag1": "1) Grafiken der Energiebilanz",
+        "tag2": "2) Ernährungsplan für jeden Tag",
+        "tag3": "3) Gesamtübersicht der Nährwerte",
+        "tag4": "4) Einkaufsliste für Lebensmittel",
+        "tag5": "5) Kochbuch mit Rezepten"
       }
     },
     "diet": {

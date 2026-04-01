@@ -73,12 +73,12 @@
       "title": "Exemplo de plano alimentar desportivo",
       "lead": "O plano encomendado inclui um ficheiro PDF detalhado que será enviado após a sua conclusão. Este documento guia-o através de todo o plano e dá-lhe instruções claras para o utilizar. Contém as seguintes partes principais:",
       "tags": {
-        "tag0": "1) Resumo introdutório com explicação de como usar o plano",
-        "tag1": "2) Gráficos de ingestão vs. gasto de energia, incluindo plano de treino",
-        "tag2": "3) Plano alimentar à medida dos seus parâmetros (exemplo de apenas 1 dia)",
-        "tag3": "4) Resumo nutricional completo de todos os nutrientes acompanhados",
-        "tag4": "5) Lista de compras inteligente com links para Rohlík.cz",
-        "tag5": "6) Receitas e recomendações sobre como trabalhar corretamente com o plano"
+        "tag0": "0) Informações sobre como usar o plano",
+        "tag1": "1) Gráficos do balanço energético",
+        "tag2": "2) Plano alimentar para cada dia",
+        "tag3": "3) Visão geral dos valores nutricionais",
+        "tag4": "4) Lista de compras de alimentos",
+        "tag5": "5) Livro de receitas"
       }
     },
     "diet": {

@@ -73,12 +73,12 @@
       "title": "Aperçu d’un menu sportif",
       "lead": "Le plan commandé comprend un fichier PDF détaillé qui vous sera envoyé une fois terminé. Ce document vous guide à travers tout le plan et vous donne des instructions claires pour l’utiliser. Il contient les parties principales suivantes :",
       "tags": {
-        "tag0": "1) Vue d’ensemble avec explication sur l’utilisation du plan",
-        "tag1": "2) Graphiques des apports et dépenses d’énergie, y compris le plan d’entraînement",
-        "tag2": "3) Menu personnalisé selon vos paramètres (aperçu d’une seule journée)",
-        "tag3": "4) Aperçu complet de tous les nutriments suivis",
-        "tag4": "5) Liste de courses intelligente avec liens vers Rohlík.cz",
-        "tag5": "6) Recettes et recommandations pour bien utiliser le plan"
+        "tag0": "0) Informations sur l'utilisation du plan",
+        "tag1": "1) Graphiques du bilan énergétique",
+        "tag2": "2) Plan de repas pour chaque jour",
+        "tag3": "3) Vue d'ensemble des valeurs nutritionnelles",
+        "tag4": "4) Liste de courses des aliments",
+        "tag5": "5) Livre de recettes"
       }
     },
     "diet": {
