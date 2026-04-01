@@ -5,8 +5,10 @@ coverage/
 .eslintcache
 
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.development.example
+!.env.production.example
 *.local
 
 npm-debug.log*
