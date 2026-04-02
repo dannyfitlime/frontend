@@ -256,65 +256,65 @@
       "cta": "Iniciar formulário",
       "note": "Sem compromisso, escolhe mais tarde na encomenda."
     },
-    "faq": {
-      "title": "FAQ – Perguntas frequentes",
-      "q1": {
-        "q": "Como vou receber o plano alimentar?",
-        "a": "Enviamos o plano alimentar para o seu e-mail em formato PDF, incluindo tabelas e gráficos claros."
-      },
-      "q2": {
-        "q": "Vou precisar de alimentos especiais?",
-        "a": "Não, as receitas baseiam-se em ingredientes comuns disponíveis no supermercado. Para cada ingrediente recebe também um link para o Rohlík.cz para uma compra online rápida."
-      },
-      "q3": {
-        "q": "Durante quanto tempo posso usar o plano?",
-        "a": "Normalmente preparamos um plano para 7 dias, com 35 refeições únicas. Pode repeti-lo ou adaptá-lo conforme necessário."
-      },
-      "q4": {
-        "q": "As listas de compras estão incluídas?",
-        "a": "Sim, preparamos uma lista de compras clara para toda a semana – incluindo links diretos para compra dos produtos no Rohlík.cz."
-      },
-      "q5": {
-        "q": "E se eu não tiver balança de cozinha?",
-        "a": "Indicamos as porções em gramas, mas muitas vezes bastam medidas aproximadas (colheres, chávenas, unidades). Não é necessário pesar todos os alimentos – mais importante é a variedade e uma abordagem saudável."
-      },
-      "q6": {
-        "q": "Adaptam o plano a alergias e intolerâncias?",
-        "a": "Sim, basta indicar as suas preferências e restrições ao fazer a encomenda no formulário."
-      },
-      "q7": {
-        "q": "Podem adaptar o plano a objetivos específicos?",
-        "a": "Claro – seja perda de peso, ganho de massa muscular ou manutenção. Basta indicar no formulário."
-      },
-      "q8": {
-        "q": "Posso usar o plano a longo prazo?",
-        "a": "O plano é concebido para ser sustentável a longo prazo. Pode repetir as semanas, combiná-las ou ajustá-las ligeiramente."
-      },
-      "q9": {
-        "q": "Quem elabora os planos alimentares?",
-        "a": "Os planos são elaborados por especialistas em nutrição com experiência em medicina desportiva."
-      },
-      "q10": {
-        "q": "De onde provêm os valores nutricionais?",
-        "a": "Usamos fontes fidedignas — principalmente a base de dados USDA (United States Department of Agriculture), complementada pelos nossos próprios modelos de cálculo."
-      },
-      "q11": {
-        "q": "E se eu não gostar de uma receita?",
-        "a": "O plano inclui várias opções, por isso terá sempre algo ao seu gosto. Além disso, a exclusão de alimentos específicos está disponível no pacote Premium."
-      },
-      "q12": {
-        "q": "Podem alterar o meu plano mais tarde?",
-        "a": "Neste momento não oferecemos alterações após a entrega. No futuro pretendemos adicionar a possibilidade de ajustes contínuos com base no seu feedback."
-      },
-      "q13": {
-        "q": "Com que rapidez vou receber o plano?",
-        "a": "No pacote Standard garantimos entrega em 3 dias úteis, no pacote Premium em 2 dias úteis. Se não cumprirmos o prazo, reembolsamos o valor pago."
-      },
-      "q14": {
-        "q": "Preciso de instalar alguma aplicação?",
-        "a": "Não. O plano é enviado em PDF e pode abri-lo no telemóvel, computador ou imprimi-lo."
-      }
+  "faq": {
+    "title": "FAQ - Perguntas Frequentes",
+    "q1": {
+      "q": "Como irei receber o plano alimentar?",
+      "a": "Iremos enviar o seu plano alimentar por e-mail em formato PDF. Este inclui tabelas claras, gráficos e informações estruturadas para garantir que o plano seja fácil de aplicar na prática."
     },
+    "q2": {
+      "q": "Vou precisar de alimentos especiais?",
+      "a": "Não, elaboramos os nossos planos alimentares baseando-nos principalmente em ingredientes comuns que pode facilmente adquirir em qualquer supermercado normal."
+    },
+    "q3": {
+      "q": "Quanto tempo dura o plano alimentar?",
+      "a": "A versão Standard do plano alimentar é preparada para 5 dias, enquanto a versão Premium cobre 7 dias. Com base nas suas preferências, o plano pode conter até 40 refeições exclusivas, sendo que o âmbito final depende sempre dos seus requisitos e restrições específicos. Graças a esta variedade, o plano alimentar pode facilmente durar um mês inteiro — antes de experimentar todas as combinações e descobrir as suas variantes favoritas."
+    },
+    "q4": {
+      "q": "As listas de compras estão incluídas?",
+      "a": "Sim, o plano alimentar inclui uma lista de compras clara com os ingredientes para a semana inteira. Além disso, a lista de compras pode ser facilmente copiada para os assistentes de compras de lojas online, que podem tratar das compras por si."
+    },
+    "q5": {
+      "q": "E se eu não tiver balança de cozinha?",
+      "a": "Os pesos no plano alimentar são fornecidos para uma orientação mais precisa, mas na maioria dos casos, as medidas caseiras comuns (punhado, taça, unidades) são suficientes. Não é necessário pesar constantemente os alimentos ao grama; a sustentabilidade a longo prazo e a variedade alimentar global são mais importantes."
+    },
+    "q6": {
+      "q": "Personalizam o plano alimentar para alergias e intolerâncias?",
+      "a": "Preparamos o plano alimentar principalmente de acordo com as suas preferências dietéticas (ex: vegetariano, sem glúten ou sem lactose). Se existirem alimentos específicos que deseja evitar, pode listá-los no formulário."
+    },
+    "q7": {
+      "q": "Podem adaptar o plano alimentar a objetivos específicos?",
+      "a": "Sim, adaptamos o plano alimentar a objetivos específicos, como perda de peso, ganho de massa muscular ou manutenção de peso a longo prazo. Basta indicar os seus objetivos no formulário e nós iremos refleti-los na configuração geral do plano."
+    },
+    "q8": {
+      "q": "Posso utilizar o plano alimentar a longo prazo?",
+      "a": "Sim, desenhamos o plano para ser sustentável a longo prazo e para se ajustar bem à vida quotidiana. Pode repetir semanas individuais, combiná-las entre si ou fazer continuamente pequenos ajustes com base nas suas necessidades atuais."
+    },
+    "q9": {
+      "q": "Quem cria os planos alimentares?",
+      "a": "Especialistas em nutrição com experiência em medicina desportiva e no trabalho com populações ativas participam na criação dos planos alimentares. Isto permite-nos combinar a aplicabilidade prática do plano com uma perspetiva especializada sobre nutrição."
+    },
+    "q10": {
+      "q": "Onde obtêm os valores nutricionais?",
+      "a": "Obtemos os valores nutricionais de fontes verificadas, principalmente da base de dados do USDA (Departamento de Agricultura dos Estados Unidos). Estes dados são posteriormente complementados e processados utilizando os nossos próprios modelos de cálculo para garantir que o plano final cumpre os seus objetivos específicos."
+    },
+    "q11": {
+      "q": "E se eu não gostar de uma das receitas?",
+      "a": "O plano alimentar contém múltiplas refeições e variantes, pelo que normalmente pode escolher de acordo com os seus gostos e preferências. Se souber que pretende excluir totalmente certos alimentos, oferecemos a opção de exclusão direcionada dentro do pacote Premium."
+    },
+    "q12": {
+      "q": "Podem ajustar o meu plano alimentar mais tarde?",
+      "a": "Neste momento, não oferecemos por norma ajustes subsequentes a planos alimentares já entregues. No entanto, estamos a trabalhar para poder oferecer ajustes contínuos no futuro, com base no seu feedback e mudanças na sua rotina."
+    },
+    "q13": {
+      "q": "Com que rapidez receberei o plano alimentar?",
+      "a": "Para o pacote Standard, garantimos a entrega no prazo de 3 dias úteis; para o pacote Premium, no prazo de 2 dias úteis após a confirmação da encomenda. Caso não cumpramos o prazo garantido, devolveremos o seu dinheiro."
+    },
+    "q14": {
+      "q": "Preciso de instalar alguma aplicação?",
+      "a": "Não, não é necessário instalar nenhuma aplicação. Receberá o plano alimentar em formato PDF, para que possa abri-lo convenientemente no seu telemóvel, computador ou imprimi-lo."
+    }
+  },
     "about": {
       "title": "Sobre nós",
       "libor": {

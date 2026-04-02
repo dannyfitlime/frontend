@@ -256,65 +256,65 @@
       "cta": "Iniciar formulario",
       "note": "Sin compromiso, eliges la opción al hacer el pedido."
     },
-    "faq": {
-      "title": "FAQ - Preguntas frecuentes",
-      "q1": {
-        "q": "¿Cómo recibiré el menú?",
-        "a": "Te enviaremos el menú por correo electrónico en formato PDF, incluyendo tablas y gráficos claros."
-      },
-      "q2": {
-        "q": "¿Necesitaré alimentos especiales?",
-        "a": "No, las recetas se basan en ingredientes comunes del supermercado. Además, para cada ingrediente recibirás un enlace a Rohlík.cz para una compra rápida online."
-      },
-      "q3": {
-        "q": "¿Cuánto tiempo me sirve el menú?",
-        "a": "Por defecto preparamos un plan de 7 días con 35 platos únicos. Puedes repetirlo o adaptarlo según necesites."
-      },
-      "q4": {
-        "q": "¿Incluye listas de la compra?",
-        "a": "Sí, preparamos una lista de ingredientes clara para toda la semana, con enlaces directos a los productos en Rohlík.cz."
-      },
-      "q5": {
-        "q": "¿Y si no tengo báscula de cocina?",
-        "a": "Indicamos las cantidades en gramos, pero a menudo bastan medidas aproximadas (cucharadas, tazas, piezas). No es necesario pesar todo el tiempo: es más importante la variedad y una buena relación con la comida."
-      },
-      "q6": {
-        "q": "¿Adaptáis el menú a alergias e intolerancias?",
-        "a": "Sí, solo tienes que indicar tus preferencias y limitaciones en el formulario de pedido."
-      },
-      "q7": {
-        "q": "¿Podéis adaptar el menú a objetivos concretos?",
-        "a": "Por supuesto: pérdida de peso, ganancia muscular o mantenimiento. Solo tienes que indicarlo en el formulario."
-      },
-      "q8": {
-        "q": "¿Puedo usar el menú a largo plazo?",
-        "a": "El plan está diseñado para ser sostenible a largo plazo. Puedes repetir, combinar o ajustar las semanas como quieras."
-      },
-      "q9": {
-        "q": "¿Quién elabora los menús?",
-        "a": "Los planes los preparan especialistas en nutrición con experiencia en medicina deportiva."
-      },
-      "q10": {
-        "q": "¿De dónde sacáis los valores nutricionales?",
-        "a": "Proceden de fuentes comprobadas, principalmente de la base de datos USDA (United States Department of Agriculture), complementadas con nuestros propios modelos de cálculo."
-      },
-      "q11": {
-        "q": "¿Qué pasa si una receta no me gusta?",
-        "a": "El menú incluye varias opciones, así que siempre encontrarás algo a tu gusto. Además, la exclusión de alimentos concretos está disponible en el paquete Premium."
-      },
-      "q12": {
-        "q": "¿Podéis modificar el menú más adelante?",
-        "a": "De momento no ofrecemos modificaciones después de la entrega. En el futuro queremos añadir la opción de ajustes continuos según tu feedback."
-      },
-      "q13": {
-        "q": "¿En cuánto tiempo recibiré el menú?",
-        "a": "En el paquete Standard garantizamos la entrega en 3 días laborables, en el Premium en 2 días. Si no cumplimos el plazo, te devolvemos el dinero."
-      },
-      "q14": {
-        "q": "¿Tengo que instalar alguna app?",
-        "a": "No. El menú llega en PDF y puedes verlo en el móvil, ordenador o imprimirlo."
-      }
+  "faq": {
+    "title": "FAQ - Preguntas Frecuentes",
+    "q1": {
+      "q": "¿Cómo recibiré el plan de alimentación?",
+      "a": "Le entregaremos su plan de alimentación por correo electrónico en formato PDF. Incluye tablas claras, gráficos e información estructurada para que sea fácil de aplicar en la práctica."
     },
+    "q2": {
+      "q": "¿Necesitaré alimentos especiales?",
+      "a": "No, elaboramos nuestros planes de alimentación principalmente con ingredientes comunes que puede adquirir fácilmente en cualquier supermercado habitual."
+    },
+    "q3": {
+      "q": "¿Cuánto tiempo dura el plan de alimentación?",
+      "a": "La variante Estándar del plan está preparada para 5 días, mientras que la variante Premium cubre 7 días. Según sus preferencias, el plan puede contener hasta 40 platos únicos, dependiendo siempre del alcance final de sus requisitos y restricciones. Gracias a esta variedad, el plan puede durarle perfectamente todo un mes, antes de que pruebe todas las combinaciones y descubra sus variantes favoritas."
+    },
+    "q4": {
+      "q": "¿Se incluyen listas de compras?",
+      "a": "Sí, el plan de alimentación incluye una lista de compras clara con los ingredientes para toda la semana. Además, la lista se puede copiar fácilmente en los asistentes de compra de tiendas online para que realicen la compra por usted."
+    },
+    "q5": {
+      "q": "¿Qué pasa si no tengo báscula de cocina?",
+      "a": "Los gramajes en el plan se proporcionan para una orientación más precisa, pero en la mayoría de los casos bastará con medidas caseras comunes (un puñado, un bol, unidades). No es necesario pesar la comida constantemente hasta el último gramo; lo más importante es la sostenibilidad a largo plazo y la variedad general de la dieta."
+    },
+    "q6": {
+      "q": "¿Adaptan el plan a alergias e intolerancias?",
+      "a": "Preparamos el plan principalmente según sus preferencias dietéticas (por ejemplo, dieta vegetariana, sin gluten o sin lactosa). Si hay alimentos específicos que desea evitar, puede indicarlos en el formulario."
+    },
+    "q7": {
+      "q": "¿Pueden adaptar el plan a objetivos específicos?",
+      "a": "Sí, adaptamos el plan de alimentación a objetivos concretos, como la pérdida de peso, el aumento de masa muscular o el mantenimiento del peso a largo plazo. Solo tiene que indicar sus objetivos en el formulario y los reflejaremos en la configuración general del plan."
+    },
+    "q8": {
+      "q": "¿Puedo usar el plan de alimentación a largo plazo?",
+      "a": "Sí, diseñamos el plan para que sea sostenible a largo plazo y se adapte bien a la vida cotidiana. Puede repetir semanas individuales, combinarlas entre sí o realizar pequeños ajustes continuos según sus necesidades actuales."
+    },
+    "q9": {
+      "q": "¿Quién elabora los planes de alimentación?",
+      "a": "En la creación de los planes participan expertos en nutrición con experiencia en medicina deportiva y trabajo con población activa. Esto nos permite combinar la utilidad práctica del plan con una perspectiva profesional sobre la nutrición."
+    },
+    "q10": {
+      "q": "¿De dónde obtienen los valores nutricionales?",
+      "a": "Obtenemos los valores nutricionales de fuentes verificadas, principalmente de la base de datos USDA (Departamento de Agricultura de los Estados Unidos). Estos datos se complementan y procesan mediante nuestros propios modelos de cálculo para que el plan final cumpla con los objetivos establecidos."
+    },
+    "q11": {
+      "q": "¿Qué pasa si no me gusta alguna receta?",
+      "a": "El plan contiene múltiples platos y variantes, por lo que generalmente puede elegir según sus gustos y preferencias. Si sabe que desea excluir ciertos alimentos por completo, ofrecemos la opción de exclusión específica dentro del paquete Premium."
+    },
+    "q12": {
+      "q": "¿Pueden modificar mi plan más adelante?",
+      "a": "En este momento, no ofrecemos de forma estándar modificaciones posteriores a los planes ya entregados. Sin embargo, estamos trabajando para poder ofrecer ajustes continuos en el futuro basados en sus comentarios y cambios en su rutina."
+    },
+    "q13": {
+      "q": "¿Qué tan pronto recibiré el plan de alimentación?",
+      "a": "Para el paquete Estándar, garantizamos la entrega en un plazo de 3 días hábiles; para el paquete Premium, en 2 días hábiles a partir de la confirmación del pedido. Si no cumplimos con el plazo garantizado, le devolveremos su dinero."
+    },
+    "q14": {
+      "q": "¿Tengo que instalar alguna aplicación?",
+      "a": "No, no es necesario instalar ninguna aplicación. Recibirá el plan de alimentación en formato PDF, por lo que podrá abrirlo cómodamente en su móvil, ordenador o imprimirlo."
+    }
+  },
     "about": {
       "title": "Sobre nosotros",
       "libor": {

@@ -256,65 +256,66 @@
       "cta": "Formular starten",
       "note": "Unverbindlich, Sie wählen erst bei der Bestellung."
     },
-    "faq": {
-      "title": "FAQ – Häufig gestellte Fragen",
-      "q1": {
-        "q": "Wie erhalte ich den Ernährungsplan?",
-        "a": "Wir senden Ihnen den Ernährungsplan per E-Mail im PDF-Format, inklusive übersichtlicher Tabellen und Grafiken."
-      },
-      "q2": {
-        "q": "Benötige ich spezielle Lebensmittel?",
-        "a": "Nein, die Rezepte basieren auf gängigen Lebensmitteln aus dem Supermarkt. Zu jeder Zutat erhalten Sie außerdem einen Link zu Rohlík.cz für den schnellen Online-Einkauf."
-      },
-      "q3": {
-        "q": "Wie lange ist der Ernährungsplan gültig?",
-        "a": "Standardmäßig erstellen wir einen 7-Tage-Plan mit 35 einzigartigen Mahlzeiten. Sie können die Wochen nach Bedarf wiederholen oder anpassen."
-      },
-      "q4": {
-        "q": "Sind Einkauflisten enthalten?",
-        "a": "Ja, wir erstellen eine übersichtliche Einkaufsliste für die ganze Woche – inklusive direkter Links zu den einzelnen Produkten bei Rohlík.cz."
-      },
-      "q5": {
-        "q": "Was, wenn ich keine Küchenwaage habe?",
-        "a": "Wir geben zwar Grammangaben an, aber meist reichen ungefähre Maße (Löffel, Becher, Stücke). Es ist nicht nötig, jedes Essen ständig abzuwiegen – wichtiger sind Vielfalt und ein gesunder Ansatz."
-      },
-      "q6": {
-        "q": "Passen Sie den Ernährungsplan an Allergien und Intoleranzen an?",
-        "a": "Ja, geben Sie Ihre Vorlieben und Einschränkungen einfach bei der Bestellung im Formular an."
-      },
-      "q7": {
-        "q": "Können Sie den Ernährungsplan an konkrete Ziele anpassen?",
-        "a": "Natürlich – egal ob es um Gewichtsabnahme, Muskelaufbau oder Gewichtserhaltung geht. Geben Sie dies einfach im Formular an."
-      },
-      "q8": {
-        "q": "Kann ich den Ernährungsplan langfristig verwenden?",
-        "a": "Der Plan ist so gestaltet, dass er langfristig umsetzbar ist. Sie können die Wochen beliebig wiederholen, kombinieren oder leicht anpassen."
-      },
-      "q9": {
-        "q": "Wer erstellt die Ernährungspläne?",
-        "a": "An den Plänen arbeiten Ernährungsexperten mit Erfahrung in der Sportmedizin."
-      },
-      "q10": {
-        "q": "Woher stammen die Nährwertangaben?",
-        "a": "Wir greifen auf geprüfte Quellen zurück – vor allem auf die Datenbank des USDA (United States Department of Agriculture) und ergänzen diese mit eigenen Berechnungsmodellen."
-      },
-      "q11": {
-        "q": "Was, wenn mir ein Rezept nicht schmeckt?",
-        "a": "Der Ernährungsplan enthält mehrere Varianten, sodass Sie immer etwas nach Ihrem Geschmack finden. Außerdem bieten wir den Ausschluss bestimmter Lebensmittel im Rahmen des Premium-Pakets an."
-      },
-      "q12": {
-        "q": "Können Sie den Ernährungsplan später anpassen?",
-        "a": "Aktuell bieten wir nach der Zustellung keine Anpassungen an. In Zukunft planen wir jedoch die Möglichkeit fortlaufender Anpassungen auf Basis Ihres Feedbacks."
-      },
-      "q13": {
-        "q": "Wie schnell erhalte ich den Ernährungsplan?",
-        "a": "Beim Standard-Paket garantieren wir die Lieferung innerhalb von 3 Werktagen, beim Premium-Paket innerhalb von 2 Werktagen. Sollten wir diese Frist nicht einhalten, erhalten Sie Ihr Geld zurück."
-      },
-      "q14": {
-        "q": "Muss ich eine App installieren?",
-        "a": "Nein. Der Ernährungsplan kommt als PDF, das Sie auf dem Handy, Computer öffnen oder ausdrucken können."
-      }
+    
+  "faq": {
+    "title": "FAQ - Häufig gestellte Fragen",
+    "q1": {
+      "q": "Wie erhalte ich den Ernährungsplan?",
+      "a": "Wir senden Ihnen den Ernährungsplan per E-Mail im PDF-Format zu. Er enthält übersichtliche Tabellen, Grafiken und strukturierte Informationen, damit Sie in der Praxis gut mit dem Plan arbeiten können."
     },
+    "q2": {
+      "q": "Benötige ich spezielle Lebensmittel?",
+      "a": "Nein, wir erstellen die Pläne primär aus gängigen Zutaten, die Sie problemlos in jedem herkömmlichen Supermarkt kaufen können."
+    },
+    "q3": {
+      "q": "Wie lange reicht der Ernährungsplan aus?",
+      "a": "Die Standard-Variante des Plans ist für 5 Tage ausgelegt, die Premium-Variante für 7 Tage. Basierend auf Ihren Vorlieben kann der Plan bis zu 40 einzigartige Gerichte enthalten, wobei der endgültige Umfang immer von den angegebenen Anforderungen und Einschränkungen abhängt. Dank dieser Vielfalt reicht der Plan locker für einen ganzen Monat – bis Sie alle Kombinationen ausprobiert und Ihre Lieblingsvarianten entdeckt haben."
+    },
+    "q4": {
+      "q": "Sind auch Einkaufslisten enthalten?",
+      "a": "Ja, der Ernährungsplan enthält eine übersichtliche Einkaufsliste mit allen Zutaten für die gesamte Woche. Zudem lässt sich die Liste einfach in die Einkaufsassistenten von Online-Shops kopieren, die den Einkauf für Sie erledigen."
+    },
+    "q5": {
+      "q": "Was ist, wenn ich keine Küchenwaage habe?",
+      "a": "Die Gewichtsangaben im Plan dienen der genaueren Orientierung, aber in den meisten Fällen reichen auch haushaltsübliche Maße (eine Handvoll, eine Schüssel, Stückzahlen) aus. Es ist nicht notwendig, das Essen ständig aufs Gramm genau abzuwiegen; wichtiger sind die langfristige Nachhaltigkeit und die allgemeine Ausgewogenheit der Ernährung."
+    },
+    "q6": {
+      "q": "Passen Sie den Plan an Allergien und Intoleranzen an?",
+      "a": "Wir erstellen den Plan primär nach Ihren Diät-Präferenzen (z. B. vegetarisch, glutenfrei oder laktosefrei). Wenn es bestimmte Lebensmittel gibt, die Sie meiden möchten, können Sie diese im Formular angeben."
+    },
+    "q7": {
+      "q": "Können Sie den Ernährungsplan an spezifische Ziele anpassen?",
+      "a": "Ja, wir passen den Plan an konkrete Ziele an, wie zum Beispiel Gewichtsreduktion, Muskelaufbau oder langfristiges Halten des Gewichts. Geben Sie Ihre Ziele einfach im Formular an, und wir lassen sie in die Gesamteinstellung des Plans einfließen."
+    },
+    "q8": {
+      "q": "Kann ich den Ernährungsplan langfristig nutzen?",
+      "a": "Ja, wir erstellen den Plan so, dass er langfristig nachhaltig ist und gut in den Alltag passt. Sie können die einzelnen Wochen wiederholen, miteinander kombinieren oder laufend leicht an Ihre aktuellen Bedürfnisse anpassen."
+    },
+    "q9": {
+      "q": "Wer erstellt die Ernährungspläne?",
+      "a": "An der Erstellung der Pläne sind Ernährungsexperten mit Erfahrung in der Sportmedizin und der Arbeit mit aktiven Menschen beteiligt. Dadurch verbinden wir die praktische Anwendbarkeit des Plans mit fachlicher Expertise."
+    },
+    "q10": {
+      "q": "Woher stammen die Nährwertangaben?",
+      "a": "Wir beziehen die Nährwertangaben aus verifizierten Quellen, primär aus der USDA-Datenbank (United States Department of Agriculture). Diese Daten werden durch eigene Berechnungsmodelle ergänzt und verarbeitet, damit der fertige Plan den festgelegten Zielen entspricht."
+    },
+    "q11": {
+      "q": "Was ist, wenn mir ein Rezept nicht schmeckt?",
+      "a": "Der Plan enthält mehrere Gerichte und Varianten, sodass Sie in der Regel nach Ihrem Geschmack wählen können. Wenn Sie wissen, dass Sie bestimmte Lebensmittel gar nicht erst inkludieren möchten, bieten wir im Premium-Paket die Möglichkeit des gezielten Ausschlusses an."
+    },
+    "q12": {
+      "q": "Können Sie mir den Plan später noch anpassen?",
+      "a": "Aktuell bieten wir standardmäßig keine nachträglichen Änderungen an bereits gelieferten Plänen an. Wir arbeiten jedoch daran, in Zukunft fortlaufende Anpassungen basierend auf Ihrem Feedback und Änderungen in Ihrem Alltag anbieten zu können."
+    },
+    "q13": {
+      "q": "Wie schnell erhalte ich den Ernährungsplan?",
+      "a": "Beim Standard-Paket garantieren wir die Lieferung innerhalb von 3 Werktagen, beim Premium-Paket innerhalb von 2 Werktagen nach Bestätigung der Bestellung. Sollten wir die garantierte Frist nicht einhalten, erstatten wir Ihnen Ihr Geld zurück."
+    },
+    "q14": {
+      "q": "Muss ich eine App installieren?",
+      "a": "Nein, es ist keine Installation einer App erforderlich. Sie erhalten den Ernährungsplan im PDF-Format, sodass Sie ihn bequem auf dem Handy oder Computer öffnen oder ausdrucken können."
+    }
+  },
     "about": {
       "title": "Über uns",
       "libor": {

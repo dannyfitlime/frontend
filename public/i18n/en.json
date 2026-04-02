@@ -266,65 +266,65 @@
       "cta": "Start questionnaire",
       "note": "Non-binding - you choose during checkout."
     },
-    "faq": {
-      "title": "FAQ - Frequently Asked Questions",
-      "q1": {
-        "q": "How will I receive my meal plan?",
-        "a": "We'll send it to your email as a PDF file including clear tables and charts."
-      },
-      "q2": {
-        "q": "Will I need special ingredients?",
-        "a": "No, recipes are based on commonly available supermarket ingredients."
-      },
-      "q3": {
-        "q": "How long does the plan last?",
-        "a": "We typically create a 7-day plan with 35 unique meals - you can reuse or modify it as needed."
-      },
-      "q4": {
-        "q": "Is a shopping list included?",
-        "a": "Yes, you'll receive a clear shopping list for the entire week."
-      },
-      "q5": {
-        "q": "What if I don't have kitchen scales?",
-        "a": "Portions are listed, but approximate measures (spoon, cup, pieces) are fine. Focus on variety and balance rather than precision."
-      },
-      "q6": {
-        "q": "Can you adjust for allergies or intolerances?",
-        "a": "Yes - just specify your preferences and restrictions in the form."
-      },
-      "q7": {
-        "q": "Can you tailor the plan to my goals?",
-        "a": "Of course - whether it's weight loss, muscle gain, or maintenance."
-      },
-      "q8": {
-        "q": "What if I have a medical condition?",
-        "a": "We can adapt the plan for special needs (e.g., high cholesterol, diabetes) - with expert consultation if necessary."
-      },
-      "q9": {
-        "q": "Who creates the meal plans?",
-        "a": "They are designed by nutrition experts with experience in sports medicine."
-      },
-      "q10": {
-        "q": "Where do you get nutritional data?",
-        "a": "We use verified food databases and our own computational models."
-      },
-      "q11": {
-        "q": "What if I dislike a recipe?",
-        "a": "The plan includes multiple options, so you can always choose your favorite. The Premium plan also allows food exclusions."
-      },
-      "q12": {
-        "q": "Can I update my plan later?",
-        "a": "Yes, monthly plans can be adjusted based on your feedback."
-      },
-      "q13": {
-        "q": "How fast will I receive it?",
-        "a": "We deliver within 3 business days, usually within 1 day."
-      },
-      "q14": {
-        "q": "Is it suitable for non-athletes?",
-        "a": "Yes, we can create plans for people with minimal or no physical activity."
-      }
+  "faq": {
+    "title": "FAQ - Frequently Asked Questions",
+    "q1": {
+      "q": "How will I receive the meal plan?",
+      "a": "We will deliver your meal plan via email in PDF format. It includes clear tables, charts, and structured information to ensure the plan is easy to work with in practice."
     },
+    "q2": {
+      "q": "Will I need special foods?",
+      "a": "No, we build our meal plans primarily from commonly available ingredients that you can easily purchase at any regular supermarket."
+    },
+    "q3": {
+      "q": "How long does the meal plan last?",
+      "a": "The Standard version of the meal plan is prepared for 5 days, while the Premium version covers 7 days. Based on your preferences, the plan can contain up to 40 unique meals, with the final scope always depending on your specific requirements and restrictions. Thanks to this variety, the meal plan can easily last you an entire month—before you try all combinations and discover your favorite variants."
+    },
+    "q4": {
+      "q": "Are shopping lists included?",
+      "a": "Yes, the meal plan includes a clear shopping list of ingredients for the entire week. Additionally, the shopping list can be easily copied into the shopping assistants of online stores, which can then handle the shopping for you."
+    },
+    "q5": {
+      "q": "What if I don't have kitchen scales?",
+      "a": "Weights in the meal plan are provided for more precise guidance, but in most cases, common household measurements (handful, bowl, pieces) are sufficient. It is not necessary to constantly weigh food to the last gram; long-term sustainability and overall dietary variety are more important."
+    },
+    "q6": {
+      "q": "Do you customize the meal plan for allergies and intolerances?",
+      "a": "We primarily prepare the meal plan according to your dietary preferences (e.g., vegetarian, gluten-free, or lactose-free). If there are specific foods you wish to avoid, you can list them in the form."
+    },
+    "q7": {
+      "q": "Can you tailor the meal plan to specific goals?",
+      "a": "Yes, we adapt the meal plan to specific goals, such as weight loss, muscle gain, or long-term weight maintenance. Simply state your goals in the form, and we will reflect them in the overall setup of the plan."
+    },
+    "q8": {
+      "q": "Can I use the meal plan long-term?",
+      "a": "Yes, we design the plan to be long-term sustainable and to fit well into everyday life. You can repeat individual weeks, combine them with each other, or continuously make slight adjustments based on your current needs."
+    },
+    "q9": {
+      "q": "Who creates the meal plans?",
+      "a": "Nutrition experts with experience in sports medicine and working with active populations participate in creating the meal plans. This allows us to combine the practical usability of the meal plan with an expert perspective on nutrition."
+    },
+    "q10": {
+      "q": "Where do you get the nutritional values from?",
+      "a": "We source nutritional values from verified sources, primarily the USDA (United States Department of Agriculture) database. This data is further supplemented and processed using our own calculation models to ensure the final plan meets your specified goals."
+    },
+    "q11": {
+      "q": "What if I don't like one of the recipes?",
+      "a": "The meal plan contains multiple meals and variants, so you can usually choose according to your tastes and preferences. If you know you want to exclude certain foods entirely, we offer the option of targeted exclusion within the Premium package."
+    },
+    "q12": {
+      "q": "Can you adjust my meal plan later?",
+      "a": "At this time, we do not standardly offer subsequent adjustments to meal plans already delivered. However, we are working on being able to offer ongoing adjustments in the future based on your feedback and changes in your routine."
+    },
+    "q13": {
+      "q": "How quickly will I receive the meal plan?",
+      "a": "For the Standard package, we guarantee delivery within 3 business days; for the Premium package, within 2 business days from order confirmation. If we fail to meet the guaranteed deadline, we will refund your money."
+    },
+    "q14": {
+      "q": "Do I need to install an app?",
+      "a": "No, there is no need to install any app. You will receive the meal plan in PDF format, so you can conveniently open it on your mobile phone, computer, or print it out."
+    }
+  },
     "about": {
       "articles": {
         "title": "Articles",
