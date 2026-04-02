@@ -266,65 +266,65 @@
       "cta": "Spustiť formulár",
       "note": "Nezáväzne, vyberiete si až v objednávke."
     },
-    "faq": {
-      "title": "FAQ - Často kladené otázky",
-      "q1": {
-        "q": "Ako obdržím jedálniček?",
-        "a": "Jedálniček Vám pošleme na e-mail vo formáte PDF, vrátane prehľadných tabuliek a grafov."
-      },
-      "q2": {
-        "q": "Budú potrebné špeciálne potraviny?",
-        "a": "Nie, recepty staviame na bežne dostupných surovinách zo supermarketu. Ku každej surovine navyše dostanete odkaz na Rohlik.cz pre rýchly online nákup."
-      },
-      "q3": {
-        "q": "Ako dlho jedálniček vydrží?",
-        "a": "Štandardne zostavujeme plán na 7 dní, obsahujúci 35 unikátnych jedál. A preto ho môžete podľa potreby opakovať či upravovať."
-      },
-      "q4": {
-        "q": "Sú súčasťou aj nákupné zoznamy?",
-        "a": "Áno, pripravíme prehľadný zoznam surovín na celý týždeň – vrátane priamych odkazov na nákup jednotlivých položiek na Rohlik.cz."
-      },
-      "q5": {
-        "q": "Čo ak nemám kuchynskú váhu?",
-        "a": "Gramáže uvádzame, ale často postačia orientačné miery (lyžica, hrnček, kusy). Nie je nutné jedlo neustále vážiť – dôležitejšia je pestrosť a zdravý prístup."
-      },
-      "q6": {
-        "q": "Prispôsobíte jedálniček alergiám a intoleranciám?",
-        "a": "Áno, stačí uviesť svoje preferencie a obmedzenia pri objednávke vo formulári."
-      },
-      "q7": {
-        "q": "Môžete jedálniček prispôsobiť konkrétnym cieľom?",
-        "a": "Samozrejme – či už ide o chudnutie, naberanie svalov alebo udržanie telesnej hmotnosti. Stačí to uviesť vo formulári."
-      },
-      "q8": {
-        "q": "Môžem jedálniček používať dlhodobo?",
-        "a": "Plán je navrhnutý tak, aby bol udržateľný dlhodobo. Jednotlivé týždne môžete opakovať, kombinovať alebo jemne upravovať."
-      },
-      "q9": {
-        "q": "Kto jedálničky zostavuje?",
-        "a": "Na plánoch sa podieľajú odborníci na výživu s praxou v športovej medicíne."
-      },
-      "q10": {
-        "q": "Odkiaľ čerpáte nutričné hodnoty?",
-        "a": "Čerpáme z overených zdrojov – najmä z databázy USDA a dopĺňame ju vlastnými výpočtovými modelmi."
-      },
-      "q11": {
-        "q": "Čo ak mi niektorý recept nechutí?",
-        "a": "Jedálniček obsahuje viac variantov, takže si vždy vyberiete podľa chuti. Navyše, vylúčenie konkrétnych potravín ponúkame v rámci balíčka Premium."
-      },
-      "q12": {
-        "q": "Môžete mi jedálniček neskôr upraviť?",
-        "a": "V tejto chvíli úpravy jedálničkov po doručení neponúkame. Do budúcna však plánujeme pridať možnosť priebežných úprav podľa Vašej spätnej väzby."
-      },
-      "q13": {
-        "q": "Ako rýchlo jedálniček obdržím?",
-        "a": "Pri štandardnom balíčku garantujeme doručenie do 3 pracovných dní, pri Premium do 2 pracovných dní. Ak by sme termín nedodržali, vrátime Vám peniaze."
-      },
-      "q14": {
-        "q": "Musím si inštalovať nejakú aplikáciu?",
-        "a": "Nie. Jedálniček príde v PDF a môžete si ho otvoriť v mobile, počítači alebo vytlačiť."
-      }
+  "faq": {
+    "title": "FAQ - Často kladené otázky",
+    "q1": {
+      "q": "Ako dostanem jedálniček?",
+      "a": "Jedálniček vám doručíme e-mailom vo formáte PDF. Obsahuje prehľadné tabuľky, grafy a štruktúrované informácie, aby sa vám s plánom v praxi dobre pracovalo."
     },
+    "q2": {
+      "q": "Budem potrebovať špeciálne potraviny?",
+      "a": "Nie, jedálničky zostavujeme primárne z bežne dostupných surovín, ktoré si jednoducho kúpite v každom bežnom supermarkete."
+    },
+    "q3": {
+      "q": "Na akú dlhú dobu je jedálniček určený?",
+      "a": "Standard verzia jedálnička je pripravená na 5 dní, zatiaľ čo Premium verzia pokrýva 7 dní. Na základe vašich preferencií môže plán obsahovať až 40 unikátnych jedál, pričom finálny rozsah vždy závisí od vašich konkrétnych požiadaviek a obmedzení. Vďaka tejto variabilite vám jedálniček hravo vystačí aj na celý mesiac – kým vyskúšate všetky kombinácie a objavíte svoje obľúbené varianty."
+    },
+    "q4": {
+      "q": "Sú súčasťou aj nákupné zoznamy?",
+      "a": "Áno, súčasťou jedálnička je prehľadný nákupný zoznam surovín na celý týždeň. Nákupný zoznam sa navyše dá jednoducho skopírovať do nákupných asistentov online predajní, ktoré nákup vybavia za vás."
+    },
+    "q5": {
+      "q": "Čo ak nemám kuchynskú váhu?",
+      "a": "Gramáže v jedálničku uvádzame pre presnejšie vedenie, no vo väčšine prípadov si vystačíte s bežnými domácimi mierami (hrsť, miska, kusy). Nie je nutné neustále vážiť jedlo na gram presne, dôležitejšia je dlhodobá udržateľnosť a celková pestrosť stravy."
+    },
+    "q6": {
+      "q": "Prispôsobujete jedálniček alergiám a intoleranciám?",
+      "a": "Jedálniček pripravujeme primárne podľa vašich stravovacích preferencií (napr. vegetariánska, bezlepková či bezlaktózová strava). Ak existujú konkrétne potraviny, ktorým sa chcete vyhnúť, môžete ich uviesť vo formulári."
+    },
+    "q7": {
+      "q": "Dokážete jedálniček ušiť na mieru konkrétnym cieľom?",
+      "a": "Áno, jedálniček prispôsobujeme konkrétnym cieľom, ako sú chudnutie, naberanie svalovej hmoty alebo dlhodobé udržanie hmotnosti. Stačí svoje ciele uviesť vo formulári a my ich zohľadníme v celkovom nastavení plánu."
+    },
+    "q8": {
+      "q": "Dá sa jedálniček používať dlhodobo?",
+      "a": "Áno, plán navrhujeme tak, aby bol dlhodobo udržateľný a dobre zapadol do bežného života. Jednotlivé týždne môžete opakovať, kombinovať medzi sebou alebo priebežne mierne upravovať podľa vašich aktuálnych potrieb."
+    },
+    "q9": {
+      "q": "Kto jedálničky vytvára?",
+      "a": "Na tvorbe jedálničkov sa podieľajú odborníci na výživu so skúsenosťami zo športovej medicíny a práce s aktívnou populáciou. Vďaka tomu dokážeme prepojiť praktickú využiteľnosť jedálnička s odborným pohľadom na výživu."
+    },
+    "q10": {
+      "q": "Odkiaľ čerpáte nutričné hodnoty?",
+      "a": "Nutričné hodnoty čerpáme z overených zdrojov, primárne z databázy USDA (United States Department of Agriculture). Tieto dáta ďalej dopĺňame a spracovávame pomocou vlastných výpočtových modelov, aby finálny plán zodpovedal vašim zadaným cieľom."
+    },
+    "q11": {
+      "q": "Čo ak mi niektorý z receptov nebude chutiť?",
+      "a": "Jedálniček obsahuje viacero jedál a variantov, takže si spravidla môžete vybrať podľa svojich chutí a preferencií. Ak vopred viete, že chcete určité potraviny úplne vylúčiť, ponúkame možnosť cielenej exklúzie v rámci balíka Premium."
+    },
+    "q12": {
+      "q": "Môžete mi jedálniček dodatočne upraviť?",
+      "a": "V súčasnosti štandardne neponúkame dodatočné úpravy už doručených jedálničkov. Pracujeme však na tom, aby sme v budúcnosti dokázeli ponúknuť priebežné úpravy na základe vašej spätnej väzby a zmien v režime."
+    },
+    "q13": {
+      "q": "Ako rýchlo jedálniček dostanem?",
+      "a": "Pri balíku Standard garantujeme doručenie do 3 pracovných dní, pri balíku Premium do 2 pracovných dní od potvrdenia objednávky. V prípade nedodržania garantovanej lehoty vám vrátime peniaze."
+    },
+    "q14": {
+      "q": "Musím si inštalovať nejakú aplikáciu?",
+      "a": "Nie, nie je potrebné inštalovať žiadnu aplikáciu. Jedálniček dostanete vo formáte PDF, takže si ho pohodlne otvoríte v mobile, počítači alebo vytlačíte."
+    }
+  },
     "about": {
       "articles": {
         "title": "Články",
