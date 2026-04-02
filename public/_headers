@@ -1,0 +1,5 @@
+/assets/*.js
+  X-Robots-Tag: noindex
+
+/*.js
+  X-Robots-Tag: noindex
