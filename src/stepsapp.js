@@ -19,9 +19,15 @@ function getApiBaseUrl() {
   const fromWindow = (window.__FITLIME_API_BASE_URL__ || window.FITLIME_API_BASE_URL || '').trim();
   if (fromWindow) return fromWindow.replace(/\/+$/, '');
 
-  const host = window.location.hostname;
+  const host = window.location.hostname.toLowerCase();
   if (host === 'localhost' || host === '127.0.0.1') return '';
-  if (host === 'fitlime.cz' || host === 'www.fitlime.cz') return 'https://api.fitlime.cz';
+  if (
+    host.endsWith('fitlime.cz') ||
+    host.endsWith('fitlime.eu') ||
+    host.endsWith('fitlime.sk')
+  ) {
+    return 'https://api.fitlime.cz';
+  }
   return '';
 }
 
