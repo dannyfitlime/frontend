@@ -1007,5 +1007,85 @@
       "docs": "Privacy Policy"
     },
     "back": "Back to homepage"
+  },
+  "seoPages": {
+    "common": {
+      "relatedArticles": "Related articles:",
+      "backHome": "Back to homepage",
+      "backHomePage": "Back to home page",
+      "links": {
+        "how": "How FitLime works",
+        "sports": "Sports meal plan",
+        "healthy": "Healthy meal plan",
+        "weightLoss": "Weight loss meal plan",
+        "weightLossShort": "Weight loss",
+        "sportsNutrition": "Sports nutrition",
+        "healthyEating": "Healthy eating"
+      }
+    },
+    "how": {
+      "metaTitle": "How FitLime Works | Algorithm, personalization, and plan creation",
+      "metaDescription": "A technical explanation of how FitLime works: questionnaire inputs, nutrient optimization, plan creation, and why personalization works better than generic templates.",
+      "ogTitle": "How FitLime Works | Algorithm, personalization, and plan creation",
+      "ogDescription": "How FitLime turns input data into a concrete meal plan: algorithm, nutrient optimization, and personalization logic.",
+      "hero": {
+        "eyebrow": "Technology behind personalization",
+        "title": "How FitLime works under the surface",
+        "lead": "This page focuses on what happens after you order your meal plan: how FitLime works with input data, how it approaches nutrient optimization, how the plan structure is created, and why personalization works better than a universal template."
+      },
+      "cta": {
+        "title": "I want to start eating better",
+        "lead": "Get your personalized meal plan and test the full system in practice.",
+        "button": "Go to questionnaire"
+      }
+    },
+    "sports": {
+      "metaTitle": "Sports Meal Plan Tailored to You | FitLime",
+      "metaDescription": "A sports meal plan from FitLime that reflects training type, workload, performance goals, and everyday routine. A practical setup for recreational and more advanced athletes.",
+      "ogTitle": "Sports Meal Plan Tailored to You | FitLime",
+      "ogDescription": "A practical sports meal plan built around training, goals, and daily routine.",
+      "hero": {
+        "eyebrow": "Nutrition for performance",
+        "title": "A sports meal plan that fits training and normal life",
+        "lead": "A sports meal plan should support performance, recovery, and long-term sustainability. It is not enough to simply eat more. Timing, training volume, sport type, and the reality of your workday all matter."
+      },
+      "cta": {
+        "title": "Want nutrition that supports your training without complicating life?",
+        "lead": "FitLime prepares a plan around your goal and activity. Fill out the questionnaire and see what kind of approach fits you best.",
+        "button": "Open questionnaire"
+      }
+    },
+    "healthy": {
+      "metaTitle": "Healthy Meal Plan in Depth | FitLime",
+      "metaDescription": "What should a healthy meal plan include? Learn the basics of balanced nutrition, smart macro combinations, and practical habits for steady energy throughout the day.",
+      "ogTitle": "Healthy Meal Plan in Depth | FitLime",
+      "ogDescription": "A practical healthy meal plan for better energy and sustainable eating.",
+      "hero": {
+        "eyebrow": "Educational guide",
+        "title": "Healthy eating and nutrition in depth",
+        "lead": "A healthy meal plan is not about perfection. It has to work at work, at home, and within the pace of a normal day. Understand how much energy you actually need, how macronutrients work, what sleep does to your hunger, and why stress or alcohol affect your plan more than most people expect."
+      },
+      "cta": {
+        "title": "Want a healthy meal plan that still makes sense in a normal day?",
+        "lead": "FitLime builds a plan around your real situation, not an idealized template. Fill out the form and learn more.",
+        "button": "Fill out the form"
+      }
+    },
+    "weight": {
+      "metaTitle": "Weight Loss Meal Plan | FitLime",
+      "metaDescription": "A personalized weight loss meal plan from FitLime built around your goal, routine, and activity. No diet chaos, no pointless restriction, and a clearer plan that is easier to sustain.",
+      "ogTitle": "Weight Loss Meal Plan | FitLime",
+      "ogDescription": "A personalized weight loss meal plan based on your goal, routine, and activity.",
+      "hero": {
+        "eyebrow": "Educational guide",
+        "title": "Weight loss without chaos",
+        "lead": "It is easy to get lost in a flood of extreme diets and guaranteed shortcuts. This page explains a stable, rational, and sustainable approach to fat loss without miracle claims, just basic biology and a plan that makes sense in real life."
+      },
+      "cta": {
+        "title": "Clear fat loss under control",
+        "lead": "Tired of diet chaos? Get a personalized meal plan and see what the full FitLime system can build around your goal.",
+        "button": "Calculate your personalized plan"
+      }
+    }
   }
 }

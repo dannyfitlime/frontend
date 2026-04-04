@@ -448,6 +448,26 @@ body.seo-page {
   line-height: 1.8;
 }
 
+.lang-switch {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.lang-current {
+  color: #111827;
+  font-weight: 700;
+}
+
+.lang-option {
+  color: var(--seo-muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.lang-option:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .seo-shell {
     width: min(var(--seo-maxw), calc(100% - 28px));
