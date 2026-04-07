@@ -399,11 +399,6 @@ body.why-page {
   text-align: center;
 }
 
-.why-chart-card .ps-complex-meal-title-mini {
-  font-size: 1rem;
-  letter-spacing: -0.02em;
-}
-
 .why-chart-card canvas {
   order: 1;
   filter: drop-shadow(0 22px 34px rgba(23, 28, 23, 0.08));
