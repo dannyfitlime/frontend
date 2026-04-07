@@ -1,0 +1,442 @@
+:root {
+  --why-bg: #f5f1e8;
+  --why-ink: #18261b;
+  --why-muted: #5d695f;
+  --why-line: rgba(24, 38, 27, 0.14);
+  --why-accent: #e58f58;
+  --why-accent-soft: rgba(229, 143, 88, 0.18);
+  --why-mint: #d7e7ce;
+  --why-card: rgba(255, 252, 247, 0.82);
+  --why-shadow: 0 24px 70px rgba(36, 34, 26, 0.14);
+}
+
+body.why-page {
+  min-height: 100vh;
+  color: var(--why-ink);
+  background:
+    radial-gradient(circle at top left, rgba(229, 143, 88, 0.24), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(116, 148, 110, 0.18), transparent 28%),
+    linear-gradient(180deg, #fcf7f0 0%, var(--why-bg) 100%);
+}
+
+.why-shell {
+  width: min(1440px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.why-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.why-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--why-ink);
+  text-decoration: none;
+}
+
+.why-brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.why-brand strong {
+  font-size: 0.92rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.why-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(380px, 0.9fr) minmax(380px, 1.15fr);
+  gap: 26px;
+  align-items: center;
+  padding: 34px;
+  border: 1px solid var(--why-line);
+  border-radius: 36px;
+  background: rgba(255, 248, 240, 0.72);
+  box-shadow: var(--why-shadow);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  position: relative;
+}
+
+.why-hero::before,
+.why-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.why-hero::before {
+  width: 260px;
+  height: 260px;
+  right: -80px;
+  top: -90px;
+  background: rgba(229, 143, 88, 0.14);
+}
+
+.why-hero::after {
+  width: 200px;
+  height: 200px;
+  left: -60px;
+  bottom: -60px;
+  background: rgba(116, 148, 110, 0.12);
+}
+
+.why-intro,
+.why-spotlight,
+.why-chart-card {
+  position: relative;
+  z-index: 1;
+}
+
+.why-kicker,
+.why-chart-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(24, 38, 27, 0.08);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--why-ink);
+}
+
+.why-kicker {
+  margin-bottom: 18px;
+}
+
+.why-intro h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.6rem, 4.8vw, 4.7rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  max-width: 12ch;
+}
+
+.why-lead {
+  margin: 0 0 18px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--why-muted);
+  max-width: 38ch;
+}
+
+.why-copy-card,
+.why-question,
+.why-chart-card {
+  border: 1px solid var(--why-line);
+  background: var(--why-card);
+  box-shadow: 0 16px 40px rgba(46, 42, 32, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.why-copy-card {
+  padding: 22px 22px 14px;
+  border-radius: 24px;
+}
+
+.why-copy-card p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--why-muted);
+}
+
+.why-question {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(229, 143, 88, 0.12), rgba(255, 255, 255, 0.9));
+}
+
+.why-question span {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--why-muted);
+}
+
+.why-question strong {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.why-spotlight {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 18px;
+}
+
+.why-stats-row {
+  width: min(100%, 420px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.why-meal-card {
+  width: min(100%, 420px);
+  margin: 0;
+  padding: 18px 18px 22px;
+  border-radius: 34px;
+  background: linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(255, 245, 234, 0.88));
+  border: 1px solid rgba(24, 38, 27, 0.1);
+  box-shadow: 0 24px 46px rgba(51, 42, 27, 0.14);
+}
+
+.why-meal-image-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1.02;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.why-meal-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(24, 38, 27, 0.14));
+}
+
+.why-meal-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.22s ease, transform 0.5s ease;
+}
+
+.why-meal-image-wrap img.is-swapping {
+  opacity: 0.38;
+  transform: scale(1.03);
+}
+
+.why-meal-caption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.why-meal-caption strong,
+.why-meal-caption span {
+  display: block;
+  min-height: 92px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fffdf9;
+  border: 1px solid rgba(24, 38, 27, 0.08);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.why-meal-caption strong {
+  font-size: 1.55rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--why-ink);
+}
+
+.why-meal-caption span {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--why-muted);
+}
+
+.why-meal-caption strong.is-swapping,
+.why-meal-caption span.is-swapping {
+  opacity: 0.42;
+  transform: translateY(4px);
+}
+
+.why-orbit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 116px;
+  padding: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(24, 38, 27, 0.08);
+  box-shadow: 0 14px 28px rgba(45, 38, 27, 0.08);
+  text-align: center;
+}
+
+.why-orbit:nth-child(2) {
+  background: linear-gradient(180deg, rgba(215, 231, 206, 0.88), rgba(255, 255, 255, 0.82));
+}
+
+.why-stat-value {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.why-stat-label {
+  max-width: 18ch;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--why-muted);
+}
+
+.why-chart-card {
+  padding: 22px;
+  border-radius: 32px;
+}
+
+.why-chart-header {
+  max-width: 38ch;
+}
+
+.why-chart-header h2 {
+  margin: 14px 0 12px;
+  font-size: clamp(1.9rem, 2.9vw, 3.1rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.why-chart-header p {
+  color: var(--why-muted);
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
+.why-chart-container {
+  margin-top: 22px;
+  width: 100%;
+  min-height: 520px;
+  margin-inline: auto;
+}
+
+.why-chart-title {
+  top: 0;
+  left: 50%;
+  width: min(320px, calc(100% - 24px));
+  padding: 14px 18px;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(24, 38, 27, 0.08);
+  box-shadow: 0 12px 28px rgba(42, 35, 24, 0.09);
+  color: var(--why-ink);
+}
+
+.why-chart-card .ps-complex-meal-title-mini {
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.why-chart-card canvas {
+  filter: drop-shadow(0 22px 34px rgba(23, 28, 23, 0.08));
+}
+
+@media (max-width: 1260px) {
+  .why-hero {
+    grid-template-columns: minmax(260px, 0.9fr) minmax(340px, 0.95fr) minmax(320px, 1fr);
+    padding: 28px;
+    gap: 18px;
+  }
+
+  .why-intro h1 {
+    max-width: 13ch;
+    font-size: clamp(2.3rem, 4vw, 3.8rem);
+  }
+
+  .why-meal-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .why-intro {
+    max-width: 760px;
+  }
+
+  .why-lead,
+  .why-copy-card,
+  .why-chart-header {
+    max-width: none;
+  }
+
+  .why-meal-card {
+    max-width: 420px;
+  }
+
+  .why-chart-container {
+    width: 100%;
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 760px) {
+  .why-shell {
+    width: min(100%, calc(100% - 20px));
+    padding: 18px 0 28px;
+  }
+
+  .why-hero {
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .why-intro h1 {
+    max-width: none;
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .why-spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .why-stats-row {
+    width: 100%;
+  }
+
+  .why-meal-caption {
+    grid-template-columns: 1fr;
+  }
+
+  .why-meal-caption strong,
+  .why-meal-caption span {
+    min-height: auto;
+  }
+
+  .why-orbit {
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  .why-chart-card {
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .why-chart-container {
+    width: 100%;
+    min-height: 360px;
+  }
+}

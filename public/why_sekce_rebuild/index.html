@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why sekce | FitLime test</title>
+  <meta name="description" content="Testovací vizuální Why sekce pro FitLime.">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=2">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/premium-simulator.css">
+  <link rel="stylesheet" href="./why.css">
+</head>
+<body class="why-page">
+  <main class="why-shell">
+    <header class="why-topbar">
+      <a class="why-brand" href="/index.html" aria-label="FitLime domů">
+        <img src="/images/logo_pruhledne.png" alt="FitLime logo">
+        <strong>FitLime</strong>
+      </a>
+    </header>
+
+    <section class="why-hero fade-in">
+      <div class="why-intro">
+        <span class="why-kicker">Why sekce</span>
+        <h1>Algoritmus nevybírá náhodně. Skládá jídla na míru podle desítek souvislostí.</h1>
+        <p class="why-lead">
+          Tým vzdělaných odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
+          vašich cílů, preferencí a nutričních potřeb.
+        </p>
+
+        <div class="why-copy-card">
+          <p>
+            Každý návrh nevychází jen z kalorií. FitLime porovnává více než 25 parametrů, hledá nejlepší rovnováhu
+            mezi živinami a pak vybírá z databáze 350+ zdravých jídel ta, která do sebe dávají smysl jako celek.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-spotlight">
+        <div class="why-stats-row">
+          <div class="why-orbit">
+            <span class="why-stat-value">25+</span>
+            <span class="why-stat-label">výživových hodnot jídla</span>
+          </div>
+
+          <div class="why-orbit">
+            <span class="why-stat-value">350+</span>
+            <span class="why-stat-label">zdravých jídel v databázi</span>
+          </div>
+        </div>
+
+        <figure class="why-meal-card">
+          <div class="why-meal-image-wrap">
+            <img id="whyMealImage" src="./images/losos_poke.jpg" alt="Ukázka zdravého jídla FitLime">
+          </div>
+          <figcaption class="why-meal-caption">
+            <strong id="whyMealCaptionTitle">Losos s quinoou a pečenou brokolicí</strong>
+            <span id="whyMealCaptionText">Ukázka jídla, které algoritmus zasadí do celého dne.</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="why-chart-card">
+        <div class="why-chart-header">
+          <span class="why-chart-eyebrow">Komplexní pohled</span>
+          <h2>Radar ukazuje, že dobré jídlo je vždy o více vrstvách najednou.</h2>
+          <p>
+            Stejný princip už používáte v sekci „Jak FitLime funguje“. Tady je nasazený jako součást Why sekce.
+          </p>
+        </div>
+
+        <div class="ps-complex-chart-container why-chart-container">
+          <div class="ps-complex-meal-title-mini why-chart-title" id="complexMealNameDisplay">
+            Středomořský cizrnový salát s fetou a olivami
+          </div>
+          <canvas id="complexChart" data-interval-ms="5000" data-max-width="920" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const WHY_MEAL_VISUALS = [
+      { src: './images/losos_poke.jpg', caption: 'Losos s quinoou a pečenou brokolicí' },
+      { src: './images/kure_s_bulgurem.jpg', caption: 'Hovězí steak s batátovým pyré a chřestem' },
+      { src: './images/tofu_quino_spena.jpg', caption: 'Středomořský cizrnový salát s fetou a olivami' },
+      { src: './images/sendvic_kruti.jpg', caption: 'Kuřecí plátek s rýží a mandlemi' },
+      { src: './images/kung_pao.jpg', caption: 'Tuňákový tatarák s avokádem a sezamem' },
+      { src: './images/kulicky_s_cizrnou.jpg', caption: 'Pohankové rizoto s houbami' },
+      { src: './images/kruti_rolky.jpg', caption: 'Krůtí ragú s celozrnnými těstovinami a parmezánem' },
+      { src: './images/tofu_se_zeleninou.jpg', caption: 'Veganské kari tofu s kokosovým mlékem' },
+      { src: './images/kure_na_paprice.jpg', caption: 'Pečený pstruh s restovanými fazolkami' },
+      { src: './images/kukurice.jpg', caption: 'Pestrá miska: černé fazole, kukuřice, grilované kuře' }
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach((element) => observer.observe(element));
+
+    const mealImage = document.getElementById('whyMealImage');
+    const mealCaptionTitle = document.getElementById('whyMealCaptionTitle');
+    const mealCaptionText = document.getElementById('whyMealCaptionText');
+
+    function updateWhyMealVisual(index, mealName) {
+      if (!mealImage || !mealCaptionTitle || !mealCaptionText) return;
+      const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
+      mealImage.classList.add('is-swapping');
+      mealCaptionTitle.classList.add('is-swapping');
+      mealCaptionText.classList.add('is-swapping');
+
+      setTimeout(() => {
+        mealImage.src = visual.src;
+        mealImage.alt = mealName || visual.caption;
+        mealCaptionTitle.textContent = mealName || visual.caption;
+        mealCaptionText.textContent = 'Ukázka jídla, které algoritmus zasadí do celého dne.';
+        mealImage.classList.remove('is-swapping');
+        mealCaptionTitle.classList.remove('is-swapping');
+        mealCaptionText.classList.remove('is-swapping');
+      }, 220);
+    }
+
+    document.addEventListener('fitlime:complex-meal-change', (event) => {
+      const { index, meal } = event.detail || {};
+      updateWhyMealVisual(index || 0, meal?.name);
+    });
+  </script>
+  <script type="module" src="/diet-simulator.js"></script>
+</body>
+</html>

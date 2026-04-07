@@ -83,9 +83,11 @@ function diet_sumSelected() {
 function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS) {
     const cx = Wcss / 2; const cy = Hcss / 2;
     const numAngles = definitions.length;
+    const forceCompactLabels = ctx.canvas?.dataset?.compactLabels === "true";
     const isCompactInteractive = isInteractive && numAngles > 10 && window.innerWidth < 900;
+    const useCompactLabels = forceCompactLabels || isCompactInteractive;
     const padding = numAngles > 10
-        ? (isInteractive ? (isCompactInteractive ? Math.max(58, Math.round(Wcss * 0.08)) : Math.max(110, Math.round(Wcss * 0.14))) : 35)
+        ? (isInteractive ? (useCompactLabels ? Math.max(58, Math.round(Wcss * 0.08)) : Math.max(110, Math.round(Wcss * 0.14))) : 35)
         : (isInteractive ? 70 : 35);
     const maxR = Math.max(0, Math.min(cx, cy) - padding);
 
@@ -93,10 +95,24 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         if (labelText.startsWith("Vit.")) return labelText.replace("Vit. ", "").toUpperCase();
         const compactMap = {
             "Energie": "EN",
+            "Bílkoviny": "BÍL",
+            "Tuky": "TUK",
+            "Sacharidy": "SAC",
+            "Vláknina": "VLK",
             "Cholesterol": "CHOL",
             "Ovoce": "OVO",
             "Zelenina": "ZEL",
-            "Ryby": "RYB"
+            "Mléčné výrobky": "MLÉK",
+            "Ryby": "RYB",
+            "Nasycené tuky": "NAS T",
+            "Mononenasycené tuky": "MONO",
+            "Polynenasycené tuky": "POLY",
+            "Kyselina listová": "FOL",
+            "Hořčík": "HOŘ",
+            "Draslík": "DRAS",
+            "Sodík": "SOD",
+            "Vápník": "VÁP",
+            "Železo": "ŽEL"
         };
         if (compactMap[labelText]) return compactMap[labelText];
         return labelText.slice(0, 3).toUpperCase();
@@ -134,12 +150,12 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
         ctx.lineWidth = 1; ctx.stroke();
 
-        const labelOffset = numAngles > 10 ? (isCompactInteractive ? 18 : 55) : (isInteractive ? 55 : 20);
+        const labelOffset = numAngles > 10 ? (useCompactLabels ? 18 : 55) : (isInteractive ? 55 : 20);
         const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + labelOffset, i);
         const labelText = definitions[i].label;
 
         ctx.fillStyle = isInteractive ? "#475569" : "rgba(71, 85, 105, 0.7)";
-        ctx.font = isInteractive ? `${isCompactInteractive ? 700 : 600} ${isCompactInteractive ? 10 : 12}px system-ui` : "500 10px system-ui";
+        ctx.font = isInteractive ? `${useCompactLabels ? 700 : 600} ${useCompactLabels ? 10 : 12}px system-ui` : "500 10px system-ui";
         ctx.letterSpacing = "1px";
 
         const angle = -Math.PI / 2 + (Math.PI * 2 * i) / numAngles;
@@ -151,7 +167,7 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         else ctx.textBaseline = "bottom";
 
         const text = isInteractive
-            ? (isCompactInteractive ? getCompactLabel(labelText) : labelText.toUpperCase())
+            ? (useCompactLabels ? getCompactLabel(labelText) : labelText.toUpperCase())
             : labelText.substring(0, 3).toUpperCase();
         ctx.fillText(text, xLabel, yLabel);
     }
@@ -403,6 +419,28 @@ function generateComplexData(seed) {
 let currentComplexMealIdx = 0;
 let complexDataRender = generateComplexData(COMPLEX_MEALS[0].seed);
 
+function dispatchComplexMealChange(index, meal) {
+    document.dispatchEvent(new CustomEvent("fitlime:complex-meal-change", {
+        detail: {
+            index,
+            meal: { ...meal }
+        }
+    }));
+}
+
+function getComplexMealIntervalMs(canvas) {
+    const raw = canvas?.dataset?.intervalMs || canvas?.parentElement?.dataset?.intervalMs;
+    const parsed = parseInt(raw || "", 10);
+    return Number.isFinite(parsed) && parsed >= 500 ? parsed : 2500;
+}
+
+function getComplexChartMaxWidth(canvas, isMobile, isWideDesktop, isDesktop) {
+    const raw = canvas?.dataset?.maxWidth || canvas?.parentElement?.dataset?.maxWidth;
+    const parsed = parseInt(raw || "", 10);
+    if (Number.isFinite(parsed) && parsed >= 300) return parsed;
+    return isMobile ? 900 : (isWideDesktop ? 940 : (isDesktop ? 840 : 840));
+}
+
 const STATIC_CANVASES = [];
 function loopStaticCanvases(time) {
     STATIC_CANVASES.forEach(sc => {
@@ -437,7 +475,7 @@ function renderComplexChart() {
     const isMobile = window.innerWidth < 900;
     const isWideDesktop = window.innerWidth >= 1400;
     const isDesktop = window.innerWidth >= 1100;
-    const maxChartWidth = isMobile ? 900 : (isWideDesktop ? 940 : (isDesktop ? 840 : 840));
+    const maxChartWidth = getComplexChartMaxWidth(canvas, isMobile, isWideDesktop, isDesktop);
     let Wcss = (canvas.parentElement.clientWidth || maxChartWidth) - (isMobile ? 0 : 8);
     if (Wcss < 300) Wcss = 300;
     if (Wcss > maxChartWidth) Wcss = maxChartWidth;
@@ -555,16 +593,20 @@ export function initDietSimulator() {
     if (weekGrid) { weekGrid.innerHTML = ''; STATIC_DATA.week.forEach(item => renderStaticCard(weekGrid, item)); }
 
     if (document.getElementById("complexChart")) {
+        const complexCanvas = document.getElementById("complexChart");
         const titleEl = document.getElementById("complexMealNameDisplay");
         if (titleEl) titleEl.textContent = COMPLEX_MEALS[currentComplexMealIdx].name;
+        dispatchComplexMealChange(currentComplexMealIdx, COMPLEX_MEALS[currentComplexMealIdx]);
         renderComplexChart();
         requestAnimationFrame(loopStaticCanvases);
         if (!window.__complexMealInterval) {
+            const complexMealIntervalMs = getComplexMealIntervalMs(complexCanvas);
             window.__complexMealInterval = setInterval(() => {
                 currentComplexMealIdx = (currentComplexMealIdx + 1) % COMPLEX_MEALS.length;
                 const newMeal = COMPLEX_MEALS[currentComplexMealIdx];
                 const titleEl = document.getElementById("complexMealNameDisplay");
                 if (titleEl) { titleEl.style.opacity = "0"; setTimeout(() => { titleEl.textContent = newMeal.name; titleEl.style.opacity = "1"; }, 300); }
+                dispatchComplexMealChange(currentComplexMealIdx, newMeal);
                 const newTarget = generateComplexData(newMeal.seed);
                 const start = { ...complexDataRender }; const delta = {};
                 for (const k in newTarget) delta[k] = newTarget[k] - start[k];
@@ -574,7 +616,7 @@ export function initDietSimulator() {
                         for (const kk in newTarget) { complexDataRender[kk] = start[kk] + delta[kk] * k; if (complexSc) complexSc.data[kk] = complexDataRender[kk]; }
                     }
                 });
-            }, 2500);
+            }, complexMealIntervalMs);
         }
     }
     window.addEventListener("resize", () => {
