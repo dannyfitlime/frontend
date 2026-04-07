@@ -21,7 +21,6 @@
 
     <section class="why-hero fade-in">
       <div class="why-intro">
-        <span class="why-kicker">Why sekce</span>
         <h1>Algoritmus skládá jídelníček na míru podle desítek souvislostí.</h1>
         <p class="why-lead">
           Tým odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
@@ -95,6 +94,9 @@
         <div class="ps-complex-chart-container why-chart-container">
           <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
         </div>
+        <p class="why-chart-caption">
+          Kompletní nutriční parametry pro: <span id="complexMealNameDisplay">Losos poke</span>
+        </p>
       </div>
     </section>
   </main>
@@ -137,7 +139,7 @@
 
     const chartHeaderTitle = document.querySelector('.why-chart-header h2');
     const chartHeaderText = document.querySelector('.why-chart-header p');
-    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály, pestrost jídel i dlouhodobou udržitelnost.';
+    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály a pestrost jídel.';
     if (chartHeaderText) chartHeaderText.remove();
 
     const mealImage = document.getElementById('whyMealImage');

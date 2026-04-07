@@ -350,7 +350,6 @@ body.why-page {
 .why-chart-container {
   margin-top: 18px;
   width: min(120%, 1040px);
-  min-height: 520px;
   margin-inline: 0;
   position: relative;
   left: 50%;
@@ -365,6 +364,20 @@ body.why-page {
   display: block;
   margin-inline: auto;
   filter: drop-shadow(0 22px 34px rgba(23, 28, 23, 0.08));
+}
+
+.why-chart-caption {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(24, 38, 27, 0.62);
+}
+
+.why-chart-caption span {
+  font-weight: 600;
+  color: var(--why-ink);
+  transition: opacity 0.28s ease;
 }
 
 @media (max-width: 1260px) {
