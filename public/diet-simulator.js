@@ -265,16 +265,16 @@ const STATIC_DATA = {
 };
 
 const COMPLEX_MEALS = [
-    { name: "Losos s quinoou a pe\u010denou brokolic\u00ed", seed: 1 },
-    { name: "Hov\u011bz\u00ed steak s bat\u00e1tov\u00fdm pyr\u00e9 a ch\u0159estem", seed: 2 },
-    { name: "St\u0159edomo\u0159sk\u00fd cizrnov\u00fd sal\u00e1t s fetou a olivami", seed: 3 },
-    { name: "Ku\u0159ec\u00ed pl\u00e1tek s r\u00fd\u017e\u00ed a mandlemi", seed: 4 },
-    { name: "Tu\u0148\u00e1kov\u00fd tatar\u00e1k s avok\u00e1dem a sezamem", seed: 5 },
-    { name: "Pohankov\u00e9 rizoto s houbami", seed: 6 },
-    { name: "Kr\u016ft\u00ed rag\u00fa s celozrnn\u00fdmi t\u011bstovinami a parmez\u00e1nem", seed: 7 },
-    { name: "Vegansk\u00e9 kari tofu s kokosov\u00fdm ml\u00e9kem", seed: 8 },
-    { name: "Pe\u010den\u00fd pstruh s restovan\u00fdmi fazolkami", seed: 9 },
-    { name: "Pestr\u00e1 miska: \u010dern\u00e9 fazole, kuku\u0159ice, grilovan\u00e9 ku\u0159e", seed: 10 }
+    { name: "Losos poke", seed: 1, macros: { carbs: 38, fat: 34, protein: 28 } },
+    { name: "Ku\u0159e s bulgurem", seed: 2, macros: { carbs: 44, fat: 21, protein: 35 } },
+    { name: "Tofu s quinoou a \u0161pen\u00e1tem", seed: 3, macros: { carbs: 36, fat: 29, protein: 35 } },
+    { name: "Kr\u016ft\u00ed sendvi\u010d", seed: 4, macros: { carbs: 40, fat: 24, protein: 36 } },
+    { name: "Kung pao", seed: 5, macros: { carbs: 33, fat: 29, protein: 38 } },
+    { name: "\u010co\u010dka s vejcem", seed: 6, macros: { carbs: 37, fat: 27, protein: 36 } },
+    { name: "Cand\u00e1t s bramborem a \u0161pen\u00e1tem", seed: 7, macros: { carbs: 30, fat: 23, protein: 47 } },
+    { name: "\u0160v\u00e9dsk\u00fd kol\u00e1\u010d", seed: 8, macros: { carbs: 58, fat: 30, protein: 12 } },
+    { name: "Panna cotta", seed: 9, macros: { carbs: 43, fat: 46, protein: 11 } },
+    { name: "Ban\u00e1nov\u00e9 smoothie", seed: 10, macros: { carbs: 63, fat: 22, protein: 15 } }
 ];
 
 const PAGE_LANG = (document.documentElement.lang || "cs").toLowerCase();

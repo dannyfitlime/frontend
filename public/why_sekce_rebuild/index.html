@@ -50,12 +50,35 @@
         </div>
 
         <figure class="why-meal-card">
+          <figcaption class="why-meal-heading">
+            <strong id="whyMealCaptionTitle">Losos s quinoou a peÄŤenou brokolicĂ­</strong>
+          </figcaption>
           <div class="why-meal-image-wrap">
             <img id="whyMealImage" src="./images/losos_poke.jpg" alt="Ukázka zdravého jídla FitLime">
           </div>
+          <div class="why-macro-row" aria-label="Rozlo&#382;en&#237; makronutrient&#367;">
+            <div class="why-macro-item">
+              <div class="why-macro-donut why-macro-donut-carbs" id="whyMacroCarbs" style="--macro-value: 38;" aria-hidden="true">
+                <span id="whyMacroCarbsValue">38%</span>
+              </div>
+              <strong>Sacharidy</strong>
+            </div>
+            <div class="why-macro-item">
+              <div class="why-macro-donut why-macro-donut-fats" id="whyMacroFats" style="--macro-value: 34;" aria-hidden="true">
+                <span id="whyMacroFatsValue">34%</span>
+              </div>
+              <strong>Tuky</strong>
+            </div>
+            <div class="why-macro-item">
+              <div class="why-macro-donut why-macro-donut-protein" id="whyMacroProtein" style="--macro-value: 28;" aria-hidden="true">
+                <span id="whyMacroProteinValue">28%</span>
+              </div>
+              <strong>B&#237;lkoviny</strong>
+            </div>
+          </div>
           <figcaption class="why-meal-caption">
             <strong id="whyMealCaptionTitle">Losos s quinoou a pečenou brokolicí</strong>
-            <span id="whyMealCaptionText">Ukázka jídla, které algoritmus zasadí do celého dne.</span>
+            <span id="whyMealCaptionText"></span>
           </figcaption>
         </figure>
       </div>
@@ -93,6 +116,19 @@
       { src: './images/kukurice.jpg', caption: 'Pestrá miska: černé fazole, kukuřice, grilované kuře' }
     ];
 
+    WHY_MEAL_VISUALS.splice(0, WHY_MEAL_VISUALS.length,
+      { src: './images/losos_poke.jpg', caption: 'Losos poke' },
+      { src: './images/kure_s_bulgurem.jpg', caption: 'Ku\u0159e s bulgurem' },
+      { src: './images/tofu_quino_spena.jpg', caption: 'Tofu s quinoou a \u0161pen\u00e1tem' },
+      { src: './images/sendvic_kruti.jpg', caption: 'Kr\u016ft\u00ed sendvi\u010d' },
+      { src: './images/kung_pao.jpg', caption: 'Kung pao' },
+      { src: './images/cocka_vejce.jpg', caption: '\u010co\u010dka s vejcem' },
+      { src: './images/candat_bramb_spe.jpg', caption: 'Cand\u00e1t s bramborem a \u0161pen\u00e1tem' },
+      { src: './images/svedsky_kolac.jpg', caption: '\u0160v\u00e9dsk\u00fd kol\u00e1\u010d' },
+      { src: './images/panacota.jpg', caption: 'Panna cotta' },
+      { src: './images/bananove_smoothie.jpg', caption: 'Ban\u00e1nov\u00e9 smoothie' }
+    );
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -100,17 +136,73 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('.fade-in').forEach((element) => observer.observe(element));
+    document.querySelectorAll('.why-meal-caption').forEach((element) => element.remove());
+
+    const chartHeaderTitle = document.querySelector('.why-chart-header h2');
+    const chartHeaderText = document.querySelector('.why-chart-header p');
+    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme více jak 25 parametrů';
+    if (chartHeaderText) chartHeaderText.remove();
 
     const mealImage = document.getElementById('whyMealImage');
     const mealCaptionTitle = document.getElementById('whyMealCaptionTitle');
-    const mealCaptionText = document.getElementById('whyMealCaptionText');
+    const mealCaptionText = { textContent: '' };
+    const chartMealTitle = document.getElementById('complexMealNameDisplay');
+    if (mealCaptionTitle) mealCaptionTitle.textContent = WHY_MEAL_VISUALS[0].caption;
+    if (chartMealTitle) chartMealTitle.textContent = WHY_MEAL_VISUALS[0].caption;
+    const macroNodes = {
+      carbs: {
+        donut: document.getElementById('whyMacroCarbs'),
+        value: document.getElementById('whyMacroCarbsValue')
+      },
+      fat: {
+        donut: document.getElementById('whyMacroFats'),
+        value: document.getElementById('whyMacroFatsValue')
+      },
+      protein: {
+        donut: document.getElementById('whyMacroProtein'),
+        value: document.getElementById('whyMacroProteinValue')
+      }
+    };
 
-    function updateWhyMealVisual(index, mealName) {
-      if (!mealImage || !mealCaptionTitle || !mealCaptionText) return;
+    function animateMacroDonut(node, nextValue, animationId) {
+      if (!node?.donut || !node?.value) return;
+      const startValue = Number(node.donut.style.getPropertyValue('--macro-value') || node.donut.dataset.value || 0);
+      const targetValue = Math.max(0, Math.min(100, Math.round(nextValue || 0)));
+      const startAt = performance.now();
+      const duration = 520;
+
+      function step(now) {
+        const progress = Math.min((now - startAt) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = startValue + (targetValue - startValue) * eased;
+        node.donut.style.setProperty('--macro-value', current.toFixed(2));
+        node.donut.dataset.value = current.toFixed(2);
+        node.value.textContent = `${Math.round(current)}%`;
+        if (progress < 1) {
+          window[animationId] = requestAnimationFrame(step);
+        } else {
+          node.donut.dataset.value = String(targetValue);
+        }
+      }
+
+      if (window[animationId]) cancelAnimationFrame(window[animationId]);
+      window[animationId] = requestAnimationFrame(step);
+    }
+
+    function updateWhyMealMacros(macros) {
+      const safeMacros = macros || {};
+      animateMacroDonut(macroNodes.carbs, safeMacros.carbs, '__whyMacroCarbsFrame');
+      animateMacroDonut(macroNodes.fat, safeMacros.fat, '__whyMacroFatFrame');
+      animateMacroDonut(macroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
+    }
+
+    function updateWhyMealVisual(index, meal) {
+      if (!mealImage || !mealCaptionTitle) return;
       const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
+      const mealName = meal?.name;
       mealImage.classList.add('is-swapping');
       mealCaptionTitle.classList.add('is-swapping');
-      mealCaptionText.classList.add('is-swapping');
+      updateWhyMealMacros(meal?.macros);
 
       setTimeout(() => {
         mealImage.src = visual.src;
@@ -119,13 +211,12 @@
         mealCaptionText.textContent = 'Ukázka jídla, které algoritmus zasadí do celého dne.';
         mealImage.classList.remove('is-swapping');
         mealCaptionTitle.classList.remove('is-swapping');
-        mealCaptionText.classList.remove('is-swapping');
       }, 220);
     }
 
     document.addEventListener('fitlime:complex-meal-change', (event) => {
       const { index, meal } = event.detail || {};
-      updateWhyMealVisual(index || 0, meal?.name);
+      updateWhyMealVisual(index || 0, meal);
     });
   </script>
   <script type="module" src="/diet-simulator.js"></script>

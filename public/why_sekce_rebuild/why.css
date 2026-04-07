@@ -200,6 +200,17 @@ body.why-page {
   box-shadow: 0 24px 46px rgba(51, 42, 27, 0.14);
 }
 
+.why-meal-heading strong {
+  display: block;
+  padding: 16px 18px;
+  border-radius: 20px;
+  font-size: 1.55rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--why-ink);
+  transition: opacity 0.22s ease;
+}
+
 .why-meal-image-wrap {
   position: relative;
   aspect-ratio: 1 / 1.02;
@@ -220,49 +231,86 @@ body.why-page {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.22s ease, transform 0.5s ease;
+  transition: opacity 0.24s ease;
 }
 
 .why-meal-image-wrap img.is-swapping {
-  opacity: 0.38;
-  transform: scale(1.03);
+  opacity: 0.18;
 }
 
-.why-meal-caption {
+.why-macro-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+  align-items: start;
 }
 
-.why-meal-caption strong,
-.why-meal-caption span {
-  display: block;
-  min-height: 92px;
-  padding: 16px;
-  border-radius: 20px;
-  background: #fffdf9;
-  border: 1px solid rgba(24, 38, 27, 0.08);
-  transition: opacity 0.22s ease, transform 0.22s ease;
+.why-macro-item {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 4px 0 0;
 }
 
-.why-meal-caption strong {
-  font-size: 1.55rem;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+.why-macro-item strong {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(24, 38, 27, 0.72);
+}
+
+.why-macro-donut {
+  --macro-color: #e58f58;
+  --macro-track: rgba(24, 38, 27, 0.08);
+  width: 58px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    conic-gradient(var(--macro-color) calc(var(--macro-value) * 1%), var(--macro-track) 0);
+  box-shadow: 0 8px 18px rgba(45, 38, 27, 0.08);
+  position: relative;
+}
+
+.why-macro-donut::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: rgba(255, 250, 244, 0.98);
+}
+
+.why-macro-donut span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--why-ink);
 }
 
-.why-meal-caption span {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--why-muted);
+.why-macro-donut-carbs {
+  --macro-color: #e58f58;
 }
 
-.why-meal-caption strong.is-swapping,
-.why-meal-caption span.is-swapping {
+.why-macro-donut-fats {
+  --macro-color: #98aa74;
+}
+
+.why-macro-donut-protein {
+  --macro-color: #cf7d63;
+}
+
+.why-meal-heading strong.is-swapping {
   opacity: 0.42;
-  transform: translateY(4px);
+}
+
+.why-meal-caption {
+  display: none;
 }
 
 .why-orbit {
@@ -305,11 +353,15 @@ body.why-page {
 }
 
 .why-chart-header {
-  max-width: 38ch;
+  max-width: none;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: center;
 }
 
 .why-chart-header h2 {
-  margin: 14px 0 12px;
+  margin: 10px 0 0;
   font-size: clamp(1.9rem, 2.9vw, 3.1rem);
   line-height: 1;
   letter-spacing: -0.05em;
@@ -322,23 +374,29 @@ body.why-page {
 }
 
 .why-chart-container {
-  margin-top: 22px;
+  margin-top: 18px;
   width: 100%;
   min-height: 520px;
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .why-chart-title {
-  top: 0;
-  left: 50%;
+  order: 2;
+  position: static;
   width: min(320px, calc(100% - 24px));
+  margin: 14px auto 0 0;
   padding: 14px 18px;
-  transform: translateX(-50%);
+  transform: none;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(24, 38, 27, 0.08);
   box-shadow: 0 12px 28px rgba(42, 35, 24, 0.09);
   color: var(--why-ink);
+  text-align: center;
 }
 
 .why-chart-card .ps-complex-meal-title-mini {
@@ -347,6 +405,7 @@ body.why-page {
 }
 
 .why-chart-card canvas {
+  order: 1;
   filter: drop-shadow(0 22px 34px rgba(23, 28, 23, 0.08));
 }
 
@@ -416,13 +475,8 @@ body.why-page {
     width: 100%;
   }
 
-  .why-meal-caption {
-    grid-template-columns: 1fr;
-  }
-
-  .why-meal-caption strong,
-  .why-meal-caption span {
-    min-height: auto;
+  .why-macro-row {
+    gap: 10px;
   }
 
   .why-orbit {
@@ -433,6 +487,10 @@ body.why-page {
   .why-chart-card {
     padding: 16px;
     border-radius: 24px;
+  }
+
+  .why-macro-donut {
+    width: 52px;
   }
 
   .why-chart-container {
