@@ -84,8 +84,8 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
     const cx = Wcss / 2; const cy = Hcss / 2;
     const numAngles = definitions.length;
     const forceCompactLabels = ctx.canvas?.dataset?.compactLabels === "true";
-    const isCompactInteractive = isInteractive && numAngles > 10 && window.innerWidth < 900;
-    const useCompactLabels = forceCompactLabels || isCompactInteractive;
+    const isCompactInteractive = isInteractive && (numAngles > 10 || (window.innerWidth < 820 && numAngles > 8));
+    const useCompactLabels = isCompactInteractive || (forceCompactLabels && numAngles > 10);
     const padding = numAngles > 10
         ? (isInteractive ? (useCompactLabels ? Math.max(58, Math.round(Wcss * 0.08)) : Math.max(110, Math.round(Wcss * 0.14))) : 35)
         : (isInteractive ? 70 : 35);
@@ -95,10 +95,18 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         if (labelText.startsWith("Vit.")) return labelText.replace("Vit. ", "").toUpperCase();
         const compactMap = {
             "Energie": "EN",
+            "Energie v rovnováze": "ENER",
             "Bílkoviny": "BÍL",
             "Tuky": "TUK",
             "Sacharidy": "SAC",
+            "Kvalita sacharidů": "SACH",
             "Vláknina": "VLK",
+            "Kvalita tuků": "TUKY",
+            "Málo nasycených tuků": "SAT",
+            "Málo sodíku": "SOD",
+            "Vitaminy": "VIT",
+            "Minerály": "MIN",
+            "Nutriční hustota": "HUST",
             "Cholesterol": "CHOL",
             "Ovoce": "OVO",
             "Zelenina": "ZEL",
@@ -264,18 +272,154 @@ const STATIC_DATA = {
     ]
 };
 
+const COMPLEX_MEAL_NUTRITION = {
+    banana_smoothie: { energy: 286.0, protein: 1.8, fat: 0.8, carbohydrates: 13.2, fiber: 1.1, sodium: 34.1, cholesterol: 1.1, fruits_vegetables: 0.7, dairy: 0.1, fish: 0.0, saturated_fat: 0.3, monounsaturated_fat: 0.3, polyunsaturated_fat: 0.1, potassium: 251.5, calcium: 60.2, magnesium: 22.2, iron: 0.7, folic_acid: 10.9, vitamin_b1: 0.0, vitamin_b2: 0.1, vitamin_b6: 0.3, vitamin_b12: 0.1, vitamin_c: 6.3, vitamin_d: 0.2, vitamin_e: 0.7 },
+    zander_with_potatoes_and_spinach: { energy: 326.7, protein: 8.1, fat: 0.5, carbohydrates: 10.2, fiber: 1.8, sodium: 47.9, cholesterol: 0.0, fruits_vegetables: 0.0, dairy: 0.0, fish: 0.4, saturated_fat: 0.1, monounsaturated_fat: 0.1, polyunsaturated_fat: 0.2, potassium: 412.7, calcium: 38.5, magnesium: 30.0, iron: 1.5, folic_acid: 38.8, vitamin_b1: 0.1, vitamin_b2: 0.1, vitamin_b6: 0.3, vitamin_b12: 1.4, vitamin_c: 18.5, vitamin_d: 0.3, vitamin_e: 1.2 },
+    red_lentils_with_eggs: { energy: 999.7, protein: 17.6, fat: 5.0, carbohydrates: 32.3, fiber: 5.8, sodium: 93.9, cholesterol: 152.1, fruits_vegetables: 0.0, dairy: 0.0, fish: 0.0, saturated_fat: 1.6, monounsaturated_fat: 2.0, polyunsaturated_fat: 1.3, potassium: 374.7, calcium: 43.7, magnesium: 48.4, iron: 4.7, folic_acid: 124.6, vitamin_b1: 0.3, vitamin_b2: 0.2, vitamin_b6: 0.3, vitamin_b12: 0.4, vitamin_c: 1.8, vitamin_d: 1.4, vitamin_e: 0.6 },
+    kung_pao_with_rice: { energy: 538.9, protein: 13.5, fat: 6.0, carbohydrates: 5.2, fiber: 1.0, sodium: 363.3, cholesterol: 31.4, fruits_vegetables: 0.4, dairy: 0.0, fish: 0.0, saturated_fat: 0.9, monounsaturated_fat: 4.3, polyunsaturated_fat: 0.8, potassium: 284.2, calcium: 21.4, magnesium: 76.1, iron: 1.8, folic_acid: 12.0, vitamin_b1: 0.1, vitamin_b2: 0.1, vitamin_b6: 0.3, vitamin_b12: 0.4, vitamin_c: 38.8, vitamin_d: 0.5, vitamin_e: 2.8 },
+    roasted_chicken_with_bulgur_salad: { energy: 583.7, protein: 11.0, fat: 3.2, carbohydrates: 17.6, fiber: 4.5, sodium: 119.9, cholesterol: 29.1, fruits_vegetables: 0.5, dairy: 0.0, fish: 0.0, saturated_fat: 0.9, monounsaturated_fat: 1.4, polyunsaturated_fat: 0.9, potassium: 300.8, calcium: 30.2, magnesium: 53.2, iron: 1.5, folic_acid: 12.8, vitamin_b1: 0.2, vitamin_b2: 0.1, vitamin_b6: 0.3, vitamin_b12: 0.0, vitamin_c: 6.1, vitamin_d: 0.0, vitamin_e: 0.5 },
+    salmon_poke_bowl: { energy: 644.3, protein: 6.5, fat: 7.6, carbohydrates: 14.8, fiber: 1.4, sodium: 331.2, cholesterol: 12.7, fruits_vegetables: 0.6, dairy: 0.0, fish: 0.3, saturated_fat: 1.2, monounsaturated_fat: 4.7, polyunsaturated_fat: 1.8, potassium: 255.5, calcium: 14.8, magnesium: 20.4, iron: 0.6, folic_acid: 21.2, vitamin_b1: 0.1, vitamin_b2: 0.1, vitamin_b6: 0.4, vitamin_b12: 0.7, vitamin_c: 3.5, vitamin_d: 2.9, vitamin_e: 1.0 },
+    yogurt_panna_cotta: { energy: 340.6, protein: 4.8, fat: 2.0, carbohydrates: 10.9, fiber: 1.6, sodium: 41.0, cholesterol: 5.7, fruits_vegetables: 0.3, dairy: 0.3, fish: 0.0, saturated_fat: 1.2, monounsaturated_fat: 0.6, polyunsaturated_fat: 0.2, potassium: 146.9, calcium: 87.5, magnesium: 13.9, iron: 0.4, folic_acid: 0.1, vitamin_b1: 0.0, vitamin_b2: 0.1, vitamin_b6: 0.1, vitamin_b12: 0.0, vitamin_c: 6.3, vitamin_d: 0.0, vitamin_e: 0.8 },
+    cheese_turkey_and_cranberry_sandwich: { energy: 1003.4, protein: 11.1, fat: 9.4, carbohydrates: 27.6, fiber: 2.5, sodium: 500.0, cholesterol: 13.6, fruits_vegetables: 0.1, dairy: 0.5, fish: 0.0, saturated_fat: 4.2, monounsaturated_fat: 3.4, polyunsaturated_fat: 1.8, potassium: 102.3, calcium: 162.5, magnesium: 25.5, iron: 2.1, folic_acid: 4.7, vitamin_b1: 0.1, vitamin_b2: 0.1, vitamin_b6: 0.1, vitamin_b12: 0.6, vitamin_c: 2.0, vitamin_d: 0.0, vitamin_e: 0.6 },
+    gluten_free_swedish_pie: { energy: 897.6, protein: 10.4, fat: 14.2, carbohydrates: 11.6, fiber: 2.3, sodium: 47.8, cholesterol: 165.8, fruits_vegetables: 0.0, dairy: 0.2, fish: 0.0, saturated_fat: 3.0, monounsaturated_fat: 8.1, polyunsaturated_fat: 3.1, potassium: 235.8, calcium: 132.5, magnesium: 58.2, iron: 1.4, folic_acid: 26.1, vitamin_b1: 0.1, vitamin_b2: 0.4, vitamin_b6: 0.1, vitamin_b12: 0.7, vitamin_c: 0.4, vitamin_d: 0.4, vitamin_e: 5.2 },
+    tofu_with_quinoa_and_spinach: { energy: 976.7, protein: 12.5, fat: 5.7, carbohydrates: 32.4, fiber: 4.4, sodium: 16.9, cholesterol: 0.0, fruits_vegetables: 0.0, dairy: 0.0, fish: 0.0, saturated_fat: 0.8, monounsaturated_fat: 1.5, polyunsaturated_fat: 3.4, potassium: 461.4, calcium: 57.5, magnesium: 124.0, iron: 3.8, folic_acid: 132.8, vitamin_b1: 0.2, vitamin_b2: 0.2, vitamin_b6: 0.3, vitamin_b12: 0.0, vitamin_c: 9.6, vitamin_d: 0.0, vitamin_e: 1.7 }
+};
+
+function scoreHigherIsBetter(value, target, minScore = 20, maxScore = MAX_DISPLAY) {
+    if (!Number.isFinite(value) || value <= 0 || !Number.isFinite(target) || target <= 0) return minScore;
+    return clamp((value / target) * 100, minScore, maxScore);
+}
+
+function scoreLowerIsBetter(value, idealMax, poorAt, minScore = 20, maxScore = 115) {
+    if (!Number.isFinite(value)) return minScore;
+    if (value <= idealMax) return maxScore;
+    const progress = (value - idealMax) / Math.max(poorAt - idealMax, 1);
+    return clamp(maxScore - progress * 90, minScore, maxScore);
+}
+
+function scoreTargetRange(value, idealMin, idealMax, lowBound, highBound, minScore = 20, idealScore = 112) {
+    if (!Number.isFinite(value)) return minScore;
+    if (value >= idealMin && value <= idealMax) {
+        const center = (idealMin + idealMax) / 2;
+        const halfRange = Math.max((idealMax - idealMin) / 2, 1);
+        const centerOffset = Math.abs(value - center) / halfRange;
+        return clamp(idealScore - centerOffset * 8, 100, idealScore);
+    }
+    if (value < idealMin) {
+        const progress = (value - lowBound) / Math.max(idealMin - lowBound, 1);
+        return clamp(minScore + progress * (idealScore - minScore), minScore, idealScore);
+    }
+    const progress = (highBound - value) / Math.max(highBound - idealMax, 1);
+    return clamp(minScore + progress * (idealScore - minScore), minScore, idealScore);
+}
+
+function scoreAverage(parts) {
+    const valid = parts.filter(([value, weight]) => Number.isFinite(value) && Number.isFinite(weight) && weight > 0);
+    if (valid.length === 0) return 20;
+    const weightSum = valid.reduce((sum, [, weight]) => sum + weight, 0);
+    const valueSum = valid.reduce((sum, [value, weight]) => sum + (value * weight), 0);
+    return clamp(valueSum / weightSum, 20, MAX_DISPLAY);
+}
+
+function calculateMealMacros(nutrition) {
+    const proteinCalories = Math.max(0, nutrition.protein) * 4;
+    const fatCalories = Math.max(0, nutrition.fat) * 9;
+    const carbCalories = Math.max(0, nutrition.carbohydrates) * 4;
+    const totalCalories = proteinCalories + fatCalories + carbCalories;
+    if (!totalCalories) return { carbs: 34, fat: 33, protein: 33 };
+
+    const raw = {
+        carbs: (carbCalories / totalCalories) * 100,
+        fat: (fatCalories / totalCalories) * 100,
+        protein: (proteinCalories / totalCalories) * 100
+    };
+    const rounded = {
+        carbs: Math.round(raw.carbs),
+        fat: Math.round(raw.fat),
+        protein: Math.round(raw.protein)
+    };
+    const diff = 100 - (rounded.carbs + rounded.fat + rounded.protein);
+    if (diff !== 0) {
+        const largestKey = Object.keys(raw).sort((a, b) => raw[b] - raw[a])[0];
+        rounded[largestKey] += diff;
+    }
+    return rounded;
+}
+
+function buildComplexMealProfile(nutrition) {
+    const produceBase = scoreHigherIsBetter(nutrition.fruits_vegetables, 0.45);
+    const fruitScore = scoreAverage([
+        [produceBase, 0.55],
+        [scoreHigherIsBetter(nutrition.vitamin_c, 18), 0.3],
+        [scoreTargetRange(nutrition.carbohydrates, 8, 30, 0, 60), 0.15]
+    ]);
+    const vegetableScore = scoreAverage([
+        [produceBase, 0.45],
+        [scoreHigherIsBetter(nutrition.fiber, 4), 0.2],
+        [scoreHigherIsBetter(nutrition.folic_acid, 90), 0.2],
+        [scoreHigherIsBetter(nutrition.potassium, 350), 0.15]
+    ]);
+    const dairyScore = scoreAverage([
+        [scoreHigherIsBetter(nutrition.dairy, 0.35), 0.55],
+        [scoreHigherIsBetter(nutrition.calcium, 180), 0.3],
+        [scoreHigherIsBetter(nutrition.vitamin_b12, 0.5), 0.15]
+    ]);
+    const fishScore = scoreAverage([
+        [scoreHigherIsBetter(nutrition.fish, 0.3), 0.6],
+        [scoreHigherIsBetter(nutrition.vitamin_d, 3.5), 0.2],
+        [scoreHigherIsBetter(nutrition.vitamin_b12, 0.8), 0.2]
+    ]);
+
+    return {
+        c0: scoreTargetRange(nutrition.energy, 320, 720, 180, 1050),
+        c1: scoreHigherIsBetter(nutrition.protein, 15),
+        c2: scoreTargetRange(nutrition.fat, 3, 12, 0, 20),
+        c3: scoreTargetRange(nutrition.carbohydrates, 10, 35, 0, 60),
+        c4: scoreHigherIsBetter(nutrition.fiber, 4.5),
+        c5: fruitScore,
+        c6: vegetableScore,
+        c7: dairyScore,
+        c8: fishScore,
+        c9: scoreLowerIsBetter(nutrition.saturated_fat, 1.5, 5),
+        c10: scoreHigherIsBetter(nutrition.monounsaturated_fat, 3.2),
+        c11: scoreHigherIsBetter(nutrition.polyunsaturated_fat, 1.6),
+        c12: scoreLowerIsBetter(nutrition.cholesterol, 35, 180),
+        c13: scoreHigherIsBetter(nutrition.vitamin_b1, 0.18),
+        c14: scoreHigherIsBetter(nutrition.vitamin_b2, 0.22),
+        c15: scoreHigherIsBetter(nutrition.vitamin_b6, 0.32),
+        c16: scoreHigherIsBetter(nutrition.vitamin_b12, 0.7),
+        c17: scoreHigherIsBetter(nutrition.vitamin_c, 24),
+        c18: scoreHigherIsBetter(nutrition.vitamin_d, 3.5),
+        c19: scoreHigherIsBetter(nutrition.vitamin_e, 2.4),
+        c20: scoreHigherIsBetter(nutrition.folic_acid, 100),
+        c21: scoreHigherIsBetter(nutrition.magnesium, 55),
+        c22: scoreHigherIsBetter(nutrition.potassium, 380),
+        c23: scoreLowerIsBetter(nutrition.sodium, 120, 500),
+        c24: scoreHigherIsBetter(nutrition.calcium, 120),
+        c25: scoreHigherIsBetter(nutrition.iron, 2.2)
+    };
+}
+
 const COMPLEX_MEALS = [
-    { name: "Losos poke", seed: 1, macros: { carbs: 38, fat: 34, protein: 28 } },
-    { name: "Ku\u0159e s bulgurem", seed: 2, macros: { carbs: 44, fat: 21, protein: 35 } },
-    { name: "Tofu s quinoou a \u0161pen\u00e1tem", seed: 3, macros: { carbs: 36, fat: 29, protein: 35 } },
-    { name: "Kr\u016ft\u00ed sendvi\u010d", seed: 4, macros: { carbs: 40, fat: 24, protein: 36 } },
-    { name: "Kung pao", seed: 5, macros: { carbs: 33, fat: 29, protein: 38 } },
-    { name: "\u010co\u010dka s vejcem", seed: 6, macros: { carbs: 37, fat: 27, protein: 36 } },
-    { name: "Cand\u00e1t s bramborem a \u0161pen\u00e1tem", seed: 7, macros: { carbs: 30, fat: 23, protein: 47 } },
-    { name: "\u0160v\u00e9dsk\u00fd kol\u00e1\u010d", seed: 8, macros: { carbs: 58, fat: 30, protein: 12 } },
-    { name: "Panna cotta", seed: 9, macros: { carbs: 43, fat: 46, protein: 11 } },
-    { name: "Ban\u00e1nov\u00e9 smoothie", seed: 10, macros: { carbs: 63, fat: 22, protein: 15 } }
-];
+    { mealId: "salmon_poke_bowl", name: "Losos poke" },
+    { mealId: "roasted_chicken_with_bulgur_salad", name: "Ku\u0159e s bulgurem" },
+    { mealId: "tofu_with_quinoa_and_spinach", name: "Tofu s quinoou a \u0161pen\u00e1tem" },
+    { mealId: "cheese_turkey_and_cranberry_sandwich", name: "Kr\u016ft\u00ed sendvi\u010d" },
+    { mealId: "kung_pao_with_rice", name: "Kung pao" },
+    { mealId: "red_lentils_with_eggs", name: "\u010co\u010dka s vejcem" },
+    { mealId: "zander_with_potatoes_and_spinach", name: "Cand\u00e1t s bramborem a \u0161pen\u00e1tem" },
+    { mealId: "gluten_free_swedish_pie", name: "\u0160v\u00e9dsk\u00fd kol\u00e1\u010d" },
+    { mealId: "yogurt_panna_cotta", name: "Panna cotta" },
+    { mealId: "banana_smoothie", name: "Ban\u00e1nov\u00e9 smoothie" }
+].map((meal) => {
+    const nutrition = COMPLEX_MEAL_NUTRITION[meal.mealId];
+    return {
+        ...meal,
+        nutrition,
+        macros: calculateMealMacros(nutrition),
+        profile: buildComplexMealProfile(nutrition)
+    };
+});
 
 const PAGE_LANG = (document.documentElement.lang || "cs").toLowerCase();
 const LOCALE = PAGE_LANG.startsWith("en") ? "en" : PAGE_LANG.startsWith("sk") ? "sk" : "cs";
@@ -315,16 +459,16 @@ const LOCALE_COPY = {
             { name: "Sobota", desc: "Rodinny obed s kacicou" }
         ],
         complexMeals: [
-            "Losos s quinoou a pecenou brokolicou",
-            "Hovadzi steak so sladkym zemiakovym pyre a sparglou",
-            "Stredomorsky cicerovy salat s fetou a olivami",
-            "Kuraci filet s ryzou a mandlami",
-            "Tuniakovy tatarak s avokadom a sezamom",
-            "Pohankove rizoto s hubami",
-            "Morcacie ragu s celozrnnymi cestovinami a parmezanom",
-            "Veganske tofu kari s kokosovym mliekom",
-            "Peceny pstruh s restovanou zelenou fazulkou",
-            "Pestrofarebna miska: cierna fazula, kukurica, grilovane kura"
+            "Losos poke",
+            "Kuracie s bulgurom",
+            "Tofu s quinoou a spenatom",
+            "Morcaci sendvic",
+            "Kung pao",
+            "Sosovica s vajcom",
+            "Zubac so zemiakmi a spenatom",
+            "Svedsky kolac",
+            "Panna cotta",
+            "Bananove smoothie"
         ]
     },
     en: {
@@ -362,16 +506,16 @@ const LOCALE_COPY = {
             { name: "Saturday", desc: "Family roast duck lunch" }
         ],
         complexMeals: [
-            "Salmon with quinoa and roasted broccoli",
-            "Beef steak with sweet potato puree and asparagus",
-            "Mediterranean chickpea salad with feta and olives",
-            "Chicken fillet with rice and almonds",
-            "Tuna tartare with avocado and sesame",
-            "Buckwheat risotto with mushrooms",
-            "Turkey ragout with wholegrain pasta and parmesan",
-            "Vegan tofu curry with coconut milk",
-            "Baked trout with sauteed green beans",
-            "Colorful bowl: black beans, corn, grilled chicken"
+            "Salmon poke bowl",
+            "Roasted chicken with bulgur salad",
+            "Tofu with quinoa and spinach",
+            "Turkey sandwich with cheese and cranberries",
+            "Kung pao with rice",
+            "Red lentils with eggs",
+            "Zander with potatoes and spinach",
+            "Gluten-free Swedish pie",
+            "Yogurt panna cotta",
+            "Banana smoothie"
         ]
     }
 };
@@ -405,19 +549,17 @@ if (ACTIVE_LOCALE_COPY) {
     });
 }
 
-function generateComplexData(seed) {
+function generateComplexData(meal) {
+    const profile = meal?.profile || {};
     const data = {};
-    COMPLEX_CATEGORIES.forEach((cat, idx) => {
-        let v = 90 + Math.sin(idx * 7 + seed) * 20 + Math.cos(idx * 3 + seed * 2) * 10 + (Math.sin(seed * idx) * 15);
-        if (cat.key === "c9" || cat.key === "c12" || cat.key === "c23") v = 50 + Math.abs(Math.sin(seed + idx)) * 40;
-        if (cat.key === "c5" || cat.key === "c6" || cat.key === "c17") v = 100 + Math.abs(Math.sin(seed * 2)) * 40;
-        data[cat.key] = v;
+    COMPLEX_CATEGORIES.forEach((cat) => {
+        data[cat.key] = profile[cat.key] || 0;
     });
     return data;
 }
 
 let currentComplexMealIdx = 0;
-let complexDataRender = generateComplexData(COMPLEX_MEALS[0].seed);
+let complexDataRender = generateComplexData(COMPLEX_MEALS[0]);
 
 function dispatchComplexMealChange(index, meal) {
     document.dispatchEvent(new CustomEvent("fitlime:complex-meal-change", {
@@ -607,7 +749,7 @@ export function initDietSimulator() {
                 const titleEl = document.getElementById("complexMealNameDisplay");
                 if (titleEl) { titleEl.style.opacity = "0"; setTimeout(() => { titleEl.textContent = newMeal.name; titleEl.style.opacity = "1"; }, 300); }
                 dispatchComplexMealChange(currentComplexMealIdx, newMeal);
-                const newTarget = generateComplexData(newMeal.seed);
+                const newTarget = generateComplexData(newMeal);
                 const start = { ...complexDataRender }; const delta = {};
                 for (const k in newTarget) delta[k] = newTarget[k] - start[k];
                 const complexSc = STATIC_CANVASES.find(s => s.id === "complex");
