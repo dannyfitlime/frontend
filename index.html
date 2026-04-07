@@ -368,14 +368,6 @@
         <div class="home-container">
           <h2 data-i18n="home.preview.title"></h2>
           <p class="lead" data-i18n="home.preview.lead"></p>
-          <div class="preview-tags">
-            <span class="tag" data-tag="0" data-i18n="home.preview.tags.tag0"></span>
-            <span class="tag" data-tag="1" data-i18n="home.preview.tags.tag1"></span>
-            <span class="tag" data-tag="2" data-i18n="home.preview.tags.tag2"></span>
-            <span class="tag" data-tag="3" data-i18n="home.preview.tags.tag3"></span>
-            <span class="tag" data-tag="4" data-i18n="home.preview.tags.tag4"></span>
-            <span class="tag" data-tag="5" data-i18n="home.preview.tags.tag5"></span>
-          </div>
         </div>
 
         <div id="lightgallery" class="preview-grid">
@@ -1408,31 +1400,17 @@
     });
   </script>
   <script>
-    const tags = document.querySelectorAll('.tag');
     const images = document.querySelectorAll('.preview-grid a');
 
     // ✅ Najetí na tag zvýrazní obrázek
-    tags.forEach(tag => {
-      tag.addEventListener('mouseenter', () => {
-        const target = tag.dataset.tag;
-        document.querySelectorAll(`.preview-grid a[data-tag="${target}"] img`).forEach(img => {
-          img.classList.add('highlight');
-        });
-      });
-      tag.addEventListener('mouseleave', () => {
-        document.querySelectorAll('.preview-grid img').forEach(img => img.classList.remove('highlight'));
-      });
-    });
-
     // ✅ Najetí na obrázek zvýrazní tag
     images.forEach(img => {
       img.addEventListener('mouseenter', () => {
-        const target = img.dataset.tag;
-        const tag = document.querySelector(`.tag[data-tag="${target}"]`);
-        tag.classList.add('highlight');
+        document.querySelectorAll('.preview-grid img').forEach(image => image.classList.remove('highlight'));
+        img.querySelector('img')?.classList.add('highlight');
       });
       img.addEventListener('mouseleave', () => {
-        document.querySelectorAll('.tag').forEach(tag => tag.classList.remove('highlight'));
+        document.querySelectorAll('.preview-grid img').forEach(image => image.classList.remove('highlight'));
       });
     });
   </script>
