@@ -735,6 +735,41 @@ body.menu-open {
   text-align: center;
 }
 
+.how-step-labels,
+.how-progress,
+.how-step-icons,
+.how-detail {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.how-steps.has-entered .how-step-labels,
+.how-steps.has-entered .how-progress,
+.how-steps.has-entered .how-step-icons,
+.how-steps.has-entered .how-detail {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-steps.has-entered .how-step-labels {
+  transition-delay: 0.06s;
+}
+
+.how-steps.has-entered .how-progress {
+  transition-delay: 0.18s;
+}
+
+.how-steps.has-entered .how-step-icons {
+  transition-delay: 0.3s;
+}
+
+.how-steps.has-entered .how-detail {
+  transition-delay: 0.42s;
+}
+
 .how-title {
   font-weight: 700;
   margin-bottom: 16px;
@@ -781,7 +816,8 @@ body.menu-open {
   font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.25s ease;
+  opacity: 0.52;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
 }
 
 .label-item.active {
@@ -916,7 +952,7 @@ body.menu-open {
 
 /* animace */
 .fade {
-  animation: fadeIn 0.6s ease;
+  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* RESPONSIVE — stack na mobilu */
@@ -983,12 +1019,35 @@ body.menu-open {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(22px, 10px, 0) scale(0.98);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how-step-labels,
+  .how-progress,
+  .how-step-icons,
+  .how-detail,
+  .label-item,
+  .icon-small,
+  .progress-fill,
+  .p-dot,
+  .fade {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .how-step-labels,
+  .how-progress,
+  .how-step-icons,
+  .how-detail {
+    opacity: 1;
   }
 }
 

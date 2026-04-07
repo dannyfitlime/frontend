@@ -1280,6 +1280,7 @@
 
     // how sekce animace
     document.addEventListener("DOMContentLoaded", () => {
+      const howSection = document.getElementById("how");
 
       const labels = document.querySelectorAll(".label-item");
       const dots = document.querySelectorAll(".p-dot");
@@ -1290,15 +1291,42 @@
       const progressFill = document.getElementById("progress-fill");
 
       const textStorage = document.querySelectorAll("#how-big-texts p");
+      const stepCount = dots.length;
+      const autoplayDelay = 2600;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      let activeStep = 0;
+      let autoplayTimer = null;
+
+      function clearHowAutoplay() {
+        if (autoplayTimer) {
+          window.clearTimeout(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      function scheduleHowAutoplay() {
+        clearHowAutoplay();
+        if (!howSection || !howSection.classList.contains("is-in-view") || prefersReducedMotion.matches || !stepCount) {
+          return;
+        }
+
+        autoplayTimer = window.setTimeout(() => {
+          window.setStep((activeStep + 1) % stepCount);
+        }, autoplayDelay);
+      }
 
 
       window.setStep = function (step) {
+        if (!stepCount) return;
+        const normalizedStep = ((Number(step) || 0) % stepCount + stepCount) % stepCount;
+        activeStep = normalizedStep;
 
         /* ===== 1) Změna velkého obrázku ===== */
-        bigImg.src = `/images/how${step + 1}.png`;
+        bigImg.src = `/images/how${normalizedStep + 1}.png`;
 
         /* ===== 2) Změna textu z hidden i18n bloků ===== */
-        bigText.innerHTML = textStorage[step].innerHTML;
+        bigText.innerHTML = textStorage[normalizedStep].innerHTML;
 
         // animace
         bigImg.classList.remove("fade");
@@ -1310,26 +1338,56 @@
 
         /* ===== 3) labely ===== */
         labels.forEach((l, index) => {
-          l.classList.toggle("active", index === step);
+          l.classList.toggle("active", index === normalizedStep);
         });
 
         /* ===== 4) ikony ===== */
         icons.forEach((icon, index) => {
-          icon.classList.toggle("active", index === step);
+          icon.classList.toggle("active", index === normalizedStep);
         });
 
         /* ===== 5) tečky ===== */
         dots.forEach((dot, index) => {
           dot.classList.remove("active", "completed");
-          if (index < step) dot.classList.add("completed");
-          if (index === step) dot.classList.add("active");
+          if (index < normalizedStep) dot.classList.add("completed");
+          if (index === normalizedStep) dot.classList.add("active");
         });
 
         /* ===== 6) progress bar ===== */
-        const percentage = (step / (dots.length - 1)) * 100;
+        const percentage = stepCount > 1 ? (normalizedStep / (stepCount - 1)) * 100 : 0;
         progressFill.style.width = percentage + "%";
+        scheduleHowAutoplay();
       }
 
+
+      if (howSection) {
+        const howObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              howSection.classList.add("has-entered", "is-in-view");
+              scheduleHowAutoplay();
+            } else {
+              howSection.classList.remove("is-in-view");
+              clearHowAutoplay();
+            }
+          });
+        }, { threshold: 0.45 });
+
+        howObserver.observe(howSection);
+
+        howSection.addEventListener("mouseenter", clearHowAutoplay);
+        howSection.addEventListener("mouseleave", scheduleHowAutoplay);
+        howSection.addEventListener("focusin", clearHowAutoplay);
+        howSection.addEventListener("focusout", scheduleHowAutoplay);
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          clearHowAutoplay();
+        } else {
+          scheduleHowAutoplay();
+        }
+      });
 
       /* === Events === */
       labels.forEach(l => {
