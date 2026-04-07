@@ -22,9 +22,9 @@
     <section class="why-hero fade-in">
       <div class="why-intro">
         <span class="why-kicker">Why sekce</span>
-        <h1>Algoritmus nevybírá náhodně. Skládá jídla na míru podle desítek souvislostí.</h1>
+        <h1>Algoritmus skládá jídelníček na míru podle desítek souvislostí.</h1>
         <p class="why-lead">
-          Tým vzdělaných odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
+          Tým odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
           vašich cílů, preferencí a nutričních potřeb.
         </p>
 
@@ -93,7 +93,7 @@
         </div>
 
         <div class="ps-complex-chart-container why-chart-container">
-          <canvas id="complexChart" data-interval-ms="5000" data-max-width="920" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
+          <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
         </div>
       </div>
     </section>
@@ -137,7 +137,7 @@
 
     const chartHeaderTitle = document.querySelector('.why-chart-header h2');
     const chartHeaderText = document.querySelector('.why-chart-header p');
-    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme více jak 25 parametrů';
+    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály, pestrost jídel i dlouhodobou udržitelnost.';
     if (chartHeaderText) chartHeaderText.remove();
 
     const mealImage = document.getElementById('whyMealImage');

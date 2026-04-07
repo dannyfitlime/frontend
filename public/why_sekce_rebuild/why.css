@@ -3,9 +3,6 @@
   --why-ink: #18261b;
   --why-muted: #5d695f;
   --why-line: rgba(24, 38, 27, 0.14);
-  --why-accent: #e58f58;
-  --why-accent-soft: rgba(229, 143, 88, 0.18);
-  --why-mint: #d7e7ce;
   --why-card: rgba(255, 252, 247, 0.82);
   --why-shadow: 0 24px 70px rgba(36, 34, 26, 0.14);
 }
@@ -135,7 +132,6 @@ body.why-page {
 }
 
 .why-copy-card,
-.why-question,
 .why-chart-card {
   border: 1px solid var(--why-line);
   background: var(--why-card);
@@ -152,28 +148,6 @@ body.why-page {
   font-size: 0.98rem;
   line-height: 1.75;
   color: var(--why-muted);
-}
-
-.why-question {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 18px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(229, 143, 88, 0.12), rgba(255, 255, 255, 0.9));
-}
-
-.why-question span {
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--why-muted);
-}
-
-.why-question strong {
-  font-size: 1.2rem;
-  line-height: 1.25;
 }
 
 .why-spotlight {
@@ -375,32 +349,21 @@ body.why-page {
 
 .why-chart-container {
   margin-top: 18px;
-  width: 100%;
+  width: min(120%, 1040px);
   min-height: 520px;
-  margin-inline: auto;
+  margin-inline: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.why-chart-title {
-  order: 2;
-  position: static;
-  width: min(320px, calc(100% - 24px));
-  margin: 14px auto 0 0;
-  padding: 14px 18px;
-  transform: none;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(24, 38, 27, 0.08);
-  box-shadow: 0 12px 28px rgba(42, 35, 24, 0.09);
-  color: var(--why-ink);
-  text-align: center;
-}
-
 .why-chart-card canvas {
   order: 1;
+  display: block;
+  margin-inline: auto;
   filter: drop-shadow(0 22px 34px rgba(23, 28, 23, 0.08));
 }
 
@@ -443,6 +406,9 @@ body.why-page {
   .why-chart-container {
     width: 100%;
     min-height: 460px;
+    margin-inline: auto;
+    left: auto;
+    transform: none;
   }
 }
 
@@ -491,5 +457,8 @@ body.why-page {
   .why-chart-container {
     width: 100%;
     min-height: 360px;
+    margin-inline: auto;
+    left: auto;
+    transform: none;
   }
 }
