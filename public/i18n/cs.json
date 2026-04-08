@@ -48,9 +48,11 @@
       "chart": {
         "title": "Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.",
         "text": "Zdravé jídlo není jen o kaloriích.",
-        "link": "Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.",
+        "linkPrefix": "Sledujeme ",
+        "link": "poměr makroživin, vitamíny, minerály",
+        "linkSuffix": " i to, jak celé složení podporuje pestrost jídelníčku.",
         "ariaLabel": "Radarový graf komplexního vyhodnocení jídla",
-        "caption": "Kompletní nutriční profil pro:"
+        "caption": "Kompletní výživový profil pro:"
       },
       "meals": {
         "salmonPoke": "Losos poke",
@@ -152,7 +154,7 @@
     },
     "coverage": {
       "title": "Co jídelníček pokrývá",
-      "intro": "Kompletní přehled všech klíčových živin a potravinových skupin:",
+      "intro": "Fitlime jídelníček pokrývá všechny důležité makroživiny, mikroživiny i vitamíny, které vaše tělo potřebuje.<br>Jak jednotlivé složky kombinujeme do vyváženého plánu, si můžete přečíst <a href=\"/jak-fitlime-funguje/index.html\" class=\"diet-link\">zde</a>.",
       "boxes": {
         "energy": {
           "title": "Energie a makroživiny",

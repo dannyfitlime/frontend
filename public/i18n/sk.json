@@ -47,7 +47,9 @@
       "chart": {
         "title": "Graf ukazuje všetky parametre, ktoré pri skladaní jedálnička sledujeme.",
         "text": "Zdravé jedlo nie je len o kalóriách.",
-        "link": "Sledujeme pomer makroživín, vitamíny, minerály aj to, ako celé zloženie podporuje pestrosť jedálnička.",
+        "linkPrefix": "Sledujeme ",
+        "link": "pomer makroživín, vitamíny, minerály",
+        "linkSuffix": " aj to, ako celé zloženie podporuje pestrosť jedálnička.",
         "ariaLabel": "Radarový graf komplexného vyhodnotenia jedla",
         "caption": "Kompletný nutričný profil pre:"
       },

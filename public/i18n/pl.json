@@ -44,7 +44,9 @@
       "chart": {
         "title": "Wykres pokazuje wszystkie parametry, które śledzimy podczas układania jadłospisu.",
         "text": "Zdrowe jedzenie to nie tylko kalorie.",
-        "link": "Monitorujemy stosunek makroskładników, witaminy, minerały oraz to, jak cały skład wspiera różnorodność diety.",
+        "linkPrefix": "Monitorujemy ",
+        "link": "stosunek makroskładników, witaminy i minerały",
+        "linkSuffix": " oraz to, jak cały skład wspiera różnorodność diety.",
         "ariaLabel": "Wykres radarowy kompleksowej oceny posiłku",
         "caption": "Pełny profil żywieniowy dla:"
       },

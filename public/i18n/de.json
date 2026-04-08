@@ -44,7 +44,9 @@
         "chart": {
         "title": "Die Grafik zeigt alle Parameter, die wir bei der Erstellung des Speiseplans berücksichtigen.",
         "text": "Gesunde Ernährung ist mehr als nur Kalorien.",
-        "link": "Wir überwachen das Makronährstoffverhältnis, Vitamine, Mineralien sowie die Art und Weise, wie die gesamte Zusammensetzung die Vielfalt des Speiseplans unterstützt.",
+        "linkPrefix": "Wir überwachen ",
+        "link": "das Makronährstoffverhältnis, Vitamine und Mineralien",
+        "linkSuffix": " sowie die Art und Weise, wie die gesamte Zusammensetzung die Vielfalt des Speiseplans unterstützt.",
         "ariaLabel": "Netzdiagramm der umfassenden Mahlzeitenbewertung",
         "caption": "Vollständiges Nährwertprofil für:"
         },

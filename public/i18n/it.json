@@ -44,7 +44,9 @@
       "chart": {
         "title": "Il grafico mostra tutti i parametri che monitoriamo durante la creazione del tuo piano alimentare.",
         "text": "Mangiare sano non è solo una questione di calorie.",
-        "link": "Monitoriamo il rapporto tra macronutrienti, vitamine, minerali e come l'intera composizione favorisca la varietà della dieta.",
+        "linkPrefix": "Monitoriamo ",
+        "link": "il rapporto tra macronutrienti, vitamine e minerali",
+        "linkSuffix": " e come l'intera composizione favorisca la varietà della dieta.",
         "ariaLabel": "Grafico a radar della valutazione nutrizionale completa",
         "caption": "Profilo nutrizionale completo per:"
       },

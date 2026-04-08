@@ -589,14 +589,6 @@ body.menu-open {
   pointer-events: none;
 }
 
-.why-hero::before {
-  width: 260px;
-  height: 260px;
-  right: -80px;
-  top: -90px;
-  background: rgba(229, 143, 88, 0.12);
-}
-
 .why-hero::after {
   width: 200px;
   height: 200px;
@@ -689,6 +681,14 @@ body.menu-open {
   text-align: center;
   color: var(--why-ink);
   transition: opacity 0.22s ease;
+}
+
+@media (min-width: 1025px) {
+  .why-meal-heading strong {
+    min-height: 104px;
+    display: grid;
+    align-items: center;
+  }
 }
 
 .why-meal-heading strong.is-swapping {

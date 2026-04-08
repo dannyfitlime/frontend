@@ -44,7 +44,9 @@
       "chart": {
         "title": "Le graphique présente tous les paramètres que nous suivons lors de l'élaboration du menu.",
         "text": "Manger sainement ne se résume pas aux calories.",
-        "link": "Nous surveillons le ratio de macronutriments, les vitamines, les minéraux ainsi que la manière dont la composition globale favorise la variété de l'alimentation.",
+        "linkPrefix": "Nous surveillons ",
+        "link": "le ratio de macronutriments, les vitamines et les minéraux",
+        "linkSuffix": " ainsi que la manière dont la composition globale favorise la variété de l'alimentation.",
         "ariaLabel": "Graphique radar de l'évaluation nutritionnelle complète",
         "caption": "Profil nutritionnel complet pour :"
       },

@@ -44,7 +44,9 @@
       "chart": {
         "title": "El gráfico muestra todos los parámetros que seguimos al crear tu plan de alimentación.",
         "text": "La comida saludable no es solo cuestión de calorías.",
-        "link": "Monitoreamos la proporción de macronutrientes, vitaminas, minerales y cómo la composición total apoya la variedad de la dieta.",
+        "linkPrefix": "Monitoreamos ",
+        "link": "la proporción de macronutrientes, vitaminas y minerales",
+        "linkSuffix": " y cómo la composición total apoya la variedad de la dieta.",
         "ariaLabel": "Gráfico de radar de la evaluación nutricional completa",
         "caption": "Perfil nutricional completo de:"
       },

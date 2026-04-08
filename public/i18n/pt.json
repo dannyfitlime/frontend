@@ -44,7 +44,9 @@
       "chart": {
         "title": "O gráfico mostra todos os parâmetros que acompanhamos ao elaborar o seu plano alimentar.",
         "text": "Alimentação saudável não é apenas sobre calorias.",
-        "link": "Monitorizamos a proporção de macronutrientes, vitaminas, minerais e como a composição total promove a variedade da dieta.",
+        "linkPrefix": "Monitorizamos ",
+        "link": "a proporção de macronutrientes, vitaminas e minerais",
+        "linkSuffix": " e como a composição total promove a variedade da dieta.",
         "ariaLabel": "Gráfico de radar da avaliação nutricional completa",
         "caption": "Perfil nutricional completo para:"
       },

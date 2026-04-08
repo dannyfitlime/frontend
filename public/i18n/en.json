@@ -48,7 +48,9 @@
       "chart": {
         "title": "The chart shows all the parameters we track when building your meal plan.",
         "text": "Healthy food is about more than just calories.",
-        "link": "We monitor macronutrient ratios, vitamins, minerals, and how the overall composition supports dietary variety.",
+        "linkPrefix": "We monitor ",
+        "link": "macronutrient ratios, vitamins, and minerals",
+        "linkSuffix": ", and how the overall composition supports dietary variety.",
         "ariaLabel": "Radar chart of comprehensive meal evaluation",
         "caption": "Complete nutritional profile for:"
       },
