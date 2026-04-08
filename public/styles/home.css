@@ -574,12 +574,8 @@ body.menu-open {
   gap: 28px;
   align-items: stretch;
   padding: 36px;
-  border: 1px solid var(--why-line);
+  border: 2px solid rgba(203, 203, 203, 0.699);
   border-radius: 40px;
-  background:
-    radial-gradient(circle at top left, rgba(229, 143, 88, 0.22), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(116, 148, 110, 0.18), transparent 28%),
-    linear-gradient(180deg, rgba(255, 248, 240, 0.88), rgba(245, 241, 232, 0.94));
   box-shadow: 0 28px 80px rgba(36, 34, 26, 0.12);
   overflow: hidden;
   position: relative;
@@ -623,11 +619,18 @@ body.menu-open {
 
 .why-title {
   margin: 0 0 20px;
-  font-size: clamp(2.6rem, 4.8vw, 4.7rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.35rem, 2.1vw, 3.35rem);
+  letter-spacing: -0.03em;
   color: var(--why-ink);
-  max-width: 10.5ch;
+}
+
+.why-kicker {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f6b28;
 }
 
 .why-lead {
@@ -641,7 +644,7 @@ body.menu-open {
 .why-copy-card,
 .why-chart-card {
   border: 1px solid var(--why-line);
-  background: var(--why-card);
+  background: #ffffff;
   box-shadow: 0 16px 40px rgba(46, 42, 32, 0.08);
   backdrop-filter: blur(16px);
 }
@@ -671,25 +674,8 @@ body.menu-open {
   margin: 0;
   padding: 18px 18px 22px;
   border-radius: 34px;
-  background: linear-gradient(180deg, rgba(255, 252, 248, 0.96), rgba(255, 245, 234, 0.88));
-  border: 1px solid rgba(24, 38, 27, 0.1);
+  border: 1px solid rgba(83, 92, 83, 0.334);
   box-shadow: 0 26px 54px rgba(51, 42, 27, 0.16);
-}
-
-.why-meal-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px;
-  padding: 9px 14px;
-  border-radius: 999px;
-  background: rgba(24, 38, 27, 0.06);
-  border: 1px solid rgba(24, 38, 27, 0.08);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(24, 38, 27, 0.72);
 }
 
 .why-meal-heading strong {
@@ -813,18 +799,13 @@ body.menu-open {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 116px;
-  padding: 20px;
+  gap: 4px;
+  padding: 10px;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(24, 38, 27, 0.08);
+  border: 2px solid rgb(0, 128, 28);
   box-shadow: 0 14px 28px rgba(45, 38, 27, 0.08);
   text-align: center;
-}
-
-.why-orbit:nth-child(2) {
-  background: linear-gradient(180deg, rgba(215, 231, 206, 0.88), rgba(255, 255, 255, 0.82));
 }
 
 .why-stat-value {
@@ -859,9 +840,7 @@ body.menu-open {
 
 .why-chart-header h3 {
   margin: 4px 0 0;
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.8rem, 1.75vw, 2.45rem);
   color: var(--why-ink);
 }
 
@@ -913,7 +892,7 @@ body.menu-open {
 
   .why-title {
     max-width: 11ch;
-    font-size: clamp(2.3rem, 4vw, 3.8rem);
+    font-size: clamp(2.3rem, 3vw, 3.8rem);
   }
 
   .why-meal-card {
@@ -3340,7 +3319,7 @@ h2 {
   }
 
   .why-title {
-    font-size: clamp(28px, 7vw, 40px);
+    font-size: clamp(28px, 3vw, 40px);
   }
 
   .why-subtitle {
