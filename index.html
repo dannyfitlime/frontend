@@ -168,44 +168,73 @@
       <!-- ===== PROČ ===== -->
       <section id="why" class="why-section fade-in">
         <div class="home-container">
-          <h2 class="why-title" data-i18n="home.why.title"></h2>
-          <p class="why-subtitle" data-i18n="home.why.subtitle"></p>
+          <div class="why-hero">
+            <div class="why-intro">
+              <h2 class="why-title">Neřešíme jen kalorie. Hledáme jídla, která fungují jako celek.</h2>
+              <p class="why-lead">FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.</p>
 
-          <div class="why-columns">
-            <!-- 1 -->
-            <div class="why-item">
-              <img src="/public/images/why1.png" data-i18n-alt="home.why.items.lifestyle.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.lifestyle.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.lifestyle.point1"></li>
-                <li data-i18n="home.why.items.lifestyle.point2"></li>
-                <li data-i18n="home.why.items.lifestyle.point3"></li>
-              </ul>
+              <div class="why-copy-card">
+                <p>Každé jídlo hodnotíme podle 25+ výživových parametrů. Potom vybíráme z velké databáze zdravých jídel takové kombinace, které dávají smysl nejen samostatně, ale i v rámci celého dne.</p>
+              </div>
             </div>
 
-            <!-- 2 -->
-            <div class="why-item">
-              <img src="/public/images/why2.png" data-i18n-alt="home.why.items.nutrition.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.nutrition.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.nutrition.point1"></li>
-                <li data-i18n="home.why.items.nutrition.point2"></li>
-                <li data-i18n="home.why.items.nutrition.point3"></li>
-              </ul>
+            <div class="why-spotlight">
+              <figure class="why-meal-card">
+                <div class="why-meal-badge">Ukázka jídla z vašeho jídelníčku</div>
+                <figcaption class="why-meal-heading">
+                  <strong id="whyMealCaptionTitle">Losos poke</strong>
+                </figcaption>
+                <div class="why-meal-image-wrap">
+                  <img id="whyMealImage" src="/why_sekce_rebuild/images/losos_poke.jpg" alt="Losos poke" loading="lazy" decoding="async">
+                </div>
+                <div class="why-macro-row" aria-label="Rozložení makronutrientů">
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-carbs" id="whyMacroCarbs" style="--macro-value: 38;" aria-hidden="true">
+                      <span id="whyMacroCarbsValue">38%</span>
+                    </div>
+                    <strong>Sacharidy</strong>
+                  </div>
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-fats" id="whyMacroFats" style="--macro-value: 34;" aria-hidden="true">
+                      <span id="whyMacroFatsValue">34%</span>
+                    </div>
+                    <strong>Tuky</strong>
+                  </div>
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-protein" id="whyMacroProtein" style="--macro-value: 28;" aria-hidden="true">
+                      <span id="whyMacroProteinValue">28%</span>
+                    </div>
+                    <strong>Bílkoviny</strong>
+                  </div>
+                </div>
+              </figure>
+
+              <div class="why-stats-row">
+                <div class="why-orbit">
+                  <span class="why-stat-value">25+</span>
+                  <span class="why-stat-label">výživových parametrů každého jídla</span>
+                </div>
+
+                <div class="why-orbit">
+                  <span class="why-stat-value">350+</span>
+                  <span class="why-stat-label">zdravých jídel v databázi</span>
+                </div>
+              </div>
             </div>
 
-            <!-- 3 -->
-            <div class="why-item">
-              <img src="/public/images/why3.png" data-i18n-alt="home.why.items.practical.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.practical.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.practical.point1"></li>
-                <li data-i18n="home.why.items.practical.point2"></li>
-                <li data-i18n="home.why.items.practical.point3"></li>
-              </ul>
+            <div class="why-chart-card">
+              <div class="why-chart-header">
+                <h3>Graf ukazuje všechny parametry, které při výběru jídla sledujeme.</h3>
+                <p>Zdravé jídlo není jen o kaloriích. Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</p>
+              </div>
+
+              <div class="ps-complex-chart-container why-chart-container">
+                <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
+              </div>
+              <p class="why-chart-caption">
+                <span>Kompletní nutriční profil pro:</span>
+                <span id="complexMealNameDisplay">Losos poke</span>
+              </p>
             </div>
           </div>
         </div>
@@ -1474,6 +1503,92 @@
   </script>
 
   <!-- Dietní simulátor -->
+  <script>
+    const WHY_MEAL_VISUALS = [
+      { src: '/why_sekce_rebuild/images/losos_poke.jpg', caption: 'Losos poke' },
+      { src: '/why_sekce_rebuild/images/kure_s_bulgurem.jpg', caption: 'Kuře s bulgurem' },
+      { src: '/why_sekce_rebuild/images/tofu_quino_spena.jpg', caption: 'Tofu s quinoou a špenátem' },
+      { src: '/why_sekce_rebuild/images/sendvic_kruti.jpg', caption: 'Krůtí sendvič' },
+      { src: '/why_sekce_rebuild/images/kung_pao.jpg', caption: 'Kung pao' },
+      { src: '/why_sekce_rebuild/images/cocka_vejce.jpg', caption: 'Čočka s vejcem' },
+      { src: '/why_sekce_rebuild/images/candat_bramb_spe.jpg', caption: 'Candát s bramborem a špenátem' },
+      { src: '/why_sekce_rebuild/images/svedsky_kolac.jpg', caption: 'Švédský koláč' },
+      { src: '/why_sekce_rebuild/images/panacota.jpg', caption: 'Panna cotta' },
+      { src: '/why_sekce_rebuild/images/bananove_smoothie.jpg', caption: 'Banánové smoothie' }
+    ];
+
+    const whyMealImage = document.getElementById('whyMealImage');
+    const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
+    const whyMacroNodes = {
+      carbs: {
+        donut: document.getElementById('whyMacroCarbs'),
+        value: document.getElementById('whyMacroCarbsValue')
+      },
+      fat: {
+        donut: document.getElementById('whyMacroFats'),
+        value: document.getElementById('whyMacroFatsValue')
+      },
+      protein: {
+        donut: document.getElementById('whyMacroProtein'),
+        value: document.getElementById('whyMacroProteinValue')
+      }
+    };
+
+    function animateWhyMacroDonut(node, nextValue, animationId) {
+      if (!node?.donut || !node?.value) return;
+      const startValue = Number(node.donut.style.getPropertyValue('--macro-value') || node.donut.dataset.value || 0);
+      const targetValue = Math.max(0, Math.min(100, Math.round(nextValue || 0)));
+      const startAt = performance.now();
+      const duration = 520;
+
+      function step(now) {
+        const progress = Math.min((now - startAt) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = startValue + (targetValue - startValue) * eased;
+        node.donut.style.setProperty('--macro-value', current.toFixed(2));
+        node.donut.dataset.value = current.toFixed(2);
+        node.value.textContent = `${Math.round(current)}%`;
+        if (progress < 1) {
+          window[animationId] = requestAnimationFrame(step);
+        } else {
+          node.donut.dataset.value = String(targetValue);
+        }
+      }
+
+      if (window[animationId]) cancelAnimationFrame(window[animationId]);
+      window[animationId] = requestAnimationFrame(step);
+    }
+
+    function updateWhyMealMacros(macros) {
+      const safeMacros = macros || {};
+      animateWhyMacroDonut(whyMacroNodes.carbs, safeMacros.carbs, '__whyMacroCarbsFrame');
+      animateWhyMacroDonut(whyMacroNodes.fat, safeMacros.fat, '__whyMacroFatFrame');
+      animateWhyMacroDonut(whyMacroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
+    }
+
+    function updateWhyMealVisual(index, meal) {
+      if (!whyMealImage || !whyMealCaptionTitle) return;
+      const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
+      const mealName = meal?.name;
+      whyMealImage.classList.add('is-swapping');
+      whyMealCaptionTitle.classList.add('is-swapping');
+      updateWhyMealMacros(meal?.macros);
+
+      setTimeout(() => {
+        whyMealImage.src = visual.src;
+        whyMealImage.alt = mealName || visual.caption;
+        whyMealCaptionTitle.textContent = mealName || visual.caption;
+        whyMealImage.classList.remove('is-swapping');
+        whyMealCaptionTitle.classList.remove('is-swapping');
+      }, 220);
+    }
+
+    document.addEventListener('fitlime:complex-meal-change', (event) => {
+      const { index, meal } = event.detail || {};
+      updateWhyMealVisual(index || 0, meal);
+    });
+  </script>
+  <script type="module" src="/diet-simulator.js"></script>
   <script type="module" src="/src/charts.js"></script>
 
   <script type="module">
