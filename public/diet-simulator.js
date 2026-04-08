@@ -285,6 +285,32 @@ const COMPLEX_MEAL_NUTRITION = {
     tofu_with_quinoa_and_spinach: { energy: 976.7, protein: 12.5, fat: 5.7, carbohydrates: 32.4, fiber: 4.4, sodium: 16.9, cholesterol: 0.0, fruits_vegetables: 0.0, dairy: 0.0, fish: 0.0, saturated_fat: 0.8, monounsaturated_fat: 1.5, polyunsaturated_fat: 3.4, potassium: 461.4, calcium: 57.5, magnesium: 124.0, iron: 3.8, folic_acid: 132.8, vitamin_b1: 0.2, vitamin_b2: 0.2, vitamin_b6: 0.3, vitamin_b12: 0.0, vitamin_c: 9.6, vitamin_d: 0.0, vitamin_e: 1.7 }
 };
 
+const COMPLEX_MEAL_RADAR_VALUES = {
+    banana_smoothie: { energy: 89, protein: 50, fat: 50, carbohydrates: 150, fiber: 50, sodium: 50, cholesterol: 50, fruits: 150, vegetables: 50, dairy: 70, fish: 50, saturated_fat: 50, monounsaturated_fat: 50, polyunsaturated_fat: 50, potassium: 50, calcium: 66, magnesium: 57, iron: 50, folic_acid: 59, vitamin_b1: 50, vitamin_b2: 50, vitamin_b6: 100, vitamin_b12: 57, vitamin_c: 64, vitamin_d: 57, vitamin_e: 54 },
+    zander_with_potatoes_and_spinach: { energy: 135, protein: 110, fat: 50, carbohydrates: 140, fiber: 63, sodium: 53, cholesterol: 50, fruits: 50, vegetables: 100, dairy: 50, fish: 150, saturated_fat: 50, monounsaturated_fat: 50, polyunsaturated_fat: 62, potassium: 100, calcium: 50, magnesium: 63, iron: 71, folic_acid: 84, vitamin_b1: 100, vitamin_b2: 50, vitamin_b6: 100, vitamin_b12: 100, vitamin_c: 100, vitamin_d: 59, vitamin_e: 65 },
+    red_lentils_with_eggs: { energy: 119, protein: 100, fat: 50, carbohydrates: 150, fiber: 100, sodium: 62, cholesterol: 100, fruits: 50, vegetables: 60, dairy: 50, fish: 50, saturated_fat: 100, monounsaturated_fat: 76, polyunsaturated_fat: 77, potassium: 85, calcium: 53, magnesium: 80, iron: 100, folic_acid: 98, vitamin_b1: 150, vitamin_b2: 75, vitamin_b6: 100, vitamin_b12: 79, vitamin_c: 55, vitamin_d: 90, vitamin_e: 52 },
+    kung_pao_with_rice: { energy: 143, protein: 132, fat: 83, carbohydrates: 85, fiber: 53, sodium: 130, cholesterol: 65, fruits: 50, vegetables: 80, dairy: 50, fish: 50, saturated_fat: 67, monounsaturated_fat: 100, polyunsaturated_fat: 54, potassium: 63, calcium: 50, magnesium: 100, iron: 76, folic_acid: 60, vitamin_b1: 100, vitamin_b2: 50, vitamin_b6: 100, vitamin_b12: 79, vitamin_c: 100, vitamin_d: 62, vitamin_e: 100 },
+    roasted_chicken_with_bulgur_salad: { energy: 124, protein: 105, fat: 50, carbohydrates: 145, fiber: 89, sodium: 74, cholesterol: 60, fruits: 50, vegetables: 70, dairy: 50, fish: 50, saturated_fat: 67, monounsaturated_fat: 63, polyunsaturated_fat: 58, potassium: 67, calcium: 50, magnesium: 73, iron: 71, folic_acid: 61, vitamin_b1: 125, vitamin_b2: 50, vitamin_b6: 100, vitamin_b12: 50, vitamin_c: 61, vitamin_d: 50, vitamin_e: 50 },
+    salmon_poke_bowl: { energy: 97, protein: 72, fat: 80, carbohydrates: 148, fiber: 55, sodium: 122, cholesterol: 55, fruits: 70, vegetables: 90, dairy: 50, fish: 125, saturated_fat: 83, monounsaturated_fat: 100, polyunsaturated_fat: 85, potassium: 62, calcium: 50, magnesium: 56, iron: 50, folic_acid: 64, vitamin_b1: 100, vitamin_b2: 50, vitamin_b6: 100, vitamin_b12: 93, vitamin_c: 58, vitamin_d: 100, vitamin_e: 65 },
+    yogurt_panna_cotta: { energy: 102, protein: 85, fat: 50, carbohydrates: 150, fiber: 58, sodium: 52, cholesterol: 65, fruits: 120, vegetables: 50, dairy: 110, fish: 50, saturated_fat: 83, monounsaturated_fat: 57, polyunsaturated_fat: 54, potassium: 51, calcium: 84, magnesium: 50, iron: 50, folic_acid: 50, vitamin_b1: 50, vitamin_b2: 50, vitamin_b6: 50, vitamin_b12: 50, vitamin_c: 64, vitamin_d: 50, vitamin_e: 59 },
+    cheese_turkey_and_cranberry_sandwich: { energy: 96, protein: 80, fat: 70, carbohydrates: 150, fiber: 74, sodium: 135, cholesterol: 70, fruits: 65, vegetables: 60, dairy: 150, fish: 50, saturated_fat: 100, monounsaturated_fat: 88, polyunsaturated_fat: 77, potassium: 50, calcium: 100, magnesium: 65, iron: 82, folic_acid: 52, vitamin_b1: 100, vitamin_b2: 50, vitamin_b6: 50, vitamin_b12: 86, vitamin_c: 55, vitamin_d: 50, vitamin_e: 52 },
+    gluten_free_swedish_pie: { energy: 98, protein: 86, fat: 118, carbohydrates: 96, fiber: 68, sodium: 53, cholesterol: 100, fruits: 50, vegetables: 50, dairy: 90, fish: 50, saturated_fat: 92, monounsaturated_fat: 100, polyunsaturated_fat: 100, potassium: 59, calcium: 97, magnesium: 83, iron: 68, folic_acid: 77, vitamin_b1: 100, vitamin_b2: 100, vitamin_b6: 50, vitamin_b12: 93, vitamin_c: 50, vitamin_d: 59, vitamin_e: 100 },
+    tofu_with_quinoa_and_spinach: { energy: 98, protein: 85, fat: 50, carbohydrates: 150, fiber: 88, sodium: 50, cholesterol: 50, fruits: 50, vegetables: 75, dairy: 50, fish: 50, saturated_fat: 67, monounsaturated_fat: 67, polyunsaturated_fat: 100, potassium: 100, calcium: 69, magnesium: 150, iron: 94, folic_acid: 100, vitamin_b1: 125, vitamin_b2: 75, vitamin_b6: 100, vitamin_b12: 50, vitamin_c: 67, vitamin_d: 50, vitamin_e: 74 }
+};
+
+const COMPLEX_MEAL_MACRO_VALUES = {
+    banana_smoothie: { protein: 11.3, fat: 5.0, carbs: 83.7 },
+    zander_with_potatoes_and_spinach: { protein: 43.0, fat: 2.7, carbs: 54.3 },
+    red_lentils_with_eggs: { protein: 32.0, fat: 9.0, carbs: 59.0 },
+    kung_pao_with_rice: { protein: 54.7, fat: 24.3, carbs: 21.0 },
+    roasted_chicken_with_bulgur_salad: { protein: 34.7, fat: 10.0, carbs: 55.3 },
+    salmon_poke_bowl: { protein: 22.7, fat: 26.3, carbs: 51.3 },
+    yogurt_panna_cotta: { protein: 27.0, fat: 11.3, carbs: 61.7 },
+    cheese_turkey_and_cranberry_sandwich: { protein: 23.0, fat: 19.7, carbs: 57.3 },
+    gluten_free_swedish_pie: { protein: 28.7, fat: 39.3, carbs: 32.0 },
+    tofu_with_quinoa_and_spinach: { protein: 24.7, fat: 11.3, carbs: 64.0 }
+};
+
 function scoreHigherIsBetter(value, target, minScore = 20, maxScore = MAX_DISPLAY) {
     if (!Number.isFinite(value) || value <= 0 || !Number.isFinite(target) || target <= 0) return minScore;
     return clamp((value / target) * 100, minScore, maxScore);
@@ -400,6 +426,38 @@ function buildComplexMealProfile(nutrition) {
     };
 }
 
+function buildComplexMealProfileFromRadarValues(profile) {
+    const safe = profile || {};
+    return {
+        c0: clamp(safe.energy || 0, 0, MAX_DISPLAY),
+        c1: clamp(safe.protein || 0, 0, MAX_DISPLAY),
+        c2: clamp(safe.fat || 0, 0, MAX_DISPLAY),
+        c3: clamp(safe.carbohydrates || 0, 0, MAX_DISPLAY),
+        c4: clamp(safe.fiber || 0, 0, MAX_DISPLAY),
+        c5: clamp(safe.fruits || 0, 0, MAX_DISPLAY),
+        c6: clamp(safe.vegetables || 0, 0, MAX_DISPLAY),
+        c7: clamp(safe.dairy || 0, 0, MAX_DISPLAY),
+        c8: clamp(safe.fish || 0, 0, MAX_DISPLAY),
+        c9: clamp(safe.saturated_fat || 0, 0, MAX_DISPLAY),
+        c10: clamp(safe.monounsaturated_fat || 0, 0, MAX_DISPLAY),
+        c11: clamp(safe.polyunsaturated_fat || 0, 0, MAX_DISPLAY),
+        c12: clamp(safe.cholesterol || 0, 0, MAX_DISPLAY),
+        c13: clamp(safe.vitamin_b1 || 0, 0, MAX_DISPLAY),
+        c14: clamp(safe.vitamin_b2 || 0, 0, MAX_DISPLAY),
+        c15: clamp(safe.vitamin_b6 || 0, 0, MAX_DISPLAY),
+        c16: clamp(safe.vitamin_b12 || 0, 0, MAX_DISPLAY),
+        c17: clamp(safe.vitamin_c || 0, 0, MAX_DISPLAY),
+        c18: clamp(safe.vitamin_d || 0, 0, MAX_DISPLAY),
+        c19: clamp(safe.vitamin_e || 0, 0, MAX_DISPLAY),
+        c20: clamp(safe.folic_acid || 0, 0, MAX_DISPLAY),
+        c21: clamp(safe.magnesium || 0, 0, MAX_DISPLAY),
+        c22: clamp(safe.potassium || 0, 0, MAX_DISPLAY),
+        c23: clamp(safe.sodium || 0, 0, MAX_DISPLAY),
+        c24: clamp(safe.calcium || 0, 0, MAX_DISPLAY),
+        c25: clamp(safe.iron || 0, 0, MAX_DISPLAY)
+    };
+}
+
 const COMPLEX_MEALS = [
     { mealId: "salmon_poke_bowl", name: "Losos poke" },
     { mealId: "roasted_chicken_with_bulgur_salad", name: "Ku\u0159e s bulgurem" },
@@ -413,11 +471,13 @@ const COMPLEX_MEALS = [
     { mealId: "banana_smoothie", name: "Ban\u00e1nov\u00e9 smoothie" }
 ].map((meal) => {
     const nutrition = COMPLEX_MEAL_NUTRITION[meal.mealId];
+    const radarValues = COMPLEX_MEAL_RADAR_VALUES[meal.mealId];
+    const macroValues = COMPLEX_MEAL_MACRO_VALUES[meal.mealId];
     return {
         ...meal,
         nutrition,
-        macros: calculateMealMacros(nutrition),
-        profile: buildComplexMealProfile(nutrition)
+        macros: macroValues || calculateMealMacros(nutrition),
+        profile: radarValues ? buildComplexMealProfileFromRadarValues(radarValues) : buildComplexMealProfile(nutrition)
     };
 });
 
