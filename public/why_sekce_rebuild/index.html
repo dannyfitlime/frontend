@@ -21,7 +21,7 @@
 
     <section class="why-hero fade-in">
       <div class="why-intro">
-        <h1>Algoritmus skládá jídelníček na míru podle desítek souvislostí.</h1>
+        <h1>Algoritmus skládá jídelníček na míru podle stovek souvislostí.</h1>
         <p class="why-lead">
           Tým odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
           vašich cílů, preferencí a nutričních potřeb.
@@ -50,12 +50,12 @@
 
         <figure class="why-meal-card">
           <figcaption class="why-meal-heading">
-            <strong id="whyMealCaptionTitle">Losos s quinoou a peÄŤenou brokolicĂ­</strong>
+            <strong id="whyMealCaptionTitle">Losos poke</strong>
           </figcaption>
           <div class="why-meal-image-wrap">
-            <img id="whyMealImage" src="./images/losos_poke.jpg" alt="Ukázka zdravého jídla FitLime">
+            <img id="whyMealImage" src="./images/losos_poke.jpg" alt="Losos poke">
           </div>
-          <div class="why-macro-row" aria-label="Rozlo&#382;en&#237; makronutrient&#367;">
+          <div class="why-macro-row" aria-label="Rozložení makronutrientů">
             <div class="why-macro-item">
               <div class="why-macro-donut why-macro-donut-carbs" id="whyMacroCarbs" style="--macro-value: 38;" aria-hidden="true">
                 <span id="whyMacroCarbsValue">38%</span>
@@ -72,23 +72,16 @@
               <div class="why-macro-donut why-macro-donut-protein" id="whyMacroProtein" style="--macro-value: 28;" aria-hidden="true">
                 <span id="whyMacroProteinValue">28%</span>
               </div>
-              <strong>B&#237;lkoviny</strong>
+              <strong>Bílkoviny</strong>
             </div>
           </div>
-          <figcaption class="why-meal-caption">
-            <strong id="whyMealCaptionTitle">Losos s quinoou a pečenou brokolicí</strong>
-            <span id="whyMealCaptionText"></span>
-          </figcaption>
         </figure>
       </div>
 
       <div class="why-chart-card">
         <div class="why-chart-header">
           <span class="why-chart-eyebrow">Komplexní pohled</span>
-          <h2>Radar ukazuje, že dobré jídlo je vždy o více vrstvách najednou.</h2>
-          <p>
-            Stejný princip už používáte v sekci „Jak FitLime funguje“. Tady je nasazený jako součást Why sekce.
-          </p>
+          <h2>Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály a pestrost jídelníčku.</h2>
         </div>
 
         <div class="ps-complex-chart-container why-chart-container">
@@ -103,30 +96,17 @@
 
   <script>
     const WHY_MEAL_VISUALS = [
-      { src: './images/losos_poke.jpg', caption: 'Losos s quinoou a pečenou brokolicí' },
-      { src: './images/kure_s_bulgurem.jpg', caption: 'Hovězí steak s batátovým pyré a chřestem' },
-      { src: './images/tofu_quino_spena.jpg', caption: 'Středomořský cizrnový salát s fetou a olivami' },
-      { src: './images/sendvic_kruti.jpg', caption: 'Kuřecí plátek s rýží a mandlemi' },
-      { src: './images/kung_pao.jpg', caption: 'Tuňákový tatarák s avokádem a sezamem' },
-      { src: './images/kulicky_s_cizrnou.jpg', caption: 'Pohankové rizoto s houbami' },
-      { src: './images/kruti_rolky.jpg', caption: 'Krůtí ragú s celozrnnými těstovinami a parmezánem' },
-      { src: './images/tofu_se_zeleninou.jpg', caption: 'Veganské kari tofu s kokosovým mlékem' },
-      { src: './images/kure_na_paprice.jpg', caption: 'Pečený pstruh s restovanými fazolkami' },
-      { src: './images/kukurice.jpg', caption: 'Pestrá miska: černé fazole, kukuřice, grilované kuře' }
-    ];
-
-    WHY_MEAL_VISUALS.splice(0, WHY_MEAL_VISUALS.length,
       { src: './images/losos_poke.jpg', caption: 'Losos poke' },
-      { src: './images/kure_s_bulgurem.jpg', caption: 'Ku\u0159e s bulgurem' },
-      { src: './images/tofu_quino_spena.jpg', caption: 'Tofu s quinoou a \u0161pen\u00e1tem' },
-      { src: './images/sendvic_kruti.jpg', caption: 'Kr\u016ft\u00ed sendvi\u010d' },
+      { src: './images/kure_s_bulgurem.jpg', caption: 'Kuře s bulgurem' },
+      { src: './images/tofu_quino_spena.jpg', caption: 'Tofu s quinoou a špenátem' },
+      { src: './images/sendvic_kruti.jpg', caption: 'Krůtí sendvič' },
       { src: './images/kung_pao.jpg', caption: 'Kung pao' },
-      { src: './images/cocka_vejce.jpg', caption: '\u010co\u010dka s vejcem' },
-      { src: './images/candat_bramb_spe.jpg', caption: 'Cand\u00e1t s bramborem a \u0161pen\u00e1tem' },
-      { src: './images/svedsky_kolac.jpg', caption: '\u0160v\u00e9dsk\u00fd kol\u00e1\u010d' },
+      { src: './images/cocka_vejce.jpg', caption: 'Čočka s vejcem' },
+      { src: './images/candat_bramb_spe.jpg', caption: 'Candát s bramborem a špenátem' },
+      { src: './images/svedsky_kolac.jpg', caption: 'Švédský koláč' },
       { src: './images/panacota.jpg', caption: 'Panna cotta' },
-      { src: './images/bananove_smoothie.jpg', caption: 'Ban\u00e1nov\u00e9 smoothie' }
-    );
+      { src: './images/bananove_smoothie.jpg', caption: 'Banánové smoothie' }
+    ];
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -135,19 +115,9 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('.fade-in').forEach((element) => observer.observe(element));
-    document.querySelectorAll('.why-meal-caption').forEach((element) => element.remove());
-
-    const chartHeaderTitle = document.querySelector('.why-chart-header h2');
-    const chartHeaderText = document.querySelector('.why-chart-header p');
-    if (chartHeaderTitle) chartHeaderTitle.textContent = 'Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály a pestrost jídel.';
-    if (chartHeaderText) chartHeaderText.remove();
 
     const mealImage = document.getElementById('whyMealImage');
     const mealCaptionTitle = document.getElementById('whyMealCaptionTitle');
-    const mealCaptionText = { textContent: '' };
-    const chartMealTitle = document.getElementById('complexMealNameDisplay');
-    if (mealCaptionTitle) mealCaptionTitle.textContent = WHY_MEAL_VISUALS[0].caption;
-    if (chartMealTitle) chartMealTitle.textContent = WHY_MEAL_VISUALS[0].caption;
     const macroNodes = {
       carbs: {
         donut: document.getElementById('whyMacroCarbs'),
@@ -207,7 +177,6 @@
         mealImage.src = visual.src;
         mealImage.alt = mealName || visual.caption;
         mealCaptionTitle.textContent = mealName || visual.caption;
-        mealCaptionText.textContent = 'Ukázka jídla, které algoritmus zasadí do celého dne.';
         mealImage.classList.remove('is-swapping');
         mealCaptionTitle.classList.remove('is-swapping');
       }, 220);
