@@ -21,34 +21,23 @@
 
     <section class="why-hero fade-in">
       <div class="why-intro">
-        <h1>Algoritmus skládá jídelníček na míru podle stovek souvislostí.</h1>
+        <h1>Neřešíme jen kalorie. Hledáme jídla, která fungují jako celek.</h1>
         <p class="why-lead">
-          Tým odborníků připravil algoritmus, který vybírá zdravá jídla a skládá vám je na míru podle
-          vašich cílů, preferencí a nutričních potřeb.
+          FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim
+          cílům, preferencím i dlouhodobé udržitelnosti.
         </p>
 
         <div class="why-copy-card">
           <p>
-            Každý návrh nevychází jen z kalorií. FitLime porovnává více než 25 parametrů, hledá nejlepší rovnováhu
-            mezi živinami a pak vybírá z databáze 350+ zdravých jídel ta, která do sebe dávají smysl jako celek.
+            Každé jídlo hodnotíme podle 25+ výživových parametrů. Potom vybíráme z velké databáze zdravých jídel
+            takové kombinace, které dávají smysl nejen samostatně, ale i v rámci celého dne.
           </p>
-        </div>
+        </div>      
       </div>
 
       <div class="why-spotlight">
-        <div class="why-stats-row">
-          <div class="why-orbit">
-            <span class="why-stat-value">25+</span>
-            <span class="why-stat-label">výživových hodnot jídla</span>
-          </div>
-
-          <div class="why-orbit">
-            <span class="why-stat-value">350+</span>
-            <span class="why-stat-label">zdravých jídel v databázi</span>
-          </div>
-        </div>
-
         <figure class="why-meal-card">
+          <div class="why-meal-badge">Ukázka jídla z Vašeho jídelníčku</div>
           <figcaption class="why-meal-heading">
             <strong id="whyMealCaptionTitle">Losos poke</strong>
           </figcaption>
@@ -76,19 +65,35 @@
             </div>
           </div>
         </figure>
+
+        <div class="why-stats-row">
+          <div class="why-orbit">
+            <span class="why-stat-value">25+</span>
+            <span class="why-stat-label">výživových parametrů každého jídla</span>
+          </div>
+
+          <div class="why-orbit">
+            <span class="why-stat-value">350+</span>
+            <span class="why-stat-label">zdravých jídel v databázi</span>
+          </div>
+        </div>
+
       </div>
 
       <div class="why-chart-card">
         <div class="why-chart-header">
-          <span class="why-chart-eyebrow">Komplexní pohled</span>
-          <h2>Sledujeme nejen kalorie, ale i poměr makroživin, vitamíny, minerály a pestrost jídelníčku.</h2>
+          <h2>Graf ukazuje všechny parametry, které při výběru jídla sledujeme.</h2>
+          <p>
+            Zdravé jídlo není jen o kaloriích. Sledujeme poměr makroživin, vitamíny, minerály i to,
+            jak celé složení podporuje pestrost jídelníčku.
+          </p>
         </div>
 
         <div class="ps-complex-chart-container why-chart-container">
           <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
         </div>
         <p class="why-chart-caption">
-          Kompletní nutriční parametry pro: <span id="complexMealNameDisplay">Losos poke</span>
+          Kompletní nutriční profil pro: <span id="complexMealNameDisplay">Losos poke</span>
         </p>
       </div>
     </section>
