@@ -178,6 +178,15 @@ export async function loadLang(lang, { onAfterApply } = {}){
     i18n.fallback = i18n.dict;
   }
 
+  window.__fitlimeI18n = {
+    lang: i18n.lang,
+    dict: i18n.dict,
+    fallback: i18n.fallback
+  };
+  window.dispatchEvent(new CustomEvent('fitlime:i18n-loaded', {
+    detail: { lang: i18n.lang }
+  }));
+
   // aplikuje překlady na stránku
   applyI18n();
   onAfterApply?.(i18n.lang);

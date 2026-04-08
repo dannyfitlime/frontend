@@ -664,7 +664,7 @@ function refreshComplexMealLocalization() {
     });
     const currentMeal = COMPLEX_MEALS[currentComplexMealIdx];
     const titleEl = document.getElementById("complexMealNameDisplay");
-    if (titleEl && currentMeal) titleEl.textContent = currentMeal.name;
+    if (titleEl && currentMeal) titleEl.textContent = getTranslatedComplexMealName(currentMeal);
     if (currentMeal) dispatchComplexMealChange(currentComplexMealIdx, currentMeal);
 }
 
@@ -695,8 +695,14 @@ if (!window.__dietSimulatorLangObserver) {
 function getTranslatedComplexMealName(meal) {
     const key = meal?.i18nKey;
     if (!key) return meal?.name || "";
-    const translated = t(key);
+    const translated = getSharedTranslation(key);
     return translated && translated !== key ? translated : (meal?.name || "");
+}
+
+function getSharedTranslation(path) {
+    const source = window.__fitlimeI18n || {};
+    const read = (obj, keyPath) => keyPath.split(".").reduce((acc, part) => acc?.[part], obj);
+    return read(source.dict || {}, path) ?? read(source.fallback || {}, path) ?? path;
 }
 
 function dispatchComplexMealChange(index, meal) {
