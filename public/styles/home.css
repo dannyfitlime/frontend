@@ -676,6 +676,7 @@ body.menu-open {
   border-radius: 34px;
   border: 1px solid rgba(83, 92, 83, 0.334);
   box-shadow: 0 26px 54px rgba(51, 42, 27, 0.16);
+  transform: translateY(-28px);
 }
 
 .why-meal-heading strong {
@@ -852,6 +853,18 @@ body.menu-open {
   max-width: 44ch;
 }
 
+.why-chart-link {
+  color: #0f6b28;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+.why-chart-link:hover,
+.why-chart-link:focus-visible {
+  color: #0a4f1d;
+}
+
 .why-chart-container {
   width: min(120%, 1040px);
   margin-inline: 0;
@@ -916,6 +929,7 @@ body.menu-open {
 
   .why-meal-card {
     max-width: 420px;
+    transform: none;
   }
 
   .why-chart-header {

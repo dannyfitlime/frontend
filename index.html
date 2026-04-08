@@ -221,7 +221,7 @@
             <div class="why-chart-card">
               <div class="why-chart-header">
                 <h3>Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.</h3>
-                <p>Zdravé jídlo není jen o kaloriích. Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</p>
+                <p>Zdravé jídlo není jen o kaloriích. <a class="why-chart-link" href="#home-coverage">Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</a></p>
               </div>
 
               <div class="ps-complex-chart-container why-chart-container">
@@ -1300,6 +1300,36 @@
             window.location.href = targetId; // fallback pro odkazy na jiné stránky
           }
         }, 300); // 0.3s aby se stihla animace draweru
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const coverageBoxes = document.querySelectorAll(".coverage-boxes .big-box");
+
+      if (!coverageBoxes.length) return;
+
+      function setCoverageBoxState(box, isActive) {
+        box.classList.toggle("active", isActive);
+        box.setAttribute("aria-expanded", String(isActive));
+      }
+
+      coverageBoxes.forEach((box, index) => {
+        box.setAttribute("role", "button");
+        box.setAttribute("tabindex", "0");
+        box.setAttribute("aria-expanded", "false");
+        box.setAttribute("aria-label", `Zobrazit detail kategorie ${index + 1}`);
+
+        box.addEventListener("click", () => {
+          const shouldActivate = !box.classList.contains("active");
+          coverageBoxes.forEach(item => setCoverageBoxState(item, false));
+          setCoverageBoxState(box, shouldActivate);
+        });
+
+        box.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          box.click();
+        });
       });
     });
 
