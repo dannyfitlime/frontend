@@ -24,27 +24,41 @@
       "note": "Bez zobowiązań, zajmuje tylko kilka minut."
     },
     "why": {
-      "title": "FitLime – coś więcej niż zwykły plan żywieniowy.",
-      "subtitle": "Tworzymy spersonalizowane plany, które zmieniają codzienne odżywianie w zdrowy i długoterminowo trwały styl życia.",
-      "items": {
-        "lifestyle": {
-          "title": "Zdrowy styl życia",
-          "point1": "Edukacja i długoterminowe podejście do zdrowia",
-          "point2": "Realne efekty bez skrajności",
-          "point3": "Trwała zmiana nawyków"
-        },
-        "nutrition": {
-          "title": "Żywienie szyte na miarę",
-          "point1": "Unikalne i urozmaicone posiłki każdego dnia",
-          "point2": "Uwzględniamy alergie i preferencje",
-          "point3": "Dobrze zbilansowane makro- i mikroskładniki"
-        },
-        "practical": {
-          "title": "Praktyczne podejście",
-          "point1": "Przejrzysty plan żywieniowy, przepisy i lista zakupów",
-          "point2": "Wsparcie aktywności sportowej, regeneracji i wydolności",
-          "point3": "Łatwy do stosowania dzięki inteligentnemu systemowi"
+      "kicker": "Dlaczego FitLime",
+      "title": "Nie liczymy tylko kalorii.<br>Szukamy posiłków, które działają jako całość.",
+      "lead": "FitLime porównuje dziesiątki powiązań żywieniowych i układa jadłospis tak, aby odpowiadał Twoim celom, preferencjom i długoterminowej równowadze.",
+      "stats": {
+        "nutrition": "parametrów odżywczych każdego posiłku",
+        "meals": "zdrowych posiłków w bazie danych"
+      },
+      "meal": {
+        "defaultName": "Poke z łososiem",
+        "imageAlt": "Poke z łososiem",
+        "macroAriaLabel": "Rozkład makroskładników",
+        "macros": {
+          "carbs": "Węglowodany",
+          "fat": "Tłuszcze",
+          "protein": "Białka"
         }
+      },
+      "chart": {
+        "title": "Wykres pokazuje wszystkie parametry, które śledzimy podczas układania jadłospisu.",
+        "text": "Zdrowe jedzenie to nie tylko kalorie.",
+        "link": "Monitorujemy stosunek makroskładników, witaminy, minerały oraz to, jak cały skład wspiera różnorodność diety.",
+        "ariaLabel": "Wykres radarowy kompleksowej oceny posiłku",
+        "caption": "Pełny profil żywieniowy dla:"
+      },
+      "meals": {
+        "salmonPoke": "Poke z łososiem",
+        "chickenBulgur": "Kurczak z bulgurem",
+        "tofuQuinoaSpinach": "Tofu z komosą ryżową i szpinakiem",
+        "turkeySandwich": "Kanapka z indykiem",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Soczewica z jajkiem",
+        "zanderPotatoesSpinach": "Sandacz z ziemniakami i szpinakiem",
+        "swedishPie": "Ciasto szwedzkie",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Smoothie bananowe"
       }
     },
     "how": {

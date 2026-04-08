@@ -24,28 +24,42 @@
       "note": "Sans engagement, cela ne prend que quelques minutes."
     },
     "why": {
-      "title": "FitLime – plus qu’un simple menu.",
-      "subtitle": "Nous créons des plans personnalisés qui transforment l’alimentation quotidienne en un mode de vie sain et durable sur le long terme.",
-      "items": {
-        "lifestyle": {
-          "title": "Mode de vie sain",
-          "point1": "Éducation et approche à long terme de la santé",
-          "point2": "Des résultats réels sans extrêmes",
-          "point3": "Changement durable des habitudes"
-        },
-        "nutrition": {
-          "title": "Nutrition sur mesure",
-          "point1": "Repas uniques et variés chaque jour",
-          "point2": "Nous respectons allergies et préférences",
-          "point3": "Macronutriments et micronutriments parfaitement ajustés"
-        },
-        "practical": {
-          "title": "Approche pratique",
-          "point1": "Menu clair, recettes et liste de courses",
-          "point2": "Soutien à la pratique sportive, à la récupération et à la performance",
-          "point3": "Facile à suivre grâce à un système intelligent"
+      "kicker": "Pourquoi FitLime",
+      "title": "Nous ne gérons pas seulement les calories.<br>Nous recherchons des repas qui fonctionnent comme un tout.",
+      "lead": "FitLime compare des dizaines de paramètres nutritionnels et compose votre menu pour qu'il corresponde à vos objectifs, à vos préférences et à une durabilité à long terme.",
+      "stats": {
+        "nutrition": "paramètres nutritionnels de chaque repas",
+        "meals": "repas sains dans la base de données"
+      },
+      "meal": {
+        "defaultName": "Poke au saumon",
+        "imageAlt": "Poke au saumon",
+        "macroAriaLabel": "Répartition des macronutriments",
+        "macros": {
+          "carbs": "Glucides",
+          "fat": "Lipides",
+          "protein": "Protéines"
         }
-      }
+      },
+      "chart": {
+        "title": "Le graphique présente tous les paramètres que nous suivons lors de l'élaboration du menu.",
+        "text": "Manger sainement ne se résume pas aux calories.",
+        "link": "Nous surveillons le ratio de macronutriments, les vitamines, les minéraux ainsi que la manière dont la composition globale favorise la variété de l'alimentation.",
+        "ariaLabel": "Graphique radar de l'évaluation nutritionnelle complète",
+        "caption": "Profil nutritionnel complet pour :"
+      },
+      "meals": {
+        "salmonPoke": "Poke au saumon",
+        "chickenBulgur": "Poulet au boulgour",
+        "tofuQuinoaSpinach": "Tofu au quinoa et épinards",
+        "turkeySandwich": "Sandwich à la dinde",
+        "kungPao": "Kung Pao",
+        "lentilsEgg": "Lentilles à l'œuf",
+        "zanderPotatoesSpinach": "Sandre aux pommes de terre et épinards",
+        "swedishPie": "Gâteau suédois",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Smoothie à la banane"
+      }    
     },
     "how": {
       "title": "Comment ça marche",

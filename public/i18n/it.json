@@ -24,27 +24,41 @@
       "note": "Senza impegno, richiede solo pochi minuti."
     },
     "why": {
-      "title": "FitLime – più di un semplice piano alimentare.",
-      "subtitle": "Creiamo piani personalizzati che trasformano l'alimentazione quotidiana in uno stile di vita sano e sostenibile nel lungo periodo.",
-      "items": {
-        "lifestyle": {
-          "title": "Stile di vita sano",
-          "point1": "Educazione e approccio a lungo termine alla salute",
-          "point2": "Risultati reali senza estremi",
-          "point3": "Cambiamento sostenibile delle abitudini"
-        },
-        "nutrition": {
-          "title": "Nutrizione su misura",
-          "point1": "Pasti unici e vari ogni giorno",
-          "point2": "Rispettiamo allergie e preferenze",
-          "point3": "Macro e micronutrienti ben bilanciati"
-        },
-        "practical": {
-          "title": "Approccio pratico",
-          "point1": "Piano alimentare chiaro, ricette e lista della spesa",
-          "point2": "Supporto allo sport, al recupero e alla performance",
-          "point3": "Facile da seguire grazie a un sistema intelligente"
+      "kicker": "Perché FitLime",
+      "title": "Non contiamo solo le calorie.<br>Cerchiamo pasti che funzionino nel loro insieme.",
+      "lead": "FitLime confronta decine di parametri nutrizionali e compone il tuo piano alimentare affinché corrisponda ai tuoi obiettivi, alle tue preferenze e alla sostenibilità a lungo termine.",
+      "stats": {
+        "nutrition": "parametri nutrizionali per ogni pasto",
+        "meals": "pasti sani nel database"
+      },
+      "meal": {
+        "defaultName": "Poke al salmone",
+        "imageAlt": "Poke al salmone",
+        "macroAriaLabel": "Distribuzione dei macronutrienti",
+        "macros": {
+          "carbs": "Carboidrati",
+          "fat": "Grassi",
+          "protein": "Proteine"
         }
+      },
+      "chart": {
+        "title": "Il grafico mostra tutti i parametri che monitoriamo durante la creazione del tuo piano alimentare.",
+        "text": "Mangiare sano non è solo una questione di calorie.",
+        "link": "Monitoriamo il rapporto tra macronutrienti, vitamine, minerali e come l'intera composizione favorisca la varietà della dieta.",
+        "ariaLabel": "Grafico a radar della valutazione nutrizionale completa",
+        "caption": "Profilo nutrizionale completo per:"
+      },
+      "meals": {
+        "salmonPoke": "Poke al salmone",
+        "chickenBulgur": "Pollo con bulgur",
+        "tofuQuinoaSpinach": "Tofu con quinoa e spinaci",
+        "turkeySandwich": "Sandwich di tacchino",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Lenticchie con uovo",
+        "zanderPotatoesSpinach": "Lucioperca con patate e spinaci",
+        "swedishPie": "Torta svedese",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Smoothie alla banana"
       }
     },
     "how": {

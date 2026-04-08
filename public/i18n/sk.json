@@ -28,7 +28,42 @@
       "hero_alt": "Pohľad zhora na dva taniere s pestrým a zdravým jedlom – ukážka jedálnička FitLime"
     },
     "why": {
-      "title": "FitLime - viac než len jedálniček.",
+      "kicker": "Prečo práve FitLime",
+      "lead": "FitLime porovnáva desiatky nutričných súvislostí a skladá jedálniček tak, aby zodpovedal vašim cieľom, preferenciám aj dlhodobej udržateľnosti.",
+      "stats": {
+        "nutrition": "výživových parametrov každého jedla",
+        "meals": "zdravých jedál v databáze"
+      },
+      "meal": {
+        "defaultName": "Losos poke",
+        "imageAlt": "Losos poke",
+        "macroAriaLabel": "Rozloženie makronutrientov",
+        "macros": {
+          "carbs": "Sacharidy",
+          "fat": "Tuky",
+          "protein": "Bielkoviny"
+        }
+      },
+      "chart": {
+        "title": "Graf ukazuje všetky parametre, ktoré pri skladaní jedálnička sledujeme.",
+        "text": "Zdravé jedlo nie je len o kalóriách.",
+        "link": "Sledujeme pomer makroživín, vitamíny, minerály aj to, ako celé zloženie podporuje pestrosť jedálnička.",
+        "ariaLabel": "Radarový graf komplexného vyhodnotenia jedla",
+        "caption": "Kompletný nutričný profil pre:"
+      },
+      "meals": {
+        "salmonPoke": "Losos poke",
+        "chickenBulgur": "Kurča s bulgurom",
+        "tofuQuinoaSpinach": "Tofu s quinoou a špenátom",
+        "turkeySandwich": "Morčací sendvič",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Šošovica s vajcom",
+        "zanderPotatoesSpinach": "Zubáč so zemiakmi a špenátom",
+        "swedishPie": "Švédsky koláč",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Banánové smoothie"
+      },
+      "title": "Neriešime len kalórie.<br>Hľadáme jedlá, ktoré fungujú ako celok.",
       "subtitle": "Tvoríme personalizované plány, ktoré menia každodenné stravovanie na dlhodobý, zdravý a udržateľný životný štýl.",
       "items": {
         "lifestyle": {

@@ -170,18 +170,18 @@
         <div class="home-container">
           <div class="why-hero">
             <div class="why-intro">
-              <p class="why-kicker">Proč právě FitLime</p>
-              <h2 class="why-title">Neřešíme jen kalorie.<br>Hledáme jídla, která fungují jako celek.</h2>
-              <p class="why-lead">FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.</p>              
+              <p class="why-kicker" data-i18n="home.why.kicker">Proč právě FitLime</p>
+              <h2 class="why-title" data-i18n="home.why.title">Neřešíme jen kalorie.<br>Hledáme jídla, která fungují jako celek.</h2>
+              <p class="why-lead" data-i18n="home.why.lead">FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.</p>              
             <div class="why-stats-row">
                 <div class="why-orbit">
                   <span class="why-stat-value">25</span>
-                  <span class="why-stat-label">výživových parametrů každého jídla</span>
+                  <span class="why-stat-label" data-i18n="home.why.stats.nutrition">výživových parametrů každého jídla</span>
                 </div>
 
                 <div class="why-orbit">
                   <span class="why-stat-value">350+</span>
-                  <span class="why-stat-label">zdravých jídel v databázi</span>
+                  <span class="why-stat-label" data-i18n="home.why.stats.meals">zdravých jídel v databázi</span>
                 </div>
               </div>
             </div>
@@ -190,29 +190,29 @@
             <div class="why-spotlight">
               <figure class="why-meal-card">
                 <figcaption class="why-meal-heading">
-                  <strong id="whyMealCaptionTitle">Losos poke</strong>
+                  <strong id="whyMealCaptionTitle" data-i18n="home.why.meal.defaultName">Losos poke</strong>
                 </figcaption>
                 <div class="why-meal-image-wrap">
-                  <img id="whyMealImage" src="/images/losos_poke.jpg" alt="Losos poke" loading="lazy" decoding="async">
+                  <img id="whyMealImage" src="/images/losos_poke.jpg" alt="Losos poke" data-i18n-alt="home.why.meal.imageAlt" loading="lazy" decoding="async">
                 </div>
-                <div class="why-macro-row" aria-label="Rozložení makronutrientů">
+                <div class="why-macro-row" aria-label="Rozložení makronutrientů" data-i18n-aria-label="home.why.meal.macroAriaLabel">
                   <div class="why-macro-item">
                     <div class="why-macro-donut why-macro-donut-carbs" id="whyMacroCarbs" style="--macro-value: 38;" aria-hidden="true">
                       <span id="whyMacroCarbsValue">38%</span>
                     </div>
-                    <strong>Sacharidy</strong>
+                    <strong data-i18n="home.why.meal.macros.carbs">Sacharidy</strong>
                   </div>
                   <div class="why-macro-item">
                     <div class="why-macro-donut why-macro-donut-fats" id="whyMacroFats" style="--macro-value: 34;" aria-hidden="true">
                       <span id="whyMacroFatsValue">34%</span>
                     </div>
-                    <strong>Tuky</strong>
+                    <strong data-i18n="home.why.meal.macros.fat">Tuky</strong>
                   </div>
                   <div class="why-macro-item">
                     <div class="why-macro-donut why-macro-donut-protein" id="whyMacroProtein" style="--macro-value: 28;" aria-hidden="true">
                       <span id="whyMacroProteinValue">28%</span>
                     </div>
-                    <strong>Bílkoviny</strong>
+                    <strong data-i18n="home.why.meal.macros.protein">Bílkoviny</strong>
                   </div>
                 </div>
               </figure>              
@@ -220,16 +220,16 @@
 
             <div class="why-chart-card">
               <div class="why-chart-header">
-                <h3>Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.</h3>
-                <p>Zdravé jídlo není jen o kaloriích. <a class="why-chart-link" href="#home-coverage">Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</a></p>
+                <h3 data-i18n="home.why.chart.title">Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.</h3>
+                <p><span data-i18n="home.why.chart.text">Zdravé jídlo není jen o kaloriích.</span> <a class="why-chart-link" href="#home-coverage" data-i18n="home.why.chart.link">Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</a></p>
               </div>
 
               <div class="ps-complex-chart-container why-chart-container">
-                <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla"></canvas>
+                <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla" data-i18n-aria-label="home.why.chart.ariaLabel"></canvas>
               </div>
               <p class="why-chart-caption">
-                <span>Kompletní nutriční profil pro:</span>
-                <span id="complexMealNameDisplay">Losos poke</span>
+                <span data-i18n="home.why.chart.caption">Kompletní nutriční profil pro:</span>
+                <span id="complexMealNameDisplay" data-i18n="home.why.meal.defaultName">Losos poke</span>
               </p>
             </div>
           </div>

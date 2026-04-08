@@ -24,27 +24,41 @@
       "note": "Sem compromisso, demora apenas alguns minutos."
     },
     "why": {
-      "title": "FitLime – mais do que um simples plano alimentar.",
-      "subtitle": "Criamos planos personalizados que transformam a alimentação do dia a dia num estilo de vida saudável e sustentável a longo prazo.",
-      "items": {
-        "lifestyle": {
-          "title": "Estilo de vida saudável",
-          "point1": "Educação e abordagem a longo prazo à saúde",
-          "point2": "Resultados reais sem extremos",
-          "point3": "Mudança sustentável de hábitos"
-        },
-        "nutrition": {
-          "title": "Nutrição à medida",
-          "point1": "Refeições únicas e variadas todos os dias",
-          "point2": "Respeitamos alergias e preferências",
-          "point3": "Macro e micronutrientes bem ajustados"
-        },
-        "practical": {
-          "title": "Abordagem prática",
-          "point1": "Plano alimentar claro, receitas e lista de compras",
-          "point2": "Apoio ao desporto, recuperação e desempenho",
-          "point3": "Fácil de seguir graças a um sistema inteligente"
+      "kicker": "Porquê a FitLime",
+      "title": "Não focamos apenas nas calorias.<br>Procuramos refeições que funcionem como um todo.",
+      "lead": "A FitLime compara dezenas de correlações nutricionais e elabora o seu plano alimentar para que corresponda aos seus objetivos, preferências e sustentabilidade a longo prazo.",
+      "stats": {
+        "nutrition": "parâmetros nutricionais de cada refeição",
+        "meals": "refeições saudáveis na base de dados"
+      },
+      "meal": {
+        "defaultName": "Poke de salmão",
+        "imageAlt": "Poke de salmão",
+        "macroAriaLabel": "Distribuição de macronutrientes",
+        "macros": {
+          "carbs": "Hidratos de carbono",
+          "fat": "Gorduras",
+          "protein": "Proteínas"
         }
+      },
+      "chart": {
+        "title": "O gráfico mostra todos os parâmetros que acompanhamos ao elaborar o seu plano alimentar.",
+        "text": "Alimentação saudável não é apenas sobre calorias.",
+        "link": "Monitorizamos a proporção de macronutrientes, vitaminas, minerais e como a composição total promove a variedade da dieta.",
+        "ariaLabel": "Gráfico de radar da avaliação nutricional completa",
+        "caption": "Perfil nutricional completo para:"
+      },
+      "meals": {
+        "salmonPoke": "Poke de salmão",
+        "chickenBulgur": "Frango com bulgur",
+        "tofuQuinoaSpinach": "Tofu com quinoa e espinafres",
+        "turkeySandwich": "Sanduíche de peru",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Lentilhas com ovo",
+        "zanderPotatoesSpinach": "Lúcio-perca com batatas e espinafres",
+        "swedishPie": "Torta sueca",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Smoothie de banana"
       }
     },
     "how": {

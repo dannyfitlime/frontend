@@ -28,30 +28,41 @@
       "hero_alt": "Top view of two plates with colorful and healthy food – FitLime meal plan preview"
     },
     "why": {
-      "title": "FitLime - more than just a meal plan.",
-      "subtitle": "We create personalized plans that turn everyday eating into a long-term, healthy, and sustainable lifestyle.",
-      "items": {
-        "lifestyle": {
-          "title": "Healthy lifestyle",
-          "point1": "Education and a long-term approach to health",
-          "point2": "Real results without extremes",
-          "point3": "Sustainable habit change",
-          "imageAlt": "Illustration of a healthy lifestyle and wellness"
-        },
-        "nutrition": {
-          "title": "Nutrition tailored",
-          "point1": "Unique and varied meals every day",
-          "point2": "We respect allergies and preferences",
-          "point3": "Tuned macro and micronutrients",
-          "imageAlt": "Illustration of a nutritionally balanced meal"
-        },
-        "practical": {
-          "title": "Practical approach",
-          "point1": "Clear meal plan, recipes, and list",
-          "point2": "Support for sport, recovery, and performance",
-          "point3": "Easy adherence thanks to a smart system",
-          "imageAlt": "Illustration of efficient meal planning"
+      "kicker": "Why FitLime",
+      "title": "We don't just track calories.<br>We look for meals that work as a whole.",
+      "lead": "FitLime compares dozens of nutritional connections and builds a meal plan that matches your goals, preferences, and long-term sustainability.",
+      "stats": {
+        "nutrition": "nutritional parameters for every meal",
+        "meals": "healthy meals in the database"
+      },
+      "meal": {
+        "defaultName": "Salmon poke",
+        "imageAlt": "Salmon poke",
+        "macroAriaLabel": "Macronutrient distribution",
+        "macros": {
+          "carbs": "Carbohydrates",
+          "fat": "Fats",
+          "protein": "Protein"
         }
+      },
+      "chart": {
+        "title": "The chart shows all the parameters we track when building your meal plan.",
+        "text": "Healthy food is about more than just calories.",
+        "link": "We monitor macronutrient ratios, vitamins, minerals, and how the overall composition supports dietary variety.",
+        "ariaLabel": "Radar chart of comprehensive meal evaluation",
+        "caption": "Complete nutritional profile for:"
+      },
+      "meals": {
+        "salmonPoke": "Salmon poke",
+        "chickenBulgur": "Chicken with bulgur",
+        "tofuQuinoaSpinach": "Tofu with quinoa and spinach",
+        "turkeySandwich": "Turkey sandwich",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Lentils with egg",
+        "zanderPotatoesSpinach": "Zander with potatoes and spinach",
+        "swedishPie": "Swedish pie",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Banana smoothie"
       }
     },
     "how": {

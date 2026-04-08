@@ -459,16 +459,16 @@ function buildComplexMealProfileFromRadarValues(profile) {
 }
 
 const COMPLEX_MEALS = [
-    { mealId: "salmon_poke_bowl", name: "Losos poke" },
-    { mealId: "roasted_chicken_with_bulgur_salad", name: "Ku\u0159e s bulgurem" },
-    { mealId: "tofu_with_quinoa_and_spinach", name: "Tofu s quinoou a \u0161pen\u00e1tem" },
-    { mealId: "cheese_turkey_and_cranberry_sandwich", name: "Kr\u016ft\u00ed sendvi\u010d" },
-    { mealId: "kung_pao_with_rice", name: "Kung pao" },
-    { mealId: "red_lentils_with_eggs", name: "\u010co\u010dka s vejcem" },
-    { mealId: "zander_with_potatoes_and_spinach", name: "Cand\u00e1t s bramborem a \u0161pen\u00e1tem" },
-    { mealId: "gluten_free_swedish_pie", name: "\u0160v\u00e9dsk\u00fd kol\u00e1\u010d" },
-    { mealId: "yogurt_panna_cotta", name: "Panna cotta" },
-    { mealId: "banana_smoothie", name: "Ban\u00e1nov\u00e9 smoothie" }
+    { mealId: "salmon_poke_bowl", name: "Losos poke", i18nKey: "home.why.meals.salmonPoke" },
+    { mealId: "roasted_chicken_with_bulgur_salad", name: "Ku\u0159e s bulgurem", i18nKey: "home.why.meals.chickenBulgur" },
+    { mealId: "tofu_with_quinoa_and_spinach", name: "Tofu s quinoou a \u0161pen\u00e1tem", i18nKey: "home.why.meals.tofuQuinoaSpinach" },
+    { mealId: "cheese_turkey_and_cranberry_sandwich", name: "Kr\u016ft\u00ed sendvi\u010d", i18nKey: "home.why.meals.turkeySandwich" },
+    { mealId: "kung_pao_with_rice", name: "Kung pao", i18nKey: "home.why.meals.kungPao" },
+    { mealId: "red_lentils_with_eggs", name: "\u010co\u010dka s vejcem", i18nKey: "home.why.meals.lentilsEgg" },
+    { mealId: "zander_with_potatoes_and_spinach", name: "Cand\u00e1t s bramborem a \u0161pen\u00e1tem", i18nKey: "home.why.meals.zanderPotatoesSpinach" },
+    { mealId: "gluten_free_swedish_pie", name: "\u0160v\u00e9dsk\u00fd kol\u00e1\u010d", i18nKey: "home.why.meals.swedishPie" },
+    { mealId: "yogurt_panna_cotta", name: "Panna cotta", i18nKey: "home.why.meals.pannaCotta" },
+    { mealId: "banana_smoothie", name: "Ban\u00e1nov\u00e9 smoothie", i18nKey: "home.why.meals.bananaSmoothie" }
 ].map((meal) => {
     const nutrition = COMPLEX_MEAL_NUTRITION[meal.mealId];
     const radarValues = COMPLEX_MEAL_RADAR_VALUES[meal.mealId];
@@ -481,8 +481,6 @@ const COMPLEX_MEALS = [
     };
 });
 
-const PAGE_LANG = (document.documentElement.lang || "cs").toLowerCase();
-const LOCALE = PAGE_LANG.startsWith("en") ? "en" : PAGE_LANG.startsWith("sk") ? "sk" : "cs";
 const LOCALE_COPY = {
     sk: {
         emptyChartPrompt: "Kliknite na jedlo",
@@ -579,35 +577,98 @@ const LOCALE_COPY = {
         ]
     }
 };
-const ACTIVE_LOCALE_COPY = LOCALE_COPY[LOCALE] || null;
-const EMPTY_CHART_PROMPT = ACTIVE_LOCALE_COPY?.emptyChartPrompt || "Klepn\u011bte na j\u00eddlo";
 
-if (ACTIVE_LOCALE_COPY) {
-    Object.entries(ACTIVE_LOCALE_COPY.foods).forEach(([key, value]) => {
+function normalizeLocale(lang) {
+    const safe = (lang || "").toLowerCase();
+    return safe.startsWith("en") ? "en" : safe.startsWith("sk") ? "sk" : "cs";
+}
+
+function detectLocale() {
+    const params = new URLSearchParams(location.search);
+    const urlLang = params.get("lang");
+    if (urlLang) return normalizeLocale(urlLang);
+
+    const storedLang = localStorage.getItem("lang");
+    if (storedLang) return normalizeLocale(storedLang);
+
+    return normalizeLocale(document.documentElement.lang || "cs");
+}
+
+const BASE_DIET_FOOD_NAMES = Object.fromEntries(Object.entries(DIET_FOODS).map(([key, value]) => [key, value.name]));
+const BASE_DIET_NUT_LABELS = DIET_NUTS.map((item) => item.label);
+const BASE_COMPLEX_CATEGORY_LABELS = COMPLEX_CATEGORIES.map((item) => item.label);
+const BASE_STATIC_DAY = STATIC_DATA.day.map((item) => ({ ...item }));
+const BASE_STATIC_WEEK = STATIC_DATA.week.map((item) => ({ ...item }));
+const BASE_COMPLEX_MEAL_NAMES = COMPLEX_MEALS.map((item) => item.name);
+let ACTIVE_LOCALE = "cs";
+let EMPTY_CHART_PROMPT = "Klepn\u011bte na j\u00eddlo";
+
+function applyLocaleCopy(locale) {
+    ACTIVE_LOCALE = normalizeLocale(locale);
+    const localeCopy = LOCALE_COPY[ACTIVE_LOCALE] || null;
+    EMPTY_CHART_PROMPT = localeCopy?.emptyChartPrompt || "Klepn\u011bte na j\u00eddlo";
+
+    Object.entries(DIET_FOODS).forEach(([key, food]) => {
+        food.name = BASE_DIET_FOOD_NAMES[key];
+    });
+    DIET_NUTS.forEach((item, idx) => {
+        item.label = BASE_DIET_NUT_LABELS[idx];
+    });
+    COMPLEX_CATEGORIES.forEach((item, idx) => {
+        item.label = BASE_COMPLEX_CATEGORY_LABELS[idx];
+    });
+    STATIC_DATA.day.forEach((item, idx) => {
+        Object.assign(item, BASE_STATIC_DAY[idx]);
+    });
+    STATIC_DATA.week.forEach((item, idx) => {
+        Object.assign(item, BASE_STATIC_WEEK[idx]);
+    });
+    COMPLEX_MEALS.forEach((item, idx) => {
+        item.name = BASE_COMPLEX_MEAL_NAMES[idx];
+    });
+
+    if (!localeCopy) return;
+
+    Object.entries(localeCopy.foods).forEach(([key, value]) => {
         if (DIET_FOODS[key]) DIET_FOODS[key].name = value;
     });
-    ACTIVE_LOCALE_COPY.nuts.forEach((value, idx) => {
+    localeCopy.nuts.forEach((value, idx) => {
         if (DIET_NUTS[idx]) DIET_NUTS[idx].label = value;
     });
-    ACTIVE_LOCALE_COPY.categories.forEach((value, idx) => {
+    localeCopy.categories.forEach((value, idx) => {
         if (COMPLEX_CATEGORIES[idx]) COMPLEX_CATEGORIES[idx].label = value;
     });
-    ACTIVE_LOCALE_COPY.day.forEach((value, idx) => {
+    localeCopy.day.forEach((value, idx) => {
         if (STATIC_DATA.day[idx]) {
             STATIC_DATA.day[idx].name = value.name;
             STATIC_DATA.day[idx].desc = value.desc;
         }
     });
-    ACTIVE_LOCALE_COPY.week.forEach((value, idx) => {
+    localeCopy.week.forEach((value, idx) => {
         if (STATIC_DATA.week[idx]) {
             STATIC_DATA.week[idx].name = value.name;
             STATIC_DATA.week[idx].desc = value.desc;
         }
     });
-    ACTIVE_LOCALE_COPY.complexMeals.forEach((value, idx) => {
+    localeCopy.complexMeals.forEach((value, idx) => {
         if (COMPLEX_MEALS[idx]) COMPLEX_MEALS[idx].name = value;
     });
 }
+
+function refreshComplexMealLocalization() {
+    applyLocaleCopy(detectLocale());
+    document.querySelectorAll(".ps-food-btn").forEach((btn) => {
+        const key = btn.getAttribute("data-key");
+        const nameEl = btn.querySelector(".name");
+        if (nameEl && key && DIET_FOODS[key]) nameEl.textContent = DIET_FOODS[key].name;
+    });
+    const currentMeal = COMPLEX_MEALS[currentComplexMealIdx];
+    const titleEl = document.getElementById("complexMealNameDisplay");
+    if (titleEl && currentMeal) titleEl.textContent = currentMeal.name;
+    if (currentMeal) dispatchComplexMealChange(currentComplexMealIdx, currentMeal);
+}
+
+applyLocaleCopy(detectLocale());
 
 function generateComplexData(meal) {
     const profile = meal?.profile || {};
@@ -621,11 +682,28 @@ function generateComplexData(meal) {
 let currentComplexMealIdx = 0;
 let complexDataRender = generateComplexData(COMPLEX_MEALS[0]);
 
+if (!window.__dietSimulatorLangObserver) {
+    window.__dietSimulatorLangObserver = new MutationObserver(() => {
+        refreshComplexMealLocalization();
+    });
+    window.__dietSimulatorLangObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["lang"]
+    });
+}
+
+function getTranslatedComplexMealName(meal) {
+    const key = meal?.i18nKey;
+    if (!key) return meal?.name || "";
+    const translated = t(key);
+    return translated && translated !== key ? translated : (meal?.name || "");
+}
+
 function dispatchComplexMealChange(index, meal) {
     document.dispatchEvent(new CustomEvent("fitlime:complex-meal-change", {
         detail: {
             index,
-            meal: { ...meal }
+            meal: { ...meal, name: getTranslatedComplexMealName(meal) }
         }
     }));
 }
@@ -797,7 +875,7 @@ export function initDietSimulator() {
     if (document.getElementById("complexChart")) {
         const complexCanvas = document.getElementById("complexChart");
         const titleEl = document.getElementById("complexMealNameDisplay");
-        if (titleEl) titleEl.textContent = COMPLEX_MEALS[currentComplexMealIdx].name;
+        if (titleEl) titleEl.textContent = getTranslatedComplexMealName(COMPLEX_MEALS[currentComplexMealIdx]);
         dispatchComplexMealChange(currentComplexMealIdx, COMPLEX_MEALS[currentComplexMealIdx]);
         renderComplexChart();
         requestAnimationFrame(loopStaticCanvases);
@@ -806,8 +884,9 @@ export function initDietSimulator() {
             window.__complexMealInterval = setInterval(() => {
                 currentComplexMealIdx = (currentComplexMealIdx + 1) % COMPLEX_MEALS.length;
                 const newMeal = COMPLEX_MEALS[currentComplexMealIdx];
+                const displayName = getTranslatedComplexMealName(newMeal);
                 const titleEl = document.getElementById("complexMealNameDisplay");
-                if (titleEl) { titleEl.style.opacity = "0"; setTimeout(() => { titleEl.textContent = newMeal.name; titleEl.style.opacity = "1"; }, 300); }
+                if (titleEl) { titleEl.style.opacity = "0"; setTimeout(() => { titleEl.textContent = displayName; titleEl.style.opacity = "1"; }, 300); }
                 dispatchComplexMealChange(currentComplexMealIdx, newMeal);
                 const newTarget = generateComplexData(newMeal);
                 const start = { ...complexDataRender }; const delta = {};
