@@ -168,44 +168,69 @@
       <!-- ===== PROČ ===== -->
       <section id="why" class="why-section fade-in">
         <div class="home-container">
-          <h2 class="why-title" data-i18n="home.why.title"></h2>
-          <p class="why-subtitle" data-i18n="home.why.subtitle"></p>
+          <div class="why-hero">
+            <div class="why-intro">
+              <p class="why-kicker" data-i18n="home.why.kicker">Proč právě FitLime</p>
+              <h2 class="why-title" data-i18n="home.why.title">Neřešíme jen kalorie.<br>Hledáme jídla, která fungují jako celek.</h2>
+              <p class="why-lead" data-i18n="home.why.lead">FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.</p>              
+            <div class="why-stats-row">
+                <div class="why-orbit">
+                  <span class="why-stat-value">25</span>
+                  <span class="why-stat-label" data-i18n="home.why.stats.nutrition">výživových parametrů každého jídla</span>
+                </div>
 
-          <div class="why-columns">
-            <!-- 1 -->
-            <div class="why-item">
-              <img src="/public/images/why1.png" data-i18n-alt="home.why.items.lifestyle.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.lifestyle.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.lifestyle.point1"></li>
-                <li data-i18n="home.why.items.lifestyle.point2"></li>
-                <li data-i18n="home.why.items.lifestyle.point3"></li>
-              </ul>
+                <div class="why-orbit">
+                  <span class="why-stat-value">350+</span>
+                  <span class="why-stat-label" data-i18n="home.why.stats.meals">zdravých jídel v databázi</span>
+                </div>
+              </div>
             </div>
 
-            <!-- 2 -->
-            <div class="why-item">
-              <img src="/public/images/why2.png" data-i18n-alt="home.why.items.nutrition.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.nutrition.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.nutrition.point1"></li>
-                <li data-i18n="home.why.items.nutrition.point2"></li>
-                <li data-i18n="home.why.items.nutrition.point3"></li>
-              </ul>
+            
+            <div class="why-spotlight">
+              <figure class="why-meal-card">
+                <figcaption class="why-meal-heading">
+                  <strong id="whyMealCaptionTitle" data-i18n="home.why.meal.defaultName">Losos poke</strong>
+                </figcaption>
+                <div class="why-meal-image-wrap">
+                  <img id="whyMealImage" src="/images/losos_poke.jpg" alt="Losos poke" data-i18n-alt="home.why.meal.imageAlt" loading="lazy" decoding="async">
+                </div>
+                <div class="why-macro-row" aria-label="Rozložení makronutrientů" data-i18n-aria-label="home.why.meal.macroAriaLabel">
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-carbs" id="whyMacroCarbs" style="--macro-value: 38;" aria-hidden="true">
+                      <span id="whyMacroCarbsValue">38%</span>
+                    </div>
+                    <strong data-i18n="home.why.meal.macros.carbs">Sacharidy</strong>
+                  </div>
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-fats" id="whyMacroFats" style="--macro-value: 34;" aria-hidden="true">
+                      <span id="whyMacroFatsValue">34%</span>
+                    </div>
+                    <strong data-i18n="home.why.meal.macros.fat">Tuky</strong>
+                  </div>
+                  <div class="why-macro-item">
+                    <div class="why-macro-donut why-macro-donut-protein" id="whyMacroProtein" style="--macro-value: 28;" aria-hidden="true">
+                      <span id="whyMacroProteinValue">28%</span>
+                    </div>
+                    <strong data-i18n="home.why.meal.macros.protein">Bílkoviny</strong>
+                  </div>
+                </div>
+              </figure>              
             </div>
 
-            <!-- 3 -->
-            <div class="why-item">
-              <img src="/public/images/why3.png" data-i18n-alt="home.why.items.practical.imageAlt" width="500" height="500" loading="lazy"
-                decoding="async">
-              <h3 data-i18n="home.why.items.practical.title"></h3>
-              <ul>
-                <li data-i18n="home.why.items.practical.point1"></li>
-                <li data-i18n="home.why.items.practical.point2"></li>
-                <li data-i18n="home.why.items.practical.point3"></li>
-              </ul>
+            <div class="why-chart-card">
+              <div class="why-chart-header">
+                <h3 data-i18n="home.why.chart.title">Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.</h3>
+                <p><span data-i18n="home.why.chart.text">Zdravé jídlo není jen o kaloriích.</span> <a class="why-chart-link" href="#home-coverage" data-i18n="home.why.chart.link">Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.</a></p>
+              </div>
+
+              <div class="ps-complex-chart-container why-chart-container">
+                <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla" data-i18n-aria-label="home.why.chart.ariaLabel"></canvas>
+              </div>
+              <p class="why-chart-caption">
+                <span data-i18n="home.why.chart.caption">Kompletní nutriční profil pro:</span>
+                <span id="complexMealNameDisplay" data-i18n="home.why.meal.defaultName">Losos poke</span>
+              </p>
             </div>
           </div>
         </div>
@@ -368,14 +393,6 @@
         <div class="home-container">
           <h2 data-i18n="home.preview.title"></h2>
           <p class="lead" data-i18n="home.preview.lead"></p>
-          <div class="preview-tags">
-            <span class="tag" data-tag="0" data-i18n="home.preview.tags.tag0"></span>
-            <span class="tag" data-tag="1" data-i18n="home.preview.tags.tag1"></span>
-            <span class="tag" data-tag="2" data-i18n="home.preview.tags.tag2"></span>
-            <span class="tag" data-tag="3" data-i18n="home.preview.tags.tag3"></span>
-            <span class="tag" data-tag="4" data-i18n="home.preview.tags.tag4"></span>
-            <span class="tag" data-tag="5" data-i18n="home.preview.tags.tag5"></span>
-          </div>
         </div>
 
         <div id="lightgallery" class="preview-grid">
@@ -427,16 +444,13 @@
         </div>
       </section>
       <section id="home-coverage" class="coverage-alt fade-in">
-        <img src="images/coverage-desktop.jpg" alt="Co jídelníček pokrývá - pozadí" class="bg-img bg-img--desktop"
-          width="1536" height="1024" loading="lazy" decoding="async">
-        <img src="images/coverage-mobile.jpg" alt="Co jídelníček pokrývá - pozadí mobil" class="bg-img bg-img--mobile"
-          width="1024" height="1536" loading="lazy" decoding="async">
-
         <div class="container">
-          <h2 data-i18n="home.coverage.title">Co jídelníček pokrývá</h2>
-          <p class="intro" data-i18n="home.coverage.intro">
-            Shrnutí všech hlavních živin do čtyř přehledných kategorií. Kliknutím zobrazíte detaily.
-          </p>
+          <div class="coverage-head">
+            <h2 data-i18n="home.coverage.title">Co jídelníček pokrývá</h2>
+            <p class="intro" data-i18n="home.coverage.intro">
+              Kompletní přehled všech klíčových živin a potravinových skupin.
+            </p>
+          </div>
 
           <div class="coverage-boxes">
             <!-- Box 1 -->
@@ -1286,8 +1300,39 @@
       });
     });
 
+    document.addEventListener("DOMContentLoaded", () => {
+      const coverageBoxes = document.querySelectorAll(".coverage-boxes .big-box");
+
+      if (!coverageBoxes.length) return;
+
+      function setCoverageBoxState(box, isActive) {
+        box.classList.toggle("active", isActive);
+        box.setAttribute("aria-expanded", String(isActive));
+      }
+
+      coverageBoxes.forEach((box, index) => {
+        box.setAttribute("role", "button");
+        box.setAttribute("tabindex", "0");
+        box.setAttribute("aria-expanded", "false");
+        box.setAttribute("aria-label", `Zobrazit detail kategorie ${index + 1}`);
+
+        box.addEventListener("click", () => {
+          const shouldActivate = !box.classList.contains("active");
+          coverageBoxes.forEach(item => setCoverageBoxState(item, false));
+          setCoverageBoxState(box, shouldActivate);
+        });
+
+        box.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          box.click();
+        });
+      });
+    });
+
     // how sekce animace
     document.addEventListener("DOMContentLoaded", () => {
+      const howSection = document.getElementById("how");
 
       const labels = document.querySelectorAll(".label-item");
       const dots = document.querySelectorAll(".p-dot");
@@ -1298,15 +1343,42 @@
       const progressFill = document.getElementById("progress-fill");
 
       const textStorage = document.querySelectorAll("#how-big-texts p");
+      const stepCount = dots.length;
+      const autoplayDelay = 2600;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      let activeStep = 0;
+      let autoplayTimer = null;
+
+      function clearHowAutoplay() {
+        if (autoplayTimer) {
+          window.clearTimeout(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      function scheduleHowAutoplay() {
+        clearHowAutoplay();
+        if (!howSection || !howSection.classList.contains("is-in-view") || prefersReducedMotion.matches || !stepCount) {
+          return;
+        }
+
+        autoplayTimer = window.setTimeout(() => {
+          window.setStep((activeStep + 1) % stepCount);
+        }, autoplayDelay);
+      }
 
 
       window.setStep = function (step) {
+        if (!stepCount) return;
+        const normalizedStep = ((Number(step) || 0) % stepCount + stepCount) % stepCount;
+        activeStep = normalizedStep;
 
         /* ===== 1) Změna velkého obrázku ===== */
-        bigImg.src = `/images/how${step + 1}.png`;
+        bigImg.src = `/images/how${normalizedStep + 1}.png`;
 
         /* ===== 2) Změna textu z hidden i18n bloků ===== */
-        bigText.innerHTML = textStorage[step].innerHTML;
+        bigText.innerHTML = textStorage[normalizedStep].innerHTML;
 
         // animace
         bigImg.classList.remove("fade");
@@ -1318,26 +1390,56 @@
 
         /* ===== 3) labely ===== */
         labels.forEach((l, index) => {
-          l.classList.toggle("active", index === step);
+          l.classList.toggle("active", index === normalizedStep);
         });
 
         /* ===== 4) ikony ===== */
         icons.forEach((icon, index) => {
-          icon.classList.toggle("active", index === step);
+          icon.classList.toggle("active", index === normalizedStep);
         });
 
         /* ===== 5) tečky ===== */
         dots.forEach((dot, index) => {
           dot.classList.remove("active", "completed");
-          if (index < step) dot.classList.add("completed");
-          if (index === step) dot.classList.add("active");
+          if (index < normalizedStep) dot.classList.add("completed");
+          if (index === normalizedStep) dot.classList.add("active");
         });
 
         /* ===== 6) progress bar ===== */
-        const percentage = (step / (dots.length - 1)) * 100;
+        const percentage = stepCount > 1 ? (normalizedStep / (stepCount - 1)) * 100 : 0;
         progressFill.style.width = percentage + "%";
+        scheduleHowAutoplay();
       }
 
+
+      if (howSection) {
+        const howObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              howSection.classList.add("has-entered", "is-in-view");
+              scheduleHowAutoplay();
+            } else {
+              howSection.classList.remove("is-in-view");
+              clearHowAutoplay();
+            }
+          });
+        }, { threshold: 0.45 });
+
+        howObserver.observe(howSection);
+
+        howSection.addEventListener("mouseenter", clearHowAutoplay);
+        howSection.addEventListener("mouseleave", scheduleHowAutoplay);
+        howSection.addEventListener("focusin", clearHowAutoplay);
+        howSection.addEventListener("focusout", scheduleHowAutoplay);
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          clearHowAutoplay();
+        } else {
+          scheduleHowAutoplay();
+        }
+      });
 
       /* === Events === */
       labels.forEach(l => {
@@ -1408,36 +1510,108 @@
     });
   </script>
   <script>
-    const tags = document.querySelectorAll('.tag');
     const images = document.querySelectorAll('.preview-grid a');
 
     // ✅ Najetí na tag zvýrazní obrázek
-    tags.forEach(tag => {
-      tag.addEventListener('mouseenter', () => {
-        const target = tag.dataset.tag;
-        document.querySelectorAll(`.preview-grid a[data-tag="${target}"] img`).forEach(img => {
-          img.classList.add('highlight');
-        });
-      });
-      tag.addEventListener('mouseleave', () => {
-        document.querySelectorAll('.preview-grid img').forEach(img => img.classList.remove('highlight'));
-      });
-    });
-
     // ✅ Najetí na obrázek zvýrazní tag
     images.forEach(img => {
       img.addEventListener('mouseenter', () => {
-        const target = img.dataset.tag;
-        const tag = document.querySelector(`.tag[data-tag="${target}"]`);
-        tag.classList.add('highlight');
+        document.querySelectorAll('.preview-grid img').forEach(image => image.classList.remove('highlight'));
+        img.querySelector('img')?.classList.add('highlight');
       });
       img.addEventListener('mouseleave', () => {
-        document.querySelectorAll('.tag').forEach(tag => tag.classList.remove('highlight'));
+        document.querySelectorAll('.preview-grid img').forEach(image => image.classList.remove('highlight'));
       });
     });
   </script>
 
   <!-- Dietní simulátor -->
+  <script>
+    const WHY_MEAL_VISUALS = [
+      { src: '/images/losos_poke.jpg', caption: 'Losos poke' },
+      { src: '/images/kure_s_bulgurem.jpg', caption: 'Kuře s bulgurem' },
+      { src: '/images/tofu_quino_spena.jpg', caption: 'Tofu s quinoou a špenátem' },
+      { src: '/images/sendvic_kruti.jpg', caption: 'Krůtí sendvič' },
+      { src: '/images/kung_pao.jpg', caption: 'Kung pao' },
+      { src: '/images/cocka_vejce.jpg', caption: 'Čočka s vejcem' },
+      { src: '/images/candat_bramb_spe.jpg', caption: 'Candát s bramborem a špenátem' },
+      { src: '/images/svedsky_kolac.jpg', caption: 'Švédský koláč' },
+      { src: '/images/panacota.jpg', caption: 'Panna cotta' },
+      { src: '/images/bananove_smoothie.jpg', caption: 'Banánové smoothie' }
+    ];
+
+    const whyMealImage = document.getElementById('whyMealImage');
+    const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
+    const whyMacroNodes = {
+      carbs: {
+        donut: document.getElementById('whyMacroCarbs'),
+        value: document.getElementById('whyMacroCarbsValue')
+      },
+      fat: {
+        donut: document.getElementById('whyMacroFats'),
+        value: document.getElementById('whyMacroFatsValue')
+      },
+      protein: {
+        donut: document.getElementById('whyMacroProtein'),
+        value: document.getElementById('whyMacroProteinValue')
+      }
+    };
+
+    function animateWhyMacroDonut(node, nextValue, animationId) {
+      if (!node?.donut || !node?.value) return;
+      const startValue = Number(node.donut.style.getPropertyValue('--macro-value') || node.donut.dataset.value || 0);
+      const targetValue = Math.max(0, Math.min(100, Math.round(nextValue || 0)));
+      const startAt = performance.now();
+      const duration = 520;
+
+      function step(now) {
+        const progress = Math.min((now - startAt) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = startValue + (targetValue - startValue) * eased;
+        node.donut.style.setProperty('--macro-value', current.toFixed(2));
+        node.donut.dataset.value = current.toFixed(2);
+        node.value.textContent = `${Math.round(current)}%`;
+        if (progress < 1) {
+          window[animationId] = requestAnimationFrame(step);
+        } else {
+          node.donut.dataset.value = String(targetValue);
+        }
+      }
+
+      if (window[animationId]) cancelAnimationFrame(window[animationId]);
+      window[animationId] = requestAnimationFrame(step);
+    }
+
+    function updateWhyMealMacros(macros) {
+      const safeMacros = macros || {};
+      animateWhyMacroDonut(whyMacroNodes.carbs, safeMacros.carbs, '__whyMacroCarbsFrame');
+      animateWhyMacroDonut(whyMacroNodes.fat, safeMacros.fat, '__whyMacroFatFrame');
+      animateWhyMacroDonut(whyMacroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
+    }
+
+    function updateWhyMealVisual(index, meal) {
+      if (!whyMealImage || !whyMealCaptionTitle) return;
+      const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
+      const mealName = meal?.name;
+      whyMealImage.classList.add('is-swapping');
+      whyMealCaptionTitle.classList.add('is-swapping');
+      updateWhyMealMacros(meal?.macros);
+
+      setTimeout(() => {
+        whyMealImage.src = visual.src;
+        whyMealImage.alt = mealName || visual.caption;
+        whyMealCaptionTitle.textContent = mealName || visual.caption;
+        whyMealImage.classList.remove('is-swapping');
+        whyMealCaptionTitle.classList.remove('is-swapping');
+      }, 220);
+    }
+
+    document.addEventListener('fitlime:complex-meal-change', (event) => {
+      const { index, meal } = event.detail || {};
+      updateWhyMealVisual(index || 0, meal);
+    });
+  </script>
+  <script type="module" src="/diet-simulator.js"></script>
   <script type="module" src="/src/charts.js"></script>
 
   <script type="module">

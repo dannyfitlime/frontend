@@ -24,27 +24,41 @@
       "note": "Bez zobowiązań, zajmuje tylko kilka minut."
     },
     "why": {
-      "title": "FitLime – coś więcej niż zwykły plan żywieniowy.",
-      "subtitle": "Tworzymy spersonalizowane plany, które zmieniają codzienne odżywianie w zdrowy i długoterminowo trwały styl życia.",
-      "items": {
-        "lifestyle": {
-          "title": "Zdrowy styl życia",
-          "point1": "Edukacja i długoterminowe podejście do zdrowia",
-          "point2": "Realne efekty bez skrajności",
-          "point3": "Trwała zmiana nawyków"
-        },
-        "nutrition": {
-          "title": "Żywienie szyte na miarę",
-          "point1": "Unikalne i urozmaicone posiłki każdego dnia",
-          "point2": "Uwzględniamy alergie i preferencje",
-          "point3": "Dobrze zbilansowane makro- i mikroskładniki"
-        },
-        "practical": {
-          "title": "Praktyczne podejście",
-          "point1": "Przejrzysty plan żywieniowy, przepisy i lista zakupów",
-          "point2": "Wsparcie aktywności sportowej, regeneracji i wydolności",
-          "point3": "Łatwy do stosowania dzięki inteligentnemu systemowi"
+      "kicker": "Dlaczego FitLime",
+      "title": "Nie liczymy tylko kalorii.<br>Szukamy posiłków, które działają jako całość.",
+      "lead": "FitLime porównuje dziesiątki powiązań żywieniowych i układa jadłospis tak, aby odpowiadał Twoim celom, preferencjom i długoterminowej równowadze.",
+      "stats": {
+        "nutrition": "parametrów odżywczych każdego posiłku",
+        "meals": "zdrowych posiłków w bazie danych"
+      },
+      "meal": {
+        "defaultName": "Poke z łososiem",
+        "imageAlt": "Poke z łososiem",
+        "macroAriaLabel": "Rozkład makroskładników",
+        "macros": {
+          "carbs": "Węglowodany",
+          "fat": "Tłuszcze",
+          "protein": "Białka"
         }
+      },
+      "chart": {
+        "title": "Wykres pokazuje wszystkie parametry, które śledzimy podczas układania jadłospisu.",
+        "text": "Zdrowe jedzenie to nie tylko kalorie.",
+        "link": "Monitorujemy stosunek makroskładników, witaminy, minerały oraz to, jak cały skład wspiera różnorodność diety.",
+        "ariaLabel": "Wykres radarowy kompleksowej oceny posiłku",
+        "caption": "Pełny profil żywieniowy dla:"
+      },
+      "meals": {
+        "salmonPoke": "Poke z łososiem",
+        "chickenBulgur": "Kurczak z bulgurem",
+        "tofuQuinoaSpinach": "Tofu z komosą ryżową i szpinakiem",
+        "turkeySandwich": "Kanapka z indykiem",
+        "kungPao": "Kung pao",
+        "lentilsEgg": "Soczewica z jajkiem",
+        "zanderPotatoesSpinach": "Sandacz z ziemniakami i szpinakiem",
+        "swedishPie": "Ciasto szwedzkie",
+        "pannaCotta": "Panna cotta",
+        "bananaSmoothie": "Smoothie bananowe"
       }
     },
     "how": {
@@ -256,65 +270,65 @@
       "cta": "Rozpocznij formularz",
       "note": "Bez zobowiązań, wybór planu nastąpi później przy składaniu zamówienia."
     },
-  "faq": {
-    "title": "FAQ - Domande Frequenti",
-    "q1": {
-      "q": "Come riceverò il piano alimentare?",
-      "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."
+    "faq": {
+      "title": "FAQ - Domande Frequenti",
+      "q1": {
+        "q": "Come riceverò il piano alimentare?",
+        "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."
+      },
+      "q2": {
+        "q": "Avrò bisogno di alimenti speciali?",
+        "a": "No, creiamo i nostri piani alimentari basandoci principalmente su ingredienti comuni che puoi facilmente acquistare in qualsiasi normale supermercato."
+      },
+      "q3": {
+        "q": "Quanto dura il piano alimentare?",
+        "a": "La versione Standard del piano alimentare è preparata per 5 giorni, mentre la versione Premium copre 7 giorni. In base alle tue preferenze, il piano può contenere fino a 40 pasti unici, con l'ambito finale che dipende sempre dalle tue esigenze e restrizioni specifiche. Grazie a questa varietà, il piano alimentare può durare tranquillamente un intero mese, prima di aver provato tutte le combinazioni e scoperto le tue varianti preferite."
+      },
+      "q4": {
+        "q": "Sono incluse le liste della spesa?",
+        "a": "Sì, il piano alimentare include una lista della spesa chiara con gli ingredienti per l'intera settimana. Inoltre, la lista può essere facilmente copiata negli assistenti per la spesa dei negozi online, che si occuperanno del resto per te."
+      },
+      "q5": {
+        "q": "Cosa succede se non ho una bilancia da cucina?",
+        "a": "I pesi nel piano alimentare sono forniti per una guida più precisa, ma nella maggior parte dei casi sono sufficienti le comuni misure casalinghe (manciata, ciotola, pezzi). Non è necessario pesare costantemente il cibo all'ultimo grammo; la sostenibilità a lungo termine e la varietà alimentare complessiva sono più importanti."
+      },
+      "q6": {
+        "q": "Personalizzate il piano alimentare per allergie e intolleranze?",
+        "a": "Prepariamo il piano alimentare principalmente in base alle tue preferenze dietetiche (ad es. vegetariano, senza glutine o senza lattosio). Se ci sono alimenti specifici che desideri evitare, puoi elencarli nel modulo."
+      },
+      "q7": {
+        "q": "Potete adattare il piano alimentare a obiettivi specifici?",
+        "a": "Sì, adattiamo il piano alimentare a obiettivi specifici come la perdita di peso, il guadagno di massa muscolare o il mantenimento del peso a lungo termine. Indica semplicemente i tuoi obiettivi nel modulo e li rifletteremo nella configurazione generale del piano."
+      },
+      "q8": {
+        "q": "Posso usare il piano alimentare a lungo termine?",
+        "a": "Sì, progettiamo il piano affinché sia sostenibile a lungo termine e si adatti bene alla vita quotidiana. Puoi ripetere le singole settimane, combinarle tra loro o apportare continuamente lievi modifiche in base alle tue esigenze attuali."
+      },
+      "q9": {
+        "q": "Chi crea i piani alimentari?",
+        "a": "Esperti di nutrizione con esperienza in medicina dello sport e nel lavoro con popolazioni attive partecipano alla creazione dei piani alimentari. Questo ci permette di combinare la praticità d'uso del piano con una prospettiva esperta sulla nutrizione."
+      },
+      "q10": {
+        "q": "Da dove provengono i valori nutrizionali?",
+        "a": "Ricaviamo i valori nutrizionali da fonti verificate, principalmente dal database dell'USDA (Dipartimento dell'Agricoltura degli Stati Uniti). Questi dati vengono ulteriormente integrati ed elaborati utilizzando i nostri modelli di calcolo per garantire che il piano finale soddisfi i tuoi obiettivi specifici."
+      },
+      "q11": {
+        "q": "Cosa succede se non mi piace una delle ricette?",
+        "a": "Il piano alimentare contiene più pasti e varianti, quindi puoi solitamente scegliere in base ai tuoi gusti e preferenze. Se sai di voler escludere completamente certi alimenti, offriamo l'opzione di esclusione mirata all'interno del pacchetto Premium."
+      },
+      "q12": {
+        "q": "Potete modificare il mio piano alimentare in un secondo momento?",
+        "a": "Al momento, non offriamo di norma modifiche successive ai piani alimentari già consegnati. Tuttavia, stiamo lavorando per poter offrire in futuro modifiche continue basate sui tuoi feedback e sui cambiamenti nella tua routine."
+      },
+      "q13": {
+        "q": "In quanto tempo riceverò il piano alimentare?",
+        "a": "Per il pacchetto Standard, garantiamo la consegna entro 3 giorni lavorativi; per il pacchetto Premium, entro 2 giorni lavorativi dalla conferma dell'ordine. Se non rispettiamo la scadenza garantita, ti rimborseremo i soldi."
+      },
+      "q14": {
+        "q": "Devo installare un'app?",
+        "a": "No, non è necessario installare alcuna app. Riceverai il piano alimentare in formato PDF, quindi potrai aprirlo comodamente sul tuo cellulare, computer o stamparlo."
+      }
     },
-    "q2": {
-      "q": "Avrò bisogno di alimenti speciali?",
-      "a": "No, creiamo i nostri piani alimentari basandoci principalmente su ingredienti comuni che puoi facilmente acquistare in qualsiasi normale supermercato."
-    },
-    "q3": {
-      "q": "Quanto dura il piano alimentare?",
-      "a": "La versione Standard del piano alimentare è preparata per 5 giorni, mentre la versione Premium copre 7 giorni. In base alle tue preferenze, il piano può contenere fino a 40 pasti unici, con l'ambito finale che dipende sempre dalle tue esigenze e restrizioni specifiche. Grazie a questa varietà, il piano alimentare può durare tranquillamente un intero mese, prima di aver provato tutte le combinazioni e scoperto le tue varianti preferite."
-    },
-    "q4": {
-      "q": "Sono incluse le liste della spesa?",
-      "a": "Sì, il piano alimentare include una lista della spesa chiara con gli ingredienti per l'intera settimana. Inoltre, la lista può essere facilmente copiata negli assistenti per la spesa dei negozi online, che si occuperanno del resto per te."
-    },
-    "q5": {
-      "q": "Cosa succede se non ho una bilancia da cucina?",
-      "a": "I pesi nel piano alimentare sono forniti per una guida più precisa, ma nella maggior parte dei casi sono sufficienti le comuni misure casalinghe (manciata, ciotola, pezzi). Non è necessario pesare costantemente il cibo all'ultimo grammo; la sostenibilità a lungo termine e la varietà alimentare complessiva sono più importanti."
-    },
-    "q6": {
-      "q": "Personalizzate il piano alimentare per allergie e intolleranze?",
-      "a": "Prepariamo il piano alimentare principalmente in base alle tue preferenze dietetiche (ad es. vegetariano, senza glutine o senza lattosio). Se ci sono alimenti specifici che desideri evitare, puoi elencarli nel modulo."
-    },
-    "q7": {
-      "q": "Potete adattare il piano alimentare a obiettivi specifici?",
-      "a": "Sì, adattiamo il piano alimentare a obiettivi specifici come la perdita di peso, il guadagno di massa muscolare o il mantenimento del peso a lungo termine. Indica semplicemente i tuoi obiettivi nel modulo e li rifletteremo nella configurazione generale del piano."
-    },
-    "q8": {
-      "q": "Posso usare il piano alimentare a lungo termine?",
-      "a": "Sì, progettiamo il piano affinché sia sostenibile a lungo termine e si adatti bene alla vita quotidiana. Puoi ripetere le singole settimane, combinarle tra loro o apportare continuamente lievi modifiche in base alle tue esigenze attuali."
-    },
-    "q9": {
-      "q": "Chi crea i piani alimentari?",
-      "a": "Esperti di nutrizione con esperienza in medicina dello sport e nel lavoro con popolazioni attive partecipano alla creazione dei piani alimentari. Questo ci permette di combinare la praticità d'uso del piano con una prospettiva esperta sulla nutrizione."
-    },
-    "q10": {
-      "q": "Da dove provengono i valori nutrizionali?",
-      "a": "Ricaviamo i valori nutrizionali da fonti verificate, principalmente dal database dell'USDA (Dipartimento dell'Agricoltura degli Stati Uniti). Questi dati vengono ulteriormente integrati ed elaborati utilizzando i nostri modelli di calcolo per garantire che il piano finale soddisfi i tuoi obiettivi specifici."
-    },
-    "q11": {
-      "q": "Cosa succede se non mi piace una delle ricette?",
-      "a": "Il piano alimentare contiene più pasti e varianti, quindi puoi solitamente scegliere in base ai tuoi gusti e preferenze. Se sai di voler escludere completamente certi alimenti, offriamo l'opzione di esclusione mirata all'interno del pacchetto Premium."
-    },
-    "q12": {
-      "q": "Potete modificare il mio piano alimentare in un secondo momento?",
-      "a": "Al momento, non offriamo di norma modifiche successive ai piani alimentari già consegnati. Tuttavia, stiamo lavorando per poter offrire in futuro modifiche continue basate sui tuoi feedback e sui cambiamenti nella tua routine."
-    },
-    "q13": {
-      "q": "In quanto tempo riceverò il piano alimentare?",
-      "a": "Per il pacchetto Standard, garantiamo la consegna entro 3 giorni lavorativi; per il pacchetto Premium, entro 2 giorni lavorativi dalla conferma dell'ordine. Se non rispettiamo la scadenza garantita, ti rimborseremo i soldi."
-    },
-    "q14": {
-      "q": "Devo installare un'app?",
-      "a": "No, non è necessario installare alcuna app. Riceverai il piano alimentare in formato PDF, quindi potrai aprirlo comodamente sul tuo cellulare, computer o stamparlo."
-    }
-  },
     "about": {
       "title": "O nas",
       "libor": {
@@ -357,7 +371,7 @@
       }
     },
     "cta": {
-      "title": "Gotowy/Gotowa, aby zacząć?",
+      "title": "Zaczynamy?",
       "lead": "Proszę rozpocząć formularz bez zobowiązań i zobaczyć, jak może wyglądać Państwa indywidualny plan.",
       "cta": "Rozpocznij formularz",
       "note": "Wybór planu nastąpi później przy zamówieniu. Zajmuje to tylko kilka minut."
@@ -985,5 +999,85 @@
       "docs": "Polityka ochrony danych osobowych"
     },
     "back": "Powrót na stronę główną"
+  },
+  "seoPages": {
+    "common": {
+      "relatedArticles": "Powiązane artykuły:",
+      "backHome": "Powrót na stronę główną",
+      "backHomePage": "Powrót na stronę główną",
+      "links": {
+        "how": "Jak działa FitLime",
+        "sports": "Sportowy plan żywieniowy",
+        "healthy": "Zdrowy plan żywieniowy",
+        "weightLoss": "Plan żywieniowy na redukcję",
+        "weightLossShort": "Redukcja masy",
+        "sportsNutrition": "Żywienie sportowe",
+        "healthyEating": "Zdrowe odżywianie"
+      }
+    },
+    "how": {
+      "metaTitle": "Jak działa FitLime | Algorytm, personalizacja i tworzenie planu",
+      "metaDescription": "Techniczne wyjaśnienie działania FitLime: dane z ankiety, optymalizacja składników odżywczych, tworzenie planu i przewaga personalizacji nad gotowymi szablonami.",
+      "ogTitle": "Jak działa FitLime | Algorytm, personalizacja i tworzenie planu",
+      "ogDescription": "Jak FitLime zamienia dane wejściowe w konkretny plan żywieniowy: algorytm, optymalizacja i logika personalizacji.",
+      "hero": {
+        "eyebrow": "Technologia personalizacji",
+        "title": "Jak FitLime działa pod maską?",
+        "lead": "Ta strona pokazuje, co dzieje się po zamówieniu planu: jak FitLime pracuje na danych wejściowych, jak podchodzi do optymalizacji składników odżywczych, jak buduje strukturę planu i dlaczego personalizacja jest skuteczniejsza niż uniwersalny szablon."
+      },
+      "cta": {
+        "title": "Chcę zacząć jeść lepiej",
+        "lead": "Odbierz spersonalizowany plan żywieniowy i sprawdź, jak system działa w praktyce.",
+        "button": "Przejdź do ankiety"
+      }
+    },
+    "sports": {
+      "metaTitle": "Sportowy plan żywieniowy dopasowany do Ciebie | FitLime",
+      "metaDescription": "Sportowy plan żywieniowy od FitLime uwzględniający rodzaj treningu, obciążenie, cele wydolnościowe i codzienną rutynę.",
+      "ogTitle": "Sportowy plan żywieniowy dopasowany do Ciebie | FitLime",
+      "ogDescription": "Praktyczny plan żywieniowy pod sport oparty o trening, cele i codzienny rytm.",
+      "hero": {
+        "eyebrow": "Odżywianie dla wydolności",
+        "title": "Sportowy plan, który pasuje do treningu i normalnego dnia",
+        "lead": "Plan żywieniowy dla sportu powinien wspierać wydolność, regenerację i długoterminową trwałość. Samo jedzenie więcej nie wystarczy."
+      },
+      "cta": {
+        "title": "Chcesz jeść tak, aby wspierać trening bez komplikowania życia?",
+        "lead": "FitLime przygotuje plan pod Twój cel i aktywność. Wypełnij ankietę i sprawdź, jakie podejście najlepiej pasuje do Ciebie.",
+        "button": "Otwórz ankietę"
+      }
+    },
+    "healthy": {
+      "metaTitle": "Zdrowy plan żywieniowy w praktyce | FitLime",
+      "metaDescription": "Co powinien zawierać zdrowy plan żywieniowy? Poznaj podstawy zbilansowanego odżywiania i praktyczne nawyki na stabilną energię przez cały dzień.",
+      "ogTitle": "Zdrowy plan żywieniowy w praktyce | FitLime",
+      "ogDescription": "Praktyczny zdrowy plan żywieniowy dla lepszej energii i trwałych nawyków.",
+      "hero": {
+        "eyebrow": "Przewodnik edukacyjny",
+        "title": "Zdrowe odżywianie i dieta bez teorii oderwanej od życia",
+        "lead": "Zdrowy plan żywieniowy nie polega na perfekcji. Ma działać w pracy, w domu i w rytmie zwykłego dnia."
+      },
+      "cta": {
+        "title": "Chcesz zdrowy plan, który działa w normalnym dniu?",
+        "lead": "FitLime buduje plan pod Twoją realną sytuację, a nie idealny szablon. Wypełnij formularz i sprawdź więcej.",
+        "button": "Wypełnij formularz"
+      }
+    },
+    "weight": {
+      "metaTitle": "Plan żywieniowy na redukcję | FitLime",
+      "metaDescription": "Spersonalizowany plan redukcji od FitLime oparty o Twój cel, tryb dnia i aktywność.",
+      "ogTitle": "Plan żywieniowy na redukcję | FitLime",
+      "ogDescription": "Spersonalizowany plan redukcji oparty o cel, rutynę i aktywność.",
+      "hero": {
+        "eyebrow": "Przewodnik edukacyjny",
+        "title": "Redukcja bez chaosu",
+        "lead": "W gąszczu skrajnych diet i gwarantowanych skrótów łatwo się pogubić. Ta strona pokazuje stabilne, racjonalne i długoterminowe podejście do redukcji tkanki tłuszczowej."
+      },
+      "cta": {
+        "title": "Kontrolowana redukcja krok po kroku",
+        "lead": "Masz dość dietetycznego chaosu? Odbierz spersonalizowany plan i sprawdź, co FitLime może zbudować pod Twój cel.",
+        "button": "Oblicz swój plan"
+      }
+    }
   }
 }

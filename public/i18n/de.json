@@ -24,28 +24,42 @@
       "note": "Unverbindlich, dauert nur ein paar Minuten."
     },
     "why": {
-      "title": "FitLime – mehr als nur ein Ernährungsplan.",
-      "subtitle": "Wir erstellen personalisierte Pläne, die den Alltag in einen langfristig gesunden und nachhaltigen Lebensstil verwandeln.",
-      "items": {
-        "lifestyle": {
-          "title": "Gesunder Lebensstil",
-          "point1": "Aufklärung und langfristiger Ansatz für Ihre Gesundheit",
-          "point2": "Reale Ergebnisse ohne Extreme",
-          "point3": "Nachhaltige Veränderung der Gewohnheiten"
+        "kicker": "Warum gerade FitLime",
+        "title": "Wir zählen nicht nur Kalorien.<br>Wir suchen nach Mahlzeiten, die als Ganzes funktionieren.",
+        "lead": "FitLime vergleicht Dutzende von Nährstoffzusammenhängen und stellt den Ernährungsplan so zusammen, dass er Ihren Zielen, Vorlieben und der langfristigen Nachhaltigkeit entspricht.",
+        "stats": {
+        "nutrition": "Nährwertparameter pro Mahlzeit",
+        "meals": "gesunde Gerichte in der Datenbank"
         },
-        "nutrition": {
-          "title": "Ernährung nach Maß",
-          "point1": "Einzigartige und abwechslungsreiche Mahlzeiten jeden Tag",
-          "point2": "Wir berücksichtigen Allergien und Vorlieben",
-          "point3": "Optimierte Makro- und Mikronährstoffe"
-        },
-        "practical": {
-          "title": "Praktischer Ansatz",
-          "point1": "Übersichtlicher Ernährungsplan, Rezepte und Einkaufsliste",
-          "point2": "Unterstützung von Sport, Regeneration und Leistung",
-          "point3": "Einfache Umsetzung dank eines cleveren Systems"
+        "meal": {
+        "defaultName": "Lachs Poke",
+        "imageAlt": "Lachs Poke",
+        "macroAriaLabel": "Verteilung der Makronährstoffe",
+        "macros": {
+            "carbs": "Kohlenhydrate",
+            "fat": "Fette",
+            "protein": "Eiweiß"
         }
-      }
+        },
+        "chart": {
+        "title": "Die Grafik zeigt alle Parameter, die wir bei der Erstellung des Speiseplans berücksichtigen.",
+        "text": "Gesunde Ernährung ist mehr als nur Kalorien.",
+        "link": "Wir überwachen das Makronährstoffverhältnis, Vitamine, Mineralien sowie die Art und Weise, wie die gesamte Zusammensetzung die Vielfalt des Speiseplans unterstützt.",
+        "ariaLabel": "Netzdiagramm der umfassenden Mahlzeitenbewertung",
+        "caption": "Vollständiges Nährwertprofil für:"
+        },
+        "meals": {
+        "salmonPoke": "Lachs Poke",
+        "chickenBulgur": "Hähnchen mit Bulgur",
+        "tofuQuinoaSpinach": "Tofu mit Quinoa und Spinat",
+        "turkeySandwich": "Puten-Sandwich",
+        "kungPao": "Kung Pao",
+        "lentilsEgg": "Linsen mit Ei",
+        "zanderPotatoesSpinach": "Zander mit Kartoffeln und Spinat",
+        "swedishPie": "Schwedischer Kuchen",
+        "pannaCotta": "Panna Cotta",
+        "bananaSmoothie": "Bananen-Smoothie"
+        }
     },
     "how": {
       "title": "Wie es funktioniert",

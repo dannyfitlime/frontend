@@ -32,6 +32,155 @@ function applyContactEmail(root = document, lang = i18n.lang){
   });
 }
 
+const SEO_LANG_PATHS = {
+  how: {
+    cs: '/jak-fitlime-funguje/index.html',
+    sk: '/ako-fitlime-funguje/index.html',
+    en: '/how-fitlime-works/index.html',
+  },
+  sports: {
+    cs: '/sportovni-jidelnicek/index.html',
+    sk: '/sportovy-jedalnicek/index.html',
+    en: '/sports-meal-plan/index.html',
+  },
+  healthy: {
+    cs: '/zdravy-jidelnicek/index.html',
+    sk: '/zdravy-jedalnicek/index.html',
+    en: '/healthy-meal-plan/index.html',
+  },
+  weightLoss: {
+    cs: '/jidelnicek-na-hubnuti/index.html',
+    sk: '/jedalnicek-na-chudnutie/index.html',
+    en: '/weight-loss-meal-plan/index.html',
+  },
+};
+
+function normalizePathname(pathname = location.pathname){
+  const clean = (pathname || '/').replace(/\/+$/, '');
+  return clean || '/';
+}
+
+function normalizeSeoPath(pathname){
+  const clean = normalizePathname(pathname);
+  if (clean.endsWith('/index.html')) return clean.slice(0, -11);
+  return clean;
+}
+
+function seoKeyForPath(pathname = location.pathname){
+  const current = normalizeSeoPath(pathname);
+  for (const [key, paths] of Object.entries(SEO_LANG_PATHS)) {
+    for (const variant of Object.values(paths)) {
+      if (current === normalizeSeoPath(variant)) return key;
+    }
+  }
+  return null;
+}
+
+function seoPathForLang(seoKey, lang){
+  const byLang = SEO_LANG_PATHS[seoKey];
+  if (!byLang) return '/index.html';
+  if (lang === 'cs' || lang === 'sk' || lang === 'en') return byLang[lang];
+  return byLang.en;
+}
+
+function setLangParam(href, lang){
+  const url = new URL(href, location.origin);
+  url.searchParams.set('lang', lang);
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+function updateLangAwareLinks(lang){
+  const genericSelectors = [
+    'a[href="/form.html"]',
+    'a[href="/terms.html"]',
+    'a[href="/gdpr.html"]',
+    'a[href="/cookies.html"]',
+    'a[href="/index.html"]',
+  ];
+
+  document.querySelectorAll(genericSelectors.join(',')).forEach(anchor => {
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+    anchor.setAttribute('href', setLangParam(href, lang));
+  });
+
+  document.querySelectorAll('[data-seo-link]').forEach(anchor => {
+    const key = anchor.getAttribute('data-seo-link');
+    if (!key || !SEO_LANG_PATHS[key]) return;
+    const targetPath = seoPathForLang(key, lang);
+    anchor.setAttribute('href', setLangParam(targetPath, lang));
+  });
+}
+
+function domainForLang(lang){
+  if (lang === 'cs') return 'fitlime.cz';
+  if (lang === 'sk') return 'fitlime.sk';
+  return 'fitlime.eu';
+}
+
+function canSwitchDomain(hostname = location.hostname){
+  const host = (hostname || '').toLowerCase();
+  if (!host) return false;
+  if (host === 'localhost' || host === '127.0.0.1') return false;
+  if (host.endsWith('.local')) return false;
+  return true;
+}
+
+function buildSeoUrlForLang(lang){
+  const seoKey = seoKeyForPath();
+  if (!seoKey) return null;
+
+  const url = new URL(location.href);
+  url.pathname = seoPathForLang(seoKey, lang);
+  url.searchParams.set('lang', lang);
+
+  if (canSwitchDomain()) {
+    url.host = domainForLang(lang);
+  }
+  return url.toString();
+}
+
+function renderSeoLangSwitcher(currentLang = i18n.lang){
+  const seoKey = seoKeyForPath();
+  if (!seoKey) return;
+
+  const footerCenter = document.querySelector('.site-footer .footer-center');
+  if (!footerCenter) return;
+
+  let container = document.getElementById('langSwitch');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'langSwitch';
+    container.className = 'lang-switch';
+    footerCenter.prepend(container);
+  }
+
+  container.innerHTML = SUPPORTED.map(code => {
+    const label = code.toUpperCase();
+    if (code === currentLang) return `<span class="lang-current">${label}</span>`;
+    return `<a href="#" class="lang-option" data-lang="${code}">${label}</a>`;
+  }).join(' | ');
+
+  container.querySelectorAll('.lang-option').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const nextLang = link.dataset.lang;
+      if (!SUPPORTED.includes(nextLang)) return;
+
+      localStorage.setItem('lang', nextLang);
+      const target = buildSeoUrlForLang(nextLang);
+      if (target) {
+        location.href = target;
+        return;
+      }
+
+      const fallback = new URL(location.href);
+      fallback.searchParams.set('lang', nextLang);
+      location.href = fallback.toString();
+    });
+  });
+}
+
 // ===============================
 // Helper: z objektu vytáhne hodnotu podle cesty "a.b.c"
 // ===============================
@@ -81,6 +230,10 @@ export function applyI18n(root=document){
   root.querySelectorAll('[data-i18n-aria-label]').forEach(el=>{
     const key = el.getAttribute('data-i18n-aria-label');
     el.setAttribute('aria-label', t(key));
+  });
+  root.querySelectorAll('[data-i18n-content]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-content');
+    el.setAttribute('content', t(key));
   });
   root.querySelectorAll('[data-i18n-preview]').forEach(el=>{
     const file = el.getAttribute('data-i18n-preview');
@@ -161,8 +314,19 @@ export async function loadLang(lang, { onAfterApply } = {}){
     i18n.fallback = i18n.dict;
   }
 
+  window.__fitlimeI18n = {
+    lang: i18n.lang,
+    dict: i18n.dict,
+    fallback: i18n.fallback
+  };
+  window.dispatchEvent(new CustomEvent('fitlime:i18n-loaded', {
+    detail: { lang: i18n.lang }
+  }));
+
   // aplikuje překlady na stránku
   applyI18n();
+  updateLangAwareLinks(i18n.lang);
+  renderSeoLangSwitcher(i18n.lang);
   onAfterApply?.(i18n.lang);
 }
 
