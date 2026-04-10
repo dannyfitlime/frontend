@@ -485,6 +485,35 @@ body.menu-open {
   padding: 50px 20px;
 }
 
+.hero-wrap > * {
+  will-change: transform, opacity;
+}
+
+html.js .hero-wrap[data-hero-ready="false"] > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+html.js .hero-wrap[data-hero-ready="true"] > * {
+  animation: hero-content-in 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
+  animation-delay: 260ms;
+}
+
 .hero h1 {
   font-size: clamp(36px, 5vw, 62px);
   font-weight: 650;
@@ -592,6 +621,18 @@ body.menu-open {
   font-size: clamp(16px, 1.1vw, 19px);
   margin-top: 18px;
   margin-bottom: 0;
+}
+
+@keyframes hero-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -1391,6 +1432,17 @@ body.menu-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html.js .hero-wrap[data-hero-ready="true"] > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.js .hero-wrap[data-hero-ready="false"] > * {
+    opacity: 0;
+    transform: none;
+  }
+
   .how-step-labels,
   .how-progress,
   .how-step-icons,

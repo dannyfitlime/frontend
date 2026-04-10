@@ -4,6 +4,19 @@ const HERO_TITLE_TRANSITION_MS = 140;
 
 let isRegistered = false;
 
+function markHeroReady() {
+  const heroWrap = document.querySelector('.hero-wrap');
+  if (!heroWrap) return;
+
+  heroWrap.setAttribute('data-hero-ready', 'false');
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      heroWrap.setAttribute('data-hero-ready', 'true');
+    });
+  });
+}
+
 function clearHeroTitleTimers(title) {
   if (title._heroTitleTimer) {
     window.clearTimeout(title._heroTitleTimer);
@@ -129,6 +142,9 @@ export function registerHeroTitleAnimation() {
   isRegistered = true;
 
   window.addEventListener('fitlime:i18n-loaded', () => {
-    window.setTimeout(() => initHeroTitleAnimation(), 0);
+    window.setTimeout(() => {
+      initHeroTitleAnimation();
+      markHeroReady();
+    }, 0);
   });
 }
