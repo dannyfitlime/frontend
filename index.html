@@ -154,7 +154,7 @@
           sizes="100vw" data-i18n-alt="home.hero.hero_alt" fetchpriority="high" decoding="async" width="1600" height="1067">
       </picture>
       <div class="home-container hero-wrap">
-        <h1 data-i18n="home.hero.title">Zdravý jídelníček na míru</h1>
+        <h1 class="hero-title" data-i18n="home.hero.title" data-hero-title>Zdravý jídelníček na míru</h1>
         <p class="lead" data-i18n="home.hero.lead">Vyplňte krátký dotazník a získejte plán, který pokrývá všechny Vaše
           potřeby.</p>
         <div class="cta-row">
@@ -1193,6 +1193,88 @@
       });
     }
 
+    const HERO_TITLE_STATIC_CS = 'Zdravý jídelníček';
+    const HERO_TITLE_ROTATING_CS = [
+      'pro více energie',
+      'pro lepší spánek',
+      'pro lámání rekordů',
+      'pro radost ze života',
+      'pro Vás'
+    ];
+    const HERO_TITLE_INTERVAL_MS = 1450;
+    const HERO_TITLE_TRANSITION_MS = 140;
+
+    function initHeroTitleAnimation(lang = window.__fitlimeI18n?.lang || getCurrentLang()) {
+      const title = document.querySelector('[data-hero-title]');
+      if (!title) return;
+
+      if (title._heroTitleTimer) {
+        window.clearInterval(title._heroTitleTimer);
+        title._heroTitleTimer = null;
+      }
+      if (title._heroTitleSwapTimer) {
+        window.clearTimeout(title._heroTitleSwapTimer);
+        title._heroTitleSwapTimer = null;
+      }
+
+      const translatedTitle = window.__fitlimeI18n?.dict?.home?.hero?.title
+        || title.getAttribute('data-hero-title-fallback')
+        || title.textContent.trim();
+      title.setAttribute('data-hero-title-fallback', translatedTitle);
+
+      if (lang !== 'cs') {
+        title.classList.remove('hero-title--animated');
+        title.removeAttribute('aria-label');
+        title.textContent = translatedTitle;
+        return;
+      }
+
+      title.classList.add('hero-title--animated');
+      title.setAttribute('aria-label', 'Zdravý jídelníček pro Vás');
+      title.innerHTML = `
+        <span class="hero-title-fixed">${HERO_TITLE_STATIC_CS}</span>
+        <span class="hero-title-rotator" aria-hidden="true">
+          <span class="hero-title-rotator-text is-visible">${HERO_TITLE_ROTATING_CS[0]}</span>
+        </span>
+      `;
+
+      const rotatingText = title.querySelector('.hero-title-rotator-text');
+      if (!rotatingText) return;
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || HERO_TITLE_ROTATING_CS.length < 2) {
+        rotatingText.textContent = HERO_TITLE_ROTATING_CS[HERO_TITLE_ROTATING_CS.length - 1];
+        return;
+      }
+
+      let index = 0;
+      title._heroTitleTimer = window.setInterval(() => {
+        if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
+          window.clearInterval(title._heroTitleTimer);
+          title._heroTitleTimer = null;
+          return;
+        }
+
+        rotatingText.classList.remove('is-visible');
+        rotatingText.classList.add('is-leaving');
+
+        title._heroTitleSwapTimer = window.setTimeout(() => {
+          index += 1;
+          rotatingText.textContent = HERO_TITLE_ROTATING_CS[index];
+          rotatingText.classList.remove('is-leaving');
+          rotatingText.classList.add('is-visible');
+          if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
+            window.clearInterval(title._heroTitleTimer);
+            title._heroTitleTimer = null;
+          }
+        }, HERO_TITLE_TRANSITION_MS);
+      }, HERO_TITLE_INTERVAL_MS);
+    }
+
+    window.addEventListener('fitlime:i18n-loaded', (event) => {
+      const nextLang = event?.detail?.lang;
+      window.setTimeout(() => initHeroTitleAnimation(nextLang), 0);
+    });
+
     (async () => {
       const INIT_LANG = getCurrentLang();     // zjistí jazyk
       renderLangSwitcher(INIT_LANG);          // vykreslí switcher
@@ -1642,7 +1724,7 @@
   <script type="module">
     import { bootI18n } from '/src/i18n-core.js';
 
-    bootI18n().then(() => {
+    bootI18n({ onAfterApply: initHeroTitleAnimation }).then(() => {
       setStep(0);
     });
   </script>
