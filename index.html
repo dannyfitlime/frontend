@@ -1201,7 +1201,8 @@
       'pro radost ze života',
       'pro Vás'
     ];
-    const HERO_TITLE_INTERVAL_MS = 1200;
+    const HERO_TITLE_INTERVAL_START_MS = 1000;
+    const HERO_TITLE_INTERVAL_END_MS = 600;
     const HERO_TITLE_TRANSITION_MS = 140;
 
     function initHeroTitleAnimation(lang = window.__fitlimeI18n?.lang || getCurrentLang()) {
@@ -1252,9 +1253,23 @@
       }
 
       let index = 0;
-      title._heroTitleTimer = window.setInterval(() => {
+      const maxSteps = Math.max(HERO_TITLE_ROTATING_CS.length - 1, 1);
+      const intervalStep = (HERO_TITLE_INTERVAL_START_MS - HERO_TITLE_INTERVAL_END_MS) / maxSteps;
+
+      function scheduleNextSwap() {
+        const nextDelay = Math.max(
+          HERO_TITLE_INTERVAL_END_MS,
+          Math.round(HERO_TITLE_INTERVAL_START_MS - (index * intervalStep))
+        );
+
+        title._heroTitleTimer = window.setTimeout(() => {
+          runSwap();
+        }, nextDelay);
+      }
+
+      function runSwap() {
         if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
-          window.clearInterval(title._heroTitleTimer);
+          window.clearTimeout(title._heroTitleTimer);
           title._heroTitleTimer = null;
           return;
         }
@@ -1276,11 +1291,15 @@
           const nextHeight = currentText.offsetHeight;
           rotator.style.height = `${nextHeight}px`;
           if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
-            window.clearInterval(title._heroTitleTimer);
+            window.clearTimeout(title._heroTitleTimer);
             title._heroTitleTimer = null;
+          } else {
+            scheduleNextSwap();
           }
         }, HERO_TITLE_TRANSITION_MS);
-      }, HERO_TITLE_INTERVAL_MS);
+      }
+
+      scheduleNextSwap();
     }
 
     window.addEventListener('fitlime:i18n-loaded', (event) => {
@@ -1641,8 +1660,16 @@
       document.getElementById('whyMealImageSecondary')
     ].filter(Boolean);
     const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
+    const whySection = document.getElementById('why');
     let whyMealActiveImageIndex = 0;
     let whyMealSwapToken = 0;
+    let hasAnimatedWhyMacrosOnEnter = false;
+    let hasWhySectionEnteredViewport = false;
+    let pendingWhyMacros = {
+      carbs: Number(document.getElementById('whyMacroCarbs')?.style.getPropertyValue('--macro-value') || 0),
+      fat: Number(document.getElementById('whyMacroFats')?.style.getPropertyValue('--macro-value') || 0),
+      protein: Number(document.getElementById('whyMacroProtein')?.style.getPropertyValue('--macro-value') || 0)
+    };
     const whyMacroNodes = {
       carbs: {
         donut: document.getElementById('whyMacroCarbs'),
@@ -1658,12 +1685,19 @@
       }
     };
 
-    function animateWhyMacroDonut(node, nextValue, animationId) {
+    function setWhyMacroDonutValue(node, nextValue) {
+      if (!node?.donut || !node?.value) return;
+      const safeValue = Math.max(0, Math.min(100, Number(nextValue) || 0));
+      node.donut.style.setProperty('--macro-value', safeValue.toFixed(2));
+      node.donut.dataset.value = safeValue.toFixed(2);
+      node.value.textContent = `${Math.round(safeValue)}%`;
+    }
+
+    function animateWhyMacroDonut(node, nextValue, animationId, duration = 520) {
       if (!node?.donut || !node?.value) return;
       const startValue = Number(node.donut.style.getPropertyValue('--macro-value') || node.donut.dataset.value || 0);
       const targetValue = Math.max(0, Math.min(100, Math.round(nextValue || 0)));
       const startAt = performance.now();
-      const duration = 520;
 
       function step(now) {
         const progress = Math.min((now - startAt) / duration, 1);
@@ -1685,9 +1719,35 @@
 
     function updateWhyMealMacros(macros) {
       const safeMacros = macros || {};
+      pendingWhyMacros = {
+        carbs: Math.max(0, Math.min(100, Math.round(safeMacros.carbs || 0))),
+        fat: Math.max(0, Math.min(100, Math.round(safeMacros.fat || 0))),
+        protein: Math.max(0, Math.min(100, Math.round(safeMacros.protein || 0)))
+      };
+      if (!hasAnimatedWhyMacrosOnEnter) return;
       animateWhyMacroDonut(whyMacroNodes.carbs, safeMacros.carbs, '__whyMacroCarbsFrame');
       animateWhyMacroDonut(whyMacroNodes.fat, safeMacros.fat, '__whyMacroFatFrame');
       animateWhyMacroDonut(whyMacroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
+    }
+
+    setWhyMacroDonutValue(whyMacroNodes.carbs, 0);
+    setWhyMacroDonutValue(whyMacroNodes.fat, 0);
+    setWhyMacroDonutValue(whyMacroNodes.protein, 0);
+
+    function startWhyMacroAnimationIfReady() {
+      if (!hasWhySectionEnteredViewport || hasAnimatedWhyMacrosOnEnter) return;
+      hasAnimatedWhyMacrosOnEnter = true;
+      const macroSequence = [
+        { node: whyMacroNodes.carbs, value: pendingWhyMacros.carbs, animationId: '__whyMacroCarbsFrame', delay: 0 },
+        { node: whyMacroNodes.fat, value: pendingWhyMacros.fat, animationId: '__whyMacroFatFrame', delay: 260 },
+        { node: whyMacroNodes.protein, value: pendingWhyMacros.protein, animationId: '__whyMacroProteinFrame', delay: 520 }
+      ];
+
+      macroSequence.forEach(({ node, value, animationId, delay }) => {
+        window.setTimeout(() => {
+          animateWhyMacroDonut(node, value, animationId, 1400);
+        }, delay);
+      });
     }
 
     function updateWhyMealVisual(index, meal) {
@@ -1801,6 +1861,19 @@
         }, { threshold: 0.6 });
 
         statNodes.forEach(node => statsObserver.observe(node));
+      }
+
+      if (whySection) {
+        const whyMacroObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting || hasAnimatedWhyMacrosOnEnter) return;
+            hasWhySectionEnteredViewport = true;
+            startWhyMacroAnimationIfReady();
+            whyMacroObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.45 });
+
+        whyMacroObserver.observe(whySection);
       }
     });
   </script>
