@@ -18,6 +18,15 @@
       "reference": "Références"
     },
     "hero": {
+      "title_static": "Programme alimentaire sur mesure",
+      "title_rotating": [
+        "pour plus d'énergie",
+        "pour mieux dormir",
+        "pour battre des records",
+        "pour profiter davantage de la vie",
+        "pour vous"
+      ],
+      "title_aria": "Programme alimentaire pour vous",
       "title": "Un menu personnalisé en quelques minutes",
       "lead": "Remplissez un court questionnaire et obtenez un plan qui couvre tous vos besoins.",
       "cta": "Lancer le formulaire",

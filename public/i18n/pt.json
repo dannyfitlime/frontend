@@ -18,6 +18,15 @@
       "reference": "Testemunhos"
     },
     "hero": {
+      "title_static": "Plano alimentar à medida",
+      "title_rotating": [
+        "para mais energia",
+        "para dormir melhor",
+        "para bater recordes",
+        "para aproveitar mais a vida",
+        "para você"
+      ],
+      "title_aria": "Plano alimentar para você",
       "title": "Plano alimentar à medida em poucos minutos",
       "lead": "Preencha um breve questionário e obtenha um plano que cobre todas as suas necessidades.",
       "cta": "Iniciar formulário",

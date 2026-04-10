@@ -226,7 +226,7 @@
               </div>
 
               <div class="ps-complex-chart-container why-chart-container">
-                <canvas id="complexChart" data-interval-ms="5000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla" data-i18n-aria-label="home.why.chart.ariaLabel"></canvas>
+                <canvas id="complexChart" data-interval-ms="4000" data-max-width="1040" data-compact-labels="true" aria-label="Radarový graf komplexního vyhodnocení jídla" data-i18n-aria-label="home.why.chart.ariaLabel"></canvas>
               </div>
               <p class="why-chart-caption">
                 <span data-i18n="home.why.chart.caption">Kompletní výživový profil pro:</span>
@@ -1193,119 +1193,6 @@
       });
     }
 
-    const HERO_TITLE_STATIC_CS = 'Zdravý jídelníček na míru';
-    const HERO_TITLE_ROTATING_CS = [
-      'pro více energie',
-      'pro lepší spánek',
-      'pro lámání rekordů',
-      'pro radost ze života',
-      'pro Vás'
-    ];
-    const HERO_TITLE_INTERVAL_START_MS = 1000;
-    const HERO_TITLE_INTERVAL_END_MS = 600;
-    const HERO_TITLE_TRANSITION_MS = 140;
-
-    function initHeroTitleAnimation(lang = window.__fitlimeI18n?.lang || getCurrentLang()) {
-      const title = document.querySelector('[data-hero-title]');
-      if (!title) return;
-
-      if (title._heroTitleTimer) {
-        window.clearInterval(title._heroTitleTimer);
-        title._heroTitleTimer = null;
-      }
-      if (title._heroTitleSwapTimer) {
-        window.clearTimeout(title._heroTitleSwapTimer);
-        title._heroTitleSwapTimer = null;
-      }
-
-      const translatedTitle = window.__fitlimeI18n?.dict?.home?.hero?.title
-        || title.getAttribute('data-hero-title-fallback')
-        || title.textContent.trim();
-      title.setAttribute('data-hero-title-fallback', translatedTitle);
-
-      if (lang !== 'cs') {
-        title.classList.remove('hero-title--animated');
-        title.removeAttribute('aria-label');
-        title.textContent = translatedTitle;
-        return;
-      }
-
-      title.classList.add('hero-title--animated');
-      title.setAttribute('aria-label', 'Zdravý jídelníček pro Vás');
-      title.innerHTML = `
-        <span class="hero-title-fixed">${HERO_TITLE_STATIC_CS}</span>
-        <span class="hero-title-rotator" aria-hidden="true">
-          <span class="hero-title-rotator-text is-current">${HERO_TITLE_ROTATING_CS[0]}</span>
-          <span class="hero-title-rotator-text is-next"></span>
-        </span>
-      `;
-
-      const rotator = title.querySelector('.hero-title-rotator');
-      const currentText = title.querySelector('.hero-title-rotator-text.is-current');
-      const nextText = title.querySelector('.hero-title-rotator-text.is-next');
-      if (!rotator || !currentText || !nextText) return;
-      const initialHeight = currentText.offsetHeight;
-      rotator.style.height = `${initialHeight}px`;
-
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || HERO_TITLE_ROTATING_CS.length < 2) {
-        currentText.textContent = HERO_TITLE_ROTATING_CS[HERO_TITLE_ROTATING_CS.length - 1];
-        return;
-      }
-
-      let index = 0;
-      const maxSteps = Math.max(HERO_TITLE_ROTATING_CS.length - 1, 1);
-      const intervalStep = (HERO_TITLE_INTERVAL_START_MS - HERO_TITLE_INTERVAL_END_MS) / maxSteps;
-
-      function scheduleNextSwap() {
-        const nextDelay = Math.max(
-          HERO_TITLE_INTERVAL_END_MS,
-          Math.round(HERO_TITLE_INTERVAL_START_MS - (index * intervalStep))
-        );
-
-        title._heroTitleTimer = window.setTimeout(() => {
-          runSwap();
-        }, nextDelay);
-      }
-
-      function runSwap() {
-        if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
-          window.clearTimeout(title._heroTitleTimer);
-          title._heroTitleTimer = null;
-          return;
-        }
-
-        const nextIndex = index + 1;
-        nextText.textContent = HERO_TITLE_ROTATING_CS[nextIndex];
-        const currentHeight = currentText.offsetHeight;
-        rotator.style.height = `${currentHeight}px`;
-        rotator.classList.add('is-animating');
-
-        title._heroTitleSwapTimer = window.setTimeout(() => {
-          index = nextIndex;
-          rotator.classList.add('is-resetting');
-          currentText.textContent = HERO_TITLE_ROTATING_CS[index];
-          nextText.textContent = '';
-          rotator.classList.remove('is-animating');
-          void rotator.offsetHeight;
-          rotator.classList.remove('is-resetting');
-          const nextHeight = currentText.offsetHeight;
-          rotator.style.height = `${nextHeight}px`;
-          if (index >= HERO_TITLE_ROTATING_CS.length - 1) {
-            window.clearTimeout(title._heroTitleTimer);
-            title._heroTitleTimer = null;
-          } else {
-            scheduleNextSwap();
-          }
-        }, HERO_TITLE_TRANSITION_MS);
-      }
-
-      scheduleNextSwap();
-    }
-
-    window.addEventListener('fitlime:i18n-loaded', (event) => {
-      const nextLang = event?.detail?.lang;
-      window.setTimeout(() => initHeroTitleAnimation(nextLang), 0);
-    });
 
     (async () => {
       const INIT_LANG = getCurrentLang();     // zjistí jazyk
@@ -1796,8 +1683,11 @@
 
   <script type="module">
     import { bootI18n } from '/src/i18n-core.js';
+    import { registerHeroTitleAnimation } from '/src/hero-title-animation.js';
 
-    bootI18n({ onAfterApply: initHeroTitleAnimation }).then(() => {
+    registerHeroTitleAnimation();
+
+    bootI18n().then(() => {
       setStep(0);
     });
   </script>

@@ -21,6 +21,15 @@
       "reference": "Testimonials"
     },
     "hero": {
+      "title_static": "Personalized meal plan",
+      "title_rotating": [
+        "for more energy",
+        "for better sleep",
+        "for breaking records",
+        "for more joy in everyday life",
+        "for you"
+      ],
+      "title_aria": "Personalized meal plan for you",
       "title": "Personalized meal & training plan",
       "lead": "Fill out a short questionnaire and get a plan tailored to your needs.",
       "cta": "Start questionnaire",

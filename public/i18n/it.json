@@ -18,6 +18,15 @@
       "reference": "Testimonianze"
     },
     "hero": {
+      "title_static": "Piano alimentare su misura",
+      "title_rotating": [
+        "per più energia",
+        "per dormire meglio",
+        "per battere i record",
+        "per vivere meglio ogni giorno",
+        "per te"
+      ],
+      "title_aria": "Piano alimentare per te",
       "title": "Piano alimentare su misura in pochi minuti",
       "lead": "Compila un breve questionario e ottieni un piano che copre tutte le tue esigenze.",
       "cta": "Inizia il questionario",

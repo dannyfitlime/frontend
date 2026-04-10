@@ -21,6 +21,15 @@
       "reference": "Referencie"
     },
     "hero": {
+      "title_static": "Zdravý jedálniček na mieru",
+      "title_rotating": [
+        "pre viac energie",
+        "pre lepší spánok",
+        "pre lámání rekordov",
+        "pre radosť zo života",
+        "pre Vás"
+      ],
+      "title_aria": "Zdravý jedálniček pre Vás",
       "title": "Zdravý jedálniček na mieru",
       "lead": "Vyplňte krátky dotazník a získajte plán, ktorý pokrýva všetky Vaše potreby.",
       "cta": "Získať jedálniček",

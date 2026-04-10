@@ -18,6 +18,15 @@
       "reference": "Referencias"
     },
     "hero": {
+      "title_static": "Menú a medida",
+      "title_rotating": [
+        "para más energía",
+        "para dormir mejor",
+        "para batir récords",
+        "para disfrutar más de la vida",
+        "para ti"
+      ],
+      "title_aria": "Menú para ti",
       "title": "Menú a medida en pocos minutos",
       "lead": "Rellena un breve cuestionario y consigue un plan que cubra todas tus necesidades.",
       "cta": "Iniciar formulario",

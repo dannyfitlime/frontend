@@ -18,6 +18,15 @@
       "reference": "Referencje"
     },
     "hero": {
+      "title_static": "Plan żywieniowy szyty na miarę",
+      "title_rotating": [
+        "na więcej energii",
+        "na lepszy sen",
+        "na bicie rekordów",
+        "na więcej radości z życia",
+        "dla Ciebie"
+      ],
+      "title_aria": "Plan żywieniowy dla Ciebie",
       "title": "Plan żywieniowy szyty na miarę w kilka minut",
       "lead": "Proszę wypełnić krótki formularz, a otrzyma Pan/Pani plan, który obejmuje wszystkie potrzeby.",
       "cta": "Rozpocznij formularz",

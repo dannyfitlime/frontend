@@ -18,6 +18,15 @@
       "reference": "Referenzen"
     },
     "hero": {
+      "title_static": "Individueller Ernährungsplan nach Maß",
+      "title_rotating": [
+        "für mehr Energie",
+        "für besseren Schlaf",
+        "für neue Rekorde",
+        "für mehr Lebensfreude",
+        "für Sie"
+      ],
+      "title_aria": "Individueller Ernährungsplan für Sie",
       "title": "Ernährungsplan nach Maß in wenigen Minuten",
       "lead": "Füllen Sie einen kurzen Fragebogen aus und erhalten Sie einen Plan, der all Ihre Bedürfnisse abdeckt.",
       "cta": "Formular starten",

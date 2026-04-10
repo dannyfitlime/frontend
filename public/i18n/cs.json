@@ -21,6 +21,15 @@
       "reference": "Reference"
     },
     "hero": {
+      "title_static": "Zdravý jídelníček na míru",
+      "title_rotating": [
+        "pro více energie",
+        "pro lepší spánek",
+        "pro lámání rekordů",
+        "pro radost ze života",
+        "pro Vás"
+      ],
+      "title_aria": "Zdravý jídelníček pro Vás",
       "title": "Zdravý jídelníček na míru",
       "lead": "Získejte stravovací plán přizpůsobený Vašemu tělu a cílům. Stačí vyplnit krátký dotazník.",
       "cta": "Získat jídelníček",
