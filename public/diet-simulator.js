@@ -80,14 +80,55 @@ function diet_sumSelected() {
     return totals;
 }
 
+function wrapRadarLabel(ctx, text, maxWidth, maxLines = 3) {
+    const words = String(text || "").split(/\s+/).filter(Boolean);
+    if (!words.length) return [""];
+    const lines = [];
+    let currentLine = words[0];
+
+    for (let i = 1; i < words.length; i++) {
+        const nextLine = `${currentLine} ${words[i]}`;
+        if (ctx.measureText(nextLine).width <= maxWidth || currentLine === "") {
+            currentLine = nextLine;
+        } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+        }
+    }
+
+    if (currentLine) lines.push(currentLine);
+    if (lines.length <= maxLines) return lines;
+
+    const visibleLines = lines.slice(0, maxLines - 1);
+    visibleLines.push(lines.slice(maxLines - 1).join(" "));
+    return visibleLines;
+}
+
+function drawRadarLabelLines(ctx, lines, x, y, lineHeight) {
+    const totalHeight = (lines.length - 1) * lineHeight;
+    let startY = y;
+
+    if (ctx.textBaseline === "middle") startY = y - totalHeight / 2;
+    else if (ctx.textBaseline === "bottom") startY = y - totalHeight;
+
+    lines.forEach((line, index) => {
+        ctx.fillText(line, x, startY + index * lineHeight);
+    });
+}
+
 function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS) {
     const cx = Wcss / 2; const cy = Hcss / 2;
     const numAngles = definitions.length;
+    const isComplexChart = ctx.canvas?.id === "complexChart";
     const forceCompactLabels = ctx.canvas?.dataset?.compactLabels === "true";
-    const isCompactInteractive = isInteractive && (numAngles > 10 || (window.innerWidth < 820 && numAngles > 8));
-    const useCompactLabels = isCompactInteractive || (forceCompactLabels && numAngles > 10);
+    const canUseFullLabels = isComplexChart || (isInteractive && numAngles > 10 && Wcss >= 760 && window.innerWidth >= 1100);
+    const isCompactInteractive = isInteractive && (numAngles > 10 ? !canUseFullLabels : (window.innerWidth < 820 && numAngles > 8));
+    const useCompactLabels = numAngles > 10
+        ? (forceCompactLabels ? !canUseFullLabels : isCompactInteractive)
+        : isCompactInteractive;
+    const outerPadding = Math.max(58, Math.round(Wcss * 0.08));
     const padding = numAngles > 10
-        ? (isInteractive ? (useCompactLabels ? Math.max(58, Math.round(Wcss * 0.08)) : Math.max(110, Math.round(Wcss * 0.14))) : 35)
+        ? (isInteractive ? outerPadding : 35)
         : (isInteractive ? 70 : 35);
     const maxR = Math.max(0, Math.min(cx, cy) - padding);
 
@@ -126,9 +167,10 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         return labelText.slice(0, 3).toUpperCase();
     };
 
-    const getXY = (value, index) => {
+    const getXY = (value, index, allowOverflow = false) => {
         const angle = -Math.PI / 2 + (Math.PI * 2 * index) / numAngles;
-        const r = (Math.min(value, MAX_DISPLAY) / MAX_DISPLAY) * maxR;
+        const radiusValue = allowOverflow ? value : Math.min(value, MAX_DISPLAY);
+        const r = (radiusValue / MAX_DISPLAY) * maxR;
         return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
     };
 
@@ -158,12 +200,12 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
         ctx.lineWidth = 1; ctx.stroke();
 
-        const labelOffset = numAngles > 10 ? (useCompactLabels ? 18 : 55) : (isInteractive ? 55 : 20);
-        const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + labelOffset, i);
+        const labelOffset = numAngles > 10 ? (useCompactLabels ? 18 : 22) : (isInteractive ? 55 : 20);
+        const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + labelOffset, i, !useCompactLabels);
         const labelText = definitions[i].label;
 
-        ctx.fillStyle = isInteractive ? "#475569" : "rgba(71, 85, 105, 0.7)";
-        ctx.font = isInteractive ? `${useCompactLabels ? 700 : 600} ${useCompactLabels ? 10 : 12}px system-ui` : "500 10px system-ui";
+        ctx.fillStyle = isInteractive ? "#273241" : "rgba(51, 65, 85, 0.78)";
+        ctx.font = isInteractive ? `${useCompactLabels ? 700 : 600} ${useCompactLabels ? 10 : (numAngles > 10 ? 10 : 12)}px system-ui` : "500 10px system-ui";
         ctx.letterSpacing = "1px";
 
         const angle = -Math.PI / 2 + (Math.PI * 2 * i) / numAngles;
@@ -174,10 +216,18 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         else if (Math.sin(angle) > 0) ctx.textBaseline = "top";
         else ctx.textBaseline = "bottom";
 
-        const text = isInteractive
-            ? (useCompactLabels ? getCompactLabel(labelText) : labelText.toUpperCase())
-            : labelText.substring(0, 3).toUpperCase();
-        ctx.fillText(text, xLabel, yLabel);
+        if (isInteractive) {
+            if (useCompactLabels) {
+                ctx.fillText(getCompactLabel(labelText), xLabel, yLabel);
+            } else if (numAngles > 10) {
+                const lines = wrapRadarLabel(ctx, labelText, Math.max(78, Math.round(Wcss * 0.1)), isComplexChart ? 4 : 3);
+                drawRadarLabelLines(ctx, lines, xLabel, yLabel, 11);
+            } else {
+                ctx.fillText(labelText.toUpperCase(), xLabel, yLabel);
+            }
+        } else {
+            ctx.fillText(labelText.substring(0, 3).toUpperCase(), xLabel, yLabel);
+        }
     }
 
     ctx.beginPath();
@@ -597,6 +647,34 @@ function detectLocale() {
 const BASE_DIET_FOOD_NAMES = Object.fromEntries(Object.entries(DIET_FOODS).map(([key, value]) => [key, value.name]));
 const BASE_DIET_NUT_LABELS = DIET_NUTS.map((item) => item.label);
 const BASE_COMPLEX_CATEGORY_LABELS = COMPLEX_CATEGORIES.map((item) => item.label);
+const COMPLEX_CATEGORY_I18N_KEYS = [
+    "home.why.chart.categories.energy",
+    "home.why.chart.categories.protein",
+    "home.why.chart.categories.fat",
+    "home.why.chart.categories.carbs",
+    "home.why.chart.categories.fiber",
+    "home.why.chart.categories.fruit",
+    "home.why.chart.categories.vegetables",
+    "home.why.chart.categories.dairy",
+    "home.why.chart.categories.fish",
+    "home.why.chart.categories.saturatedFat",
+    "home.why.chart.categories.monounsaturatedFat",
+    "home.why.chart.categories.polyunsaturatedFat",
+    "home.why.chart.categories.cholesterol",
+    "home.why.chart.categories.vitaminB1",
+    "home.why.chart.categories.vitaminB2",
+    "home.why.chart.categories.vitaminB6",
+    "home.why.chart.categories.vitaminB12",
+    "home.why.chart.categories.vitaminC",
+    "home.why.chart.categories.vitaminD",
+    "home.why.chart.categories.vitaminE",
+    "home.why.chart.categories.folate",
+    "home.why.chart.categories.magnesium",
+    "home.why.chart.categories.potassium",
+    "home.why.chart.categories.sodium",
+    "home.why.chart.categories.calcium",
+    "home.why.chart.categories.iron"
+];
 const BASE_STATIC_DAY = STATIC_DATA.day.map((item) => ({ ...item }));
 const BASE_STATIC_WEEK = STATIC_DATA.week.map((item) => ({ ...item }));
 const BASE_COMPLEX_MEAL_NAMES = COMPLEX_MEALS.map((item) => item.name);
@@ -627,31 +705,38 @@ function applyLocaleCopy(locale) {
         item.name = BASE_COMPLEX_MEAL_NAMES[idx];
     });
 
-    if (!localeCopy) return;
+    if (localeCopy) {
+        Object.entries(localeCopy.foods).forEach(([key, value]) => {
+            if (DIET_FOODS[key]) DIET_FOODS[key].name = value;
+        });
+        localeCopy.nuts.forEach((value, idx) => {
+            if (DIET_NUTS[idx]) DIET_NUTS[idx].label = value;
+        });
+        localeCopy.categories.forEach((value, idx) => {
+            if (COMPLEX_CATEGORIES[idx]) COMPLEX_CATEGORIES[idx].label = value;
+        });
+        localeCopy.day.forEach((value, idx) => {
+            if (STATIC_DATA.day[idx]) {
+                STATIC_DATA.day[idx].name = value.name;
+                STATIC_DATA.day[idx].desc = value.desc;
+            }
+        });
+        localeCopy.week.forEach((value, idx) => {
+            if (STATIC_DATA.week[idx]) {
+                STATIC_DATA.week[idx].name = value.name;
+                STATIC_DATA.week[idx].desc = value.desc;
+            }
+        });
+        localeCopy.complexMeals.forEach((value, idx) => {
+            if (COMPLEX_MEALS[idx]) COMPLEX_MEALS[idx].name = value;
+        });
+    }
 
-    Object.entries(localeCopy.foods).forEach(([key, value]) => {
-        if (DIET_FOODS[key]) DIET_FOODS[key].name = value;
-    });
-    localeCopy.nuts.forEach((value, idx) => {
-        if (DIET_NUTS[idx]) DIET_NUTS[idx].label = value;
-    });
-    localeCopy.categories.forEach((value, idx) => {
-        if (COMPLEX_CATEGORIES[idx]) COMPLEX_CATEGORIES[idx].label = value;
-    });
-    localeCopy.day.forEach((value, idx) => {
-        if (STATIC_DATA.day[idx]) {
-            STATIC_DATA.day[idx].name = value.name;
-            STATIC_DATA.day[idx].desc = value.desc;
+    COMPLEX_CATEGORY_I18N_KEYS.forEach((key, idx) => {
+        const translated = getSharedTranslation(key);
+        if (translated && translated !== key && COMPLEX_CATEGORIES[idx]) {
+            COMPLEX_CATEGORIES[idx].label = translated;
         }
-    });
-    localeCopy.week.forEach((value, idx) => {
-        if (STATIC_DATA.week[idx]) {
-            STATIC_DATA.week[idx].name = value.name;
-            STATIC_DATA.week[idx].desc = value.desc;
-        }
-    });
-    localeCopy.complexMeals.forEach((value, idx) => {
-        if (COMPLEX_MEALS[idx]) COMPLEX_MEALS[idx].name = value;
     });
 }
 
@@ -765,7 +850,9 @@ function renderComplexChart() {
     let Wcss = (canvas.parentElement.clientWidth || maxChartWidth) - (isMobile ? 0 : 8);
     if (Wcss < 300) Wcss = 300;
     if (Wcss > maxChartWidth) Wcss = maxChartWidth;
-    const Hcss = isMobile ? (Wcss > 600 ? 500 : 360) : Math.round(Wcss * 0.8);
+    const Hcss = isMobile
+        ? (Wcss > 600 ? 500 : (window.innerWidth <= 470 ? 300 : 360))
+        : Math.round(Wcss * 0.8);
     canvas.style.width = Wcss + "px"; canvas.style.height = Hcss + "px";
     canvas.width = Wcss * ratio; canvas.height = Hcss * ratio;
     const ctx = canvas.getContext("2d"); ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
