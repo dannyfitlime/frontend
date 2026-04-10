@@ -175,12 +175,12 @@
               <p class="why-lead" data-i18n="home.why.lead">FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.</p>              
             <div class="why-stats-row">
                 <div class="why-orbit">
-                  <span class="why-stat-value">25</span>
+                  <span class="why-stat-value" data-count-to="25">25</span>
                   <span class="why-stat-label" data-i18n="home.why.stats.nutrition">výživových parametrů každého jídla</span>
                 </div>
 
                 <div class="why-orbit">
-                  <span class="why-stat-value">350+</span>
+                  <span class="why-stat-value" data-count-to="350" data-count-suffix="+">350+</span>
                   <span class="why-stat-label" data-i18n="home.why.stats.meals">zdravých jídel v databázi</span>
                 </div>
               </div>
@@ -193,7 +193,8 @@
                   <strong id="whyMealCaptionTitle" data-i18n="home.why.meal.defaultName">Losos poke</strong>
                 </figcaption>
                 <div class="why-meal-image-wrap">
-                  <img id="whyMealImage" src="/images/losos_poke.jpg" alt="Losos poke" data-i18n-alt="home.why.meal.imageAlt" loading="lazy" decoding="async">
+                  <img id="whyMealImagePrimary" class="why-meal-image is-active" src="/images/losos_poke.jpg" alt="Losos poke" data-i18n-alt="home.why.meal.imageAlt" loading="lazy" decoding="async">
+                  <img id="whyMealImageSecondary" class="why-meal-image" src="/images/losos_poke.jpg" alt="Losos poke" loading="lazy" decoding="async" aria-hidden="true">
                 </div>
                 <div class="why-macro-row" aria-label="Rozložení makronutrientů" data-i18n-aria-label="home.why.meal.macroAriaLabel">
                   <div class="why-macro-item">
@@ -1540,8 +1541,13 @@
       { src: '/images/bananove_smoothie.jpg', caption: 'Banánové smoothie' }
     ];
 
-    const whyMealImage = document.getElementById('whyMealImage');
+    const whyMealImages = [
+      document.getElementById('whyMealImagePrimary'),
+      document.getElementById('whyMealImageSecondary')
+    ].filter(Boolean);
     const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
+    let whyMealActiveImageIndex = 0;
+    let whyMealSwapToken = 0;
     const whyMacroNodes = {
       carbs: {
         donut: document.getElementById('whyMacroCarbs'),
@@ -1590,20 +1596,39 @@
     }
 
     function updateWhyMealVisual(index, meal) {
-      if (!whyMealImage || !whyMealCaptionTitle) return;
+      if (whyMealImages.length < 2 || !whyMealCaptionTitle) return;
       const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
-      const mealName = meal?.name;
-      whyMealImage.classList.add('is-swapping');
+      const mealName = meal?.name || visual.caption;
+      const nextImageIndex = whyMealActiveImageIndex === 0 ? 1 : 0;
+      const activeImage = whyMealImages[whyMealActiveImageIndex];
+      const nextImage = whyMealImages[nextImageIndex];
+      const swapToken = ++whyMealSwapToken;
+
       whyMealCaptionTitle.classList.add('is-swapping');
       updateWhyMealMacros(meal?.macros);
 
-      setTimeout(() => {
-        whyMealImage.src = visual.src;
-        whyMealImage.alt = mealName || visual.caption;
-        whyMealCaptionTitle.textContent = mealName || visual.caption;
-        whyMealImage.classList.remove('is-swapping');
+      const finalizeSwap = () => {
+        if (swapToken !== whyMealSwapToken) return;
+        nextImage.src = visual.src;
+        nextImage.alt = mealName;
+        nextImage.removeAttribute('aria-hidden');
+        nextImage.classList.add('is-active');
+        activeImage.setAttribute('aria-hidden', 'true');
+        activeImage.classList.remove('is-active');
+        whyMealCaptionTitle.textContent = mealName;
         whyMealCaptionTitle.classList.remove('is-swapping');
-      }, 220);
+        whyMealActiveImageIndex = nextImageIndex;
+      };
+
+      const preloadImage = new Image();
+      preloadImage.decoding = 'async';
+      preloadImage.onload = finalizeSwap;
+      preloadImage.onerror = finalizeSwap;
+      preloadImage.src = visual.src;
+
+      if (preloadImage.complete) {
+        finalizeSwap();
+      }
     }
 
     document.addEventListener('fitlime:complex-meal-change', (event) => {
@@ -1632,5 +1657,55 @@
         });
       }, { threshold: 0.1, rootMargin: '40px' });
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      const statNodes = Array.from(document.querySelectorAll('.why-stat-value[data-count-to]'));
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function renderWhyStat(node, value) {
+        const suffix = node.dataset.countSuffix || '';
+        node.textContent = `${value}${suffix}`;
+      }
+
+      function animateWhyStat(node) {
+        const targetValue = Number(node.dataset.countTo || 0);
+        if (!Number.isFinite(targetValue)) return;
+        if (prefersReducedMotion) {
+          renderWhyStat(node, targetValue);
+          return;
+        }
+
+        const startAt = performance.now();
+        const duration = targetValue >= 100 ? 1400 : 1100;
+
+        function step(now) {
+          const progress = Math.min((now - startAt) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          renderWhyStat(node, Math.round(targetValue * eased));
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            renderWhyStat(node, targetValue);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      if (statNodes.length) {
+        statNodes.forEach(node => renderWhyStat(node, 0));
+
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const node = entry.target;
+            if (node.dataset.countAnimated === 'true') return;
+            node.dataset.countAnimated = 'true';
+            animateWhyStat(node);
+            statsObserver.unobserve(node);
+          });
+        }, { threshold: 0.6 });
+
+        statNodes.forEach(node => statsObserver.observe(node));
+      }
     });
   </script>
