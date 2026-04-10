@@ -18,6 +18,15 @@
       "reference": "Referencje"
     },
     "hero": {
+      "title_static": "Plan żywieniowy szyty na miarę",
+      "title_rotating": [
+        "na więcej energii",
+        "na lepszy sen",
+        "na bicie rekordów",
+        "na więcej radości z życia",
+        "dla Ciebie"
+      ],
+      "title_aria": "Plan żywieniowy dla Ciebie",
       "title": "Plan żywieniowy szyty na miarę w kilka minut",
       "lead": "Proszę wypełnić krótki formularz, a otrzyma Pan/Pani plan, który obejmuje wszystkie potrzeby.",
       "cta": "Rozpocznij formularz",
@@ -44,9 +53,39 @@
       "chart": {
         "title": "Wykres pokazuje wszystkie parametry, które śledzimy podczas układania jadłospisu.",
         "text": "Zdrowe jedzenie to nie tylko kalorie.",
-        "link": "Monitorujemy stosunek makroskładników, witaminy, minerały oraz to, jak cały skład wspiera różnorodność diety.",
+        "linkPrefix": "Monitorujemy ",
+        "link": "stosunek makroskładników, witaminy i minerały",
+        "linkSuffix": " oraz to, jak cały skład wspiera różnorodność diety.",
         "ariaLabel": "Wykres radarowy kompleksowej oceny posiłku",
-        "caption": "Pełny profil żywieniowy dla:"
+        "caption": "Pełny profil żywieniowy dla:",
+        "categories": {
+          "energy": "Energia",
+          "protein": "Białko",
+          "fat": "Tłuszcze",
+          "carbs": "Węglowodany",
+          "fiber": "Błonnik",
+          "fruit": "Owoce",
+          "vegetables": "Warzywa",
+          "dairy": "Nabiał",
+          "fish": "Ryby",
+          "saturatedFat": "NKT",
+          "monounsaturatedFat": "JNKT",
+          "polyunsaturatedFat": "WNKT",
+          "cholesterol": "Cholesterol",
+          "vitaminB1": "Vit. B1",
+          "vitaminB2": "Vit. B2",
+          "vitaminB6": "Vit. B6",
+          "vitaminB12": "Vit. B12",
+          "vitaminC": "Vit. C",
+          "vitaminD": "Vit. D",
+          "vitaminE": "Vit. E",
+          "folate": "Foliany",
+          "magnesium": "Magnez",
+          "potassium": "Potas",
+          "sodium": "Sód",
+          "calcium": "Wapń",
+          "iron": "Żelazo"
+        }
       },
       "meals": {
         "salmonPoke": "Poke z łososiem",

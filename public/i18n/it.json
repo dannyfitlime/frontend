@@ -18,6 +18,15 @@
       "reference": "Testimonianze"
     },
     "hero": {
+      "title_static": "Piano alimentare su misura",
+      "title_rotating": [
+        "per più energia",
+        "per dormire meglio",
+        "per battere i record",
+        "per vivere meglio ogni giorno",
+        "per te"
+      ],
+      "title_aria": "Piano alimentare per te",
       "title": "Piano alimentare su misura in pochi minuti",
       "lead": "Compila un breve questionario e ottieni un piano che copre tutte le tue esigenze.",
       "cta": "Inizia il questionario",
@@ -44,9 +53,39 @@
       "chart": {
         "title": "Il grafico mostra tutti i parametri che monitoriamo durante la creazione del tuo piano alimentare.",
         "text": "Mangiare sano non è solo una questione di calorie.",
-        "link": "Monitoriamo il rapporto tra macronutrienti, vitamine, minerali e come l'intera composizione favorisca la varietà della dieta.",
+        "linkPrefix": "Monitoriamo ",
+        "link": "il rapporto tra macronutrienti, vitamine e minerali",
+        "linkSuffix": " e come l'intera composizione favorisca la varietà della dieta.",
         "ariaLabel": "Grafico a radar della valutazione nutrizionale completa",
-        "caption": "Profilo nutrizionale completo per:"
+        "caption": "Profilo nutrizionale completo per:",
+        "categories": {
+          "energy": "Energia",
+          "protein": "Proteine",
+          "fat": "Grassi",
+          "carbs": "Carboidrati",
+          "fiber": "Fibre",
+          "fruit": "Frutta",
+          "vegetables": "Verdure",
+          "dairy": "Latticini",
+          "fish": "Pesce",
+          "saturatedFat": "AGS",
+          "monounsaturatedFat": "AGMI",
+          "polyunsaturatedFat": "AGPI",
+          "cholesterol": "Colesterolo",
+          "vitaminB1": "Vit. B1",
+          "vitaminB2": "Vit. B2",
+          "vitaminB6": "Vit. B6",
+          "vitaminB12": "Vit. B12",
+          "vitaminC": "Vit. C",
+          "vitaminD": "Vit. D",
+          "vitaminE": "Vit. E",
+          "folate": "Folati",
+          "magnesium": "Magnesio",
+          "potassium": "Potassio",
+          "sodium": "Sodio",
+          "calcium": "Calcio",
+          "iron": "Ferro"
+        }
       },
       "meals": {
         "salmonPoke": "Poke al salmone",

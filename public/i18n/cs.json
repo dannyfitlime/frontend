@@ -21,6 +21,15 @@
       "reference": "Reference"
     },
     "hero": {
+      "title_static": "Zdravý jídelníček na míru",
+      "title_rotating": [
+        "pro více energie",
+        "pro lepší spánek",
+        "pro lámání rekordů",
+        "pro radost ze života",
+        "pro Vás"
+      ],
+      "title_aria": "Zdravý jídelníček pro Vás",
       "title": "Zdravý jídelníček na míru",
       "lead": "Získejte stravovací plán přizpůsobený Vašemu tělu a cílům. Stačí vyplnit krátký dotazník.",
       "cta": "Získat jídelníček",
@@ -48,9 +57,39 @@
       "chart": {
         "title": "Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.",
         "text": "Zdravé jídlo není jen o kaloriích.",
-        "link": "Sledujeme poměr makroživin, vitamíny, minerály i to, jak celé složení podporuje pestrost jídelníčku.",
+        "linkPrefix": "Sledujeme ",
+        "link": "poměr makroživin, vitamíny, minerály",
+        "linkSuffix": " i to, jak celé složení podporuje pestrost jídelníčku.",
         "ariaLabel": "Radarový graf komplexního vyhodnocení jídla",
-        "caption": "Kompletní nutriční profil pro:"
+        "caption": "Kompletní výživový profil pro:",
+        "categories": {
+          "energy": "Energie",
+          "protein": "Bílkoviny",
+          "fat": "Tuky",
+          "carbs": "Sacharidy",
+          "fiber": "Vláknina",
+          "fruit": "Ovoce",
+          "vegetables": "Zelenina",
+          "dairy": "Mléčné výrobky",
+          "fish": "Ryby",
+          "saturatedFat": "SFA",
+          "monounsaturatedFat": "MUFA",
+          "polyunsaturatedFat": "PUFA",
+          "cholesterol": "Cholesterol",
+          "vitaminB1": "Vit. B1",
+          "vitaminB2": "Vit. B2",
+          "vitaminB6": "Vit. B6",
+          "vitaminB12": "Vit. B12",
+          "vitaminC": "Vit. C",
+          "vitaminD": "Vit. D",
+          "vitaminE": "Vit. E",
+          "folate": "Kyselina listová",
+          "magnesium": "Hořčík",
+          "potassium": "Draslík",
+          "sodium": "Sodík",
+          "calcium": "Vápník",
+          "iron": "Železo"
+        }
       },
       "meals": {
         "salmonPoke": "Losos poke",
@@ -152,7 +191,7 @@
     },
     "coverage": {
       "title": "Co jídelníček pokrývá",
-      "intro": "Kompletní přehled všech klíčových živin a potravinových skupin:",
+      "intro": "Fitlime jídelníček pokrývá všechny důležité makroživiny, mikroživiny i vitamíny, které vaše tělo potřebuje.<br>Jak jednotlivé složky kombinujeme do vyváženého plánu, si můžete přečíst <a href=\"/jak-fitlime-funguje/index.html\" class=\"diet-link\">zde</a>.",
       "boxes": {
         "energy": {
           "title": "Energie a makroživiny",

@@ -21,6 +21,15 @@
       "reference": "Testimonials"
     },
     "hero": {
+      "title_static": "Personalized meal plan",
+      "title_rotating": [
+        "for more energy",
+        "for better sleep",
+        "for breaking records",
+        "for more joy in everyday life",
+        "for you"
+      ],
+      "title_aria": "Personalized meal plan for you",
       "title": "Personalized meal & training plan",
       "lead": "Fill out a short questionnaire and get a plan tailored to your needs.",
       "cta": "Start questionnaire",
@@ -48,9 +57,39 @@
       "chart": {
         "title": "The chart shows all the parameters we track when building your meal plan.",
         "text": "Healthy food is about more than just calories.",
-        "link": "We monitor macronutrient ratios, vitamins, minerals, and how the overall composition supports dietary variety.",
+        "linkPrefix": "We monitor ",
+        "link": "macronutrient ratios, vitamins, and minerals",
+        "linkSuffix": ", and how the overall composition supports dietary variety.",
         "ariaLabel": "Radar chart of comprehensive meal evaluation",
-        "caption": "Complete nutritional profile for:"
+        "caption": "Complete nutritional profile for:",
+        "categories": {
+          "energy": "Energy",
+          "protein": "Protein",
+          "fat": "Fat",
+          "carbs": "Carbs",
+          "fiber": "Fiber",
+          "fruit": "Fruit",
+          "vegetables": "Vegetables",
+          "dairy": "Dairy",
+          "fish": "Fish",
+          "saturatedFat": "SFA",
+          "monounsaturatedFat": "MUFA",
+          "polyunsaturatedFat": "PUFA",
+          "cholesterol": "Cholesterol",
+          "vitaminB1": "Vit. B1",
+          "vitaminB2": "Vit. B2",
+          "vitaminB6": "Vit. B6",
+          "vitaminB12": "Vit. B12",
+          "vitaminC": "Vit. C",
+          "vitaminD": "Vit. D",
+          "vitaminE": "Vit. E",
+          "folate": "Folate",
+          "magnesium": "Magnesium",
+          "potassium": "Potassium",
+          "sodium": "Sodium",
+          "calcium": "Calcium",
+          "iron": "Iron"
+        }
       },
       "meals": {
         "salmonPoke": "Salmon poke",

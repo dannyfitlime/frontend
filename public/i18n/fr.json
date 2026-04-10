@@ -18,6 +18,15 @@
       "reference": "Références"
     },
     "hero": {
+      "title_static": "Programme alimentaire sur mesure",
+      "title_rotating": [
+        "pour plus d'énergie",
+        "pour mieux dormir",
+        "pour battre des records",
+        "pour profiter davantage de la vie",
+        "pour vous"
+      ],
+      "title_aria": "Programme alimentaire pour vous",
       "title": "Un menu personnalisé en quelques minutes",
       "lead": "Remplissez un court questionnaire et obtenez un plan qui couvre tous vos besoins.",
       "cta": "Lancer le formulaire",
@@ -44,9 +53,39 @@
       "chart": {
         "title": "Le graphique présente tous les paramètres que nous suivons lors de l'élaboration du menu.",
         "text": "Manger sainement ne se résume pas aux calories.",
-        "link": "Nous surveillons le ratio de macronutriments, les vitamines, les minéraux ainsi que la manière dont la composition globale favorise la variété de l'alimentation.",
+        "linkPrefix": "Nous surveillons ",
+        "link": "le ratio de macronutriments, les vitamines et les minéraux",
+        "linkSuffix": " ainsi que la manière dont la composition globale favorise la variété de l'alimentation.",
         "ariaLabel": "Graphique radar de l'évaluation nutritionnelle complète",
-        "caption": "Profil nutritionnel complet pour :"
+        "caption": "Profil nutritionnel complet pour :",
+        "categories": {
+          "energy": "Énergie",
+          "protein": "Protéines",
+          "fat": "Lipides",
+          "carbs": "Glucides",
+          "fiber": "Fibres",
+          "fruit": "Fruits",
+          "vegetables": "Légumes",
+          "dairy": "Produits laitiers",
+          "fish": "Poisson",
+          "saturatedFat": "AGS",
+          "monounsaturatedFat": "AGMI",
+          "polyunsaturatedFat": "AGPI",
+          "cholesterol": "Cholestérol",
+          "vitaminB1": "Vit. B1",
+          "vitaminB2": "Vit. B2",
+          "vitaminB6": "Vit. B6",
+          "vitaminB12": "Vit. B12",
+          "vitaminC": "Vit. C",
+          "vitaminD": "Vit. D",
+          "vitaminE": "Vit. E",
+          "folate": "Folates",
+          "magnesium": "Magnésium",
+          "potassium": "Potassium",
+          "sodium": "Sodium",
+          "calcium": "Calcium",
+          "iron": "Fer"
+        }
       },
       "meals": {
         "salmonPoke": "Poke au saumon",
