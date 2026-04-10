@@ -2,7 +2,10 @@
    Globální nastavení
    ========================= */
 :root {
-  --maxw: 1180px;
+  --container-default: 1180px;
+  --container-wide: 1200px;
+  --container-reading: 1000px;
+  --maxw: var(--container-default);
   --page-pad: 16px;
 
   --bg: #ffffff;
@@ -23,6 +26,9 @@
   --section-sub-size: 1.05rem;
   --section-sub-color: #1f2937;
   --section-sub-gap: 44px;
+  --section-intro-max: 780px;
+  --section-intro-size: clamp(1rem, 1.1vw, 1.14rem);
+  --section-intro-line: 1.72;
 }
 
 html,
@@ -57,9 +63,17 @@ main {
 
 /* Container */
 .home-container {
-  max-width: var(--maxw);
+  max-width: var(--container-max, var(--maxw));
   margin: 0 auto;
   padding: 0 var(--page-pad);
+}
+
+.home-container--wide {
+  max-width: var(--container-wide);
+}
+
+.home-container--narrow {
+  max-width: var(--container-reading);
 }
 
 /* Responsive breakpoints */
@@ -528,6 +542,13 @@ body.menu-open {
   margin-bottom: 40px;
 }
 
+:is(.why-lead, .how-subtitle, .audience-header .lead, .preview .lead, .coverage-alt .intro, .footer-cta__lead) {
+  max-width: var(--section-intro-max);
+  margin: 0 auto var(--section-sub-gap);
+  font-size: var(--section-intro-size);
+  line-height: var(--section-intro-line);
+}
+
 .card {
   background: #fff;
   border: 2px solid #b4b4b4;
@@ -555,6 +576,7 @@ body.menu-open {
    WHY SECTION REBUILD
    ========================= */
 .why-section {
+  --container-max: var(--container-wide);
   --why-bg: #f5f1e8;
   --why-ink: #18261b;
   --why-muted: #5d695f;
@@ -562,10 +584,6 @@ body.menu-open {
   --why-card: rgba(255, 252, 247, 0.82);
   padding: 40px 0 12px;
   color: var(--why-ink);
-}
-
-.why-section .home-container {
-  max-width: 1200px;
 }
 
 .why-hero {
@@ -626,11 +644,8 @@ body.menu-open {
 }
 
 .why-lead {
-  margin: 0 0 22px;
-  font-size: 1.08rem;
-  line-height: 1.78;
+  margin-bottom: 22px;
   color: var(--why-muted);
-  max-width: 40ch;
 }
 
 .why-copy-card,
@@ -1058,11 +1073,7 @@ body.menu-open {
 }
 
 .how-subtitle {
-  font-size: 1.2rem;
   color: #000000;
-  max-width: 780px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
 }
 
 .how-more-info {
@@ -1197,12 +1208,12 @@ body.menu-open {
 /* ===== VELKÝ OBSAH — DVOUSTLOUPEC ===== */
 
 .how-detail {
-  margin-top: 40px;
   background-color: #f5f5f5;
   padding: 15px 25px;
   border-radius: 20px;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
-  margin: 0px 100px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .how-detail-inner {
@@ -2017,16 +2028,15 @@ body.menu-open {
   position: relative;
   color: var(--fg);
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: var(--container-default);
 }
 
 .coverage-alt .container {
-  max-width: 1100px;
+  max-width: min(100%, calc(var(--container-default) - 80px));
   margin: 0 auto;
 }
 
 .coverage-head {
-  max-width: 700px;
   margin: 0 auto 34px;
   text-align: center;
 }
@@ -2035,13 +2045,20 @@ body.menu-open {
   font-weight: 800;
 }
 
-.coverage-alt .intro {
-  text-align: center;
-  max-width: 56ch;
-  margin: 0 auto;
-  font-size: clamp(1rem, 1.2vw, 1.22rem);
-  line-height: 1.7;
-  color: #5d695f;
+.coverage-alt .intro .diet-link {
+  font-family: inherit;
+  font-style: normal;
+  color: #0f6b28;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  border-radius: 6px;
+  padding: 0 4px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.coverage-alt .intro .diet-link:hover,
+.coverage-alt .intro .diet-link:focus-visible {
+  background-color: rgba(15, 107, 40, 0.12);
 }
 
 .coverage-boxes {
@@ -2202,7 +2219,6 @@ PRO KOHO JE JÍDELNÍČEK
 }
 
 .audience-header {
-  max-width: 780px;
   margin: 0 auto 40px;
   text-align: center;
 }
@@ -2566,6 +2582,10 @@ PRO KOHO JE JÍDELNÍČEK
 .footer-cta__lead,
 .footer-cta__note {
   color: #f3f4f6;
+}
+
+.footer-cta__lead {
+  color: #f8fafc;
 }
 
 .footer-cta .btn {
