@@ -543,9 +543,8 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   display: block;
   position: relative;
   min-height: 1.2em;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: clamp(28px, 4.0vw, 54px);
-  font-style: italic;
   width: 100%;
   overflow: hidden;
 }
@@ -809,14 +808,6 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   transition: opacity 0.22s ease;
 }
 
-@media (min-width: 1025px) {
-  .why-meal-heading strong {
-    min-height: 104px;
-    display: grid;
-    align-items: center;
-  }
-}
-
 .why-meal-heading strong.is-swapping {
   opacity: 0.62;
 }
@@ -1025,7 +1016,13 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   color: rgba(24, 38, 27, 0.62);
 }
 
-.why-chart-caption span:last-child {
+.why-chart-caption-label {
+  display: block;
+}
+
+.why-chart-caption-meal {
+  display: block;
+  margin-top: 2px;
   font-weight: 600;
   color: var(--why-ink);
   transition: opacity 0.28s ease;
@@ -3033,7 +3030,7 @@ PRO KOHO JE JÍDELNÍČEK
 .background-soft {
   position: relative;
   background: linear-gradient(to bottom, #ffffff 0%, #fafffb 100%);
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
   overflow: hidden;
 }
@@ -3434,13 +3431,13 @@ h2 {
 
   /* HERO */
   .hero h1 {
-    font-size: clamp(32px, 8vw, 44px);
-    margin-top: 120px;
-    margin-bottom: 20px;
+    font-size: clamp(32px, 10vw, 60px);
+    margin-top: 30px;
+    margin-bottom: 60px;
   }
 
   .hero-title--animated {
-    row-gap: 0.1em;
+    row-gap: 0.3em;
   }
 
   .hero-title-rotator {
