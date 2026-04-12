@@ -384,9 +384,12 @@ document.querySelectorAll(".carousel").forEach(carousel => {
   const slides = Array.from(track.children);                 // jednotlivé slidery
   const dotsContainer = carousel.querySelector(".carousel-dots"); // tečky
 
+  if (!track || !dotsContainer || !slides.length) return;
+
   let index = 0;
 
   // --- Vytvoření teček ---
+  dotsContainer.replaceChildren();
   slides.forEach((_, i) => {
     const dot = document.createElement("button");
     if (i === 0) dot.classList.add("active");
