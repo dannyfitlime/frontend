@@ -107,7 +107,7 @@
     "how": {
       "title": "Jak to funguje",
       "subtitle": "Vytvoření jídelního plánu je jednoduché a rychlé. Stačí nám pár základních informací o Vás a Vašich cílech. Na základě nich Vám během několika minut vygenerujeme personalizovaný jídelníček na míru.",
-      "moreInfoLabel": "Více informací zde:",
+      "moreInfoLabel": "Více informací o tom, jak samotné skládání jídelníčku funguje se dozvíte zde:",
       "moreInfoLink": "Zjistit více",
       "step1": {
         "title": "Dotazník",
@@ -378,9 +378,15 @@
     "about": {
       "articles": {
         "title": "Články",
-        "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčku a fungování FitLime.",
+        "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčků a zdravého životního stylu.",
+        "descriptions": {
+          "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime🍋‍🟩.",
+          "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
+          "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
+          "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
+        },
         "links": {
-          "how": "Jak FitLime funguje",
+          "how": "Jak funguje tvorba jídelníčku",
           "sports": "Sportovní jídelníček",
           "weightLoss": "Jídelníček na hubnutí",
           "healthy": "Zdravý jídelníček"
@@ -406,7 +412,7 @@
       "title": "FitLime Komunita",
       "client1": {
         "text": "„Změnilo nám to pohled na stravování. Máme víc energie během dne.“",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -414,14 +420,14 @@
       },
       "client2": {
         "text": "„Jídla jsou jednoduchá a chutná. Nákupní seznam šetří čas. Cítím se dobře na kole.“",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "„Premium mi sedlo k tréninkovému plánu. Ta služba je good AF.“",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

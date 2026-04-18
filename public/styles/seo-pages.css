@@ -240,6 +240,18 @@ body.seo-page {
   border-top: 1px solid var(--seo-line);
 }
 
+.seo-how-page .seo-how-complex-section {
+  padding-bottom: 32px;
+}
+
+.seo-how-page .seo-how-complex-section .ps-section-header {
+  margin-bottom: 18px;
+}
+
+.seo-how-page .seo-how-complex-section + .seo-faq {
+  margin-top: 56px;
+}
+
 .seo-visual-panel {
   margin-top: 0;
 }

@@ -103,7 +103,7 @@
     "how": {
       "title": "Wie es funktioniert",
       "subtitle": "Die Erstellung des Ernährungsplans ist einfach und schnell. Wir benötigen nur ein paar grundlegende Informationen über Sie und Ihre Ziele. Auf dieser Basis generieren wir innerhalb weniger Minuten einen personalisierten Ernährungsplan.",
-      "moreInfoLabel": "Mehr Informationen hier:",
+      "moreInfoLabel": "Mehr Informationen darüber, wie der Ernährungsplan erstellt wird, finden Sie hier:",
       "moreInfoLink": "Mehr erfahren",
       "step1": {
         "title": "Fragebogen",
@@ -371,6 +371,22 @@
   },
     "about": {
       "title": "Über uns",
+      "articles": {
+        "title": "Artikel",
+        "lead": "Lesen Sie kurze Artikel zu den haeufigsten Themen rund um Ernaehrungsplaene und die Funktionsweise von FitLime.",
+        "descriptions": {
+          "how": "Eine kurze Erklaerung dazu, wie Bestellung, Erstellung des Plans und Lieferung bei FitLime ablaufen.",
+          "sports": "Wie Sie Ihre Ernaehrung fuer Leistung, Regeneration und stabile Energie im Alltag einstellen.",
+          "weightLoss": "Worauf es ankommt, wenn Sie nachhaltig abnehmen und unnoetige Extreme vermeiden wollen.",
+          "healthy": "Einfache Prinzipien, um besser zu essen, mehr Energie zu haben und den Alltag gut zu meistern."
+        },
+        "links": {
+          "how": "Wie FitLime funktioniert",
+          "sports": "Sport-Ernaehrungsplan",
+          "weightLoss": "Ernaehrungsplan zum Abnehmen",
+          "healthy": "Gesunder Ernaehrungsplan"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Klinischer Biochemiker, Internist im Universitätskrankenhaus VFN und an der 1. Medizinischen Fakultät der Karls-Universität",
@@ -388,7 +404,7 @@
       "title": "FitLime Community",
       "client1": {
         "text": "„Es hat unseren Blick auf Ernährung verändert. Wir haben tagsüber mehr Energie.“",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -396,14 +412,14 @@
       },
       "client2": {
         "text": "„Die Gerichte sind einfach und lecker. Die Einkaufsliste spart Zeit. Ich fühle mich gut auf dem Rad.“",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "„Premium passt perfekt zu meinem Trai-\nningsplan. Der Service ist einfach nur good AF.“",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

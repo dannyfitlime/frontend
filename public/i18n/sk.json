@@ -131,7 +131,7 @@
     "how": {
       "title": "Ako to funguje",
       "subtitle": "Vytvorenie jedálničného plánu je jednoduché a rýchle. Stačí nám pár základných informácií o Vás a Vašich cieľoch. Na ich základe Vám v priebehu niekoľkých minút vygenerujeme personalizovaný jedálniček na mieru.",
-      "moreInfoLabel": "Viac informácií tu:",
+      "moreInfoLabel": "Viac informácií o tom, ako sa vytvára jedálniček, nájdete tu:",
       "moreInfoLink": "Zistiť viac",
       "step1": {
         "title": "Dotazník",
@@ -403,6 +403,12 @@
       "articles": {
         "title": "Články",
         "lead": "Pozrite si stručné články k najčastejším témam okolo jedálnička a fungovania FitLime.",
+        "descriptions": {
+          "how": "Krátke vysvetlenie, ako prebieha tvorba jedálnička v FitLime🍋‍🟩.",
+          "sports": "Ako nastaviť jedálniček pre výkon, regeneráciu a stabilnú energiu počas dňa.",
+          "weightLoss": "Na čo si dať pozor, ak chcete chudnúť udržateľne a bez zbytočných extrémov.",
+          "healthy": "Jednoduché princípy, ako jesť lepšie, mať viac energie a zvládať bežný režim."
+        },
         "links": {
           "how": "Ako FitLime funguje",
           "sports": "Športový jedálniček",
@@ -430,7 +436,7 @@
       "title": "FitLime Komunita",
       "client1": {
         "text": "\"Zmenilo nám to pohľad na stravovanie. Máme viac energie počas dňa.\"",
-        "author": "- Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -438,14 +444,14 @@
       },
       "client2": {
         "text": "\"Jedlá sú jednoduché a chutné. Nákupný zoznam šetrí čas. Cítim sa dobre na bicykli.\"",
-        "author": "- Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "\"Premium mi sadlo k tréningovému plánu. Tá služba je super.\"",
-        "author": "- David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

@@ -103,7 +103,7 @@
     "how": {
       "title": "Comment ça marche",
       "subtitle": "Créer votre plan alimentaire est simple et rapide. Il nous suffit de quelques informations de base sur vous et vos objectifs. À partir de cela, nous générons en quelques minutes un menu personnalisé sur mesure.",
-      "moreInfoLabel": "Plus d'informations ici :",
+      "moreInfoLabel": "Vous pouvez en savoir plus sur la création du plan alimentaire ici :",
       "moreInfoLink": "En savoir plus",
       "step1": {
         "title": "Questionnaire",
@@ -370,6 +370,22 @@
   },
     "about": {
       "title": "À propos de nous",
+      "articles": {
+        "title": "Articles",
+        "lead": "Consultez de courts articles sur les themes les plus frequents autour du plan alimentaire et du fonctionnement de FitLime.",
+        "descriptions": {
+          "how": "Une explication rapide du fonctionnement de la creation du plan et FitLime🍋‍🟩.",
+          "sports": "Comment adapter son alimentation pour la performance, la recuperation et une energie stable au quotidien.",
+          "weightLoss": "Les points essentiels pour perdre du poids durablement et sans extremes inutiles.",
+          "healthy": "Des principes simples pour mieux manger, avoir plus d'energie et gerer le rythme quotidien."
+        },
+        "links": {
+          "how": "Comment fonctionne FitLime",
+          "sports": "Plan alimentaire sportif",
+          "weightLoss": "Plan alimentaire pour perdre du poids",
+          "healthy": "Plan alimentaire sain"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Biochimiste clinique, médecin interniste au VFN et 1re Faculté de médecine de l’UK",
@@ -387,7 +403,7 @@
       "title": "Communauté FitLime",
       "client1": {
         "text": "« Cela a changé notre vision de l’alimentation. Nous avons plus d’énergie tout au long de la journée. »",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -395,14 +411,14 @@
       },
       "client2": {
         "text": "« Les repas sont simples et bons. La liste de courses fait gagner du temps. Je me sens bien sur le vélo. »",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "« Le Premium s’est parfaitement adapté à mon plan d’entraînement. Ce service est vraiment top. »",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

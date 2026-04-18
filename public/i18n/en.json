@@ -107,7 +107,7 @@
     "how": {
       "title": "How it works",
       "subtitle": "Creating a meal plan is simple and fast. We just need a few basic details about you and your goals. Based on them, we will generate a personalized meal plan within a few minutes.",
-      "moreInfoLabel": "More information here:",
+      "moreInfoLabel": "You can learn more about how the meal plan is created here:",
       "moreInfoLink": "Learn more",
       "step1": {
         "title": "Questionnaire",
@@ -379,6 +379,12 @@
       "articles": {
         "title": "Articles",
         "lead": "Browse quick reads covering the most common meal-planning topics and how FitLime works.",
+        "descriptions": {
+          "how": "A quick overview of how meal planning works at FitLime🍋‍🟩.",
+          "sports": "How to set up meals for performance, recovery and steady energy throughout the day.",
+          "weightLoss": "What matters when you want to lose weight sustainably and avoid unnecessary extremes.",
+          "healthy": "Simple principles for eating better, having more energy and handling everyday routine."
+        },
         "links": {
           "how": "How FitLime works",
           "sports": "Sports meal plan",
@@ -406,7 +412,7 @@
       "title": "Testimonials",
       "client1": {
         "text": "It changed the way we think about eating. We feel more energized throughout the day.",
-        "author": "- Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -414,14 +420,14 @@
       },
       "client2": {
         "text": "Meals are simple and tasty. The shopping list saves time. I feel great cycling.",
-        "author": "- Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "Premium matched my training plan perfectly. The service is good AF.",
-        "author": "- David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

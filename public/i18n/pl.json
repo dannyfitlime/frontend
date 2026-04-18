@@ -103,7 +103,7 @@
     "how": {
       "title": "Jak to działa",
       "subtitle": "Stworzenie Państwa planu żywieniowego jest proste i szybkie. Potrzebujemy tylko kilku podstawowych informacji o Państwu i Państwa celach. Na ich podstawie w kilka minut generujemy spersonalizowany plan żywieniowy.",
-      "moreInfoLabel": "Więcej informacji tutaj:",
+      "moreInfoLabel": "Więcej informacji o tym, jak tworzony jest plan posiłków, znajdziesz tutaj:",
       "moreInfoLink": "Dowiedz się więcej",
       "step1": {
         "title": "Formularz",
@@ -370,6 +370,22 @@
     },
     "about": {
       "title": "O nas",
+      "articles": {
+        "title": "Artykuly",
+        "lead": "Zobacz krotkie artykuly o najczestszych tematach zwiazanych z planem zywieniowym i dzialaniem FitLime.",
+        "descriptions": {
+          "how": "Krotkie wyjasnienie, jak wyglada tworzenie planu w FitLime🍋‍🟩",
+          "sports": "Jak ustawic diete pod wyniki, regeneracje i stabilna energie w ciagu dnia.",
+          "weightLoss": "Na co zwrocic uwage, jesli chcesz schudnac trwale i bez niepotrzebnych skrajnosci.",
+          "healthy": "Proste zasady, jak jesc lepiej, miec wiecej energii i lepiej funkcjonowac na co dzien."
+        },
+        "links": {
+          "how": "Jak dziala FitLime",
+          "sports": "Sportowy plan zywieniowy",
+          "weightLoss": "Plan zywieniowy na odchudzanie",
+          "healthy": "Zdrowy plan zywieniowy"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Biochemik kliniczny, internista w VFN oraz na 1. Wydziale Lekarskim Uniwersytetu Karola",
@@ -387,7 +403,7 @@
       "title": "Społeczność FitLime",
       "client1": {
         "text": "„Zmieniło to nasze spojrzenie na odżywianie. Mamy więcej energii w ciągu dnia.”",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -395,14 +411,14 @@
       },
       "client2": {
         "text": "„Posiłki są proste i smaczne. Lista zakupów oszczędza czas. Na rowerze czuję się świetnie.”",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "„Pakiet Premium idealnie wpasował się w mój plan treningowy. Usługa jest naprawdę świetna.”",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

@@ -103,7 +103,7 @@
     "how": {
       "title": "Como funciona",
       "subtitle": "Criar o seu plano alimentar é simples e rápido. Só precisamos de algumas informações básicas sobre si e os seus objetivos. Com base nelas, geramos em poucos minutos um plano alimentar personalizado.",
-      "moreInfoLabel": "Mais informações aqui:",
+      "moreInfoLabel": "Você pode saber mais sobre como o plano alimentar é criado aqui:",
       "moreInfoLink": "Saiba mais",
       "step1": {
         "title": "Questionário",
@@ -370,6 +370,22 @@
   },
     "about": {
       "title": "Sobre nós",
+      "articles": {
+        "title": "Artigos",
+        "lead": "Veja artigos curtos sobre os temas mais comuns relacionados com o plano alimentar e o funcionamento da FitLime.",
+        "descriptions": {
+          "how": "Uma explicacao rapida de como funcionam a criacao do plano na FitLime🍋‍🟩.",
+          "sports": "Como ajustar a alimentacao para desempenho, recuperacao e energia estavel ao longo do dia.",
+          "weightLoss": "O que importa quando quer perder peso de forma sustentavel e sem extremos desnecessarios.",
+          "healthy": "Principios simples para comer melhor, ter mais energia e lidar bem com a rotina diaria."
+        },
+        "links": {
+          "how": "Como a FitLime funciona",
+          "sports": "Plano alimentar desportivo",
+          "weightLoss": "Plano alimentar para perda de peso",
+          "healthy": "Plano alimentar saudavel"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Bioquímico clínico, médico internista no VFN e na 1.ª Faculdade de Medicina da Universidade Carolina",
@@ -387,7 +403,7 @@
       "title": "Comunidade FitLime",
       "client1": {
         "text": "“Mudou a nossa visão sobre alimentação. Temos mais energia ao longo do dia.”",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -395,14 +411,14 @@
       },
       "client2": {
         "text": "“As refeições são simples e saborosas. A lista de compras poupa tempo. Sinto-me bem na bicicleta.”",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "“O Premium encaixou na perfeição no meu plano de treino. O serviço é brutalmente bom.”",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"
