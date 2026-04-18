@@ -406,7 +406,7 @@
       "title": "Testimonials",
       "client1": {
         "text": "It changed the way we think about eating. We feel more energized throughout the day.",
-        "author": "- Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -414,14 +414,14 @@
       },
       "client2": {
         "text": "Meals are simple and tasty. The shopping list saves time. I feel great cycling.",
-        "author": "- Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "Premium matched my training plan perfectly. The service is good AF.",
-        "author": "- David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

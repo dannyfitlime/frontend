@@ -430,7 +430,7 @@
       "title": "FitLime Komunita",
       "client1": {
         "text": "\"Zmenilo nám to pohľad na stravovanie. Máme viac energie počas dňa.\"",
-        "author": "- Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -438,14 +438,14 @@
       },
       "client2": {
         "text": "\"Jedlá sú jednoduché a chutné. Nákupný zoznam šetrí čas. Cítim sa dobre na bicykli.\"",
-        "author": "- Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "\"Premium mi sadlo k tréningovému plánu. Tá služba je super.\"",
-        "author": "- David",
+        "author": "David",
         "flags": [
           "us",
           "cz"

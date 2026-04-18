@@ -387,7 +387,7 @@
       "title": "Communauté FitLime",
       "client1": {
         "text": "« Cela a changé notre vision de l’alimentation. Nous avons plus d’énergie tout au long de la journée. »",
-        "author": "— Mati | Solene",
+        "author": "Pancho | JJ",
         "flags": [
           "cl",
           "es"
@@ -395,14 +395,14 @@
       },
       "client2": {
         "text": "« Les repas sont simples et bons. La liste de courses fait gagner du temps. Je me sens bien sur le vélo. »",
-        "author": "— Hana",
+        "author": "Hana",
         "flags": [
           "de"
         ]
       },
       "client3": {
         "text": "« Le Premium s’est parfaitement adapté à mon plan d’entraînement. Ce service est vraiment top. »",
-        "author": "— David",
+        "author": "David",
         "flags": [
           "us",
           "cz"
