@@ -7,6 +7,18 @@
   --seo-maxw: 1100px;
 }
 
+.seo-page-link {
+  color: var(--seo-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.25em;
+}
+
+.seo-page-link:hover,
+.seo-page-link:focus-visible {
+  background-color: rgba(15, 107, 40, 0.1);
+}
+
 body.seo-page {
   min-height: 100vh;
   background: #ffffff;
