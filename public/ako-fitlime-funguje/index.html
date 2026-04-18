@@ -110,27 +110,40 @@
             sledujte, ako sa zmení profil radaru.</p>
         </div>
         <div class="ps-hero-container">
-          <div class="ps-panel">
-            <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
-          </div>
-          <div class="ps-chart-panel">
+          <div class="ps-simulator-layout">
+            <div class="ps-panel ps-panel--foods">
+              <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
+              <div class="ps-simulator-controls">
+                <div class="ps-mini-action-box ps-mini-action-box--static">
+              <button class="ps-mini-btn" type="button" tabindex="-1">UkĂˇzaĹĄ rieĹˇenie</button>
+                </div>
+                <div class="ps-mini-portion-box ps-mini-portion-box--static">
+                  <div class="ps-mini-portion-header">
+                    <label for="portionSlider">HmotnosĹĄ porcie</label>
+                <span>400 g</span>
+                  </div>
+              <input type="range" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+                </div>
+              </div>
+            </div>
+            <div class="ps-chart-panel ps-chart-panel--hero">
             <div class="ps-score-display">
               <div class="ps-score-label">Skóre jedla</div>
               <div><span class="ps-score-value" id="dietScore">0</span><span class="ps-score-max">/100</span></div>
             </div>
 
-            <div class="ps-mini-action-box">
+            <div class="ps-mini-action-box ps-simulator-legacy-control" aria-hidden="true">
               <button class="ps-mini-btn" id="dietAutoSelect">Ukázať riešenie</button>
             </div>
 
             <canvas id="dietChart"></canvas>
 
-            <div class="ps-mini-portion-box">
+            <div class="ps-mini-portion-box ps-simulator-legacy-control" aria-hidden="true">
               <div class="ps-mini-portion-header">
                 <label for="portionSlider">Hmotnosť porcie</label>
-                <span id="portionValue">400 g</span>
+                <span>400 g</span>
               </div>
-              <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+              <input type="range" min="100" max="1000" step="50" value="400" class="ps-mini-slider" tabindex="-1">
             </div>
           </div>
         </div>

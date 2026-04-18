@@ -116,9 +116,11 @@ function drawRadarLabelLines(ctx, lines, x, y, lineHeight) {
     });
 }
 
-function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS) {
+function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NUTS, options = {}) {
     const cx = Wcss / 2; const cy = Hcss / 2;
     const numAngles = definitions.length;
+    const reserveX = options.reserveX || 0;
+    const reserveY = options.reserveY || 0;
     const isComplexChart = ctx.canvas?.id === "complexChart";
     const forceCompactLabels = ctx.canvas?.dataset?.compactLabels === "true";
     const canUseFullLabels = isComplexChart || (isInteractive && numAngles > 10 && Wcss >= 760 && window.innerWidth >= 1100);
@@ -130,7 +132,7 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
     const padding = numAngles > 10
         ? (isInteractive ? outerPadding : 35)
         : (isInteractive ? 70 : 35);
-    const maxR = Math.max(0, Math.min(cx, cy) - padding);
+    const maxR = Math.max(0, Math.min(cx - reserveX, cy - reserveY) - padding);
 
     const getCompactLabel = (labelText) => {
         if (labelText.startsWith("Vit.")) return labelText.replace("Vit. ", "").toUpperCase();
@@ -200,7 +202,9 @@ function drawRadar(ctx, totals, Wcss, Hcss, isInteractive, definitions = DIET_NU
         ctx.strokeStyle = "rgba(0, 0, 0, 0.04)";
         ctx.lineWidth = 1; ctx.stroke();
 
-        const labelOffset = numAngles > 10 ? (useCompactLabels ? 18 : 22) : (isInteractive ? 55 : 20);
+        const labelOffset = numAngles > 10
+            ? (useCompactLabels ? 18 : 22)
+            : (isInteractive ? 22 : 20);
         const { x: xLabel, y: yLabel } = getXY(MAX_DISPLAY + labelOffset, i, !useCompactLabels);
         const labelText = definitions[i].label;
 
@@ -282,9 +286,16 @@ function renderMainChart(canvas, totals) {
     if (!canvas) return;
     if (pulseFrame) { cancelAnimationFrame(pulseFrame); pulseFrame = null; }
     const ratio = dpr();
-    let Wcss = canvas.parentElement.clientWidth || 550;
-    if (Wcss > 900) Wcss = 900;
-    const Hcss = Wcss > 600 ? 500 : 360;
+    let chartSize = canvas.parentElement.clientWidth || 550;
+    const isLargeScreen = window.innerWidth >= 980;
+    chartSize = Math.round(chartSize * 0.9);
+    if (chartSize > 820) chartSize = 820;
+    if (chartSize < 320) chartSize = 320;
+    if (isLargeScreen) chartSize = Math.round(chartSize * 0.8);
+    const gutterX = isLargeScreen ? 96 : 40;
+    const gutterY = isLargeScreen ? 64 : 36;
+    const Wcss = chartSize + gutterX * 2;
+    const Hcss = chartSize + gutterY * 2;
     canvas.width = Wcss * ratio; canvas.height = Hcss * ratio;
     canvas.style.width = Wcss + "px"; canvas.style.height = Hcss + "px";
     const ctx = canvas.getContext("2d");
@@ -302,7 +313,7 @@ function renderMainChart(canvas, totals) {
         pulseFrame = requestAnimationFrame(() => renderMainChart(canvas, totals));
         return;
     }
-    drawRadar(ctx, totals, Wcss, Hcss, true, DIET_NUTS);
+    drawRadar(ctx, totals, Wcss, Hcss, true, DIET_NUTS, { reserveX: gutterX, reserveY: gutterY });
 }
 
 const STATIC_DATA = {
@@ -932,8 +943,10 @@ export function initDietSimulator() {
             foodListEl.appendChild(btn);
         }
     }
-    const slider = document.getElementById("portionSlider");
-    const portionVal = document.getElementById("portionValue");
+    const slider = document.querySelector(".ps-simulator-controls .ps-mini-slider") || document.getElementById("portionSlider");
+    const portionVal = document.querySelector(".ps-simulator-controls .ps-mini-portion-header span") || document.getElementById("portionValue");
+    const portionLabel = document.querySelector(".ps-simulator-controls .ps-mini-portion-header label");
+    if (portionLabel) portionLabel.textContent = "Hmotnost porce";
     if (slider) {
         slider.addEventListener("input", (e) => {
             STATE.portionWeight = parseInt(e.target.value, 10);
@@ -945,8 +958,9 @@ export function initDietSimulator() {
     const canvasChart = document.getElementById("dietChart");
     if (canvasChart) renderMainChart(canvasChart, DIET_renderedTotals);
 
-    const autoBtn = document.getElementById("dietAutoSelect");
+    const autoBtn = document.querySelector(".ps-simulator-controls .ps-mini-btn") || document.getElementById("dietAutoSelect");
     if (autoBtn) {
+        autoBtn.textContent = "Ukázat řešení";
         autoBtn.addEventListener("click", () => {
             STATE.selected.clear();
             document.querySelectorAll('.ps-food-btn').forEach(btn => {

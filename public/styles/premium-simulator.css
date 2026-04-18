@@ -39,16 +39,24 @@
     font-size: 1.2rem;
     max-width: 650px;
     margin: 0 auto;
+    padding-inline: 1.25rem;
 }
 
 /* Hero sekce */
 .ps-hero-container {
+    margin-top: 24px;
     max-width: 1400px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 0 auto;
+}
+
+.ps-simulator-layout {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    align-items: start;
 }
 
 .ps-panel {
@@ -56,16 +64,63 @@
     position: relative;
 }
 
+.ps-panel--foods {
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+
 .ps-food-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.6rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 980px) {
+    .ps-simulator-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .ps-panel--foods {
+        flex: 0 1 392px;
+        width: min(392px, 100%);
+    }
+
+    .ps-chart-panel--hero {
+        flex: 1 1 630px;
+    }
+}
+
+@media (max-width: 979px) {
+    .ps-simulator-layout {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+}
+
+@media (max-width: 700px) {
     .ps-food-grid {
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+}
+
+.ps-simulator-controls {
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+
+@media (max-width: 600px) {
+    .ps-simulator-controls {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -73,7 +128,7 @@
     background: #ffffff;
     border: 2px solid #e2e8f0;
     color: var(--fg);
-    padding: 0.9rem 1rem;
+    padding: 0.85rem 0.72rem;
     border-radius: 18px;
     font-family: inherit;
     font-size: 1rem;
@@ -232,6 +287,12 @@
     background: radial-gradient(circle at center, rgba(0, 0, 0, 0.01) 0%, transparent 60%);
     border-radius: 50%;
     padding: 0.5rem;
+}
+
+.ps-chart-panel--hero {
+    width: 100%;
+    min-height: 100%;
+    padding: 1rem;
 }
 
 .ps-chart-panel--complex {
@@ -502,10 +563,15 @@
     z-index: 10;
 }
 
+.ps-mini-action-box--static {
+    position: static;
+    display: flex;
+}
+
 .ps-mini-btn {
     background: var(--ps-card-bg);
     backdrop-filter: blur(12px);
-    border: 2px solid var(--ps-card-border);
+    border: 2px solid #005907;
     border-radius: 12px;
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
@@ -514,6 +580,12 @@
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
+}
+
+.ps-mini-action-box--static .ps-mini-btn {
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
 }
 
 .ps-mini-btn:hover {
@@ -534,6 +606,18 @@
     padding: 0.8rem 1rem;
     width: 180px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ps-mini-portion-box--static {
+    position: static;
+    width: auto;
+    height: 100%;
+}
+
+.ps-mini-portion-box--static .ps-mini-portion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
 }
 
 .ps-mini-portion-header {
@@ -575,12 +659,20 @@
         width: 140px;
         padding: 0.5rem 0.8rem;
     }
+
+    .ps-mini-portion-box--static {
+        width: auto;
+    }
+}
+
+.ps-simulator-legacy-control {
+    display: none;
 }
 
 .ps-mini-legend-box {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 0;
     z-index: 10;
     background: var(--ps-card-bg);
     backdrop-filter: blur(12px);
