@@ -989,6 +989,7 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
 .why-chart-link:hover,
 .why-chart-link:focus-visible {
   color: #0a4f1d;
+  background-color: rgba(15, 107, 40, 0.1);
 }
 
 .why-chart-container {
@@ -1907,22 +1908,6 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   accent-color: var(--accent);
 }
 
-.diet-link {
-  text-decoration: none;
-  /* odstraní podtržení */
-  color: inherit;
-  /* stejná barva jako okolní text */
-  font-style: italic;
-  /* kurziva – jemné zvýraznění */
-  font-weight: 600;
-  cursor: pointer;
-  /* kurzor, aby bylo vidět, že je to klikací */
-}
-
-.diet-link:hover {
-  text-decoration: underline;
-  /* jemné podtržení při hoveru */
-}
 
 /* === CHART === */
 
@@ -2660,7 +2645,7 @@ PRO KOHO JE JÍDELNÍČEK
   align-items: center;
   min-height: 100%;
   padding: 14px;
-  border: 1px solid rgba(117, 153, 132, 0.24);
+  border: 2px solid rgba(117, 153, 132, 0.24);
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, #ffffff 100%);
   color: var(--text);
@@ -2671,7 +2656,7 @@ PRO KOHO JE JÍDELNÍČEK
 
 .about-articles__card:hover {
   transform: translateY(-4px);
-  border-color: var(--brand);
+  border-color: var(--accent);
   box-shadow: 0 22px 44px rgba(18, 61, 41, 0.12);
 }
 
