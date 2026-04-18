@@ -288,12 +288,14 @@ function renderMainChart(canvas, totals) {
     const ratio = dpr();
     let chartSize = canvas.parentElement.clientWidth || 550;
     const isLargeScreen = window.innerWidth >= 980;
+    const isMediumScreen = window.innerWidth >= 600 && window.innerWidth < 980;
     chartSize = Math.round(chartSize * 0.9);
     if (chartSize > 820) chartSize = 820;
     if (chartSize < 320) chartSize = 320;
     if (isLargeScreen) chartSize = Math.round(chartSize * 0.8);
-    const gutterX = isLargeScreen ? 96 : 40;
-    const gutterY = isLargeScreen ? 64 : 36;
+    if (isMediumScreen) chartSize = Math.round(chartSize * 0.82);
+    const gutterX = isLargeScreen ? 96 : (isMediumScreen ? 54 : 40);
+    const gutterY = isLargeScreen ? 34 : (isMediumScreen ? 28 : 24);
     const Wcss = chartSize + gutterX * 2;
     const Hcss = chartSize + gutterY * 2;
     canvas.width = Wcss * ratio; canvas.height = Hcss * ratio;
