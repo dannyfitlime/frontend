@@ -379,6 +379,19 @@
       "articles": {
         "title": "Articles",
         "lead": "Browse quick reads covering the most common meal-planning topics and how FitLime works.",
+        "cta": "Read article",
+        "tags": {
+          "how": "Basics",
+          "sports": "Sport",
+          "weightLoss": "Weight loss",
+          "healthy": "Healthy eating"
+        },
+        "descriptions": {
+          "how": "A quick overview of how ordering, plan creation and delivery work at FitLime.",
+          "sports": "How to set up meals for performance, recovery and steady energy throughout the day.",
+          "weightLoss": "What matters when you want to lose weight sustainably and avoid unnecessary extremes.",
+          "healthy": "Simple principles for eating better, having more energy and handling everyday routine."
+        },
         "links": {
           "how": "How FitLime works",
           "sports": "Sports meal plan",

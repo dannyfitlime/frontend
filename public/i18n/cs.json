@@ -107,7 +107,7 @@
     "how": {
       "title": "Jak to funguje",
       "subtitle": "Vytvoření jídelního plánu je jednoduché a rychlé. Stačí nám pár základních informací o Vás a Vašich cílech. Na základě nich Vám během několika minut vygenerujeme personalizovaný jídelníček na míru.",
-      "moreInfoLabel": "Více informací zde:",
+      "moreInfoLabel": "Více informací o tom, jak samotné skládání jídelníčku funguje se dozvíte zde:",
       "moreInfoLink": "Zjistit více",
       "step1": {
         "title": "Dotazník",
@@ -379,6 +379,19 @@
       "articles": {
         "title": "Články",
         "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčku a fungování FitLime.",
+        "cta": "P\u0159e\u010d\u00edst \u010dl\u00e1nek",
+        "tags": {
+          "how": "Z\u00e1klady",
+          "sports": "Sport",
+          "weightLoss": "Hubnut\u00ed",
+          "healthy": "Zdrav\u00e9 stravov\u00e1n\u00ed"
+        },
+        "descriptions": {
+          "how": "Kr\u00e1tk\u00e9 vysv\u011btlen\u00ed, jak prob\u00edh\u00e1 objedn\u00e1n\u00ed, tvorba pl\u00e1nu i jeho doru\u010den\u00ed.",
+          "sports": "Jak nastavit j\u00eddeln\u00ed\u010dek pro v\u00fdkon, regeneraci a stabiln\u00ed energii b\u011bhem dne.",
+          "weightLoss": "Co si pohl\u00eddat, kdy\u017e chcete hubnout udr\u017eiteln\u011b a bez zbyte\u010dn\u00fdch extr\u00e9m\u016f.",
+          "healthy": "Jednoduch\u00e9 principy, jak j\u00edst l\u00e9pe, m\u00edt v\u00edc energie a zvl\u00e1dat b\u011b\u017en\u00fd re\u017eim."
+        },
         "links": {
           "how": "Jak FitLime funguje",
           "sports": "Sportovní jídelníček",

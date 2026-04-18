@@ -370,6 +370,29 @@
     },
     "about": {
       "title": "O nas",
+      "articles": {
+        "title": "Artykuly",
+        "lead": "Zobacz krotkie artykuly o najczestszych tematach zwiazanych z planem zywieniowym i dzialaniem FitLime.",
+        "cta": "Czytaj artykul",
+        "tags": {
+          "how": "Podstawy",
+          "sports": "Sport",
+          "weightLoss": "Odchudzanie",
+          "healthy": "Zdrowe odzywianie"
+        },
+        "descriptions": {
+          "how": "Krotkie wyjasnienie, jak wyglada zamowienie, tworzenie planu i jego dostarczenie w FitLime.",
+          "sports": "Jak ustawic diete pod wyniki, regeneracje i stabilna energie w ciagu dnia.",
+          "weightLoss": "Na co zwrocic uwage, jesli chcesz schudnac trwale i bez niepotrzebnych skrajnosci.",
+          "healthy": "Proste zasady, jak jesc lepiej, miec wiecej energii i lepiej funkcjonowac na co dzien."
+        },
+        "links": {
+          "how": "Jak dziala FitLime",
+          "sports": "Sportowy plan zywieniowy",
+          "weightLoss": "Plan zywieniowy na odchudzanie",
+          "healthy": "Zdrowy plan zywieniowy"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Biochemik kliniczny, internista w VFN oraz na 1. Wydziale Lekarskim Uniwersytetu Karola",

@@ -243,11 +243,7 @@
       <section id="how" class="how-steps fade-in">
         <div class="home-container">
           <h2 class="how-title" data-i18n="home.how.title"></h2>
-          <p class="how-subtitle" data-i18n="home.how.subtitle"></p>
-          <p class="how-more-info">
-            <span data-i18n="home.how.moreInfoLabel"></span>
-            <a class="how-more-info-link" href="/jak-fitlime-funguje/index.html" data-i18n="home.how.moreInfoLink"></a>
-          </p>
+          <p class="how-subtitle" data-i18n="home.how.subtitle"></p>          
 
           <!-- === LABELY KROKŮ === -->
           <div class="how-step-labels">
@@ -297,6 +293,10 @@
               <p id="how-big-text" class="how-big-text"></p>
             </div>
           </div>
+          <p class="how-more-info">
+            <span data-i18n="home.how.moreInfoLabel"></span>
+            <a class="how-more-info-link" href="/jak-fitlime-funguje/index.html" data-i18n="home.how.moreInfoLink"></a>
+          </p>
         </div>
       </section>
 
@@ -330,7 +330,6 @@
                   Máš tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle
                   zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.
                 </p>
-                <p class="audience-more-info"><span>Více informací zde:</span> <a class="audience-more-info-link" href="/sportovni-jidelnicek/index.html">Zjistit více</a></p>
               </div>
               <div class="audience-tag audience-tag--pro">
                 <span data-i18n="home.audience.pro.tag"></span>
@@ -351,7 +350,6 @@
                   Běháš, chodíš do fitka, na kolo nebo skupinové lekce a chceš se cítit
                   lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.
                 </p>
-                <p class="audience-more-info"><span>Více informací zde:</span> <a class="audience-more-info-link" href="/zdravy-jidelnicek/index.html">Zjistit více</a></p>
               </div>
               <div class="audience-tag audience-tag--hobby">
                 <span data-i18n="home.audience.hobby.tag"></span>
@@ -373,7 +371,6 @@
                   během dne nebo zhubnout? Postavíme jídelníček, který je realistický
                   a dlouhodobě udržitelný.
                 </p>
-                <p class="audience-more-info"><span>Více informací zde:</span> <a class="audience-more-info-link" href="/jidelnicek-na-hubnuti/index.html">Zjistit více</a></p>
               </div>
               <div class="audience-tag audience-tag--everyday">
                 <span data-i18n="home.audience.everyday.tag"></span>
@@ -743,14 +740,38 @@
               <p data-i18n="home.about.articles.lead"></p>
             </div>
             <div class="about-articles__grid">
-              <a class="about-articles__link" href="/jak-fitlime-funguje/index.html" data-seo-link="how"
-                data-i18n="home.about.articles.links.how"></a>
-              <a class="about-articles__link" href="/sportovni-jidelnicek/index.html" data-seo-link="sports"
-                data-i18n="home.about.articles.links.sports"></a>
-              <a class="about-articles__link" href="/jidelnicek-na-hubnuti/index.html" data-seo-link="weightLoss"
-                data-i18n="home.about.articles.links.weightLoss"></a>
-              <a class="about-articles__link" href="/zdravy-jidelnicek/index.html" data-seo-link="healthy"
-                data-i18n="home.about.articles.links.healthy"></a>
+              <a class="about-articles__card about-articles__card--how" href="/jak-fitlime-funguje/index.html" data-seo-link="how">
+                <div class="about-articles__media" aria-hidden="true"></div>
+                <div class="about-articles__body">
+                  <span class="about-articles__tag" data-i18n="home.about.articles.tags.how"></span>
+                  <strong class="about-articles__title" data-i18n="home.about.articles.links.how"></strong>
+                  <span class="about-articles__desc" data-i18n="home.about.articles.descriptions.how"></span>
+                </div>
+              </a>
+              <a class="about-articles__card about-articles__card--sports" href="/sportovni-jidelnicek/index.html" data-seo-link="sports">
+                <div class="about-articles__media" aria-hidden="true"></div>
+                <div class="about-articles__body">
+                  <span class="about-articles__tag" data-i18n="home.about.articles.tags.sports"></span>
+                  <strong class="about-articles__title" data-i18n="home.about.articles.links.sports"></strong>
+                  <span class="about-articles__desc" data-i18n="home.about.articles.descriptions.sports"></span>
+                </div>
+              </a>
+              <a class="about-articles__card about-articles__card--weight-loss" href="/jidelnicek-na-hubnuti/index.html" data-seo-link="weightLoss">
+                <div class="about-articles__media" aria-hidden="true"></div>
+                <div class="about-articles__body">
+                  <span class="about-articles__tag" data-i18n="home.about.articles.tags.weightLoss"></span>
+                  <strong class="about-articles__title" data-i18n="home.about.articles.links.weightLoss"></strong>
+                  <span class="about-articles__desc" data-i18n="home.about.articles.descriptions.weightLoss"></span>
+                </div>
+              </a>
+              <a class="about-articles__card about-articles__card--healthy" href="/zdravy-jidelnicek/index.html" data-seo-link="healthy">
+                <div class="about-articles__media" aria-hidden="true"></div>
+                <div class="about-articles__body">
+                  <span class="about-articles__tag" data-i18n="home.about.articles.tags.healthy"></span>
+                  <strong class="about-articles__title" data-i18n="home.about.articles.links.healthy"></strong>
+                  <span class="about-articles__desc" data-i18n="home.about.articles.descriptions.healthy"></span>
+                </div>
+              </a>
             </div>
           </div>
         </div>

@@ -370,6 +370,29 @@
   },
     "about": {
       "title": "Chi siamo",
+      "articles": {
+        "title": "Articoli",
+        "lead": "Consulta brevi articoli sui temi piu comuni legati al piano alimentare e al funzionamento di FitLime.",
+        "cta": "Leggi l'articolo",
+        "tags": {
+          "how": "Basi",
+          "sports": "Sport",
+          "weightLoss": "Dimagrimento",
+          "healthy": "Alimentazione sana"
+        },
+        "descriptions": {
+          "how": "Una rapida spiegazione di come funzionano l'ordine, la creazione del piano e la consegna con FitLime.",
+          "sports": "Come impostare l'alimentazione per prestazione, recupero ed energia costante durante la giornata.",
+          "weightLoss": "Cosa conta davvero se vuoi perdere peso in modo sostenibile e senza estremi inutili.",
+          "healthy": "Principi semplici per mangiare meglio, avere piu energia e gestire bene la routine quotidiana."
+        },
+        "links": {
+          "how": "Come funziona FitLime",
+          "sports": "Piano alimentare sportivo",
+          "weightLoss": "Piano alimentare per dimagrire",
+          "healthy": "Piano alimentare sano"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Biochimico clinico, medico internista presso VFN e 1ª Facoltà di Medicina dell'Università Carlo",

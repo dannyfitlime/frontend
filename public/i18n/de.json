@@ -371,6 +371,29 @@
   },
     "about": {
       "title": "Über uns",
+      "articles": {
+        "title": "Artikel",
+        "lead": "Lesen Sie kurze Artikel zu den haeufigsten Themen rund um Ernaehrungsplaene und die Funktionsweise von FitLime.",
+        "cta": "Artikel lesen",
+        "tags": {
+          "how": "Grundlagen",
+          "sports": "Sport",
+          "weightLoss": "Abnehmen",
+          "healthy": "Gesunde Ernaehrung"
+        },
+        "descriptions": {
+          "how": "Eine kurze Erklaerung dazu, wie Bestellung, Erstellung des Plans und Lieferung bei FitLime ablaufen.",
+          "sports": "Wie Sie Ihre Ernaehrung fuer Leistung, Regeneration und stabile Energie im Alltag einstellen.",
+          "weightLoss": "Worauf es ankommt, wenn Sie nachhaltig abnehmen und unnoetige Extreme vermeiden wollen.",
+          "healthy": "Einfache Prinzipien, um besser zu essen, mehr Energie zu haben und den Alltag gut zu meistern."
+        },
+        "links": {
+          "how": "Wie FitLime funktioniert",
+          "sports": "Sport-Ernaehrungsplan",
+          "weightLoss": "Ernaehrungsplan zum Abnehmen",
+          "healthy": "Gesunder Ernaehrungsplan"
+        }
+      },
       "libor": {
         "name": "Prof. MUDr. Libor Vítek, PhD, MBA",
         "item1": "Klinischer Biochemiker, Internist im Universitätskrankenhaus VFN und an der 1. Medizinischen Fakultät der Karls-Universität",
