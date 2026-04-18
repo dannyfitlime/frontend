@@ -379,21 +379,14 @@
       "articles": {
         "title": "Články",
         "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčku a fungování FitLime.",
-        "cta": "P\u0159e\u010d\u00edst \u010dl\u00e1nek",
-        "tags": {
-          "how": "Z\u00e1klady",
-          "sports": "Sport",
-          "weightLoss": "Hubnut\u00ed",
-          "healthy": "Zdrav\u00e9 stravov\u00e1n\u00ed"
-        },
         "descriptions": {
-          "how": "Kr\u00e1tk\u00e9 vysv\u011btlen\u00ed, jak prob\u00edh\u00e1 objedn\u00e1n\u00ed, tvorba pl\u00e1nu i jeho doru\u010den\u00ed.",
-          "sports": "Jak nastavit j\u00eddeln\u00ed\u010dek pro v\u00fdkon, regeneraci a stabiln\u00ed energii b\u011bhem dne.",
-          "weightLoss": "Co si pohl\u00eddat, kdy\u017e chcete hubnout udr\u017eiteln\u011b a bez zbyte\u010dn\u00fdch extr\u00e9m\u016f.",
-          "healthy": "Jednoduch\u00e9 principy, jak j\u00edst l\u00e9pe, m\u00edt v\u00edc energie a zvl\u00e1dat b\u011b\u017en\u00fd re\u017eim."
+          "how": "Krátké vysvětlení o tom, jak probíhá tvorba jídelního plánu ve FitLime🍋‍🟩.",
+          "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
+          "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
+          "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
         },
         "links": {
-          "how": "Jak FitLime funguje",
+          "how": "Jak funguje tvorba jídelníčku",
           "sports": "Sportovní jídelníček",
           "weightLoss": "Jídelníček na hubnutí",
           "healthy": "Zdravý jídelníček"

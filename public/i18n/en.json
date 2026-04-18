@@ -107,7 +107,7 @@
     "how": {
       "title": "How it works",
       "subtitle": "Creating a meal plan is simple and fast. We just need a few basic details about you and your goals. Based on them, we will generate a personalized meal plan within a few minutes.",
-      "moreInfoLabel": "More information here:",
+      "moreInfoLabel": "You can learn more about how the meal plan is created here:",
       "moreInfoLink": "Learn more",
       "step1": {
         "title": "Questionnaire",
@@ -379,15 +379,8 @@
       "articles": {
         "title": "Articles",
         "lead": "Browse quick reads covering the most common meal-planning topics and how FitLime works.",
-        "cta": "Read article",
-        "tags": {
-          "how": "Basics",
-          "sports": "Sport",
-          "weightLoss": "Weight loss",
-          "healthy": "Healthy eating"
-        },
         "descriptions": {
-          "how": "A quick overview of how ordering, plan creation and delivery work at FitLime.",
+          "how": "A quick overview of how meal planning works at FitLime🍋‍🟩.",
           "sports": "How to set up meals for performance, recovery and steady energy throughout the day.",
           "weightLoss": "What matters when you want to lose weight sustainably and avoid unnecessary extremes.",
           "healthy": "Simple principles for eating better, having more energy and handling everyday routine."

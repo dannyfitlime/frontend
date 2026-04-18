@@ -103,7 +103,7 @@
     "how": {
       "title": "Wie es funktioniert",
       "subtitle": "Die Erstellung des Ernährungsplans ist einfach und schnell. Wir benötigen nur ein paar grundlegende Informationen über Sie und Ihre Ziele. Auf dieser Basis generieren wir innerhalb weniger Minuten einen personalisierten Ernährungsplan.",
-      "moreInfoLabel": "Mehr Informationen hier:",
+      "moreInfoLabel": "Mehr Informationen darüber, wie der Ernährungsplan erstellt wird, finden Sie hier:",
       "moreInfoLink": "Mehr erfahren",
       "step1": {
         "title": "Fragebogen",
@@ -374,13 +374,6 @@
       "articles": {
         "title": "Artikel",
         "lead": "Lesen Sie kurze Artikel zu den haeufigsten Themen rund um Ernaehrungsplaene und die Funktionsweise von FitLime.",
-        "cta": "Artikel lesen",
-        "tags": {
-          "how": "Grundlagen",
-          "sports": "Sport",
-          "weightLoss": "Abnehmen",
-          "healthy": "Gesunde Ernaehrung"
-        },
         "descriptions": {
           "how": "Eine kurze Erklaerung dazu, wie Bestellung, Erstellung des Plans und Lieferung bei FitLime ablaufen.",
           "sports": "Wie Sie Ihre Ernaehrung fuer Leistung, Regeneration und stabile Energie im Alltag einstellen.",

@@ -131,7 +131,7 @@
     "how": {
       "title": "Ako to funguje",
       "subtitle": "Vytvorenie jedálničného plánu je jednoduché a rýchle. Stačí nám pár základných informácií o Vás a Vašich cieľoch. Na ich základe Vám v priebehu niekoľkých minút vygenerujeme personalizovaný jedálniček na mieru.",
-      "moreInfoLabel": "Viac informácií tu:",
+      "moreInfoLabel": "Viac informácií o tom, ako sa vytvára jedálniček, nájdete tu:",
       "moreInfoLink": "Zistiť viac",
       "step1": {
         "title": "Dotazník",
@@ -403,18 +403,11 @@
       "articles": {
         "title": "Články",
         "lead": "Pozrite si stručné články k najčastejším témam okolo jedálnička a fungovania FitLime.",
-        "cta": "Pre\u010d\u00edta\u0165 \u010dl\u00e1nok",
-        "tags": {
-          "how": "Z\u00e1klady",
-          "sports": "\u0160port",
-          "weightLoss": "Chudnutie",
-          "healthy": "Zdrav\u00e9 stravovanie"
-        },
         "descriptions": {
-          "how": "Kr\u00e1tke vysvetlenie, ako prebieha objedn\u00e1vka, tvorba pl\u00e1nu aj jeho doru\u010denie.",
-          "sports": "Ako nastavi\u0165 jed\u00e1lni\u010dek pre v\u00fdkon, regener\u00e1ciu a stabiln\u00fa energiu po\u010das d\u0148a.",
-          "weightLoss": "Na \u010do si da\u0165 pozor, ak chcete chudn\u00fa\u0165 udr\u017eate\u013ene a bez zbyto\u010dn\u00fdch extr\u00e9mov.",
-          "healthy": "Jednoduch\u00e9 princ\u00edpy, ako jes\u0165 lep\u0161ie, ma\u0165 viac energie a zvl\u00e1da\u0165 be\u017en\u00fd re\u017eim."
+          "how": "Krátke vysvetlenie, ako prebieha tvorba jedálnička v FitLime🍋‍🟩.",
+          "sports": "Ako nastaviť jedálniček pre výkon, regeneráciu a stabilnú energiu počas dňa.",
+          "weightLoss": "Na čo si dať pozor, ak chcete chudnúť udržateľne a bez zbytočných extrémov.",
+          "healthy": "Jednoduché princípy, ako jesť lepšie, mať viac energie a zvládať bežný režim."
         },
         "links": {
           "how": "Ako FitLime funguje",

@@ -103,7 +103,7 @@
     "how": {
       "title": "Come funziona",
       "subtitle": "Creare il tuo piano alimentare è semplice e veloce. Abbiamo solo bisogno di alcune informazioni di base su di te e sui tuoi obiettivi. In base a questi dati, generiamo in pochi minuti un piano alimentare personalizzato.",
-      "moreInfoLabel": "Maggiori informazioni qui:",
+      "moreInfoLabel": "Puoi saperne di più su come viene creato il piano alimentare qui:",
       "moreInfoLink": "Scopri di più",
       "step1": {
         "title": "Questionario",
@@ -373,15 +373,8 @@
       "articles": {
         "title": "Articoli",
         "lead": "Consulta brevi articoli sui temi piu comuni legati al piano alimentare e al funzionamento di FitLime.",
-        "cta": "Leggi l'articolo",
-        "tags": {
-          "how": "Basi",
-          "sports": "Sport",
-          "weightLoss": "Dimagrimento",
-          "healthy": "Alimentazione sana"
-        },
         "descriptions": {
-          "how": "Una rapida spiegazione di come funzionano l'ordine, la creazione del piano e la consegna con FitLime.",
+          "how": "Una rapida spiegazione di come funzionano la creazione del piano e FitLime🍋‍🟩.",
           "sports": "Come impostare l'alimentazione per prestazione, recupero ed energia costante durante la giornata.",
           "weightLoss": "Cosa conta davvero se vuoi perdere peso in modo sostenibile e senza estremi inutili.",
           "healthy": "Principi semplici per mangiare meglio, avere piu energia e gestire bene la routine quotidiana."

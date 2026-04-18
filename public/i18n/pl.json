@@ -103,7 +103,7 @@
     "how": {
       "title": "Jak to działa",
       "subtitle": "Stworzenie Państwa planu żywieniowego jest proste i szybkie. Potrzebujemy tylko kilku podstawowych informacji o Państwu i Państwa celach. Na ich podstawie w kilka minut generujemy spersonalizowany plan żywieniowy.",
-      "moreInfoLabel": "Więcej informacji tutaj:",
+      "moreInfoLabel": "Więcej informacji o tym, jak tworzony jest plan posiłków, znajdziesz tutaj:",
       "moreInfoLink": "Dowiedz się więcej",
       "step1": {
         "title": "Formularz",
@@ -373,15 +373,8 @@
       "articles": {
         "title": "Artykuly",
         "lead": "Zobacz krotkie artykuly o najczestszych tematach zwiazanych z planem zywieniowym i dzialaniem FitLime.",
-        "cta": "Czytaj artykul",
-        "tags": {
-          "how": "Podstawy",
-          "sports": "Sport",
-          "weightLoss": "Odchudzanie",
-          "healthy": "Zdrowe odzywianie"
-        },
         "descriptions": {
-          "how": "Krotkie wyjasnienie, jak wyglada zamowienie, tworzenie planu i jego dostarczenie w FitLime.",
+          "how": "Krotkie wyjasnienie, jak wyglada tworzenie planu w FitLime🍋‍🟩",
           "sports": "Jak ustawic diete pod wyniki, regeneracje i stabilna energie w ciagu dnia.",
           "weightLoss": "Na co zwrocic uwage, jesli chcesz schudnac trwale i bez niepotrzebnych skrajnosci.",
           "healthy": "Proste zasady, jak jesc lepiej, miec wiecej energii i lepiej funkcjonowac na co dzien."

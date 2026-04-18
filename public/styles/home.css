@@ -2744,18 +2744,6 @@ PRO KOHO JE JÍDELNÍČEK
   min-width: 0;
 }
 
-.about-articles__tag {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(72, 122, 95, 0.1);
-  color: #355743;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
 .about-articles__title {
   display: block;
   font-size: 1.08rem;
