@@ -2628,7 +2628,6 @@ PRO KOHO JE JÍDELNÍČEK
 
 .about-articles__copy p {
   margin: 10px 0 0;
-  color: var(--muted);
 }
 
 .about-articles__grid {
@@ -2673,52 +2672,14 @@ PRO KOHO JE JÍDELNÍČEK
   overflow: hidden;
   border-radius: 16px;
   background-color: #dfece4;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
-.about-articles__media::before,
-.about-articles__media::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  opacity: 0.9;
-}
-
-.about-articles__media::before {
-  inset: auto auto -22% -8%;
-  width: 58%;
-  height: 58%;
-  background: rgba(255, 255, 255, 0.24);
-}
-
-.about-articles__media::after {
-  inset: 10% -10% auto auto;
-  width: 42%;
-  height: 42%;
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.about-articles__card--how .about-articles__media {
-  background:
-    radial-gradient(circle at 24% 24%, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 24%),
-    linear-gradient(135deg, #87bfa4 0%, #4e7f69 48%, #204432 100%);
-}
-
-.about-articles__card--sports .about-articles__media {
-  background:
-    radial-gradient(circle at 78% 26%, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0) 24%),
-    linear-gradient(135deg, #8fd0c8 0%, #5e977f 44%, #22463f 100%);
-}
-
-.about-articles__card--weight-loss .about-articles__media {
-  background:
-    radial-gradient(circle at 18% 82%, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 28%),
-    linear-gradient(135deg, #f2dcb0 0%, #d7a769 40%, #8d5d2d 100%);
-}
-
-.about-articles__card--healthy .about-articles__media {
-  background:
-    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.34) 0, rgba(255, 255, 255, 0) 22%),
-    linear-gradient(135deg, #b6d88f 0%, #6ea962 44%, #2d5a37 100%);
+.about-articles__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-articles__body {

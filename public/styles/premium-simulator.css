@@ -451,7 +451,7 @@
     .ps-complex-chart-container {
         width: min(860px, calc(100vw - 96px));
         max-width: none;
-        height: 500px;
+        height: auto;
     }
 }
 
