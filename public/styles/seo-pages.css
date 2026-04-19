@@ -4,7 +4,19 @@
   --seo-line: #e5e7eb;
   --seo-soft: #f8faf8;
   --seo-accent: #0f5132;
-  --seo-maxw: 900px;
+  --seo-maxw: 1100px;
+}
+
+.seo-page-link {
+  color: var(--seo-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.25em;
+}
+
+.seo-page-link:hover,
+.seo-page-link:focus-visible {
+  background-color: rgba(15, 107, 40, 0.1);
 }
 
 body.seo-page {

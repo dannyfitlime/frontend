@@ -110,6 +110,9 @@
             <span class="seo-stat-label">Výstup</span>
             <strong>Výživově i prakticky použitelný jídelní plán s kuchařkou</strong>
           </div>
+          </div>
+          </div>
+          </div>
         </div>
       </article>
     </section>
@@ -135,10 +138,23 @@
             sledujte, jak se změní profil grafu.</p>
         </div>
         <div class="ps-hero-container">
-          <div class="ps-panel">
-            <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
-          </div>
-          <div class="ps-chart-panel">
+          <div class="ps-simulator-layout">
+            <div class="ps-panel ps-panel--foods">
+              <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
+              <div class="ps-simulator-controls">
+                <div class="ps-mini-action-box ps-mini-action-box--static">
+                  <button class="ps-mini-btn" id="dietAutoSelect">Ukázat řešení</button>
+                </div>
+                <div class="ps-mini-portion-box ps-mini-portion-box--static">
+                  <div class="ps-mini-portion-header">
+                    <label for="portionSlider">Hmotnost porce</label>
+                    <span id="portionValue">400 g</span>
+                  </div>
+                  <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+                </div>
+              </div>
+            </div>
+            <div class="ps-chart-panel ps-chart-panel--hero">
             <!-- Skóre vpravo nahoře -->
             <div class="ps-score-display">
               <div class="ps-score-label">Skóre Jídla</div>
@@ -146,14 +162,14 @@
             </div>
 
             <!-- Ukázat řešení vlevo nahoře -->
-            <div class="ps-mini-action-box">
+            <div class="ps-mini-action-box ps-simulator-legacy-control" aria-hidden="true">
               <button class="ps-mini-btn" id="dietAutoSelect">Ukázat řešení</button>
             </div>
 
             <canvas id="dietChart"></canvas>
 
             <!-- Slider vlevo dole -->
-            <div class="ps-mini-portion-box">
+            <div class="ps-mini-portion-box ps-simulator-legacy-control" aria-hidden="true">
               <div class="ps-mini-portion-header">
                 <label for="portionSlider">Hmotnost porce</label>
                 <span id="portionValue">400 g</span>
@@ -167,6 +183,7 @@
               <span class="ps-mini-legend-text">Doporučené hodnoty pro vyvážený oběd</span>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -214,7 +231,7 @@
           <p>Znamená to hledat takové rozložení energie a makroživin, které sedí cíli a zároveň jde fungovat v realitě.
             Nestačí správná čísla, pokud plán nejde běžně žít.</p>
           <p>Podobný princip se v matematice označuje jako optimalizace v prostoru podmínek. Už ve 40. letech ho popsal
-            například <a href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank"
+            například <a class="seo-page-link" href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank"
               rel="noopener noreferrer">Stigler
               diet problem</a>, kde se hledala nejlevnější kombinace potravin splňující nutriční požadavky.</p>
           <p>FitLime pracuje se stejnou logikou, ale místo ceny optimalizuje kombinaci živin, struktury dne a praktické
@@ -385,3 +402,4 @@
 </body>
 
 </html>
+
