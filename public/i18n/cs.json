@@ -218,9 +218,9 @@
           "title": "Skupiny tuků",
           "subtitle": "Různé typy tuků a jejich role ve výživě.",
           "items": {
-            "satu": "<b>Nasycené tuky</b> – energetický zdroj",
-            "mono": "<b>Mononenasycené tuky</b> – zdraví srdce",
-            "poly": "<b>Polynenasycené tuky</b> – omega-3 a omega-6 mastné kyseliny",
+            "satu": "<b>Nasycené tuky (SFA)</b> – energetický zdroj",
+            "mono": "<b>Mononenasycené tuky (MUFA)</b> – zdraví srdce",
+            "poly": "<b>Polynenasycené tuky (PUFA)</b> – omega-3 a omega-6 mastné kyseliny",
             "chole": "<b>Cholesterol</b> – tvorba hormonů"
           }
         },

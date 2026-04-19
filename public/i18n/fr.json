@@ -214,9 +214,9 @@
           "title": "Types de graisses",
           "subtitle": "Différents types de lipides et leur rôle dans l’alimentation.",
           "items": {
-            "satu": "<b>Graisses saturées</b> – source d’énergie",
-            "mono": "<b>Graisses monoinsaturées</b> – santé du cœur",
-            "poly": "<b>Graisses polyinsaturées</b> – acides gras oméga-3 et oméga-6",
+            "satu": "<b>Graisses saturées (SFA)</b> – source d’énergie",
+            "mono": "<b>Graisses monoinsaturées (MUFA)</b> – santé du cœur",
+            "poly": "<b>Graisses polyinsaturées (PUFA)</b> – acides gras oméga-3 et oméga-6",
             "chole": "<b>Cholestérol</b> – production d’hormones"
           }
         },

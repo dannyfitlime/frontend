@@ -214,9 +214,9 @@
           "title": "Tipi di grassi",
           "subtitle": "Tipi diversi di grassi e il loro ruolo nell'alimentazione.",
           "items": {
-            "satu": "<b>Grassi saturi</b> – fonte di energia",
-            "mono": "<b>Grassi monoinsaturi</b> – salute del cuore",
-            "poly": "<b>Grassi polinsaturi</b> – acidi grassi omega-3 e omega-6",
+            "satu": "<b>Grassi saturi (SFA)</b> – fonte di energia",
+            "mono": "<b>Grassi monoinsaturi (MUFA)</b> – salute del cuore",
+            "poly": "<b>Grassi polinsaturi (PUFA)</b> – acidi grassi omega-3 e omega-6",
             "chole": "<b>Colesterolo</b> – produzione di ormoni"
           }
         },

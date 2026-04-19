@@ -214,9 +214,9 @@
           "title": "Fettgruppen",
           "subtitle": "Verschiedene Fettarten und ihre Rolle in der Ernährung.",
           "items": {
-            "satu": "<b>Gesättigte Fette</b> – Energiequelle",
-            "mono": "<b>Einfach ungesättigte Fette</b> – Herzgesundheit",
-            "poly": "<b>Mehrfach ungesättigte Fette</b> – Omega-3- und Omega-6-Fettsäuren",
+            "satu": "<b>Gesättigte Fette (SFA)</b> – Energiequelle",
+            "mono": "<b>Einfach ungesättigte Fette (MUFA)</b> – Herzgesundheit",
+            "poly": "<b>Mehrfach ungesättigte Fette (PUFA)</b> – Omega-3- und Omega-6-Fettsäuren",
             "chole": "<b>Cholesterin</b> – Hormonbildung"
           }
         },

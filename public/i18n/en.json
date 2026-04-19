@@ -218,9 +218,9 @@
           "title": "Types of fats",
           "subtitle": "Different types of fat and their roles in nutrition.",
           "items": {
-            "satu": "<b>Saturated fats</b> - energy source",
-            "mono": "<b>Monounsaturated fats</b> - heart health",
-            "poly": "<b>Polyunsaturated fats</b> - omega-3 and omega-6 fatty acids",
+            "satu": "<b>Saturated fats (SFA)</b> - energy source",
+            "mono": "<b>Monounsaturated fats (MUFA)</b> - heart health",
+            "poly": "<b>Polyunsaturated fats (PUFA)</b> - omega-3 and omega-6 fatty acids",
             "chole": "<b>Cholesterol</b> - hormone production"
           }
         },

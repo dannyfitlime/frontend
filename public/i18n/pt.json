@@ -214,9 +214,9 @@
           "title": "Tipos de gorduras",
           "subtitle": "Diferentes tipos de gorduras e o seu papel na alimentação.",
           "items": {
-            "satu": "<b>Gorduras saturadas</b> – fonte de energia",
-            "mono": "<b>Gorduras monoinsaturadas</b> – saúde do coração",
-            "poly": "<b>Gorduras polinsaturadas</b> – ácidos gordos ómega-3 e ómega-6",
+            "satu": "<b>Gorduras saturadas (SFA)</b> – fonte de energia",
+            "mono": "<b>Gorduras monoinsaturadas (MUFA)</b> – saúde do coração",
+            "poly": "<b>Gorduras polinsaturadas (PUFA)</b> – ácidos gordos ómega-3 e ómega-6",
             "chole": "<b>Colesterol</b> – produção de hormonas"
           }
         },
