@@ -187,7 +187,7 @@
     },
     "coverage": {
       "title": "Was der Ernährungsplan abdeckt",
-      "intro": "Vollständige Übersicht aller wichtigen Nährstoffe und Lebensmittelgruppen:",
+      "intro": "Der FitLime-Ernährungsplan deckt alle wichtigen Makronährstoffe, Mikronährstoffe und Vitamine ab, die Ihr Körper braucht. Wie wir die einzelnen Bestandteile zu einem ausgewogenen Plan kombinieren, können Sie <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">hier</a> nachlesen.",
       "boxes": {
         "energy": {
           "title": "Energie und Makronährstoffe",

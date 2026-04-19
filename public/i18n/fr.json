@@ -187,7 +187,7 @@
     },
     "coverage": {
       "title": "Ce que le menu couvre",
-      "intro": "Aperçu complet de tous les nutriments clés et groupes d’aliments :",
+      "intro": "Le menu FitLime couvre tous les macronutriments, micronutriments et vitamines essentiels dont votre corps a besoin. Vous pouvez lire <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">ici</a> comment nous combinons chaque élément dans un plan équilibré.",
       "boxes": {
         "energy": {
           "title": "Énergie et macronutriments",

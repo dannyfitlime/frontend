@@ -25,9 +25,9 @@
       "title_rotating": [
         "for more energy",
         "for better sleep",
-        "for breaking records",
-        "for more joy in everyday life",
-        "for you"
+        "for pushing your limits",
+        "for more joy",
+        "for you!"
       ],
       "title_aria": "Personalized meal plan for you",
       "title": "Personalized meal & training plan",
@@ -191,7 +191,7 @@
     },
     "coverage": {
       "title": "What the meal plan covers",
-      "intro": "A complete overview of all key nutrients and food groups:",
+      "intro": "The FitLime meal plan covers all key macronutrients, micronutrients, and vitamins your body needs. You can read how we combine the individual parts into a balanced plan <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">here</a>.",
       "boxes": {
         "energy": {
           "title": "Energy and macronutrients",
