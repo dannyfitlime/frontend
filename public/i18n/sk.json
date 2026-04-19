@@ -215,7 +215,7 @@
     },
     "coverage": {
       "title": "Čo jedálniček pokrýva",
-      "intro": "Kompletný prehľad všetkých kľúčových živín a potravinových skupín:",
+      "intro": "Fitlime jedálniček pokrýva všetky dôležité makroživiny, mikroživiny aj vitamíny, ktoré vaše telo potrebuje. Ako jednotlivé zložky kombinujeme do vyváženého plánu, si môžete prečítať <a href=\"/ako-fitlime-funguje/index.html\" class=\"diet-link\">tu</a>.",
       "boxes": {
         "energy": {
           "title": "Energia a makroživiny",
@@ -242,9 +242,9 @@
           "title": "Skupiny tukov",
           "subtitle": "Rôzne typy tukov a ich rola vo výžive.",
           "items": {
-            "satu": "<b>Nasytené tuky</b> – energetický zdroj",
-            "mono": "<b>Mononenasýtené tuky</b> – zdravie srdca",
-            "poly": "<b>Polynenasýtené tuky</b> – omega-3 a omega-6 mastné kyseliny",
+            "satu": "<b>Nasytené tuky (SFA)</b> – energetický zdroj",
+            "mono": "<b>Mononenasýtené tuky (MUFA)</b> – zdravie srdca",
+            "poly": "<b>Polynenasýtené tuky (PUFA)</b> – omega-3 a omega-6 mastné kyseliny",
             "chole": "<b>Cholesterol</b> – tvorba hormónov"
           }
         },

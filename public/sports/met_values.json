@@ -55,6 +55,7 @@
   "aerobics": { "low": 5, "medium": 6.5, "high": 8 },
   "pole_dance": { "low": 4, "medium": 6, "high": 8 },
   "canoeing": { "low": 3.5, "medium": 6, "high": 9 },
+  "underwater_hockey": { "low": 6, "medium": 8, "high": 10 },
   "water_polo": { "low": 6, "medium": 8, "high": 10 },
   "diving": { "low": 3, "medium": 4, "high": 6 },
   "surfing": { "low": 3, "medium": 5, "high": 8 },

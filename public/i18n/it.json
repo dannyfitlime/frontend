@@ -187,7 +187,7 @@
     },
     "coverage": {
       "title": "Cosa include il piano",
-      "intro": "Riepilogo completo di tutti i nutrienti e gruppi alimentari chiave:",
+      "intro": "Il piano alimentare FitLime copre tutti i macronutrienti, micronutrienti e vitamine importanti di cui il tuo corpo ha bisogno. Puoi leggere <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">qui</a> come combiniamo i singoli elementi in un piano equilibrato.",
       "boxes": {
         "energy": {
           "title": "Energia e macronutrienti",
@@ -214,9 +214,9 @@
           "title": "Tipi di grassi",
           "subtitle": "Tipi diversi di grassi e il loro ruolo nell'alimentazione.",
           "items": {
-            "satu": "<b>Grassi saturi</b> – fonte di energia",
-            "mono": "<b>Grassi monoinsaturi</b> – salute del cuore",
-            "poly": "<b>Grassi polinsaturi</b> – acidi grassi omega-3 e omega-6",
+            "satu": "<b>Grassi saturi (SFA)</b> – fonte di energia",
+            "mono": "<b>Grassi monoinsaturi (MUFA)</b> – salute del cuore",
+            "poly": "<b>Grassi polinsaturi (PUFA)</b> – acidi grassi omega-3 e omega-6",
             "chole": "<b>Colesterolo</b> – produzione di ormoni"
           }
         },

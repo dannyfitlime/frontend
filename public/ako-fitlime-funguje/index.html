@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ako FitLime funguje | Algoritmus, personalizácia a tvorba plánu</title>
   <meta name="description"
-    content="Technologické vysvetlenie toho, ako FitLime funguje: práca s dátami z formulára, optimalizácia živín, proces tvorby plánu a dôvody, prečo personalizácia funguje lepšie než všeobecné šablóny.">
+    content="Technologické vysvetlenie toho, ako FitLime funguje: optimalizácia živín a proces tvorby jedálnička na mieru.">
   <link rel="canonical" href="https://fitlime.sk/ako-fitlime-funguje/">
   <link rel="alternate" hreflang="cs" href="https://fitlime.cz/jak-fitlime-funguje/">
   <link rel="alternate" hreflang="sk" href="https://fitlime.sk/ako-fitlime-funguje/">
@@ -78,17 +78,30 @@
       </a>
     </header>
 
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
     <section class="seo-hero">
-      <article class="seo-card seo-hero-card">
+      <article class="seo-card seo-hero-card fade-in">
         <div class="seo-eyebrow">Technológia za personalizáciou</div>
         <h1>Ako FitLime funguje pod povrchom</h1>
-        <p class="seo-lead">Táto stránka sa zameriava na to, čo sa deje po tom, čo si objednáte jedálniček:
-          ako FitLime pracuje so vstupnými dátami, ako premýšľa o optimalizácii živín, ako vzniká
+        <p class="seo-lead">Táto stránka sa zameriava na to, čo sa deje po tom, čo si objednáte jedálniček: ako FitLime
+          pracuje so vstupnými dátami, ako premýšľa o optimalizácii živín, ako vzniká
           štruktúra plánu a prečo personalizácia funguje lepšie než univerzálna šablóna.</p>
         <div class="seo-stat-row">
           <div class="seo-stat-chip">
             <span class="seo-stat-label">Vstupy</span>
-            <strong>Ciele, vaše parametre, životný režim, stravovacie preferencie</strong>
+            <strong>Ciele, vaše parametre, životný režim a stravovacie preferencie</strong>
           </div>
           <div class="seo-stat-chip">
             <span class="seo-stat-label">Výpočtové jadro</span>
@@ -102,12 +115,25 @@
       </article>
     </section>
 
+    <section class="seo-section fade-in">
+      <h2>Ako FitLime skladá jedálniček na mieru</h2>
+      <p>Na rozdiel od statických šablón FitLime nevyužíva predpripravené tabuľky, ale dynamický proces, kde je každý
+        jedálniček na mieru počítaný od nuly. Systém pracuje s algoritmom, ktorý súčasne vyhodnocuje desiatky vstupných
+        parametrov vrátane bazálneho metabolizmu, termického efektu stravy a špecifického výdaja pri fyzickej aktivite.</p>
+      <p>Cieľom tejto optimalizácie živín nie je iba matematická presnosť, ale predovšetkým udržateľnosť v reálnom živote.
+        Personalizovaný jedálniček musí zohľadňovať nielen celkový kalorický príjem, ale aj časové možnosti prípravy
+        jedla, dostupnosť surovín a vaše individuálne chuťové preferencie.</p>
+      <p>Výsledný plán tak garantuje, že energetická bilancia presne zodpovedá vášmu cieľu, či už ide o redukciu tuku,
+        budovanie svalovej hmoty alebo stabilizáciu výkonu. Každý deň je štrukturálne vyvážený tak, aby hladina krvného
+        cukru zostala stabilná a aby ste mali dostatok energie pre pracovné aj športové nasadenie.</p>
+    </section>
+
     <div class="seo-stack">
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
           <h2>Interaktívny simulátor</h2>
-          <p>Interaktívny simulátor vášho aktuálneho jedla. Skúste si naklikať kombináciu, vyberte hmotnosť porcie a
-            sledujte, ako sa zmení profil radaru.</p>
+          <p>Interaktívny simulátor vášho obeda. Skúste si naklikať kombináciu, vyberte hmotnosť porcie a sledujte, ako sa
+            zmení profil grafu.</p>
         </div>
         <div class="ps-hero-container">
           <div class="ps-simulator-layout">
@@ -115,49 +141,55 @@
               <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
               <div class="ps-simulator-controls">
                 <div class="ps-mini-action-box ps-mini-action-box--static">
-              <button class="ps-mini-btn" type="button" tabindex="-1">UkĂˇzaĹĄ rieĹˇenie</button>
+                  <button class="ps-mini-btn" id="dietAutoSelect">Ukázať riešenie</button>
                 </div>
                 <div class="ps-mini-portion-box ps-mini-portion-box--static">
                   <div class="ps-mini-portion-header">
-                    <label for="portionSlider">HmotnosĹĄ porcie</label>
-                <span>400 g</span>
+                    <label for="portionSlider">Hmotnosť porcie</label>
+                    <span id="portionValue">400 g</span>
                   </div>
-              <input type="range" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+                  <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
                 </div>
               </div>
             </div>
             <div class="ps-chart-panel ps-chart-panel--hero">
-            <div class="ps-score-display">
-              <div class="ps-score-label">Skóre jedla</div>
-              <div><span class="ps-score-value" id="dietScore">0</span><span class="ps-score-max">/100</span></div>
-            </div>
-
-            <div class="ps-mini-action-box ps-simulator-legacy-control" aria-hidden="true">
-              <button class="ps-mini-btn" id="dietAutoSelect">Ukázať riešenie</button>
-            </div>
-
-            <canvas id="dietChart"></canvas>
-
-            <div class="ps-mini-portion-box ps-simulator-legacy-control" aria-hidden="true">
-              <div class="ps-mini-portion-header">
-                <label for="portionSlider">Hmotnosť porcie</label>
-                <span>400 g</span>
+              <div class="ps-score-display">
+                <div class="ps-score-label">Skóre jedla</div>
+                <div><span class="ps-score-value" id="dietScore">0</span><span class="ps-score-max">/100</span></div>
               </div>
-              <input type="range" min="100" max="1000" step="50" value="400" class="ps-mini-slider" tabindex="-1">
+
+              <div class="ps-mini-action-box ps-simulator-legacy-control" aria-hidden="true">
+                <button class="ps-mini-btn" id="dietAutoSelect">Ukázať riešenie</button>
+              </div>
+
+              <canvas id="dietChart"></canvas>
+
+              <div class="ps-mini-portion-box ps-simulator-legacy-control" aria-hidden="true">
+                <div class="ps-mini-portion-header">
+                  <label for="portionSlider">Hmotnosť porcie</label>
+                  <span id="portionValue">400 g</span>
+                </div>
+                <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+              </div>
+
+              <div class="ps-mini-legend-box">
+                <div class="ps-mini-legend-line"></div>
+                <span class="ps-mini-legend-text">Odporúčané hodnoty pre vyvážený obed</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
           <h2>Kontext zvyšku dňa</h2>
-          <p>Takto by teoreticky vyzeral váš radar pri ostatných jedlách počas dňa (zjednodušený náhľad).</p>
+          <p>Takto môžu vyzerať ostatné jedlá vášho aktuálneho jedálnička (zjednodušený náhľad).</p>
         </div>
         <div class="ps-static-grid" id="day-grid"></div>
       </section>
 
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
           <h2>Týždenný komplexný pohľad</h2>
           <p>Porovnanie priemerných hodnôt za jednotlivé dni. Ideálny týždeň verzus víkendové vychýlenie.</p>
@@ -165,7 +197,7 @@
         <div class="ps-static-grid ps-week-grid" id="week-grid"></div>
       </section>
 
-      <section class="ps-section seo-how-complex-section" style="min-height: auto;">
+      <section class="ps-section seo-how-complex-section fade-in" style="min-height: auto;">
         <div class="ps-section-header">
           <h2>Všetko je to však oveľa zložitejšie</h2>
           <p>Personalizácia jedálnička je komplexný proces, ktorý zohľadňuje mnoho faktorov a premenných. Okrem iného
@@ -179,20 +211,7 @@
         </div>
       </section>
 
-      <section class="seo-section">
-        <h2>Ako FitLime skladá jedálniček na mieru</h2>
-        <p>Na rozdiel od statických šablón FitLime nevyužíva predpripravené tabuľky, ale dynamický proces, kde je každý
-          jedálniček na mieru počítaný od nuly. Systém pracuje s algoritmom, ktorý súčasne vyhodnocuje desiatky vstupných
-          parametrov vrátane bazálneho metabolizmu, termického efektu stravy a špecifického výdaja pri fyzickej aktivite.</p>
-        <p>Cieľom tejto optimalizácie živín nie je iba matematická presnosť, ale predovšetkým udržateľnosť v reálnom živote.
-          Personalizovaný jedálniček musí zohľadňovať nielen celkový kalorický príjem, ale aj časové možnosti prípravy
-          jedla, dostupnosť surovín a vaše individuálne chuťové preferencie.</p>
-        <p>Výsledný plán tak garantuje, že energetická bilancia presne zodpovedá vášmu cieľu, či už ide o redukciu tuku,
-          budovanie svalovej hmoty alebo stabilizáciu výkonu. Každý deň je štrukturálne vyvážený tak, aby hladina krvného
-          cukru zostala stabilná a aby ste mali dostatok energie pre pracovné aj športové nasadenie.</p>
-      </section>
-
-      <section class="seo-faq">
+      <section class="seo-faq fade-in">
         <h2>FAQ</h2>
         <div class="seo-faq-item">
           <h3>Je FitLime len jednoduchá kalkulačka kalórií?</h3>
@@ -204,24 +223,22 @@
           <p>Znamená to hľadať také rozloženie energie a makroživín, ktoré sedí cieľu a zároveň funguje v realite.
             Nestačia správne čísla, ak sa plán nedá bežne žiť.</p>
           <p>Podobný princíp sa v matematike označuje ako optimalizácia v priestore podmienok. Už v 40. rokoch ho opísal
-            napríklad <a href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank" rel="noopener noreferrer">Stigler
-              diet problem</a>, kde sa hľadala najlacnejšia kombinácia potravín spĺňajúca nutričné požiadavky.</p>
+            napríklad <a class="seo-page-link" href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank"
+              rel="noopener noreferrer">Stigler diet problem</a>, kde sa hľadala najlacnejšia kombinácia potravín
+            spĺňajúca nutričné požiadavky.</p>
           <p>FitLime pracuje s rovnakou logikou, ale namiesto ceny optimalizuje kombináciu živín, štruktúry dňa a praktickej
             použiteľnosti.</p>
           <details style="margin:24px 0 16px;">
-            <summary style="cursor:pointer; font-weight:700; color:var(--fg);">Matematický vzorec pre zaujímavosť</summary>
-            <img src="/images/diet_plan.png" alt="Schéma optimalizácie diétneho plánu" style="display:block; width:min(100%, 560px); margin:16px auto 0; border-radius:18px;">
+            <summary style="cursor:pointer; font-weight:700; color:var(--fg);">Matematický vzorec pre zaujímavosť
+            </summary>
+            <img src="/images/diet_plan.png" alt="Schéma optimalizácie diétneho plánu"
+              style="display:block; width:min(100%, 560px); margin:16px auto 0; border-radius:18px;">
             <p>Matematický vzorec vyzerá zložito, ale zjednodušene povedané systém hľadá také riešenie, ktoré maximalizuje
-              „kvalitu plánu“ pri splnení všetkých nutričných a praktických obmedzení.</p>
+              "kvalitu plánu" pri splnení všetkých nutričných a praktických obmedzení.</p>
           </details>
         </div>
-        <div class="seo-faq-item">
-          <h3>Prečo nestačí jedna univerzálna šablóna pre všetkých?</h3>
-          <p>Pretože rovnaké odporúčanie nebude rovnako fungovať u človeka so sedavým režimom, u športovca ani u niekoho s
-            nepravidelnou pracovnou dobou. Personalizácia rieši práve tento rozdiel.</p>
-        </div>
 
-        <section class="seo-section">
+        <section class="seo-section fade-in">
           <h2>Prečo personalizovaný jedálniček funguje lepšie</h2>
           <p>Univerzálne stravovacie plány často zlyhávajú, pretože ignorujú premenlivosť ľudského biorytmu a životného štýlu.
             Rozdiely v pracovnej dobe, intenzite tréningu alebo kvalite spánku zásadne ovplyvňujú to, ako telo spracúva
@@ -232,7 +249,7 @@
             bez pocitu obmedzovania.</p>
         </section>
 
-        <section class="seo-section seo-faq" style="border-top: 1px solid var(--line);">
+        <section class="seo-section seo-faq fade-in" style="border-top: 1px solid var(--line);">
           <h2 style="margin-bottom: 24px;">Časté otázky k optimalizácii stravy</h2>
 
           <div style="margin-bottom: 24px;">
@@ -247,7 +264,7 @@
           <div style="margin-bottom: 24px;">
             <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--fg);">Koľko kalórií by som mal denne prijímať?</h3>
             <p style="color: var(--muted); line-height: 1.6;">Ideálny kalorický príjem je vysoko individuálna veličina
-              závislá od veku, pohlavia, telesnej kompozície a úrovne denného pohybu (PAL). FitLime tieto premenné využíva na
+              závislá od veku, pohlavia, telesnej kompozície a úrovne denného pohybu. FitLime tieto premenné využíva na
               výpočet presného energetického okna, v ktorom dosiahnete svoj cieľ najrýchlejšie. Výpočet pravidelne
               aktualizujeme na základe vašej spätnej väzby a progresu, čím eliminujeme stagnáciu spôsobenú adaptáciou
               organizmu.</p>
@@ -272,7 +289,7 @@
           </div>
         </section>
 
-        <section class="seo-section seo-action" style="padding: 30px 24px; text-align: center;">
+        <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
           <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: none;">Chcem začať jesť lepšie</h2>
           <p
             style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
@@ -293,12 +310,11 @@
               <a href="/zdravy-jedalnicek/index.html" class="ps-elegant-link">Zdravé stravovanie</a>
             </div>
             <div style="display: flex; justify-content: center; margin-top: 28px;">
-              <a href="/index.html" class="seo-btn seo-btn-primary"
-                style="padding: 14px 28px; border-radius: 12px; font-size: 1rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Návrat
-                na hlavnú stránku</a>
+              <a href="/index.html" class="ps-elegant-link">Návrat na hlavnú stránku</a>
             </div>
           </div>
         </section>
+      </section>
     </div>
   </main>
 
@@ -316,7 +332,7 @@
           <span class="brandline" data-i18n="home.footer.brand">FitLime - Chytrý jedálniček</span>
         </div>
         <div style="font-size: 0.85rem; opacity: 0.8;">
-          <span data-i18n="home.footer.company">© 2026 SportVital Pro s.r.o.</span>
+          <span data-i18n="home.footer.company">&copy; 2026 SportVital Pro s.r.o.</span>
         </div>
       </div>
 
@@ -355,6 +371,17 @@
     import { bootI18n } from '/i18n-core.js';
 
     bootI18n();
+  </script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 

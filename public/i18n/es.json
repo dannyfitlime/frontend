@@ -187,7 +187,7 @@
     },
     "coverage": {
       "title": "Qué incluye el menú",
-      "intro": "Resumen completo de los nutrientes clave y de los grupos de alimentos:",
+      "intro": "El menú de FitLime cubre todos los macronutrientes, micronutrientes y vitaminas importantes que tu cuerpo necesita. Puedes leer cómo combinamos cada componente en un plan equilibrado <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">aquí</a>.",
       "boxes": {
         "energy": {
           "title": "Energía y macronutrientes",
@@ -214,9 +214,9 @@
           "title": "Tipos de grasas",
           "subtitle": "Diferentes tipos de grasas y su papel en la alimentación.",
           "items": {
-            "satu": "<b>Grasas saturadas</b> – fuente de energía",
-            "mono": "<b>Grasas monoinsaturadas</b> – salud del corazón",
-            "poly": "<b>Grasas poliinsaturadas</b> – ácidos grasos omega-3 y omega-6",
+            "satu": "<b>Grasas saturadas (SFA)</b> – fuente de energía",
+            "mono": "<b>Grasas monoinsaturadas (MUFA)</b> – salud del corazón",
+            "poly": "<b>Grasas poliinsaturadas (PUFA)</b> – ácidos grasos omega-3 y omega-6",
             "chole": "<b>Colesterol</b> – producción de hormonas"
           }
         },

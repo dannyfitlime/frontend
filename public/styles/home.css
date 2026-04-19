@@ -861,14 +861,18 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   justify-items: center;
   gap: 7px;
   padding: 4px 0 0;
+  min-width: 0;
 }
 
 .why-macro-item strong {
+  width: 100%;
   font-size: 0.72rem;
   line-height: 1.2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: auto;
   color: rgba(24, 38, 27, 0.72);
 }
 
@@ -1180,6 +1184,24 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
 }
 
 @media (max-width: 470px) {
+  .why-macro-row {
+    gap: 6px;
+  }
+
+  .why-macro-item {
+    gap: 6px;
+  }
+
+  .why-macro-item strong {
+    font-size: 0.62rem;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+  }
+
+  .why-macro-donut {
+    width: 48px;
+  }
+
   .why-chart-container {
     min-height: 0;
   }

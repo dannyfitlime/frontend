@@ -1,21 +1,19 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="seoPages.how.metaTitle">How FitLime Works | Algorithm, personalization, and plan creation</title>
+  <title>How FitLime Works | Algorithm, personalization, and plan creation</title>
   <meta name="description"
-    data-i18n-content="seoPages.how.metaDescription"
-    content="A technical explanation of how FitLime works: questionnaire inputs, nutrient optimization, plan creation, and why personalization works better than generic templates.">
+    content="A technical explanation of how FitLime works: nutrient optimization and the process behind creating a personalized meal plan.">
   <link rel="canonical" href="https://fitlime.eu/how-fitlime-works/">
   <link rel="alternate" hreflang="cs" href="https://fitlime.cz/jak-fitlime-funguje/">
   <link rel="alternate" hreflang="sk" href="https://fitlime.sk/ako-fitlime-funguje/">
   <link rel="alternate" hreflang="en" href="https://fitlime.eu/how-fitlime-works/">
   <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/how-fitlime-works/">
-  <meta property="og:title" data-i18n-content="seoPages.how.ogTitle" content="How FitLime Works | Algorithm, personalization, and plan creation">
+  <meta property="og:title" content="How FitLime Works | Algorithm, personalization, and plan creation">
   <meta property="og:description"
-    data-i18n-content="seoPages.how.ogDescription"
     content="How FitLime turns input data into a concrete meal plan: algorithm, nutrient optimization, and personalization logic.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.eu/how-fitlime-works/">
@@ -80,83 +78,129 @@
       </a>
     </header>
 
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
     <section class="seo-hero">
-      <article class="seo-card seo-hero-card">
-        <div class="seo-eyebrow" data-i18n="seoPages.how.hero.eyebrow">Technology behind personalization</div>
-        <h1 data-i18n="seoPages.how.hero.title">How FitLime works under the surface</h1>
-        <p class="seo-lead" data-i18n="seoPages.how.hero.lead">This page focuses on what happens after you order your meal plan: how FitLime works with
+      <article class="seo-card seo-hero-card fade-in">
+        <div class="seo-eyebrow">Technology behind personalization</div>
+        <h1>How FitLime works under the surface</h1>
+        <p class="seo-lead">This page focuses on what happens after you order your meal plan: how FitLime works with
           input data, how it approaches nutrient optimization, how the plan structure is created, and why personalization
           works better than a universal template.</p>
         <div class="seo-stat-row">
           <div class="seo-stat-chip">
             <span class="seo-stat-label">Inputs</span>
-            <strong>Goals, your parameters, daily routine, dietary preferences</strong>
+            <strong>Goals, your parameters, lifestyle, and dietary preferences</strong>
           </div>
           <div class="seo-stat-chip">
-            <span class="seo-stat-label">Computation Core</span>
+            <span class="seo-stat-label">Computation core</span>
             <strong>Optimization across dozens to hundreds of constraints</strong>
           </div>
           <div class="seo-stat-chip">
             <span class="seo-stat-label">Output</span>
-            <strong>A meal plan that is nutritionally sound and practical to follow</strong>
+            <strong>A meal plan that is nutritionally sound, practical, and paired with recipes</strong>
           </div>
         </div>
       </article>
     </section>
 
+    <section class="seo-section fade-in">
+      <h2>How FitLime builds a meal plan tailored to you</h2>
+      <p>Unlike static templates, FitLime does not rely on pre-made tables. It uses a dynamic process in which each
+        personalized meal plan is calculated from scratch. The system works with an algorithm that evaluates dozens of
+        input parameters at once, including basal metabolism, the thermic effect of food, and specific energy expenditure
+        linked to physical activity.</p>
+      <p>The goal of this nutrient optimization is not just mathematical precision, but above all sustainability in real
+        life. A personalized meal plan must account not only for total calorie intake, but also for preparation time,
+        ingredient availability, and your individual taste preferences.</p>
+      <p>The final plan ensures that energy balance matches your goal precisely, whether that goal is fat loss, muscle
+        gain, or performance stability. Each day is structured to stay balanced so blood sugar remains stable and you
+        have enough energy for both work and training.</p>
+    </section>
+
     <div class="seo-stack">
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
           <h2>Interactive simulator</h2>
-          <p>An interactive simulator of your current meal. Try clicking together a combination, choose portion weight,
-            and watch how the radar profile changes.</p>
+          <p>Interactive simulator of your lunch. Try assembling a combination, choose the portion weight, and watch how
+            the chart profile changes.</p>
         </div>
         <div class="ps-hero-container">
-          <div class="ps-panel">
-            <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
-          </div>
-          <div class="ps-chart-panel">
-            <div class="ps-score-display">
-              <div class="ps-score-label">Meal Score</div>
-              <div><span class="ps-score-value" id="dietScore">0</span><span class="ps-score-max">/100</span></div>
-            </div>
-
-            <div class="ps-mini-action-box">
-              <button class="ps-mini-btn" id="dietAutoSelect">Show solution</button>
-            </div>
-
-            <canvas id="dietChart"></canvas>
-
-            <div class="ps-mini-portion-box">
-              <div class="ps-mini-portion-header">
-                <label for="portionSlider">Portion weight</label>
-                <span id="portionValue">400 g</span>
+          <div class="ps-simulator-layout">
+            <div class="ps-panel ps-panel--foods">
+              <div class="ps-food-grid" id="foodList" style="margin-bottom: 0;"></div>
+              <div class="ps-simulator-controls">
+                <div class="ps-mini-action-box ps-mini-action-box--static">
+                  <button class="ps-mini-btn" id="dietAutoSelect">Show solution</button>
+                </div>
+                <div class="ps-mini-portion-box ps-mini-portion-box--static">
+                  <div class="ps-mini-portion-header">
+                    <label for="portionSlider">Portion weight</label>
+                    <span id="portionValue">400 g</span>
+                  </div>
+                  <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+                </div>
               </div>
-              <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+            </div>
+            <div class="ps-chart-panel ps-chart-panel--hero">
+              <div class="ps-score-display">
+                <div class="ps-score-label">Meal Score</div>
+                <div><span class="ps-score-value" id="dietScore">0</span><span class="ps-score-max">/100</span></div>
+              </div>
+
+              <div class="ps-mini-action-box ps-simulator-legacy-control" aria-hidden="true">
+                <button class="ps-mini-btn" id="dietAutoSelect">Show solution</button>
+              </div>
+
+              <canvas id="dietChart"></canvas>
+
+              <div class="ps-mini-portion-box ps-simulator-legacy-control" aria-hidden="true">
+                <div class="ps-mini-portion-header">
+                  <label for="portionSlider">Portion weight</label>
+                  <span id="portionValue">400 g</span>
+                </div>
+                <input type="range" id="portionSlider" min="100" max="1000" step="50" value="400" class="ps-mini-slider">
+              </div>
+
+              <div class="ps-mini-legend-box">
+                <div class="ps-mini-legend-line"></div>
+                <span class="ps-mini-legend-text">Recommended values for a balanced lunch</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
           <h2>Context of the rest of the day</h2>
-          <p>This is how your radar could theoretically look for the other meals in your day (simplified preview).</p>
+          <p>This is how the other meals in your current meal plan could look (simplified preview).</p>
         </div>
         <div class="ps-static-grid" id="day-grid"></div>
       </section>
 
-      <section class="ps-section">
+      <section class="ps-section fade-in">
         <div class="ps-section-header">
-          <h2>Weekly complex view</h2>
-          <p>A comparison of average values across individual days. An ideal week versus weekend deviations.</p>
+          <h2>Weekly comprehensive view</h2>
+          <p>Comparison of average values across individual days. An ideal week versus weekend deviations.</p>
         </div>
         <div class="ps-static-grid ps-week-grid" id="week-grid"></div>
       </section>
 
-      <section class="ps-section seo-how-complex-section" style="min-height: auto;">
+      <section class="ps-section seo-how-complex-section fade-in" style="min-height: auto;">
         <div class="ps-section-header">
-          <h2>But it is much more complex than that</h2>
+          <h2>But everything is much more complex</h2>
           <p>Meal plan personalization is a complex process that considers many factors and variables. Among other things,
             our system optimizes the plan across more than 25 different nutrients.</p>
         </div>
@@ -168,21 +212,7 @@
         </div>
       </section>
 
-      <section class="seo-section">
-        <h2>How FitLime builds a meal plan tailored to you</h2>
-        <p>Unlike static templates, FitLime does not rely on pre-made tables. It uses a dynamic process in which each
-          personalized meal plan is calculated from scratch. The system works with an algorithm that evaluates dozens of
-          input parameters at once, including basal metabolism, the thermic effect of food, and specific energy expenditure
-          linked to physical activity.</p>
-        <p>The goal of this nutrient optimization is not just mathematical precision, but above all sustainability in real
-          life. A personalized meal plan must account not only for total calorie intake, but also for preparation time,
-          ingredient availability, and your individual taste preferences.</p>
-        <p>The final plan ensures that energy balance matches your goal precisely, whether that goal is fat loss, muscle
-          gain, or performance stability. Each day is structured to stay balanced so blood sugar remains stable and you
-          have enough energy for both work and training.</p>
-      </section>
-
-      <section class="seo-faq">
+      <section class="seo-faq fade-in">
         <h2>FAQ</h2>
         <div class="seo-faq-item">
           <h3>Is FitLime just a simple calorie calculator?</h3>
@@ -194,24 +224,22 @@
           <p>It means finding a distribution of energy and macronutrients that fits the goal while still working in real
             life. Correct numbers alone are not enough if the plan is not livable day to day.</p>
           <p>A similar principle in mathematics is known as optimization in a constrained space. It was described as early
-            as the 1940s in the <a href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank" rel="noopener noreferrer">Stigler
-              diet problem</a>, where the goal was to find the cheapest combination of foods that still met nutritional requirements.</p>
+            as the 1940s in the <a class="seo-page-link" href="https://en.wikipedia.org/wiki/Stigler_diet" target="_blank"
+              rel="noopener noreferrer">Stigler diet problem</a>, where the goal was to find the cheapest combination of
+            foods that still met nutritional requirements.</p>
           <p>FitLime uses the same logic, but instead of minimizing cost, it optimizes a combination of nutrients, daily
             structure, and practical usability.</p>
           <details style="margin:24px 0 16px;">
-            <summary style="cursor:pointer; font-weight:700; color:var(--fg);">Mathematical formula for the curious</summary>
-            <img src="/images/diet_plan.png" alt="Diet plan optimization scheme" style="display:block; width:min(100%, 560px); margin:16px auto 0; border-radius:18px;">
+            <summary style="cursor:pointer; font-weight:700; color:var(--fg);">Mathematical formula for the curious
+            </summary>
+            <img src="/images/diet_plan.png" alt="Diet plan optimization scheme"
+              style="display:block; width:min(100%, 560px); margin:16px auto 0; border-radius:18px;">
             <p>The formula looks complex, but in simple terms the system is searching for a solution that maximizes
               "plan quality" while satisfying all nutritional and practical constraints.</p>
           </details>
         </div>
-        <div class="seo-faq-item">
-          <h3>Why is one universal template not enough for everyone?</h3>
-          <p>Because the same recommendation will not work equally well for someone with a sedentary routine, an athlete,
-            or a person with an irregular work schedule. Personalization is what solves that gap.</p>
-        </div>
 
-        <section class="seo-section">
+        <section class="seo-section fade-in">
           <h2>Why a personalized meal plan works better</h2>
           <p>Universal nutrition plans often fail because they ignore the variability of human biorhythm and lifestyle.
             Differences in working hours, training intensity, or sleep quality fundamentally affect how the body processes
@@ -222,7 +250,7 @@
             without the feeling of constant limitation.</p>
         </section>
 
-        <section class="seo-section seo-faq" style="border-top: 1px solid var(--line);">
+        <section class="seo-section seo-faq fade-in" style="border-top: 1px solid var(--line);">
           <h2 style="margin-bottom: 24px;">Common questions about diet optimization</h2>
 
           <div style="margin-bottom: 24px;">
@@ -236,7 +264,7 @@
           <div style="margin-bottom: 24px;">
             <h3 style="font-size: 1.2rem; margin-bottom: 8px; color: var(--fg);">How many calories should I eat per day?</h3>
             <p style="color: var(--muted); line-height: 1.6;">Ideal calorie intake is highly individual and depends on age,
-              sex, body composition, and daily activity level (PAL). FitLime uses these variables to calculate a precise
+              sex, body composition, and daily activity level. FitLime uses these variables to calculate a precise
               energy range in which you can reach your goal most efficiently. We also update that target regularly based on
               your feedback and progress, which helps prevent stagnation caused by adaptation.</p>
           </div>
@@ -260,35 +288,32 @@
           </div>
         </section>
 
-        <section class="seo-section seo-action" style="padding: 30px 24px; text-align: center;">
-          <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: none;" data-i18n="seoPages.how.cta.title">I want to start eating better</h2>
+        <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
+          <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px; animation: none;">I want to start eating better</h2>
           <p
-            style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;" data-i18n="seoPages.how.cta.lead">
+            style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
             Get your personalized meal plan and test the full system in practice.</p>
           <div style="display: flex; justify-content: center; margin-bottom: 60px;">
             <a href="/form.html" class="seo-btn seo-btn-primary"
-              data-i18n="seoPages.how.cta.button"
               style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Go
               to questionnaire</a>
           </div>
 
           <div class="ps-related-articles">
             <h3
-              style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;" data-i18n="seoPages.common.relatedArticles">
+              style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">
               More articles:</h3>
             <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
-              <a href="/weight-loss-meal-plan/index.html" data-seo-link="weightLoss" class="ps-elegant-link" data-i18n="seoPages.common.links.weightLossShort">Weight loss</a>
-              <a href="/sports-meal-plan/index.html" data-seo-link="sports" class="ps-elegant-link" data-i18n="seoPages.common.links.sportsNutrition">Sports nutrition</a>
-              <a href="/healthy-meal-plan/index.html" data-seo-link="healthy" class="ps-elegant-link" data-i18n="seoPages.common.links.healthyEating">Healthy eating</a>
+              <a href="/weight-loss-meal-plan/index.html" class="ps-elegant-link">Weight loss</a>
+              <a href="/sports-meal-plan/index.html" class="ps-elegant-link">Sports nutrition</a>
+              <a href="/healthy-meal-plan/index.html" class="ps-elegant-link">Healthy eating</a>
             </div>
             <div style="display: flex; justify-content: center; margin-top: 28px;">
-              <a href="/index.html" class="seo-btn seo-btn-primary"
-                data-i18n="seoPages.common.backHomePage"
-                style="padding: 14px 28px; border-radius: 12px; font-size: 1rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Back
-                to home page</a>
+              <a href="/index.html" class="ps-elegant-link">Back to home page</a>
             </div>
           </div>
         </section>
+      </section>
     </div>
   </main>
 
@@ -345,6 +370,17 @@
     import { bootI18n } from '/i18n-core.js';
 
     bootI18n();
+  </script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '40px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 

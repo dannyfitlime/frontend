@@ -187,7 +187,7 @@
     },
     "coverage": {
       "title": "Co zawiera plan",
-      "intro": "Pełne podsumowanie wszystkich kluczowych składników odżywczych i grup produktów:",
+      "intro": "Plan żywieniowy FitLime obejmuje wszystkie ważne makroskładniki, mikroskładniki i witaminy, których potrzebuje Twoje ciało. Jak łączymy poszczególne elementy w zbilansowany plan, możesz przeczytać <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">tutaj</a>.",
       "boxes": {
         "energy": {
           "title": "Energia i makroskładniki",
@@ -214,9 +214,9 @@
           "title": "Rodzaje tłuszczów",
           "subtitle": "Różne typy tłuszczów i ich rola w diecie.",
           "items": {
-            "satu": "<b>Tłuszcze nasycone</b> – źródło energii",
-            "mono": "<b>Tłuszcze jednonienasycone</b> – zdrowie serca",
-            "poly": "<b>Tłuszcze wielonienasycone</b> – kwasy tłuszczowe omega-3 i omega-6",
+            "satu": "<b>Tłuszcze nasycone (SFA)</b> – źródło energii",
+            "mono": "<b>Tłuszcze jednonienasycone (MUFA)</b> – zdrowie serca",
+            "poly": "<b>Tłuszcze wielonienasycone (PUFA)</b> – kwasy tłuszczowe omega-3 i omega-6",
             "chole": "<b>Cholesterol</b> – produkcja hormonów"
           }
         },

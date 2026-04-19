@@ -135,27 +135,6 @@
         margin-top: 16px;
       }
 
-      .seo-text-link {
-        color: #0f5132;
-        font-weight: 700;
-        text-decoration-line: underline;
-        text-decoration-color: rgba(15, 81, 50, 0.35);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 0.22em;
-        transition: color 0.2s ease, text-decoration-color 0.2s ease;
-      }
-
-      .seo-text-link:hover {
-        color: #0b3d27;
-        text-decoration-color: rgba(11, 61, 39, 0.7);
-      }
-
-      .seo-text-link:focus-visible {
-        outline: 2px solid rgba(15, 81, 50, 0.22);
-        outline-offset: 3px;
-        border-radius: 4px;
-      }
-
       .balance-lab {
         display: grid;
         gap: 10px;
@@ -696,7 +675,7 @@
 
     <section class="seo-hero">
       <article class="seo-card seo-hero-card fade-in">
-        <div class="seo-eyebrow">Edukatívny sprievodca</div>
+        <div class="seo-eyebrow">Sprievodca zdravým jedálničkom</div>
         <h1>Chudnutie bez chaosu</h1>
         <p class="seo-lead">Je jednoduché stratiť sa v záplave drastických diét a zaručených rád. Vysvetlíme si, ako
           funguje stabilný, racionálny a hlavne udržateľný prístup k chudnutiu bez zázrakov, len s použitím zdravého
@@ -711,27 +690,27 @@
           energie počas dňa, váha rastie. Naopak keď je výdaj o niečo vyšší než príjem, vzniká priestor na chudnutie.
           Táto ukážka je zjednodušeným príkladom, ktorý vychádza z bežného dňa, keď sú základné energetické potreby
           tela (BMR) pokryté. Viac o energetických potrebách tela sa dozviete v článku <a
-            href="/zdravy-jedalnicek/index.html" class="seo-text-link">Zdravý jedálniček</a>.</p>
+            href="/zdravy-jedalnicek/index.html" class="seo-page-link">Zdravý jedálniček</a>.</p>
         <div class="balance-lab">
           <div class="balance-controls">
             <div class="balance-choice-list" id="balanceChoices">
-              <button type="button" class="balance-chip" data-group="food" data-kcal="365" data-emoji="🍟"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="1527" data-emoji="🍟"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍟</span><span
                       class="balance-chip-label">Hranolky</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="food" data-kcal="120" data-emoji="🥗"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="502" data-emoji="🥗"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🥗</span><span
                       class="balance-chip-label">Šalát</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="food" data-kcal="80" data-emoji="🍎"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="335" data-emoji="🍎"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍎</span><span
                       class="balance-chip-label">Jablko</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="activity" data-kcal="260" data-emoji="🏃"><span
+              <button type="button" class="balance-chip" data-group="activity" data-kj="1088" data-emoji="🏃"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🏃</span><span
                       class="balance-chip-label">Beh</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="activity" data-kcal="220" data-emoji="🏋️"><span
+              <button type="button" class="balance-chip" data-group="activity" data-kj="920" data-emoji="🏋️"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🏋️</span><span
                       class="balance-chip-label">Posilňovňa</span></span></span></button>
@@ -751,14 +730,14 @@
               <div class="balance-pan left" id="foodPan">
                 <div class="balance-pan-bowl">
                   <strong>Jedlo</strong>
-                  <span id="foodTotal">0 kcal</span>
+                  <span id="foodTotal">0 kJ</span>
                   <div class="balance-pan-items" id="foodIcons"></div>
                 </div>
               </div>
               <div class="balance-pan right" id="activityPan">
                 <div class="balance-pan-bowl">
                   <strong>Aktivita</strong>
-                  <span id="activityTotal">0 kcal</span>
+                  <span id="activityTotal">0 kJ</span>
                   <div class="balance-pan-items" id="activityIcons"></div>
                 </div>
               </div>
@@ -785,13 +764,14 @@
               pravdepodobnosť jojo efektu.</div>
           </div>
           <div>
+            <h3 style="margin:0 0 12px 36px;">Graf porovnania mierneho deficitu a drastickej diéty</h3>
             <div class="edu-chart-md"><canvas id="weightLossChart"></canvas></div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Prečo nefunguje lokálne chudnutie</h2>
+        <h2>Prečo nemôžeme schudnúť len tuk na bruchu?</h2>
         <p>Robiť denne stovky skracovačiek nepovedie k úbytku tuku izolovane iba na bruchu. Telo spaľuje tukové zásoby
           komplexne po celom tele a poradie je z veľkej časti dané genetikou a hormonálnym nastavením.</p>
         <div class="seo-grid">
@@ -868,10 +848,17 @@
         <h2>Prečo nechudnem, aj keď jem málo?</h2>
         <p>Častým problémom nie je len množstvo jedla, ale <strong>energetická hustota</strong>. Rovnakých 1 000 kJ môže
           mať úplne iný objem, inú sýtosť a iný dopad na ďalší hlad počas dňa.</p>
+        <h3 style="margin:0 0 12px;">Graf porovnania hmotnosti jedla pri rovnakom energetickom obsahu (1000 kJ)</h3>
         <div class="edu-chart-lg" style="height: 380px;"><canvas id="foodCompareChart"></canvas></div>
         <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">Čo z toho vyplýva:</strong>Šalát,
           zemiaky alebo ovocie môžu pri rovnakom energetickom obsahu zaplniť tanier aj žalúdok výrazne viac než cola,
           čokoláda alebo biela ryža. Chudnutie preto nie je len o tom jesť menej, ale jesť rozumnejšie.</div>
+        <p><strong>Rolu hrá aj metabolická flexibilita.</strong> Keď je jedálniček dlhodobo postavený hlavne na rýchlych
+          sacharidoch, častom zobkaní a veľkých výkyvoch energie, telo horšie prepína medzi využívaním glukózy a tuku
+          ako zdroja paliva. V praxi to potom často vyzerá tak, že človek síce „neje veľa“, ale skoro je hladný, má
+          menej energie na pohyb a horšie drží režim dlhodobo. Zároveň platí, že ak niekto 20 alebo 30 rokov fungoval
+          bez pohybu a bez pevného režimu, za dva dni sa nič zásadné nestane. Telo zvyčajne potrebuje týždne a mesiace
+          konzistentných návykov, nie pár rýchlych pokusov.</p>
       </section>
 
       <section class="seo-section fade-in">
@@ -890,9 +877,11 @@
               sýtosti vydrží dlhšie.
             </div>
             <p><strong>Odporúčaná literatúra:</strong> <a href="https://share.google/qRSN5eN642gmVtwXP"
-                class="seo-text-link" target="_blank" rel="noopener noreferrer">Glucose Revolution (Pravda o cukru)</a>
+                class="seo-page-link" target="_blank" rel="noopener noreferrer">Glucose Revolution (Pravda o cukru)</a>
               od Jessie Inchauspé.</p>
           </div>
+          <div>
+            <h3 style="margin:0 0 12px;">Kolísanie glukózy počas dňa</h3>
             <div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div>
           </div>
         </div>
@@ -905,10 +894,12 @@
             <div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div>
           </div>
           <div>
-            <p>Cieľovou zónou je <strong>7 až 9 hodín kvalitného spánku</strong>. Nedostatok odpočinku mení hlad,
-              sýtosť aj schopnosť rozhodovať sa rozumne počas dňa.</p>
-            <p>Leptín klesá, ghrelín rastie a mozog unaveného človeka prirodzene siaha po rýchlej energii. Preto je
-              spánok pri redukcii oveľa dôležitejší, než si väčšina ľudí pripúšťa.</p>
+            <p>Cieľovou zónou je <strong>7 až 9 hodín kvalitného spánku</strong>. Nedostatok odpočinku ale narúša prirodzené
+              signály hladu a sýtosti a zároveň zhoršuje schopnosť robiť rozumné rozhodnutia počas dňa.</p>
+            <p>Keď ste nevyspatí, telo vás začne „tlačiť“ k jedlu. Častejšie ste hladní, horšie sa zasýtite a omnoho viac
+              vás to ťahá k rýchlej energii, ako sú sladké alebo kalorické potraviny. Zároveň klesá vôľa odolávať týmto
+              chutiam.</p>
+            <p>Preto je spánok pri chudnutí často dôležitejší, než si väčšina ľudí uvedomuje.</p>
           </div>
         </div>
       </section>
@@ -951,7 +942,7 @@
               celý rok.</p>
           </article>
           <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">Extrém nie je zdravie</h3>
+            <h3 style="color:var(--seo-accent);">Limity extrémnych prístupov k stravovaniu</h3>
             <p>Príliš nízke percento tuku môže podkopať energiu, hormóny, náladu aj regeneráciu. Dobrý cieľ je taký,
               ktorý sa dá naozaj žiť.</p>
           </article>
@@ -1036,27 +1027,27 @@
         const choiceButtons = document.querySelectorAll('.balance-chip');
 
         const renderBalance = () => {
-          let foodKcal = 0;
-          let activityKcal = 0;
+          let foodKj = 0;
+          let activityKj = 0;
           const foodIcons = [];
           const activityIcons = [];
 
           choiceButtons.forEach((button) => {
             if (!button.classList.contains('active')) return;
-            const kcal = Number(button.dataset.kcal || 0);
+            const kj = Number(button.dataset.kj || 0);
             const emoji = button.dataset.emoji || '';
             if (button.dataset.group === 'food') {
-              foodKcal += kcal;
+              foodKj += kj;
               foodIcons.push(emoji);
             }
             if (button.dataset.group === 'activity') {
-              activityKcal += kcal;
+              activityKj += kj;
               activityIcons.push(emoji);
             }
           });
 
-          const delta = foodKcal - activityKcal;
-          const clampedTilt = Math.max(-14, Math.min(14, delta / 35));
+          const delta = foodKj - activityKj;
+          const clampedTilt = Math.max(-14, Math.min(14, delta / 150));
           const visualAngle = -clampedTilt;
           const angleRad = (visualAngle * Math.PI) / 180;
           const halfBeam = beam.offsetWidth / 2;
@@ -1067,8 +1058,8 @@
           foodPan.style.transform = `translate(${-panAnchorOffset}px, ${verticalShift}px)`;
           activityPan.style.transform = `translate(${panAnchorOffset}px, ${-verticalShift}px)`;
 
-          const foodText = `${foodKcal} kcal`;
-          const activityText = `${activityKcal} kcal`;
+          const foodText = `${foodKj} kJ`;
+          const activityText = `${activityKj} kJ`;
           foodTotalEl.textContent = foodText;
           activityTotalEl.textContent = activityText;
           foodIconsEl.innerHTML = foodIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
@@ -1079,10 +1070,10 @@
 
           if (foodIcons.length === 0 && activityIcons.length === 0) {
             outcomeText = 'Vyberte aspoň jedno jedlo alebo aktivitu.';
-          } else if (delta > 120) {
+          } else if (delta > 500) {
             outcomeClass = 'surplus';
             outcomeText = 'Priberanie na váhe';
-          } else if (delta < -120) {
+          } else if (delta < -500) {
             outcomeClass = 'deficit';
             outcomeText = 'Chudnutie';
           } else if (delta < 0) {
@@ -1106,8 +1097,8 @@
 
         renderBalance();
         new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Týždeň 0', 'Týždeň 2', 'Týždeň 4', 'Týždeň 6', 'Týždeň 8', 'Týždeň 10', 'Týždeň 12'], datasets: [{ label: 'Mierny deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Drastická diéta a jojo efekt', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Hmotnosť (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
-        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Šalát', 'Zemiaky', 'Ovocie', 'Ryža', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množstvo jedla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'gramy jedla' } } } } });
-        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [85, 165, 68, 82, 88], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 50, suggestedMax: 180, title: { display: true, text: 'mg/dl' } } } } });
+        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Šalát', 'Zemiaky', 'Ovocie', 'Ryža', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množstvo jedla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Hmotnosť jedla (g)' } } } } });
+        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Čas' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
         new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánok (8 h)', 'Bdelosť (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       });
     </script>

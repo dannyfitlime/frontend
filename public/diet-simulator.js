@@ -547,6 +547,10 @@ const COMPLEX_MEALS = [
 const LOCALE_COPY = {
     sk: {
         emptyChartPrompt: "Kliknite na jedlo",
+        simulator: {
+            showSolution: "Ukazat riesenie",
+            portionWeight: "Hmotnost porcie"
+        },
         foods: {
             chicken: "Kuracie",
             rice: "Ryza",
@@ -594,6 +598,10 @@ const LOCALE_COPY = {
     },
     en: {
         emptyChartPrompt: "Click a food",
+        simulator: {
+            showSolution: "Show solution",
+            portionWeight: "Portion weight"
+        },
         foods: {
             chicken: "Chicken",
             rice: "Rice",
@@ -638,6 +646,13 @@ const LOCALE_COPY = {
             "Yogurt panna cotta",
             "Banana smoothie"
         ]
+    }
+};
+
+LOCALE_COPY.cs = {
+    simulator: {
+        showSolution: "Ukázat řešení",
+        portionWeight: "Hmotnost porce"
     }
 };
 
@@ -694,6 +709,11 @@ const BASE_COMPLEX_MEAL_NAMES = COMPLEX_MEALS.map((item) => item.name);
 let ACTIVE_LOCALE = "cs";
 let EMPTY_CHART_PROMPT = "Klepn\u011bte na j\u00eddlo";
 
+function getSimulatorUiCopy() {
+    const localeCopy = LOCALE_COPY[ACTIVE_LOCALE] || LOCALE_COPY.cs;
+    return localeCopy?.simulator || LOCALE_COPY.cs.simulator;
+}
+
 function applyLocaleCopy(locale) {
     ACTIVE_LOCALE = normalizeLocale(locale);
     const localeCopy = LOCALE_COPY[ACTIVE_LOCALE] || null;
@@ -718,28 +738,38 @@ function applyLocaleCopy(locale) {
         item.name = BASE_COMPLEX_MEAL_NAMES[idx];
     });
 
-    if (localeCopy) {
+    if (localeCopy?.foods) {
         Object.entries(localeCopy.foods).forEach(([key, value]) => {
             if (DIET_FOODS[key]) DIET_FOODS[key].name = value;
         });
+    }
+    if (localeCopy?.nuts) {
         localeCopy.nuts.forEach((value, idx) => {
             if (DIET_NUTS[idx]) DIET_NUTS[idx].label = value;
         });
+    }
+    if (localeCopy?.categories) {
         localeCopy.categories.forEach((value, idx) => {
             if (COMPLEX_CATEGORIES[idx]) COMPLEX_CATEGORIES[idx].label = value;
         });
+    }
+    if (localeCopy?.day) {
         localeCopy.day.forEach((value, idx) => {
             if (STATIC_DATA.day[idx]) {
                 STATIC_DATA.day[idx].name = value.name;
                 STATIC_DATA.day[idx].desc = value.desc;
             }
         });
+    }
+    if (localeCopy?.week) {
         localeCopy.week.forEach((value, idx) => {
             if (STATIC_DATA.week[idx]) {
                 STATIC_DATA.week[idx].name = value.name;
                 STATIC_DATA.week[idx].desc = value.desc;
             }
         });
+    }
+    if (localeCopy?.complexMeals) {
         localeCopy.complexMeals.forEach((value, idx) => {
             if (COMPLEX_MEALS[idx]) COMPLEX_MEALS[idx].name = value;
         });
@@ -755,6 +785,13 @@ function applyLocaleCopy(locale) {
 
 function refreshComplexMealLocalization() {
     applyLocaleCopy(detectLocale());
+    const simulatorUi = getSimulatorUiCopy();
+    document.querySelectorAll("#dietAutoSelect").forEach((btn) => {
+        btn.textContent = simulatorUi.showSolution;
+    });
+    document.querySelectorAll('label[for="portionSlider"]').forEach((label) => {
+        label.textContent = simulatorUi.portionWeight;
+    });
     document.querySelectorAll(".ps-food-btn").forEach((btn) => {
         const key = btn.getAttribute("data-key");
         const nameEl = btn.querySelector(".name");
@@ -948,7 +985,8 @@ export function initDietSimulator() {
     const slider = document.querySelector(".ps-simulator-controls .ps-mini-slider") || document.getElementById("portionSlider");
     const portionVal = document.querySelector(".ps-simulator-controls .ps-mini-portion-header span") || document.getElementById("portionValue");
     const portionLabel = document.querySelector(".ps-simulator-controls .ps-mini-portion-header label");
-    if (portionLabel) portionLabel.textContent = "Hmotnost porce";
+    const simulatorUi = getSimulatorUiCopy();
+    if (portionLabel) portionLabel.textContent = simulatorUi.portionWeight;
     if (slider) {
         slider.addEventListener("input", (e) => {
             STATE.portionWeight = parseInt(e.target.value, 10);
@@ -962,7 +1000,7 @@ export function initDietSimulator() {
 
     const autoBtn = document.querySelector(".ps-simulator-controls .ps-mini-btn") || document.getElementById("dietAutoSelect");
     if (autoBtn) {
-        autoBtn.textContent = "Ukázat řešení";
+        autoBtn.textContent = simulatorUi.showSolution;
         autoBtn.addEventListener("click", () => {
             STATE.selected.clear();
             document.querySelectorAll('.ps-food-btn').forEach(btn => {

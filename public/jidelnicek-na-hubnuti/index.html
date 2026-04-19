@@ -133,27 +133,7 @@
         border-radius: 12px;
         border: 1px solid var(--seo-line);
         margin-top: 16px;
-      }
-
-      .seo-text-link {
-        color: #0f5132;
-        font-weight: 700;
-        text-decoration-line: underline;
-        text-decoration-color: rgba(15, 81, 50, 0.35);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 0.22em;
-        transition: color 0.2s ease, text-decoration-color 0.2s ease;
-      }
-
-      .seo-text-link:hover {
-        color: #0b3d27;
-        text-decoration-color: rgba(11, 61, 39, 0.7);
-      }
-
-      .seo-text-link:focus-visible {
-        outline: 2px solid rgba(15, 81, 50, 0.22);
-        outline-offset: 3px;
-        border-radius: 4px;
+        margin-bottom: 16px;
       }
 
       .balance-lab {
@@ -696,11 +676,9 @@
 
     <section class="seo-hero">
       <article class="seo-card seo-hero-card fade-in">
-        <div class="seo-eyebrow">Edukativní průvodce</div>
+        <div class="seo-eyebrow">Průvodce zdravým jídelníčkem</div>
         <h1>Hubnutí bez chaosu</h1>
-        <p class="seo-lead">Je snadné se ztratit v záplavě drastických diet a zaručených rad. Vysvětlíme si, jak funguje
-          stabilní, racionální a hlavně udržitelný přístup k hubnutí bez zázraků, jen s použitím selského rozumu a
-          biologie.</p>
+        <p class="seo-lead">V současnosti je snadné ztratit se v množství extrémních dietních přístupů a neověřených doporučení. V tomto textu se zaměříme na principy racionálního, dlouhodobě udržitelného přístupu k redukci hmotnosti, vycházejícího z poznatků biologie a fyziologie.</p>
       </article>
     </section>
 
@@ -711,27 +689,27 @@
           energie během dne, váha roste. Naopak když je výdej o něco vyšší než příjem, vzniká prostor pro hubnutí.
           Tato ukázka je zjednodušeným příkladem, který vychází z běžného dne, kdy jsou základní energetické potřeby
           těla (BMR) pokryty. Více o energetických potřebách těla se dozvíte v článku <a
-            href="/zdravy-jidelnicek/index.html" class="seo-text-link">Zdravý jídelníček</a>.</p>
+            href="/zdravy-jidelnicek/index.html" class="seo-page-link">Zdravý jídelníček</a>.</p>
         <div class="balance-lab">
           <div class="balance-controls">
             <div class="balance-choice-list" id="balanceChoices">
-              <button type="button" class="balance-chip" data-group="food" data-kcal="365" data-emoji="🍟"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="1530" data-emoji="🍟"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍟</span><span
                       class="balance-chip-label">Hranolky</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="food" data-kcal="120" data-emoji="🥗"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="500" data-emoji="🥗"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🥗</span><span
                       class="balance-chip-label">Salát</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="food" data-kcal="80" data-emoji="🍎"><span
+              <button type="button" class="balance-chip" data-group="food" data-kj="330" data-emoji="🍎"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍎</span><span
                       class="balance-chip-label">Jablko</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="activity" data-kcal="260" data-emoji="🏃"><span
+              <button type="button" class="balance-chip" data-group="activity" data-kj="1090" data-emoji="🏃"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🏃</span><span
                       class="balance-chip-label">Běh</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="activity" data-kcal="220" data-emoji="🏋️"><span
+              <button type="button" class="balance-chip" data-group="activity" data-kj="920" data-emoji="🏋️"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🏋️</span><span
                       class="balance-chip-label">Posilovna</span></span></span></button>
@@ -751,14 +729,14 @@
               <div class="balance-pan left" id="foodPan">
                 <div class="balance-pan-bowl">
                   <strong>Jídlo</strong>
-                  <span id="foodTotal">0 kcal</span>
+                  <span id="foodTotal">0 kJ</span>
                   <div class="balance-pan-items" id="foodIcons"></div>
                 </div>
               </div>
               <div class="balance-pan right" id="activityPan">
                 <div class="balance-pan-bowl">
                   <strong>Aktivita</strong>
-                  <span id="activityTotal">0 kcal</span>
+                  <span id="activityTotal">0 kJ</span>
                   <div class="balance-pan-items" id="activityIcons"></div>
                 </div>
               </div>
@@ -785,13 +763,14 @@
               pravděpodobnost jojo efektu.</div>
           </div>
           <div>
+            <h3 style="margin:0 0 12px 36px;">Graf porovnání mírného deficitu a drastické diety</h3>
             <div class="edu-chart-md"><canvas id="weightLossChart"></canvas></div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Proč nefunguje lokální hubnutí</h2>
+        <h2>Proč nemůžeme zhubnout jen tuk na břiše?</h2>
         <p>Dělat denně stovky sklapovaček nepovede k úbytku tuku izolovaně pouze na břiše. Tělo spaluje tukové zásoby
           komplexně po celém těle a pořadí je z velké části dáno genetikou a hormonálním nastavením.</p>
         <div class="seo-grid">
@@ -855,7 +834,7 @@
                   <path d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
-              <h3 style="color:#830000; margin:0;">Jen cardio</h3>
+              <h3 style="color:#830000; margin:0;">Jen kardio</h3>
             </div>
             <p>Kardio je užitečné, ale bez rozumného příjmu a silového tréninku se výsledek často zastaví dřív, než
               čekáte.</p>
@@ -867,17 +846,24 @@
         <h2>Proč nehubnu, i když jím málo?</h2>
         <p>Častým problémem není jen množství jídla, ale <strong>energetická hustota</strong>. Stejných 1 000 kJ může
           mít úplně jiný objem, jinou sytivost a jiný dopad na další hlad během dne.</p>
+        <h3 style="margin:0 0 12px;">Graf porovnání hmotnosti jídla při stejném energetickém obsahu (1000 kJ)</h3>
         <div class="edu-chart-lg" style="height: 380px;"><canvas id="foodCompareChart"></canvas></div>
-        <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">Co z toho plyne:</strong>Salát,
+                <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">Co z toho plyne:</strong>Salát,
           brambory nebo ovoce mohou při stejném energetickém obsahu zaplnit talíř i žaludek výrazně víc než cola,
           čokoláda nebo bílá rýže. Hubnutí proto není jen o tom jíst méně, ale jíst chytřeji.</div>
+        <p><strong>Roli hraje i metabolická flexibilita.</strong> Když je jídelníček dlouhodobě postavený hlavně na
+          rychlých sacharidech, častém uzobávání a velkých výkyvech energie, tělo hůř přepíná mezi využíváním
+          glukózy a tuku jako zdroje paliva. V praxi to pak často vypadá tak, že člověk sice „nejí moc“, ale má brzo
+          hlad, méně energie na pohyb a hůř drží režim dlouhodobě. Zároveň platí, že pokud někdo 20 nebo 30 let
+          fungoval bez pohybu a bez pevného režimu, za dva dny se nic zásadního nestane. Tělo obvykle potřebuje týdny
+          a měsíce konzistentních návyků, ne pár rychlých pokusů.</p>
       </section>
 
       <section class="seo-section fade-in">
         <h2>Neustálá chuť na sladké</h2>
         <div class="edu-flex-row">
           <div>
-            <p>Viníkem často nebývá slabá vůle, ale prudké kolísání glukózy v krvi. Typicky po sladké snídani nebo
+            <p>Viníkem často nebývá slabá vůle, ale výrazné kolísání glukózy v krvi. Typicky po sladké snídani nebo
               rychlém snacku vystřelí energie nahoru a krátce nato přijde propad.</p>
             <p>Ten se projeví únavou, zhoršeným soustředěním a chutí na další rychlý cukr. Tělo si neříká o disciplínu,
               ale o stabilnější zdroj energie.</p>
@@ -889,25 +875,26 @@
               sytosti vydrží déle.
             </div>
             <p><strong>Doporučená literatura:</strong> <a href="https://share.google/qRSN5eN642gmVtwXP"
-                class="seo-text-link" target="_blank" rel="noopener noreferrer">Glucose Revolution (Pravda o cukru)</a>
+                class="seo-page-link" target="_blank" rel="noopener noreferrer">Glucose Revolution (Pravda o cukru)</a>
               od Jessie Inchauspé.</p>
           </div>
+          <div>
+            <h3 style="margin:0 0 12px;">Kolísání glukózy během dne</h3>
             <div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Když slevíte na spánku, budete jíst</h2>
+        <h2>Když omezíte spánek, poroste chuť k jídlu</h2>
         <div class="edu-flex-row">
           <div>
             <div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div>
           </div>
           <div>
-            <p>Cílovou zónou je <strong>7 až 9 hodin kvalitního spánku</strong>. Nedostatek odpočinku mění hlad, sytost
-              i schopnost rozhodovat se rozumně během dne.</p>
-            <p>Leptin klesá, ghrelin roste a mozek unaveného člověka přirozeně sahá po rychlé energii. Proto je spánek v
-              redukci mnohem důležitější, než si většina lidí připouští.</p>
+            <p>Cílovou zónou je <strong>7 až 9 hodin kvalitního spánku</strong>. Nedostatek odpočinku ale narušuje přirozené signály hladu a sytosti a zároveň zhoršuje schopnost dělat rozumná rozhodnutí během dne.</p>
+            <p>Když jste nevyspaní, tělo vás začne „tlačit“ k jídlu — častěji máte hlad, hůř se zasytíte a mnohem víc vás to táhne k rychlé energii, jako jsou sladké nebo kalorické potraviny. Zároveň klesá vůle odolávat těmto chutím.</p>
+            <p>Proto je spánek při hubnutí často důležitější, než si většina lidí uvědomuje.</p>
           </div>
         </div>
       </section>
@@ -923,7 +910,7 @@
           </article>
           <article class="seo-mini-card">
             <h3>Schody a běžný pohyb</h3>
-            <p>NEAT, tedy běžná aktivita během dne, bývá podceňovaný. Přitom právě ten často rozhoduje o rozdílu mezi
+            <p>Běžná aktivita během dne, bývá podceňována. Přitom právě ta často rozhoduje o rozdílu mezi
               stagnací a pokrokem.</p>
           </article>
           <article class="seo-mini-card">
@@ -945,11 +932,10 @@
         <div class="seo-grid">
           <article class="seo-mini-card">
             <h3>Nedosažitelné podmínky</h3>
-            <p>Světlo, pumpa, dehydratace i úhel fotky umí vytvořit iluzi výsledku, který ve skutečnosti netrvá celý
-              rok.</p>
+            <p>Výsledný vzhled často ovlivňuje světl v místnosti, napumpování svalů, míra hydratace nebo úhel focení. To vše může vytvořit dojem formy, která není dlouhodobě udržitelná.</p>
           </article>
           <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">Extrém není zdraví</h3>
+            <h3 style="color:var(--seo-accent);">Limity extrémních přístupů ke stravování</h3>
             <p>Příliš nízké procento tuku může podkopat energii, hormony, náladu i regeneraci. Dobrý cíl je takový,
               který jde opravdu žít.</p>
           </article>
@@ -1034,27 +1020,27 @@
         const choiceButtons = document.querySelectorAll('.balance-chip');
 
         const renderBalance = () => {
-          let foodKcal = 0;
-          let activityKcal = 0;
+          let foodKj = 0;
+          let activityKj = 0;
           const foodIcons = [];
           const activityIcons = [];
 
           choiceButtons.forEach((button) => {
             if (!button.classList.contains('active')) return;
-            const kcal = Number(button.dataset.kcal || 0);
+            const kj = Number(button.dataset.kj || 0);
             const emoji = button.dataset.emoji || '';
             if (button.dataset.group === 'food') {
-              foodKcal += kcal;
+              foodKj += kj;
               foodIcons.push(emoji);
             }
             if (button.dataset.group === 'activity') {
-              activityKcal += kcal;
+              activityKj += kj;
               activityIcons.push(emoji);
             }
           });
 
-          const delta = foodKcal - activityKcal;
-          const clampedTilt = Math.max(-14, Math.min(14, delta / 35));
+          const delta = foodKj - activityKj;
+          const clampedTilt = Math.max(-14, Math.min(14, delta / 150));
           const visualAngle = -clampedTilt;
           const angleRad = (visualAngle * Math.PI) / 180;
           const halfBeam = beam.offsetWidth / 2;
@@ -1065,8 +1051,8 @@
           foodPan.style.transform = `translate(${-panAnchorOffset}px, ${verticalShift}px)`;
           activityPan.style.transform = `translate(${panAnchorOffset}px, ${-verticalShift}px)`;
 
-          const foodText = `${foodKcal} kcal`;
-          const activityText = `${activityKcal} kcal`;
+          const foodText = `${foodKj} kJ`;
+          const activityText = `${activityKj} kJ`;
           foodTotalEl.textContent = foodText;
           activityTotalEl.textContent = activityText;
           foodIconsEl.innerHTML = foodIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
@@ -1077,10 +1063,10 @@
 
           if (foodIcons.length === 0 && activityIcons.length === 0) {
             outcomeText = 'Vyberte alespoň jedno jídlo nebo aktivitu.';
-          } else if (delta > 120) {
+          } else if (delta > 500) {
             outcomeClass = 'surplus';
             outcomeText = 'Přibírání na váze';
-          } else if (delta < -120) {
+          } else if (delta < -500) {
             outcomeClass = 'deficit';
             outcomeText = 'Hubnutí';
           } else if (delta < 0) {
@@ -1104,8 +1090,8 @@
 
         renderBalance();
         new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Týden 0', 'Týden 2', 'Týden 4', 'Týden 6', 'Týden 8', 'Týden 10', 'Týden 12'], datasets: [{ label: 'Mírný deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Drastická dieta a jojo efekt', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Hmotnost (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
-        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salát', 'Brambory', 'Ovoce', 'Rýže', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množství jídla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'gramy jídla' } } } } });
-        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [85, 165, 68, 82, 88], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { y: { suggestedMin: 50, suggestedMax: 180, title: { display: true, text: 'mg/dl' } } } } });
+        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salát', 'Brambory', 'Ovoce', 'Rýže', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množství jídla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Hmotnost jída (g)' } } } } });
+        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Čas' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
         new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánek (8 h)', 'Bdělost (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       });
     </script>

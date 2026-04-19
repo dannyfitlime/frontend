@@ -25,9 +25,9 @@
       "title_rotating": [
         "for more energy",
         "for better sleep",
-        "for breaking records",
-        "for more joy in everyday life",
-        "for you"
+        "for pushing your limits",
+        "for more joy",
+        "for you!"
       ],
       "title_aria": "Personalized meal plan for you",
       "title": "Personalized meal & training plan",
@@ -191,7 +191,7 @@
     },
     "coverage": {
       "title": "What the meal plan covers",
-      "intro": "A complete overview of all key nutrients and food groups:",
+      "intro": "The FitLime meal plan covers all key macronutrients, micronutrients, and vitamins your body needs. You can read how we combine the individual parts into a balanced plan <a href=\"/how-fitlime-works/index.html\" class=\"diet-link\">here</a>.",
       "boxes": {
         "energy": {
           "title": "Energy and macronutrients",
@@ -218,9 +218,9 @@
           "title": "Types of fats",
           "subtitle": "Different types of fat and their roles in nutrition.",
           "items": {
-            "satu": "<b>Saturated fats</b> - energy source",
-            "mono": "<b>Monounsaturated fats</b> - heart health",
-            "poly": "<b>Polyunsaturated fats</b> - omega-3 and omega-6 fatty acids",
+            "satu": "<b>Saturated fats (SFA)</b> - energy source",
+            "mono": "<b>Monounsaturated fats (MUFA)</b> - heart health",
+            "poly": "<b>Polyunsaturated fats (PUFA)</b> - omega-3 and omega-6 fatty acids",
             "chole": "<b>Cholesterol</b> - hormone production"
           }
         },
