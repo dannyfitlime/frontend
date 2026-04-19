@@ -102,9 +102,11 @@
       .checklist li { padding: 8px 12px; border: 2px solid #005003; border-radius: 8px; background: #fff; transition: transform 0.2s ease; display: flex; align-items: center; gap: 8px; }
       .checklist li:hover { transform: translateY(-1px); }
       .timing-meal-grid { align-items: stretch; }
-      .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-      .compare-table th, .compare-table td { padding: 14px 16px; border-bottom: 1px solid var(--seo-line); text-align: left; }
-      .compare-table th { background: var(--seo-soft); }
+      .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; margin-top: 20px; }
+      .compare-table th, .compare-table td { padding: 16px 22px; border-bottom: 1px solid var(--seo-line); text-align: left; vertical-align: top; }
+      .compare-table th { background: var(--seo-soft); font-weight: 800; }
+      .compare-table th:first-child, .compare-table td:first-child { width: 24%; padding-right: 32px; font-weight: 700; color: #111827; background: linear-gradient(90deg, rgba(15, 81, 50, 0.06) 0%, rgba(15, 81, 50, 0.01) 100%); }
+      .compare-table th:nth-child(2), .compare-table td:nth-child(2) { padding-left: 30px; }
       .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
       .fade-in.visible { opacity: 1; transform: translateY(0); }
       .meal-card { background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); padding: 28px; border-radius: 18px; border: 1px solid rgba(17, 24, 39, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; box-shadow: 0 16px 40px rgba(15, 81, 50, 0.08); position: relative; overflow: hidden; }
@@ -366,12 +368,13 @@
         <table class="compare-table">
           <thead><tr><th>Parametr</th><th>Silový sport</th><th>Vytrvalostní sport</th></tr></thead>
           <tbody>
-            <tr><td>Bílkoviny</td><td>1,2 až 1,7 g/kg</td><td>1,0 až 1,5 g/kg</td></tr>
+            <tr><td>Bílkoviny*</td><td>1,2 až 1,7 g/kg</td><td>1,0 až 1,5 g/kg</td></tr>
             <tr><td>Sacharidy</td><td>Střední příjem dle objemu a intenzity tréninku</td><td>Hlavní zdroj energie</td></tr>
             <tr><td>Tuky</td><td>Stabilní základ příjmu energie</td><td>Stabilní základ příjmu energie</td></tr>
             <tr><td>Priorita</td><td>Podpora regenerace, svalového růstu a síly</td><td>Udržení výkonu, oddálení únavy a doplnění energie</td></tr>
           </tbody>
         </table>
+        <p class="seo-note">* Hodnoty představují doporučený denní příjem bílkovin vztažený k tělesné hmotnosti.</p>
       </section>
 
       <section class="seo-section fade-in">
