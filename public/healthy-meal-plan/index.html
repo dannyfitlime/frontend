@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="seoPages.healthy.metaTitle">Healthy Meal Plan in Depth | FitLime</title>
-  <meta name="description" data-i18n-content="seoPages.healthy.metaDescription" content="What should a healthy meal plan include? Learn the basics of balanced nutrition, smart macro combinations, and practical habits for steady energy throughout the day.">
+  <title>Healthy meal plan tailored to you | FitLime</title>
+  <meta name="description" content="Learn what a healthy meal plan should include, how to balance nutrients, and how to estimate BMR in a practical calculator for better energy throughout the day.">
   <link rel="canonical" href="https://fitlime.eu/healthy-meal-plan/">
   <link rel="alternate" hreflang="cs" href="https://fitlime.cz/zdravy-jidelnicek/">
   <link rel="alternate" hreflang="sk" href="https://fitlime.sk/zdravy-jedalnicek/">
   <link rel="alternate" hreflang="en" href="https://fitlime.eu/healthy-meal-plan/">
   <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/healthy-meal-plan/">
-  <meta property="og:title" data-i18n-content="seoPages.healthy.ogTitle" content="Healthy Meal Plan in Depth | FitLime">
-  <meta property="og:description" data-i18n-content="seoPages.healthy.ogDescription" content="A practical healthy meal plan for better energy and sustainable eating.">
+  <meta property="og:title" content="Healthy meal plan tailored to you | FitLime">
+  <meta property="og:description" content="A practical healthy meal plan tailored to you for better energy and sustainable eating.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.eu/healthy-meal-plan/">
   <meta property="og:image" content="https://fitlime.eu/images/og-fitlime_en.jpg">
@@ -32,7 +32,7 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What does a personalized healthy meal plan mean?",
+        "name": "What does a healthy meal plan tailored to you mean?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "It is a plan that takes your goal, daily routine, activity, preferences, and practical long-term sustainability into account."
@@ -125,9 +125,9 @@
 
     <section class="seo-hero">
       <article class="seo-card seo-hero-card fade-in">
-        <div class="seo-eyebrow" data-i18n="seoPages.healthy.hero.eyebrow">Educational guide</div>
-        <h1 data-i18n="seoPages.healthy.hero.title">Healthy eating and nutrition in depth</h1>
-        <p class="seo-lead" data-i18n="seoPages.healthy.hero.lead">A healthy meal plan is not about perfection. It has to work at work, at home, and within the pace of a normal day. Understand how much energy you actually need, how macronutrients work, what sleep does to your hunger, and why stress or alcohol affect your plan more than most people expect.</p>
+        <div class="seo-eyebrow">Educational guide</div>
+        <h1>Healthy meal planning and nutrition in depth</h1>
+        <p class="seo-lead">A healthy meal plan is not about perfection. It has to work at work, at home, and within the pace of a normal day. Understand how much energy you actually need, how macronutrients work, what sleep does to your hunger, and why stress or alcohol affect your plan more than most people expect.</p>
       </article>
     </section>
 
@@ -135,12 +135,13 @@
       <section class="seo-section fade-in">
         <h2>Where does your energy go during the day?</h2>
         <p>People often overestimate the role of training itself and underestimate the energy the body burns simply by functioning, digesting, moving around the house, or sitting through an office day.</p>
+        <p><strong>BMR</strong> is basal metabolic rate, meaning the energy your body needs for basic functioning at rest. <strong>Daily activity expenditure</strong> refers to normal daily movement outside targeted exercise, such as walking, standing, or doing things around the house.</p>
         <div class="edu-flex-row">
           <div><div class="edu-chart-md"><canvas id="bmrChart"></canvas></div></div>
           <div>
             <ul>
               <li><strong>BMR (including the thermic effect) 50-80%:</strong> basic organ function, breathing, temperature regulation, nervous system activity, and digestion.</li>
-              <li><strong>Daily movement / NEAT 5-20%:</strong> everyday movement outside training, walking, housework, standing, and carrying things.</li>
+              <li><strong>Daily activity expenditure 5-20%:</strong> normal movement outside training, walking, housework, standing, and carrying things.</li>
               <li><strong>Sport 5-40%:</strong> the share of total energy expenditure depends on intensity and activity type, from minimal movement to very high output in professional athletes.</li>
             </ul>
           </div>
@@ -149,7 +150,7 @@
 
       <section class="seo-section fade-in">
         <h2>BMR and daily activity calculator</h2>
-        <p><strong>BMR</strong> is the energy you use at rest. <strong>Daily activity expenditure</strong> already includes your normal movement. These numbers are the baseline for deciding how much food makes sense for weight loss, maintenance, or muscle gain.</p>
+        <p><strong>BMR</strong> is the energy you use at rest. <strong>Daily activity expenditure</strong> already includes your normal movement. These values are the baseline for deciding how much food makes sense for weight loss, maintenance, or muscle gain.</p>
         <div class="bmr-calc">
           <div class="bmr-calc-grid">
             <label>Gender<select id="calc-gender"><option value="m">Male</option><option value="f">Female</option></select></label>
@@ -161,10 +162,10 @@
             <label>Units<select id="calc-unit"><option value="kcal" selected>kcal</option><option value="kj">kJ</option></select></label>
           </div>
           <button type="button" class="bmr-calc-btn" id="bmr-calc-btn">Calculate recommendation</button>
-          <p class="bmr-calc-note">Activity is estimated automatically based on movement level and steps. The default display uses kcal, but you can switch to kJ.</p>
+          <p class="bmr-calc-note">Activity is estimated automatically based on movement level and step count. The default display uses kcal, but you can switch to kJ.</p>
           <div id="bmr-result" class="bmr-result">
             <div class="bmr-result-row"><span class="bmr-result-label">BMR</span><span class="bmr-result-value" id="res-bmr">-</span></div>
-            <div class="bmr-result-row"><span class="bmr-result-label">Daily activity</span><span class="bmr-result-value" id="res-tdee">-</span></div>
+            <div class="bmr-result-row"><span class="bmr-result-label">Daily activity expenditure</span><span class="bmr-result-value" id="res-tdee">-</span></div>
             <div class="bmr-result-row highlighted"><span class="bmr-result-label" id="res-goal-label">Recommended daily intake</span><span class="bmr-result-value" id="res-goal">-</span></div>
           </div>
         </div>
@@ -174,37 +175,31 @@
         <h2>Macronutrients made simple</h2>
         <p>You do not need to memorize every number. It is enough to understand what each macronutrient does and how to fit it into a normal day in a practical way.</p>
         <div class="seo-grid macro-grid" style="margin-top: 20px;">
-          <article class="macro-card"><span class="macro-badge" style="background:#dbeafe; color:#1d4ed8;">1 g = 17 kJ</span><h3>Protein</h3><p>Supports fullness, recovery, and muscle retention. It matters during fat loss and in normal maintenance as well.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Good sources:</strong> eggs, skyr, cottage cheese, meat, fish, tofu, legumes</div></article>
-          <article class="macro-card"><span class="macro-badge" style="background:#fef3c7; color:#92400e;">1 g = 38 kJ</span><h3>Fat</h3><p>Supports hormones, vitamin absorption, and the nervous system. The issue is rarely fat itself, but uncontrolled amounts and poor-quality sources.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Good sources:</strong> olive oil, nuts, avocado, salmon, seeds</div></article>
-          <article class="macro-card"><span class="macro-badge" style="background:#dcfce7; color:#166534;">1 g = 17 kJ</span><h3>Carbohydrates</h3><p>They are quick-access fuel for both the brain and muscles. They are not the enemy when the amount and timing make sense.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">Good sources:</strong> oats, rice, potatoes, fruit, whole-grain sides</div></article>
+          <article class="macro-card"><span class="macro-badge" style="background:#dbeafe; color:#1d4ed8;">1 g = 17 kJ</span><h3>Protein</h3><p>Supports fullness, recovery, and muscle retention. It matters during fat loss and in normal maintenance as well.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">What to eat:</strong> eggs, yogurt, cottage cheese, meat, fish, tofu, legumes</div></article>
+          <article class="macro-card"><span class="macro-badge" style="background:#fef3c7; color:#92400e;">1 g = 38 kJ</span><h3>Fat</h3><p>Supports hormones, vitamin absorption, and the nervous system. The issue is rarely fat itself, but uncontrolled amounts and poor-quality sources.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">What to eat:</strong> olive oil, nuts, hummus, avocado, salmon, seeds</div></article>
+          <article class="macro-card"><span class="macro-badge" style="background:#dcfce7; color:#166534;">1 g = 17 kJ</span><h3>Carbohydrates</h3><p>They are quick-access fuel for both the brain and muscles. They are not the enemy when the amount and timing make sense.</p><div class="edu-fact-box" style="margin-top: 12px; padding: 12px 16px;"><strong style="font-size:0.85rem;">What to eat:</strong> oats, rice, potatoes, fruit, whole-grain sides</div></article>
         </div>
       </section>
 
       <section class="seo-section fade-in macro-balance-section">
         <h2>How to build a healthy meal plan</h2>
-        <p>There is no single perfect split for everyone. As a starting point for normal maintenance, a simple ratio often works well, then you adjust it according to your goal, sport, and routine.</p>
+        <p>There is no single universal split that works for everyone. As a starting model for normal maintenance, a simple ratio often works well, then you adjust it according to your goal, sport, and daily routine.</p>
         <div class="edu-flex-row">
           <div><div class="edu-chart-md"><canvas id="macroChart"></canvas></div></div>
           <div>
-            <p class="macro-balance-copy">There is no universal distribution that fits everybody. It is better to work with a range and then adjust it based on your goal, sport, and daily structure.</p>
+            <p class="macro-balance-copy">There is no single universal distribution that fits everybody. It is better to work with a range and then adjust it based on your goal, sport, and daily structure.</p>
             <ul class="macro-balance-list">
-              <li><strong>Carbohydrates 50 to 60%:</strong> cover daily energy needs, performance, and glycogen replenishment.</li>
-              <li><strong>Fat 25 to 35%:</strong> supports hormonal balance, the nervous system, and vitamin absorption.</li>
+              <li><strong>Carbohydrates 50 to 60%:</strong> cover daily energy needs, performance during the day, and glycogen replenishment.</li>
+              <li><strong>Fat 20 to 35%:</strong> supports hormonal balance, the nervous system, and vitamin absorption.</li>
               <li><strong>Protein 10 to 20%:</strong> supports fullness, recovery, and meal structure.</li>
             </ul>
             <div class="edu-fact-box macro-balance-note"><strong style="display:block; margin-bottom:6px;">In practice:</strong>Try to think of each larger meal as a carbohydrate source, a protein source, and a smaller portion of quality fats. That keeps you within a sensible framework without tracking every gram.</div>
-            <ul>
-              <li><strong>30% protein:</strong> helps fullness and keeps meals structured.</li>
-              <li><strong>25% fat:</strong> supports hormonal and neurological balance.</li>
-              <li><strong>45% carbohydrates:</strong> covers normal daily energy and performance.</li>
-            </ul>
-            <div class="edu-fact-box"><strong style="display:block; margin-bottom:6px;">In practice:</strong>Try to picture each bigger meal as a protein, vegetables, and a side. That naturally keeps the framework sensible without constant counting.</div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Principles that work in real life</h2>
+        <h2>Principles for real life</h2>
         <div class="seo-grid principles-grid">
           <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div><h3>Regularity</h3><p>You do not need to eat every two hours, but long blocks of hunger often lead to evening overeating and weaker discipline.</p></article>
           <article class="seo-mini-card"><div class="edu-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg></div><h3>Variety</h3><p>The broader your food selection is across the week, the better the chance you cover micronutrients without complicated planning.</p></article>
@@ -229,7 +224,7 @@
           <div>
             <p>Alcohol carries energy on its own and also makes it harder to control what you eat afterward. On top of that, it worsens recovery, sleep quality, and the overall hormonal environment.</p>
             <ul>
-              <li><strong>Calories:</strong> even a few drinks can easily add the equivalent of a full extra meal.</li>
+              <li><strong>Calories:</strong> even a few drinks can easily add 1,000 to 2,000 kJ on top.</li>
               <li><strong>Hormones:</strong> alcohol increases stress load and slows recovery after a demanding day.</li>
               <li><strong>Sleep:</strong> falling asleep after drinking does not mean good sleep quality. REM sleep is often disrupted.</li>
             </ul>
@@ -252,13 +247,13 @@
         <p>Omega-3 fatty acids are among the best-supported supplements in nutrition. They support the heart, brain, joints, and regulation of inflammatory processes related to recovery and immune function.</p>
         <div class="seo-grid" style="margin-top: 16px;">
           <article class="seo-mini-card"><h3>When they make sense</h3><p>If you do not eat fatty fish regularly, supplementing EPA and DHA can be a practical and sensible step.</p></article>
-          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>What to watch</h3><p>Purity of the source, active ingredient content, and long-term consistency matter more than whatever the label claims in marketing language.</p></article>
+          <article class="seo-mini-card" style="background:var(--seo-soft);"><h3>What to watch</h3><p>Purity of the source, active ingredient content, and long-term consistency matter more than marketing claims on the label.</p></article>
         </div>
         <div class="edu-shop-box">
           <div class="edu-shop-box-media">
             <img src="/images/omega.jpg" alt="Omega-3 supplement">
           </div>
-          <div><strong style="display:block; margin-bottom:6px;">A subtle way to improve your plan</strong>If you are looking for proven supplements to support immunity and recovery, take a look at <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</div>
+          <div><strong style="display:block; margin-bottom:6px;">A subtle tip to improve your meal plan</strong>If you are looking for proven supplements to support immunity and recovery, take a look at <a href="https://www.sportvitalpro.cz/obchod" target="_blank" rel="noopener noreferrer">sportvitalpro.cz/obchod</a>.</div>
         </div>
       </section>
 
@@ -270,13 +265,13 @@
       </section>
 
       <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center;">
-        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;" data-i18n="seoPages.healthy.cta.title">Want a healthy meal plan that still makes sense in a normal day?</h2>
-        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;" data-i18n="seoPages.healthy.cta.lead">FitLime builds a plan around your real situation, not an idealized template. Fill out the form and learn more.</p>
-        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" data-i18n="seoPages.healthy.cta.button" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Fill out the form</a></div>
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Want a healthy meal plan that still makes sense in a normal day?</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">FitLime builds a plan around your real situation, not an idealized template. Fill out the form and learn more.</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html" class="seo-btn seo-btn-primary" style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Fill out the form</a></div>
         <div class="ps-related-articles">
-          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;" data-i18n="seoPages.common.relatedArticles">Related articles:</h3>
-          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/weight-loss-meal-plan/index.html" data-seo-link="weightLoss" class="ps-elegant-link" data-i18n="seoPages.common.links.weightLoss">Weight loss meal plan</a><a href="/sports-meal-plan/index.html" data-seo-link="sports" class="ps-elegant-link" data-i18n="seoPages.common.links.sports">Sports meal plan</a><a href="/how-fitlime-works/index.html" data-seo-link="how" class="ps-elegant-link" data-i18n="seoPages.common.links.how">How FitLime works</a></div>
-          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link" data-i18n="seoPages.common.backHome">Back to homepage</a></div>
+          <h3 style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">Related articles:</h3>
+          <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a href="/weight-loss-meal-plan/index.html" class="ps-elegant-link">Weight loss meal plan</a><a href="/sports-meal-plan/index.html" class="ps-elegant-link">Sports meal plan</a><a href="/how-fitlime-works/index.html" class="ps-elegant-link">How FitLime works</a></div>
+          <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html" class="ps-elegant-link">Back to homepage</a></div>
         </div>
       </section>
     </div>
@@ -326,7 +321,7 @@
       const bdaKcal = bdaKj / 4.184;
       const tdeeKcal = bmrKcal + bdaKcal;
       const goalKcal = tdeeKcal;
-      const goalLabel = 'Estimated daily expenditure without sport';
+      const goalLabel = 'Daily expenditure without sport activity';
       document.getElementById('res-bmr').textContent = formatEnergy(bmrKcal, unit);
       document.getElementById('res-tdee').textContent = formatEnergy(bdaKcal, unit);
       document.getElementById('res-goal').textContent = formatEnergy(goalKcal, unit);
@@ -344,8 +339,8 @@
       if (!window.Chart) return;
       Chart.defaults.font.family = 'system-ui, -apple-system, sans-serif';
       Chart.defaults.color = '#4b5563';
-      new Chart(document.getElementById('bmrChart'), { type: 'bar', data: { labels: ['BMR', 'Daily movement / NEAT', 'Sport'], datasets: [{ label: '%', data: [67, 16, 17], backgroundColor: ['#2563eb', '#059669', '#d97706'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: '% of total expenditure' }, max: 100 } } } });
-      new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Protein 10 to 20%', 'Fat 25 to 35%', 'Carbohydrates 50 to 60%'], datasets: [{ data: [15, 30, 55], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
+      new Chart(document.getElementById('bmrChart'), { type: 'bar', data: { labels: ['BMR', 'Daily activity expenditure', 'Sport'], datasets: [{ label: '%', data: [67, 16, 17], backgroundColor: ['#2563eb', '#059669', '#d97706'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: '% of total expenditure' }, max: 100 } } } });
+      new Chart(document.getElementById('macroChart'), { type: 'doughnut', data: { labels: ['Protein 10 to 20%', 'Fat 20 to 35%', 'Carbohydrates 50 to 60%'], datasets: [{ data: [15, 30, 55], backgroundColor: ['#2563eb', '#d97706', '#059669'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: true, position: 'bottom', labels: { padding: 14, font: { size: 12 } } } }, cutout: '60%' } });
       new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Sleep (8 h)', 'Awake (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
       new Chart(document.getElementById('alcoholChart'), { type: 'bar', data: { labels: ['Beer 500 ml', 'Wine 175 ml', 'Shot 40 ml', 'Cider 330 ml', 'Cocktail 250 ml'], datasets: [{ label: 'kJ', data: [700, 540, 300, 620, 980], backgroundColor: ['#8b5cf6', '#7c3aed', '#6d28d9', '#a78bfa', '#4c1d95'], borderRadius: 6, borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: 'kJ' } } } } });
     });
