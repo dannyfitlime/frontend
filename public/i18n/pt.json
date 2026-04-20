@@ -311,6 +311,8 @@
     },
   "faq": {
     "title": "FAQ - Perguntas Frequentes",
+    "showMore": "Mostrar mais",
+    "showLess": "Mostrar menos",
     "q1": {
       "q": "Como irei receber o plano alimentar?",
       "a": "Iremos enviar o seu plano alimentar por e-mail em formato PDF. Este inclui tabelas claras, gráficos e informações estruturadas para garantir que o plano seja fácil de aplicar na prática."

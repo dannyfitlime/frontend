@@ -318,6 +318,8 @@
     },
   "faq": {
     "title": "FAQ - Frequently Asked Questions",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "q1": {
       "q": "How will I receive the meal plan?",
       "a": "We will deliver your meal plan via email in PDF format. It includes clear tables, charts, and structured information to ensure the plan is easy to work with in practice."

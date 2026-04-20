@@ -318,6 +318,8 @@
     },
     "faq": {
       "title": "FAQ - Často kladené dotazy",
+      "showMore": "Zobrazit více",
+      "showLess": "Zobrazit méně",
       "q1": {
         "q": "Jak jídelníček obdržím?",
         "a": "Jídelníček Vám doručíme e-mailem ve formátu PDF. Součástí jsou přehledné tabulky, grafy a strukturované informace, aby se Vám s plánem dobře pracovalo v praxi."

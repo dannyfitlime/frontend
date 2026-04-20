@@ -2564,6 +2564,10 @@ PRO KOHO JE JÍDELNÍČEK
   gap: 12px;
 }
 
+.faq details[hidden] {
+  display: none;
+}
+
 .faq details {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -2597,6 +2601,39 @@ PRO KOHO JE JÍDELNÍČEK
   content: "–";
 }
 
+
+.faq-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.faq-toggle {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.faq-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+}
+
+.faq-toggle:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.faq-toggle[hidden] {
+  display: none;
+}
 
 /* =========================
    About

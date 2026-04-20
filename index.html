@@ -642,7 +642,7 @@
       <section id="faq" class="features fade-in">
         <div class="home-container">
           <h2 data-i18n="home.faq.title"></h2>
-          <div class="faq">
+          <div class="faq" data-faq-preview-count="6">
             <details>
               <summary data-i18n="home.faq.q1.q"></summary>
               <p data-i18n="home.faq.q1.a"></p>
@@ -699,6 +699,9 @@
               <summary data-i18n="home.faq.q14.q"></summary>
               <p data-i18n="home.faq.q14.a"></p>
             </details>
+          </div>
+          <div class="faq-toggle-wrap">
+            <button type="button" class="faq-toggle" aria-expanded="false"></button>
           </div>
         </div>
       </section>
@@ -1796,6 +1799,44 @@
         });
 
         whyMacroObserver.observe(whyMacroTrigger);
+      }
+
+      const faq = document.querySelector('.faq[data-faq-preview-count]');
+      const faqToggle = document.querySelector('.faq-toggle');
+
+      if (faq && faqToggle) {
+        const faqItems = Array.from(faq.querySelectorAll(':scope > details'));
+        const previewCount = Number(faq.dataset.faqPreviewCount || 6);
+        let isExpanded = false;
+
+        function getI18nValue(path, fallback) {
+          const dict = window.__fitlimeI18n?.dict || {};
+          const fallbackDict = window.__fitlimeI18n?.fallback || {};
+          const resolve = (source) => path.split('.').reduce((acc, key) => acc?.[key], source);
+          return resolve(dict) ?? resolve(fallbackDict) ?? fallback;
+        }
+
+        function renderFaqState() {
+          const showMoreLabel = getI18nValue('home.faq.showMore', 'Zobrazit více');
+          const showLessLabel = getI18nValue('home.faq.showLess', 'Zobrazit méně');
+          faqItems.forEach((item, index) => {
+            const isVisible = isExpanded || index < previewCount;
+            item.hidden = !isVisible;
+            if (!isVisible) item.removeAttribute('open');
+          });
+
+          faqToggle.hidden = faqItems.length <= previewCount;
+          faqToggle.setAttribute('aria-expanded', String(isExpanded));
+          faqToggle.textContent = isExpanded ? showLessLabel : showMoreLabel;
+        }
+
+        faqToggle.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          renderFaqState();
+        });
+
+        window.addEventListener('fitlime:i18n-loaded', renderFaqState);
+        renderFaqState();
       }
     });
   </script>

@@ -311,6 +311,8 @@
     },
   "faq": {
     "title": "FAQ - Domande Frequenti",
+    "showMore": "Mostra di più",
+    "showLess": "Mostra di meno",
     "q1": {
       "q": "Come riceverò il piano alimentare?",
       "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."

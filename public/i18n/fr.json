@@ -311,6 +311,8 @@
     },
   "faq": {
     "title": "FAQ - Häufig gestellte Fragen",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins",
     "q1": {
       "q": "Wie erhalte ich den Ernährungsplan?",
       "a": "Wir senden Ihnen den Ernährungsplan per E-Mail im PDF-Format zu. Er enthält übersichtliche Tabellen, Grafiken und strukturierte Informationen, damit Sie in der Praxis gut mit dem Plan arbeiten können."
