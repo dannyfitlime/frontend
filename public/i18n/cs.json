@@ -287,7 +287,7 @@
       "per_month": "/ měsíc",
       "advantage": "výhodnější",
       "standard": {
-        "title": "🥗 Standard – plnohodnotný (5 dní)",
+        "title": "🥗 Standard (5 dní)",
         "feature1": "Jídelníček na 5 dní (Po–Pá)",
         "feature2": "Unikátní, pestrá jídla",
         "feature3": "Personalizace podle tréninkového deníku",
@@ -298,14 +298,9 @@
       },
       "premium": {
         "badge": "Nejoblíbenější",
-        "title": "✨ Premium – na míru (7 dní)",
+        "title": "✨ Premium (7 dní)",
         "feature1": "Jídelníček na 7 dní (Po–Ne)",
-        "feature2": "Unikátní, pestrá jídla",
-        "feature3": "Personalizace podle tréninkového deníku",
-        "feature4": "Recepty k jednotlivým jídlům",
-        "feature5": "Nákupní seznam",
-        "feature6": "Grafy příjmu a výdeje energie",
-        "feature7": "Edukace k jednotlivým nutrientům",
+        "feature2": "Vše ze Standardu",
         "extra1": "Edukace o výživě ve sportu",
         "extra2": "Doplňky stravy na míru",
         "extra3": "Pitný režim",
@@ -318,6 +313,8 @@
     },
     "faq": {
       "title": "FAQ - Často kladené dotazy",
+      "showMore": "Zobrazit více",
+      "showLess": "Zobrazit méně",
       "q1": {
         "q": "Jak jídelníček obdržím?",
         "a": "Jídelníček Vám doručíme e-mailem ve formátu PDF. Součástí jsou přehledné tabulky, grafy a strukturované informace, aby se Vám s plánem dobře pracovalo v praxi."
@@ -380,7 +377,7 @@
         "title": "Články",
         "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčků a zdravého životního stylu.",
         "descriptions": {
-          "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime🍋‍🟩.",
+          "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime.",
           "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
           "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
           "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
@@ -409,6 +406,15 @@
       }
     },
     "reference": {
+      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít víc energie, víc rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
+      "featured": "Příběh, který stojí za zmínku",
+      "highlights": {
+        "energy": "Více energie během dne",
+        "performance": "Vyšší výkon v tréninku",
+        "recovery": "Lepší regenerace",
+        "sleep": "Kvalitnější spánek"
+      },
+      "cardTitle": "Jak to vidí naši klienti",
       "title": "FitLime Komunita",
       "client1": {
         "text": "„Změnilo nám to pohled na stravování. Máme víc energie během dne.“",
@@ -420,7 +426,7 @@
       },
       "client2": {
         "text": "„Jídla jsou jednoduchá a chutná. Nákupní seznam šetří čas. Cítím se dobře na kole.“",
-        "author": "Hana",
+        "author": "Miki",
         "flags": [
           "de"
         ]
@@ -677,7 +683,7 @@
     "premium_delivery": "Expresní dodání do 2 pracovních dní",
     "details_intro": "Klikněte níže pro podrobné porovnání jednotlivých plánů.",
     "details_title": "Rozbalit podrobnosti plánů",
-    "standard_detail_title": "Standard – plnohodnotný (5 dní)",
+    "standard_detail_title": "Standard (5 dní)",
     "standard_detail1": "Jídelníček na 5 dní (Po–Pá)",
     "standard_detail2": "Unikátní, pestrá jídla",
     "standard_detail3": "Personalizace podle tréninkového deníku",
@@ -685,14 +691,9 @@
     "standard_detail5": "Nákupní seznam",
     "standard_detail6": "Grafy příjmu a výdeje energie",
     "standard_detail7": "Edukace k jednotlivým nutrientům",
-    "premium_detail_title": "Premium – na míru (7 dní)",
+    "premium_detail_title": "Premium (7 dní)",
     "premium_detail1": "Jídelníček na 7 dní (Po–Ne)",
-    "premium_detail2": "Unikátní, pestrá jídla",
-    "premium_detail3": "Personalizace podle tréninkového deníku",
-    "premium_detail4": "Recepty k jednotlivým jídlům",
-    "premium_detail5": "Nákupní seznam",
-    "premium_detail6": "Grafy příjmu a výdeje energie",
-    "premium_detail7": "Edukace k jednotlivým nutrientům",
+    "premium_detail2": "Vše ze Standardu",
     "premium_detail8": "Edukace o výživě ve sportu",
     "premium_detail9": "Doplňky stravy na míru",
     "premium_detail10": "Pitný režim",

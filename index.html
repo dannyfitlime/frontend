@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="cs">
 
 <head>
@@ -599,13 +599,8 @@
               <div class="badge" data-i18n="home.pricing.premium.badge"></div>
               <h3 data-i18n="home.pricing.premium.title"></h3>
               <ul class="features">
-                <li data-i18n="home.pricing.premium.feature1"></li>
-                <li data-i18n="home.pricing.premium.feature2"></li>
-                <li data-i18n="home.pricing.premium.feature3"></li>
-                <li data-i18n="home.pricing.premium.feature4"></li>
-                <li data-i18n="home.pricing.premium.feature5"></li>
-                <li data-i18n="home.pricing.premium.feature6"></li>
-                <li data-i18n="home.pricing.premium.feature7"></li>
+                <li class="feature-strong" data-i18n="home.pricing.premium.feature1"></li>
+                <li class="feature-strong" data-i18n="home.pricing.premium.feature2"></li>
                 <li class="extra" data-i18n="home.pricing.premium.extra1"></li>
                 <li class="extra" data-i18n="home.pricing.premium.extra2"></li>
                 <li class="extra" data-i18n="home.pricing.premium.extra3"></li>
@@ -642,7 +637,7 @@
       <section id="faq" class="features fade-in">
         <div class="home-container">
           <h2 data-i18n="home.faq.title"></h2>
-          <div class="faq">
+          <div class="faq" data-faq-preview-count="6">
             <details>
               <summary data-i18n="home.faq.q1.q"></summary>
               <p data-i18n="home.faq.q1.a"></p>
@@ -699,6 +694,9 @@
               <summary data-i18n="home.faq.q14.q"></summary>
               <p data-i18n="home.faq.q14.a"></p>
             </details>
+          </div>
+          <div class="faq-toggle-wrap">
+            <button type="button" class="faq-toggle" aria-expanded="false"></button>
           </div>
         </div>
       </section>
@@ -784,6 +782,93 @@
       <!-- ===== REFERENCE ===== -->
       <section id="reference" class="carousel-section fade-in">
         <div class="home-container">
+          <div class="community-section-head">
+            <h2 class="community-section-title" data-i18n="home.reference.title">FitLime Komunita</h2>
+          </div>
+
+          <div class="community-shell">
+            <div class="community-intro">
+              <h3 class="community-card-title" data-i18n="home.reference.cardTitle">Nasi klienti</h3>
+              <p class="community-lead" data-i18n="home.reference.lead">Zkušenosti klientů, kteří chtěli jíst lepe, mít víc energie a dlouhodobě zvládat svůj režim bez zbytečných extremů.</p>
+              <div class="community-highlights" aria-label="Temata komunity">
+                <span class="community-pill" data-i18n="home.reference.highlights.energy">Více energie během dne</span>
+                <span class="community-pill" data-i18n="home.reference.highlights.performance">Vyšší výkon</span>
+                <span class="community-pill" data-i18n="home.reference.highlights.recovery">Lepší regenerace</span>
+                <span class="community-pill" data-i18n="home.reference.highlights.sleep">Kvalitnější spánek</span>
+              </div>
+              <div class="community-actions" aria-label="Social media">
+                <a href="https://www.instagram.com/sportvitalpro" class="community-social community-social--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram Sportvitalpro">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.75 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.6A5.4 5.4 0 1 1 6.6 12 5.4 5.4 0 0 1 12 6.6Zm0 1.8A3.6 3.6 0 1 0 15.6 12 3.6 3.6 0 0 0 12 8.4Z"></path>
+                  </svg>
+                </a>
+                <a href="https://www.sportvitalpro.cz" class="community-social community-social--brand" target="_blank" rel="noopener noreferrer" aria-label="SportvitalPro">
+                  <img src="/public/images/logo_sportvitalpro.png" alt="SportvitalPro" class="community-brand-card__logo" loading="lazy" decoding="async" />
+                </a>
+                <a href="https://www.facebook.com/sportvitalpro" class="community-social community-social--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook Sportvitalpro">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M13.4 22v-8.2h2.76l.41-3.2H13.4V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.13A22.3 22.3 0 0 0 14.2 4c-2.47 0-4.17 1.5-4.17 4.27v2.39H7.2v3.2h2.83V22h3.37Z"></path>
+                  </svg>
+                </a>
+                <a href="https://www.youtube.com/@sportvitalpro" class="community-social community-social--youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube Sportvitalpro">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M21.6 7.2a2.9 2.9 0 0 0-2.04-2.05C17.76 4.67 12 4.67 12 4.67s-5.76 0-7.56.48A2.9 2.9 0 0 0 2.4 7.2 30.2 30.2 0 0 0 1.93 12a30.2 30.2 0 0 0 .47 4.8 2.9 2.9 0 0 0 2.04 2.05c1.8.48 7.56.48 7.56.48s5.76 0 7.56-.48a2.9 2.9 0 0 0 2.04-2.05 30.2 30.2 0 0 0 .47-4.8 30.2 30.2 0 0 0-.47-4.8ZM10.1 15.02V8.98L15.32 12l-5.22 3.02Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <article class="community-quote community-quote--featured">
+              <div class="community-quote__media">
+                <img src="/public/images/client1.jpg" alt="Pancho | JJ - client" class="community-quote__avatar" width="750" height="938" loading="lazy" decoding="async" />
+              </div>
+              <div class="community-quote__body">
+                <span class="community-quote__eyebrow" data-i18n="home.reference.featured">Featured story</span>
+                <blockquote data-i18n="home.reference.client1.text"></blockquote>
+                <div class="community-quote__author">
+                  <span data-i18n="home.reference.client1.author"></span>
+                  <div class="community-quote__flags" aria-hidden="true">
+                    <img src="/public/images/flags/cl.svg" alt="Chile" class="flag">
+                    <img src="/public/images/flags/es.svg" alt="Spain" class="flag">
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="community-grid">
+            <article class="community-quote">
+              <div class="community-quote__media community-quote__media--compact">
+                <img src="/public/images/client2.jpg" alt="Miki - client" class="community-quote__avatar" width="1095" height="1369" loading="lazy" decoding="async" />
+              </div>
+              <div class="community-quote__body">
+                <blockquote data-i18n="home.reference.client2.text"></blockquote>
+                <div class="community-quote__author">
+                  <span data-i18n="home.reference.client2.author"></span>
+                  <div class="community-quote__flags" aria-hidden="true">
+                    <img src="/public/images/flags/de.svg" alt="Germany" class="flag">
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="community-quote">
+              <div class="community-quote__media community-quote__media--compact">
+                <img src="/public/images/client3.jpg" alt="David - client" class="community-quote__avatar" width="2406" height="3008" loading="lazy" decoding="async" />
+              </div>
+              <div class="community-quote__body">
+                <blockquote data-i18n="home.reference.client3.text"></blockquote>
+                <div class="community-quote__author">
+                  <span data-i18n="home.reference.client3.author"></span>
+                  <div class="community-quote__flags" aria-hidden="true">
+                    <img src="/public/images/flags/cz.svg" alt="Czech Republic" class="flag">
+                    <img src="/public/images/flags/us.svg" alt="USA" class="flag">
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <h2 data-i18n="home.reference.title"></h2>
 
           <div class="carousel" data-carousel="reference">
@@ -801,7 +886,7 @@
               </article>
 
               <article class="card quote">
-                <img src="/public/images/client2.jpg" alt="Hana – client" class="avatar" width="1095" height="1369"
+                <img src="/public/images/client2.jpg" alt="Miki – client" class="avatar" width="1095" height="1369"
                   loading="lazy" decoding="async" />
                 <blockquote data-i18n="home.reference.client2.text"></blockquote>
                 <div class="author">
@@ -1780,6 +1865,54 @@
         statNodes.forEach(node => statsObserver.observe(node));
       }
 
+      const communityCountNodes = Array.from(document.querySelectorAll('.community-social-count[data-count-to]'));
+      if (communityCountNodes.length) {
+        const renderCommunityCount = (node, value) => {
+          const suffix = node.dataset.countSuffix || '';
+          node.textContent = `${value}${suffix}`;
+        };
+
+        const animateCommunityCount = (node) => {
+          const targetValue = Number(node.dataset.countTo || 0);
+          if (!Number.isFinite(targetValue)) return;
+          if (prefersReducedMotion) {
+            renderCommunityCount(node, targetValue);
+            return;
+          }
+
+          const startAt = performance.now();
+          const duration = 1500;
+
+          function step(now) {
+            const progress = Math.min((now - startAt) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            renderCommunityCount(node, Math.round(targetValue * eased));
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              renderCommunityCount(node, targetValue);
+            }
+          }
+
+          requestAnimationFrame(step);
+        };
+
+        communityCountNodes.forEach(node => renderCommunityCount(node, 0));
+
+        const communityCountsObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const node = entry.target;
+            if (node.dataset.countAnimated === 'true') return;
+            node.dataset.countAnimated = 'true';
+            animateCommunityCount(node);
+            communityCountsObserver.unobserve(node);
+          });
+        }, { threshold: 0.6 });
+
+        communityCountNodes.forEach(node => communityCountsObserver.observe(node));
+      }
+
       const whyMacroTrigger = whyMacroRow || whySection;
 
       if (whyMacroTrigger) {
@@ -1796,6 +1929,44 @@
         });
 
         whyMacroObserver.observe(whyMacroTrigger);
+      }
+
+      const faq = document.querySelector('.faq[data-faq-preview-count]');
+      const faqToggle = document.querySelector('.faq-toggle');
+
+      if (faq && faqToggle) {
+        const faqItems = Array.from(faq.querySelectorAll(':scope > details'));
+        const previewCount = Number(faq.dataset.faqPreviewCount || 6);
+        let isExpanded = false;
+
+        function getI18nValue(path, fallback) {
+          const dict = window.__fitlimeI18n?.dict || {};
+          const fallbackDict = window.__fitlimeI18n?.fallback || {};
+          const resolve = (source) => path.split('.').reduce((acc, key) => acc?.[key], source);
+          return resolve(dict) ?? resolve(fallbackDict) ?? fallback;
+        }
+
+        function renderFaqState() {
+          const showMoreLabel = getI18nValue('home.faq.showMore', 'Zobrazit více');
+          const showLessLabel = getI18nValue('home.faq.showLess', 'Zobrazit méně');
+          faqItems.forEach((item, index) => {
+            const isVisible = isExpanded || index < previewCount;
+            item.hidden = !isVisible;
+            if (!isVisible) item.removeAttribute('open');
+          });
+
+          faqToggle.hidden = faqItems.length <= previewCount;
+          faqToggle.setAttribute('aria-expanded', String(isExpanded));
+          faqToggle.textContent = isExpanded ? showLessLabel : showMoreLabel;
+        }
+
+        faqToggle.addEventListener('click', () => {
+          isExpanded = !isExpanded;
+          renderFaqState();
+        });
+
+        window.addEventListener('fitlime:i18n-loaded', renderFaqState);
+        renderFaqState();
       }
     });
   </script>

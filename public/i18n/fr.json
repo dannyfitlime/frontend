@@ -98,7 +98,7 @@
         "swedishPie": "Gâteau suédois",
         "pannaCotta": "Panna cotta",
         "bananaSmoothie": "Smoothie à la banane"
-      }    
+      }
     },
     "how": {
       "title": "Comment ça marche",
@@ -280,7 +280,7 @@
       "per_month": "/ mois",
       "advantage": "plus avantageux",
       "standard": {
-        "title": "⚖️ Standard – complet (5 jours)",
+        "title": "⚖️ Standard (5 jours)",
         "feature1": "Menu sur 5 jours (lun–ven)",
         "feature2": "Repas uniques et variés",
         "feature3": "Personnalisation selon le carnet d’entraînement",
@@ -291,14 +291,9 @@
       },
       "premium": {
         "badge": "Le plus populaire",
-        "title": "🏆 Premium – sur mesure (7 jours)",
+        "title": "🏆 Premium (7 jours)",
         "feature1": "Menu sur 7 jours (lun–dim)",
-        "feature2": "Repas uniques et variés",
-        "feature3": "Personnalisation selon le carnet d’entraînement",
-        "feature4": "Recettes pour chaque repas",
-        "feature5": "Liste de courses",
-        "feature6": "Graphiques des apports et dépenses d’énergie",
-        "feature7": "Éducation sur les différents nutriments",
+        "feature2": "Tout du forfait Standard",
         "extra1": "Éducation à la nutrition sportive",
         "extra2": "Compléments alimentaires sur mesure",
         "extra3": "Programme d’hydratation",
@@ -309,65 +304,67 @@
       "cta": "Lancer le formulaire",
       "note": "Sans engagement, vous choisirez plus tard dans la commande."
     },
-  "faq": {
-    "title": "FAQ - Häufig gestellte Fragen",
-    "q1": {
-      "q": "Wie erhalte ich den Ernährungsplan?",
-      "a": "Wir senden Ihnen den Ernährungsplan per E-Mail im PDF-Format zu. Er enthält übersichtliche Tabellen, Grafiken und strukturierte Informationen, damit Sie in der Praxis gut mit dem Plan arbeiten können."
+    "faq": {
+      "title": "FAQ - Häufig gestellte Fragen",
+      "showMore": "Afficher plus",
+      "showLess": "Afficher moins",
+      "q1": {
+        "q": "Wie erhalte ich den Ernährungsplan?",
+        "a": "Wir senden Ihnen den Ernährungsplan per E-Mail im PDF-Format zu. Er enthält übersichtliche Tabellen, Grafiken und strukturierte Informationen, damit Sie in der Praxis gut mit dem Plan arbeiten können."
+      },
+      "q2": {
+        "q": "Benötige ich spezielle Lebensmittel?",
+        "a": "Nein, wir erstellen die Pläne primär aus gängigen Zutaten, die Sie problemlos in jedem herkömmlichen Supermarkt kaufen können."
+      },
+      "q3": {
+        "q": "Wie lange reicht der Ernährungsplan aus?",
+        "a": "Die Standard-Variante des Plans ist für 5 Tage ausgelegt, die Premium-Variante für 7 Tage. Basierend auf Ihren Vorlieben kann der Plan bis zu 40 einzigartige Gerichte enthalten, wobei der endgültige Umfang immer von den angegebenen Anforderungen und Einschränkungen abhängt. Dank dieser Vielfalt reicht der Plan locker für einen ganzen Monat – bis Sie alle Kombinationen ausprobiert und Ihre Lieblingsvarianten entdeckt haben."
+      },
+      "q4": {
+        "q": "Sind auch Einkaufslisten enthalten?",
+        "a": "Ja, der Ernährungsplan enthält eine übersichtliche Einkaufsliste mit allen Zutaten für die gesamte Woche. Zudem lässt sich die Liste einfach in die Einkaufsassistenten von Online-Shops kopieren, die den Einkauf für Sie erledigen."
+      },
+      "q5": {
+        "q": "Was ist, wenn ich keine Küchenwaage habe?",
+        "a": "Die Gewichtsangaben im Plan dienen der genaueren Orientierung, aber in den meisten Fällen reichen auch haushaltsübliche Maße (eine Handvoll, eine Schüssel, Stückzahlen) aus. Es ist nicht notwendig, das Essen ständig aufs Gramm genau abzuwiegen; wichtiger sind die langfristige Nachhaltigkeit und die allgemeine Ausgewogenheit der Ernährung."
+      },
+      "q6": {
+        "q": "Passen Sie den Plan an Allergien und Intoleranzen an?",
+        "a": "Wir erstellen den Plan primär nach Ihren Diät-Präferenzen (z. B. vegetarisch, glutenfrei oder laktosefrei). Wenn es bestimmte Lebensmittel gibt, die Sie meiden möchten, können Sie diese im Formular angeben."
+      },
+      "q7": {
+        "q": "Können Sie den Ernährungsplan an spezifische Ziele anpassen?",
+        "a": "Ja, wir passen den Plan an konkrete Ziele an, wie zum Beispiel Gewichtsreduktion, Muskelaufbau oder langfristiges Halten des Gewichts. Geben Sie Ihre Ziele einfach im Formular an, und wir lassen sie in die Gesamteinstellung des Plans einfließen."
+      },
+      "q8": {
+        "q": "Kann ich den Ernährungsplan langfristig nutzen?",
+        "a": "Ja, wir erstellen den Plan so, dass er langfristig nachhaltig ist und gut in den Alltag passt. Sie können die einzelnen Wochen wiederholen, miteinander kombinieren oder laufend leicht an Ihre aktuellen Bedürfnisse anpassen."
+      },
+      "q9": {
+        "q": "Wer erstellt die Ernährungspläne?",
+        "a": "An der Erstellung der Pläne sind Ernährungsexperten mit Erfahrung in der Sportmedizin und der Arbeit mit aktiven Menschen beteiligt. Dadurch verbinden wir die praktische Anwendbarkeit des Plans mit fachlicher Expertise."
+      },
+      "q10": {
+        "q": "Woher stammen die Nährwertangaben?",
+        "a": "Wir beziehen die Nährwertangaben aus verifizierten Quellen, primär aus der USDA-Datenbank (United States Department of Agriculture). Diese Daten werden durch eigene Berechnungsmodelle ergänzt und verarbeitet, damit der fertige Plan den festgelegten Zielen entspricht."
+      },
+      "q11": {
+        "q": "Was ist, wenn mir ein Rezept nicht schmeckt?",
+        "a": "Der Plan enthält mehrere Gerichte und Varianten, sodass Sie in der Regel nach Ihrem Geschmack wählen können. Wenn Sie wissen, dass Sie bestimmte Lebensmittel gar nicht erst inkludieren möchten, bieten wir im Premium-Paket die Möglichkeit des gezielten Ausschlusses an."
+      },
+      "q12": {
+        "q": "Können Sie mir den Plan später noch anpassen?",
+        "a": "Aktuell bieten wir standardmäßig keine nachträglichen Änderungen an bereits gelieferten Plänen an. Wir arbeiten jedoch daran, in Zukunft fortlaufende Anpassungen basierend auf Ihrem Feedback und Änderungen in Ihrem Alltag anbieten zu können."
+      },
+      "q13": {
+        "q": "Wie schnell erhalte ich den Ernährungsplan?",
+        "a": "Beim Standard-Paket garantieren wir die Lieferung innerhalb von 3 Werktagen, beim Premium-Paket innerhalb von 2 Werktagen nach Bestätigung der Bestellung. Sollten wir die garantierte Frist nicht einhalten, erstatten wir Ihnen Ihr Geld zurück."
+      },
+      "q14": {
+        "q": "Muss ich eine App installieren?",
+        "a": "Nein, es ist keine Installation einer App erforderlich. Sie erhalten den Ernährungsplan im PDF-Format, sodass Sie ihn bequem auf dem Handy oder Computer öffnen oder ausdrucken können."
+      }
     },
-    "q2": {
-      "q": "Benötige ich spezielle Lebensmittel?",
-      "a": "Nein, wir erstellen die Pläne primär aus gängigen Zutaten, die Sie problemlos in jedem herkömmlichen Supermarkt kaufen können."
-    },
-    "q3": {
-      "q": "Wie lange reicht der Ernährungsplan aus?",
-      "a": "Die Standard-Variante des Plans ist für 5 Tage ausgelegt, die Premium-Variante für 7 Tage. Basierend auf Ihren Vorlieben kann der Plan bis zu 40 einzigartige Gerichte enthalten, wobei der endgültige Umfang immer von den angegebenen Anforderungen und Einschränkungen abhängt. Dank dieser Vielfalt reicht der Plan locker für einen ganzen Monat – bis Sie alle Kombinationen ausprobiert und Ihre Lieblingsvarianten entdeckt haben."
-    },
-    "q4": {
-      "q": "Sind auch Einkaufslisten enthalten?",
-      "a": "Ja, der Ernährungsplan enthält eine übersichtliche Einkaufsliste mit allen Zutaten für die gesamte Woche. Zudem lässt sich die Liste einfach in die Einkaufsassistenten von Online-Shops kopieren, die den Einkauf für Sie erledigen."
-    },
-    "q5": {
-      "q": "Was ist, wenn ich keine Küchenwaage habe?",
-      "a": "Die Gewichtsangaben im Plan dienen der genaueren Orientierung, aber in den meisten Fällen reichen auch haushaltsübliche Maße (eine Handvoll, eine Schüssel, Stückzahlen) aus. Es ist nicht notwendig, das Essen ständig aufs Gramm genau abzuwiegen; wichtiger sind die langfristige Nachhaltigkeit und die allgemeine Ausgewogenheit der Ernährung."
-    },
-    "q6": {
-      "q": "Passen Sie den Plan an Allergien und Intoleranzen an?",
-      "a": "Wir erstellen den Plan primär nach Ihren Diät-Präferenzen (z. B. vegetarisch, glutenfrei oder laktosefrei). Wenn es bestimmte Lebensmittel gibt, die Sie meiden möchten, können Sie diese im Formular angeben."
-    },
-    "q7": {
-      "q": "Können Sie den Ernährungsplan an spezifische Ziele anpassen?",
-      "a": "Ja, wir passen den Plan an konkrete Ziele an, wie zum Beispiel Gewichtsreduktion, Muskelaufbau oder langfristiges Halten des Gewichts. Geben Sie Ihre Ziele einfach im Formular an, und wir lassen sie in die Gesamteinstellung des Plans einfließen."
-    },
-    "q8": {
-      "q": "Kann ich den Ernährungsplan langfristig nutzen?",
-      "a": "Ja, wir erstellen den Plan so, dass er langfristig nachhaltig ist und gut in den Alltag passt. Sie können die einzelnen Wochen wiederholen, miteinander kombinieren oder laufend leicht an Ihre aktuellen Bedürfnisse anpassen."
-    },
-    "q9": {
-      "q": "Wer erstellt die Ernährungspläne?",
-      "a": "An der Erstellung der Pläne sind Ernährungsexperten mit Erfahrung in der Sportmedizin und der Arbeit mit aktiven Menschen beteiligt. Dadurch verbinden wir die praktische Anwendbarkeit des Plans mit fachlicher Expertise."
-    },
-    "q10": {
-      "q": "Woher stammen die Nährwertangaben?",
-      "a": "Wir beziehen die Nährwertangaben aus verifizierten Quellen, primär aus der USDA-Datenbank (United States Department of Agriculture). Diese Daten werden durch eigene Berechnungsmodelle ergänzt und verarbeitet, damit der fertige Plan den festgelegten Zielen entspricht."
-    },
-    "q11": {
-      "q": "Was ist, wenn mir ein Rezept nicht schmeckt?",
-      "a": "Der Plan enthält mehrere Gerichte und Varianten, sodass Sie in der Regel nach Ihrem Geschmack wählen können. Wenn Sie wissen, dass Sie bestimmte Lebensmittel gar nicht erst inkludieren möchten, bieten wir im Premium-Paket die Möglichkeit des gezielten Ausschlusses an."
-    },
-    "q12": {
-      "q": "Können Sie mir den Plan später noch anpassen?",
-      "a": "Aktuell bieten wir standardmäßig keine nachträglichen Änderungen an bereits gelieferten Plänen an. Wir arbeiten jedoch daran, in Zukunft fortlaufende Anpassungen basierend auf Ihrem Feedback und Änderungen in Ihrem Alltag anbieten zu können."
-    },
-    "q13": {
-      "q": "Wie schnell erhalte ich den Ernährungsplan?",
-      "a": "Beim Standard-Paket garantieren wir die Lieferung innerhalb von 3 Werktagen, beim Premium-Paket innerhalb von 2 Werktagen nach Bestätigung der Bestellung. Sollten wir die garantierte Frist nicht einhalten, erstatten wir Ihnen Ihr Geld zurück."
-    },
-    "q14": {
-      "q": "Muss ich eine App installieren?",
-      "a": "Nein, es ist keine Installation einer App erforderlich. Sie erhalten den Ernährungsplan im PDF-Format, sodass Sie ihn bequem auf dem Handy oder Computer öffnen oder ausdrucken können."
-    }
-  },
     "about": {
       "title": "À propos de nous",
       "articles": {
@@ -411,7 +408,7 @@
       },
       "client2": {
         "text": "« Les repas sont simples et bons. La liste de courses fait gagner du temps. Je me sens bien sur le vélo. »",
-        "author": "Hana",
+        "author": "Miki",
         "flags": [
           "de"
         ]
@@ -423,7 +420,16 @@
           "us",
           "cz"
         ]
-      }
+      },
+      "lead": "Expériences de nos clients qui voulaient mieux manger, avoir plus d'énergie, mieux comprendre la nutrition et gérer leur mode de vie à long terme sans extrêmes inutiles.",
+      "featured": "Une histoire qui mérite d'être mentionnée",
+      "highlights": {
+        "energy": "Plus d'énergie tout au long de la journée",
+        "performance": "Meilleure performance à l'entraînement",
+        "recovery": "Meilleure récupération",
+        "sleep": "Sommeil de meilleure qualité"
+      },
+      "cardTitle": "Ce que disent nos clients"
     },
     "cta": {
       "title": "Prêt à commencer ?",
@@ -678,12 +684,7 @@
     "standard_detail7": "Éducation sur les différents nutriments",
     "premium_detail_title": "Premium – sur mesure (7 jours)",
     "premium_detail1": "Menu sur 7 jours (lun–dim)",
-    "premium_detail2": "Repas uniques et variés",
-    "premium_detail3": "Personnalisation selon le carnet d’entraînement",
-    "premium_detail4": "Recettes pour chaque repas",
-    "premium_detail5": "Liste de courses",
-    "premium_detail6": "Graphiques des apports et dépenses d’énergie",
-    "premium_detail7": "Éducation sur les différents nutriments",
+    "premium_detail2": "Tout du forfait Standard",
     "premium_detail8": "Éducation à la nutrition sportive",
     "premium_detail9": "Compléments alimentaires sur mesure",
     "premium_detail10": "Programme d’hydratation",

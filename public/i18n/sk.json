@@ -311,7 +311,7 @@
       "per_month": "/ mesiac",
       "advantage": "výhodnejšia",
       "standard": {
-        "title": "Standard - plnohodnotný (5 dní)",
+        "title": "Standard (5 dní)",
         "feature1": "Jedálniček na 5 dní (Po-Pi)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
@@ -322,14 +322,9 @@
       },
       "premium": {
         "badge": "Najobľúbenejšia",
-        "title": "Premium - na mieru (7 dní)",
+        "title": "Premium (7 dní)",
         "feature1": "Jedálniček na 7 dní (Po-Ne)",
-        "feature2": "Unikátne, pestré jedlá",
-        "feature3": "Personalizácia podľa tréningového denníka",
-        "feature4": "Recepty k jednotlivým jedlám",
-        "feature5": "Nákupný zoznam",
-        "feature6": "Grafy príjmu a výdaja energie",
-        "feature7": "Edukácia k jednotlivým živinám",
+        "feature2": "Všetko zo štandardu",
         "extra1": "Edukácia o výžive v športe",
         "extra2": "Doplnky stravy na mieru",
         "extra3": "Pitný režim",
@@ -340,65 +335,67 @@
       "cta": "Spustiť formulár",
       "note": "Nezáväzne, vyberiete si až v objednávke."
     },
-  "faq": {
-    "title": "FAQ - Často kladené otázky",
-    "q1": {
-      "q": "Ako dostanem jedálniček?",
-      "a": "Jedálniček vám doručíme e-mailom vo formáte PDF. Obsahuje prehľadné tabuľky, grafy a štruktúrované informácie, aby sa vám s plánom v praxi dobre pracovalo."
+    "faq": {
+      "title": "FAQ - Často kladené otázky",
+      "showMore": "Zobraziť viac",
+      "showLess": "Zobraziť menej",
+      "q1": {
+        "q": "Ako dostanem jedálniček?",
+        "a": "Jedálniček vám doručíme e-mailom vo formáte PDF. Obsahuje prehľadné tabuľky, grafy a štruktúrované informácie, aby sa vám s plánom v praxi dobre pracovalo."
+      },
+      "q2": {
+        "q": "Budem potrebovať špeciálne potraviny?",
+        "a": "Nie, jedálničky zostavujeme primárne z bežne dostupných surovín, ktoré si jednoducho kúpite v každom bežnom supermarkete."
+      },
+      "q3": {
+        "q": "Na akú dlhú dobu je jedálniček určený?",
+        "a": "Standard verzia jedálnička je pripravená na 5 dní, zatiaľ čo Premium verzia pokrýva 7 dní. Na základe vašich preferencií môže plán obsahovať až 40 unikátnych jedál, pričom finálny rozsah vždy závisí od vašich konkrétnych požiadaviek a obmedzení. Vďaka tejto variabilite vám jedálniček hravo vystačí aj na celý mesiac – kým vyskúšate všetky kombinácie a objavíte svoje obľúbené varianty."
+      },
+      "q4": {
+        "q": "Sú súčasťou aj nákupné zoznamy?",
+        "a": "Áno, súčasťou jedálnička je prehľadný nákupný zoznam surovín na celý týždeň. Nákupný zoznam sa navyše dá jednoducho skopírovať do nákupných asistentov online predajní, ktoré nákup vybavia za vás."
+      },
+      "q5": {
+        "q": "Čo ak nemám kuchynskú váhu?",
+        "a": "Gramáže v jedálničku uvádzame pre presnejšie vedenie, no vo väčšine prípadov si vystačíte s bežnými domácimi mierami (hrsť, miska, kusy). Nie je nutné neustále vážiť jedlo na gram presne, dôležitejšia je dlhodobá udržateľnosť a celková pestrosť stravy."
+      },
+      "q6": {
+        "q": "Prispôsobujete jedálniček alergiám a intoleranciám?",
+        "a": "Jedálniček pripravujeme primárne podľa vašich stravovacích preferencií (napr. vegetariánska, bezlepková či bezlaktózová strava). Ak existujú konkrétne potraviny, ktorým sa chcete vyhnúť, môžete ich uviesť vo formulári."
+      },
+      "q7": {
+        "q": "Dokážete jedálniček ušiť na mieru konkrétnym cieľom?",
+        "a": "Áno, jedálniček prispôsobujeme konkrétnym cieľom, ako sú chudnutie, naberanie svalovej hmoty alebo dlhodobé udržanie hmotnosti. Stačí svoje ciele uviesť vo formulári a my ich zohľadníme v celkovom nastavení plánu."
+      },
+      "q8": {
+        "q": "Dá sa jedálniček používať dlhodobo?",
+        "a": "Áno, plán navrhujeme tak, aby bol dlhodobo udržateľný a dobre zapadol do bežného života. Jednotlivé týždne môžete opakovať, kombinovať medzi sebou alebo priebežne mierne upravovať podľa vašich aktuálnych potrieb."
+      },
+      "q9": {
+        "q": "Kto jedálničky vytvára?",
+        "a": "Na tvorbe jedálničkov sa podieľajú odborníci na výživu so skúsenosťami zo športovej medicíny a práce s aktívnou populáciou. Vďaka tomu dokážeme prepojiť praktickú využiteľnosť jedálnička s odborným pohľadom na výživu."
+      },
+      "q10": {
+        "q": "Odkiaľ čerpáte nutričné hodnoty?",
+        "a": "Nutričné hodnoty čerpáme z overených zdrojov, primárne z databázy USDA (United States Department of Agriculture). Tieto dáta ďalej dopĺňame a spracovávame pomocou vlastných výpočtových modelov, aby finálny plán zodpovedal vašim zadaným cieľom."
+      },
+      "q11": {
+        "q": "Čo ak mi niektorý z receptov nebude chutiť?",
+        "a": "Jedálniček obsahuje viacero jedál a variantov, takže si spravidla môžete vybrať podľa svojich chutí a preferencií. Ak vopred viete, že chcete určité potraviny úplne vylúčiť, ponúkame možnosť cielenej exklúzie v rámci balíka Premium."
+      },
+      "q12": {
+        "q": "Môžete mi jedálniček dodatočne upraviť?",
+        "a": "V súčasnosti štandardne neponúkame dodatočné úpravy už doručených jedálničkov. Pracujeme však na tom, aby sme v budúcnosti dokázeli ponúknuť priebežné úpravy na základe vašej spätnej väzby a zmien v režime."
+      },
+      "q13": {
+        "q": "Ako rýchlo jedálniček dostanem?",
+        "a": "Pri balíku Standard garantujeme doručenie do 3 pracovných dní, pri balíku Premium do 2 pracovných dní od potvrdenia objednávky. V prípade nedodržania garantovanej lehoty vám vrátime peniaze."
+      },
+      "q14": {
+        "q": "Musím si inštalovať nejakú aplikáciu?",
+        "a": "Nie, nie je potrebné inštalovať žiadnu aplikáciu. Jedálniček dostanete vo formáte PDF, takže si ho pohodlne otvoríte v mobile, počítači alebo vytlačíte."
+      }
     },
-    "q2": {
-      "q": "Budem potrebovať špeciálne potraviny?",
-      "a": "Nie, jedálničky zostavujeme primárne z bežne dostupných surovín, ktoré si jednoducho kúpite v každom bežnom supermarkete."
-    },
-    "q3": {
-      "q": "Na akú dlhú dobu je jedálniček určený?",
-      "a": "Standard verzia jedálnička je pripravená na 5 dní, zatiaľ čo Premium verzia pokrýva 7 dní. Na základe vašich preferencií môže plán obsahovať až 40 unikátnych jedál, pričom finálny rozsah vždy závisí od vašich konkrétnych požiadaviek a obmedzení. Vďaka tejto variabilite vám jedálniček hravo vystačí aj na celý mesiac – kým vyskúšate všetky kombinácie a objavíte svoje obľúbené varianty."
-    },
-    "q4": {
-      "q": "Sú súčasťou aj nákupné zoznamy?",
-      "a": "Áno, súčasťou jedálnička je prehľadný nákupný zoznam surovín na celý týždeň. Nákupný zoznam sa navyše dá jednoducho skopírovať do nákupných asistentov online predajní, ktoré nákup vybavia za vás."
-    },
-    "q5": {
-      "q": "Čo ak nemám kuchynskú váhu?",
-      "a": "Gramáže v jedálničku uvádzame pre presnejšie vedenie, no vo väčšine prípadov si vystačíte s bežnými domácimi mierami (hrsť, miska, kusy). Nie je nutné neustále vážiť jedlo na gram presne, dôležitejšia je dlhodobá udržateľnosť a celková pestrosť stravy."
-    },
-    "q6": {
-      "q": "Prispôsobujete jedálniček alergiám a intoleranciám?",
-      "a": "Jedálniček pripravujeme primárne podľa vašich stravovacích preferencií (napr. vegetariánska, bezlepková či bezlaktózová strava). Ak existujú konkrétne potraviny, ktorým sa chcete vyhnúť, môžete ich uviesť vo formulári."
-    },
-    "q7": {
-      "q": "Dokážete jedálniček ušiť na mieru konkrétnym cieľom?",
-      "a": "Áno, jedálniček prispôsobujeme konkrétnym cieľom, ako sú chudnutie, naberanie svalovej hmoty alebo dlhodobé udržanie hmotnosti. Stačí svoje ciele uviesť vo formulári a my ich zohľadníme v celkovom nastavení plánu."
-    },
-    "q8": {
-      "q": "Dá sa jedálniček používať dlhodobo?",
-      "a": "Áno, plán navrhujeme tak, aby bol dlhodobo udržateľný a dobre zapadol do bežného života. Jednotlivé týždne môžete opakovať, kombinovať medzi sebou alebo priebežne mierne upravovať podľa vašich aktuálnych potrieb."
-    },
-    "q9": {
-      "q": "Kto jedálničky vytvára?",
-      "a": "Na tvorbe jedálničkov sa podieľajú odborníci na výživu so skúsenosťami zo športovej medicíny a práce s aktívnou populáciou. Vďaka tomu dokážeme prepojiť praktickú využiteľnosť jedálnička s odborným pohľadom na výživu."
-    },
-    "q10": {
-      "q": "Odkiaľ čerpáte nutričné hodnoty?",
-      "a": "Nutričné hodnoty čerpáme z overených zdrojov, primárne z databázy USDA (United States Department of Agriculture). Tieto dáta ďalej dopĺňame a spracovávame pomocou vlastných výpočtových modelov, aby finálny plán zodpovedal vašim zadaným cieľom."
-    },
-    "q11": {
-      "q": "Čo ak mi niektorý z receptov nebude chutiť?",
-      "a": "Jedálniček obsahuje viacero jedál a variantov, takže si spravidla môžete vybrať podľa svojich chutí a preferencií. Ak vopred viete, že chcete určité potraviny úplne vylúčiť, ponúkame možnosť cielenej exklúzie v rámci balíka Premium."
-    },
-    "q12": {
-      "q": "Môžete mi jedálniček dodatočne upraviť?",
-      "a": "V súčasnosti štandardne neponúkame dodatočné úpravy už doručených jedálničkov. Pracujeme však na tom, aby sme v budúcnosti dokázeli ponúknuť priebežné úpravy na základe vašej spätnej väzby a zmien v režime."
-    },
-    "q13": {
-      "q": "Ako rýchlo jedálniček dostanem?",
-      "a": "Pri balíku Standard garantujeme doručenie do 3 pracovných dní, pri balíku Premium do 2 pracovných dní od potvrdenia objednávky. V prípade nedodržania garantovanej lehoty vám vrátime peniaze."
-    },
-    "q14": {
-      "q": "Musím si inštalovať nejakú aplikáciu?",
-      "a": "Nie, nie je potrebné inštalovať žiadnu aplikáciu. Jedálniček dostanete vo formáte PDF, takže si ho pohodlne otvoríte v mobile, počítači alebo vytlačíte."
-    }
-  },
     "about": {
       "articles": {
         "title": "Články",
@@ -433,6 +430,15 @@
       }
     },
     "reference": {
+      "lead": "Skúsenosti našich klientov, ktorí chceli jesť lepšie, mať viac energie, lepšie rozumieť výžive a dlhodobo zvládať svoj režim bez zbytočných extrémov.",
+      "featured": "Príbeh, ktorý stojí za zmienku",
+      "highlights": {
+        "energy": "Viac energie počas dňa",
+        "performance": "Vyšší výkon v tréningu",
+        "recovery": "Lepšia regenerácia",
+        "sleep": "Kvalitnejší spánok"
+      },
+      "cardTitle": "Ako to vidia naši klienti",
       "title": "FitLime Komunita",
       "client1": {
         "text": "\"Zmenilo nám to pohľad na stravovanie. Máme viac energie počas dňa.\"",
@@ -444,7 +450,7 @@
       },
       "client2": {
         "text": "\"Jedlá sú jednoduché a chutné. Nákupný zoznam šetrí čas. Cítim sa dobre na bicykli.\"",
-        "author": "Hana",
+        "author": "Miki",
         "flags": [
           "de"
         ]
@@ -711,12 +717,7 @@
     "standard_detail7": "Edukácia k jednotlivým nutrientom",
     "premium_detail_title": "Premium – na mieru (7 dní)",
     "premium_detail1": "Jedálniček na 7 dní (Po–Ne)",
-    "premium_detail2": "Unikátne, pestré jedlá",
-    "premium_detail3": "Personalizácia podľa tréningového denníka",
-    "premium_detail4": "Recepty k jednotlivým jedlám",
-    "premium_detail5": "Nákupný zoznam",
-    "premium_detail6": "Grafy príjmu a výdaja energie",
-    "premium_detail7": "Edukácia k jednotlivým nutrientom",
+    "premium_detail2": "Všetko zo štandardu",
     "premium_detail8": "Edukácia o výžive v športe",
     "premium_detail9": "Doplnky stravy na mieru",
     "premium_detail10": "Pitný režim",

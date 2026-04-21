@@ -293,12 +293,7 @@
         "badge": "Najczęściej wybierany",
         "title": "Premium – szyty na miarę (7 dni)",
         "feature1": "Plan żywieniowy na 7 dni (pon–niedz)",
-        "feature2": "Unikalne i urozmaicone posiłki",
-        "feature3": "Personalizacja na podstawie dziennika treningowego",
-        "feature4": "Przepisy do każdego posiłku",
-        "feature5": "Lista zakupów",
-        "feature6": "Wykresy podaży i wydatku energetycznego",
-        "feature7": "Edukacja na temat poszczególnych składników odżywczych",
+        "feature2": "Wszystko ze standardu",
         "extra1": "Edukacja z zakresu żywienia w sporcie",
         "extra2": "Indywidualnie dobrane suplementy diety",
         "extra3": "Plan nawodnienia",
@@ -311,6 +306,8 @@
     },
     "faq": {
       "title": "FAQ - Domande Frequenti",
+      "showMore": "Pokaż więcej",
+      "showLess": "Pokaż mniej",
       "q1": {
         "q": "Come riceverò il piano alimentare?",
         "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."
@@ -400,6 +397,14 @@
       }
     },
     "reference": {
+      "lead": "Doświadczenia naszych klientów, którzy chcieli jeść lepiej, mieć więcej energii, lepiej rozumieć odżywianie i długoterminowo radzić sobie ze swoim stylem życia bez zbędnych skrajności.",
+      "featured": "Historia warta uwagi",
+      "highlights": {
+        "energy": "Więcej energii w ciągu dnia",
+        "performance": "Lepsza wydajność na treningu",
+        "recovery": "Lepsza regeneracja",
+        "sleep": "Lepsza jakość snu"
+      },
       "title": "Społeczność FitLime",
       "client1": {
         "text": "„Zmieniło to nasze spojrzenie na odżywianie. Mamy więcej energii w ciągu dnia.”",
@@ -411,7 +416,7 @@
       },
       "client2": {
         "text": "„Posiłki są proste i smaczne. Lista zakupów oszczędza czas. Na rowerze czuję się świetnie.”",
-        "author": "Hana",
+        "author": "Miki",
         "flags": [
           "de"
         ]
@@ -423,7 +428,8 @@
           "us",
           "cz"
         ]
-      }
+      },
+      "cardTitle": "Jak widzą to nasi klienci"
     },
     "cta": {
       "title": "Zaczynamy?",
@@ -668,7 +674,7 @@
     "premium_delivery": "Ekspresowa dostawa w ciągu maksymalnie 2 dni roboczych",
     "details_intro": "Kliknij poniżej, aby zobaczyć szczegółowe porównanie poszczególnych planów.",
     "details_title": "Rozwiń szczegóły planów",
-    "standard_detail_title": "Standard – kompletny (5 dni)",
+    "standard_detail_title": "Standard (5 dni)",
     "standard_detail1": "Plan żywieniowy na 5 dni (pon–pt)",
     "standard_detail2": "Unikalne i urozmaicone posiłki",
     "standard_detail3": "Personalizacja na podstawie dziennika treningowego",
@@ -676,14 +682,9 @@
     "standard_detail5": "Lista zakupów",
     "standard_detail6": "Wykresy podaży i wydatku energetycznego",
     "standard_detail7": "Edukacja na temat poszczególnych składników odżywczych",
-    "premium_detail_title": "Premium – szyty na miarę (7 dni)",
+    "premium_detail_title": "Premium (7 dni)",
     "premium_detail1": "Plan żywieniowy na 7 dni (pon–niedz)",
-    "premium_detail2": "Unikalne i urozmaicone posiłki",
-    "premium_detail3": "Personalizacja na podstawie dziennika treningowego",
-    "premium_detail4": "Przepisy do każdego posiłku",
-    "premium_detail5": "Lista zakupów",
-    "premium_detail6": "Wykresy podaży i wydatku energetycznego",
-    "premium_detail7": "Edukacja na temat poszczególnych składników odżywczych",
+    "premium_detail2": "Wszystko ze standardu",
     "premium_detail8": "Edukacja z zakresu żywienia w sporcie",
     "premium_detail9": "Indywidualnie dobrane suplementy diety",
     "premium_detail10": "Plan nawodnienia",

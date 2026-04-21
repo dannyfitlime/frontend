@@ -280,7 +280,7 @@
       "per_month": "/ mese",
       "advantage": "più conveniente",
       "standard": {
-        "title": "⚖️ Standard – completo (5 giorni)",
+        "title": "⚖️ Standard (5 giorni)",
         "feature1": "Piano alimentare per 5 giorni (lun–ven)",
         "feature2": "Pasti unici e vari",
         "feature3": "Personalizzazione in base al diario di allenamento",
@@ -291,14 +291,9 @@
       },
       "premium": {
         "badge": "Il più scelto",
-        "title": "🏆 Premium – su misura (7 giorni)",
+        "title": "🏆 Premium (7 giorni)",
         "feature1": "Piano alimentare per 7 giorni (lun–dom)",
-        "feature2": "Pasti unici e vari",
-        "feature3": "Personalizzazione in base al diario di allenamento",
-        "feature4": "Ricette per ogni pasto",
-        "feature5": "Lista della spesa",
-        "feature6": "Grafici di apporto e dispendio energetico",
-        "feature7": "Educazione sui diversi nutrienti",
+        "feature2": "Tutto dal piano Standard",
         "extra1": "Educazione sulla nutrizione nello sport",
         "extra2": "Integratori alimentari su misura",
         "extra3": "Piano di idratazione",
@@ -309,65 +304,67 @@
       "cta": "Inizia il questionario",
       "note": "Senza impegno, scegli più avanti al momento dell'ordine."
     },
-  "faq": {
-    "title": "FAQ - Domande Frequenti",
-    "q1": {
-      "q": "Come riceverò il piano alimentare?",
-      "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."
+    "faq": {
+      "title": "FAQ - Domande Frequenti",
+      "showMore": "Mostra di più",
+      "showLess": "Mostra di meno",
+      "q1": {
+        "q": "Come riceverò il piano alimentare?",
+        "a": "Ti invieremo il piano alimentare via email in formato PDF. Include tabelle chiare, grafici e informazioni strutturate per garantire che il piano sia facile da seguire nella pratica."
+      },
+      "q2": {
+        "q": "Avrò bisogno di alimenti speciali?",
+        "a": "No, creiamo i nostri piani alimentari basandoci principalmente su ingredienti comuni che puoi facilmente acquistare in qualsiasi normale supermercato."
+      },
+      "q3": {
+        "q": "Quanto dura il piano alimentare?",
+        "a": "La versione Standard del piano alimentare è preparata per 5 giorni, mentre la versione Premium copre 7 giorni. In base alle tue preferenze, il piano può contenere fino a 40 pasti unici, con l'ambito finale che dipende sempre dalle tue esigenze e restrizioni specifiche. Grazie a questa varietà, il piano alimentare può durare tranquillamente un intero mese, prima di aver provato tutte le combinazioni e scoperto le tue varianti preferite."
+      },
+      "q4": {
+        "q": "Sono incluse le liste della spesa?",
+        "a": "Sì, il piano alimentare include una lista della spesa chiara con gli ingredienti per l'intera settimana. Inoltre, la lista può essere facilmente copiata negli assistenti per la spesa dei negozi online, che si occuperanno del resto per te."
+      },
+      "q5": {
+        "q": "Cosa succede se non ho una bilancia da cucina?",
+        "a": "I pesi nel piano alimentare sono forniti per una guida più precisa, ma nella maggior parte dei casi sono sufficienti le comuni misure casalinghe (manciata, ciotola, pezzi). Non è necessario pesare costantemente il cibo all'ultimo grammo; la sostenibilità a lungo termine e la varietà alimentare complessiva sono più importanti."
+      },
+      "q6": {
+        "q": "Personalizzate il piano alimentare per allergie e intolleranze?",
+        "a": "Prepariamo il piano alimentare principalmente in base alle tue preferenze dietetiche (ad es. vegetariano, senza glutine o senza lattosio). Se ci sono alimenti specifici che desideri evitare, puoi elencarli nel modulo."
+      },
+      "q7": {
+        "q": "Potete adattare il piano alimentare a obiettivi specifici?",
+        "a": "Sì, adattiamo il piano alimentare a obiettivi specifici come la perdita di peso, il guadagno di massa muscolare o il mantenimento del peso a lungo termine. Indica semplicemente i tuoi obiettivi nel modulo e li rifletteremo nella configurazione generale del piano."
+      },
+      "q8": {
+        "q": "Posso usare il piano alimentare a lungo termine?",
+        "a": "Sì, progettiamo il piano affinché sia sostenibile a lungo termine e si adatti bene alla vita quotidiana. Puoi ripetere le singole settimane, combinarle tra loro o apportare continuamente lievi modifiche in base alle tue esigenze attuali."
+      },
+      "q9": {
+        "q": "Chi crea i piani alimentari?",
+        "a": "Esperti di nutrizione con esperienza in medicina dello sport e nel lavoro con popolazioni attive partecipano alla creazione dei piani alimentari. Questo ci permette di combinare la praticità d'uso del piano con una prospettiva esperta sulla nutrizione."
+      },
+      "q10": {
+        "q": "Da dove provengono i valori nutrizionali?",
+        "a": "Ricaviamo i valori nutrizionali da fonti verificate, principalmente dal database dell'USDA (Dipartimento dell'Agricoltura degli Stati Uniti). Questi dati vengono ulteriormente integrati ed elaborati utilizzando i nostri modelli di calcolo per garantire che il piano finale soddisfi i tuoi obiettivi specifici."
+      },
+      "q11": {
+        "q": "Cosa succede se non mi piace una delle ricette?",
+        "a": "Il piano alimentare contiene più pasti e varianti, quindi puoi solitamente scegliere in base ai tuoi gusti e preferenze. Se sai di voler escludere completamente certi alimenti, offriamo l'opzione di esclusione mirata all'interno del pacchetto Premium."
+      },
+      "q12": {
+        "q": "Potete modificare il mio piano alimentare in un secondo momento?",
+        "a": "Al momento, non offriamo di norma modifiche successive ai piani alimentari già consegnati. Tuttavia, stiamo lavorando per poter offrire in futuro modifiche continue basate sui tuoi feedback e sui cambiamenti nella tua routine."
+      },
+      "q13": {
+        "q": "In quanto tempo riceverò il piano alimentare?",
+        "a": "Per il pacchetto Standard, garantiamo la consegna entro 3 giorni lavorativi; per il pacchetto Premium, entro 2 giorni lavorativi dalla conferma dell'ordine. Se non rispettiamo la scadenza garantita, ti rimborseremo i soldi."
+      },
+      "q14": {
+        "q": "Devo installare un'app?",
+        "a": "No, non è necessario installare alcuna app. Riceverai il piano alimentare in formato PDF, quindi potrai aprirlo comodamente sul tuo cellulare, computer o stamparlo."
+      }
     },
-    "q2": {
-      "q": "Avrò bisogno di alimenti speciali?",
-      "a": "No, creiamo i nostri piani alimentari basandoci principalmente su ingredienti comuni che puoi facilmente acquistare in qualsiasi normale supermercato."
-    },
-    "q3": {
-      "q": "Quanto dura il piano alimentare?",
-      "a": "La versione Standard del piano alimentare è preparata per 5 giorni, mentre la versione Premium copre 7 giorni. In base alle tue preferenze, il piano può contenere fino a 40 pasti unici, con l'ambito finale che dipende sempre dalle tue esigenze e restrizioni specifiche. Grazie a questa varietà, il piano alimentare può durare tranquillamente un intero mese, prima di aver provato tutte le combinazioni e scoperto le tue varianti preferite."
-    },
-    "q4": {
-      "q": "Sono incluse le liste della spesa?",
-      "a": "Sì, il piano alimentare include una lista della spesa chiara con gli ingredienti per l'intera settimana. Inoltre, la lista può essere facilmente copiata negli assistenti per la spesa dei negozi online, che si occuperanno del resto per te."
-    },
-    "q5": {
-      "q": "Cosa succede se non ho una bilancia da cucina?",
-      "a": "I pesi nel piano alimentare sono forniti per una guida più precisa, ma nella maggior parte dei casi sono sufficienti le comuni misure casalinghe (manciata, ciotola, pezzi). Non è necessario pesare costantemente il cibo all'ultimo grammo; la sostenibilità a lungo termine e la varietà alimentare complessiva sono più importanti."
-    },
-    "q6": {
-      "q": "Personalizzate il piano alimentare per allergie e intolleranze?",
-      "a": "Prepariamo il piano alimentare principalmente in base alle tue preferenze dietetiche (ad es. vegetariano, senza glutine o senza lattosio). Se ci sono alimenti specifici che desideri evitare, puoi elencarli nel modulo."
-    },
-    "q7": {
-      "q": "Potete adattare il piano alimentare a obiettivi specifici?",
-      "a": "Sì, adattiamo il piano alimentare a obiettivi specifici come la perdita di peso, il guadagno di massa muscolare o il mantenimento del peso a lungo termine. Indica semplicemente i tuoi obiettivi nel modulo e li rifletteremo nella configurazione generale del piano."
-    },
-    "q8": {
-      "q": "Posso usare il piano alimentare a lungo termine?",
-      "a": "Sì, progettiamo il piano affinché sia sostenibile a lungo termine e si adatti bene alla vita quotidiana. Puoi ripetere le singole settimane, combinarle tra loro o apportare continuamente lievi modifiche in base alle tue esigenze attuali."
-    },
-    "q9": {
-      "q": "Chi crea i piani alimentari?",
-      "a": "Esperti di nutrizione con esperienza in medicina dello sport e nel lavoro con popolazioni attive partecipano alla creazione dei piani alimentari. Questo ci permette di combinare la praticità d'uso del piano con una prospettiva esperta sulla nutrizione."
-    },
-    "q10": {
-      "q": "Da dove provengono i valori nutrizionali?",
-      "a": "Ricaviamo i valori nutrizionali da fonti verificate, principalmente dal database dell'USDA (Dipartimento dell'Agricoltura degli Stati Uniti). Questi dati vengono ulteriormente integrati ed elaborati utilizzando i nostri modelli di calcolo per garantire che il piano finale soddisfi i tuoi obiettivi specifici."
-    },
-    "q11": {
-      "q": "Cosa succede se non mi piace una delle ricette?",
-      "a": "Il piano alimentare contiene più pasti e varianti, quindi puoi solitamente scegliere in base ai tuoi gusti e preferenze. Se sai di voler escludere completamente certi alimenti, offriamo l'opzione di esclusione mirata all'interno del pacchetto Premium."
-    },
-    "q12": {
-      "q": "Potete modificare il mio piano alimentare in un secondo momento?",
-      "a": "Al momento, non offriamo di norma modifiche successive ai piani alimentari già consegnati. Tuttavia, stiamo lavorando per poter offrire in futuro modifiche continue basate sui tuoi feedback e sui cambiamenti nella tua routine."
-    },
-    "q13": {
-      "q": "In quanto tempo riceverò il piano alimentare?",
-      "a": "Per il pacchetto Standard, garantiamo la consegna entro 3 giorni lavorativi; per il pacchetto Premium, entro 2 giorni lavorativi dalla conferma dell'ordine. Se non rispettiamo la scadenza garantita, ti rimborseremo i soldi."
-    },
-    "q14": {
-      "q": "Devo installare un'app?",
-      "a": "No, non è necessario installare alcuna app. Riceverai il piano alimentare in formato PDF, quindi potrai aprirlo comodamente sul tuo cellulare, computer o stamparlo."
-    }
-  },
     "about": {
       "title": "Chi siamo",
       "articles": {
@@ -411,7 +408,7 @@
       },
       "client2": {
         "text": "“I pasti sono semplici e gustosi. La lista della spesa fa risparmiare tempo. Mi sento bene in bici.”",
-        "author": "Hana",
+        "author": "Miki",
         "flags": [
           "de"
         ]
@@ -423,7 +420,16 @@
           "us",
           "cz"
         ]
-      }
+      },
+      "lead": "Le esperienze dei nostri clienti che volevano mangiare meglio, avere più energia, comprendere meglio la nutrizione e gestire il proprio stile di vita a lungo termine senza estremi inutili.",
+      "featured": "Una storia che vale la pena raccontare",
+      "highlights": {
+        "energy": "Più energia durante la giornata",
+        "performance": "Prestazioni migliori in allenamento",
+        "recovery": "Recupero migliore",
+        "sleep": "Sonno di qualità superiore"
+      },
+      "cardTitle": "Cosa dicono i nostri clienti"
     },
     "cta": {
       "title": "Pronto per iniziare?",
@@ -678,12 +684,7 @@
     "standard_detail7": "Educazione sui diversi nutrienti",
     "premium_detail_title": "Premium – su misura (7 giorni)",
     "premium_detail1": "Piano alimentare per 7 giorni (lun–dom)",
-    "premium_detail2": "Pasti unici e vari",
-    "premium_detail3": "Personalizzazione in base al diario di allenamento",
-    "premium_detail4": "Ricette per ogni pasto",
-    "premium_detail5": "Lista della spesa",
-    "premium_detail6": "Grafici di apporto e dispendio energetico",
-    "premium_detail7": "Educazione sui diversi nutrienti",
+    "premium_detail2": "Tutto dal piano Standard",
     "premium_detail8": "Educazione sulla nutrizione nello sport",
     "premium_detail9": "Integratori alimentari su misura",
     "premium_detail10": "Piano di idratazione",

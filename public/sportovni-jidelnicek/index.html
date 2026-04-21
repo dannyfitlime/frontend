@@ -77,7 +77,7 @@
       .timing-visual-header p { margin: 0; color: #4b5563; }
       .timing-visual-meta { padding: 16px 18px; border-radius: 16px; background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%); border: 1px solid rgba(22, 163, 74, 0.16); }
       .timing-visual-meta strong { display: block; margin-bottom: 6px; color: #14532d; }
-      .timing-chart-stage-list { display: grid; gap: 14px; margin-top: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .timing-chart-stage-list { display: grid; gap: 14px; margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
       @media (max-width: 767px) { .timing-chart-stage-list { grid-template-columns: 1fr; } }
       .timing-stage-card { padding: 16px 18px; border-radius: 16px; background: #fff; border: 1px solid rgba(17, 24, 39, 0.08); min-width: 0; }
       .timing-stage-card strong { display: block; margin-bottom: 6px; color: #111827; }
@@ -194,7 +194,7 @@
 
     <div class="seo-stack">
       <section class="seo-section fade-in">
-        <h2>Timing jídla směrem k výkonu</h2>
+        <h2>Načasování jídla směrem k výkonu</h2>
         <p>Jídlo před, během a po výkonu neřeší jen hlad. Ovlivňuje energii, schopnost držet tempo i to, jak rychle se vrátíte zpět do tréninku další den.</p>
         <div class="timing-visual">
           <div class="timing-visual-header">
@@ -215,6 +215,11 @@
               <strong>1-2 hodiny před startem</strong>
               <p>Lehké sacharidy, menší dávka bílkovin a minimum tuku nebo vlákniny, aby energie přišla včas a žaludek zůstal v klidu.</p>
             </article>
+            <article class="timing-stage-card pre">
+              <span class="timing-stage-tag">Krátce před výkonem</span>
+              <strong>Asi 30 minut před startem</strong>
+              <p>Pokud chcete ještě lehce dorovnat energii, stačí malá porce rychlých sacharidů, třeba kus banánu, půlka tyčinky nebo pár rýžových chlebíčků.</p>
+            </article>
             <article class="timing-stage-card performance">
               <span class="timing-stage-tag">Výkon</span>
               <strong>Během zátěže podle délky</strong>
@@ -222,8 +227,8 @@
             </article>
             <article class="timing-stage-card recovery">
               <span class="timing-stage-tag">Regenerace</span>
-              <strong>Do 45 minut po výkonu</strong>
-              <p>Sacharidy, bílkoviny a tekutiny pomáhají rychleji doplnit zásoby, snížit únavu a připravit tělo na další trénink.</p>
+              <strong>Do 30 minut po výkonu</strong>
+              <p>Nejprve rychlé sacharidy pro doplnění energie, potom větší jídlo se sacharidy, bílkovinami a tekutinami, které podpoří plnou regeneraci.</p>
             </article>
           </div>
         </div>
@@ -238,8 +243,8 @@
               </div>
               <span class="meal-card-kicker">1-2 hodiny před výkonem</span>
             </div>
-            <p class="meal-card-goal"><strong>Cíl:</strong> dodat rychle dostupnou energii bez těžkého žaludku a bez výkyvu, který vás po startu zbrzdí.</p>
-            <p>Lehce stravitelné sacharidy a menší dávka bílkovin fungují nejlépe. Tuk a velké množství vlákniny nechte spíš dál od tréninku.</p>
+            <p class="meal-card-goal"><strong>Cíl:</strong> dodat rychle dostupnou energii bez těžkého žaludku a těsně před startem už jen jemně doplnit sacharidy.</p>
+            <p>1-2 hodiny před výkonem fungují lehce stravitelné sacharidy a menší dávka bílkovin. Asi 30 minut před startem pak stačí malá porce, třeba kus banánu nebo pár soust něčeho jednoduchého.</p>
             <ul class="checklist">
               <li>🍌 Jogurt s banánem</li>
               <li>🍞 Toast se sýrem a šunkou</li>
@@ -256,8 +261,8 @@
               </div>
               <span class="meal-card-kicker">Po výkonu</span>
             </div>
-            <p class="meal-card-goal"><strong>Cíl:</strong> vrátit tělu sacharidy, bílkoviny a tekutiny dřív, než únava zbytečně prodlouží regeneraci.</p>
-            <p>Po náročnějším výkonu má smysl nečekat na velké jídlo později, ale poslat tělu jednoduchý první krok k obnově hned po tréninku.</p>
+            <p class="meal-card-goal"><strong>Cíl:</strong> nejdřív rychle vrátit sacharidy a potom doplnit plnohodnotné jídlo, aby regenerace nezačínala se zbytečným zpožděním.</p>
+            <p>Do 30 minut po výkonu se hodí jednoduchý sacharidový krok. Potom je ideální navázat větším jídlem se sacharidy, bílkovinami a tekutinami, které doplní zásoby a podpoří obnovu.</p>
             <ul class="checklist">
               <li>🍝 Těstoviny s rajčaty a tuňákem</li>
               <li>🥣 Tvaroh s ovocem a medem</li>
@@ -273,7 +278,7 @@
             <div>
               <span class="hydration-kicker">Hydratace a elektrolyty</span>
               <h4>Nestačí jen pít víc. Potřebujete pít ve správný moment.</h4>
-              <p>Při pocení neztrácíte jen vodu, ale i sodík a další minerály. Když doplňujete tekutiny bez kontextu, můžete být pořád unavení, těžcí nebo zpomalení, i když “hodně pijete”.</p>
+              <p>Při pocení neztrácíte jen vodu, ale i sodík a další ionty. Když doplňujete tekutiny bez správně nastaveného plánu, můžete být pořád unavení, těžcí nebo zpomalení, i když “hodně pijete”.</p>
             </div>
             <div class="hydration-highlight">
               <strong>Nejčastější chyba</strong>
@@ -284,27 +289,27 @@
             <article class="hydration-stage pre">
               <span class="hydration-stage-tag">Před výkonem</span>
               <h5>Přijďte už připravení</h5>
-              <p>Nepřicházejte na trénink dehydrovaní. Tekutiny doplňujte průběžně během dne a před startem už jen dolaďujte, nehaste deficit na poslední chvíli.</p>
+              <p>Dbejte na to, abyste přišli na trénink dostatečně hydratovaní. Tekutiny doplňujte průběžně během dne a před startem už jen dolaďujte, nehaste deficit na poslední chvíli.</p>
               <div class="hydration-stage-note">Pro většinu lidí funguje nejlépe pravidelný pitný režim, ne velká dávka naráz.</div>
             </article>
             <article class="hydration-stage during">
               <span class="hydration-stage-tag">Během výkonu</span>
               <h5>Délka a podmínky rozhodují</h5>
-              <p>U delší, intenzivní nebo horké zátěže dává smysl voda se sodíkem, případně ionťák s jednoduchými sacharidy. Kratší trénink často zvládnete i bez speciálního řešení.</p>
-              <div class="hydration-stage-note">Čím víc se potíte, tím víc je důležitý sodík, ne jen samotná voda.</div>
+              <p>U delší, intenzivní nebo horké zátěže dává smysl voda se sodným iontem, případně ionťák s jednoduchými sacharidy. Kratší trénink zvládnete i bez speciálního řešení.</p>
+              <div class="hydration-stage-note">Čím víc se potíte, tím víc je důležitý sodný iont, ne jen samotná voda.</div>
             </article>
             <article class="hydration-stage post">
               <span class="hydration-stage-tag">Po výkonu</span>
               <h5>Obnova nezačíná až večer</h5>
-              <p>Pokud jste hodně propocení, zaměřte se nejen na vodu, ale i na jídlo nebo nápoj, který doplní elektrolyty. Jen čistá voda po těžké zátěži často nestačí.</p>
-              <div class="hydration-stage-note">Kombinace tekutin, sodíku a jídla vrátí tělo rychleji do normálu.</div>
+              <p>Pokud jste hodně propocení, zaměřte se nejen na vodu, ale i na jídlo nebo nápoj, který doplní elektrolyty. Jen čistá voda po těžké zátěži nestačí.</p>
+              <div class="hydration-stage-note">Kombinace tekutin, sodného iontu a jídla vrátí tělo rychleji do normálu.</div>
             </article>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Tréninkový den vs. rest day</h2>
+        <h2>Tréninkový vs. odpočinkový day</h2>
         
         <div class="edu-flex-row">
           <div style="background: #fffcfb; padding: 24px; border-radius: 12px; border-left: 4px solid #510f0f;">
