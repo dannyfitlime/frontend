@@ -2338,13 +2338,6 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   margin-top: 18px;
 }
 
-.hint::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: currentColor;
-}
-
 .box-back ul {
   margin: 0;
   padding-left: 0;
