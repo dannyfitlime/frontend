@@ -377,7 +377,7 @@
         "title": "Články",
         "lead": "Podívejte se na stručné články k nejčastějším tématům okolo jídelníčků a zdravého životního stylu.",
         "descriptions": {
-          "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime🍋‍🟩.",
+          "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime.",
           "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
           "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
           "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
@@ -406,6 +406,15 @@
       }
     },
     "reference": {
+      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít víc energie, víc rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
+      "featured": "Příběh, který stojí za zmínku",
+      "highlights": {
+        "energy": "Více energie během dne",
+        "performance": "Vyšší výkon v tréninku",
+        "recovery": "Lepší regenerace",
+        "sleep": "Kvalitnější spánek"
+      },
+      "cardTitle": "Jak to vidí naši klienti",
       "title": "FitLime Komunita",
       "client1": {
         "text": "„Změnilo nám to pohled na stravování. Máme víc energie během dne.“",

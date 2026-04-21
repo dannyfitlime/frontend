@@ -397,6 +397,14 @@
       }
     },
     "reference": {
+      "lead": "Doświadczenia naszych klientów, którzy chcieli jeść lepiej, mieć więcej energii, lepiej rozumieć odżywianie i długoterminowo radzić sobie ze swoim stylem życia bez zbędnych skrajności.",
+      "featured": "Historia warta uwagi",
+      "highlights": {
+        "energy": "Więcej energii w ciągu dnia",
+        "performance": "Lepsza wydajność na treningu",
+        "recovery": "Lepsza regeneracja",
+        "sleep": "Lepsza jakość snu"
+      },
       "title": "Społeczność FitLime",
       "client1": {
         "text": "„Zmieniło to nasze spojrzenie na odżywianie. Mamy więcej energii w ciągu dnia.”",
@@ -420,7 +428,8 @@
           "us",
           "cz"
         ]
-      }
+      },
+      "cardTitle": "Jak widzą to nasi klienci"
     },
     "cta": {
       "title": "Zaczynamy?",
