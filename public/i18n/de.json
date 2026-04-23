@@ -280,7 +280,7 @@
       "per_month": "/ Monat",
       "advantage": "günstiger",
       "standard": {
-        "title": "Standard (5 Tage)",
+        "title": "🥗 Standard Plan",
         "feature1": "Ernährungsplan für 5 Tage (Mo–Fr)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -291,7 +291,7 @@
       },
       "premium": {
         "badge": "Am beliebtesten",
-        "title": "Premium (7 Tage)",
+        "title": "✨ Premium Plan",
         "feature1": "Ernährungsplan für 7 Tage (Mo–So)",
         "feature2": "Alles aus dem Standardtarif",
         "extra1": "Aufklärung zur Ernährung im Sport",
