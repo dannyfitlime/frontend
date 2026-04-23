@@ -217,6 +217,21 @@
                     <strong data-i18n="home.why.meal.macros.protein">Bílkoviny</strong>
                   </div>
                 </div>
+                <div class="why-recipe-preview" aria-live="polite">
+                  <div class="why-recipe-preview-head">
+                    <span id="whyRecipeEyebrow">Ukázka receptu</span>
+                    <strong id="whyRecipeIngredientLabel">Suroviny</strong>
+                  </div>
+                  <ul class="why-ingredient-list" id="whyIngredientList" aria-label="Ukázka surovin">
+                    <li>losos</li>
+                    <li>rýže</li>
+                    <li>avokádo</li>
+                  </ul>
+                  <p class="why-recipe-step" id="whyRecipeStep">
+                    <span id="whyRecipeStepLabel">Postup:</span>
+                    <span id="whyRecipeStepText">Uvařenou rýži doplňte lososem, avokádem a zeleninou, poté zakápněte limetkovou zálivkou.</span>
+                  </p>
+                </div>
               </figure>              
             </div>
 
@@ -570,7 +585,10 @@
           <div class="price-grid">
 
             <article class="plan" data-plan="std">
-              <h3 data-i18n="home.pricing.standard.title"></h3>
+              <h3 class="plan-title">
+                <span data-i18n="home.pricing.standard.title"></span>
+                <span class="plan-title-emoji" aria-hidden="true">🥗</span>
+              </h3>
               <ul class="features">
                 <li data-i18n="home.pricing.standard.feature1"></li>
                 <li data-i18n="home.pricing.standard.feature2"></li>
@@ -597,7 +615,10 @@
 
             <article class="plan popular" data-plan="prem">
               <div class="badge" data-i18n="home.pricing.premium.badge"></div>
-              <h3 data-i18n="home.pricing.premium.title"></h3>
+              <h3 class="plan-title">
+                <span data-i18n="home.pricing.premium.title"></span>
+                <span class="plan-title-emoji" aria-hidden="true">✨</span>
+              </h3>
               <ul class="features">
                 <li class="feature-strong" data-i18n="home.pricing.premium.feature1"></li>
                 <li class="feature-strong" data-i18n="home.pricing.premium.feature2"></li>
@@ -801,10 +822,7 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.75 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.6A5.4 5.4 0 1 1 6.6 12 5.4 5.4 0 0 1 12 6.6Zm0 1.8A3.6 3.6 0 1 0 15.6 12 3.6 3.6 0 0 0 12 8.4Z"></path>
                   </svg>
-                </a>
-                <a href="https://www.sportvitalpro.cz" class="community-social community-social--brand" target="_blank" rel="noopener noreferrer" aria-label="SportvitalPro">
-                  <img src="/public/images/logo_sportvitalpro.png" alt="SportvitalPro" class="community-brand-card__logo" loading="lazy" decoding="async" />
-                </a>
+                </a>               
                 <a href="https://www.facebook.com/sportvitalpro" class="community-social community-social--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook Sportvitalpro">
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M13.4 22v-8.2h2.76l.41-3.2H13.4V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.13A22.3 22.3 0 0 0 14.2 4c-2.47 0-4.17 1.5-4.17 4.27v2.39H7.2v3.2h2.83V22h3.37Z"></path>
@@ -814,6 +832,9 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M21.6 7.2a2.9 2.9 0 0 0-2.04-2.05C17.76 4.67 12 4.67 12 4.67s-5.76 0-7.56.48A2.9 2.9 0 0 0 2.4 7.2 30.2 30.2 0 0 0 1.93 12a30.2 30.2 0 0 0 .47 4.8 2.9 2.9 0 0 0 2.04 2.05c1.8.48 7.56.48 7.56.48s5.76 0 7.56-.48a2.9 2.9 0 0 0 2.04-2.05 30.2 30.2 0 0 0 .47-4.8 30.2 30.2 0 0 0-.47-4.8ZM10.1 15.02V8.98L15.32 12l-5.22 3.02Z"></path>
                   </svg>
+                </a>
+                 <a href="https://www.sportvitalpro.cz" class="community-social community-social--brand" target="_blank" rel="noopener noreferrer" aria-label="SportvitalPro">
+                  <img src="/public/images/logo_sportvitalpro.png" alt="SportvitalPro" class="community-brand-card__logo" loading="lazy" decoding="async" />
                 </a>
               </div>
             </div>
@@ -1413,36 +1434,6 @@
       });
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const coverageBoxes = document.querySelectorAll(".coverage-boxes .big-box");
-
-      if (!coverageBoxes.length) return;
-
-      function setCoverageBoxState(box, isActive) {
-        box.classList.toggle("active", isActive);
-        box.setAttribute("aria-expanded", String(isActive));
-      }
-
-      coverageBoxes.forEach((box, index) => {
-        box.setAttribute("role", "button");
-        box.setAttribute("tabindex", "0");
-        box.setAttribute("aria-expanded", "false");
-        box.setAttribute("aria-label", `Zobrazit detail kategorie ${index + 1}`);
-
-        box.addEventListener("click", () => {
-          const shouldActivate = !box.classList.contains("active");
-          coverageBoxes.forEach(item => setCoverageBoxState(item, false));
-          setCoverageBoxState(box, shouldActivate);
-        });
-
-        box.addEventListener("keydown", (event) => {
-          if (event.key !== "Enter" && event.key !== " ") return;
-          event.preventDefault();
-          box.click();
-        });
-      });
-    });
-
     // how sekce animace
     document.addEventListener("DOMContentLoaded", () => {
       const howSection = document.getElementById("how");
@@ -1660,7 +1651,13 @@
     const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
     const whySection = document.getElementById('why');
     const whyMacroRow = document.querySelector('.why-macro-row');
+    const whyRecipeEyebrow = document.getElementById('whyRecipeEyebrow');
+    const whyRecipeIngredientLabel = document.getElementById('whyRecipeIngredientLabel');
+    const whyIngredientList = document.getElementById('whyIngredientList');
+    const whyRecipeStepLabel = document.getElementById('whyRecipeStepLabel');
+    const whyRecipeStepText = document.getElementById('whyRecipeStepText');
     let whyMealActiveImageIndex = 0;
+    let whyMealCurrentIndex = 0;
     let whyMealSwapToken = 0;
     let hasAnimatedWhyMacrosOnEnter = false;
     let hasWhySectionEnteredViewport = false;
@@ -1729,6 +1726,36 @@
       animateWhyMacroDonut(whyMacroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
     }
 
+    function getI18nValue(source, path) {
+      return path.split('.').reduce((value, key) => value?.[key], source);
+    }
+
+    function getWhyRecipeCopy() {
+      const i18nState = window.__fitlimeI18n || {};
+      return getI18nValue(i18nState.dict, 'home.why.recipe')
+        || getI18nValue(i18nState.fallback, 'home.why.recipe');
+    }
+
+    function updateWhyRecipePreview(index) {
+      const copy = getWhyRecipeCopy();
+      if (!copy?.previews?.length) return;
+      const preview = copy.previews[index % copy.previews.length];
+      if (!preview) return;
+      if (whyRecipeEyebrow) whyRecipeEyebrow.textContent = copy.eyebrow;
+      if (whyRecipeIngredientLabel) whyRecipeIngredientLabel.textContent = copy.ingredientLabel;
+      if (whyRecipeStepLabel) whyRecipeStepLabel.textContent = copy.stepLabel;
+      if (whyRecipeStepText) whyRecipeStepText.textContent = preview.step;
+      if (whyIngredientList) {
+        whyIngredientList.setAttribute('aria-label', copy.ingredientAria);
+        const ingredientItems = preview.ingredients.slice(0, 3).map((ingredient) => {
+          const item = document.createElement('li');
+          item.textContent = ingredient;
+          return item;
+        });
+        whyIngredientList.replaceChildren(...ingredientItems);
+      }
+    }
+
     setWhyMacroDonutValue(whyMacroNodes.carbs, 0);
     setWhyMacroDonutValue(whyMacroNodes.fat, 0);
     setWhyMacroDonutValue(whyMacroNodes.protein, 0);
@@ -1751,6 +1778,7 @@
 
     function updateWhyMealVisual(index, meal) {
       if (whyMealImages.length < 2 || !whyMealCaptionTitle) return;
+      whyMealCurrentIndex = index || 0;
       const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
       const mealName = meal?.name || visual.caption;
       const nextImageIndex = whyMealActiveImageIndex === 0 ? 1 : 0;
@@ -1760,6 +1788,7 @@
 
       whyMealCaptionTitle.classList.add('is-swapping');
       updateWhyMealMacros(meal?.macros);
+      updateWhyRecipePreview(index || 0);
 
       const finalizeSwap = () => {
         if (swapToken !== whyMealSwapToken) return;
@@ -1788,6 +1817,10 @@
     document.addEventListener('fitlime:complex-meal-change', (event) => {
       const { index, meal } = event.detail || {};
       updateWhyMealVisual(index || 0, meal);
+    });
+
+    window.addEventListener('fitlime:i18n-loaded', () => {
+      updateWhyRecipePreview(whyMealCurrentIndex);
     });
   </script>
   <script type="module" src="/diet-simulator.js"></script>

@@ -39,10 +39,10 @@
     "why": {
       "kicker": "Why FitLime",
       "title": "We don't just track calories.<br>We look for meals that work as a whole.",
-      "lead": "FitLime compares dozens of nutritional connections and builds a meal plan that matches your goals, preferences, and long-term sustainability.",
+      "lead": "In the background, the app runs an advanced mathematical model that processes tens of thousands of food combinations and nutritional constraints to find the ideal meal plan tailored exactly to you.",
       "stats": {
-        "nutrition": "nutritional parameters for every meal",
-        "meals": "healthy meals in the database"
+        "nutrition": "Tracked nutritional parameters",
+        "meals": "healthy meals in our database"
       },
       "meal": {
         "defaultName": "Salmon poke",
@@ -53,6 +53,24 @@
           "fat": "Fats",
           "protein": "Protein"
         }
+      },
+      "recipe": {
+        "eyebrow": "Recipe preview",
+        "ingredientLabel": "(Simplified)",
+        "ingredientAria": "Ingredient preview",
+        "stepLabel": "Method:",
+        "previews": [
+          { "ingredients": ["Salmon", "Rice", "Avocado"], "step": "Top cooked rice with salmon, avocado and vegetables, then finish with a lime dressing." },
+          { "ingredients": ["Chicken breast", "Bulgur", "Vegetables"], "step": "Sear the chicken until golden, mix with bulgur and serve with a fresh salad." },
+          { "ingredients": ["Tofu", "Quinoa", "Spinach"], "step": "Pan-sear the tofu, add quinoa with spinach and season with a light soy-lime sauce." },
+          { "ingredients": ["Turkey", "Cheese", "Cranberries"], "step": "Spread whole-grain bread with a yogurt base, then fill it with turkey, cheese and cranberries." },
+          { "ingredients": ["Chicken", "Rice", "Peanuts"], "step": "Stir-fry the meat with vegetables, add the sauce and finish with peanuts." },
+          { "ingredients": ["Red lentils", "Egg", "Carrot"], "step": "Cook the lentils with vegetables until tender and add egg for a filling protein boost." },
+          { "ingredients": ["Zander", "Potatoes", "Spinach"], "step": "Pan-sear the zander and serve with potatoes and gently wilted spinach." },
+          { "ingredients": ["Oats", "Apples", "Cinnamon"], "step": "Press the base into a tin, layer apples with cinnamon and bake until golden." },
+          { "ingredients": ["Yogurt", "Gelatin", "Fruit"], "step": "Let the yogurt cream set in a glass and serve it with warm fruit sauce." },
+          { "ingredients": ["Banana", "Yogurt", "Oats"], "step": "Blend everything until smooth and loosen with milk or kefir if needed." }
+        ]
       },
       "chart": {
         "title": "The chart shows all the parameters we track when building your meal plan.",
@@ -287,7 +305,7 @@
       "per_month": "/ month",
       "advantage": "better value",
       "standard": {
-        "title": "🥗 Standard (5 days)",
+        "title": "Standard Plan",
         "feature1": "5-day meal plan (Mon-Fri)",
         "feature2": "Unique, varied meals",
         "feature3": "Personalized by training diary",
@@ -298,7 +316,7 @@
       },
       "premium": {
         "badge": "Most popular",
-        "title": "✨ Premium (7 days)",
+        "title": "Premium Plan",
         "feature1": "7-day meal plan (Mon-Sun)",
         "feature2": "Everything from Standard",
         "extra1": "Education on sports nutrition",
@@ -1008,7 +1026,7 @@
       "contact": {
         "title": "8. Contact information",
         "lead": "For any requests, contact:",
-        "email": "info@fitlime.cz",
+        "email": "info@fitlime.eu",
         "address": "Sportvital-Pro s.r.o., Mokropeska 1799, 252 28 Cernosice"
       },
       "final": {
@@ -1059,7 +1077,7 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "More documents",
       "docs": "Privacy Policy"
     },
@@ -1129,19 +1147,157 @@
       }
     },
     "weight": {
-      "metaTitle": "Weight Loss Meal Plan | FitLime",
-      "metaDescription": "A personalized weight loss meal plan from FitLime built around your goal, routine, and activity. No diet chaos, no pointless restriction, and a clearer plan that is easier to sustain.",
-      "ogTitle": "Weight Loss Meal Plan | FitLime",
-      "ogDescription": "A personalized weight loss meal plan based on your goal, routine, and activity.",
+      "metaTitle": "Weight loss meal plan tailored to you | FitLime",
+      "metaDescription": "A weight loss meal plan from FitLime tailored to your goal, daily routine, and activity. No chaos, no pointless restrictions, and a clear plan you can actually follow.",
+      "ogTitle": "Weight loss meal plan tailored to you | FitLime",
+      "ogDescription": "A personalized weight loss meal plan based on your goal, daily routine, and activity.",
       "hero": {
-        "eyebrow": "Educational guide",
+        "eyebrow": "Guide to healthy meal planning",
         "title": "Weight loss without chaos",
-        "lead": "It is easy to get lost in a flood of extreme diets and guaranteed shortcuts. This page explains a stable, rational, and sustainable approach to fat loss without miracle claims, just basic biology and a plan that makes sense in real life."
+        "lead": "These days it is easy to get lost in a flood of extreme diets and unverified recommendations. This page focuses on the principles of a rational, long-term sustainable approach to fat loss based on biology and physiology."
+      },
+      "energy": {
+        "title": "How weight loss really works",
+        "intro": "Energy balance is the foundation of long-term success in fat loss. If food intake is higher than your daily energy expenditure, body weight goes up. When expenditure is slightly higher than intake, you create room for weight loss.",
+        "chartTitle": "Daily energy balance",
+        "deficit": "Mild deficit",
+        "intake": "Intake 48%",
+        "expenditure": "Expenditure 52%",
+        "legendIntake": "Energy intake [%]",
+        "legendExpenditure": "Energy expenditure [%]",
+        "legendBalance": "Intake and expenditure balance",
+        "caption": "Intake includes energy from all foods and drinks during the day. Expenditure includes basal metabolism, normal daily movement such as walking to work or shopping, and any planned sports activity.",
+        "explain": "The goal is not to hit exact percentages every day. What matters is that your intake and expenditure move in the right direction over time. For weight loss, a mild deficit is usually enough without extreme hunger, fatigue, or unnecessary loss of muscle mass.",
+        "simulatorTitle": "Interactive simulator: Try adjusting your energy balance",
+        "simulatorIntro": "This example is a simplified model based on a normal day in which the body's basic energy needs (BMR) are already covered. You can read more about the body's energy needs in the article <a href=\"/healthy-meal-plan/index.html\" class=\"seo-page-link\">Healthy meal plan</a>.",
+        "chips": {
+          "fries": "Fries",
+          "apple": "Apple",
+          "run": "Run",
+          "gym": "Gym"
+        },
+        "panFood": "Food",
+        "panActivity": "Activity",
+        "note": "For example, if you select fries and both activities, expenditure in this simplified model is higher than intake, so an energy deficit is created. That does not mean the day is automatically healthy: fries mainly provide energy, salt, and fat, but little fiber, protein, vitamins, and minerals. For sustainable weight loss, the quality of meals, satiety, and enough micronutrients matter alongside the kJ balance.",
+        "outcomes": {
+          "empty": "Select at least one food or activity.",
+          "initial": "It is balanced for now. Add food or activity and see where the scale tips.",
+          "surplus": "Weight gain",
+          "deficit": "Weight loss",
+          "mildDeficit": "Mild weight loss",
+          "mildSurplus": "Mild weight gain"
+        }
+      },
+      "speed": {
+        "title": "How fast should weight loss be?",
+        "p1": "A realistic and sustainable pace is roughly <strong>0.3 to 0.7 kg per week</strong>. That usually means a daily deficit of around 1,000 to 2,500 kJ. Faster progress looks attractive, but it often ends in muscle loss, fatigue, and a rebound.",
+        "p2": "Strong results rarely happen in ten days. They are usually built over months of consistent habits. Short plateaus do not mean failure either. Body weight naturally fluctuates with water retention, stress, and the menstrual cycle.",
+        "mistake": "<strong style=\"display:block; margin-bottom:8px;\">The biggest mistake:</strong>Trying to speed up the process through extremes. An overly aggressive diet raises hunger, lowers spontaneous movement, and increases the chance of a yo-yo effect.",
+        "chartTitle": "Comparison of a moderate deficit and a crash diet"
+      },
+      "spotReduction": {
+        "title": "Why spot reduction does not work",
+        "intro": "Doing hundreds of crunches every day will not make fat disappear only from your stomach. The body reduces fat stores across the whole body and the order is largely influenced by genetics and hormones.",
+        "mythTitle": "Myth: just target the area",
+        "mythText": "Training one body part strengthens the muscle under the fat, not a specific fat store. Crunches alone do not melt belly fat.",
+        "factTitle": "Fact: the whole system matters",
+        "factText": "Fat loss mostly comes from a moderate deficit, enough protein, regular movement, and strength training that helps preserve muscle mass."
+      },
+      "mistakes": {
+        "title": "The most common fat-loss mistakes",
+        "intro": "Most people do not make one massive mistake. They usually keep returning to a few habits that quietly slow their progress over time.",
+        "tooAggressiveTitle": "Too aggressive a deficit",
+        "tooAggressiveText": "Drastically cutting intake quickly increases hunger and fatigue and makes the plan hard to follow for more than a few days.",
+        "skippingTitle": "Skipping meals",
+        "skippingText": "If the day starts with long stretches of hunger, overeating later in the afternoon or evening becomes much more likely.",
+        "proteinTitle": "Too little protein",
+        "proteinText": "Without enough protein it is harder to stay full, and the risk of losing muscle during dieting goes up.",
+        "cardioTitle": "Cardio only",
+        "cardioText": "Cardio is useful, but without reasonable intake and strength training, progress often stalls earlier than people expect."
+      },
+      "notLosing": {
+        "title": "Why am I not losing weight even if I eat little?",
+        "intro": "A common issue is not only the amount of food, but also <strong>energy density</strong>. The same 1,000 kJ can come with a very different volume, a very different fullness effect, and a very different impact on your next hunger wave later in the day.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">What this means in practice:</strong>Salad, potatoes, or fruit can fill both the plate and the stomach much more than soda, chocolate, or white rice at the same energy content. Weight loss is not only about eating less, but often about eating smarter.",
+        "flexibility": "<strong>Metabolic flexibility also plays a role.</strong> When your eating pattern is built mainly around fast carbohydrates, frequent snacking, and big swings in energy, the body becomes worse at switching between glucose and fat as fuel sources. In practice, that often looks like this: someone \"doesn't eat much,\" but still gets hungry quickly, has less energy for movement, and struggles to keep the routine long term. At the same time, if someone has spent 20 or 30 years without much movement or structure, nothing major changes in two days. The body usually needs weeks and months of consistent habits, not a few rushed attempts."
+      },
+      "cravings": {
+        "title": "Constant cravings for sweets",
+        "p1": "The problem is often not weak willpower, but steep blood sugar swings. A very sweet breakfast or a fast snack can push energy up quickly and then bring a sharp drop soon after.",
+        "p2": "That drop often shows up as fatigue, worse focus, and a craving for another hit of quick sugar. The body is not necessarily asking for discipline. It is often asking for a steadier energy supply.",
+        "p3": "At the same time, fast carbohydrates do have a place before sport when you actually need quick energy for performance.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">How to calm the swings:</strong>Combine carbohydrates with a source of protein and fat. That slows absorption and helps fullness last longer.",
+        "reading": "<strong>Recommended reading:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> by Jessie Inchauspe.",
+        "chartTitle": "Blood glucose swings during the day"
+      },
+      "sleep": {
+        "title": "Cut sleep and you will eat",
+        "p1": "The target zone is <strong>7 to 9 hours of quality sleep</strong>. Lack of rest disrupts your natural hunger and fullness signals and also makes it harder to make sensible decisions during the day.",
+        "p2": "When you are sleep-deprived, the body starts \"pushing\" you toward food. You get hungry more often, feel less satisfied, and are drawn much more strongly to quick energy such as sweets or calorie-dense foods. At the same time, your ability to resist these cravings goes down.",
+        "p3": "That is why sleep is often more important during fat loss than most people realize."
+      },
+      "movement": {
+        "title": "A realistic view of healthy movement",
+        "intro": "You do not need to run a marathon every day to burn calories or improve cardiovascular health. The important thing is to find movement you can keep doing long term and that does not add even more stress to your week.",
+        "walkingTitle": "Simple walking",
+        "walkingText": "It is accessible, easy to recover from, and when done regularly it often does more for total energy expenditure than people expect.",
+        "stairsTitle": "Stairs and daily movement",
+        "stairsText": "Normal daily activity is often underestimated. In reality, it often decides the difference between stagnation and progress.",
+        "strengthTitle": "Strength training",
+        "strengthText": "It helps protect muscle mass, improves body shape, and supports a more sustainable reduction phase.",
+        "enjoymentTitle": "Sport for enjoyment",
+        "enjoymentText": "Cycling, swimming, or racket sports make sense when they are activities you still want to return to after the first burst of motivation fades."
+      },
+      "social": {
+        "title": "Reality vs social media",
+        "intro": "Algorithms on social media constantly show extremely lean and highly defined physiques, but that often does not reflect normal health or a sustainable lifestyle.",
+        "unrealTitle": "Unreal conditions",
+        "unrealText": "Lighting, a pump, hydration status, and camera angle can create an illusion of a look that is not sustainable long term.",
+        "limitsTitle": "The limits of extreme approaches",
+        "limitsText": "Very low body fat can undermine energy, hormones, mood, and recovery. A good goal is one you can actually live with."
+      },
+      "faq": {
+        "title": "Common weight loss questions",
+        "q1": "Do I need a strict keto or low-carb diet?",
+        "a1": "No. What works best is usually a sustainable deficit and a sensible meal structure. Extreme restriction may lower intake for a while, but it is often harder to maintain.",
+        "q2": "What if I work shifts?",
+        "a2": "Your metabolism is not controlled only by a clock on the wall. What matters is your total intake and whether the plan fits your real routine across the day and week.",
+        "q3": "Why does strength training matter during fat loss and not just cardio?",
+        "a3": "Strength training helps keep muscle mass even while you are in a deficit. That means the result is not only a lower number on the scale, but also a firmer physique and better long-term sustainability. Cardio helps, but on its own it is not enough.",
+        "q4": "Do I need to spend hours in the gym?",
+        "a4": "No. If your main goal is weight loss, the key is still the kitchen. The gym can help, but strong results often come from the combination of nutrition, walking, and basic strength work."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Week 0", "Week 2", "Week 4", "Week 6", "Week 8", "Week 10", "Week 12"],
+          "moderate": "Moderate deficit",
+          "crash": "Crash diet and rebound",
+          "yTitle": "Body weight (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Salad", "Potatoes", "Fruit", "Rice", "Chocolate", "Soda"],
+          "dataset": "Amount of food for 1,000 kJ (g)",
+          "xTitle": "Weight of food (g)"
+        },
+        "glucose": {
+          "label": "Blood glucose",
+          "xTitle": "Time",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sleep (8 h)",
+          "awake": "Awake (16 h)"
+        }
       },
       "cta": {
         "title": "Clear fat loss under control",
-        "lead": "Tired of diet chaos? Get a personalized meal plan and see what the full FitLime system can build around your goal.",
-        "button": "Calculate your personalized plan"
+        "lead": "Tired of diet chaos? Get your personalized meal plan and see what the full FitLime system can build around your goal.",
+        "button": "Calculate your personalized plan",
+        "related": "Related articles:",
+        "healthy": "Healthy eating",
+        "sports": "Sports nutrition",
+        "how": "How FitLime works",
+        "back": "Back to homepage"
       }
     }
   }

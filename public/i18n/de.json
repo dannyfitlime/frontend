@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Warum gerade FitLime",
       "title": "Wir zählen nicht nur Kalorien.<br>Wir suchen nach Mahlzeiten, die als Ganzes funktionieren.",
-      "lead": "FitLime vergleicht Dutzende von Nährstoffzusammenhängen und stellt den Ernährungsplan so zusammen, dass er Ihren Zielen, Vorlieben und der langfristigen Nachhaltigkeit entspricht.",
+      "lead": "Im Hintergrund der App läuft ein fortschrittliches mathematisches Modell, das Zehntausende Kombinationen von Lebensmitteln und Ernährungsbeschränkungen verarbeitet, um den idealen, individuell zugeschnittenen Ernährungsplan zu finden.",
       "stats": {
-        "nutrition": "Nährwertparameter pro Mahlzeit",
-        "meals": "gesunde Gerichte in der Datenbank"
+        "nutrition": "Überwachte Ernährungsparameter",
+        "meals": "gesunde Gerichte in unserer Datenbank"
       },
       "meal": {
         "defaultName": "Lachs Poke",
@@ -49,6 +49,24 @@
           "fat": "Fette",
           "protein": "Eiweiß"
         }
+      },
+      "recipe": {
+        "eyebrow": "Rezeptbeispiel",
+        "ingredientLabel": "(Vereinfacht)",
+        "ingredientAria": "Zutatenbeispiel",
+        "stepLabel": "Zubereitung:",
+        "previews": [
+          { "ingredients": ["Lachs", "Reis", "Avocado"], "step": "Den gekochten Reis mit Lachs, Avocado und Gemüse ergänzen und mit Limetten-Dressing beträufeln." },
+          { "ingredients": ["Hähnchenbrust", "Bulgur", "Gemüse"], "step": "Das Hähnchen goldbraun anbraten, mit Bulgur mischen und mit frischem Salat servieren." },
+          { "ingredients": ["Tofu", "Quinoa", "Spinat"], "step": "Tofu kurz anbraten, Quinoa mit Spinat hinzufügen und mit einer leichten Soja-Limetten-Sauce abschmecken." },
+          { "ingredients": ["Putenschinken", "Käse", "Preiselbeeren"], "step": "Vollkornbrot mit Joghurtsauce bestreichen, mit Pute, Käse und Preiselbeeren füllen." },
+          { "ingredients": ["Hähnchenfleisch", "Reis", "Erdnüsse"], "step": "Fleisch scharf anbraten, Gemüse und Sauce hinzufügen und mit Erdnüssen bestreuen." },
+          { "ingredients": ["rote Linsen", "Ei", "Karotte"], "step": "Linsen mit Gemüse weich kochen und mit Ei als sättigende Proteinquelle ergänzen." },
+          { "ingredients": ["Zander", "Kartoffeln", "Spinat"], "step": "Zander in der Pfanne braten, mit Kartoffeln und leicht gedünstetem Spinat servieren." },
+          { "ingredients": ["Haferflocken", "Äpfel", "Zimt"], "step": "Die Masse in die Form drücken, Äpfel mit Zimt schichten und goldbraun backen." },
+          { "ingredients": ["Joghurt", "Gelatine", "Obst"], "step": "Die Joghurtcreme im Glas fest werden lassen und mit Fruchtkompott servieren." },
+          { "ingredients": ["Banane", "Joghurt", "Haferflocken"], "step": "Alles glatt mixen und nach Bedarf mit Milch oder Kefir verdünnen." }
+        ]
       },
       "chart": {
         "title": "Die Grafik zeigt alle Parameter, die wir bei der Erstellung des Speiseplans berücksichtigen.",
@@ -280,7 +298,7 @@
       "per_month": "/ Monat",
       "advantage": "günstiger",
       "standard": {
-        "title": "Standard (5 Tage)",
+        "title": "Standard Plan",
         "feature1": "Ernährungsplan für 5 Tage (Mo–Fr)",
         "feature2": "Einzigartige, abwechslungsreiche Gerichte",
         "feature3": "Personalisierung nach Trainingsprotokoll",
@@ -291,7 +309,7 @@
       },
       "premium": {
         "badge": "Am beliebtesten",
-        "title": "Premium (7 Tage)",
+        "title": "Premium Plan",
         "feature1": "Ernährungsplan für 7 Tage (Mo–So)",
         "feature2": "Alles aus dem Standardtarif",
         "extra1": "Aufklärung zur Ernährung im Sport",
@@ -1055,5 +1073,161 @@
       "docs": "Datenschutzerklärung"
     },
     "back": "Zurück zur Startseite"
+  },
+  "seoPages": {
+    "weight": {
+      "metaTitle": "Individueller Abnehmplan für dich | FitLime",
+      "metaDescription": "Ein Abnehmplan von FitLime, abgestimmt auf dein Ziel, deinen Alltag und deine Aktivität. Kein Chaos, keine unnötigen Einschränkungen und ein klarer Plan, den du wirklich einhalten kannst.",
+      "ogTitle": "Individueller Abnehmplan für dich | FitLime",
+      "ogDescription": "Ein personalisierter Abnehmplan basierend auf deinem Ziel, deinem Alltag und deiner Aktivität.",
+      "hero": {
+        "eyebrow": "Leitfaden für gesunde Ernährung",
+        "title": "Abnehmen ohne Chaos",
+        "lead": "Heutzutage ist es leicht, sich in einer Flut aus extremen Diäten und ungeprüften Empfehlungen zu verlieren. Diese Seite konzentriert sich auf die Prinzipien eines rationalen und langfristig nachhaltigen Ansatzes zur Fettabnahme, basierend auf Biologie und Physiologie."
+      },
+      "energy": {
+        "title": "Wie Gewichtsverlust wirklich funktioniert",
+        "intro": "Die Energiebilanz ist die Grundlage für langfristigen Erfolg beim Abnehmen. Wenn die Energieaufnahme höher ist als dein täglicher Verbrauch, steigt das Körpergewicht. Ist der Verbrauch leicht höher als die Aufnahme, entsteht Raum für Gewichtsverlust.",
+        "chartTitle": "Tägliche Energiebilanz",
+        "deficit": "Leichtes Defizit",
+        "intake": "Aufnahme 48 %",
+        "expenditure": "Verbrauch 52 %",
+        "legendIntake": "Energieaufnahme [%]",
+        "legendExpenditure": "Energieverbrauch [%]",
+        "legendBalance": "Balance zwischen Aufnahme und Verbrauch",
+        "caption": "Die Aufnahme umfasst Energie aus allen Lebensmitteln und Getränken. Der Verbrauch beinhaltet Grundumsatz, Alltagsbewegung und sportliche Aktivität.",
+        "explain": "Es geht nicht darum, jeden Tag exakte Werte zu treffen, sondern langfristig in die richtige Richtung zu gehen.",
+        "simulatorTitle": "Interaktiver Simulator: Energiebilanz anpassen",
+        "simulatorIntro": "Vereinfachtes Beispiel eines Tages, bei dem der Grundbedarf bereits gedeckt ist.",
+        "chips": {
+          "fries": "Pommes",
+          "apple": "Apfel",
+          "run": "Laufen",
+          "gym": "Fitnessstudio"
+        },
+        "panFood": "Essen",
+        "panActivity": "Aktivität",
+        "note": "Auch wenn ein Defizit entsteht, bedeutet das nicht automatisch, dass der Tag gesund ist.",
+        "outcomes": {
+          "empty": "Wähle mindestens ein Lebensmittel oder eine Aktivität.",
+          "initial": "Aktuell ist es ausgeglichen.",
+          "surplus": "Gewichtszunahme",
+          "deficit": "Gewichtsverlust",
+          "mildDeficit": "Leichter Gewichtsverlust",
+          "mildSurplus": "Leichte Gewichtszunahme"
+        }
+      },
+      "speed": {
+        "title": "Wie schnell sollte man abnehmen?",
+        "p1": "Ein realistisches Tempo liegt bei etwa <strong>0,3 bis 0,7 kg pro Woche</strong>.",
+        "p2": "Nachhaltige Ergebnisse entstehen über Monate, nicht in wenigen Tagen.",
+        "mistake": "<strong>Größter Fehler:</strong> den Prozess durch extreme Maßnahmen beschleunigen zu wollen.",
+        "chartTitle": "Vergleich eines moderaten Defizits und einer Crash-Diät"
+      },
+      "spotReduction": {
+        "title": "Warum gezielter Fettabbau nicht funktioniert",
+        "intro": "Viele Bauchübungen lassen nicht gezielt Bauchfett verschwinden.",
+        "mythTitle": "Mythos: gezielt abnehmen",
+        "mythText": "Training stärkt Muskeln, nicht einzelne Fettdepots.",
+        "factTitle": "Fakt: das ganze System zählt",
+        "factText": "Fettverlust basiert auf einem Gesamtansatz aus Ernährung und Bewegung."
+      },
+      "mistakes": {
+        "title": "Häufigste Fehler",
+        "intro": "Die meisten Menschen machen keinen einzigen großen Fehler. Sie kehren meist immer wieder zu einigen Gewohnheiten zurück, die ihren Fortschritt mit der Zeit unauffällig verlangsamen.",
+        "tooAggressiveTitle": "Zu großes Defizit",
+        "tooAggressiveText": "Führt zu Hunger und Müdigkeit.",
+        "skippingTitle": "Mahlzeiten auslassen",
+        "skippingText": "Erhöht das Risiko für späteres Überessen.",
+        "proteinTitle": "Zu wenig Protein",
+        "proteinText": "Verringert Sättigung und Muskelmasse.",
+        "cardioTitle": "Nur Cardio",
+        "cardioText": "Ohne Krafttraining stagnieren Ergebnisse."
+      },
+      "sleep": {
+        "title": "Weniger Schlaf = mehr Hunger",
+        "p1": "Ziel: <strong>7–9 Stunden Schlaf</strong>.",
+        "p2": "Wenn du unter Schlafmangel leidest, beginnt der Körper dich regelrecht zum Essen zu „drängen“. Du bekommst häufiger Hunger, fühlst dich weniger gesättigt und wirst deutlich stärker zu schnell verfügbarer Energie wie Süßigkeiten oder kalorienreichen Lebensmitteln hingezogen. Gleichzeitig sinkt deine Fähigkeit, diesen Gelüsten zu widerstehen.",
+        "p3": "Deshalb ist Schlaf während einer Diät oft wichtiger, als die meisten Menschen denken."
+      },
+      "movement": {
+        "title": "Realistische Bewegung",
+        "intro": "Du musst nicht jeden Tag einen Marathon laufen, um Kalorien zu verbrennen oder deine Herz-Kreislauf-Gesundheit zu verbessern. Wichtig ist, eine Form der Bewegung zu finden, die du langfristig beibehalten kannst und die deinen Alltag nicht zusätzlich belastet.",
+        "walkingTitle": "Spazierengehen",
+        "walkingText": "Einfach und effektiv.",
+        "stairsTitle": "Treppen und alltägliche Bewegung",
+        "stairsText": "Normale Alltagsbewegung wird oft unterschätzt. In Wirklichkeit entscheidet sie häufig über den Unterschied zwischen Stillstand und Fortschritt.",
+        "strengthTitle": "Krafttraining",
+        "strengthText": "Erhält Muskelmasse.",
+        "enjoymentTitle": "Sport aus Freude",
+        "enjoymentText": "Radfahren, Schwimmen oder Rückschlagsportarten sind sinnvoll, wenn es Aktivitäten sind, zu denen du auch nach der ersten Motivationsphase gerne zurückkehrst."
+      },
+      "notLosing": {
+        "title": "Warum nehme ich nicht ab, obwohl ich wenig esse?",
+        "intro": "Ein häufiges Problem ist nicht nur die Menge an Nahrung, sondern auch die <strong>Energiedichte</strong>. Die gleichen 1.000 kJ können mit einem sehr unterschiedlichen Volumen, einem sehr unterschiedlichen Sättigungseffekt und einem sehr unterschiedlichen Einfluss auf die nächste Hungerphase im Laufe des Tages einhergehen.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">Was das in der Praxis bedeutet:</strong>Salat, Kartoffeln oder Obst können Teller und Magen deutlich mehr füllen als Limonade, Schokolade oder weißer Reis bei gleichem Energiegehalt. Abnehmen bedeutet nicht nur weniger zu essen, sondern oft auch, klüger zu essen.",
+        "flexibility": "<strong>Auch die metabolische Flexibilität spielt eine Rolle.</strong> Wenn das Essverhalten hauptsächlich aus schnellen Kohlenhydraten, häufigem Snacken und starken Energieschwankungen besteht, wird der Körper schlechter darin, zwischen Glukose und Fett als Energiequelle zu wechseln. In der Praxis sieht das oft so aus: Jemand „isst nicht viel“, bekommt aber trotzdem schnell Hunger, hat weniger Energie für Bewegung und hat Schwierigkeiten, die Routine langfristig beizubehalten. Gleichzeitig gilt: Wenn jemand 20 oder 30 Jahre lang kaum Bewegung oder Struktur hatte, ändert sich nichts Wesentliches in zwei Tagen. Der Körper braucht in der Regel Wochen und Monate konsistenter Gewohnheiten, nicht ein paar hektische Versuche."
+      },
+      "cravings": {
+        "title": "Ständiges Verlangen nach Süßem",
+        "p1": "Das Problem ist oft nicht mangelnde Willenskraft, sondern starke Blutzuckerschwankungen. Ein sehr süßes Frühstück oder ein schneller Snack kann die Energie schnell ansteigen lassen und kurz darauf wieder stark abfallen lassen.",
+        "p2": "Dieser Abfall zeigt sich oft durch Müdigkeit, schlechtere Konzentration und das Verlangen nach einem weiteren schnellen Zuckerschub. Der Körper verlangt dabei nicht unbedingt nach Disziplin, sondern eher nach einer stabileren Energieversorgung.",
+        "p3": "Gleichzeitig haben schnelle Kohlenhydrate ihren Platz vor dem Sport, wenn tatsächlich schnell verfügbare Energie für Leistung benötigt wird.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Wie man die Schwankungen beruhigt:</strong>Kombiniere Kohlenhydrate mit einer Quelle für Protein und Fett. Das verlangsamt die Aufnahme und sorgt dafür, dass die Sättigung länger anhält.",
+        "reading": "<strong>Empfohlene Lektüre:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> von Jessie Inchauspe.",
+        "chartTitle": "Blutzuckerschwankungen im Tagesverlauf"
+      },
+      "social": {
+        "title": "Realität vs. soziale Medien",
+        "intro": "Algorithmen in sozialen Medien zeigen ständig extrem schlanke und stark definierte Körper, aber das spiegelt oft weder normale Gesundheit noch einen nachhaltigen Lebensstil wider.",
+        "unrealTitle": "Unrealistische Bedingungen",
+        "unrealText": "Beleuchtung, Pump, Hydrationsstatus und Kamerawinkel können eine Illusion erzeugen, die langfristig nicht haltbar ist.",
+        "limitsTitle": "Die Grenzen extremer Ansätze",
+        "limitsText": "Ein sehr niedriger Körperfettanteil kann Energie, Hormone, Stimmung und Regeneration negativ beeinflussen. Ein gutes Ziel ist eines, mit dem du langfristig leben kannst."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Woche 0", "Woche 2", "Woche 4", "Woche 6", "Woche 8", "Woche 10", "Woche 12"],
+          "moderate": "Moderates Defizit",
+          "crash": "Crash-Diät und Jojo-Effekt",
+          "yTitle": "Körpergewicht (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Salat", "Kartoffeln", "Obst", "Reis", "Schokolade", "Limonade"],
+          "dataset": "Menge an Lebensmitteln für 1.000 kJ (g)",
+          "xTitle": "Gewicht der Lebensmittel (g)"
+        },
+        "glucose": {
+          "label": "Blutzucker",
+          "xTitle": "Zeit",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Schlaf (8 h)",
+          "awake": "Wach (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Häufige Fragen",
+        "q1": "Brauche ich Keto?",
+        "a1": "Nein, ein nachhaltiges Defizit ist entscheidend.",
+        "q2": "Was bei Schichtarbeit?",
+        "a2": "Die Gesamtbilanz zählt.",
+        "q3": "Warum Krafttraining?",
+        "a3": "Es schützt die Muskulatur.",
+        "q4": "Muss ich täglich ins Gym?",
+        "a4": "Nein, Ernährung ist der Schlüssel."
+      },
+      "cta": {
+        "title": "Fettverlust unter Kontrolle",
+        "lead": "Genug vom Diät-Chaos? Hol dir deinen persönlichen Plan.",
+        "button": "Plan berechnen",
+        "back": "Zurück zur Startseite",
+        "related": "Ähnliche Artikel:",
+        "healthy": "Gesunde Ernährung",
+        "sports": "Sporternährung",
+        "how": "Wie FitLime funktioniert"
+      }
+    }
   }
 }

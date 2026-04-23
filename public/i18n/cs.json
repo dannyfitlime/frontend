@@ -39,10 +39,10 @@
     "why": {
       "kicker": "Proč právě FitLime",
       "title": "Neřešíme jen kalorie.<br>Hledáme jídla, která fungují jako celek.",
-      "lead": "FitLime porovnává desítky nutričních souvislostí a skládá jídelníček tak, aby odpovídal vašim cílům, preferencím i dlouhodobé udržitelnosti.",
+      "lead": "Na pozadí aplikace běží pokročilý matematický model, který zpracovává desítky tisíc kombinací potravin a nutričních omezení, aby našel ideální jídelníček přesně na míru.",
       "stats": {
-        "nutrition": "výživových parametrů každého jídla",
-        "meals": "zdravých jídel v databázi"
+        "nutrition": "Sledovaných nutričních parametrů",
+        "meals": "zdravých jídel v naší databázi"
       },
       "meal": {
         "defaultName": "Losos poke",
@@ -53,6 +53,24 @@
           "fat": "Tuky",
           "protein": "Bílkoviny"
         }
+      },
+      "recipe": {
+        "eyebrow": "Ukázka receptu",
+        "ingredientLabel": "(Zjednodušené)",
+        "ingredientAria": "Ukázka surovin",
+        "stepLabel": "Postup:",
+        "previews": [
+          { "ingredients": ["Losos", "Rýže", "Avokádo"], "step": "Uvařenou rýži doplňte lososem, avokádem a zeleninou, poté zakápněte limetkovou zálivkou." },
+          { "ingredients": ["Kuřecí prsa", "Bulgur", "Zelenina"], "step": "Kuře opečte dozlatova, promíchejte s bulgurem a podávejte s čerstvým salátem." },
+          { "ingredients": ["Tofu", "Quinoa", "špenát"], "step": "Tofu krátce opečte, přidejte quinou se špenátem a dochuťte lehkou sójovo-limetkovou omáčkou." },
+          { "ingredients": ["Krůtí šunka", "Sýr", "brusinky"], "step": "Celozrnné pečivo potřete jogurtovým základem, naplňte krůtím masem, sýrem a brusinkami." },
+          { "ingredients": ["Kuřecí maso", "Rýže", "arašídy"], "step": "Maso zprudka orestujte se zeleninou, přidejte omáčku a na závěr posypte arašídy." },
+          { "ingredients": ["Červená čočka", "Vejce", "Mrkev"], "step": "Čočku povařte se zeleninou doměkka a doplňte vejcem jako sytý zdroj bílkovin." },
+          { "ingredients": ["Candát", "Brambory", "Špenát"], "step": "Candáta opečte na pánvi, podávejte s bramborem a jemně podušeným špenátem." },
+          { "ingredients": ["Ovesné vločky", "Jablka", "Skořice"], "step": "Základ vtlačte do formy, navrstvěte jablka se skořicí a pečte dozlatova." },
+          { "ingredients": ["Jogurt", "Želatina", "Ovoce"], "step": "Jogurtový krém nechte ztuhnout ve skleničce a podávejte s ovocným rozvarem." },
+          { "ingredients": ["Banán", "Jogurt", "Vločky"], "step": "Vše rozmixujte dohladka a podle potřeby zjemněte mlékem nebo kefírem." }
+        ]
       },
       "chart": {
         "title": "Graf ukazuje všechny parametry, které při skládání jídelníčku sledujeme.",
@@ -287,7 +305,7 @@
       "per_month": "/ měsíc",
       "advantage": "výhodnější",
       "standard": {
-        "title": "🥗 Standard (5 dní)",
+        "title": "Standard Plán",
         "feature1": "Jídelníček na 5 dní (Po–Pá)",
         "feature2": "Unikátní, pestrá jídla",
         "feature3": "Personalizace podle tréninkového deníku",
@@ -298,7 +316,7 @@
       },
       "premium": {
         "badge": "Nejoblíbenější",
-        "title": "✨ Premium (7 dní)",
+        "title": "Premium Plán",
         "feature1": "Jídelníček na 7 dní (Po–Ne)",
         "feature2": "Vše ze Standardu",
         "extra1": "Edukace o výživě ve sportu",

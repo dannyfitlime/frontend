@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Perché FitLime",
       "title": "Non contiamo solo le calorie.<br>Cerchiamo pasti che funzionino nel loro insieme.",
-      "lead": "FitLime confronta decine di parametri nutrizionali e compone il tuo piano alimentare affinché corrisponda ai tuoi obiettivi, alle tue preferenze e alla sostenibilità a lungo termine.",
+      "lead": "In background, l’app utilizza un modello matematico avanzato che elabora decine di migliaia di combinazioni di alimenti e vincoli nutrizionali per trovare il piano alimentare ideale su misura per te.",
       "stats": {
-        "nutrition": "parametri nutrizionali per ogni pasto",
-        "meals": "pasti sani nel database"
+        "nutrition": "Parametri nutrizionali monitorati",
+        "meals": "pasti sani nel nostro database"
       },
       "meal": {
         "defaultName": "Poke al salmone",
@@ -49,6 +49,24 @@
           "fat": "Grassi",
           "protein": "Proteine"
         }
+      },
+      "recipe": {
+        "eyebrow": "Esempio di ricetta",
+        "ingredientLabel": "(Semplificato)",
+        "ingredientAria": "Esempio ingredienti",
+        "stepLabel": "Preparazione:",
+        "previews": [
+          { "ingredients": ["Salmone", "Riso", "Avocado"], "step": "Aggiungi salmone, avocado e verdure al riso e condisci con lime." },
+          { "ingredients": ["Petto di pollo", "Bulgur", "Verdure"], "step": "Rosola il pollo, mescola con bulgur e servi con insalata." },
+          { "ingredients": ["Tofu", "Quinoa", "Spinaci"], "step": "Salta il tofu, aggiungi quinoa e spinaci e condisci." },
+          { "ingredients": ["Prosciutto di tacchino", "Formaggio", "Mirtilli rossi"], "step": "Spalma pane integrale e farcisci." },
+          { "ingredients": ["Pollo", "Riso", "Arachidi"], "step": "Salta la carne e aggiungi arachidi." },
+          { "ingredients": ["Lenticchie rosse", "Uovo", "Carota"], "step": "Cuoci le lenticchie e aggiungi l’uovo." },
+          { "ingredients": ["Lucioperca", "Patate", "Spinaci"], "step": "Cuoci il pesce e servi con contorni." },
+          { "ingredients": ["Fiocchi d’avena", "Mele", "Cannella"], "step": "Disponi e cuoci." },
+          { "ingredients": ["Yogurt", "Gelatina", "Frutta"], "step": "Lascia solidificare e servi." },
+          { "ingredients": ["Banana", "Yogurt", "Avena"], "step": "Frulla tutto." }
+        ]
       },
       "chart": {
         "title": "Il grafico mostra tutti i parametri che monitoriamo durante la creazione del tuo piano alimentare.",
@@ -280,7 +298,7 @@
       "per_month": "/ mese",
       "advantage": "più conveniente",
       "standard": {
-        "title": "⚖️ Standard (5 giorni)",
+        "title": "Standard Plan",
         "feature1": "Piano alimentare per 5 giorni (lun–ven)",
         "feature2": "Pasti unici e vari",
         "feature3": "Personalizzazione in base al diario di allenamento",
@@ -291,7 +309,7 @@
       },
       "premium": {
         "badge": "Il più scelto",
-        "title": "🏆 Premium (7 giorni)",
+        "title": "Premium Plan",
         "feature1": "Piano alimentare per 7 giorni (lun–dom)",
         "feature2": "Tutto dal piano Standard",
         "extra1": "Educazione sulla nutrizione nello sport",
@@ -999,7 +1017,7 @@
       "contact": {
         "title": "8. Informazioni di contatto",
         "lead": "Per qualsiasi richiesta, scrivi a:",
-        "email": "info@fitlime.cz",
+        "email": "info@fitlime.eu",
         "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Repubblica Ceca"
       },
       "final": {
@@ -1050,10 +1068,166 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "Altri documenti",
       "docs": "Informativa sulla protezione dei dati personali"
     },
     "back": "Torna alla pagina iniziale"
+  },
+  "seoPages": {
+    "weight": {
+      "metaTitle": "Piano di dimagrimento su misura per te | FitLime",
+      "metaDescription": "Un piano di dimagrimento FitLime adattato al tuo obiettivo, alla tua routine quotidiana e alla tua attività. Niente caos, niente restrizioni inutili e un piano chiaro che puoi davvero seguire.",
+      "ogTitle": "Piano di dimagrimento su misura per te | FitLime",
+      "ogDescription": "Un piano personalizzato per la perdita di peso basato sul tuo obiettivo, sulla tua routine e sulla tua attività.",
+      "hero": {
+        "eyebrow": "Guida a un’alimentazione sana",
+        "title": "Dimagrire senza caos",
+        "lead": "Oggi è facile perdersi in una valanga di diete estreme e consigli non verificati. Questa pagina si concentra sui principi di un approccio razionale e sostenibile a lungo termine alla perdita di grasso, basato su biologia e fisiologia."
+      },
+      "energy": {
+        "title": "Come funziona davvero la perdita di peso",
+        "intro": "Il bilancio energetico è la base del successo a lungo termine. Se l’apporto calorico è superiore al dispendio energetico giornaliero, il peso aumenta. Quando il dispendio è leggermente superiore all’apporto, si crea spazio per dimagrire.",
+        "chartTitle": "Bilancio energetico giornaliero",
+        "deficit": "Deficit moderato",
+        "intake": "Apporto 48%",
+        "expenditure": "Dispendio 52%",
+        "legendIntake": "Apporto energetico [%]",
+        "legendExpenditure": "Dispendio energetico [%]",
+        "legendBalance": "Equilibrio tra apporto e dispendio",
+        "caption": "L’apporto include l’energia da tutti gli alimenti e bevande. Il dispendio comprende metabolismo basale, attività quotidiana e sport.",
+        "explain": "L’obiettivo non è raggiungere valori esatti ogni giorno, ma muoversi nella giusta direzione nel tempo.",
+        "simulatorTitle": "Simulatore interattivo: regola il tuo bilancio energetico",
+        "simulatorIntro": "Esempio semplificato basato su una giornata normale con il fabbisogno base già coperto.",
+        "chips": {
+          "fries": "Patatine fritte",
+          "apple": "Mela",
+          "run": "Corsa",
+          "gym": "Palestra"
+        },
+        "panFood": "Cibo",
+        "panActivity": "Attività",
+        "note": "Anche se si crea un deficit, ciò non significa automaticamente che la giornata sia sana.",
+        "outcomes": {
+          "empty": "Seleziona almeno un alimento o un’attività.",
+          "initial": "Per ora è equilibrato.",
+          "surplus": "Aumento di peso",
+          "deficit": "Perdita di peso",
+          "mildDeficit": "Perdita di peso moderata",
+          "mildSurplus": "Aumento di peso moderato"
+        }
+      },
+      "speed": {
+        "title": "Quanto velocemente dimagrire?",
+        "p1": "Un ritmo realistico è circa <strong>0,3–0,7 kg a settimana</strong>.",
+        "p2": "I risultati duraturi richiedono mesi, non pochi giorni.",
+        "mistake": "<strong>Errore principale:</strong> cercare di accelerare con approcci estremi.",
+        "chartTitle": "Confronto tra un deficit moderato e una dieta drastica"
+      },
+      "spotReduction": {
+        "title": "Perché la riduzione localizzata non funziona",
+        "intro": "Fare addominali non elimina il grasso solo dalla pancia.",
+        "mythTitle": "Mito: mirare a una zona",
+        "mythText": "Allenare una parte del corpo rafforza il muscolo, non elimina il grasso locale.",
+        "factTitle": "Fatto: conta l’intero sistema",
+        "factText": "La perdita di grasso dipende da deficit, proteine e movimento."
+      },
+      "mistakes": {
+        "title": "Errori più comuni",
+        "intro": "La maggior parte delle persone non commette un unico grande errore. Di solito torna a poche abitudini che rallentano silenziosamente i progressi nel tempo.",
+        "tooAggressiveTitle": "Deficit troppo aggressivo",
+        "tooAggressiveText": "Aumenta fame e stanchezza.",
+        "skippingTitle": "Saltare i pasti",
+        "skippingText": "Porta a mangiare troppo più tardi.",
+        "proteinTitle": "Poche proteine",
+        "proteinText": "Riduce la sazietà.",
+        "cardioTitle": "Solo cardio",
+        "cardioText": "Limita i risultati."
+      },
+      "sleep": {
+        "title": "Meno sonno = più fame",
+        "p1": "Obiettivo: <strong>7–9 ore di sonno</strong>.",
+        "p2": "Quando sei privato del sonno, il corpo inizia a \"spingerti\" verso il cibo. Hai più spesso fame, ti senti meno sazio e sei molto più attratto da fonti di energia rapida come dolci o alimenti ad alta densità calorica. Allo stesso tempo, la tua capacità di resistere a queste voglie diminuisce.",
+        "p3": "Per questo il sonno è spesso più importante durante la perdita di grasso di quanto la maggior parte delle persone pensi."
+      },
+      "movement": {
+        "title": "Movimento realistico",
+        "intro": "Non è necessario correre una maratona ogni giorno per bruciare calorie o migliorare la salute cardiovascolare. L’importante è trovare un’attività che puoi mantenere nel lungo periodo e che non aggiunga ulteriore stress alla tua settimana.",
+        "walkingTitle": "Camminare",
+        "walkingText": "Semplice ed efficace.",
+        "stairsTitle": "Scale e movimento quotidiano",
+        "stairsText": "L’attività quotidiana normale è spesso sottovalutata. In realtà, spesso fa la differenza tra stagnazione e progresso.",
+        "strengthTitle": "Allenamento di forza",
+        "strengthText": "Protegge la massa muscolare.",
+        "enjoymentTitle": "Sport per piacere",
+        "enjoymentText": "Ciclismo, nuoto o sport con racchetta hanno senso se sono attività a cui vuoi tornare anche dopo il primo slancio di motivazione."
+      },
+      "notLosing": {
+        "title": "Perché non perdo peso anche se mangio poco?",
+        "intro": "Un problema comune non è solo la quantità di cibo, ma anche la <strong>densità energetica</strong>. Gli stessi 1.000 kJ possono corrispondere a volumi molto diversi, a un effetto di sazietà molto diverso e a un impatto molto diverso sulla successiva sensazione di fame durante la giornata.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">Cosa significa in pratica:</strong>Insalata, patate o frutta possono riempire piatto e stomaco molto più di bibite, cioccolato o riso bianco a parità di contenuto energetico. Dimagrire non significa solo mangiare meno, ma spesso mangiare in modo più intelligente.",
+        "flexibility": "<strong>Anche la flessibilità metabolica gioca un ruolo.</strong> Quando l’alimentazione è basata principalmente su carboidrati veloci, spuntini frequenti e grandi oscillazioni di energia, il corpo diventa meno efficiente nel passare dal glucosio ai grassi come fonte di energia. In pratica, spesso succede questo: una persona \"non mangia molto\", ma ha comunque fame rapidamente, ha meno energia per muoversi e fatica a mantenere la routine nel lungo periodo. Allo stesso tempo, se qualcuno ha passato 20 o 30 anni senza molta attività o struttura, nulla cambia in due giorni. Il corpo ha generalmente bisogno di settimane e mesi di abitudini costanti, non di pochi tentativi frettolosi."
+      },
+      "cravings": {
+        "title": "Desiderio costante di dolci",
+        "p1": "Il problema spesso non è la mancanza di forza di volontà, ma le forti oscillazioni della glicemia. Una colazione molto dolce o uno spuntino veloce può far salire rapidamente l’energia e poi farla crollare poco dopo.",
+        "p2": "Questo calo si manifesta spesso con stanchezza, peggior concentrazione e voglia di un’altra dose di zucchero rapido. Il corpo non chiede necessariamente disciplina, ma piuttosto un apporto energetico più stabile.",
+        "p3": "Allo stesso tempo, i carboidrati veloci hanno il loro posto prima dell’attività sportiva, quando serve davvero energia immediata per la performance.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Come stabilizzare queste oscillazioni:</strong>Abbina i carboidrati a una fonte di proteine e grassi. Questo rallenta l’assorbimento e aiuta a mantenere la sazietà più a lungo.",
+        "reading": "<strong>Lettura consigliata:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> di Jessie Inchauspe.",
+        "chartTitle": "Oscillazioni della glicemia durante la giornata"
+      },
+      "social": {
+        "title": "Realtà vs social media",
+        "intro": "Gli algoritmi dei social media mostrano continuamente fisici estremamente magri e definiti, ma questo spesso non riflette una salute normale né uno stile di vita sostenibile.",
+        "unrealTitle": "Condizioni irreali",
+        "unrealText": "Illuminazione, pump, stato di idratazione e angolo della fotocamera possono creare un’illusione estetica non sostenibile nel lungo periodo.",
+        "limitsTitle": "I limiti degli approcci estremi",
+        "limitsText": "Un livello molto basso di grasso corporeo può compromettere energia, ormoni, umore e recupero. Un buon obiettivo è quello con cui puoi realmente convivere."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Settimana 0", "Settimana 2", "Settimana 4", "Settimana 6", "Settimana 8", "Settimana 10", "Settimana 12"],
+          "moderate": "Deficit moderato",
+          "crash": "Dieta drastica ed effetto rebound",
+          "yTitle": "Peso corporeo (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Insalata", "Patate", "Frutta", "Riso", "Cioccolato", "Bibita"],
+          "dataset": "Quantità di cibo per 1.000 kJ (g)",
+          "xTitle": "Peso del cibo (g)"
+        },
+        "glucose": {
+          "label": "Glicemia",
+          "xTitle": "Tempo",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sonno (8 h)",
+          "awake": "Sveglio (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Domande frequenti",
+        "q1": "Serve la dieta keto?",
+        "a1": "No, conta un deficit sostenibile.",
+        "q2": "E se lavoro su turni?",
+        "a2": "Conta il totale complessivo.",
+        "q3": "Perché la forza?",
+        "a3": "Mantiene i muscoli.",
+        "q4": "Serve tanto tempo in palestra?",
+        "a4": "No, l’alimentazione è la chiave."
+      },
+      "cta": {
+        "title": "Perdita di grasso sotto controllo",
+        "lead": "Stanco del caos delle diete? Ottieni il tuo piano personalizzato.",
+        "button": "Calcola il tuo piano",
+        "back": "Torna alla homepage",
+        "related": "Articoli correlati:",
+        "healthy": "Alimentazione sana",
+        "sports": "Nutrizione sportiva",
+        "how": "Come funziona FitLime"
+      }
+    }
   }
 }
