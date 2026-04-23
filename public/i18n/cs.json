@@ -39,9 +39,9 @@
     "why": {
       "kicker": "Proč právě FitLime",
       "title": "Neřešíme jen kalorie.<br>Hledáme jídla, která fungují jako celek.",
-      "lead": "Na pozadí aplikace běží pokročilý matematický model, který zpracovává desítky tisíc kombinací potravin a nutričních omezení, aby našel ideální jídelníček přesně na míru.",
+      "lead": "Na pozadí aplikace běží pokročilý matematický model, který zpracovává desítky tisíc kombinací potravin a výživových omezení, aby našel ideální jídelníček přesně na míru.",
       "stats": {
-        "nutrition": "Sledovaných nutričních parametrů",
+        "nutrition": "Sledovaných výživových parametrů",
         "meals": "zdravých jídel v naší databázi"
       },
       "meal": {
@@ -158,7 +158,7 @@
     },
     "diet": {
       "title": "Zkuste si složit ideální oběd",
-      "subtitle": "Vyberte jednotlivé potraviny a uvidíte, jak se při skládání oběda mění celkové nutriční hodnoty. Ukazované hodnoty jsou normalizované pro lepší ilustraci a porovnání zdravých i méně zdravých potravin mezi sebou.",
+      "subtitle": "Vyberte jednotlivé potraviny a uvidíte, jak se při skládání oběda mění celkové výživové hodnoty. Ukazované hodnoty jsou normalizované pro lepší ilustraci a porovnání zdravých i méně zdravých potravin mezi sebou.",
       "autoSelect": "Vybrat doporučené potraviny",
       "food": {
         "avocado": "Avokádo",
@@ -370,8 +370,8 @@
         "a": "Na tvorbě jídelníčků se podílejí odborníci na výživu s praxí ve sportovní medicíně a práci s aktivní populací. Díky tomu propojujeme praktickou použitelnost jídelníčku s odborným pohledem na výživu."
       },
       "q10": {
-        "q": "Odkud čerpáte nutriční hodnoty?",
-        "a": "Nutriční hodnoty čerpáme z ověřených zdrojů, především z databáze USDA (United States Department of Agriculture). Tyto údaje dále doplňujeme a zpracováváme pomocí vlastních výpočetních modelů, aby výsledný plán odpovídal zadaným cílům."
+        "q": "Odkud čerpáte výživové hodnoty?",
+        "a": "Výživové hodnoty čerpáme z ověřených zdrojů, především z databáze USDA (United States Department of Agriculture). Tyto údaje dále doplňujeme a zpracováváme pomocí vlastních výpočetních modelů, aby výsledný plán odpovídal zadaným cílům."
       },
       "q11": {
         "q": "Co když mi některý recept nechutná?",
@@ -413,7 +413,7 @@
         "item1": "Klinický biochemik, lékař internista ve VFN a 1. LF UK",
         "item2": "Odborný konzultant v oblasti sportovní výživy",
         "item3": "Spolupráce s Českým olympijským týmem",
-        "imageAlt": "Libor Vítek - expert na nutriční terapii"
+        "imageAlt": "Libor Vítek - expert na výživovou terapii"
       },
       "danny": {
         "name": "Ing. Daniel Vítek",
@@ -540,7 +540,7 @@
   },
   "step2": {
     "title": "Cíl & energie",
-    "target": "Nutriční cíl",
+    "target": "Výživový cíl",
     "target_lose": "Zhubnout",
     "target_maintain": "Udržet váhu",
     "target_gain": "Přibrat",
