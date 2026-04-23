@@ -52,7 +52,7 @@
       },
       "recipe": {
         "eyebrow": "Rezeptbeispiel",
-        "ingredientLabel": "Zutaten",
+        "ingredientLabel": "(Vereinfacht)",
         "ingredientAria": "Zutatenbeispiel",
         "stepLabel": "Zubereitung:",
         "previews": [

@@ -56,7 +56,7 @@
       },
       "recipe": {
         "eyebrow": "Recipe preview",
-        "ingredientLabel": "Ingredients",
+        "ingredientLabel": "(Simplified)",
         "ingredientAria": "Ingredient preview",
         "stepLabel": "Method:",
         "previews": [

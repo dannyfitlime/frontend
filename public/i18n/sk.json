@@ -55,7 +55,7 @@
       },
       "recipe": {
         "eyebrow": "Ukážka receptu",
-        "ingredientLabel": "Suroviny",
+        "ingredientLabel": "(Zjednodušené)",
         "ingredientAria": "Ukážka surovín",
         "stepLabel": "Postup:",
         "previews": [

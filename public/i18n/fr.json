@@ -52,7 +52,7 @@
       },
       "recipe": {
         "eyebrow": "Exemple de recette",
-        "ingredientLabel": "Ingrédients",
+        "ingredientLabel": "(Simplifié)",
         "ingredientAria": "Exemple d’ingrédients",
         "stepLabel": "Préparation :",
         "previews": [
