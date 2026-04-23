@@ -613,8 +613,33 @@
         }
       }
 
+      @media (max-width: 470px) {
+        .balance-stage {
+          min-height: 300px;
+        }
+
+        .balance-pan {
+          width: 108px;
+        }
+
+        .balance-pan.left,
+        .balance-pan.right {
+          margin-left: -54px;
+        }
+
+        .balance-pan-bowl {
+          width: 96px;
+          min-height: 70px;
+          padding: 16px 7px 11px;
+        }
+
+        .balance-beam {
+          width: min(300px, 82%);
+        }
+      }
+
       .balance-readout {
-        display: grid;
+        display: none;
         gap: 14px;
       }
 
@@ -829,17 +854,7 @@
         margin-top: 28px;
       }
 
-      @media (min-width: 761px) {
-        .balance-readout .balance-outcome {
-          display: none;
-        }
-      }
-
       @media (max-width: 760px) {
-        .balance-overlay-outcome {
-          display: none;
-        }
-
         .energy-stack-card {
           padding: 16px;
         }
@@ -1272,7 +1287,10 @@
           const visualAngle = -clampedTilt;
           const angleRad = (visualAngle * Math.PI) / 180;
           const halfBeam = beam.offsetWidth / 2;
-          const panAnchorOffset = Math.max(halfBeam - 30, 80);
+          const isCompactBalance = window.matchMedia('(max-width: 470px)').matches;
+          const panAnchorOffset = isCompactBalance
+            ? Math.max(halfBeam - 58, 66)
+            : Math.max(halfBeam - 30, 80);
           const verticalShift = -Math.sin(angleRad) * panAnchorOffset;
 
           beam.style.transform = `rotate(${visualAngle}deg)`;
