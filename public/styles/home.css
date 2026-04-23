@@ -2173,6 +2173,17 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   margin-bottom: 10px;
 }
 
+.plan-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.plan-title-emoji {
+  line-height: 1;
+}
+
 .plan ul {
   list-style: disc;
   padding-left: 12px;

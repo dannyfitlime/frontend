@@ -298,7 +298,7 @@
       "per_month": "/ mês",
       "advantage": "mais vantajoso",
       "standard": {
-        "title": "🥗 Standard Plan",
+        "title": "Standard Plan",
         "feature1": "Plano alimentar para 5 dias (seg–sex)",
         "feature2": "Refeições únicas e variadas",
         "feature3": "Personalização com base no diário de treino",
@@ -309,7 +309,7 @@
       },
       "premium": {
         "badge": "Mais popular",
-        "title": "✨ Premium Plan",
+        "title": "Premium Plan",
         "feature1": "Plano alimentar para 7 dias (seg–dom)",
         "feature2": "Tudo do plano Padrão",
         "extra1": "Educação sobre nutrição no desporto",

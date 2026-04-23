@@ -298,7 +298,7 @@
       "per_month": "/ miesiąc",
       "advantage": "korzystniejsza opcja",
       "standard": {
-        "title": "🥗 Standard Plan",
+        "title": "Standard Plan",
         "feature1": "Plan żywieniowy na 5 dni (pon–pt)",
         "feature2": "Unikalne i urozmaicone posiłki",
         "feature3": "Personalizacja na podstawie dziennika treningowego",
@@ -309,7 +309,7 @@
       },
       "premium": {
         "badge": "Najczęściej wybierany",
-        "title": "✨ Premium Plan",
+        "title": "Premium Plan",
         "feature1": "Plan żywieniowy na 7 dni (pon–niedz)",
         "feature2": "Wszystko ze standardu",
         "extra1": "Edukacja z zakresu żywienia w sporcie",

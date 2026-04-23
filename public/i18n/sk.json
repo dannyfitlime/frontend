@@ -329,7 +329,7 @@
       "per_month": "/ mesiac",
       "advantage": "výhodnejšia",
       "standard": {
-        "title": "🥗 Standard Plan",
+        "title": "Standard Plan",
         "feature1": "Jedálniček na 5 dní (Po-Pi)",
         "feature2": "Unikátne, pestré jedlá",
         "feature3": "Personalizácia podľa tréningového denníka",
@@ -340,7 +340,7 @@
       },
       "premium": {
         "badge": "Najobľúbenejšia",
-        "title": "✨ Premium Plan",
+        "title": "Premium Plan",
         "feature1": "Jedálniček na 7 dní (Po-Ne)",
         "feature2": "Všetko zo štandardu",
         "extra1": "Edukácia o výžive v športe",
