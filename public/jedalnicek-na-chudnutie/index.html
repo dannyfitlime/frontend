@@ -274,13 +274,13 @@
       }
 
       #foodPan .balance-pan-bowl {
-        background: linear-gradient(180deg, #fffdf0 0%, #fef3c7 100%);
-        border: 1px solid #facc15;
+        background: linear-gradient(180deg, #fff7ef 0%, #f0c99f 100%);
+        border: 1px solid #d79a5b;
       }
 
       #activityPan .balance-pan-bowl {
-        background: linear-gradient(180deg, #f8fbff 0%, #dbeafe 100%);
-        border: 1px solid #60a5fa;
+        background: linear-gradient(180deg, #f5f9fd 0%, #c7d7ea 100%);
+        border: 1px solid #6f8fb8;
       }
 
       .balance-pan-bowl::before {
@@ -434,21 +434,21 @@
       }
 
       .balance-chip[data-group="food"] {
-        background: #fff8db;
-        border-color: #facc15;
+        background: rgba(215, 154, 91, 0.16);
+        border-color: #d79a5b;
       }
 
       .balance-chip[data-group="food"]:hover {
-        border-color: #eab308;
+        border-color: #b8793d;
       }
 
       .balance-chip[data-group="activity"] {
-        background: #eff6ff;
-        border-color: #60a5fa;
+        background: rgba(111, 143, 184, 0.16);
+        border-color: #6f8fb8;
       }
 
       .balance-chip[data-group="activity"]:hover {
-        border-color: #3b82f6;
+        border-color: #4f719d;
       }
 
       .balance-chip.active {
@@ -612,8 +612,33 @@
         }
       }
 
+      @media (max-width: 470px) {
+        .balance-stage {
+          min-height: 300px;
+        }
+
+        .balance-pan {
+          width: 108px;
+        }
+
+        .balance-pan.left,
+        .balance-pan.right {
+          margin-left: -54px;
+        }
+
+        .balance-pan-bowl {
+          width: 96px;
+          min-height: 70px;
+          padding: 16px 7px 11px;
+        }
+
+        .balance-beam {
+          width: min(300px, 82%);
+        }
+      }
+
       .balance-readout {
-        display: grid;
+        display: none;
         gap: 14px;
       }
 
@@ -649,15 +674,210 @@
         text-align: center;
       }
 
-      @media (min-width: 761px) {
-        .balance-readout .balance-outcome {
-          display: none;
+      .energy-stack-card {
+        margin-top: 22px;
+        padding: 22px;
+        border: 1px solid var(--seo-line);
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .energy-stack-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-end;
+        margin-bottom: 14px;
+      }
+
+      .energy-stack-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 850;
+        color: var(--fg);
+      }
+
+      .energy-stack-delta {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: #f0fdf4;
+        color: #166534;
+        font-weight: 800;
+        font-size: 0.84rem;
+        white-space: nowrap;
+      }
+
+      .energy-stack-bar {
+        position: relative;
+        display: flex;
+        height: 72px;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #f3f4f6;
+      }
+
+      .energy-stack-segment {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        color: #fff;
+        font-weight: 850;
+        letter-spacing: 0.01em;
+      }
+
+      .energy-stack-segment.intake {
+        justify-content: flex-start;
+        width: 48%;
+        padding-left: 24px;
+        background: #082b79;
+      }
+
+      .energy-stack-segment.output {
+        justify-content: flex-end;
+        width: 52%;
+        padding-right: 24px;
+        background: #ae9000;
+      }
+
+      .energy-stack-marker {
+        position: absolute;
+        inset: 0 auto 0 50%;
+        width: 4px;
+        transform: translateX(-50%);
+        background: #ff1f1f;
+        z-index: 2;
+      }
+
+      .energy-stack-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        margin-top: 18px;
+        color: var(--fg);
+      }
+
+      .energy-stack-legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 0.95rem;
+      }
+
+      .energy-stack-swatch {
+        width: 18px;
+        height: 12px;
+        border-radius: 4px;
+      }
+
+      .energy-stack-swatch.intake {
+        background: #082b79;
+      }
+
+      .energy-stack-swatch.output {
+        background: #ae9000;
+      }
+
+      .energy-stack-swatch.marker {
+        background: #ff1f1f;
+      }
+
+      .energy-stack-caption {
+        margin: 12px 0 0;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+
+      .energy-stack-explain {
+        margin: 14px 0 0;
+        color: var(--fg);
+      }
+
+      .fade-in.visible .energy-stack-segment.intake {
+        animation: energyIntakeFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .fade-in.visible .energy-stack-segment.output {
+        animation: energyOutputFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
+      }
+
+      .fade-in.visible .energy-stack-marker {
+        animation: energyMarkerReveal 0.5s ease-out 0.85s both;
+      }
+
+      @keyframes energyIntakeFill {
+        from {
+          width: 0;
+          padding-left: 0;
+        }
+        to {
+          width: 48%;
+          padding-left: 24px;
         }
       }
 
+      @keyframes energyOutputFill {
+        from {
+          width: 0;
+          padding-right: 0;
+        }
+        to {
+          width: 52%;
+          padding-right: 24px;
+        }
+      }
+
+      @keyframes energyMarkerReveal {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) scaleY(0.2);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-50%) scaleY(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in.visible .energy-stack-segment.intake,
+        .fade-in.visible .energy-stack-segment.output,
+        .fade-in.visible .energy-stack-marker {
+          animation: none;
+        }
+      }
+
+      .balance-simulator-title {
+        margin-top: 28px;
+      }
+
       @media (max-width: 760px) {
-        .balance-overlay-outcome {
-          display: none;
+        .energy-stack-card {
+          padding: 16px;
+        }
+
+        .energy-stack-header {
+          display: grid;
+          gap: 10px;
+          align-items: start;
+        }
+
+        .energy-stack-bar {
+          height: 62px;
+        }
+
+        .energy-stack-segment.intake {
+          padding-left: 14px;
+        }
+
+        .energy-stack-segment.output {
+          padding-right: 14px;
+        }
+
+        .energy-stack-legend {
+          gap: 10px 14px;
         }
       }
 
@@ -687,8 +907,30 @@
       <section class="seo-section fade-in">
         <h2>Ako chudnutie reálne funguje</h2>
         <p>Energetická bilancia je základom dlhodobého úspechu pri chudnutí. Ak príjem z jedla prevyšuje výdaj
-          energie počas dňa, váha rastie. Naopak keď je výdaj o niečo vyšší než príjem, vzniká priestor na chudnutie.
-          Táto ukážka je zjednodušeným príkladom, ktorý vychádza z bežného dňa, keď sú základné energetické potreby
+          energie počas dňa, váha rastie. Naopak keď je výdaj o niečo vyšší než príjem, vzniká priestor na chudnutie.</p>
+        <div class="energy-stack-card" aria-label="Energetická bilancia dňa">
+          <div class="energy-stack-header">
+            <p class="energy-stack-title">Energetická bilancia dňa</p>
+            <span class="energy-stack-delta">Mierny deficit</span>
+          </div>
+          <div class="energy-stack-bar">
+            <div class="energy-stack-segment intake"><span>Príjem 48 %</span></div>
+            <div class="energy-stack-marker" aria-hidden="true"></div>
+            <div class="energy-stack-segment output"><span>Výdaj 52 %</span></div>
+          </div>
+          <div class="energy-stack-legend">
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch intake"></span>Príjem energie [%]</span>
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch output"></span>Výdaj energie [%]</span>
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch marker"></span>Rovnováha príjmu a výdaja</span>
+          </div>
+          <p class="energy-stack-caption">Príjem tvorí energia zo všetkých jedál a nápojov počas dňa. Výdaj zahŕňa bazálny
+            metabolizmus, bežný pohyb ako chôdzu do práce alebo na nákup a prípadnú športovú aktivitu.</p>
+          <p class="energy-stack-explain">Cieľom nie je trafiť presné percentá každý deň. Dôležité je, aby sa v dlhšom
+            období príjem a výdaj pohybovali smerom, ktorý zodpovedá vášmu cieľu. Pri chudnutí zvyčajne stačí mierny
+            deficit, ktorý nevedie k extrémnemu hladu, únave ani zbytočnej strate svalovej hmoty.</p>
+        </div>
+        <h3 class="balance-simulator-title">Interaktívny simulátor: Vyskúšajte si regulovať energetickú bilanciu</h3>
+        <p>Táto ukážka je zjednodušeným príkladom, ktorý vychádza z bežného dňa, keď sú základné energetické potreby
           tela (BMR) pokryté. Viac o energetických potrebách tela sa dozviete v článku <a
             href="/zdravy-jedalnicek/index.html" class="seo-page-link">Zdravý jedálniček</a>.</p>
         <div class="balance-lab">
@@ -698,10 +940,6 @@
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍟</span><span
                       class="balance-chip-label">Hranolky</span></span></span></button>
-              <button type="button" class="balance-chip" data-group="food" data-kj="502" data-emoji="🥗"><span
-                  class="balance-chip-main"><span class="balance-chip-title"><span
-                      class="balance-chip-emoji">🥗</span><span
-                      class="balance-chip-label">Šalát</span></span></span></button>
               <button type="button" class="balance-chip" data-group="food" data-kj="335" data-emoji="🍎"><span
                   class="balance-chip-main"><span class="balance-chip-title"><span
                       class="balance-chip-emoji">🍎</span><span
@@ -747,6 +985,11 @@
               <div class="balance-ground"></div>
             </div>
           </div>
+          <p class="balance-note">Keď napríklad vyberiete hranolky a obe aktivity, výdaj v tejto zjednodušenej ukážke
+            prevýši príjem, takže vzniká energetický deficit. To však neznamená, že je taký deň automaticky zdravý:
+            hranolky dodajú najmä energiu, soľ a tuk, ale málo vlákniny, bielkovín, vitamínov a minerálnych látok. Pre
+            dlhodobé chudnutie je preto dôležitá nielen samotná bilancia kJ, ale aj kvalita jedál, sýtosť a dostatok
+            mikronutrientov.</p>
         </div>
       </section>
 
@@ -1051,7 +1294,10 @@
           const visualAngle = -clampedTilt;
           const angleRad = (visualAngle * Math.PI) / 180;
           const halfBeam = beam.offsetWidth / 2;
-          const panAnchorOffset = Math.max(halfBeam - 30, 80);
+          const isCompactBalance = window.matchMedia('(max-width: 470px)').matches;
+          const panAnchorOffset = isCompactBalance
+            ? Math.max(halfBeam - 58, 66)
+            : Math.max(halfBeam - 30, 80);
           const verticalShift = -Math.sin(angleRad) * panAnchorOffset;
 
           beam.style.transform = `rotate(${visualAngle}deg)`;

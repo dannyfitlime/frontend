@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Weight loss meal plan tailored to you | FitLime</title>
+  <title data-i18n="seoPages.weight.metaTitle">Weight loss meal plan tailored to you | FitLime</title>
   <meta name="description"
-    content="A weight loss meal plan from FitLime tailored to your goal, daily routine, and activity. No chaos, no pointless restrictions, and a clear plan you can actually follow.">
+    content="A weight loss meal plan from FitLime tailored to your goal, daily routine, and activity. No chaos, no pointless restrictions, and a clear plan you can actually follow."
+    data-i18n-content="seoPages.weight.metaDescription">
   <link rel="canonical" href="https://fitlime.eu/weight-loss-meal-plan/">
   <link rel="alternate" hreflang="cs" href="https://fitlime.cz/jidelnicek-na-hubnuti/">
   <link rel="alternate" hreflang="sk" href="https://fitlime.sk/jedalnicek-na-chudnutie/">
   <link rel="alternate" hreflang="en" href="https://fitlime.eu/weight-loss-meal-plan/">
   <link rel="alternate" hreflang="x-default" href="https://fitlime.eu/weight-loss-meal-plan/">
-  <meta property="og:title" content="Weight loss meal plan tailored to you | FitLime">
+  <meta property="og:title" content="Weight loss meal plan tailored to you | FitLime"
+    data-i18n-content="seoPages.weight.ogTitle">
   <meta property="og:description"
-    content="A personalized weight loss meal plan based on your goal, daily routine, and activity.">
+    content="A personalized weight loss meal plan based on your goal, daily routine, and activity."
+    data-i18n-content="seoPages.weight.ogDescription">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fitlime.eu/weight-loss-meal-plan/">
   <meta property="og:image" content="https://fitlime.eu/images/og-fitlime_en.jpg">
@@ -274,13 +277,13 @@
       }
 
       #foodPan .balance-pan-bowl {
-        background: linear-gradient(180deg, #fffdf0 0%, #fef3c7 100%);
-        border: 1px solid #facc15;
+        background: linear-gradient(180deg, #fff7ef 0%, #f0c99f 100%);
+        border: 1px solid #d79a5b;
       }
 
       #activityPan .balance-pan-bowl {
-        background: linear-gradient(180deg, #f8fbff 0%, #dbeafe 100%);
-        border: 1px solid #60a5fa;
+        background: linear-gradient(180deg, #f5f9fd 0%, #c7d7ea 100%);
+        border: 1px solid #6f8fb8;
       }
 
       .balance-pan-bowl::before {
@@ -434,21 +437,21 @@
       }
 
       .balance-chip[data-group="food"] {
-        background: #fff8db;
-        border-color: #facc15;
+        background: rgba(215, 154, 91, 0.16);
+        border-color: #d79a5b;
       }
 
       .balance-chip[data-group="food"]:hover {
-        border-color: #eab308;
+        border-color: #b8793d;
       }
 
       .balance-chip[data-group="activity"] {
-        background: #eff6ff;
-        border-color: #60a5fa;
+        background: rgba(111, 143, 184, 0.16);
+        border-color: #6f8fb8;
       }
 
       .balance-chip[data-group="activity"]:hover {
-        border-color: #3b82f6;
+        border-color: #4f719d;
       }
 
       .balance-chip.active {
@@ -612,8 +615,33 @@
         }
       }
 
+      @media (max-width: 470px) {
+        .balance-stage {
+          min-height: 300px;
+        }
+
+        .balance-pan {
+          width: 108px;
+        }
+
+        .balance-pan.left,
+        .balance-pan.right {
+          margin-left: -54px;
+        }
+
+        .balance-pan-bowl {
+          width: 96px;
+          min-height: 70px;
+          padding: 16px 7px 11px;
+        }
+
+        .balance-beam {
+          width: min(300px, 82%);
+        }
+      }
+
       .balance-readout {
-        display: grid;
+        display: none;
         gap: 14px;
       }
 
@@ -652,15 +680,210 @@
         text-align: center;
       }
 
-      @media (min-width: 761px) {
-        .balance-readout .balance-outcome {
-          display: none;
+      .energy-stack-card {
+        margin-top: 22px;
+        padding: 22px;
+        border: 1px solid var(--seo-line);
+        border-radius: 22px;
+        background: #ffffff;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .energy-stack-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-end;
+        margin-bottom: 14px;
+      }
+
+      .energy-stack-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 850;
+        color: var(--fg);
+      }
+
+      .energy-stack-delta {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: #f0fdf4;
+        color: #166534;
+        font-weight: 800;
+        font-size: 0.84rem;
+        white-space: nowrap;
+      }
+
+      .energy-stack-bar {
+        position: relative;
+        display: flex;
+        height: 72px;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #f3f4f6;
+      }
+
+      .energy-stack-segment {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        color: #fff;
+        font-weight: 850;
+        letter-spacing: 0.01em;
+      }
+
+      .energy-stack-segment.intake {
+        justify-content: flex-start;
+        width: 48%;
+        padding-left: 24px;
+        background: #082b79;
+      }
+
+      .energy-stack-segment.output {
+        justify-content: flex-end;
+        width: 52%;
+        padding-right: 24px;
+        background: #ae9000;
+      }
+
+      .energy-stack-marker {
+        position: absolute;
+        inset: 0 auto 0 50%;
+        width: 4px;
+        transform: translateX(-50%);
+        background: #ff1f1f;
+        z-index: 2;
+      }
+
+      .energy-stack-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        margin-top: 18px;
+        color: var(--fg);
+      }
+
+      .energy-stack-legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 0.95rem;
+      }
+
+      .energy-stack-swatch {
+        width: 18px;
+        height: 12px;
+        border-radius: 4px;
+      }
+
+      .energy-stack-swatch.intake {
+        background: #082b79;
+      }
+
+      .energy-stack-swatch.output {
+        background: #ae9000;
+      }
+
+      .energy-stack-swatch.marker {
+        background: #ff1f1f;
+      }
+
+      .energy-stack-caption {
+        margin: 12px 0 0;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+
+      .energy-stack-explain {
+        margin: 14px 0 0;
+        color: var(--fg);
+      }
+
+      .fade-in.visible .energy-stack-segment.intake {
+        animation: energyIntakeFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .fade-in.visible .energy-stack-segment.output {
+        animation: energyOutputFill 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
+      }
+
+      .fade-in.visible .energy-stack-marker {
+        animation: energyMarkerReveal 0.5s ease-out 0.85s both;
+      }
+
+      @keyframes energyIntakeFill {
+        from {
+          width: 0;
+          padding-left: 0;
+        }
+        to {
+          width: 48%;
+          padding-left: 24px;
         }
       }
 
+      @keyframes energyOutputFill {
+        from {
+          width: 0;
+          padding-right: 0;
+        }
+        to {
+          width: 52%;
+          padding-right: 24px;
+        }
+      }
+
+      @keyframes energyMarkerReveal {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) scaleY(0.2);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-50%) scaleY(1);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in.visible .energy-stack-segment.intake,
+        .fade-in.visible .energy-stack-segment.output,
+        .fade-in.visible .energy-stack-marker {
+          animation: none;
+        }
+      }
+
+      .balance-simulator-title {
+        margin-top: 28px;
+      }
+
       @media (max-width: 760px) {
-        .balance-overlay-outcome {
-          display: none;
+        .energy-stack-card {
+          padding: 16px;
+        }
+
+        .energy-stack-header {
+          display: grid;
+          gap: 10px;
+          align-items: start;
+        }
+
+        .energy-stack-bar {
+          height: 62px;
+        }
+
+        .energy-stack-segment.intake {
+          padding-left: 14px;
+        }
+
+        .energy-stack-segment.output {
+          padding-right: 14px;
+        }
+
+        .energy-stack-legend {
+          gap: 10px 14px;
         }
       }
 
@@ -678,215 +901,233 @@
 
     <section class="seo-hero">
       <article class="seo-card seo-hero-card fade-in">
-        <div class="seo-eyebrow">Guide to healthy meal planning</div>
-        <h1>Weight loss without chaos</h1>
-        <p class="seo-lead">These days it is easy to get lost in a flood of extreme diets and unverified recommendations. This page focuses on the principles of a rational, long-term sustainable approach to fat loss based on biology and physiology.</p>
+        <div class="seo-eyebrow" data-i18n="seoPages.weight.hero.eyebrow">Guide to healthy meal planning</div>
+        <h1 data-i18n="seoPages.weight.hero.title">Weight loss without chaos</h1>
+        <p class="seo-lead" data-i18n="seoPages.weight.hero.lead">These days it is easy to get lost in a flood of extreme diets and unverified recommendations. This page focuses on the principles of a rational, long-term sustainable approach to fat loss based on biology and physiology.</p>
       </article>
     </section>
 
     <div class="seo-stack">
       <section class="seo-section fade-in">
-        <h2>How weight loss really works</h2>
-        <p>Energy balance is the foundation of long-term success in fat loss. If food intake is higher than your daily energy expenditure, body weight goes up. When expenditure is slightly higher than intake, you create room for weight loss. This example is a simplified model based on a normal day in which the body’s basic energy needs (BMR) are already covered. You can read more about the body’s energy needs in the article <a
+        <h2 data-i18n="seoPages.weight.energy.title">How weight loss really works</h2>
+        <p data-i18n="seoPages.weight.energy.intro">Energy balance is the foundation of long-term success in fat loss. If food intake is higher than your daily energy expenditure, body weight goes up. When expenditure is slightly higher than intake, you create room for weight loss.</p>
+        <div class="energy-stack-card" aria-label="Daily energy balance" data-i18n-aria-label="seoPages.weight.energy.chartTitle">
+          <div class="energy-stack-header">
+            <p class="energy-stack-title" data-i18n="seoPages.weight.energy.chartTitle">Daily energy balance</p>
+            <span class="energy-stack-delta" data-i18n="seoPages.weight.energy.deficit">Mild deficit</span>
+          </div>
+          <div class="energy-stack-bar">
+            <div class="energy-stack-segment intake"><span data-i18n="seoPages.weight.energy.intake">Intake 48%</span></div>
+            <div class="energy-stack-marker" aria-hidden="true"></div>
+            <div class="energy-stack-segment output"><span data-i18n="seoPages.weight.energy.expenditure">Expenditure 52%</span></div>
+          </div>
+          <div class="energy-stack-legend">
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch intake"></span><span data-i18n="seoPages.weight.energy.legendIntake">Energy intake [%]</span></span>
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch output"></span><span data-i18n="seoPages.weight.energy.legendExpenditure">Energy expenditure [%]</span></span>
+            <span class="energy-stack-legend-item"><span class="energy-stack-swatch marker"></span><span data-i18n="seoPages.weight.energy.legendBalance">Intake and expenditure balance</span></span>
+          </div>
+          <p class="energy-stack-caption" data-i18n="seoPages.weight.energy.caption">Intake includes energy from all foods and drinks during the day. Expenditure includes basal metabolism, normal daily movement such as walking to work or shopping, and any planned sports activity.</p>
+          <p class="energy-stack-explain" data-i18n="seoPages.weight.energy.explain">The goal is not to hit exact percentages every day. What matters is that your intake and expenditure move in the right direction over time. For weight loss, a mild deficit is usually enough without extreme hunger, fatigue, or unnecessary loss of muscle mass.</p>
+        </div>
+        <h3 class="balance-simulator-title" data-i18n="seoPages.weight.energy.simulatorTitle">Interactive simulator: Try adjusting your energy balance</h3>
+        <p data-i18n="seoPages.weight.energy.simulatorIntro">This example is a simplified model based on a normal day in which the body’s basic energy needs (BMR) are already covered. You can read more about the body’s energy needs in the article <a
             href="/healthy-meal-plan/index.html" class="seo-page-link">Healthy meal plan</a>.</p>
         <div class="balance-lab">
           <div class="balance-controls">
             <div class="balance-choice-list" id="balanceChoices">
               <button type="button" class="balance-chip" data-group="food" data-kj="1527" data-emoji="🍟">
-                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍟</span><span class="balance-chip-label">Fries</span></span></span>
-              </button>
-              <button type="button" class="balance-chip" data-group="food" data-kj="502" data-emoji="🥗">
-                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🥗</span><span class="balance-chip-label">Salad</span></span></span>
+                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍟</span><span class="balance-chip-label" data-i18n="seoPages.weight.energy.chips.fries">Fries</span></span></span>
               </button>
               <button type="button" class="balance-chip" data-group="food" data-kj="335" data-emoji="🍎">
-                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍎</span><span class="balance-chip-label">Apple</span></span></span>
+                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🍎</span><span class="balance-chip-label" data-i18n="seoPages.weight.energy.chips.apple">Apple</span></span></span>
               </button>
               <button type="button" class="balance-chip" data-group="activity" data-kj="1088" data-emoji="🏃">
-                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🏃</span><span class="balance-chip-label">Run</span></span></span>
+                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🏃</span><span class="balance-chip-label" data-i18n="seoPages.weight.energy.chips.run">Run</span></span></span>
               </button>
               <button type="button" class="balance-chip" data-group="activity" data-kj="920" data-emoji="🏋️">
-                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🏋️</span><span class="balance-chip-label">Gym</span></span></span>
+                <span class="balance-chip-main"><span class="balance-chip-title"><span class="balance-chip-emoji">🏋️</span><span class="balance-chip-label" data-i18n="seoPages.weight.energy.chips.gym">Gym</span></span></span>
               </button>
             </div>
             <div class="balance-readout">
-              <div class="balance-outcome balance" id="balanceOutcome">Select at least one food or activity.</div>
+              <div class="balance-outcome balance" id="balanceOutcome" data-i18n="seoPages.weight.energy.outcomes.empty">Select at least one food or activity.</div>
             </div>
           </div>
           <div class="balance-playground">
             <div class="balance-stage">
-              <div class="balance-overlay-outcome balance" id="balanceOverlayOutcome">It is balanced for now. Add food or activity and see where the scale tips.</div>
+              <div class="balance-overlay-outcome balance" id="balanceOverlayOutcome" data-i18n="seoPages.weight.energy.outcomes.initial">It is balanced for now. Add food or activity and see where the scale tips.</div>
               <div class="balance-beam" id="balanceBeam"></div>
               <div class="balance-pointer"></div>
-              <div class="balance-pan left" id="foodPan"><div class="balance-pan-bowl"><strong>Food</strong><span id="foodTotal">0 kJ</span><div class="balance-pan-items" id="foodIcons"></div></div></div>
-              <div class="balance-pan right" id="activityPan"><div class="balance-pan-bowl"><strong>Activity</strong><span id="activityTotal">0 kJ</span><div class="balance-pan-items" id="activityIcons"></div></div></div>
+              <div class="balance-pan left" id="foodPan"><div class="balance-pan-bowl"><strong data-i18n="seoPages.weight.energy.panFood">Food</strong><span id="foodTotal">0 kJ</span><div class="balance-pan-items" id="foodIcons"></div></div></div>
+              <div class="balance-pan right" id="activityPan"><div class="balance-pan-bowl"><strong data-i18n="seoPages.weight.energy.panActivity">Activity</strong><span id="activityTotal">0 kJ</span><div class="balance-pan-items" id="activityIcons"></div></div></div>
               <div class="balance-pivot"></div><div class="balance-pillar"></div><div class="balance-base"></div><div class="balance-ground"></div>
             </div>
           </div>
+          <p class="balance-note" data-i18n="seoPages.weight.energy.note">For example, if you select fries and both activities, expenditure in this simplified model is higher than intake, so an energy deficit is created. That does not mean the day is automatically healthy: fries mainly provide energy, salt, and fat, but little fiber, protein, vitamins, and minerals. For sustainable weight loss, the quality of meals, satiety, and enough micronutrients matter alongside the kJ balance.</p>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>How fast should weight loss be?</h2>
+        <h2 data-i18n="seoPages.weight.speed.title">How fast should weight loss be?</h2>
         <div class="edu-flex-row">
           <div>
-            <p>A realistic and sustainable pace is roughly <strong>0.3 to 0.7 kg per week</strong>. That usually means a daily deficit of around 1,000 to 2,500 kJ. Faster progress looks attractive, but it often ends in muscle loss, fatigue, and a rebound.</p>
-            <p>Strong results rarely happen in ten days. They are usually built over months of consistent habits. Short plateaus do not mean failure either. Body weight naturally fluctuates with water retention, stress, and the menstrual cycle.</p>
-            <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">The biggest mistake:</strong>Trying to speed up the process through extremes. An overly aggressive diet raises hunger, lowers spontaneous movement, and increases the chance of a yo-yo effect.</div>
+            <p data-i18n="seoPages.weight.speed.p1">A realistic and sustainable pace is roughly <strong>0.3 to 0.7 kg per week</strong>. That usually means a daily deficit of around 1,000 to 2,500 kJ. Faster progress looks attractive, but it often ends in muscle loss, fatigue, and a rebound.</p>
+            <p data-i18n="seoPages.weight.speed.p2">Strong results rarely happen in ten days. They are usually built over months of consistent habits. Short plateaus do not mean failure either. Body weight naturally fluctuates with water retention, stress, and the menstrual cycle.</p>
+            <div class="edu-fact-box" data-i18n="seoPages.weight.speed.mistake"><strong style="display:block; margin-bottom:8px;">The biggest mistake:</strong>Trying to speed up the process through extremes. An overly aggressive diet raises hunger, lowers spontaneous movement, and increases the chance of a yo-yo effect.</div>
           </div>
           <div>
-            <h3 style="margin:0 0 12px;">Comparison of a moderate deficit and a crash diet</h3>
+            <h3 style="margin:0 0 12px;" data-i18n="seoPages.weight.speed.chartTitle">Comparison of a moderate deficit and a crash diet</h3>
             <div class="edu-chart-md"><canvas id="weightLossChart"></canvas></div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Why spot reduction does not work</h2>
-        <p>Doing hundreds of crunches every day will not make fat disappear only from your stomach. The body reduces fat stores across the whole body and the order is largely influenced by genetics and hormones.</p>
+        <h2 data-i18n="seoPages.weight.spotReduction.title">Why spot reduction does not work</h2>
+        <p data-i18n="seoPages.weight.spotReduction.intro">Doing hundreds of crunches every day will not make fat disappear only from your stomach. The body reduces fat stores across the whole body and the order is largely influenced by genetics and hormones.</p>
         <div class="seo-grid">
           <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;">
-            <h3 style="color:#b91c1c;">Myth: just target the area</h3>
-            <p>Training one body part strengthens the muscle under the fat, not a specific fat store. Crunches alone do not melt belly fat.</p>
+            <h3 style="color:#b91c1c;" data-i18n="seoPages.weight.spotReduction.mythTitle">Myth: just target the area</h3>
+            <p data-i18n="seoPages.weight.spotReduction.mythText">Training one body part strengthens the muscle under the fat, not a specific fat store. Crunches alone do not melt belly fat.</p>
           </article>
           <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">Fact: the whole system matters</h3>
-            <p>Fat loss mostly comes from a moderate deficit, enough protein, regular movement, and strength training that helps preserve muscle mass.</p>
+            <h3 style="color:var(--seo-accent);" data-i18n="seoPages.weight.spotReduction.factTitle">Fact: the whole system matters</h3>
+            <p data-i18n="seoPages.weight.spotReduction.factText">Fat loss mostly comes from a moderate deficit, enough protein, regular movement, and strength training that helps preserve muscle mass.</p>
           </article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>The most common fat-loss mistakes</h2>
-        <p>Most people do not make one massive mistake. They usually keep returning to a few habits that quietly slow their progress over time.</p>
+        <h2 data-i18n="seoPages.weight.mistakes.title">The most common fat-loss mistakes</h2>
+        <p data-i18n="seoPages.weight.mistakes.intro">Most people do not make one massive mistake. They usually keep returning to a few habits that quietly slow their progress over time.</p>
         <div class="seo-grid">
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg></div><h3 style="color:#830000; margin:0;">Too aggressive a deficit</h3></div><p>Drastically cutting intake quickly increases hunger and fatigue and makes the plan hard to follow for more than a few days.</p></article>
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg></div><h3 style="color:#830000; margin:0;">Skipping meals</h3></div><p>If the day starts with long stretches of hunger, overeating later in the afternoon or evening becomes much more likely.</p></article>
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" /></svg></div><h3 style="color:#830000; margin:0;">Too little protein</h3></div><p>Without enough protein it is harder to stay full, and the risk of losing muscle during dieting goes up.</p></article>
-          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M6 18L18 6M6 6l12 12" /></svg></div><h3 style="color:#830000; margin:0;">Cardio only</h3></div><p>Cardio is useful, but without reasonable intake and strength training, progress often stalls earlier than people expect.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg></div><h3 style="color:#830000; margin:0;" data-i18n="seoPages.weight.mistakes.tooAggressiveTitle">Too aggressive a deficit</h3></div><p data-i18n="seoPages.weight.mistakes.tooAggressiveText">Drastically cutting intake quickly increases hunger and fatigue and makes the plan hard to follow for more than a few days.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg></div><h3 style="color:#830000; margin:0;" data-i18n="seoPages.weight.mistakes.skippingTitle">Skipping meals</h3></div><p data-i18n="seoPages.weight.mistakes.skippingText">If the day starts with long stretches of hunger, overeating later in the afternoon or evening becomes much more likely.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" /></svg></div><h3 style="color:#830000; margin:0;" data-i18n="seoPages.weight.mistakes.proteinTitle">Too little protein</h3></div><p data-i18n="seoPages.weight.mistakes.proteinText">Without enough protein it is harder to stay full, and the risk of losing muscle during dieting goes up.</p></article>
+          <article class="seo-mini-card" style="background:#fffcfc; border-color:#fee2e2;"><div style="display:flex; align-items:center; gap:8px;"><div class="edu-icon" style="margin-bottom:0; display:flex; align-items:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M6 18L18 6M6 6l12 12" /></svg></div><h3 style="color:#830000; margin:0;" data-i18n="seoPages.weight.mistakes.cardioTitle">Cardio only</h3></div><p data-i18n="seoPages.weight.mistakes.cardioText">Cardio is useful, but without reasonable intake and strength training, progress often stalls earlier than people expect.</p></article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Why am I not losing weight even if I eat little?</h2>
-        <p>A common issue is not only the amount of food, but also <strong>energy density</strong>. The same 1,000 kJ can come with a very different volume, a very different fullness effect, and a very different impact on your next hunger wave later in the day.</p>
+        <h2 data-i18n="seoPages.weight.notLosing.title">Why am I not losing weight even if I eat little?</h2>
+        <p data-i18n="seoPages.weight.notLosing.intro">A common issue is not only the amount of food, but also <strong>energy density</strong>. The same 1,000 kJ can come with a very different volume, a very different fullness effect, and a very different impact on your next hunger wave later in the day.</p>
         <div class="edu-chart-lg" style="height: 380px;"><canvas id="foodCompareChart"></canvas></div>
-        <div class="edu-fact-box"><strong style="display:block; margin-bottom:8px;">What this means in practice:</strong>Salad, potatoes, or fruit can fill both the plate and the stomach much more than soda, chocolate, or white rice at the same energy content. Weight loss is not only about eating less, but often about eating smarter.</div>
-        <p><strong>Metabolic flexibility also plays a role.</strong> When your eating pattern is built mainly around fast carbohydrates, frequent snacking, and big swings in energy, the body becomes worse at switching between glucose and fat as fuel sources. In practice, that often looks like this: someone “doesn’t eat much,” but still gets hungry quickly, has less energy for movement, and struggles to keep the routine long term. At the same time, if someone has spent 20 or 30 years without much movement or structure, nothing major changes in two days. The body usually needs weeks and months of consistent habits, not a few rushed attempts.</p>
+        <div class="edu-fact-box" data-i18n="seoPages.weight.notLosing.fact"><strong style="display:block; margin-bottom:8px;">What this means in practice:</strong>Salad, potatoes, or fruit can fill both the plate and the stomach much more than soda, chocolate, or white rice at the same energy content. Weight loss is not only about eating less, but often about eating smarter.</div>
+        <p data-i18n="seoPages.weight.notLosing.flexibility"><strong>Metabolic flexibility also plays a role.</strong> When your eating pattern is built mainly around fast carbohydrates, frequent snacking, and big swings in energy, the body becomes worse at switching between glucose and fat as fuel sources. In practice, that often looks like this: someone “doesn’t eat much,” but still gets hungry quickly, has less energy for movement, and struggles to keep the routine long term. At the same time, if someone has spent 20 or 30 years without much movement or structure, nothing major changes in two days. The body usually needs weeks and months of consistent habits, not a few rushed attempts.</p>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Constant cravings for sweets</h2>
+        <h2 data-i18n="seoPages.weight.cravings.title">Constant cravings for sweets</h2>
         <div class="edu-flex-row">
           <div>
-            <p>The problem is often not weak willpower, but steep blood sugar swings. A very sweet breakfast or a fast snack can push energy up quickly and then bring a sharp drop soon after.</p>
-            <p>That drop often shows up as fatigue, worse focus, and a craving for another hit of quick sugar. The body is not necessarily asking for discipline. It is often asking for a steadier energy supply.</p>
-            <p>At the same time, fast carbohydrates do have a place before sport when you actually need quick energy for performance.</p>
-            <div class="edu-fact-box">
+            <p data-i18n="seoPages.weight.cravings.p1">The problem is often not weak willpower, but steep blood sugar swings. A very sweet breakfast or a fast snack can push energy up quickly and then bring a sharp drop soon after.</p>
+            <p data-i18n="seoPages.weight.cravings.p2">That drop often shows up as fatigue, worse focus, and a craving for another hit of quick sugar. The body is not necessarily asking for discipline. It is often asking for a steadier energy supply.</p>
+            <p data-i18n="seoPages.weight.cravings.p3">At the same time, fast carbohydrates do have a place before sport when you actually need quick energy for performance.</p>
+            <div class="edu-fact-box" data-i18n="seoPages.weight.cravings.fact">
               <strong style="display:block; margin-bottom: 8px;">How to calm the swings:</strong>
               Combine carbohydrates with a source of protein and fat. That slows absorption and helps fullness last longer.
             </div>
-            <p><strong>Recommended reading:</strong> <a href="https://share.google/qRSN5eN642gmVtwXP"
+            <p data-i18n="seoPages.weight.cravings.reading"><strong>Recommended reading:</strong> <a href="https://share.google/qRSN5eN642gmVtwXP"
                 class="seo-page-link" target="_blank" rel="noopener noreferrer">Glucose Revolution</a>
               by Jessie Inchauspe.</p>
           </div>
           <div>
-            <h3 style="margin:0 0 12px;">Blood glucose swings during the day</h3>
+            <h3 style="margin:0 0 12px;" data-i18n="seoPages.weight.cravings.chartTitle">Blood glucose swings during the day</h3>
             <div class="edu-chart-md"><canvas id="glucoseChart"></canvas></div>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Cut sleep and you will eat</h2>
+        <h2 data-i18n="seoPages.weight.sleep.title">Cut sleep and you will eat</h2>
         <div class="edu-flex-row">
           <div>
             <div class="edu-chart-md" style="max-height:220px;"><canvas id="sleepChart"></canvas></div>
           </div>
           <div>
-            <p>The target zone is <strong>7 to 9 hours of quality sleep</strong>. Lack of rest disrupts your natural hunger and fullness signals and also makes it harder to make sensible decisions during the day.</p>
-            <p>When you are sleep-deprived, the body starts “pushing” you toward food. You get hungry more often, feel less satisfied, and are drawn much more strongly to quick energy such as sweets or calorie-dense foods. At the same time, your ability to resist these cravings goes down.</p>
-            <p>That is why sleep is often more important during fat loss than most people realize.</p>
+            <p data-i18n="seoPages.weight.sleep.p1">The target zone is <strong>7 to 9 hours of quality sleep</strong>. Lack of rest disrupts your natural hunger and fullness signals and also makes it harder to make sensible decisions during the day.</p>
+            <p data-i18n="seoPages.weight.sleep.p2">When you are sleep-deprived, the body starts “pushing” you toward food. You get hungry more often, feel less satisfied, and are drawn much more strongly to quick energy such as sweets or calorie-dense foods. At the same time, your ability to resist these cravings goes down.</p>
+            <p data-i18n="seoPages.weight.sleep.p3">That is why sleep is often more important during fat loss than most people realize.</p>
           </div>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>A realistic view of healthy movement</h2>
-        <p>You do not need to run a marathon every day to burn calories or improve cardiovascular health. The important thing is to find movement you can keep doing long term and that does not add even more stress to your week.</p>
+        <h2 data-i18n="seoPages.weight.movement.title">A realistic view of healthy movement</h2>
+        <p data-i18n="seoPages.weight.movement.intro">You do not need to run a marathon every day to burn calories or improve cardiovascular health. The important thing is to find movement you can keep doing long term and that does not add even more stress to your week.</p>
         <div class="seo-grid">
           <article class="seo-mini-card">
-            <h3>Simple walking</h3>
-            <p>It is accessible, easy to recover from, and when done regularly it often does more for total energy expenditure than people expect.</p>
+            <h3 data-i18n="seoPages.weight.movement.walkingTitle">Simple walking</h3>
+            <p data-i18n="seoPages.weight.movement.walkingText">It is accessible, easy to recover from, and when done regularly it often does more for total energy expenditure than people expect.</p>
           </article>
           <article class="seo-mini-card">
-            <h3>Stairs and daily movement</h3>
-            <p>Normal daily activity is often underestimated. In reality, it often decides the difference between stagnation and progress.</p>
+            <h3 data-i18n="seoPages.weight.movement.stairsTitle">Stairs and daily movement</h3>
+            <p data-i18n="seoPages.weight.movement.stairsText">Normal daily activity is often underestimated. In reality, it often decides the difference between stagnation and progress.</p>
           </article>
           <article class="seo-mini-card">
-            <h3>Strength training</h3>
-            <p>It helps protect muscle mass, improves body shape, and supports a more sustainable reduction phase.</p>
+            <h3 data-i18n="seoPages.weight.movement.strengthTitle">Strength training</h3>
+            <p data-i18n="seoPages.weight.movement.strengthText">It helps protect muscle mass, improves body shape, and supports a more sustainable reduction phase.</p>
           </article>
           <article class="seo-mini-card">
-            <h3>Sport for enjoyment</h3>
-            <p>Cycling, swimming, or racket sports make sense when they are activities you still want to return to after the first burst of motivation fades.
+            <h3 data-i18n="seoPages.weight.movement.enjoymentTitle">Sport for enjoyment</h3>
+            <p data-i18n="seoPages.weight.movement.enjoymentText">Cycling, swimming, or racket sports make sense when they are activities you still want to return to after the first burst of motivation fades.
             </p>
           </article>
         </div>
       </section>
 
       <section class="seo-section fade-in">
-        <h2>Reality vs social media</h2>
-        <p>Algorithms on social media constantly show extremely lean and highly defined physiques, but that often does not reflect normal health or a sustainable lifestyle.</p>
+        <h2 data-i18n="seoPages.weight.social.title">Reality vs social media</h2>
+        <p data-i18n="seoPages.weight.social.intro">Algorithms on social media constantly show extremely lean and highly defined physiques, but that often does not reflect normal health or a sustainable lifestyle.</p>
         <div class="seo-grid">
           <article class="seo-mini-card">
-            <h3>Unreal conditions</h3>
-            <p>Lighting, a pump, hydration status, and camera angle can create an illusion of a look that is not sustainable long term.</p>
+            <h3 data-i18n="seoPages.weight.social.unrealTitle">Unreal conditions</h3>
+            <p data-i18n="seoPages.weight.social.unrealText">Lighting, a pump, hydration status, and camera angle can create an illusion of a look that is not sustainable long term.</p>
           </article>
           <article class="seo-mini-card" style="background:var(--seo-soft);">
-            <h3 style="color:var(--seo-accent);">The limits of extreme approaches</h3>
-            <p>Very low body fat can undermine energy, hormones, mood, and recovery. A good goal is one you can actually live with.</p>
+            <h3 style="color:var(--seo-accent);" data-i18n="seoPages.weight.social.limitsTitle">The limits of extreme approaches</h3>
+            <p data-i18n="seoPages.weight.social.limitsText">Very low body fat can undermine energy, hormones, mood, and recovery. A good goal is one you can actually live with.</p>
           </article>
         </div>
       </section>
 
       <section class="seo-faq fade-in">
-        <h2>Common weight loss questions</h2>
+        <h2 data-i18n="seoPages.weight.faq.title">Common weight loss questions</h2>
         <div class="seo-faq-item">
-          <h3>Do I need a strict keto or low-carb diet?</h3>
-          <p>No. What works best is usually a sustainable deficit and a sensible meal structure. Extreme restriction may lower intake for a while, but it is often harder to maintain.</p>
+          <h3 data-i18n="seoPages.weight.faq.q1">Do I need a strict keto or low-carb diet?</h3>
+          <p data-i18n="seoPages.weight.faq.a1">No. What works best is usually a sustainable deficit and a sensible meal structure. Extreme restriction may lower intake for a while, but it is often harder to maintain.</p>
         </div>
         <div class="seo-faq-item">
-          <h3>What if I work shifts?</h3>
-          <p>Your metabolism is not controlled only by a clock on the wall. What matters is your total intake and whether the plan fits your real routine across the day and week.</p>
+          <h3 data-i18n="seoPages.weight.faq.q2">What if I work shifts?</h3>
+          <p data-i18n="seoPages.weight.faq.a2">Your metabolism is not controlled only by a clock on the wall. What matters is your total intake and whether the plan fits your real routine across the day and week.</p>
         </div>
         <div class="seo-faq-item">
-          <h3>Why does strength training matter during fat loss and not just cardio?</h3>
-          <p>Strength training helps keep muscle mass even while you are in a deficit. That means the result is not only a lower number on the scale, but also a firmer physique and better long-term sustainability. Cardio helps, but on its own it is not enough.</p>
+          <h3 data-i18n="seoPages.weight.faq.q3">Why does strength training matter during fat loss and not just cardio?</h3>
+          <p data-i18n="seoPages.weight.faq.a3">Strength training helps keep muscle mass even while you are in a deficit. That means the result is not only a lower number on the scale, but also a firmer physique and better long-term sustainability. Cardio helps, but on its own it is not enough.</p>
         </div>
         <div class="seo-faq-item">
-          <h3>Do I need to spend hours in the gym?</h3>
-          <p>No. If your main goal is weight loss, the key is still the kitchen. The gym can help, but strong results often come from the combination of nutrition, walking, and basic strength work.</p>
+          <h3 data-i18n="seoPages.weight.faq.q4">Do I need to spend hours in the gym?</h3>
+          <p data-i18n="seoPages.weight.faq.a4">No. If your main goal is weight loss, the key is still the kitchen. The gym can help, but strong results often come from the combination of nutrition, walking, and basic strength work.</p>
         </div>
       </section>
 
       <section class="seo-section seo-action fade-in" style="padding: 30px 24px; text-align: center; margin-top: 40px;">
-        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Clear fat loss under control</h2>
-        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;" data-i18n="seoPages.weight.cta.title">Clear fat loss under control</h2>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 600px; margin-inline: auto;" data-i18n="seoPages.weight.cta.lead">
           Tired of diet chaos? Get your personalized meal plan and see what the full FitLime system can build around your goal.</p>
         <div style="display: flex; justify-content: center; margin-bottom: 60px;"><a href="/form.html"
             class="seo-btn seo-btn-primary"
-            style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;">Calculate
+            style="padding: 16px 36px; border-radius: 12px; font-size: 1.2rem; text-decoration: none; background-color: #005003; color: #ffffff; font-weight: 800; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); transition: transform 0.15s ease, background-color 0.2s ease; display: inline-flex; align-items: center; justify-content: center;" data-i18n="seoPages.weight.cta.button">Calculate
             your personalized plan</a></div>
         <div class="ps-related-articles">
           <h3
             style="font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; font-weight: 600;">
-            Related articles:</h3>
+            <span data-i18n="seoPages.weight.cta.related">Related articles:</span></h3>
           <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;"><a
-              href="/healthy-meal-plan/index.html" class="ps-elegant-link">Healthy eating</a><a
-              href="/sports-meal-plan/index.html" class="ps-elegant-link">Sports nutrition</a><a
-              href="/how-fitlime-works/index.html" class="ps-elegant-link">How FitLime works</a></div>
+              href="/healthy-meal-plan/index.html" class="ps-elegant-link" data-i18n="seoPages.weight.cta.healthy">Healthy eating</a><a
+              href="/sports-meal-plan/index.html" class="ps-elegant-link" data-i18n="seoPages.weight.cta.sports">Sports nutrition</a><a
+              href="/how-fitlime-works/index.html" class="ps-elegant-link" data-i18n="seoPages.weight.cta.how">How FitLime works</a></div>
           <div style="display: flex; justify-content: center; margin-top: 28px;"><a href="/index.html"
-              class="ps-elegant-link">Back to homepage</a></div>
+              class="ps-elegant-link" data-i18n="seoPages.weight.cta.back">Back to homepage</a></div>
         </div>
       </section>
     </div>
@@ -919,6 +1160,10 @@
         const foodIconsEl = document.getElementById('foodIcons');
         const activityIconsEl = document.getElementById('activityIcons');
         const choiceButtons = document.querySelectorAll('.balance-chip');
+        const i18nLookup = (path, fallback) => {
+          const get = (obj) => path.split('.').reduce((value, key) => value?.[key], obj);
+          return get(window.__fitlimeI18n?.dict) ?? get(window.__fitlimeI18n?.fallback) ?? fallback;
+        };
 
         const renderBalance = () => {
           let foodKj = 0;
@@ -945,7 +1190,10 @@
           const visualAngle = -clampedTilt;
           const angleRad = (visualAngle * Math.PI) / 180;
           const halfBeam = beam.offsetWidth / 2;
-          const panAnchorOffset = Math.max(halfBeam - 30, 80);
+          const isCompactBalance = window.matchMedia('(max-width: 470px)').matches;
+          const panAnchorOffset = isCompactBalance
+            ? Math.max(halfBeam - 58, 66)
+            : Math.max(halfBeam - 30, 80);
           const verticalShift = -Math.sin(angleRad) * panAnchorOffset;
 
           beam.style.transform = `rotate(${visualAngle}deg)`;
@@ -960,20 +1208,20 @@
           activityIconsEl.innerHTML = activityIcons.map((emoji) => `<span class="balance-pan-item">${emoji}</span>`).join('');
 
           let outcomeClass = 'balance';
-          let outcomeText = 'Select at least one food or activity.';
+          let outcomeText = i18nLookup('seoPages.weight.energy.outcomes.empty', 'Select at least one food or activity.');
 
           if (foodIcons.length === 0 && activityIcons.length === 0) {
-            outcomeText = 'Select at least one food or activity.';
+            outcomeText = i18nLookup('seoPages.weight.energy.outcomes.empty', 'Select at least one food or activity.');
           } else if (delta > 500) {
             outcomeClass = 'surplus';
-            outcomeText = 'Weight gain';
+            outcomeText = i18nLookup('seoPages.weight.energy.outcomes.surplus', 'Weight gain');
           } else if (delta < -500) {
             outcomeClass = 'deficit';
-            outcomeText = 'Weight loss';
+            outcomeText = i18nLookup('seoPages.weight.energy.outcomes.deficit', 'Weight loss');
           } else if (delta < 0) {
-            outcomeText = 'Mild weight loss';
+            outcomeText = i18nLookup('seoPages.weight.energy.outcomes.mildDeficit', 'Mild weight loss');
           } else {
-            outcomeText = 'Mild weight gain';
+            outcomeText = i18nLookup('seoPages.weight.energy.outcomes.mildSurplus', 'Mild weight gain');
           }
 
           balanceOutcomeEl.className = `balance-outcome ${outcomeClass}`;
@@ -990,10 +1238,34 @@
         });
 
         renderBalance();
-        new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12'], datasets: [{ label: 'Moderate deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Crash diet and rebound', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Body weight (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
-        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda'], datasets: [{ label: 'Amount of food for 1,000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Weight of food (g)' } } } } });
-        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Blood glucose', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Time' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
-        new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Sleep (8 h)', 'Awake (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
+        const weightLossChart = new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12'], datasets: [{ label: 'Moderate deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Crash diet and rebound', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Body weight (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
+        const foodCompareChart = new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda'], datasets: [{ label: 'Amount of food for 1,000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Weight of food (g)' } } } } });
+        const glucoseChart = new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Blood glucose', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Time' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
+        const sleepChart = new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Sleep (8 h)', 'Awake (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
+        const localizeCharts = () => {
+          weightLossChart.data.labels = i18nLookup('seoPages.weight.charts.weightLoss.weeks', ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12']);
+          weightLossChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.weightLoss.moderate', 'Moderate deficit');
+          weightLossChart.data.datasets[1].label = i18nLookup('seoPages.weight.charts.weightLoss.crash', 'Crash diet and rebound');
+          weightLossChart.options.scales.y.title.text = i18nLookup('seoPages.weight.charts.weightLoss.yTitle', 'Body weight (kg)');
+          foodCompareChart.data.labels = i18nLookup('seoPages.weight.charts.foodCompare.labels', ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda']);
+          foodCompareChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.foodCompare.dataset', 'Amount of food for 1,000 kJ (g)');
+          foodCompareChart.options.scales.x.title.text = i18nLookup('seoPages.weight.charts.foodCompare.xTitle', 'Weight of food (g)');
+          glucoseChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.glucose.label', 'Blood glucose');
+          glucoseChart.options.scales.x.title.text = i18nLookup('seoPages.weight.charts.glucose.xTitle', 'Time');
+          glucoseChart.options.scales.y.title.text = i18nLookup('seoPages.weight.charts.glucose.yTitle', 'mmol/l');
+          sleepChart.data.labels = [
+            i18nLookup('seoPages.weight.charts.sleep.sleep', 'Sleep (8 h)'),
+            i18nLookup('seoPages.weight.charts.sleep.awake', 'Awake (16 h)')
+          ];
+          weightLossChart.update();
+          foodCompareChart.update();
+          glucoseChart.update();
+          sleepChart.update();
+        };
+        window.addEventListener('fitlime:i18n-loaded', () => {
+          renderBalance();
+          localizeCharts();
+        });
       });
     </script>
   </main>

@@ -56,16 +56,16 @@
         "ingredientAria": "Przykład składników",
         "stepLabel": "Przygotowanie:",
         "previews": [
-          { "ingredients": ["łosoś", "ryż", "awokado"], "step": "Dodaj łososia, awokado i warzywa do ryżu i skrop limonką." },
-          { "ingredients": ["pierś z kurczaka", "bulgur", "warzywa"], "step": "Usmaż kurczaka i podaj z bulgurem." },
-          { "ingredients": ["tofu", "komosa ryżowa", "szpinak"], "step": "Podsmaż tofu i dodaj resztę." },
-          { "ingredients": ["szynka z indyka", "ser", "żurawina"], "step": "Posmaruj pieczywo i dodaj składniki." },
-          { "ingredients": ["kurczak", "ryż", "orzeszki ziemne"], "step": "Podsmaż i dodaj orzeszki." },
-          { "ingredients": ["czerwona soczewica", "jajko", "marchew"], "step": "Gotuj i dodaj jajko." },
-          { "ingredients": ["sandacz", "ziemniaki", "szpinak"], "step": "Usmaż rybę i podaj." },
-          { "ingredients": ["płatki owsiane", "jabłka", "cynamon"], "step": "Ułóż i piecz." },
-          { "ingredients": ["jogurt", "żelatyna", "owoce"], "step": "Schłódź i podaj." },
-          { "ingredients": ["banan", "jogurt", "płatki"], "step": "Zmiksuj wszystko." }
+          { "ingredients": ["Łosoś", "Ryż", "Awokado"], "step": "Dodaj łososia, awokado i warzywa do ryżu i skrop limonką." },
+          { "ingredients": ["Pierś z kurczaka", "Bulgur", "Warzywa"], "step": "Usmaż kurczaka i podaj z bulgurem." },
+          { "ingredients": ["Tofu", "Komosa ryżowa", "Szpinak"], "step": "Podsmaż tofu i dodaj resztę." },
+          { "ingredients": ["Szynka z indyka", "Ser", "Żurawina"], "step": "Posmaruj pieczywo i dodaj składniki." },
+          { "ingredients": ["Kurczak", "Ryż", "Orzeszki ziemne"], "step": "Podsmaż i dodaj orzeszki." },
+          { "ingredients": ["Czerwona soczewica", "Jajko", "Marchew"], "step": "Gotuj i dodaj jajko." },
+          { "ingredients": ["Sandacz", "Ziemniaki", "Szpinak"], "step": "Usmaż rybę i podaj." },
+          { "ingredients": ["Płatki owsiane", "Jabłka", "Cynamon"], "step": "Ułóż i piecz." },
+          { "ingredients": ["Jogurt", "Żelatyna", "Owoce"], "step": "Schłódź i podaj." },
+          { "ingredients": ["Banan", "Jogurt", "Płatki"], "step": "Zmiksuj wszystko." }
         ]
       },
       "chart": {
@@ -1017,7 +1017,7 @@
       "contact": {
         "title": "8. Dane kontaktowe",
         "lead": "W przypadku jakichkolwiek pytań prosimy o kontakt:",
-        "email": "info@fitlime.cz",
+        "email": "info@fitlime.eu",
         "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, Republika Czeska"
       },
       "final": {
@@ -1068,7 +1068,7 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "Inne dokumenty",
       "docs": "Polityka ochrony danych osobowych"
     },
@@ -1138,19 +1138,157 @@
       }
     },
     "weight": {
-      "metaTitle": "Plan żywieniowy na redukcję | FitLime",
-      "metaDescription": "Spersonalizowany plan redukcji od FitLime oparty o Twój cel, tryb dnia i aktywność.",
-      "ogTitle": "Plan żywieniowy na redukcję | FitLime",
-      "ogDescription": "Spersonalizowany plan redukcji oparty o cel, rutynę i aktywność.",
+      "metaTitle": "Indywidualny plan odchudzania dla Ciebie | FitLime",
+      "metaDescription": "Plan odchudzania FitLime dopasowany do Twojego celu, codziennej rutyny i aktywności. Bez chaosu, bez zbędnych ograniczeń i z jasnym planem, który naprawdę możesz realizować.",
+      "ogTitle": "Indywidualny plan odchudzania dla Ciebie | FitLime",
+      "ogDescription": "Spersonalizowany plan odchudzania oparty na Twoim celu, rutynie i aktywności.",
       "hero": {
-        "eyebrow": "Przewodnik edukacyjny",
-        "title": "Redukcja bez chaosu",
-        "lead": "W gąszczu skrajnych diet i gwarantowanych skrótów łatwo się pogubić. Ta strona pokazuje stabilne, racjonalne i długoterminowe podejście do redukcji tkanki tłuszczowej."
+        "eyebrow": "Przewodnik po zdrowym odżywianiu",
+        "title": "Odchudzanie bez chaosu",
+        "lead": "W dzisiejszych czasach łatwo zgubić się w natłoku ekstremalnych diet i niesprawdzonych porad. Ta strona skupia się na zasadach racjonalnego i długoterminowo zrównoważonego podejścia do redukcji tkanki tłuszczowej, opartego na biologii i fizjologii."
+      },
+      "energy": {
+        "title": "Jak naprawdę działa odchudzanie",
+        "intro": "Bilans energetyczny to podstawa długoterminowego sukcesu. Jeśli spożycie energii jest wyższe niż dzienne zapotrzebowanie, masa ciała rośnie. Gdy wydatek energetyczny jest nieco wyższy niż spożycie, powstaje przestrzeń do utraty wagi.",
+        "chartTitle": "Dzienny bilans energetyczny",
+        "deficit": "Umiarkowany deficyt",
+        "intake": "Spożycie 48%",
+        "expenditure": "Wydatek 52%",
+        "legendIntake": "Spożycie energii [%]",
+        "legendExpenditure": "Wydatek energetyczny [%]",
+        "legendBalance": "Równowaga między spożyciem a wydatkiem",
+        "caption": "Spożycie obejmuje energię ze wszystkich posiłków i napojów. Wydatek to metabolizm podstawowy, codzienna aktywność oraz sport.",
+        "explain": "Nie chodzi o idealne proporcje każdego dnia, lecz o kierunek w dłuższym okresie.",
+        "simulatorTitle": "Interaktywny symulator: dostosuj swój bilans energetyczny",
+        "simulatorIntro": "Uproszczony model dnia, w którym podstawowe potrzeby energetyczne są już pokryte.",
+        "chips": {
+          "fries": "Frytki",
+          "apple": "Jabłko",
+          "run": "Bieganie",
+          "gym": "Siłownia"
+        },
+        "panFood": "Jedzenie",
+        "panActivity": "Aktywność",
+        "note": "Deficyt nie oznacza automatycznie zdrowego dnia.",
+        "outcomes": {
+          "empty": "Wybierz co najmniej jeden produkt lub aktywność.",
+          "initial": "Na razie jest równowaga.",
+          "surplus": "Przyrost masy ciała",
+          "deficit": "Utrata masy ciała",
+          "mildDeficit": "Umiarkowana utrata masy",
+          "mildSurplus": "Umiarkowany przyrost masy"
+        }
+      },
+      "speed": {
+        "title": "Jak szybko powinno się chudnąć?",
+        "p1": "Realne tempo to około <strong>0,3–0,7 kg tygodniowo</strong>.",
+        "p2": "Trwałe efekty buduje się miesiącami, nie dniami.",
+        "mistake": "<strong>Największy błąd:</strong> próba przyspieszenia procesu ekstremalnymi metodami.",
+        "chartTitle": "Porównanie umiarkowanego deficytu i diety restrykcyjnej"
+      },
+      "spotReduction": {
+        "title": "Dlaczego spalanie miejscowe nie działa",
+        "intro": "Ćwiczenia brzucha nie spalają tłuszczu tylko z tej okolicy.",
+        "mythTitle": "Mit: celowanie w jedną partię",
+        "mythText": "Trening wzmacnia mięśnie, nie usuwa lokalnie tłuszczu.",
+        "factTitle": "Fakt: liczy się cały organizm",
+        "factText": "Redukcja zależy od deficytu i stylu życia."
+      },
+      "mistakes": {
+        "title": "Najczęstsze błędy",
+        "intro": "Większość ludzi nie popełnia jednego dużego błędu. Zazwyczaj wracają do kilku nawyków, które z czasem po cichu spowalniają ich postępy.",
+        "tooAggressiveTitle": "Zbyt duży deficyt",
+        "tooAggressiveText": "Powoduje głód i zmęczenie.",
+        "skippingTitle": "Pomijanie posiłków",
+        "skippingText": "Zwiększa ryzyko przejadania się.",
+        "proteinTitle": "Za mało białka",
+        "proteinText": "Zmniejsza sytość.",
+        "cardioTitle": "Tylko cardio",
+        "cardioText": "Ogranicza efekty."
+      },
+      "sleep": {
+        "title": "Mniej snu = więcej jedzenia",
+        "p1": "Cel: <strong>7–9 godzin snu</strong>.",
+        "p2": "Kiedy brakuje snu, organizm zaczyna „popychać” cię w stronę jedzenia. Częściej odczuwasz głód, czujesz się mniej syty i znacznie bardziej ciągnie cię do szybkich źródeł energii, takich jak słodycze czy wysokokaloryczne produkty. Jednocześnie spada twoja zdolność do opierania się tym zachciankom.",
+        "p3": "Dlatego sen jest często ważniejszy podczas redukcji tkanki tłuszczowej, niż większości osób się wydaje."
+      },
+      "movement": {
+        "title": "Realistyczne podejście do ruchu",
+        "intro": "Nie musisz codziennie biegać maratonu, aby spalać kalorie lub poprawić zdrowie układu krążenia. Najważniejsze jest znalezienie aktywności, którą możesz utrzymać długoterminowo i która nie dodaje dodatkowego stresu do twojego tygodnia.",
+        "walkingTitle": "Chodzenie",
+        "walkingText": "Proste i skuteczne.",
+        "stairsTitle": "Schody i codzienny ruch",
+        "stairsText": "Zwykła codzienna aktywność jest często niedoceniana. W rzeczywistości to ona często decyduje o różnicy między stagnacją a postępem.",
+        "strengthTitle": "Trening siłowy",
+        "strengthText": "Chroni mięśnie.",
+        "enjoymentTitle": "Sport dla przyjemności",
+        "enjoymentText": "Jazda na rowerze, pływanie czy sporty rakietowe mają sens, jeśli są to aktywności, do których chcesz wracać nawet po pierwszym przypływie motywacji."
+      },
+      "notLosing": {
+        "title": "Dlaczego nie chudnę, mimo że jem mało?",
+        "intro": "Częstym problemem jest nie tylko ilość jedzenia, ale także <strong>gęstość energetyczna</strong>. Te same 1 000 kJ mogą oznaczać bardzo różną objętość, bardzo różne uczucie sytości i zupełnie inny wpływ na kolejną falę głodu w ciągu dnia.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">Co to oznacza w praktyce:</strong>Sałatki, ziemniaki czy owoce mogą wypełnić talerz i żołądek znacznie bardziej niż napoje słodzone, czekolada czy biały ryż przy tej samej wartości energetycznej. Odchudzanie to nie tylko jedzenie mniej, ale często także jedzenie mądrzej.",
+        "flexibility": "<strong>Elastyczność metaboliczna również odgrywa rolę.</strong> Gdy dieta opiera się głównie na szybkich węglowodanach, częstym podjadaniu i dużych wahaniach energii, organizm gorzej radzi sobie z przełączaniem się między glukozą a tłuszczem jako źródłem energii. W praktyce wygląda to często tak: ktoś „je mało”, a mimo to szybko odczuwa głód, ma mniej energii do ruchu i ma trudności z utrzymaniem rutyny w dłuższym czasie. Jednocześnie, jeśli ktoś przez 20 lub 30 lat nie miał dużo ruchu ani struktury, nic istotnego nie zmieni się w dwa dni. Organizm zazwyczaj potrzebuje tygodni i miesięcy regularnych nawyków, a nie kilku pośpiesznych prób."
+      },
+      "cravings": {
+        "title": "Stała ochota na słodycze",
+        "p1": "Problemem często nie jest brak silnej woli, lecz duże wahania poziomu cukru we krwi. Bardzo słodkie śniadanie lub szybka przekąska może szybko podnieść poziom energii, a następnie doprowadzić do gwałtownego spadku.",
+        "p2": "Ten spadek często objawia się zmęczeniem, gorszą koncentracją i chęcią sięgnięcia po kolejną dawkę cukru. Organizm niekoniecznie domaga się dyscypliny — często potrzebuje bardziej stabilnego źródła energii.",
+        "p3": "Jednocześnie szybkie węglowodany mają swoje miejsce przed wysiłkiem fizycznym, gdy rzeczywiście potrzebna jest szybka energia do wydajności.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Jak ograniczyć wahania:</strong>Łącz węglowodany ze źródłem białka i tłuszczu. Spowalnia to wchłanianie i pomaga utrzymać uczucie sytości na dłużej.",
+        "reading": "<strong>Polecana lektura:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> autorstwa Jessie Inchauspe.",
+        "chartTitle": "Wahania poziomu glukozy w ciągu dnia"
+      },
+      "social": {
+        "title": "Rzeczywistość vs media społecznościowe",
+        "intro": "Algorytmy mediów społecznościowych stale pokazują bardzo szczupłe i silnie zdefiniowane sylwetki, ale często nie odzwierciedlają one normalnego zdrowia ani zrównoważonego stylu życia.",
+        "unrealTitle": "Nierealne warunki",
+        "unrealText": "Oświetlenie, „pump”, poziom nawodnienia i kąt kamery mogą stworzyć iluzję wyglądu, która nie jest możliwa do utrzymania na dłuższą metę.",
+        "limitsTitle": "Granice ekstremalnych podejść",
+        "limitsText": "Bardzo niski poziom tkanki tłuszczowej może negatywnie wpływać na energię, hormony, nastrój i regenerację. Dobry cel to taki, z którym możesz realnie funkcjonować na co dzień."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Tydzień 0", "Tydzień 2", "Tydzień 4", "Tydzień 6", "Tydzień 8", "Tydzień 10", "Tydzień 12"],
+          "moderate": "Umiarkowany deficyt",
+          "crash": "Dieta restrykcyjna i efekt jo-jo",
+          "yTitle": "Masa ciała (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Sałatka", "Ziemniaki", "Owoce", "Ryż", "Czekolada", "Napój słodzony"],
+          "dataset": "Ilość jedzenia dla 1 000 kJ (g)",
+          "xTitle": "Masa jedzenia (g)"
+        },
+        "glucose": {
+          "label": "Poziom glukozy",
+          "xTitle": "Czas",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sen (8 h)",
+          "awake": "Czuwanie (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Najczęstsze pytania",
+        "q1": "Czy potrzebna jest dieta keto?",
+        "a1": "Nie, najważniejszy jest trwały deficyt.",
+        "q2": "Co przy pracy zmianowej?",
+        "a2": "Liczy się całkowity bilans.",
+        "q3": "Dlaczego trening siłowy?",
+        "a3": "Chroni masę mięśniową.",
+        "q4": "Czy trzeba spędzać godziny na siłowni?",
+        "a4": "Nie, kluczowa jest dieta."
       },
       "cta": {
-        "title": "Kontrolowana redukcja krok po kroku",
-        "lead": "Masz dość dietetycznego chaosu? Odbierz spersonalizowany plan i sprawdź, co FitLime może zbudować pod Twój cel.",
-        "button": "Oblicz swój plan"
+        "title": "Kontrolowana utrata tłuszczu",
+        "lead": "Masz dość chaosu diet? Otrzymaj swój plan.",
+        "button": "Oblicz swój plan",
+        "back": "Powrót do strony głównej",
+        "related": "Powiązane artykuły:",
+        "healthy": "Zdrowe odżywianie",
+        "sports": "Żywienie sportowe",
+        "how": "Jak działa FitLime"
       }
     }
   }

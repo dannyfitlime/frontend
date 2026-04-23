@@ -56,20 +56,20 @@
       },
       "recipe": {
         "eyebrow": "Ukázka receptu",
-        "ingredientLabel": "Suroviny",
+        "ingredientLabel": "(Zjednodušené)",
         "ingredientAria": "Ukázka surovin",
         "stepLabel": "Postup:",
         "previews": [
-          { "ingredients": ["losos", "rýže", "avokádo"], "step": "Uvařenou rýži doplňte lososem, avokádem a zeleninou, poté zakápněte limetkovou zálivkou." },
-          { "ingredients": ["kuřecí prsa", "bulgur", "zelenina"], "step": "Kuře opečte dozlatova, promíchejte s bulgurem a podávejte s čerstvým salátem." },
-          { "ingredients": ["tofu", "quinoa", "špenát"], "step": "Tofu krátce opečte, přidejte quinou se špenátem a dochuťte lehkou sójovo-limetkovou omáčkou." },
-          { "ingredients": ["krůtí šunka", "sýr", "brusinky"], "step": "Celozrnné pečivo potřete jogurtovým základem, naplňte krůtím masem, sýrem a brusinkami." },
-          { "ingredients": ["kuřecí maso", "rýže", "arašídy"], "step": "Maso zprudka orestujte se zeleninou, přidejte omáčku a na závěr posypte arašídy." },
-          { "ingredients": ["červená čočka", "vejce", "mrkev"], "step": "Čočku povařte se zeleninou doměkka a doplňte vejcem jako sytý zdroj bílkovin." },
-          { "ingredients": ["candát", "brambory", "špenát"], "step": "Candáta opečte na pánvi, podávejte s bramborem a jemně podušeným špenátem." },
-          { "ingredients": ["ovesné vločky", "jablka", "skořice"], "step": "Základ vtlačte do formy, navrstvěte jablka se skořicí a pečte dozlatova." },
-          { "ingredients": ["jogurt", "želatina", "ovoce"], "step": "Jogurtový krém nechte ztuhnout ve skleničce a podávejte s ovocným rozvarem." },
-          { "ingredients": ["banán", "jogurt", "vločky"], "step": "Vše rozmixujte dohladka a podle potřeby zjemněte mlékem nebo kefírem." }
+          { "ingredients": ["Losos", "Rýže", "Avokádo"], "step": "Uvařenou rýži doplňte lososem, avokádem a zeleninou, poté zakápněte limetkovou zálivkou." },
+          { "ingredients": ["Kuřecí prsa", "Bulgur", "Zelenina"], "step": "Kuře opečte dozlatova, promíchejte s bulgurem a podávejte s čerstvým salátem." },
+          { "ingredients": ["Tofu", "Quinoa", "špenát"], "step": "Tofu krátce opečte, přidejte quinou se špenátem a dochuťte lehkou sójovo-limetkovou omáčkou." },
+          { "ingredients": ["Krůtí šunka", "Sýr", "brusinky"], "step": "Celozrnné pečivo potřete jogurtovým základem, naplňte krůtím masem, sýrem a brusinkami." },
+          { "ingredients": ["Kuřecí maso", "Rýže", "arašídy"], "step": "Maso zprudka orestujte se zeleninou, přidejte omáčku a na závěr posypte arašídy." },
+          { "ingredients": ["Červená čočka", "Vejce", "Mrkev"], "step": "Čočku povařte se zeleninou doměkka a doplňte vejcem jako sytý zdroj bílkovin." },
+          { "ingredients": ["Candát", "Brambory", "Špenát"], "step": "Candáta opečte na pánvi, podávejte s bramborem a jemně podušeným špenátem." },
+          { "ingredients": ["Ovesné vločky", "Jablka", "Skořice"], "step": "Základ vtlačte do formy, navrstvěte jablka se skořicí a pečte dozlatova." },
+          { "ingredients": ["Jogurt", "Želatina", "Ovoce"], "step": "Jogurtový krém nechte ztuhnout ve skleničce a podávejte s ovocným rozvarem." },
+          { "ingredients": ["Banán", "Jogurt", "Vločky"], "step": "Vše rozmixujte dohladka a podle potřeby zjemněte mlékem nebo kefírem." }
         ]
       },
       "chart": {

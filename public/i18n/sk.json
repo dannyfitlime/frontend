@@ -59,16 +59,16 @@
         "ingredientAria": "Ukážka surovín",
         "stepLabel": "Postup:",
         "previews": [
-          { "ingredients": ["losos", "ryža", "avokádo"], "step": "Uvarenú ryžu doplňte lososom, avokádom a zeleninou, potom pokvapkajte limetkovou zálievkou." },
-          { "ingredients": ["kuracie prsia", "bulgur", "zelenina"], "step": "Kuracie mäso opečte dozlatista, premiešajte s bulgurom a podávajte s čerstvým šalátom." },
-          { "ingredients": ["tofu", "quinoa", "špenát"], "step": "Tofu krátko opečte, pridajte quinou so špenátom a dochuťte ľahkou sójovo-limetkovou omáčkou." },
-          { "ingredients": ["morčacia šunka", "syr", "brusnice"], "step": "Celozrnné pečivo potrite jogurtovým základom, naplňte morčacím mäsom, syrom a brusnicami." },
-          { "ingredients": ["kuracie mäso", "ryža", "arašidy"], "step": "Mäso prudko orestujte so zeleninou, pridajte omáčku a na záver posypte arašidmi." },
-          { "ingredients": ["červená šošovica", "vajce", "mrkva"], "step": "Šošovicu povarte so zeleninou domäkka a doplňte vajcom ako sýty zdroj bielkovín." },
-          { "ingredients": ["zubáč", "zemiaky", "špenát"], "step": "Zubáča opečte na panvici, podávajte so zemiakmi a jemne poduseným špenátom." },
-          { "ingredients": ["ovsené vločky", "jablká", "škorica"], "step": "Základ vtlačte do formy, navrstvite jablká so škoricou a pečte dozlatista." },
-          { "ingredients": ["jogurt", "želatína", "ovocie"], "step": "Jogurtový krém nechajte stuhnúť v pohári a podávajte s ovocným rozvarom." },
-          { "ingredients": ["banán", "jogurt", "vločky"], "step": "Všetko rozmixujte dohladka a podľa potreby zjemnite mliekom alebo kefírom." }
+          { "ingredients": ["Losos", "Ryža", "Avokádo"], "step": "Uvarenú ryžu doplňte lososom, avokádom a zeleninou, potom pokvapkajte limetkovou zálievkou." },
+          { "ingredients": ["Kuracie prsia", "Bulgur", "Zelenina"], "step": "Kuracie mäso opečte dozlatista, premiešajte s bulgurom a podávajte s čerstvým šalátom." },
+          { "ingredients": ["Tofu", "Quinoa", "Špenát"], "step": "Tofu krátko opečte, pridajte quinou so špenátom a dochuťte ľahkou sójovo-limetkovou omáčkou." },
+          { "ingredients": ["Morčacia šunka", "Syr", "Brusnice"], "step": "Celozrnné pečivo potrite jogurtovým základom, naplňte morčacím mäsom, syrom a brusnicami." },
+          { "ingredients": ["Kuracie mäso", "Ryža", "Arašidy"], "step": "Mäso prudko orestujte so zeleninou, pridajte omáčku a na záver posypte arašidmi." },
+          { "ingredients": ["Červená šošovica", "Vajce", "Mrkva"], "step": "Šošovicu povarte so zeleninou domäkka a doplňte vajcom ako sýty zdroj bielkovín." },
+          { "ingredients": ["Zubáč", "Zemiaky", "Špenát"], "step": "Zubáča opečte na panvici, podávajte so zemiakmi a jemne poduseným špenátom." },
+          { "ingredients": ["Ovsené vločky", "Jablká", "Škorica"], "step": "Základ vtlačte do formy, navrstvite jablká so škoricou a pečte dozlatista." },
+          { "ingredients": ["Jogurt", "Želatína", "Ovoce"], "step": "Jogurtový krém nechajte stuhnúť v pohári a podávajte s ovocným rozvarom." },
+          { "ingredients": ["Banán", "Jogurt", "Vločky"], "step": "Všetko rozmixujte dohladka a podľa potreby zjemnite mliekom alebo kefírom." }
         ]
       },
       "chart": {
@@ -783,7 +783,7 @@
     "newsletter": "Chcem odoberať newsletter",
     "placeholders": {
       "name": "Ján Novák",
-      "email": "jan.novak@email.cz"
+      "email": "jan.novak@email.sk"
     },
     "terms": "Súhlasím s Obchodnými podmienkami",
     "privacy": "Súhlasím so Zásadami spracovania osobných údajov",
@@ -962,7 +962,7 @@
         "provider": "Sportvital-Pro s.r.o.",
         "address": "Mokropeská 1799, 252 28 Černošice, Česká republika",
         "ico": "IČO: 04528930",
-        "email": "E-mail: info@fitlime.cz",
+        "email": "E-mail: info@fitlime.sk",
         "domains": "Správca prevádzkuje projekty FitLime na doménach fitlime.cz, fitlime.sk, fitlime.eu."
       },
       "data": {
@@ -1101,7 +1101,7 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "IČO: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.sk",
       "docsLabel": "Ďalšie dokumenty",
       "docs": "Zásady ochrany osobných údajov"
     },

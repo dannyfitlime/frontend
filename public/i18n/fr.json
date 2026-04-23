@@ -56,16 +56,16 @@
         "ingredientAria": "Exemple d’ingrédients",
         "stepLabel": "Préparation :",
         "previews": [
-          { "ingredients": ["saumon", "riz", "avocat"], "step": "Ajoutez du saumon, de l’avocat et des légumes au riz et arrosez de sauce au citron vert." },
-          { "ingredients": ["blanc de poulet", "boulgour", "légumes"], "step": "Faites dorer le poulet, mélangez avec le boulgour et servez avec une salade." },
-          { "ingredients": ["tofu", "quinoa", "épinards"], "step": "Faites revenir le tofu, ajoutez le quinoa et les épinards et assaisonnez." },
-          { "ingredients": ["jambon de dinde", "fromage", "canneberges"], "step": "Tartinez le pain complet de yaourt et garnissez avec dinde, fromage et canneberges." },
-          { "ingredients": ["poulet", "riz", "cacahuètes"], "step": "Faites revenir la viande, ajoutez légumes et sauce, puis des cacahuètes." },
-          { "ingredients": ["lentilles rouges", "œuf", "carotte"], "step": "Faites cuire les lentilles avec légumes et ajoutez un œuf." },
-          { "ingredients": ["sandre", "pommes de terre", "épinards"], "step": "Faites cuire le sandre et servez avec pommes de terre et épinards." },
-          { "ingredients": ["flocons d’avoine", "pommes", "cannelle"], "step": "Étalez la base, ajoutez les pommes et faites cuire." },
-          { "ingredients": ["yaourt", "gélatine", "fruits"], "step": "Laissez prendre la crème et servez avec fruits." },
-          { "ingredients": ["banane", "yaourt", "avoine"], "step": "Mixez le tout et ajustez avec du lait ou du kéfir." }
+          { "ingredients": ["Saumon", "Riz", "Avoceat"], "step": "Ajoutez du saumon, de l’avocat et des légumes au riz et arrosez de sauce au citron vert." },
+          { "ingredients": ["Blanc de poulet", "Boulgour", "Légumes"], "step": "Faites dorer le poulet, mélangez avec le boulgour et servez avec une salade." },
+          { "ingredients": ["Tofu", "Quinoa", "Épinards"], "step": "Faites revenir le tofu, ajoutez le quinoa et les épinards et assaisonnez." },
+          { "ingredients": ["Jambon de dinde", "Fromage", "Canneberges"], "step": "Tartinez le pain complet de yaourt et garnissez avec dinde, fromage et canneberges." },
+          { "ingredients": ["Poulet", "Riz", "Cacahuètes"], "step": "Faites revenir la viande, ajoutez légumes et sauce, puis des cacahuètes." },
+          { "ingredients": ["Lentilles rouges", "Œuf", "Carotte"], "step": "Faites cuire les lentilles avec légumes et ajoutez un œuf." },
+          { "ingredients": ["Sandre", "Pommes de terre", "Épinards"], "step": "Faites cuire le sandre et servez avec pommes de terre et épinards." },
+          { "ingredients": ["Flocons d’avoine", "Pommes", "Cannelle"], "step": "Étalez la base, ajoutez les pommes et faites cuire." },
+          { "ingredients": ["Yaourt", "Gélatine", "Fruits"], "step": "Laissez prendre la crème et servez avec fruits." },
+          { "ingredients": ["Banane", "Yaourt", "Avoine"], "step": "Mixez le tout et ajustez avec du lait ou du kéfir." }
         ]
       },
       "chart": {
@@ -1017,7 +1017,7 @@
       "contact": {
         "title": "8. Coordonnées",
         "lead": "Pour toute demande, veuillez écrire à :",
-        "email": "info@fitlime.cz",
+        "email": "info@fitlime.eu",
         "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, République tchèque"
       },
       "final": {
@@ -1068,10 +1068,166 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "Autres documents",
       "docs": "Politique de protection des données personnelles"
     },
     "back": "Retour à la page d’accueil"
+  },
+  "seoPages": {
+    "weight": {
+      "metaTitle": "Plan de perte de poids adapté à vous | FitLime",
+      "metaDescription": "Un plan de perte de poids FitLime adapté à votre objectif, votre routine quotidienne et votre activité. Sans chaos, sans restrictions inutiles, avec un plan clair que vous pouvez réellement suivre.",
+      "ogTitle": "Plan de perte de poids adapté à vous | FitLime",
+      "ogDescription": "Un plan personnalisé de perte de poids basé sur votre objectif, votre routine et votre activité.",
+      "hero": {
+        "eyebrow": "Guide pour une alimentation saine",
+        "title": "Perdre du poids sans chaos",
+        "lead": "Aujourd’hui, il est facile de se perdre dans une avalanche de régimes extrêmes et de recommandations non vérifiées. Cette page se concentre sur les principes d’une approche rationnelle et durable à long terme de la perte de graisse, basée sur la biologie et la physiologie."
+      },
+      "energy": {
+        "title": "Comment fonctionne réellement la perte de poids",
+        "intro": "L’équilibre énergétique est la base du succès à long terme. Si l’apport énergétique est supérieur à la dépense quotidienne, le poids augmente. Lorsque la dépense est légèrement supérieure à l’apport, cela crée un espace pour perdre du poids.",
+        "chartTitle": "Équilibre énergétique quotidien",
+        "deficit": "Déficit modéré",
+        "intake": "Apport 48 %",
+        "expenditure": "Dépense 52 %",
+        "legendIntake": "Apport énergétique [%]",
+        "legendExpenditure": "Dépense énergétique [%]",
+        "legendBalance": "Équilibre entre apport et dépense",
+        "caption": "L’apport inclut l’énergie de tous les aliments et boissons. La dépense comprend le métabolisme de base, les activités quotidiennes et le sport.",
+        "explain": "L’objectif n’est pas d’atteindre des pourcentages exacts chaque jour, mais de maintenir la bonne direction sur le long terme.",
+        "simulatorTitle": "Simulateur interactif : ajustez votre équilibre énergétique",
+        "simulatorIntro": "Exemple simplifié basé sur une journée normale où les besoins de base sont déjà couverts.",
+        "chips": {
+          "fries": "Frites",
+          "apple": "Pomme",
+          "run": "Course",
+          "gym": "Salle de sport"
+        },
+        "panFood": "Alimentation",
+        "panActivity": "Activité",
+        "note": "Choisir des frites et des activités peut créer un déficit, mais cela ne garantit pas une journée saine.",
+        "outcomes": {
+          "empty": "Sélectionnez au moins un aliment ou une activité.",
+          "initial": "Pour l’instant, c’est équilibré.",
+          "surplus": "Prise de poids",
+          "deficit": "Perte de poids",
+          "mildDeficit": "Perte de poids modérée",
+          "mildSurplus": "Prise de poids modérée"
+        }
+      },
+      "speed": {
+        "title": "À quelle vitesse perdre du poids ?",
+        "p1": "Un rythme réaliste est d’environ <strong>0,3 à 0,7 kg par semaine</strong>.",
+        "p2": "Les résultats durables prennent des mois, pas quelques jours.",
+        "mistake": "<strong>Erreur principale :</strong> vouloir aller trop vite avec des méthodes extrêmes.",
+        "chartTitle": "Comparaison entre un déficit modéré et un régime drastique"
+      },
+      "spotReduction": {
+        "title": "Pourquoi la perte ciblée ne fonctionne pas",
+        "intro": "Faire des abdos ne fait pas disparaître la graisse uniquement du ventre.",
+        "mythTitle": "Mythe : cibler une zone",
+        "mythText": "On renforce le muscle, pas la graisse locale.",
+        "factTitle": "Réalité : le corps entier compte",
+        "factText": "La perte de graisse dépend d’un déficit global et d’un mode de vie."
+      },
+      "mistakes": {
+        "title": "Erreurs les plus courantes",
+        "intro": "La plupart des gens ne commettent pas une seule grosse erreur. Ils reviennent généralement à quelques habitudes qui ralentissent discrètement leur progression au fil du temps.",
+        "tooAggressiveTitle": "Déficit trop agressif",
+        "tooAggressiveText": "Augmente la faim et la fatigue.",
+        "skippingTitle": "Sauter des repas",
+        "skippingText": "Favorise les excès plus tard.",
+        "proteinTitle": "Manque de protéines",
+        "proteinText": "Réduit la satiété.",
+        "cardioTitle": "Uniquement du cardio",
+        "cardioText": "Limite les résultats."
+      },
+      "sleep": {
+        "title": "Moins dormir = manger plus",
+        "p1": "Objectif : <strong>7 à 9 heures de sommeil</strong>.",
+        "p2": "Lorsque vous manquez de sommeil, le corps commence à vous « pousser » à manger. Vous avez plus souvent faim, vous vous sentez moins rassasié et vous êtes beaucoup plus attiré par les sources d’énergie rapide comme les sucreries ou les aliments très caloriques. En même temps, votre capacité à résister à ces envies diminue.",
+        "p3": "C’est pourquoi le sommeil est souvent plus important pendant une perte de poids que la plupart des gens ne le pensent."
+      },
+      "movement": {
+        "title": "Une vision réaliste du mouvement",
+        "intro": "Vous n’avez pas besoin de courir un marathon chaque jour pour brûler des calories ou améliorer votre santé cardiovasculaire. L’important est de trouver une activité que vous pouvez maintenir sur le long terme et qui n’ajoute pas de stress supplémentaire à votre semaine.",
+        "walkingTitle": "Marcher",
+        "walkingText": "Simple et efficace.",
+        "stairsTitle": "Escaliers et activité quotidienne",
+        "stairsText": "L’activité quotidienne normale est souvent sous-estimée. En réalité, elle fait souvent la différence entre stagnation et progression.",
+        "strengthTitle": "Musculation",
+        "strengthText": "Protège la masse musculaire.",
+        "enjoymentTitle": "Le sport par plaisir",
+        "enjoymentText": "Le vélo, la natation ou les sports de raquette sont pertinents s’il s’agit d’activités vers lesquelles vous avez envie de revenir même après la première vague de motivation."
+      },
+      "notLosing": {
+        "title": "Pourquoi est-ce que je ne perds pas de poids même si je mange peu ?",
+        "intro": "Un problème fréquent n’est pas seulement la quantité de nourriture, mais aussi la <strong>densité énergétique</strong>. Les mêmes 1 000 kJ peuvent représenter des volumes très différents, procurer une satiété très différente et avoir un impact très différent sur la prochaine sensation de faim au cours de la journée.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">Concrètement :</strong>La salade, les pommes de terre ou les fruits peuvent remplir l’assiette et l’estomac bien plus que les sodas, le chocolat ou le riz blanc à apport énergétique égal. Perdre du poids ne consiste pas seulement à manger moins, mais souvent à manger plus intelligemment.",
+        "flexibility": "<strong>La flexibilité métabolique joue également un rôle.</strong> Lorsque l’alimentation repose principalement sur des glucides rapides, des grignotages fréquents et de fortes variations d’énergie, le corps devient moins efficace pour passer du glucose aux graisses comme source d’énergie. En pratique, cela se traduit souvent ainsi : une personne « ne mange pas beaucoup », mais a rapidement faim, manque d’énergie pour bouger et a du mal à maintenir une routine sur le long terme. Par ailleurs, si quelqu’un a passé 20 ou 30 ans sans beaucoup de mouvement ni de structure, rien ne change en deux jours. Le corps a généralement besoin de semaines et de mois d’habitudes régulières, pas de quelques tentatives précipitées."
+      },
+      "cravings": {
+        "title": "Envies constantes de sucré",
+        "p1": "Le problème n’est souvent pas un manque de volonté, mais de fortes variations de la glycémie. Un petit-déjeuner très sucré ou une collation rapide peut faire monter l’énergie rapidement, puis provoquer une chute brutale peu après.",
+        "p2": "Cette chute se manifeste souvent par de la fatigue, une baisse de concentration et une envie de reprendre du sucre rapidement. Le corps ne demande pas forcément de la discipline, mais plutôt un apport énergétique plus stable.",
+        "p3": "En même temps, les glucides rapides ont leur place avant le sport lorsque l’on a réellement besoin d’énergie rapide pour la performance.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Comment stabiliser ces variations :</strong>Associez les glucides à une source de protéines et de lipides. Cela ralentit l’absorption et prolonge la satiété.",
+        "reading": "<strong>Lecture recommandée :</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> de Jessie Inchauspe.",
+        "chartTitle": "Variations de la glycémie au cours de la journée"
+      },
+      "social": {
+        "title": "Réalité vs réseaux sociaux",
+        "intro": "Les algorithmes des réseaux sociaux montrent constamment des physiques extrêmement secs et très définis, mais cela ne reflète souvent ni une santé normale ni un mode de vie durable.",
+        "unrealTitle": "Conditions irréalistes",
+        "unrealText": "L’éclairage, le « pump », l’hydratation et l’angle de la caméra peuvent créer une illusion d’apparence qui n’est pas soutenable sur le long terme.",
+        "limitsTitle": "Les limites des approches extrêmes",
+        "limitsText": "Un taux de masse grasse très faible peut nuire à l’énergie, aux hormones, à l’humeur et à la récupération. Un bon objectif est celui avec lequel vous pouvez réellement vivre."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Semaine 0", "Semaine 2", "Semaine 4", "Semaine 6", "Semaine 8", "Semaine 10", "Semaine 12"],
+          "moderate": "Déficit modéré",
+          "crash": "Régime drastique et effet yo-yo",
+          "yTitle": "Poids corporel (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Salade", "Pommes de terre", "Fruits", "Riz", "Chocolat", "Soda"],
+          "dataset": "Quantité d’aliments pour 1 000 kJ (g)",
+          "xTitle": "Poids des aliments (g)"
+        },
+        "glucose": {
+          "label": "Glycémie",
+          "xTitle": "Temps",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sommeil (8 h)",
+          "awake": "Éveil (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "q1": "Faut-il faire un régime keto ?",
+        "a1": "Non, un déficit durable est plus important.",
+        "q2": "Et le travail en horaires décalés ?",
+        "a2": "L’important est le total global.",
+        "q3": "Pourquoi la musculation ?",
+        "a3": "Elle préserve les muscles.",
+        "q4": "Faut-il passer des heures à la salle ?",
+        "a4": "Non, l’alimentation reste la clé."
+      },
+      "cta": {
+        "title": "Une perte de graisse maîtrisée",
+        "lead": "Fatigué du chaos des régimes ? Obtenez votre plan personnalisé.",
+        "button": "Calculer mon plan",
+        "back": "Retour à l’accueil",
+        "related": "Articles associés :",
+        "healthy": "Alimentation saine",
+        "sports": "Nutrition sportive",
+        "how": "Comment fonctionne FitLime"
+      }
+    }
   }
 }

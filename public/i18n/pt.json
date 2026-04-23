@@ -56,16 +56,16 @@
         "ingredientAria": "Exemplo de ingredientes",
         "stepLabel": "Modo de preparo:",
         "previews": [
-          { "ingredients": ["salmão", "arroz", "abacate"], "step": "Adicione salmão, abacate e legumes ao arroz e finalize com limão." },
-          { "ingredients": ["peito de frango", "bulgur", "legumes"], "step": "Doure o frango e sirva com bulgur." },
-          { "ingredients": ["tofu", "quinoa", "espinafre"], "step": "Salteie o tofu e misture." },
-          { "ingredients": ["presunto de peru", "queijo", "cranberries"], "step": "Recheie pão integral." },
-          { "ingredients": ["frango", "arroz", "amendoim"], "step": "Salteie e adicione amendoim." },
-          { "ingredients": ["lentilhas vermelhas", "ovo", "cenoura"], "step": "Cozinhe e adicione ovo." },
-          { "ingredients": ["lucioperca", "batatas", "espinafre"], "step": "Prepare e sirva." },
-          { "ingredients": ["aveia", "maçã", "canela"], "step": "Monte e asse." },
-          { "ingredients": ["iogurte", "gelatina", "fruta"], "step": "Deixe firmar e sirva." },
-          { "ingredients": ["banana", "iogurte", "aveia"], "step": "Bata tudo." }
+          { "ingredients": ["Salmão", "Arroz", "Abacate"], "step": "Adicione salmão, abacate e legumes ao arroz e finalize com limão." },
+          { "ingredients": ["Peito de frango", "Bulgur", "Legumes"], "step": "Doure o frango e sirva com bulgur." },
+          { "ingredients": ["Tofu", "Quinoa", "Espinafre"], "step": "Salteie o tofu e misture." },
+          { "ingredients": ["Presunto de peru", "Queijo", "Cranberries"], "step": "Recheie pão integral." },
+          { "ingredients": ["Frango", "Arroz", "Amendoim"], "step": "Salteie e adicione amendoim." },
+          { "ingredients": ["Lentilhas vermelhas", "Ovo", "Cenoura"], "step": "Cozinhe e adicione ovo." },
+          { "ingredients": ["Lucioperca", "Batatas", "Espinafre"], "step": "Prepare e sirva." },
+          { "ingredients": ["Aveia", "Maçã", "Canela"], "step": "Monte e asse." },
+          { "ingredients": ["Iogurte", "Gelatina", "Fruta"], "step": "Deixe firmar e sirva." },
+          { "ingredients": ["Banana", "Iogurte", "Aveia"], "step": "Bata tudo." }
         ]
       },
       "chart": {
@@ -1017,7 +1017,7 @@
       "contact": {
         "title": "8. Informações de contacto",
         "lead": "Para qualquer pedido, escreva para:",
-        "email": "info@fitlime.cz",
+        "email": "info@fitlime.eu",
         "address": "Sportvital-Pro s.r.o., Mokropeská 1799, 252 28 Černošice, República Checa"
       },
       "final": {
@@ -1068,10 +1068,166 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "E-mail",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "Outros documentos",
       "docs": "Política de proteção de dados pessoais"
     },
     "back": "Voltar à página inicial"
+  },
+  "seoPages": {
+    "weight": {
+      "metaTitle": "Plano de perda de peso personalizado para si | FitLime",
+      "metaDescription": "Um plano de perda de peso da FitLime adaptado ao seu objetivo, rotina diária e nível de atividade. Sem caos, sem restrições desnecessárias e com um plano claro que pode realmente seguir.",
+      "ogTitle": "Plano de perda de peso personalizado para si | FitLime",
+      "ogDescription": "Um plano personalizado de perda de peso baseado no seu objetivo, rotina e atividade.",
+      "hero": {
+        "eyebrow": "Guia para uma alimentação saudável",
+        "title": "Perder peso sem caos",
+        "lead": "Hoje em dia é fácil perder-se numa avalanche de dietas extremas e recomendações não verificadas. Esta página foca-se nos princípios de uma abordagem racional e sustentável a longo prazo para a perda de gordura, baseada na biologia e na fisiologia."
+      },
+      "energy": {
+        "title": "Como a perda de peso realmente funciona",
+        "intro": "O balanço energético é a base do sucesso a longo prazo. Se a ingestão de energia for superior ao gasto diário, o peso corporal aumenta. Quando o gasto é ligeiramente superior à ingestão, cria-se espaço para perder peso.",
+        "chartTitle": "Balanço energético diário",
+        "deficit": "Défice moderado",
+        "intake": "Ingestão 48%",
+        "expenditure": "Gasto 52%",
+        "legendIntake": "Ingestão de energia [%]",
+        "legendExpenditure": "Gasto energético [%]",
+        "legendBalance": "Equilíbrio entre ingestão e gasto",
+        "caption": "A ingestão inclui a energia de todos os alimentos e bebidas. O gasto inclui metabolismo basal, atividade diária e exercício.",
+        "explain": "O objetivo não é atingir valores exatos todos os dias, mas sim manter a direção certa ao longo do tempo.",
+        "simulatorTitle": "Simulador interativo: ajuste o seu balanço energético",
+        "simulatorIntro": "Exemplo simplificado de um dia em que as necessidades básicas já estão cobertas.",
+        "chips": {
+          "fries": "Batatas fritas",
+          "apple": "Maçã",
+          "run": "Corrida",
+          "gym": "Ginásio"
+        },
+        "panFood": "Alimentação",
+        "panActivity": "Atividade",
+        "note": "Mesmo com défice, isso não significa automaticamente um dia saudável.",
+        "outcomes": {
+          "empty": "Selecione pelo menos um alimento ou atividade.",
+          "initial": "De momento está equilibrado.",
+          "surplus": "Aumento de peso",
+          "deficit": "Perda de peso",
+          "mildDeficit": "Perda de peso moderada",
+          "mildSurplus": "Aumento de peso moderado"
+        }
+      },
+      "speed": {
+        "title": "Qual deve ser a velocidade da perda de peso?",
+        "p1": "Um ritmo realista é cerca de <strong>0,3 a 0,7 kg por semana</strong>.",
+        "p2": "Resultados duradouros constroem-se ao longo de meses, não em poucos dias.",
+        "mistake": "<strong>Maior erro:</strong> tentar acelerar o processo com métodos extremos.",
+        "chartTitle": "Comparação entre um défice moderado e uma dieta restritiva"
+      },
+      "spotReduction": {
+        "title": "Porque a redução localizada não funciona",
+        "intro": "Fazer abdominais não elimina gordura apenas na barriga.",
+        "mythTitle": "Mito: focar numa zona",
+        "mythText": "O treino fortalece o músculo, não elimina gordura localizada.",
+        "factTitle": "Facto: o corpo funciona como um todo",
+        "factText": "A perda de gordura depende de um défice global e estilo de vida."
+      },
+      "mistakes": {
+        "title": "Erros mais comuns",
+        "intro": "A maioria das pessoas não comete um único grande erro. Normalmente regressa a alguns hábitos que, de forma discreta, abrandam o seu progresso ao longo do tempo.",
+        "tooAggressiveTitle": "Défice demasiado agressivo",
+        "tooAggressiveText": "Aumenta a fome e o cansaço.",
+        "skippingTitle": "Saltar refeições",
+        "skippingText": "Aumenta o risco de comer em excesso depois.",
+        "proteinTitle": "Pouca proteína",
+        "proteinText": "Reduz a saciedade.",
+        "cardioTitle": "Apenas cardio",
+        "cardioText": "Limita os resultados."
+      },
+      "sleep": {
+        "title": "Menos sono = mais fome",
+        "p1": "Objetivo: <strong>7–9 horas de sono</strong>.",
+        "p2": "Quando há privação de sono, o corpo começa a “empurrar” para a comida. Sente mais fome, fica menos saciado e é muito mais atraído por fontes de energia rápida, como doces ou alimentos calóricos. Ao mesmo tempo, a capacidade de resistir a esses desejos diminui.",
+        "p3": "Por isso, o sono é muitas vezes mais importante durante a perda de gordura do que a maioria das pessoas imagina."
+      },
+      "movement": {
+        "title": "Uma visão realista do movimento",
+        "intro": "Não é necessário correr uma maratona todos os dias para queimar calorias ou melhorar a saúde cardiovascular. O importante é encontrar uma forma de atividade que consiga manter a longo prazo e que não acrescente mais stress à sua semana.",
+        "walkingTitle": "Caminhar",
+        "walkingText": "Simples e eficaz.",
+        "stairsTitle": "Escadas e movimento diário",
+        "stairsText": "A atividade diária normal é frequentemente subestimada. Na realidade, muitas vezes é ela que determina a diferença entre estagnação e progresso.",
+        "strengthTitle": "Treino de força",
+        "strengthText": "Protege a massa muscular.",
+        "enjoymentTitle": "Desporto por prazer",
+        "enjoymentText": "Ciclismo, natação ou desportos de raquete fazem sentido se forem atividades às quais quer voltar mesmo depois de passar a primeira fase de motivação."
+      },
+      "notLosing": {
+        "title": "Porque não estou a perder peso mesmo comendo pouco?",
+        "intro": "Um problema comum não é apenas a quantidade de comida, mas também a <strong>densidade energética</strong>. Os mesmos 1 000 kJ podem corresponder a volumes muito diferentes, a um efeito de saciedade muito distinto e a um impacto muito diferente na próxima sensação de fome ao longo do dia.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">O que isto significa na prática:</strong>Salada, batatas ou fruta podem encher muito mais o prato e o estômago do que refrigerantes, chocolate ou arroz branco com o mesmo valor energético. Perder peso não é apenas comer menos, mas muitas vezes comer de forma mais inteligente.",
+        "flexibility": "<strong>A flexibilidade metabólica também desempenha um papel.</strong> Quando a alimentação é baseada principalmente em hidratos de carbono rápidos, petiscos frequentes e grandes oscilações de energia, o corpo torna-se menos eficiente a alternar entre glicose e gordura como fontes de energia. Na prática, isto manifesta-se muitas vezes assim: alguém “não come muito”, mas sente fome rapidamente, tem menos energia para se mexer e tem dificuldade em manter a rotina a longo prazo. Ao mesmo tempo, se alguém passou 20 ou 30 anos sem muita atividade ou estrutura, nada muda em dois dias. O corpo normalmente precisa de semanas e meses de hábitos consistentes, não de algumas tentativas apressadas."
+      },
+      "cravings": {
+        "title": "Desejo constante por doces",
+        "p1": "O problema muitas vezes não é falta de força de vontade, mas sim grandes oscilações da glicemia. Um pequeno-almoço muito doce ou um snack rápido pode fazer a energia subir rapidamente e depois cair de forma acentuada pouco depois.",
+        "p2": "Essa queda manifesta-se frequentemente como fadiga, pior concentração e vontade de consumir mais açúcar rapidamente. O corpo não está necessariamente a pedir disciplina, mas sim um fornecimento de energia mais estável.",
+        "p3": "Ao mesmo tempo, os hidratos de carbono rápidos têm o seu lugar antes do exercício, quando realmente é necessária energia rápida para o desempenho.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Como estabilizar estas oscilações:</strong>Combine hidratos de carbono com uma fonte de proteína e gordura. Isto abranda a absorção e ajuda a manter a saciedade por mais tempo.",
+        "reading": "<strong>Leitura recomendada:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> de Jessie Inchauspe.",
+        "chartTitle": "Oscilações da glicemia ao longo do dia"
+      },
+      "social": {
+        "title": "Realidade vs redes sociais",
+        "intro": "Os algoritmos das redes sociais mostram constantemente físicos extremamente magros e definidos, mas isso muitas vezes não reflete uma saúde normal nem um estilo de vida sustentável.",
+        "unrealTitle": "Condições irreais",
+        "unrealText": "Iluminação, “pump”, nível de hidratação e ângulo da câmara podem criar uma ilusão de aparência que não é sustentável a longo prazo.",
+        "limitsTitle": "Os limites das abordagens extremas",
+        "limitsText": "Um nível muito baixo de gordura corporal pode prejudicar a energia, as hormonas, o humor e a recuperação. Um bom objetivo é aquele com o qual consegue realmente viver."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Semana 0", "Semana 2", "Semana 4", "Semana 6", "Semana 8", "Semana 10", "Semana 12"],
+          "moderate": "Défice moderado",
+          "crash": "Dieta restritiva e efeito yo-yo",
+          "yTitle": "Peso corporal (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Salada", "Batatas", "Fruta", "Arroz", "Chocolate", "Refrigerante"],
+          "dataset": "Quantidade de alimentos para 1 000 kJ (g)",
+          "xTitle": "Peso dos alimentos (g)"
+        },
+        "glucose": {
+          "label": "Glicemia",
+          "xTitle": "Tempo",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sono (8 h)",
+          "awake": "Acordado (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "q1": "Preciso de dieta keto?",
+        "a1": "Não, o mais importante é um défice sustentável.",
+        "q2": "E se trabalho por turnos?",
+        "a2": "O que importa é o balanço total.",
+        "q3": "Porque treinar força?",
+        "a3": "Ajuda a preservar massa muscular.",
+        "q4": "Preciso de passar horas no ginásio?",
+        "a4": "Não, a alimentação é a chave."
+      },
+      "cta": {
+        "title": "Perda de gordura sob controlo",
+        "lead": "Cansado do caos das dietas? Obtenha o seu plano personalizado.",
+        "button": "Calcular o seu plano",
+        "back": "Voltar à página inicial",
+        "related": "Artigos relacionados:",
+        "healthy": "Alimentação saudável",
+        "sports": "Nutrição desportiva",
+        "how": "Como funciona o FitLime"
+      }
+    }
   }
 }

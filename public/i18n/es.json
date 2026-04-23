@@ -56,16 +56,16 @@
         "ingredientAria": "Ejemplo de ingredientes",
         "stepLabel": "Preparación:",
         "previews": [
-          { "ingredients": ["salmón", "arroz", "aguacate"], "step": "Añade salmón, aguacate y verduras al arroz cocido y rocía con aliño de lima." },
-          { "ingredients": ["pechuga de pollo", "bulgur", "verduras"], "step": "Dora el pollo, mézclalo con bulgur y sirve con ensalada fresca." },
-          { "ingredients": ["tofu", "quinoa", "espinaca"], "step": "Saltea el tofu, añade quinoa con espinaca y sazona con salsa ligera de soja y lima." },
-          { "ingredients": ["jamón de pavo", "queso", "arándanos rojos"], "step": "Unta pan integral con base de yogur y rellena con pavo, queso y arándanos." },
-          { "ingredients": ["pollo", "arroz", "cacahuetes"], "step": "Saltea la carne, añade verduras y salsa, y espolvorea con cacahuetes." },
-          { "ingredients": ["lentejas rojas", "huevo", "zanahoria"], "step": "Cuece las lentejas con verduras hasta que estén tiernas y añade huevo." },
-          { "ingredients": ["lucio", "patatas", "espinaca"], "step": "Dora el pescado y sirve con patatas y espinaca salteada." },
-          { "ingredients": ["avena", "manzanas", "canela"], "step": "Presiona la base en el molde, añade manzanas con canela y hornea." },
-          { "ingredients": ["yogur", "gelatina", "fruta"], "step": "Deja cuajar la crema de yogur en un vaso y sirve con compota de fruta." },
-          { "ingredients": ["plátano", "yogur", "avena"], "step": "Mezcla todo hasta obtener una textura suave y ajusta con leche o kéfir." }
+          { "ingredients": ["Salmón", "Arroz", "Aguacate"], "step": "Añade salmón, aguacate y verduras al arroz cocido y rocía con aliño de lima." },
+          { "ingredients": ["Pechuga de pollo", "Bulgur", "Verduras"], "step": "Dora el pollo, mézclalo con bulgur y sirve con ensalada fresca." },
+          { "ingredients": ["Tofu", "Quinoa", "Espinaca"], "step": "Saltea el tofu, añade quinoa con espinaca y sazona con salsa ligera de soja y lima." },
+          { "ingredients": ["Jamón de pavo", "Queso", "arándanos rojos"], "step": "Unta pan integral con base de yogur y rellena con pavo, queso y arándanos." },
+          { "ingredients": ["Pollo", "Arroz", "Cacahuetes"], "step": "Saltea la carne, añade verduras y salsa, y espolvorea con cacahuetes." },
+          { "ingredients": ["Lentejas rojas", "Huevo", "Zanahoria"], "step": "Cuece las lentejas con verduras hasta que estén tiernas y añade huevo." },
+          { "ingredients": ["Lucio", "Patatas", "Espinaca"], "step": "Dora el pescado y sirve con patatas y espinaca salteada." },
+          { "ingredients": ["Avena", "Manzanas", "Canela"], "step": "Presiona la base en el molde, añade manzanas con canela y hornea." },
+          { "ingredients": ["Yogur", "Gelatina", "Fruta"], "step": "Deja cuajar la crema de yogur en un vaso y sirve con compota de fruta." },
+          { "ingredients": ["Plátano", "Yogur", "Avena"], "step": "Mezcla todo hasta obtener una textura suave y ajusta con leche o kéfir." }
         ]
       },
       "chart": {
@@ -1068,10 +1068,166 @@
       "controller": "Sportvital-Pro s.r.o.",
       "ico": "ID: 04528930",
       "emailLabel": "Correo electrónico",
-      "email": "info@fitlime.com",
+      "email": "info@fitlime.eu",
       "docsLabel": "Otros documentos",
       "docs": "Política de protección de datos personales"
     },
     "back": "Volver al inicio"
+  },
+  "seoPages": {
+    "weight": {
+      "metaTitle": "Plan de pérdida de peso adaptado a ti | FitLime",
+      "metaDescription": "Un plan de pérdida de peso de FitLime adaptado a tu objetivo, rutina diaria y actividad. Sin caos, sin restricciones innecesarias y con un plan claro que realmente puedes seguir.",
+      "ogTitle": "Plan de pérdida de peso adaptado a ti | FitLime",
+      "ogDescription": "Un plan personalizado de pérdida de peso basado en tu objetivo, rutina diaria y actividad.",
+      "hero": {
+        "eyebrow": "Guía para una alimentación saludable",
+        "title": "Perder peso sin caos",
+        "lead": "Hoy en día es fácil perderse en una avalancha de dietas extremas y recomendaciones sin verificar. Esta página se centra en los principios de un enfoque racional y sostenible a largo plazo para la pérdida de grasa basado en la biología y la fisiología."
+      },
+      "energy": {
+        "title": "Cómo funciona realmente la pérdida de peso",
+        "intro": "El balance energético es la base del éxito a largo plazo en la pérdida de grasa. Si la ingesta de alimentos es mayor que tu gasto energético diario, el peso corporal aumenta. Cuando el gasto es ligeramente mayor que la ingesta, se crea espacio para perder peso.",
+        "chartTitle": "Balance energético diario",
+        "deficit": "Déficit moderado",
+        "intake": "Ingesta 48%",
+        "expenditure": "Gasto 52%",
+        "legendIntake": "Ingesta energética [%]",
+        "legendExpenditure": "Gasto energético [%]",
+        "legendBalance": "Balance entre ingesta y gasto",
+        "caption": "La ingesta incluye la energía de todos los alimentos y bebidas durante el día. El gasto incluye el metabolismo basal, el movimiento diario normal como caminar al trabajo o hacer compras, y cualquier actividad deportiva planificada.",
+        "explain": "El objetivo no es alcanzar porcentajes exactos cada día. Lo importante es que la ingesta y el gasto se muevan en la dirección correcta con el tiempo. Para perder peso, un déficit moderado suele ser suficiente sin hambre extrema, fatiga o pérdida innecesaria de masa muscular.",
+        "simulatorTitle": "Simulador interactivo: ajusta tu balance energético",
+        "simulatorIntro": "Este ejemplo es un modelo simplificado basado en un día normal en el que las necesidades básicas del cuerpo (TMB) ya están cubiertas.",
+        "chips": {
+          "fries": "Patatas fritas",
+          "apple": "Manzana",
+          "run": "Correr",
+          "gym": "Gimnasio"
+        },
+        "panFood": "Comida",
+        "panActivity": "Actividad",
+        "note": "Por ejemplo, si eliges patatas fritas y ambas actividades, el gasto en este modelo simplificado es mayor que la ingesta, creando un déficit energético. Eso no significa que el día sea saludable: las patatas aportan principalmente energía, sal y grasa, pero poca fibra, proteína, vitaminas y minerales.",
+        "outcomes": {
+          "empty": "Selecciona al menos un alimento o actividad.",
+          "initial": "Por ahora está equilibrado. Añade comida o actividad y observa el cambio.",
+          "surplus": "Aumento de peso",
+          "deficit": "Pérdida de peso",
+          "mildDeficit": "Pérdida de peso moderada",
+          "mildSurplus": "Aumento de peso moderado"
+        }
+      },
+      "speed": {
+        "title": "¿Qué tan rápido debería ser la pérdida de peso?",
+        "p1": "Un ritmo realista y sostenible es aproximadamente <strong>0,3 a 0,7 kg por semana</strong>.",
+        "p2": "Los resultados sólidos rara vez ocurren en diez días. Normalmente se construyen durante meses de hábitos consistentes.",
+        "mistake": "<strong>El mayor error:</strong> intentar acelerar el proceso con extremos.",
+        "chartTitle": "Comparación entre un déficit moderado y una dieta extrema"
+      },
+      "spotReduction": {
+        "title": "Por qué la reducción localizada no funciona",
+        "intro": "Hacer cientos de abdominales no eliminará la grasa solo del abdomen.",
+        "mythTitle": "Mito: enfocar solo una zona",
+        "mythText": "Entrenar una parte del cuerpo fortalece el músculo, no elimina grasa localizada.",
+        "factTitle": "Realidad: todo el sistema importa",
+        "factText": "La pérdida de grasa proviene de un déficit moderado, suficiente proteína y actividad regular."
+      },
+      "mistakes": {
+        "title": "Errores más comunes",
+        "intro": "La mayoría de las personas no comete un gran error. Normalmente vuelven a algunos hábitos que ralentizan silenciosamente su progreso con el tiempo.",
+        "tooAggressiveTitle": "Déficit demasiado agresivo",
+        "tooAggressiveText": "Provoca hambre y fatiga.",
+        "skippingTitle": "Saltarse comidas",
+        "skippingText": "Aumenta el riesgo de comer en exceso después.",
+        "proteinTitle": "Poca proteína",
+        "proteinText": "Reduce la saciedad y aumenta pérdida muscular.",
+        "cardioTitle": "Solo cardio",
+        "cardioText": "Sin fuerza y nutrición adecuada, el progreso se estanca."
+      },
+      "sleep": {
+        "title": "Dormir menos = comer más",
+        "p1": "El objetivo es <strong>7–9 horas de sueño</strong>.",
+        "p2": "Cuando tienes falta de sueño, el cuerpo empieza a \"empujarte\" hacia la comida. Tienes hambre con más frecuencia, te sientes menos saciado y te atraen mucho más las fuentes de energía rápida como los dulces o los alimentos calóricos. Al mismo tiempo, disminuye tu capacidad para resistir estos antojos.",
+        "p3": "Por eso el sueño suele ser más importante durante la pérdida de grasa de lo que la mayoría de la gente cree."
+      },
+      "movement": {
+        "title": "Movimiento realista",
+        "intro": "No necesitas correr un maratón todos los días para quemar calorías o mejorar la salud cardiovascular. Lo importante es encontrar una forma de movimiento que puedas mantener a largo plazo y que no añada más estrés a tu semana.",
+        "walkingTitle": "Caminar",
+        "walkingText": "Accesible y efectivo.",
+        "stairsTitle": "Escaleras y movimiento diario",
+        "stairsText": "La actividad diaria normal suele subestimarse. En realidad, a menudo marca la diferencia entre estancamiento y progreso.",
+        "strengthTitle": "Entrenamiento de fuerza",
+        "strengthText": "Protege la masa muscular.",
+        "enjoymentTitle": "Deporte por disfrute",
+        "enjoymentText": "El ciclismo, la natación o los deportes de raqueta tienen sentido si son actividades a las que quieres volver incluso después de que pase el primer impulso de motivación."
+      },
+      "notLosing": {
+        "title": "¿Por qué no pierdo peso aunque coma poco?",
+        "intro": "Un problema común no es solo la cantidad de comida, sino también la <strong>densidad energética</strong>. Los mismos 1.000 kJ pueden venir con un volumen muy diferente, un efecto de saciedad muy distinto y un impacto muy diferente en la siguiente sensación de hambre a lo largo del día.",
+        "fact": "<strong style=\"display:block; margin-bottom:8px;\">Qué significa esto en la práctica:</strong>La ensalada, las patatas o la fruta pueden llenar mucho más el plato y el estómago que los refrescos, el chocolate o el arroz blanco con el mismo contenido energético. Perder peso no es solo comer menos, sino muchas veces comer de forma más inteligente.",
+        "flexibility": "<strong>La flexibilidad metabólica también juega un papel.</strong> Cuando la alimentación se basa principalmente en carbohidratos rápidos, picoteo frecuente y grandes fluctuaciones de energía, el cuerpo pierde capacidad para cambiar entre glucosa y grasa como fuente de energía. En la práctica, suele verse así: alguien \"no come mucho\", pero aun así tiene hambre rápidamente, tiene menos energía para moverse y le cuesta mantener la rutina a largo plazo. Al mismo tiempo, si alguien ha pasado 20 o 30 años sin mucho movimiento o estructura, nada cambia en dos días. El cuerpo normalmente necesita semanas y meses de hábitos consistentes, no unos pocos intentos apresurados."
+      },
+      "cravings": {
+        "title": "Antojos constantes de dulce",
+        "p1": "El problema suele no ser falta de fuerza de voluntad, sino fuertes cambios en el nivel de glucosa en sangre. Un desayuno muy dulce o un snack rápido puede hacer que la energía suba rápidamente y luego caiga bruscamente poco después.",
+        "p2": "Esa caída suele manifestarse como fatiga, peor concentración y antojo de otro aporte rápido de azúcar. El cuerpo no necesariamente pide disciplina, sino un suministro de energía más estable.",
+        "p3": "Al mismo tiempo, los carbohidratos rápidos tienen su lugar antes del deporte, cuando realmente necesitas energía rápida para el rendimiento.",
+        "fact": "<strong style=\"display:block; margin-bottom: 8px;\">Cómo estabilizar estos cambios:</strong>Combina los carbohidratos con una fuente de proteína y grasa. Esto ralentiza la absorción y ayuda a mantener la saciedad durante más tiempo.",
+        "reading": "<strong>Lectura recomendada:</strong> <a href=\"https://share.google/qRSN5eN642gmVtwXP\" class=\"seo-page-link\" target=\"_blank\" rel=\"noopener noreferrer\">Glucose Revolution</a> de Jessie Inchauspe.",
+        "chartTitle": "Variaciones de la glucosa en sangre a lo largo del día"
+      },
+      "social": {
+        "title": "Realidad vs redes sociales",
+        "intro": "Los algoritmos en redes sociales muestran constantemente físicos extremadamente delgados y definidos, pero eso a menudo no refleja una salud normal ni un estilo de vida sostenible.",
+        "unrealTitle": "Condiciones irreales",
+        "unrealText": "La iluminación, el \"pump\", el nivel de hidratación y el ángulo de la cámara pueden crear una ilusión de apariencia que no es sostenible a largo plazo.",
+        "limitsTitle": "Los límites de los enfoques extremos",
+        "limitsText": "Un nivel muy bajo de grasa corporal puede afectar negativamente a la energía, las hormonas, el estado de ánimo y la recuperación. Un buen objetivo es aquel con el que realmente puedes vivir."
+      },
+      "charts": {
+        "weightLoss": {
+          "weeks": ["Semana 0", "Semana 2", "Semana 4", "Semana 6", "Semana 8", "Semana 10", "Semana 12"],
+          "moderate": "Déficit moderado",
+          "crash": "Dieta extrema y efecto rebote",
+          "yTitle": "Peso corporal (kg)"
+        },
+        "foodCompare": {
+          "labels": ["Ensalada", "Patatas", "Fruta", "Arroz", "Chocolate", "Refresco"],
+          "dataset": "Cantidad de alimentos para 1.000 kJ (g)",
+          "xTitle": "Peso de los alimentos (g)"
+        },
+        "glucose": {
+          "label": "Glucosa en sangre",
+          "xTitle": "Tiempo",
+          "yTitle": "mmol/l"
+        },
+        "sleep": {
+          "sleep": "Sueño (8 h)",
+          "awake": "Despierto (16 h)"
+        }
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "q1": "¿Necesito dieta keto?",
+        "a1": "No, lo importante es un déficit sostenible.",
+        "q2": "¿Y si trabajo por turnos?",
+        "a2": "Lo importante es el total diario y semanal.",
+        "q3": "¿Por qué fuerza?",
+        "a3": "Mantiene músculo durante el déficit.",
+        "q4": "¿Necesito horas de gimnasio?",
+        "a4": "No, la clave sigue siendo la alimentación."
+      },
+      "cta": {
+        "title": "Control total de la pérdida de grasa",
+        "lead": "¿Cansado del caos de dietas? Obtén tu plan personalizado.",
+        "button": "Calcular mi plan",
+        "back": "Volver a inicio",
+        "related": "Artículos relacionados:",
+        "healthy": "Alimentación saludable",
+        "sports": "Nutrición deportiva",
+        "how": "Cómo funciona FitLime"
+      }
+    }
   }
 }
