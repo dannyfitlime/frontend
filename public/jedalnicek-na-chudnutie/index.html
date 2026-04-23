@@ -88,14 +88,51 @@
 
     <style>
       .edu-chart-lg {
+        position: relative;
         width: 100%;
         height: 350px;
         margin: 20px 0;
       }
 
       .edu-chart-md {
+        position: relative;
         width: 100%;
         height: 280px;
+      }
+
+      .edu-chart-lg canvas,
+      .edu-chart-md canvas {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .edu-chart-lg::after,
+      .edu-chart-md::after {
+        content: '';
+        position: absolute;
+        inset: 12px;
+        border-radius: 18px;
+        background:
+          linear-gradient(90deg, transparent 0%, rgba(15, 81, 50, 0.08) 45%, transparent 90%),
+          linear-gradient(180deg, rgba(15, 81, 50, 0.08), rgba(15, 81, 50, 0.02));
+        opacity: 0.7;
+        pointer-events: none;
+        transform: scaleX(0.92);
+        transform-origin: left center;
+        transition: opacity 0.35s ease, transform 0.5s ease;
+      }
+
+      .edu-chart-lg.is-chart-ready canvas,
+      .edu-chart-md.is-chart-ready canvas {
+        opacity: 1;
+        transform: none;
+      }
+
+      .edu-chart-lg.is-chart-ready::after,
+      .edu-chart-md.is-chart-ready::after {
+        opacity: 0;
+        transform: scaleX(1);
       }
 
       .edu-flex-row {
@@ -847,6 +884,13 @@
         .fade-in.visible .energy-stack-marker {
           animation: none;
         }
+
+        .edu-chart-lg canvas,
+        .edu-chart-md canvas,
+        .edu-chart-lg::after,
+        .edu-chart-md::after {
+          transition: none;
+        }
       }
 
       .balance-simulator-title {
@@ -1342,10 +1386,103 @@
         });
 
         renderBalance();
-        new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Týždeň 0', 'Týždeň 2', 'Týždeň 4', 'Týždeň 6', 'Týždeň 8', 'Týždeň 10', 'Týždeň 12'], datasets: [{ label: 'Mierny deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Drastická diéta a jojo efekt', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Hmotnosť (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
-        new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Šalát', 'Zemiaky', 'Ovocie', 'Ryža', 'Čokoláda', 'Cola'], datasets: [{ label: 'Množstvo jedla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Hmotnosť jedla (g)' } } } } });
-        new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Glukóza v krvi', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Čas' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
-        new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Spánok (8 h)', 'Bdelosť (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const chartAnimation = (step = 70) => prefersReducedMotion
+          ? false
+          : {
+            duration: 1200,
+            easing: 'easeOutQuart',
+            delay: (context) => context.type === 'data'
+              ? context.dataIndex * step + context.datasetIndex * 140
+              : 0,
+          };
+        const chartBaseOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: chartAnimation(),
+        };
+
+        const chartDefinitions = {
+          weightLossChart: () => ({
+            type: 'line',
+            data: {
+              labels: ['Týždeň 0', 'Týždeň 2', 'Týždeň 4', 'Týždeň 6', 'Týždeň 8', 'Týždeň 10', 'Týždeň 12'],
+              datasets: [
+                { label: 'Mierny deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3, pointRadius: 4, pointHoverRadius: 5 },
+                { label: 'Drastická diéta a jojo efekt', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3], pointRadius: 4, pointHoverRadius: 5 },
+              ],
+            },
+            options: {
+              ...chartBaseOptions,
+              plugins: { legend: { position: 'bottom' } },
+              scales: { y: { title: { display: true, text: 'Hmotnosť (kg)' }, suggestedMin: 78, suggestedMax: 86 } },
+            },
+          }),
+          foodCompareChart: () => ({
+            type: 'bar',
+            data: {
+              labels: ['Šalát', 'Zemiaky', 'Ovocie', 'Ryža', 'Čokoláda', 'Cola'],
+              datasets: [{ label: 'Množstvo jedla na 1 000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }],
+            },
+            options: {
+              ...chartBaseOptions,
+              animation: chartAnimation(85),
+              indexAxis: 'y',
+              plugins: { legend: { display: false } },
+              scales: { x: { title: { display: true, text: 'Hmotnosť jedla (g)' } } },
+            },
+          }),
+          glucoseChart: () => ({
+            type: 'line',
+            data: {
+              labels: ['08:00', '09:00', '10:00', '11:00', '12:00'],
+              datasets: [{ label: 'Glukóza v krvi', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3, pointRadius: 4, pointHoverRadius: 5 }],
+            },
+            options: {
+              ...chartBaseOptions,
+              plugins: { legend: { display: false } },
+              scales: { x: { title: { display: true, text: 'Čas' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } },
+            },
+          }),
+          sleepChart: () => ({
+            type: 'doughnut',
+            data: { labels: ['Spánok (8 h)', 'Bdelosť (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] },
+            options: {
+              ...chartBaseOptions,
+              animation: prefersReducedMotion ? false : { animateRotate: true, animateScale: true, duration: 1200, easing: 'easeOutQuart' },
+              cutout: '75%',
+              plugins: { legend: { display: true, position: 'bottom' } },
+              rotation: -90,
+              circumference: 180,
+            },
+          }),
+        };
+
+        const createChart = (canvas) => {
+          if (!canvas || canvas.dataset.chartRendered === 'true') return;
+          const getConfig = chartDefinitions[canvas.id];
+          if (!getConfig) return;
+          canvas.dataset.chartRendered = 'true';
+          new Chart(canvas, getConfig());
+          requestAnimationFrame(() => {
+            canvas.closest('.edu-chart-lg, .edu-chart-md')?.classList.add('is-chart-ready');
+          });
+        };
+
+        const chartCanvases = document.querySelectorAll('#weightLossChart, #foodCompareChart, #glucoseChart, #sleepChart');
+        if ('IntersectionObserver' in window) {
+          const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              createChart(entry.target);
+              chartObserver.unobserve(entry.target);
+            });
+          }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+          chartCanvases.forEach((canvas) => chartObserver.observe(canvas));
+        } else {
+          chartCanvases.forEach(createChart);
+        }
       });
     </script>
   </main>

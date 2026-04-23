@@ -90,14 +90,51 @@
 
     <style>
       .edu-chart-lg {
+        position: relative;
         width: 100%;
         height: 350px;
         margin: 20px 0;
       }
 
       .edu-chart-md {
+        position: relative;
         width: 100%;
         height: 280px;
+      }
+
+      .edu-chart-lg canvas,
+      .edu-chart-md canvas {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .edu-chart-lg::after,
+      .edu-chart-md::after {
+        content: '';
+        position: absolute;
+        inset: 12px;
+        border-radius: 18px;
+        background:
+          linear-gradient(90deg, transparent 0%, rgba(15, 81, 50, 0.08) 45%, transparent 90%),
+          linear-gradient(180deg, rgba(15, 81, 50, 0.08), rgba(15, 81, 50, 0.02));
+        opacity: 0.7;
+        pointer-events: none;
+        transform: scaleX(0.92);
+        transform-origin: left center;
+        transition: opacity 0.35s ease, transform 0.5s ease;
+      }
+
+      .edu-chart-lg.is-chart-ready canvas,
+      .edu-chart-md.is-chart-ready canvas {
+        opacity: 1;
+        transform: none;
+      }
+
+      .edu-chart-lg.is-chart-ready::after,
+      .edu-chart-md.is-chart-ready::after {
+        opacity: 0;
+        transform: scaleX(1);
       }
 
       .edu-flex-row {
@@ -853,6 +890,13 @@
         .fade-in.visible .energy-stack-marker {
           animation: none;
         }
+
+        .edu-chart-lg canvas,
+        .edu-chart-md canvas,
+        .edu-chart-lg::after,
+        .edu-chart-md::after {
+          transition: none;
+        }
       }
 
       .balance-simulator-title {
@@ -1238,30 +1282,150 @@
         });
 
         renderBalance();
-        const weightLossChart = new Chart(document.getElementById('weightLossChart'), { type: 'line', data: { labels: ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12'], datasets: [{ label: 'Moderate deficit', data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3 }, { label: 'Crash diet and rebound', data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3] }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'Body weight (kg)' }, suggestedMin: 78, suggestedMax: 86 } } } });
-        const foodCompareChart = new Chart(document.getElementById('foodCompareChart'), { type: 'bar', data: { labels: ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda'], datasets: [{ label: 'Amount of food for 1,000 kJ (g)', data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Weight of food (g)' } } } } });
-        const glucoseChart = new Chart(document.getElementById('glucoseChart'), { type: 'line', data: { labels: ['08:00', '09:00', '10:00', '11:00', '12:00'], datasets: [{ label: 'Blood glucose', data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3 }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { title: { display: true, text: 'Time' } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: 'mmol/l' } } } } });
-        const sleepChart = new Chart(document.getElementById('sleepChart'), { type: 'doughnut', data: { labels: ['Sleep (8 h)', 'Awake (16 h)'], datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { display: true, position: 'bottom' } }, rotation: -90, circumference: 180 } });
-        const localizeCharts = () => {
-          weightLossChart.data.labels = i18nLookup('seoPages.weight.charts.weightLoss.weeks', ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12']);
-          weightLossChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.weightLoss.moderate', 'Moderate deficit');
-          weightLossChart.data.datasets[1].label = i18nLookup('seoPages.weight.charts.weightLoss.crash', 'Crash diet and rebound');
-          weightLossChart.options.scales.y.title.text = i18nLookup('seoPages.weight.charts.weightLoss.yTitle', 'Body weight (kg)');
-          foodCompareChart.data.labels = i18nLookup('seoPages.weight.charts.foodCompare.labels', ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda']);
-          foodCompareChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.foodCompare.dataset', 'Amount of food for 1,000 kJ (g)');
-          foodCompareChart.options.scales.x.title.text = i18nLookup('seoPages.weight.charts.foodCompare.xTitle', 'Weight of food (g)');
-          glucoseChart.data.datasets[0].label = i18nLookup('seoPages.weight.charts.glucose.label', 'Blood glucose');
-          glucoseChart.options.scales.x.title.text = i18nLookup('seoPages.weight.charts.glucose.xTitle', 'Time');
-          glucoseChart.options.scales.y.title.text = i18nLookup('seoPages.weight.charts.glucose.yTitle', 'mmol/l');
-          sleepChart.data.labels = [
-            i18nLookup('seoPages.weight.charts.sleep.sleep', 'Sleep (8 h)'),
-            i18nLookup('seoPages.weight.charts.sleep.awake', 'Awake (16 h)')
-          ];
-          weightLossChart.update();
-          foodCompareChart.update();
-          glucoseChart.update();
-          sleepChart.update();
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const renderedCharts = {};
+        const chartAnimation = (step = 70) => prefersReducedMotion
+          ? false
+          : {
+            duration: 1200,
+            easing: 'easeOutQuart',
+            delay: (context) => context.type === 'data'
+              ? context.dataIndex * step + context.datasetIndex * 140
+              : 0,
+          };
+        const chartBaseOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: chartAnimation(),
         };
+        const getChartCopy = () => ({
+          weightLossWeeks: i18nLookup('seoPages.weight.charts.weightLoss.weeks', ['Week 0', 'Week 2', 'Week 4', 'Week 6', 'Week 8', 'Week 10', 'Week 12']),
+          weightLossModerate: i18nLookup('seoPages.weight.charts.weightLoss.moderate', 'Moderate deficit'),
+          weightLossCrash: i18nLookup('seoPages.weight.charts.weightLoss.crash', 'Crash diet and rebound'),
+          weightLossYTitle: i18nLookup('seoPages.weight.charts.weightLoss.yTitle', 'Body weight (kg)'),
+          foodLabels: i18nLookup('seoPages.weight.charts.foodCompare.labels', ['Salad', 'Potatoes', 'Fruit', 'Rice', 'Chocolate', 'Soda']),
+          foodDataset: i18nLookup('seoPages.weight.charts.foodCompare.dataset', 'Amount of food for 1,000 kJ (g)'),
+          foodXTitle: i18nLookup('seoPages.weight.charts.foodCompare.xTitle', 'Weight of food (g)'),
+          glucoseLabel: i18nLookup('seoPages.weight.charts.glucose.label', 'Blood glucose'),
+          glucoseXTitle: i18nLookup('seoPages.weight.charts.glucose.xTitle', 'Time'),
+          glucoseYTitle: i18nLookup('seoPages.weight.charts.glucose.yTitle', 'mmol/l'),
+          sleepLabels: [
+            i18nLookup('seoPages.weight.charts.sleep.sleep', 'Sleep (8 h)'),
+            i18nLookup('seoPages.weight.charts.sleep.awake', 'Awake (16 h)'),
+          ],
+        });
+
+        const chartDefinitions = {
+          weightLossChart: () => {
+            const copy = getChartCopy();
+            return {
+              type: 'line',
+              data: {
+                labels: copy.weightLossWeeks,
+                datasets: [
+                  { label: copy.weightLossModerate, data: [85, 84.4, 83.8, 83.1, 82.5, 81.9, 81.2], borderColor: brandAccent, backgroundColor: 'rgba(15,81,50,0.08)', fill: true, tension: 0.4, borderWidth: 3, pointRadius: 4, pointHoverRadius: 5 },
+                  { label: copy.weightLossCrash, data: [85, 82.1, 79.8, 78.7, 79.9, 82.3, 84.1], borderColor: '#b91c1c', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.4, borderWidth: 3, borderDash: [6, 3], pointRadius: 4, pointHoverRadius: 5 },
+                ],
+              },
+              options: {
+                ...chartBaseOptions,
+                plugins: { legend: { position: 'bottom' } },
+                scales: { y: { title: { display: true, text: copy.weightLossYTitle }, suggestedMin: 78, suggestedMax: 86 } },
+              },
+            };
+          },
+          foodCompareChart: () => {
+            const copy = getChartCopy();
+            return {
+              type: 'bar',
+              data: {
+                labels: copy.foodLabels,
+                datasets: [{ label: copy.foodDataset, data: [850, 470, 360, 210, 105, 290], backgroundColor: ['#059669', '#10b981', '#34d399', '#d97706', '#b91c1c', '#dc2626'], borderRadius: 6, borderWidth: 0 }],
+              },
+              options: {
+                ...chartBaseOptions,
+                animation: chartAnimation(85),
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: { x: { title: { display: true, text: copy.foodXTitle } } },
+              },
+            };
+          },
+          glucoseChart: () => {
+            const copy = getChartCopy();
+            return {
+              type: 'line',
+              data: {
+                labels: ['08:00', '09:00', '10:00', '11:00', '12:00'],
+                datasets: [{ label: copy.glucoseLabel, data: [4.7, 9.2, 3.8, 4.6, 4.9], borderColor: '#d97706', backgroundColor: 'rgba(217,119,6,0.08)', fill: true, tension: 0.4, borderWidth: 3, pointRadius: 4, pointHoverRadius: 5 }],
+              },
+              options: {
+                ...chartBaseOptions,
+                plugins: { legend: { display: false } },
+                scales: { x: { title: { display: true, text: copy.glucoseXTitle } }, y: { suggestedMin: 3, suggestedMax: 10, title: { display: true, text: copy.glucoseYTitle } } },
+              },
+            };
+          },
+          sleepChart: () => {
+            const copy = getChartCopy();
+            return {
+              type: 'doughnut',
+              data: { labels: copy.sleepLabels, datasets: [{ data: [8, 16], backgroundColor: ['#2563eb', '#e5e7eb'], borderWidth: 0 }] },
+              options: {
+                ...chartBaseOptions,
+                animation: prefersReducedMotion ? false : { animateRotate: true, animateScale: true, duration: 1200, easing: 'easeOutQuart' },
+                cutout: '75%',
+                plugins: { legend: { display: true, position: 'bottom' } },
+                rotation: -90,
+                circumference: 180,
+              },
+            };
+          },
+        };
+
+        const createChart = (canvas) => {
+          if (!canvas || renderedCharts[canvas.id]) return;
+          const getConfig = chartDefinitions[canvas.id];
+          if (!getConfig) return;
+          renderedCharts[canvas.id] = new Chart(canvas, getConfig());
+          requestAnimationFrame(() => {
+            canvas.closest('.edu-chart-lg, .edu-chart-md')?.classList.add('is-chart-ready');
+          });
+        };
+
+        const localizeCharts = () => {
+          Object.entries(renderedCharts).forEach(([id, chart]) => {
+            const nextConfig = chartDefinitions[id]?.();
+            if (!nextConfig) return;
+            chart.data.labels = nextConfig.data.labels;
+            chart.data.datasets.forEach((dataset, index) => {
+              dataset.label = nextConfig.data.datasets[index]?.label ?? dataset.label;
+            });
+            if (id === 'weightLossChart') chart.options.scales.y.title.text = nextConfig.options.scales.y.title.text;
+            if (id === 'foodCompareChart') chart.options.scales.x.title.text = nextConfig.options.scales.x.title.text;
+            if (id === 'glucoseChart') {
+              chart.options.scales.x.title.text = nextConfig.options.scales.x.title.text;
+              chart.options.scales.y.title.text = nextConfig.options.scales.y.title.text;
+            }
+            chart.update('none');
+          });
+        };
+
+        const chartCanvases = document.querySelectorAll('#weightLossChart, #foodCompareChart, #glucoseChart, #sleepChart');
+        if ('IntersectionObserver' in window) {
+          const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              createChart(entry.target);
+              chartObserver.unobserve(entry.target);
+            });
+          }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+          chartCanvases.forEach((canvas) => chartObserver.observe(canvas));
+        } else {
+          chartCanvases.forEach(createChart);
+        }
+
         window.addEventListener('fitlime:i18n-loaded', () => {
           renderBalance();
           localizeCharts();
