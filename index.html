@@ -217,6 +217,21 @@
                     <strong data-i18n="home.why.meal.macros.protein">Bílkoviny</strong>
                   </div>
                 </div>
+                <div class="why-recipe-preview" aria-live="polite">
+                  <div class="why-recipe-preview-head">
+                    <span id="whyRecipeEyebrow">Ukázka receptu</span>
+                    <strong id="whyRecipeIngredientLabel">Suroviny</strong>
+                  </div>
+                  <ul class="why-ingredient-list" id="whyIngredientList" aria-label="Ukázka surovin">
+                    <li>losos</li>
+                    <li>rýže</li>
+                    <li>avokádo</li>
+                  </ul>
+                  <p class="why-recipe-step" id="whyRecipeStep">
+                    <span id="whyRecipeStepLabel">Postup:</span>
+                    <span id="whyRecipeStepText">Uvařenou rýži doplňte lososem, avokádem a zeleninou, poté zakápněte limetkovou zálivkou.</span>
+                  </p>
+                </div>
               </figure>              
             </div>
 
@@ -1630,7 +1645,13 @@
     const whyMealCaptionTitle = document.getElementById('whyMealCaptionTitle');
     const whySection = document.getElementById('why');
     const whyMacroRow = document.querySelector('.why-macro-row');
+    const whyRecipeEyebrow = document.getElementById('whyRecipeEyebrow');
+    const whyRecipeIngredientLabel = document.getElementById('whyRecipeIngredientLabel');
+    const whyIngredientList = document.getElementById('whyIngredientList');
+    const whyRecipeStepLabel = document.getElementById('whyRecipeStepLabel');
+    const whyRecipeStepText = document.getElementById('whyRecipeStepText');
     let whyMealActiveImageIndex = 0;
+    let whyMealCurrentIndex = 0;
     let whyMealSwapToken = 0;
     let hasAnimatedWhyMacrosOnEnter = false;
     let hasWhySectionEnteredViewport = false;
@@ -1699,6 +1720,36 @@
       animateWhyMacroDonut(whyMacroNodes.protein, safeMacros.protein, '__whyMacroProteinFrame');
     }
 
+    function getI18nValue(source, path) {
+      return path.split('.').reduce((value, key) => value?.[key], source);
+    }
+
+    function getWhyRecipeCopy() {
+      const i18nState = window.__fitlimeI18n || {};
+      return getI18nValue(i18nState.dict, 'home.why.recipe')
+        || getI18nValue(i18nState.fallback, 'home.why.recipe');
+    }
+
+    function updateWhyRecipePreview(index) {
+      const copy = getWhyRecipeCopy();
+      if (!copy?.previews?.length) return;
+      const preview = copy.previews[index % copy.previews.length];
+      if (!preview) return;
+      if (whyRecipeEyebrow) whyRecipeEyebrow.textContent = copy.eyebrow;
+      if (whyRecipeIngredientLabel) whyRecipeIngredientLabel.textContent = copy.ingredientLabel;
+      if (whyRecipeStepLabel) whyRecipeStepLabel.textContent = copy.stepLabel;
+      if (whyRecipeStepText) whyRecipeStepText.textContent = preview.step;
+      if (whyIngredientList) {
+        whyIngredientList.setAttribute('aria-label', copy.ingredientAria);
+        const ingredientItems = preview.ingredients.slice(0, 3).map((ingredient) => {
+          const item = document.createElement('li');
+          item.textContent = ingredient;
+          return item;
+        });
+        whyIngredientList.replaceChildren(...ingredientItems);
+      }
+    }
+
     setWhyMacroDonutValue(whyMacroNodes.carbs, 0);
     setWhyMacroDonutValue(whyMacroNodes.fat, 0);
     setWhyMacroDonutValue(whyMacroNodes.protein, 0);
@@ -1721,6 +1772,7 @@
 
     function updateWhyMealVisual(index, meal) {
       if (whyMealImages.length < 2 || !whyMealCaptionTitle) return;
+      whyMealCurrentIndex = index || 0;
       const visual = WHY_MEAL_VISUALS[index % WHY_MEAL_VISUALS.length];
       const mealName = meal?.name || visual.caption;
       const nextImageIndex = whyMealActiveImageIndex === 0 ? 1 : 0;
@@ -1730,6 +1782,7 @@
 
       whyMealCaptionTitle.classList.add('is-swapping');
       updateWhyMealMacros(meal?.macros);
+      updateWhyRecipePreview(index || 0);
 
       const finalizeSwap = () => {
         if (swapToken !== whyMealSwapToken) return;
@@ -1758,6 +1811,10 @@
     document.addEventListener('fitlime:complex-meal-change', (event) => {
       const { index, meal } = event.detail || {};
       updateWhyMealVisual(index || 0, meal);
+    });
+
+    window.addEventListener('fitlime:i18n-loaded', () => {
+      updateWhyRecipePreview(whyMealCurrentIndex);
     });
   </script>
   <script type="module" src="/diet-simulator.js"></script>

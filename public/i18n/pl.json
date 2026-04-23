@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Dlaczego FitLime",
       "title": "Nie liczymy tylko kalorii.<br>Szukamy posiłków, które działają jako całość.",
-      "lead": "FitLime porównuje dziesiątki powiązań żywieniowych i układa jadłospis tak, aby odpowiadał Twoim celom, preferencjom i długoterminowej równowadze.",
+      "lead": "W tle aplikacja wykorzystuje zaawansowany model matematyczny, który przetwarza dziesiątki tysięcy kombinacji produktów i ograniczeń żywieniowych, aby znaleźć idealny jadłospis dopasowany do Ciebie.",
       "stats": {
-        "nutrition": "parametrów odżywczych każdego posiłku",
-        "meals": "zdrowych posiłków w bazie danych"
+        "nutrition": "Śledzone parametry odżywcze",
+        "meals": "zdrowe posiłki w naszej bazie danych"
       },
       "meal": {
         "defaultName": "Poke z łososiem",
@@ -49,6 +49,24 @@
           "fat": "Tłuszcze",
           "protein": "Białka"
         }
+      },
+      "recipe": {
+        "eyebrow": "Przykład przepisu",
+        "ingredientLabel": "Składniki",
+        "ingredientAria": "Przykład składników",
+        "stepLabel": "Przygotowanie:",
+        "previews": [
+          { "ingredients": ["łosoś", "ryż", "awokado"], "step": "Dodaj łososia, awokado i warzywa do ryżu i skrop limonką." },
+          { "ingredients": ["pierś z kurczaka", "bulgur", "warzywa"], "step": "Usmaż kurczaka i podaj z bulgurem." },
+          { "ingredients": ["tofu", "komosa ryżowa", "szpinak"], "step": "Podsmaż tofu i dodaj resztę." },
+          { "ingredients": ["szynka z indyka", "ser", "żurawina"], "step": "Posmaruj pieczywo i dodaj składniki." },
+          { "ingredients": ["kurczak", "ryż", "orzeszki ziemne"], "step": "Podsmaż i dodaj orzeszki." },
+          { "ingredients": ["czerwona soczewica", "jajko", "marchew"], "step": "Gotuj i dodaj jajko." },
+          { "ingredients": ["sandacz", "ziemniaki", "szpinak"], "step": "Usmaż rybę i podaj." },
+          { "ingredients": ["płatki owsiane", "jabłka", "cynamon"], "step": "Ułóż i piecz." },
+          { "ingredients": ["jogurt", "żelatyna", "owoce"], "step": "Schłódź i podaj." },
+          { "ingredients": ["banan", "jogurt", "płatki"], "step": "Zmiksuj wszystko." }
+        ]
       },
       "chart": {
         "title": "Wykres pokazuje wszystkie parametry, które śledzimy podczas układania jadłospisu.",

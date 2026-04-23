@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Perché FitLime",
       "title": "Non contiamo solo le calorie.<br>Cerchiamo pasti che funzionino nel loro insieme.",
-      "lead": "FitLime confronta decine di parametri nutrizionali e compone il tuo piano alimentare affinché corrisponda ai tuoi obiettivi, alle tue preferenze e alla sostenibilità a lungo termine.",
+      "lead": "In background, l’app utilizza un modello matematico avanzato che elabora decine di migliaia di combinazioni di alimenti e vincoli nutrizionali per trovare il piano alimentare ideale su misura per te.",
       "stats": {
-        "nutrition": "parametri nutrizionali per ogni pasto",
-        "meals": "pasti sani nel database"
+        "nutrition": "Parametri nutrizionali monitorati",
+        "meals": "pasti sani nel nostro database"
       },
       "meal": {
         "defaultName": "Poke al salmone",
@@ -49,6 +49,24 @@
           "fat": "Grassi",
           "protein": "Proteine"
         }
+      },
+      "recipe": {
+        "eyebrow": "Esempio di ricetta",
+        "ingredientLabel": "Ingredienti",
+        "ingredientAria": "Esempio ingredienti",
+        "stepLabel": "Preparazione:",
+        "previews": [
+          { "ingredients": ["salmone", "riso", "avocado"], "step": "Aggiungi salmone, avocado e verdure al riso e condisci con lime." },
+          { "ingredients": ["petto di pollo", "bulgur", "verdure"], "step": "Rosola il pollo, mescola con bulgur e servi con insalata." },
+          { "ingredients": ["tofu", "quinoa", "spinaci"], "step": "Salta il tofu, aggiungi quinoa e spinaci e condisci." },
+          { "ingredients": ["prosciutto di tacchino", "formaggio", "mirtilli rossi"], "step": "Spalma pane integrale e farcisci." },
+          { "ingredients": ["pollo", "riso", "arachidi"], "step": "Salta la carne e aggiungi arachidi." },
+          { "ingredients": ["lenticchie rosse", "uovo", "carota"], "step": "Cuoci le lenticchie e aggiungi l’uovo." },
+          { "ingredients": ["lucioperca", "patate", "spinaci"], "step": "Cuoci il pesce e servi con contorni." },
+          { "ingredients": ["fiocchi d’avena", "mele", "cannella"], "step": "Disponi e cuoci." },
+          { "ingredients": ["yogurt", "gelatina", "frutta"], "step": "Lascia solidificare e servi." },
+          { "ingredients": ["banana", "yogurt", "avena"], "step": "Frulla tutto." }
+        ]
       },
       "chart": {
         "title": "Il grafico mostra tutti i parametri che monitoriamo durante la creazione del tuo piano alimentare.",

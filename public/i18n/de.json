@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Warum gerade FitLime",
       "title": "Wir zählen nicht nur Kalorien.<br>Wir suchen nach Mahlzeiten, die als Ganzes funktionieren.",
-      "lead": "FitLime vergleicht Dutzende von Nährstoffzusammenhängen und stellt den Ernährungsplan so zusammen, dass er Ihren Zielen, Vorlieben und der langfristigen Nachhaltigkeit entspricht.",
+      "lead": "Im Hintergrund der App läuft ein fortschrittliches mathematisches Modell, das Zehntausende Kombinationen von Lebensmitteln und Ernährungsbeschränkungen verarbeitet, um den idealen, individuell zugeschnittenen Ernährungsplan zu finden.",
       "stats": {
-        "nutrition": "Nährwertparameter pro Mahlzeit",
-        "meals": "gesunde Gerichte in der Datenbank"
+        "nutrition": "Überwachte Ernährungsparameter",
+        "meals": "gesunde Gerichte in unserer Datenbank"
       },
       "meal": {
         "defaultName": "Lachs Poke",
@@ -49,6 +49,24 @@
           "fat": "Fette",
           "protein": "Eiweiß"
         }
+      },
+      "recipe": {
+        "eyebrow": "Rezeptbeispiel",
+        "ingredientLabel": "Zutaten",
+        "ingredientAria": "Zutatenbeispiel",
+        "stepLabel": "Zubereitung:",
+        "previews": [
+          { "ingredients": ["Lachs", "Reis", "Avocado"], "step": "Den gekochten Reis mit Lachs, Avocado und Gemüse ergänzen und mit Limetten-Dressing beträufeln." },
+          { "ingredients": ["Hähnchenbrust", "Bulgur", "Gemüse"], "step": "Das Hähnchen goldbraun anbraten, mit Bulgur mischen und mit frischem Salat servieren." },
+          { "ingredients": ["Tofu", "Quinoa", "Spinat"], "step": "Tofu kurz anbraten, Quinoa mit Spinat hinzufügen und mit einer leichten Soja-Limetten-Sauce abschmecken." },
+          { "ingredients": ["Putenschinken", "Käse", "Preiselbeeren"], "step": "Vollkornbrot mit Joghurtsauce bestreichen, mit Pute, Käse und Preiselbeeren füllen." },
+          { "ingredients": ["Hähnchenfleisch", "Reis", "Erdnüsse"], "step": "Fleisch scharf anbraten, Gemüse und Sauce hinzufügen und mit Erdnüssen bestreuen." },
+          { "ingredients": ["rote Linsen", "Ei", "Karotte"], "step": "Linsen mit Gemüse weich kochen und mit Ei als sättigende Proteinquelle ergänzen." },
+          { "ingredients": ["Zander", "Kartoffeln", "Spinat"], "step": "Zander in der Pfanne braten, mit Kartoffeln und leicht gedünstetem Spinat servieren." },
+          { "ingredients": ["Haferflocken", "Äpfel", "Zimt"], "step": "Die Masse in die Form drücken, Äpfel mit Zimt schichten und goldbraun backen." },
+          { "ingredients": ["Joghurt", "Gelatine", "Obst"], "step": "Die Joghurtcreme im Glas fest werden lassen und mit Fruchtkompott servieren." },
+          { "ingredients": ["Banane", "Joghurt", "Haferflocken"], "step": "Alles glatt mixen und nach Bedarf mit Milch oder Kefir verdünnen." }
+        ]
       },
       "chart": {
         "title": "Die Grafik zeigt alle Parameter, die wir bei der Erstellung des Speiseplans berücksichtigen.",

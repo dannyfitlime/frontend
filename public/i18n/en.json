@@ -39,10 +39,10 @@
     "why": {
       "kicker": "Why FitLime",
       "title": "We don't just track calories.<br>We look for meals that work as a whole.",
-      "lead": "FitLime compares dozens of nutritional connections and builds a meal plan that matches your goals, preferences, and long-term sustainability.",
+      "lead": "In the background, the app runs an advanced mathematical model that processes tens of thousands of food combinations and nutritional constraints to find the ideal meal plan tailored exactly to you.",
       "stats": {
-        "nutrition": "nutritional parameters for every meal",
-        "meals": "healthy meals in the database"
+        "nutrition": "Tracked nutritional parameters",
+        "meals": "healthy meals in our database"
       },
       "meal": {
         "defaultName": "Salmon poke",
@@ -53,6 +53,24 @@
           "fat": "Fats",
           "protein": "Protein"
         }
+      },
+      "recipe": {
+        "eyebrow": "Recipe preview",
+        "ingredientLabel": "Ingredients",
+        "ingredientAria": "Ingredient preview",
+        "stepLabel": "Method:",
+        "previews": [
+          { "ingredients": ["salmon", "rice", "avocado"], "step": "Top cooked rice with salmon, avocado and vegetables, then finish with a lime dressing." },
+          { "ingredients": ["chicken breast", "bulgur", "vegetables"], "step": "Sear the chicken until golden, mix with bulgur and serve with a fresh salad." },
+          { "ingredients": ["tofu", "quinoa", "spinach"], "step": "Pan-sear the tofu, add quinoa with spinach and season with a light soy-lime sauce." },
+          { "ingredients": ["turkey", "cheese", "cranberries"], "step": "Spread whole-grain bread with a yogurt base, then fill it with turkey, cheese and cranberries." },
+          { "ingredients": ["chicken", "rice", "peanuts"], "step": "Stir-fry the meat with vegetables, add the sauce and finish with peanuts." },
+          { "ingredients": ["red lentils", "egg", "carrot"], "step": "Cook the lentils with vegetables until tender and add egg for a filling protein boost." },
+          { "ingredients": ["zander", "potatoes", "spinach"], "step": "Pan-sear the zander and serve with potatoes and gently wilted spinach." },
+          { "ingredients": ["oats", "apples", "cinnamon"], "step": "Press the base into a tin, layer apples with cinnamon and bake until golden." },
+          { "ingredients": ["yogurt", "gelatin", "fruit"], "step": "Let the yogurt cream set in a glass and serve it with warm fruit sauce." },
+          { "ingredients": ["banana", "yogurt", "oats"], "step": "Blend everything until smooth and loosen with milk or kefir if needed." }
+        ]
       },
       "chart": {
         "title": "The chart shows all the parameters we track when building your meal plan.",

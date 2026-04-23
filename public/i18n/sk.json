@@ -38,10 +38,10 @@
     },
     "why": {
       "kicker": "Prečo práve FitLime",
-      "lead": "FitLime porovnáva desiatky nutričných súvislostí a skladá jedálniček tak, aby zodpovedal vašim cieľom, preferenciám aj dlhodobej udržateľnosti.",
+      "lead": "Na pozadí aplikácie beží pokročilý matematický model, ktorý spracováva desaťtisíce kombinácií potravín a nutričných obmedzení, aby našiel ideálny jedálniček presne na mieru.",
       "stats": {
-        "nutrition": "výživových parametrov každého jedla",
-        "meals": "zdravých jedál v databáze"
+        "nutrition": "Sledované nutričné parametre",
+        "meals": "zdravé jedlá v našej databáze"
       },
       "meal": {
         "defaultName": "Losos poke",
@@ -52,6 +52,24 @@
           "fat": "Tuky",
           "protein": "Bielkoviny"
         }
+      },
+      "recipe": {
+        "eyebrow": "Ukážka receptu",
+        "ingredientLabel": "Suroviny",
+        "ingredientAria": "Ukážka surovín",
+        "stepLabel": "Postup:",
+        "previews": [
+          { "ingredients": ["losos", "ryža", "avokádo"], "step": "Uvarenú ryžu doplňte lososom, avokádom a zeleninou, potom pokvapkajte limetkovou zálievkou." },
+          { "ingredients": ["kuracie prsia", "bulgur", "zelenina"], "step": "Kuracie mäso opečte dozlatista, premiešajte s bulgurom a podávajte s čerstvým šalátom." },
+          { "ingredients": ["tofu", "quinoa", "špenát"], "step": "Tofu krátko opečte, pridajte quinou so špenátom a dochuťte ľahkou sójovo-limetkovou omáčkou." },
+          { "ingredients": ["morčacia šunka", "syr", "brusnice"], "step": "Celozrnné pečivo potrite jogurtovým základom, naplňte morčacím mäsom, syrom a brusnicami." },
+          { "ingredients": ["kuracie mäso", "ryža", "arašidy"], "step": "Mäso prudko orestujte so zeleninou, pridajte omáčku a na záver posypte arašidmi." },
+          { "ingredients": ["červená šošovica", "vajce", "mrkva"], "step": "Šošovicu povarte so zeleninou domäkka a doplňte vajcom ako sýty zdroj bielkovín." },
+          { "ingredients": ["zubáč", "zemiaky", "špenát"], "step": "Zubáča opečte na panvici, podávajte so zemiakmi a jemne poduseným špenátom." },
+          { "ingredients": ["ovsené vločky", "jablká", "škorica"], "step": "Základ vtlačte do formy, navrstvite jablká so škoricou a pečte dozlatista." },
+          { "ingredients": ["jogurt", "želatína", "ovocie"], "step": "Jogurtový krém nechajte stuhnúť v pohári a podávajte s ovocným rozvarom." },
+          { "ingredients": ["banán", "jogurt", "vločky"], "step": "Všetko rozmixujte dohladka a podľa potreby zjemnite mliekom alebo kefírom." }
+        ]
       },
       "chart": {
         "title": "Graf ukazuje všetky parametre, ktoré pri skladaní jedálnička sledujeme.",

@@ -791,9 +791,9 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   margin: 0;
   padding: 18px 18px 22px;
   border-radius: 34px;
-  border: 1px solid rgba(83, 92, 83, 0.334);
+  border: 1px solid var(--why-line);
   box-shadow: 0 26px 54px rgba(51, 42, 27, 0.16);
-  transform: translateY(-28px);
+  transform: translateY(-14px);
 }
 
 .why-meal-heading strong {
@@ -916,6 +916,72 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
 
 .why-macro-donut-protein {
   --macro-color: #c97a52;
+}
+
+.why-recipe-preview {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  min-height: 148px;
+  padding: 14px;
+  border: 1px solid rgba(24, 38, 27, 0.08);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 249, 0.95), rgba(248, 242, 234, 0.777));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.why-recipe-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.why-recipe-preview-head span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0f6b28;
+}
+
+.why-recipe-preview-head strong {
+  font-size: 0.8rem;
+  color: rgba(24, 38, 27, 0.62);
+}
+
+.why-ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why-ingredient-list li {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 5px 14px rgba(45, 38, 27, 0.06);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--why-ink);
+}
+
+.why-recipe-step {
+  margin: 0;
+  min-height: calc(3 * 1.45em);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: rgba(24, 38, 27, 0.78);
+}
+
+.why-recipe-step span:first-child {
+  font-weight: 900;
+  color: var(--why-ink);
 }
 
 .why-stats-row {
@@ -1051,6 +1117,12 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
   }
 }
 
+@media (min-width: 1260px) {
+  .why-meal-card {
+    transform: none;
+  }
+}
+
 @media (min-width: 761px) and (max-width: 1024px) {
   .why-hero {
     grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
@@ -1089,6 +1161,7 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
 
   .why-meal-card {
     max-width: none;
+    margin-top: 0;
     transform: none;
   }
 
@@ -1164,6 +1237,12 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
     width: 52px;
   }
 
+  .why-recipe-preview {
+    min-height: 144px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
   .why-chart-container {
     width: 100%;
     min-height: 360px;
@@ -1200,6 +1279,21 @@ html.js .hero-wrap[data-hero-ready="true"] > *:nth-child(4) {
 
   .why-macro-donut {
     width: 48px;
+  }
+
+  .why-recipe-preview-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .why-ingredient-list li {
+    font-size: 0.72rem;
+  }
+
+  .why-recipe-step {
+    min-height: calc(3 * 1.45em);
+    font-size: 0.8rem;
   }
 
   .why-chart-container {

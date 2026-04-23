@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Porquê a FitLime",
       "title": "Não focamos apenas nas calorias.<br>Procuramos refeições que funcionem como um todo.",
-      "lead": "A FitLime compara dezenas de correlações nutricionais e elabora o seu plano alimentar para que corresponda aos seus objetivos, preferências e sustentabilidade a longo prazo.",
+      "lead": "Em segundo plano, a aplicação utiliza um modelo matemático avançado que processa dezenas de milhares de combinações de alimentos e restrições nutricionais para encontrar o plano alimentar ideal, feito à sua medida.",
       "stats": {
-        "nutrition": "parâmetros nutricionais de cada refeição",
-        "meals": "refeições saudáveis na base de dados"
+        "nutrition": "Parâmetros nutricionais monitorizados",
+        "meals": "refeições saudáveis na nossa base de dados"
       },
       "meal": {
         "defaultName": "Poke de salmão",
@@ -49,6 +49,24 @@
           "fat": "Gorduras",
           "protein": "Proteínas"
         }
+      },
+      "recipe": {
+        "eyebrow": "Exemplo de receita",
+        "ingredientLabel": "Ingredientes",
+        "ingredientAria": "Exemplo de ingredientes",
+        "stepLabel": "Modo de preparo:",
+        "previews": [
+          { "ingredients": ["salmão", "arroz", "abacate"], "step": "Adicione salmão, abacate e legumes ao arroz e finalize com limão." },
+          { "ingredients": ["peito de frango", "bulgur", "legumes"], "step": "Doure o frango e sirva com bulgur." },
+          { "ingredients": ["tofu", "quinoa", "espinafre"], "step": "Salteie o tofu e misture." },
+          { "ingredients": ["presunto de peru", "queijo", "cranberries"], "step": "Recheie pão integral." },
+          { "ingredients": ["frango", "arroz", "amendoim"], "step": "Salteie e adicione amendoim." },
+          { "ingredients": ["lentilhas vermelhas", "ovo", "cenoura"], "step": "Cozinhe e adicione ovo." },
+          { "ingredients": ["lucioperca", "batatas", "espinafre"], "step": "Prepare e sirva." },
+          { "ingredients": ["aveia", "maçã", "canela"], "step": "Monte e asse." },
+          { "ingredients": ["iogurte", "gelatina", "fruta"], "step": "Deixe firmar e sirva." },
+          { "ingredients": ["banana", "iogurte", "aveia"], "step": "Bata tudo." }
+        ]
       },
       "chart": {
         "title": "O gráfico mostra todos os parâmetros que acompanhamos ao elaborar o seu plano alimentar.",

@@ -35,10 +35,10 @@
     "why": {
       "kicker": "Por qué FitLime",
       "title": "No solo contamos calorías.<br>Buscamos comidas que funcionen como un todo.",
-      "lead": "FitLime compara decenas de conexiones nutricionales y elabora un plan de alimentación que se adapta a tus objetivos, preferencias y sostenibilidad a largo plazo.",
+      "lead": "En segundo plano, la aplicación utiliza un modelo matemático avanzado que procesa decenas de miles de combinaciones de alimentos y restricciones nutricionales para encontrar el plan de alimentación ideal adaptado a ti.",
       "stats": {
-        "nutrition": "parámetros nutricionales de cada comida",
-        "meals": "comidas saludables en la base de datos"
+        "nutrition": "Parámetros nutricionales monitorizados",
+        "meals": "comidas saludables en nuestra base de datos"
       },
       "meal": {
         "defaultName": "Poke de salmón",
@@ -49,6 +49,24 @@
           "fat": "Grasas",
           "protein": "Proteínas"
         }
+      },
+      "recipe": {
+        "eyebrow": "Ejemplo de receta",
+        "ingredientLabel": "Ingredientes",
+        "ingredientAria": "Ejemplo de ingredientes",
+        "stepLabel": "Preparación:",
+        "previews": [
+          { "ingredients": ["salmón", "arroz", "aguacate"], "step": "Añade salmón, aguacate y verduras al arroz cocido y rocía con aliño de lima." },
+          { "ingredients": ["pechuga de pollo", "bulgur", "verduras"], "step": "Dora el pollo, mézclalo con bulgur y sirve con ensalada fresca." },
+          { "ingredients": ["tofu", "quinoa", "espinaca"], "step": "Saltea el tofu, añade quinoa con espinaca y sazona con salsa ligera de soja y lima." },
+          { "ingredients": ["jamón de pavo", "queso", "arándanos rojos"], "step": "Unta pan integral con base de yogur y rellena con pavo, queso y arándanos." },
+          { "ingredients": ["pollo", "arroz", "cacahuetes"], "step": "Saltea la carne, añade verduras y salsa, y espolvorea con cacahuetes." },
+          { "ingredients": ["lentejas rojas", "huevo", "zanahoria"], "step": "Cuece las lentejas con verduras hasta que estén tiernas y añade huevo." },
+          { "ingredients": ["lucio", "patatas", "espinaca"], "step": "Dora el pescado y sirve con patatas y espinaca salteada." },
+          { "ingredients": ["avena", "manzanas", "canela"], "step": "Presiona la base en el molde, añade manzanas con canela y hornea." },
+          { "ingredients": ["yogur", "gelatina", "fruta"], "step": "Deja cuajar la crema de yogur en un vaso y sirve con compota de fruta." },
+          { "ingredients": ["plátano", "yogur", "avena"], "step": "Mezcla todo hasta obtener una textura suave y ajusta con leche o kéfir." }
+        ]
       },
       "chart": {
         "title": "El gráfico muestra todos los parámetros que seguimos al crear tu plan de alimentación.",
