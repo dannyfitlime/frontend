@@ -277,24 +277,24 @@
       "hint": "Klikněte pro detail"
     },
     "audience": {
-      "title": "Pro koho je jídelníček určen",
-      "lead": "Zdravý jídelníček přizpůsobujeme tomu, jak žijete – jestli trénujete na závody, chodíte si jen občas zacvičit, nebo chcete jíst lépe a mít víc energie.",
+      "title": "Jídelníček podle vašeho života",
+      "lead": "Každý z nás má jiné potřeby. Někdo potřebuje palivo pro vrcholový výkon, jiný stabilitu pro náročné pracovní dny. Naše jídelníčky přizpůsobujeme na míru tomu, jak se hýbete, jak odpočíváte a čeho chcete dosáhnout.",
       "pro": {
-        "title": "Vrcholoví sportovci",
-        "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.",
-        "tag": "Výkon",
-        "imageAlt": "Vrcholový sportovec při intenzivním tréninku"
+        "title": "Vrcholový sport",
+        "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zátěže v jednotlivých dnech tak, aby podpořil maximální výkon, rychlou regeneraci i kontrolu hmotnosti.",
+        "tag": "Výkon a regenerace",
+        "imageAlt": "Vrcholový sportovní tým při intenzivním tréninku"
       },
       "hobby": {
         "title": "Aktivní životní styl",
-        "text": "Běháte, chodíte do fitka, na kolo nebo skupinové lekce a chcete se cítit lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.",
-        "tag": "Balance",
-        "imageAlt": "Hobby sportovec při rekreačním běhu v přírodě"
+        "text": "Běháte, chodíte do fitka, na kolo nebo na skupinové lekce? Nastavíme jídelníček tak, abyste měli dostatek energie, cítili se silněji a zvládali sport i běžné povinnosti bez výkyvů.",
+        "tag": "Pohyb a energie",
+        "imageAlt": "Hobby sportovci při rekreačním plavání v bazénu"
       },
       "everyday": {
-        "title": "Běžný život",
-        "text": "Nejste „sportovec“, ale chcete jíst zdravěji, mít energii během dne nebo zhubnout? Postavíme jídelníček, který je realistický a dlouhodobě udržitelný.",
-        "tag": "Začínám",
+        "title": "Zdravý životní styl",
+        "text": "Chcete jíst lépe, mít víc energie během dne nebo postupně zhubnout? Vytvoříme jídelníček, který je srozumitelný, realistický a dlouhodobě udržitelný – tak, aby zapadl do vašeho běžného života.",
+        "tag": "Běžný režim",
         "imageAlt": "Spokojený člověk u zdravého a čerstvého pokrmu"
       },
       "cta": "Zjistěte, jaký plán je pro Vás"
@@ -398,7 +398,7 @@
           "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime.",
           "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
           "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
-          "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
+          "healthy": "Základní principy, jak jíst lépe, mít více energie a zvládat běžný režim."
         },
         "links": {
           "how": "Jak funguje tvorba jídelníčku",
@@ -424,7 +424,7 @@
       }
     },
     "reference": {
-      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít víc energie, víc rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
+      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít více energie, více rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
       "featured": "Příběh, který stojí za zmínku",
       "highlights": {
         "energy": "Více energie během dne",
@@ -435,7 +435,7 @@
       "cardTitle": "Jak to vidí naši klienti",
       "title": "FitLime Komunita",
       "client1": {
-        "text": "„Změnilo nám to pohled na stravování. Máme víc energie během dne.“",
+        "text": "„Změnilo nám to pohled na stravování. Máme více energie během dne.“",
         "author": "Pancho | JJ",
         "flags": [
           "cl",
