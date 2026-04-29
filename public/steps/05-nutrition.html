@@ -1,8 +1,31 @@
 <section class="layout-step5">
   <h1 data-i18n="step5.title">Nutrition & macros</h1>
 
+  <div class="row row--2">
+    <div class="field" id="soups_block">
+      <div class="field-label"><strong data-i18n="step5.soups_title">Polévky</strong></div>
+      <div class="help" data-i18n="step5.soups_help">Vyberte, zda máme do vašeho jídelníčku zařadit polévky.</div>
+      <div id="soups_group" class="chips chips-hero" role="group" aria-label="Soup preference">
+        <button type="button" class="chip" data-value="true" data-i18n="step5.soups_yes">Ano</button>
+        <button type="button" class="chip" data-value="false" data-i18n="step5.soups_no">Ne</button>
+      </div>
+      <div class="error" id="err-soups"></div>
+    </div>
+
+    <div class="field" id="warm_meals_block">
+      <div class="field-label"><strong data-i18n="step5.warm_meals_title">Teplá jídla za den</strong></div>
+      <div class="help" data-i18n="step5.warm_meals_help">Vyberte, kolik teplých jídel chcete mít v jídelníčku denně.</div>
+      <div id="warm_meals_group" class="chips chips-hero" role="group" aria-label="Warm meals per day">
+        <button type="button" class="chip" data-value="1" data-i18n="step5.warm_meals_1">1</button>
+        <button type="button" class="chip" data-value="2" data-i18n="step5.warm_meals_2">2</button>
+        <button type="button" class="chip" data-value="any" data-i18n="step5.warm_meals_no_preference">Je mi to jedno</button>
+      </div>
+      <div class="error" id="err-warm_meals"></div>
+    </div>
+  </div>
+
   <!-- Typ diety -->
-  <div class="field">
+  <div class="field" id ="diet_block">
     <div class="field-label"><strong data-i18n="step5.diet">Diet type</strong></div>
     <div class="help" data-i18n="step5.help_diet">Choose the type of diet you usually follow.</div>
     <div id="diet_group" class="chips chips-hero" role="group" aria-label="Diet type">
@@ -38,4 +61,3 @@
     <div class="error" id="err-dislikes"></div>
   </div>
   
-

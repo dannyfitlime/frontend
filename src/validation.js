@@ -232,6 +232,9 @@ export function validateDiet(nutrition, t){
     e['diet'] = reqMsg(t);
   }
 
+  if (!n.soups || n.soups === '') e['soups'] = reqMsg(t);
+  if (!n.warm_meals || n.warm_meals === '') e['warm_meals'] = reqMsg(t);
+
   if (dislikes.length > 4){
     e['dislikes'] = t?.('step5.error_dislikes_max4') || 'You can select up to 4 items.';
   }
@@ -273,10 +276,7 @@ export function validateMenuSettings(nutrition, t){
   const e = {};
   const d = nutrition || {};
 
-  // Validate meal repetition count selection
-  if (!d.repeats || d.repeats === '' || d.repeats === 'none') {
-    e['repeats'] = reqMsg(t);
-  }
+  if (!d.cooking_complexity || d.cooking_complexity === '') e['cooking_complexity'] = reqMsg(t);
 
   // Validate grams display selection
   if (!d.show_grams || d.show_grams === '') {

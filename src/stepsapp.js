@@ -1,4 +1,4 @@
-import { renderMacroCharts } from './charts.js';
+﻿import { renderMacroCharts } from './charts.js';
 import { formState } from './state.js';
 import { $, applyI18n, showErrors } from './app.js';
 import {
@@ -179,7 +179,7 @@ export function bindGoalStep() {
     const rangeWord = t('common.range') || 'Range';
     const perDay = t('common.per_day_short') || 'day';
 
-    helpEl.textContent = `${base} ${rangeWord}: ${minStr}–${maxStr} ${unit}/${perDay}.`;
+    helpEl.textContent = `${base} ${rangeWord}: ${minStr}-${maxStr} ${unit}/${perDay}.`;
   }
 
 
@@ -435,7 +435,7 @@ function renderOwnBlocks() {
       </div>
 
       <div class="own-block-actions">
-        <button type="button" class="btn-del-block" data-idx="${idx}" ${formState.sport.ownBlocks.length <= 1 ? 'disabled' : ''}>×</button>
+        <button type="button" class="btn-del-block" data-idx="${idx}" ${formState.sport.ownBlocks.length <= 1 ? 'disabled' : ''}>x</button>
       </div>
     `;
     host.appendChild(card);
@@ -820,40 +820,39 @@ export function bindDietStep() {
   formState.nutrition ||= {};
   if (!formState.nutrition.diet) formState.nutrition.diet = 'no_restrictions';
   if (!formState.nutrition.dislikes) formState.nutrition.dislikes = [];
+  if (formState.nutrition.soups === 'yes') formState.nutrition.soups = true;
+  if (formState.nutrition.soups === 'no') formState.nutrition.soups = false;
+  if (formState.nutrition.warm_meals === 'no_preference') formState.nutrition.warm_meals = 'any';
+  if (formState.nutrition.soups == null) formState.nutrition.soups = null;
+  if (formState.nutrition.warm_meals == null) formState.nutrition.warm_meals = null;
+
+  const normalizeChipValue = (key, value) => {
+    if (key === 'soups') {
+      if (value === true || value === 'true') return true;
+      if (value === false || value === 'false') return false;
+    }
+    return value;
+  };
 
   const bindChipGroup = (groupId, target, key) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
     chips.forEach(ch => {
-      if (target[key] === ch.dataset.value) ch.classList.add('selected');
+      if (target[key] === normalizeChipValue(key, ch.dataset.value)) ch.classList.add('selected');
       ch.onclick = () => {
         chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
-        target[key] = ch.dataset.value;
+        target[key] = normalizeChipValue(key, ch.dataset.value);
         updatePremiumNote();
         checkIfPremiumNeeded(); // After each diet/repeats change
       };
     });
   };
 
+  bindChipGroup('soups_group', formState.nutrition, 'soups');
+  bindChipGroup('warm_meals_group', formState.nutrition, 'warm_meals');
+
   // Dieta
   bindChipGroup('diet_group', formState.nutrition, 'diet');
-
-  // Repeat (meal repetitions)
-  bindChipGroup('repeat_group', formState.nutrition, 'repeats');
-
-  // Repeat hints
-  const updateRepeatHints = (val) => {
-    const hints = document.querySelectorAll('.repeat-hints .repeat-hint');
-    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
-  };
-  updateRepeatHints(formState.nutrition.repeats);
-
-  document.querySelectorAll('#repeat_group .chip').forEach(ch => {
-    ch.addEventListener('click', () => {
-      formState.nutrition.repeats = ch.dataset.value;
-      updateRepeatHints(ch.dataset.value);
-    });
-  });
 
   // Dislikes (WITHOUT 'Other')
   const MAX_DISLIKES = 4;
@@ -928,7 +927,7 @@ export function bindDietStep() {
 
 export function bindMenuSettingsStep() {
   formState.nutrition ||= {};
-  if (!formState.nutrition.repeats) formState.nutrition.repeats = 'none';
+  if (formState.nutrition.cooking_complexity == null) formState.nutrition.cooking_complexity = 'standard';
   if (formState.nutrition.show_grams == null) formState.nutrition.show_grams = null;
 
   const bindChipGroup = (groupId, target, key, cb) => {
@@ -944,19 +943,12 @@ export function bindMenuSettingsStep() {
     });
   };
 
-  const updateRepeatHints = (val) => {
-    const hints = document.querySelectorAll('.repeat-hints .repeat-hint');
-    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
-  };
-
   const updateGramsHints = (val) => {
     const hints = document.querySelectorAll('.grams-hints .grams-hint');
     hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
   };
 
-  bindChipGroup('repeat_group', formState.nutrition, 'repeats', updateRepeatHints);
-  updateRepeatHints(formState.nutrition.repeats);
-
+  bindChipGroup('cooking_complexity_group', formState.nutrition, 'cooking_complexity');
   bindChipGroup('grams_group', formState.nutrition, 'show_grams', updateGramsHints);
   updateGramsHints(formState.nutrition.show_grams);
 }
@@ -1054,8 +1046,8 @@ function currentCurrency() {
 function formatPrice(czk, eur) {
   const currency = currentCurrency();
   return currency === 'EUR'
-    ? `€${eur.toFixed(2)}`
-    : `${czk} Kč`;
+    ? `EUR ${eur.toFixed(2)}`
+    : `${czk} CZK`;
 }
 function populatePlanPriceData() {
   const pricing = window?.PRICING;
@@ -1264,10 +1256,20 @@ function buildReviewSummary() {
   const { profile, goal, sport, nutrition, plan } = formState;
   const lang = i18n?.lang || 'cs';
 
-  const repeatsMap = {
-    1: t('step8.repeats_1'),
-    2: t('step8.repeats_2'),
-    3: t('step8.repeats_3')
+  const repeatsMap = {};
+  const soupsMap = {
+    true: t('step5.soups_yes'),
+    false: t('step5.soups_no')
+  };
+  const warmMealsMap = {
+    1: t('step5.warm_meals_1'),
+    2: t('step5.warm_meals_2'),
+    any: t('step5.warm_meals_no_preference')
+  };
+  const cookingComplexityMap = {
+    simple: t('step6.cooking_complexity_simple'),
+    standard: t('step6.cooking_complexity_standard'),
+    advanced: t('step6.cooking_complexity_advanced')
   };
   const gramsMap = {
     yes: t('step6.grams_yes'),
@@ -1278,7 +1280,7 @@ function buildReviewSummary() {
   const periodKey = plan?.period ? `step7.period_${plan.period}` : null;
 
   // --- energie + BMR ---
-  const targetTxt = t('step2.target_' + goal?.target) || '—';
+  const targetTxt = t('step2.target_' + goal?.target) || '-';
   const bmrKcal = goal?.bmr_override ?? goal?.bmr_kcal;
   let bmrVal = null;
   if (bmrKcal) {
@@ -1287,13 +1289,13 @@ function buildReviewSummary() {
     const locale = i18n?.lang || 'cs';
     bmrVal = `${val.toLocaleString(locale)} ${unit}`;
   }
-  const goalFull = bmrVal ? `${targetTxt} · BMR: ${bmrVal}` : targetTxt;
+  const goalFull = bmrVal ? `${targetTxt} | BMR: ${bmrVal}` : targetTxt;
 
-  // --- sportovní část ---
-  let sportsSummary = '—';
+  // --- sports section ---
+  let sportsSummary = '-';
 
   if (!sport || !sport.level) {
-    sportsSummary = '—';
+    sportsSummary = '-';
   }
 
   else if (sport.level === 'none') {
@@ -1319,7 +1321,7 @@ function buildReviewSummary() {
         const intensityLabel = t('step3.intensity_' + b.intensity) || b.intensity;
         const intensityWord = t('step3.intensity') || 'Intensity';
 
-        return `${lbl}: ${b.sessions}×/týden, ${b.minutes} min, ${intensityLabel} ${intensityWord.toLowerCase()}`;
+        return `${lbl}: ${b.sessions}x/week, ${b.minutes} min, ${intensityLabel} ${intensityWord.toLowerCase()}`;
       }).join('<br>');
     }
 
@@ -1332,30 +1334,33 @@ function buildReviewSummary() {
   }
 
   return {
-    plan: `${variantKey ? t(variantKey) : '—'}`,
-    // původně tu bylo: plan: `${variantKey ? t(variantKey) : '—'} · ${periodKey ? t(periodKey) : '—'}`,
+    plan: `${variantKey ? t(variantKey) : '-'}`,
+    // Previously this also included the period label.
 
-    basic: `${t('step1.sex_' + profile.sex) || '?'} · ${profile.age || '?'} ${t('common.years') || 'years'} · ${profile.height_cm || '?'} cm · ${profile.weight_kg || '?'} kg`,
-    activity: `${t('step1.activity_' + profile.activity) || '—'} · ${t('step1.steps')}: ${t('step1.steps_' + profile.steps_bucket) || '—'}`,
+    basic: `${t('step1.sex_' + profile.sex) || '?'} | ${profile.age || '?'} ${t('common.years') || 'years'} | ${profile.height_cm || '?'} cm | ${profile.weight_kg || '?'} kg`,
+    activity: `${t('step1.activity_' + profile.activity) || '-'} | ${t('step1.steps')}: ${t('step1.steps_' + profile.steps_bucket) || '-'}`,
 
     goal: goalFull,
     sports: sportsSummary,
-    diet: t('step5.diet_' + nutrition?.diet) || '—',
+    diet: t('step5.diet_' + nutrition?.diet) || '-',
 
     dislikes: (() => {
       const base = (nutrition.dislikes || [])
         .map(d => t('step5.dislike_' + d) || d);
 
-      return base.join(', ') || '—';
+      return base.join(', ') || '-';
     })(),
 
 
-    repeats: repeatsMap[nutrition?.repeats] || '—',
-    show_grams: gramsMap[nutrition?.show_grams] || '—',
+    repeats: repeatsMap[nutrition?.repeats] || '-',
+    show_grams: gramsMap[nutrition?.show_grams] || '-',
+    soups: soupsMap[String(nutrition?.soups)] || '-',
+    warm_meals: warmMealsMap[nutrition?.warm_meals] || '-',
+    cooking_complexity: cookingComplexityMap[nutrition?.cooking_complexity] || '-',
     macros: (() => {
-      const c = nutrition?.macros?.c ?? '—';
-      const f = nutrition?.macros?.f ?? '—';
-      const p = nutrition?.macros?.p ?? '—';
+      const c = nutrition?.macros?.c ?? '-';
+      const f = nutrition?.macros?.f ?? '-';
+      const p = nutrition?.macros?.p ?? '-';
 
       const carbLabel = t('step8.macros_carbs') || 'Carbs';
       const fatLabel = t('step8.macros_fats') || 'Fats';
@@ -1383,7 +1388,9 @@ export function bindReviewStep() {
     rev_sports: summary.sports,
     rev_diet: summary.diet,
     rev_dislikes: summary.dislikes,
-    rev_repeats: summary.repeats,
+    rev_soups: summary.soups,
+    rev_warm_meals: summary.warm_meals,
+    rev_cooking_complexity: summary.cooking_complexity,
     rev_show_grams: summary.show_grams,
     rev_macros: summary.macros
   };
@@ -1406,10 +1413,10 @@ export function bindReviewStep() {
       const { czk, eur } = formState.plan.price;
       const isEur = (currentCurrency() === 'EUR');
       const originalPrice = isEur ? eur : czk;
-      priceBox.textContent = isEur ? `€${originalPrice.toFixed(2)}` : `${originalPrice} Kč`;
+      priceBox.textContent = isEur ? `EUR ${originalPrice.toFixed(2)}` : `${originalPrice} CZK`;
       priceBox.dataset.original = originalPrice;
     } else {
-      priceBox.textContent = '—';
+      priceBox.textContent = '-';
     }
   }
 
@@ -1450,7 +1457,7 @@ export function bindReviewStep() {
 
         await handlePurchase(); // Your function that handles the purchase
       } catch (err) {
-        console.error("❌ Purchase error:", err);
+        console.error("Purchase error:", err);
       } finally {
         btn.disabled = false;
         btn.innerHTML = originalHTML;
@@ -1510,9 +1517,9 @@ export function bindReviewStep() {
           formState.plan.price.final = parseFloat(newPrice);
           formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
 
-          // 💬 update UI
-          priceEl.textContent = isEur ? `€${newPrice}` : `${newPrice} Kč`;
-          infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (−${discount}%)`;
+          // update UI
+          priceEl.textContent = isEur ? `EUR ${newPrice}` : `${newPrice} CZK`;
+          infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (-${discount}%)`;
           errorEl.textContent = "";
         } else {
           // Invalid code
@@ -1569,7 +1576,7 @@ export async function handlePurchase() {
       amountCZK = parseFloat(priceEl.dataset.czk);
     } else if (formState?.plan?.price?.czk) {
       amountCZK = parseFloat(formState.plan.price.czk);
-      console.warn("⚠️ Price element not found in DOM, using stored formState.plan.price");
+      console.warn("Price element not found in DOM, using stored formState.plan.price");
     } else {
       throw new Error("Price not found");
     }
@@ -1673,6 +1680,7 @@ export async function handlePurchase() {
     window.location.href = failUrl;
   }
 }
+
 
 
 

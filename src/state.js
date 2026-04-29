@@ -63,7 +63,9 @@ export function createInitialState() {
       diet: 'no_restrictions',
       dislikes: [],
       other_dislike: '',
-      repeats: '2',
+      soups: true,
+      warm_meals: 'any',
+      cooking_complexity: 'standard',
       show_grams: null,
       macros: { c: 55, f: 25, p: 20 },
       _customized: false
@@ -143,6 +145,14 @@ export function hydrateFormState(saved) {
     formState.nutrition = { ...formState.nutrition, ...saved.nutrition };
     if (formState.nutrition.diet === 'none') {
       formState.nutrition.diet = 'no_restrictions';
+    }
+    if (formState.nutrition.soups === 'yes') {
+      formState.nutrition.soups = true;
+    } else if (formState.nutrition.soups === 'no') {
+      formState.nutrition.soups = false;
+    }
+    if (formState.nutrition.warm_meals === 'no_preference') {
+      formState.nutrition.warm_meals = 'any';
     }
   }
 

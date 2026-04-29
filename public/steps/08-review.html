@@ -2,7 +2,6 @@
   <h1 data-i18n="step8.title">Summary & purchase</h1>
 
   <div class="review-grid">
-    <!-- Levý sloupec: Souhrn -->
     <div class="review-left">
       <div class="card summary-card">
         <h3 data-i18n="step8.summary_title">Order summary</h3>
@@ -43,8 +42,18 @@
         </div>
 
         <div class="summary-block">
-          <h4 data-i18n="step8.repeats">Meal repetition count</h4>
-          <p id="rev_repeats">—</p>
+          <h4 data-i18n="step8.soups">Polévky</h4>
+          <p id="rev_soups">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step8.warm_meals">Počet teplých jídel denně</h4>
+          <p id="rev_warm_meals">—</p>
+        </div>
+
+        <div class="summary-block">
+          <h4 data-i18n="step8.cooking_complexity">Složitost přípravy jídel</h4>
+          <p id="rev_cooking_complexity">—</p>
         </div>
 
         <div class="summary-block">
@@ -55,16 +64,14 @@
         <div class="summary-block">
           <h4 data-i18n="step8.macros">Macronutrient distribution</h4>
           <p id="rev_macros">—</p>
-        </div>        
+        </div>
       </div>
     </div>
 
-    <!-- Pravý sloupec: Cena + Formulář -->
     <div class="review-right">
-
       <div class="card">
         <h3 data-i18n="step8.summary_personal">Personal information</h3>
-        <!-- Zákazník -->
+
         <div class="field">
           <label for="cust_name" data-i18n="step8.name">Name</label>
           <input id="cust_name" maxlength="80" data-i18n-placeholder="step8.placeholders.name" />
@@ -77,20 +84,17 @@
           <div class="error" id="err-customer_email"></div>
         </div>
 
-        <!-- Newsletter (volitelně, můžeš zakomentovat) -->
-        
         <div class="field consent-toggle newsletter-toggle">
           <label>
             <span data-i18n="step8.newsletter">I want to receive the newsletter</span>
-            <input type="checkbox" id="newsletter_optin" />            
+            <input type="checkbox" id="newsletter_optin" />
           </label>
-        </div>     
+        </div>
 
-        <!-- Souhlasy -->
         <div class="field consent-toggle">
           <label>
             <span data-i18n="step8.terms">I agree to the Terms and Conditions</span>
-            <input type="checkbox" id="consent_terms" />            
+            <input type="checkbox" id="consent_terms" />
           </label>
           <div class="error" id="err-consent_terms"></div>
         </div>
@@ -98,41 +102,24 @@
         <div class="field consent-toggle">
           <label>
             <span data-i18n="step8.privacy">I agree to the Privacy Policy</span>
-            <input type="checkbox" id="consent_privacy" />            
+            <input type="checkbox" id="consent_privacy" />
           </label>
           <div class="error" id="err-consent_privacy"></div>
         </div>
 
-        <!-- Cena -->
         <div class="field total-price">
           <strong class="price-label" data-i18n="step8.total">Total price</strong>
           <span id="reviewPrice" class="price-value">—</span>
         </div>
 
-
-        <!-- CTA -->
         <div class="field" style="margin-top:12px;">
           <button id="btn-purchase" class="primary" data-i18n="step8.buy">Buy</button>
         </div>
-      
-        <!-- Trust element -->
+
         <div class="trust">
           <small data-i18n="step8.trust">Payments are processed by Comgate</small>
         </div>
       </div>
-      
-      <!-- Sleva -->
-      <div class="field discount-field">
-        <label for="discount_code" data-i18n="step8.discount">Discount code</label>
-        <div class="discount-input">
-          <input id="discount_code" type="text" />
-          <button id="apply-discount" type="button" class="btn-discount" data-i18n="step8.use">Apply</button>
-        </div>
-        <div class="error" id="err-discount"></div>
-      <!-- Info o aplikovaném slevovém kódu -->
-      <div id="discount-info"></div>
-
-      
     </div>
   </div>
 </section>
