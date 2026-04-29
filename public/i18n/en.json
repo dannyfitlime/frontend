@@ -301,8 +301,8 @@
     },
     "pricing": {
       "title": "Plans & pricing",
-      "per_week": "/ week",
-      "per_month": "/ month",
+      "per_week": "/week",
+      "per_month": "/month",
       "advantage": "better value",
       "standard": {
         "title": "Standard Plan",

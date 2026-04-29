@@ -294,8 +294,8 @@
     },
     "pricing": {
       "title": "Tipos de menús y precios",
-      "per_week": "/ semana",
-      "per_month": "/ mes",
+      "per_week": "/semana",
+      "per_month": "/mes",
       "advantage": "más ventajoso",
       "standard": {
         "title": "Standard Plan",

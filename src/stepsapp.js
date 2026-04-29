@@ -1046,7 +1046,7 @@ function currentCurrency() {
 function formatPrice(czk, eur) {
   const currency = currentCurrency();
   return currency === 'EUR'
-    ? `EUR ${eur.toFixed(2)}`
+    ? `€ ${eur.toFixed(2)}`
     : `${czk} CZK`;
 }
 function populatePlanPriceData() {
@@ -1320,8 +1320,9 @@ function buildReviewSummary() {
         const lbl = window._sportCatalog?.[b.sportId]?.labels?.[lang] || b.sportId;
         const intensityLabel = t('step3.intensity_' + b.intensity) || b.intensity;
         const intensityWord = t('step3.intensity') || 'Intensity';
+        const perWeek = t('home.pricing.per_week') || '/ week';
 
-        return `${lbl}: ${b.sessions}x/week, ${b.minutes} min, ${intensityLabel} ${intensityWord.toLowerCase()}`;
+        return `${lbl}: ${b.sessions}x${perWeek}, ${b.minutes} min, ${intensityLabel} ${intensityWord.toLowerCase()}`;
       }).join('<br>');
     }
 
@@ -1413,7 +1414,7 @@ export function bindReviewStep() {
       const { czk, eur } = formState.plan.price;
       const isEur = (currentCurrency() === 'EUR');
       const originalPrice = isEur ? eur : czk;
-      priceBox.textContent = isEur ? `EUR ${originalPrice.toFixed(2)}` : `${originalPrice} CZK`;
+      priceBox.textContent = isEur ? `€ ${originalPrice.toFixed(2)}` : `${originalPrice} CZK`;
       priceBox.dataset.original = originalPrice;
     } else {
       priceBox.textContent = '-';
@@ -1518,7 +1519,7 @@ export function bindReviewStep() {
           formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
 
           // update UI
-          priceEl.textContent = isEur ? `EUR ${newPrice}` : `${newPrice} CZK`;
+          priceEl.textContent = isEur ? `€ ${newPrice}` : `${newPrice} CZK`;
           infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (-${discount}%)`;
           errorEl.textContent = "";
         } else {

@@ -294,8 +294,8 @@
     },
     "pricing": {
       "title": "Rodzaje planów żywieniowych i ceny",
-      "per_week": "/ tydzień",
-      "per_month": "/ miesiąc",
+      "per_week": "/tydzień",
+      "per_month": "/miesiąc",
       "advantage": "korzystniejsza opcja",
       "standard": {
         "title": "Standard Plan",

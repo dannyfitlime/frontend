@@ -294,8 +294,8 @@
     },
     "pricing": {
       "title": "Varianten und Preise der Ernährungspläne",
-      "per_week": "/ Woche",
-      "per_month": "/ Monat",
+      "per_week": "/Woche",
+      "per_month": "/Monat",
       "advantage": "günstiger",
       "standard": {
         "title": "Standard Plan",

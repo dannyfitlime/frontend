@@ -294,8 +294,8 @@
     },
     "pricing": {
       "title": "Options de menus et tarifs",
-      "per_week": "/ semaine",
-      "per_month": "/ mois",
+      "per_week": "/semaine",
+      "per_month": "/mois",
       "advantage": "plus avantageux",
       "standard": {
         "title": "Standard Plan",

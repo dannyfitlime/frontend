@@ -325,8 +325,8 @@
     },
     "pricing": {
       "title": "Varianty jedálničkov a cenník",
-      "per_week": "/ týždeň",
-      "per_month": "/ mesiac",
+      "per_week": "/týždeň",
+      "per_month": "/mesiac",
       "advantage": "výhodnejšia",
       "standard": {
         "title": "Standard Plan",

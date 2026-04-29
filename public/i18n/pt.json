@@ -294,8 +294,8 @@
     },
     "pricing": {
       "title": "Tipos de planos alimentares e preços",
-      "per_week": "/ semana",
-      "per_month": "/ mês",
+      "per_week": "/semana",
+      "per_month": "/mês",
       "advantage": "mais vantajoso",
       "standard": {
         "title": "Standard Plan",

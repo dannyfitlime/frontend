@@ -301,8 +301,8 @@
     },
     "pricing": {
       "title": "Varianty jídelníčků a ceník",
-      "per_week": "/ týden",
-      "per_month": "/ měsíc",
+      "per_week": "/týden",
+      "per_month": "/měsíc",
       "advantage": "výhodnější",
       "standard": {
         "title": "Standard Plán",
