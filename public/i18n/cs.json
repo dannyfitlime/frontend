@@ -277,32 +277,32 @@
       "hint": "Klikněte pro detail"
     },
     "audience": {
-      "title": "Pro koho je jídelníček určen",
-      "lead": "Zdravý jídelníček přizpůsobujeme tomu, jak žijete – jestli trénujete na závody, chodíte si jen občas zacvičit, nebo chcete jíst lépe a mít víc energie.",
+      "title": "Jídelníček podle vašeho života",
+      "lead": "Každý z nás má jiné potřeby. Někdo potřebuje palivo pro vrcholový výkon, jiný stabilitu pro náročné pracovní dny. Naše jídelníčky přizpůsobujeme na míru tomu, jak se hýbete, jak odpočíváte a čeho chcete dosáhnout.",
       "pro": {
-        "title": "Vrcholoví sportovci",
-        "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zatížení v jednotlivých dnech, aby seděl výkonu, regeneraci i tělesné hmotnosti.",
-        "tag": "Výkon",
-        "imageAlt": "Vrcholový sportovec při intenzivním tréninku"
+        "title": "Vrcholový sport",
+        "text": "Máte tréninkový plán, sezónu nebo závody? Jídelníček ladíme podle zátěže v jednotlivých dnech tak, aby podpořil maximální výkon, rychlou regeneraci i kontrolu hmotnosti.",
+        "tag": "Výkon a regenerace",
+        "imageAlt": "Vrcholový sportovní tým při intenzivním tréninku"
       },
       "hobby": {
         "title": "Aktivní životní styl",
-        "text": "Běháte, chodíte do fitka, na kolo nebo skupinové lekce a chcete se cítit lehčeji, silněji a mít víc energie? Jídelníček zapadne do práce, školy i rodiny.",
-        "tag": "Balance",
-        "imageAlt": "Hobby sportovec při rekreačním běhu v přírodě"
+        "text": "Běháte, chodíte do fitka, na kolo nebo na skupinové lekce? Nastavíme jídelníček tak, abyste měli dostatek energie, cítili se silněji a zvládali sport i běžné povinnosti bez výkyvů.",
+        "tag": "Pohyb a energie",
+        "imageAlt": "Hobby sportovci při rekreační cyklistice v přírodě"
       },
       "everyday": {
-        "title": "Běžný život",
-        "text": "Nejste „sportovec“, ale chcete jíst zdravěji, mít energii během dne nebo zhubnout? Postavíme jídelníček, který je realistický a dlouhodobě udržitelný.",
-        "tag": "Začínám",
+        "title": "Zdravý životní styl",
+        "text": "Chcete jíst lépe, mít víc energie během dne nebo postupně zhubnout? Vytvoříme jídelníček, který je srozumitelný, realistický a dlouhodobě udržitelný – tak, aby zapadl do vašeho běžného života.",
+        "tag": "Běžný režim",
         "imageAlt": "Spokojený člověk u zdravého a čerstvého pokrmu"
       },
       "cta": "Zjistěte, jaký plán je pro Vás"
     },
     "pricing": {
       "title": "Varianty jídelníčků a ceník",
-      "per_week": "/ týden",
-      "per_month": "/ měsíc",
+      "per_week": "/týden",
+      "per_month": "/měsíc",
       "advantage": "výhodnější",
       "standard": {
         "title": "Standard Plán",
@@ -398,7 +398,7 @@
           "how": "Krátké vysvětlení, jak probíhá tvorba jídelního plánu ve FitLime.",
           "sports": "Jak nastavit jídelníček na daný trénink pro výkon a následnou regeneraci.",
           "weightLoss": "Na co si dát pozor, když chcete hubnout udržitelně a bez zbytečných extrémů.",
-          "healthy": "Základní principy, jak jíst lépe, mít víc energie a zvládat běžný režim."
+          "healthy": "Základní principy, jak jíst lépe, mít více energie a zvládat běžný režim."
         },
         "links": {
           "how": "Jak funguje tvorba jídelníčku",
@@ -424,7 +424,7 @@
       }
     },
     "reference": {
-      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít víc energie, víc rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
+      "lead": "Zkušenosti našich klientů, kteří chtěli jíst lépe, mít více energie, více rozumět výživě a dlouhodobě zvládat svůj režim bez zbytečných extrémů.",
       "featured": "Příběh, který stojí za zmínku",
       "highlights": {
         "energy": "Více energie během dne",
@@ -435,7 +435,7 @@
       "cardTitle": "Jak to vidí naši klienti",
       "title": "FitLime Komunita",
       "client1": {
-        "text": "„Změnilo nám to pohled na stravování. Máme víc energie během dne.“",
+        "text": "„Změnilo nám to pohled na stravování. Máme více energie během dne.“",
         "author": "Pancho | JJ",
         "flags": [
           "cl",
@@ -554,7 +554,7 @@
     "bmr_help_kj": "Vypočítáno z profilu (kJ/den). Můžete upravit ručně.",
     "bmr_help_kcal": "Vypočítáno z profilu (kcal/den). Můžete upravit ručně.",
     "target_explainer": "Vyberte, zda chcete hubnout, udržovat nebo přibírat váhu. Doporučení příjmu se automaticky přizpůsobí.",
-    "energy_help": "Nastavte jednotku energie.",
+    "energy_help": "Nastavte jednotku energie, kterou zobrazíme v jídelníčku.",
     "bmr_explainer": "BMR (bazální metabolismus) je energie, kterou tělo spotřebuje v klidu. Hodnotu můžete upravit, pokud víte přesnější údaj."
   },
   "step3": {
@@ -627,11 +627,20 @@
     "premium_note": "Úprava maker se propíše pouze u Premium plánu."
   },
   "step5": {
+    "soups_title": "Polévky",
+    "soups_help": "Přejete si zařadit do jídelníčku polévky?",
+    "soups_yes": "Ano",
+    "soups_no": "Ne",
+    "warm_meals_title": "Teplá jídla za den",
+    "warm_meals_help": "Kolikrát denně chcete v jídelníčku teplé jídlo? (1 = pouze oběd, 2 = oběd i večeře)",
+    "warm_meals_1": "1",
+    "warm_meals_2": "2",
+    "warm_meals_no_preference": "Je mi to jedno",
     "title": "Stravování",
     "diet": "Typ diety",
     "diet_no_restrictions": "Bez omezení",
     "diet_vegetarian": "Vegetarián",
-    "diet_pescetarian": "Pescetarián",
+    "diet_pescatarian": "Pescetarián",
     "diet_gluten_free": "Bezlepková",
     "diet_lactose_free": "Bez laktózy",
     "dislikes_title": "Potraviny k vyloučení z jídelníčku (volitelné)",
@@ -647,21 +656,18 @@
     "dislike_seafood": "Mořské plody",
     "dislike_eggs": "Vejce",
     "dislike_meat_alternatives": "Tofu, tempeh",
-    "help_diet": "Vyberte typ stravy, který běžně dodržujete.",
+    "help_diet": "Jaký typ stravy běžně dodržujete?",
     "help_dislikes": "Označte suroviny, kterým se chcete v jídelníčku vyhnout.",
     "error_dislikes_max4": "Můžete vybrat maximálně 4 položky.",
     "premium_note": "Úprava diet a vyloučení potravin jsou dostupné pouze u Premium plánu."
   },
   "step6": {
     "title": "Nastavení jídelníčku",
-    "repeats_title": "Počet opakování jídel",
-    "help_repeats": "Vyberte, kolikrát se mohou jídla během týdne opakovat.",
-    "repeat_once": "Jednou",
-    "repeat_twice": "Dvakrát",
-    "repeat_thrice": "Vícekrát",
-    "hint1": "Jídelníček je nejpestřejší, jídla se neopakují.",
-    "hint2": "Střední varianta – některá jídla se zopakují, stále dostatečně pestré.",
-    "hint3": "Méně pestré, ale snazší na přípravu.",
+    "cooking_complexity_title": "Složitost přípravy jídel",
+    "cooking_complexity_help": "Jak náročná mají být jídla na přípravu?",
+    "cooking_complexity_simple": "Jednoduché",
+    "cooking_complexity_standard": "Standard",
+    "cooking_complexity_advanced": "Složitější",
     "grams_title": "Chcete v jídelníčku zobrazovat přesné gramáže?",
     "grams_subtitle": "Vyberte si způsob, který nejlépe podpoří váš vztah k jídlu.",
     "grams_yes": "Ano, chci zobrazit",
@@ -733,12 +739,11 @@
     "training": "Chci tréninkový plán:",
     "diet": "Typ diety",
     "dislikes": "Potraviny, které nejím",
-    "repeats": "Opakování jídel",
+    "soups": "Polévky",
+    "warm_meals": "Počet teplých jídel denně",
+    "cooking_complexity": "Složitost přípravy jídel",
     "macros": "Rozložení makronutrientů",
     "plan": "Zvolený plán",
-    "repeats_1": "Jídla se neopakují",
-    "repeats_2": "Střední cesta",
-    "repeats_3": "Jídla se opakují",
     "level_none": "Nesportuji",
     "want_sport": "Zatím nesportuji",
     "level_sport": "Sportuji",

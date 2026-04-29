@@ -11,6 +11,11 @@
 }
 .row + .row { margin-top: 22px; }
 
+.layout-step5 .row.row--2 {
+  column-gap: 14px;
+  row-gap: 28px;
+}
+
 @media (min-width: 960px) {
   .row--3 { grid-template-columns: repeat(3, 1fr); }
   .row--2 { grid-template-columns: 1fr 1fr; }
@@ -663,9 +668,11 @@ button:focus-visible {
 
 /* === Sekce "Nejím" ve stylu políček === */
 .layout-step5 #dislikes_block {
-  margin-top: 60px;
+  margin-top: 30px;
 }
-
+.layout-step5 #diet_block {
+  margin-top: 30px;
+}
 .layout-step5 #dislikes_block .chip {
   min-height: 40px;
   padding: 10px 14px;
@@ -1026,8 +1033,8 @@ button:focus-visible {
 
 /* === Souhrn objednávky === */
 .summary-block {
-  margin-bottom: 14px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
   border-bottom: 1px solid #f0f0f0;
 }
 .summary-block:last-child { border-bottom: none; }
@@ -1036,6 +1043,7 @@ button:focus-visible {
   font-weight: 600;
   margin-bottom: 4px;
   color: #000000;
+  margin-top: 4px;
 }
 .summary-block p {
   margin: 0;

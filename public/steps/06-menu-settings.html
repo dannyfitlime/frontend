@@ -1,36 +1,21 @@
 <section class="layout-step6">
   <h1 data-i18n="step6.title">Meal plan settings</h1>
 
-  <!-- Počet opakování jídel -->
-  <div class="field" id="repeats_block">
-    <div id="step6_repeats_title" class="field-label">
-      <strong data-i18n="step6.repeats_title">Meal repetition count</strong>
+  <div class="field" id="cooking_complexity_block">
+    <div class="field-label">
+      <strong data-i18n="step6.cooking_complexity_title">Složitost přípravy jídel</strong>
     </div>
-
-    <div id="step6_help_repeats" class="help" data-i18n="step6.help_repeats">
-      Choose how many times meals can repeat during the week.
+    <div class="help" data-i18n="step6.cooking_complexity_help">
+      Vyberte, jakou náročnost přípravy jídel preferujete.
     </div>
-
-    <div id="repeat_group" class="chips chips-hero" role="group" aria-label="Meal repetition count">
-      <button type="button" class="chip" data-value="1" data-i18n="step6.repeat_once">1×</button>
-      <button type="button" class="chip" data-value="2" data-i18n="step6.repeat_twice">2×</button>
-      <button type="button" class="chip" data-value="3" data-i18n="step6.repeat_thrice">3×</button>
+    <div id="cooking_complexity_group" class="chips chips-hero" role="group" aria-label="Cooking complexity">
+      <button type="button" class="chip" data-value="simple" data-i18n="step6.cooking_complexity_simple">Jednoduché</button>
+      <button type="button" class="chip" data-value="standard" data-i18n="step6.cooking_complexity_standard">Standard</button>
+      <button type="button" class="chip" data-value="advanced" data-i18n="step6.cooking_complexity_advanced">Složitější</button>
     </div>
-
-    <div class="repeat-hints">
-      <div class="repeat-hint" data-value="1" id="step6_repeats_hint1" data-i18n="step6.hint1">
-        The meal plan is the most varied, meals do not repeat.
-      </div>
-      <div class="repeat-hint active" data-value="2" id="step6_repeats_hint2" data-i18n="step6.hint2">
-        Medium option: some meals repeat, but it is still varied enough.
-      </div>
-      <div class="repeat-hint" data-value="3" id="step6_repeats_hint3" data-i18n="step6.hint3">
-        Less varied, but easier to prepare.
-      </div>
-    </div>
-    <div class="error" id="err-repeats"></div>
+    <div class="error" id="err-cooking_complexity"></div>
   </div>
-  <!-- Zobrazení gramů -->
+
   <div class="field" id="grams_block">
     <div class="field-label">
       <strong data-i18n="step6.grams_title">Do you want exact gram amounts shown in the meal plan?</strong>
@@ -76,8 +61,3 @@
     <div class="error" id="err-show_grams"></div>
   </div>
 </section>
-
-
-
-
-
