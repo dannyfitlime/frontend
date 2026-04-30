@@ -834,7 +834,7 @@ export function bindDietStep() {
     return value;
   };
 
-  const bindChipGroup = (groupId, target, key) => {
+  const bindChipGroup = (groupId, target, key, cb) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
     chips.forEach(ch => {
       if (target[key] === normalizeChipValue(key, ch.dataset.value)) ch.classList.add('selected');
@@ -842,6 +842,7 @@ export function bindDietStep() {
         chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
         target[key] = normalizeChipValue(key, ch.dataset.value);
+        cb && cb(target[key]);
         updatePremiumNote();
         checkIfPremiumNeeded(); // After each diet/repeats change
       };
@@ -852,7 +853,12 @@ export function bindDietStep() {
   bindChipGroup('warm_meals_group', formState.nutrition, 'warm_meals');
 
   // Dieta
-  bindChipGroup('diet_group', formState.nutrition, 'diet');
+  const updateDietHints = (val) => {
+    const hints = document.querySelectorAll('#diet_block .grams-hint');
+    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
+  };
+  bindChipGroup('diet_group', formState.nutrition, 'diet', updateDietHints);
+  updateDietHints(formState.nutrition.diet);
 
   // Dislikes (WITHOUT 'Other')
   const MAX_DISLIKES = 4;
