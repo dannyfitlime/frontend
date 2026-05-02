@@ -252,13 +252,17 @@ function ensureOwnDefaults() {
   formState.sport ||= {};
   formState.sport.ownBlocks ||= [];
   if (formState.sport.ownBlocks.length === 0) {
-    formState.sport.ownBlocks.push({ sportId: '', sessions: 3, minutes: 45, intensity: 'medium' });
+    formState.sport.ownBlocks.push(emptyOwnBlock());
   }
   formState.sport.ownBlocks.forEach(b => {
     if (!b.sportId) b.sportId = '';
     if (!b.sessions) b.sessions = 3;
     if (!b.minutes) b.minutes = 45;
     if (!b.intensity) b.intensity = 'medium';
+    if (!b.energy_source) b.energy_source = 'estimated';
+    if (b.energy_source !== 'manual' && b.energy_kj_per_session === undefined) {
+      b.energy_kj_per_session = null;
+    }
   });
   recomputePickedOwnFromBlocks();
   if (!formState.sport.mainSportOwn && (formState.sport.pickedOwn || []).length > 0) {
@@ -273,6 +277,15 @@ async function loadCatalog() {
   if (!res.ok) { console.warn('catalog fetch failed', res.status); return {}; }
   const data = await res.json();
   window._sportCatalog = data;
+  return data;
+}
+
+async function loadMetValues() {
+  if (window._sportMetValues) return window._sportMetValues;
+  const res = await fetch('/sports/met_values.json');
+  if (!res.ok) { console.warn('MET values fetch failed', res.status); return {}; }
+  const data = await res.json();
+  window._sportMetValues = data;
   return data;
 }
 
@@ -363,7 +376,73 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
 
 
 function emptyOwnBlock() {
-  return { sportId: '', sessions: 3, minutes: 45, intensity: 'medium' };
+  return {
+    sportId: '',
+    sessions: 3,
+    minutes: 45,
+    intensity: 'medium',
+    energy_kj_per_session: null,
+    energy_source: 'estimated'
+  };
+}
+
+function finiteNumber(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : null;
+}
+
+function estimateEnergyKjPerSession(block) {
+  const metValues = window._sportMetValues || {};
+  const sportId = block?.sportId;
+  const intensity = block?.intensity || 'medium';
+  const minutes = finiteNumber(block?.minutes);
+  const weightKg = finiteNumber(formState.profile?.weight_kg);
+  const met = finiteNumber(metValues?.[sportId]?.[intensity]);
+
+  if (!sportId || !met || !minutes || !weightKg || minutes <= 0 || weightKg <= 0) {
+    return null;
+  }
+
+  const kcal = met * weightKg * (minutes / 60);
+  return kcal * KCAL_TO_KJ;
+}
+
+function refreshEstimatedEnergy(block, { force = false } = {}) {
+  if (!block || (block.energy_source === 'manual' && !force)) return block?.energy_kj_per_session ?? null;
+
+  const estimate = estimateEnergyKjPerSession(block);
+  block.energy_source = 'estimated';
+  block.energy_kj_per_session = estimate == null ? null : Math.round(estimate);
+  return block.energy_kj_per_session;
+}
+
+function energyDisplayValue(block) {
+  const kj = block?.energy_source === 'manual'
+    ? finiteNumber(block.energy_kj_per_session)
+    : refreshEstimatedEnergy(block);
+
+  if (kj == null || kj <= 0) return '';
+  return String(toActiveUnitFromKJ(kj));
+}
+
+function activeUnitToKj(value) {
+  const num = finiteNumber(value);
+  if (num == null || num <= 0) return null;
+  return activeUnit() === 'kcal' ? toKJ(num) : num;
+}
+
+function updateOwnEnergyInput(idx) {
+  const block = formState.sport?.ownBlocks?.[idx];
+  if (!block) return;
+
+  if (block.energy_source !== 'manual') {
+    refreshEstimatedEnergy(block);
+  }
+
+  const input = document.getElementById(`own_energy_${idx}`);
+  const unit = document.getElementById(`own_energy_unit_${idx}`);
+  if (input) input.value = energyDisplayValue(block);
+  if (unit) unit.textContent = activeUnit();
 }
 
 function recomputePickedOwnFromBlocks() {
@@ -399,6 +478,9 @@ function renderOwnBlocks() {
 
   host.innerHTML = '';
   formState.sport.ownBlocks.forEach((b, idx) => {
+    if (!b.energy_source) b.energy_source = 'estimated';
+    refreshEstimatedEnergy(b);
+
     const card = document.createElement('div');
     card.className = 'own-block-card';
     card.innerHTML = `
@@ -432,6 +514,15 @@ function renderOwnBlocks() {
           <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
           <div class="error" id="err-minutes_${idx}"></div>
         </div>
+
+        <div class="field">
+          <label for="own_energy_${idx}" data-i18n="step3.energy_expenditure">Energy expenditure</label>
+          <div class="input-with-unit own-energy-wrap">
+            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="1" value="${energyDisplayValue(b)}" />
+            <span id="own_energy_unit_${idx}" class="unit">${activeUnit()}</span>
+          </div>
+          <div class="help" data-i18n="step3.energy_expenditure_help">Estimated expenditure for one training session.</div>
+        </div>
       </div>
 
       <div class="own-block-actions">
@@ -449,6 +540,7 @@ function renderOwnBlocks() {
       if (activePlan() === 'own') ensureMainForActive();
       renderMainSportChips();
       onLevelOrPlanChanged();
+      updateOwnEnergyInput(i);
     };
   });
 
@@ -465,6 +557,7 @@ function renderOwnBlocks() {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].intensity = sel.value;
       if (i === 0) formState.sport.intensity = formState.sport.ownBlocks[0].intensity;
+      updateOwnEnergyInput(i);
     };
   });
 
@@ -473,6 +566,27 @@ function renderOwnBlocks() {
       const i = +inp.dataset.idx;
       formState.sport.ownBlocks[i].minutes = +inp.value || null;
       if (i === 0) formState.sport.minutes = formState.sport.ownBlocks[0].minutes;
+      updateOwnEnergyInput(i);
+    };
+  });
+
+  host.querySelectorAll('.own-energy').forEach(inp => {
+    inp.oninput = () => {
+      const i = +inp.dataset.idx;
+      const block = formState.sport.ownBlocks[i];
+      const kj = activeUnitToKj(inp.value);
+
+      block.energy_source = 'manual';
+      block.energy_kj_per_session = kj;
+    };
+    inp.onblur = () => {
+      const i = +inp.dataset.idx;
+      const block = formState.sport.ownBlocks[i];
+      if (activeUnitToKj(inp.value) == null) {
+        block.energy_source = 'estimated';
+        refreshEstimatedEnergy(block, { force: true });
+        updateOwnEnergyInput(i);
+      }
     };
   });
 
@@ -611,6 +725,7 @@ export function onLevelOrPlanChanged() {
 export async function bindSportStep() {
   ensureSportState();
   const catalog = await loadCatalog();
+  await loadMetValues();
   const byGroup = groupCatalogByGroup(catalog);
 
   const bindChipGroup = (groupId, target, key, cb) => {

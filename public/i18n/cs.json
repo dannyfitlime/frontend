@@ -581,6 +581,8 @@
     "intensity_high": "Vysoká",
     "sessions_per_week": "Tréninky týdně",
     "minutes": "Délka tréninku (min)",
+    "energy_expenditure": "Energetický výdej",
+    "energy_expenditure_help": "Odhadovaný výdej za jeden trénink.",
     "hours_per_week": "Čas týdně (h/týden)",
     "future_sports": "Co by Vás lákalo?",
     "help_none_multi": "Můžete vybrat více možností",

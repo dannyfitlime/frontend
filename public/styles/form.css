@@ -348,13 +348,21 @@ button:focus-visible {
 
 .own-block-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.6fr 0.7fr 0.6fr;
+  grid-template-columns: 1.1fr 0.6fr 0.7fr 0.6fr 0.75fr;
   gap: 12px;
   align-items: end;
 }
 
 @media (min-width: 720px) {
-  .own-block-grid { grid-template-columns: 1.1fr .6fr .7fr .6fr; }
+  .own-block-grid { grid-template-columns: 1.1fr .6fr .7fr .6fr .75fr; }
+}
+
+.own-energy-wrap {
+  width: 100%;
+}
+
+.own-energy-wrap input {
+  min-width: 0;
 }
 
 .own-block-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
