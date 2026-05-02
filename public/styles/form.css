@@ -367,6 +367,10 @@ button:focus-visible {
   box-shadow: 0 10px 26px rgba(5, 102, 8, .10);
 }
 
+.own-block-card--summary {
+  background: #f8fafc;
+}
+
 .own-block-grid {
   display: grid;
   grid-template-columns:
@@ -427,6 +431,182 @@ button:focus-visible {
 
 .own-sport-select {
   display: none;
+}
+
+.strava-import,
+.training-detail {
+  margin-top: 18px;
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.strava-import {
+  padding: 14px;
+}
+
+.strava-import__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.strava-import__actions,
+.training-detail__toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.strava-import__status,
+.strava-import__preview {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.strava-import__preview {
+  margin-top: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.btn-strava,
+.btn-detail-primary,
+.btn-detail-secondary {
+  border-radius: 8px;
+  min-height: 38px;
+  padding: 9px 13px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.btn-strava {
+  background: #fc4c02;
+  border: 1px solid #fc4c02;
+  color: #fff;
+}
+
+.btn-detail-primary {
+  background: #005003;
+  border: 1px solid #005003;
+  color: #fff;
+}
+
+.btn-detail-secondary {
+  background: #fff;
+  border: 1px solid var(--line-strong, #d1d5db);
+  color: #111827;
+}
+
+.training-detail {
+  padding: 0;
+  overflow: hidden;
+}
+
+.training-detail > summary {
+  min-height: 48px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8fafc;
+}
+
+.training-detail__badge {
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  background: #fff;
+}
+
+.training-detail__intro {
+  padding: 14px;
+  border-top: 1px solid var(--line, #e5e7eb);
+}
+
+.training-detail__intro p {
+  margin: 0 0 10px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.training-detail__rows {
+  display: grid;
+  gap: 12px;
+  padding: 0 14px 14px;
+}
+
+.training-day {
+  border-top: 1px solid var(--line, #e5e7eb);
+  padding-top: 12px;
+}
+
+.training-day h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.training-day__slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.training-slot {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+}
+
+.training-slot__title {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.training-slot__grid {
+  display: grid;
+  grid-template-columns: minmax(74px, .7fr) minmax(100px, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.training-slot__grid .unit-input {
+  grid-column: 1 / -1;
+}
+
+.training-slot select,
+.training-slot input {
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .strava-import__content {
+    flex-direction: column;
+  }
+
+  .strava-import__actions,
+  .training-detail__toolbar {
+    justify-content: flex-start;
+  }
+
+  .training-day__slots {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sport-picker {

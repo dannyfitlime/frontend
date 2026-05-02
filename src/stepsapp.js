@@ -210,6 +210,16 @@ export function bindGoalStep() {
 
 /* ============== STEP 3 - SPORT ================= */
 const OWN_BLOCKS_LIMIT = 10;
+const TRAINING_DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+const TRAINING_SLOTS = ['morning', 'afternoon', 'evening'];
+
+function dayLabel(day) {
+  return t(`step3.days.${day}`) || day;
+}
+
+function slotLabel(slot) {
+  return t(`step3.slots.${slot}`) || slot;
+}
 function updateAddOwnBlockControls() {
   const btn = document.getElementById('add_own_block');
   const hint = document.getElementById('add_own_block_limit_hint');
@@ -218,10 +228,14 @@ function updateAddOwnBlockControls() {
 
   const count = (formState.sport?.ownBlocks || []).length;
   const limitReached = count >= OWN_BLOCKS_LIMIT;
+  const detailActive = Boolean(formState.sport?.training_detail?.enabled);
 
-  btn.disabled = limitReached || formState.sport?.level !== 'sport';
+  btn.disabled = limitReached || detailActive || formState.sport?.level !== 'sport';
   btn.classList.toggle('limit-reached', limitReached);
-  if (limitReached) {
+  if (detailActive) {
+    btn.textContent = t?.('step3.detail_summary_locked') || 'Controlled by detailed week';
+    if (hint) hint.textContent = t?.('step3.detail_summary_locked_hint') || 'Return to simple entry to edit these fields directly.';
+  } else if (limitReached) {
     // If you want translations here, use t('step3.add_own_block_full'), etc.
     btn.textContent = t?.('step3.add_own_block_full') || 'Capacity reached';
     if (hint) {
@@ -241,6 +255,9 @@ function ensureSportState() {
   formState.sport.mainSportOwn = formState.sport.mainSportOwn ?? null;
   formState.sport.picked ||= [];
   formState.sport.mainSportId = formState.sport.mainSportId ?? null;
+  formState.sport.training_detail ||= { enabled: false, expanded: false, source: null, rows: [] };
+  formState.sport.training_detail.rows ||= [];
+  formState.sport.strava_import ??= null;
 
   // UPDATED: if user is set to 'sport', always use own plan
   if (formState.sport.level === 'sport') {
@@ -376,6 +393,25 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
                 ${t('step3.select_sport_placeholder') || 'Select a sport'}
               </option>`;
+
+  for (const g of order) {
+    const list = byGroup[g]; if (!list || !list.length) continue;
+    html += `<optgroup label="${escapeHtml(labels[g])}">`;
+    list.slice()
+      .filter(rec => rec.id !== 'triathlon')
+      .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+      .forEach(rec => {
+        const lbl = sportLabel(rec, lang);
+        html += `<option value="${escapeHtml(rec.id)}" ${rec.id === selectedId ? 'selected' : ''}>${escapeHtml(lbl)}</option>`;
+      });
+    html += `</optgroup>`;
+  }
+  return html;
+}
+
+function buildDetailSportsSelectOptions(byGroup, lang, selectedId) {
+  const { labels, order } = sportGroupMeta();
+  let html = `<option value="" ${!selectedId ? 'selected' : ''}>${escapeHtml(t('step3.detail_no_activity') || 'No activity')}</option>`;
 
   for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
@@ -561,6 +597,157 @@ function recomputePickedOwnFromBlocks() {
   formState.sport.pickedOwn = Array.from(set);
 }
 
+function emptyTrainingDetailRows() {
+  return TRAINING_DAYS.map(day => {
+    const row = { day };
+    TRAINING_SLOTS.forEach(slot => {
+      row[`${slot}_activity`] = null;
+      row[`${slot}_intensity`] = null;
+      row[`${slot}_minutes`] = null;
+      row[`${slot}_manual_kj`] = null;
+    });
+    return row;
+  });
+}
+
+function ensureTrainingDetailRows() {
+  ensureSportState();
+  const existing = Array.isArray(formState.sport.training_detail.rows)
+    ? formState.sport.training_detail.rows
+    : [];
+  const byDay = new Map(existing.map(row => [row?.day, row]));
+  formState.sport.training_detail.rows = emptyTrainingDetailRows().map(row => ({
+    ...row,
+    ...(byDay.get(row.day) || {})
+  }));
+  return formState.sport.training_detail.rows;
+}
+
+function detailRowsHaveSession(rows = []) {
+  return rows.some(row => TRAINING_SLOTS.some(slot => row?.[`${slot}_activity`]));
+}
+
+function normalizeDetailSlot(row, slot) {
+  const sportId = row[`${slot}_activity`] || null;
+  if (!sportId) {
+    row[`${slot}_activity`] = null;
+    row[`${slot}_intensity`] = null;
+    row[`${slot}_minutes`] = null;
+    row[`${slot}_manual_kj`] = null;
+    return;
+  }
+
+  row[`${slot}_intensity`] ||= 'medium';
+  const minutes = finiteNumber(row[`${slot}_minutes`]);
+  row[`${slot}_minutes`] = minutes && minutes > 0 ? Math.round(minutes) : 45;
+  const manualKj = finiteNumber(row[`${slot}_manual_kj`]);
+  row[`${slot}_manual_kj`] = manualKj && manualKj > 0 ? Math.round(manualKj) : null;
+}
+
+function normalizeDetailRows(rows = ensureTrainingDetailRows()) {
+  rows.forEach(row => TRAINING_SLOTS.forEach(slot => normalizeDetailSlot(row, slot)));
+  return rows;
+}
+
+function detailRowsToOwnBlocks(rows = ensureTrainingDetailRows()) {
+  const bySport = new Map();
+
+  rows.forEach(row => {
+    TRAINING_SLOTS.forEach(slot => {
+      const sportId = row[`${slot}_activity`];
+      if (!sportId) return;
+
+      const item = bySport.get(sportId) || {
+        sportId,
+        sessions: 0,
+        minutesTotal: 0,
+        intensities: {},
+        manualKjTotal: 0,
+        manualKjCount: 0
+      };
+      item.sessions += 1;
+      item.minutesTotal += finiteNumber(row[`${slot}_minutes`]) || 45;
+      const intensity = row[`${slot}_intensity`] || 'medium';
+      item.intensities[intensity] = (item.intensities[intensity] || 0) + 1;
+      const manualKj = finiteNumber(row[`${slot}_manual_kj`]);
+      if (manualKj && manualKj > 0) {
+        item.manualKjTotal += manualKj;
+        item.manualKjCount += 1;
+      }
+      bySport.set(sportId, item);
+    });
+  });
+
+  return Array.from(bySport.values()).map(item => {
+    const intensity = Object.entries(item.intensities)
+      .sort((a, b) => b[1] - a[1])[0]?.[0] || 'medium';
+    const block = {
+      sportId: item.sportId,
+      sessions: item.sessions,
+      minutes: Math.max(15, Math.round(item.minutesTotal / item.sessions / 5) * 5),
+      intensity,
+      energy_kj_per_session: null,
+      energy_source: 'estimated'
+    };
+    if (item.manualKjCount > 0) {
+      block.energy_kj_per_session = Math.round(item.manualKjTotal / item.manualKjCount);
+      block.energy_source = 'manual';
+    }
+    return block;
+  });
+}
+
+function applyDetailRowsToSimpleSummary({ render = true } = {}) {
+  const rows = normalizeDetailRows();
+  const blocks = detailRowsToOwnBlocks(rows);
+  if (blocks.length === 0) {
+    formState.sport.ownBlocks = [emptyOwnBlock()];
+    formState.sport.pickedOwn = [];
+    formState.sport.mainSportOwn = null;
+    syncAliasToActive();
+    return;
+  }
+
+  formState.sport.ownBlocks = blocks.slice(0, OWN_BLOCKS_LIMIT);
+  recomputePickedOwnFromBlocks();
+  formState.sport.mainSportOwn = blocks
+    .slice()
+    .sort((a, b) => (b.sessions || 0) - (a.sessions || 0))[0]?.sportId || null;
+  syncAliasToActive();
+
+  if (render) {
+    renderOwnBlocks();
+    renderMainSportChips();
+    onLevelOrPlanChanged();
+  }
+}
+
+function trainingPlanPayloadFromDetail() {
+  const detail = formState.sport?.training_detail;
+  if (!detail?.enabled) return null;
+  const rows = normalizeDetailRows(detail.rows || []);
+  if (!detailRowsHaveSession(rows)) return null;
+  return {
+    source: detail.source || 'manual_detail',
+    rows: rows.map(row => ({ ...row }))
+  };
+}
+
+function setTrainingDetailEnabled(enabled, source = 'manual_detail') {
+  ensureSportState();
+  ensureTrainingDetailRows();
+  formState.sport.training_detail.enabled = Boolean(enabled);
+  formState.sport.training_detail.expanded = Boolean(enabled);
+  formState.sport.training_detail.source = enabled ? source : null;
+  if (!enabled) {
+    formState.sport.strava_import = null;
+  } else if (detailRowsHaveSession(formState.sport.training_detail.rows)) {
+    applyDetailRowsToSimpleSummary({ render: false });
+  }
+}
+
+window.__fitlimeBuildTrainingPlanPayload = () => trainingPlanPayloadFromDetail();
+
 // Same logic for own blocks
 function renderOwnBlocks() {
   const host = document.getElementById('own_blocks_container');
@@ -569,6 +756,7 @@ function renderOwnBlocks() {
   const catalog = window._sportCatalog || {};
   const lang = i18n.lang || 'en';
   const byGroup = groupCatalogByGroup(catalog);
+  const detailActive = Boolean(formState.sport?.training_detail?.enabled);
 
   if (!Array.isArray(formState.sport.ownBlocks) || formState.sport.ownBlocks.length === 0) {
     formState.sport.ownBlocks = [emptyOwnBlock()];
@@ -587,27 +775,27 @@ function renderOwnBlocks() {
     refreshEstimatedEnergy(b);
 
     const card = document.createElement('div');
-    card.className = `own-block-card${!b.sportId ? ' own-block-card--needs-sport' : ''}`;
+    card.className = `own-block-card${!b.sportId ? ' own-block-card--needs-sport' : ''}${detailActive ? ' own-block-card--summary' : ''}`;
     card.innerHTML = `
       <div class="own-block-grid">
         <div class="field own-sport-field${!b.sportId ? ' own-sport-field--attention' : ''}">
           <label for="own_sport_${idx}"><strong data-i18n="step3.sports">Sport</strong></label>
-          <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}">
+          <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}" ${detailActive ? 'disabled' : ''}>
             ${buildSportsSelectOptions(byGroup, lang, b.sportId)}
           </select>
-          ${buildSportsPickerHtml(byGroup, lang, b.sportId, idx)}
+          ${detailActive ? `<div class="sport-picker-toggle has-value"><span>${escapeHtml(sportLabel(window._sportCatalog?.[b.sportId], lang) || b.sportId || '-')}</span></div>` : buildSportsPickerHtml(byGroup, lang, b.sportId, idx)}
           <div class="error" id="err-picked_own_${idx}"></div>
         </div>
 
         <div class="field">
           <label for="own_sessions_${idx}" data-i18n="step3.sessions_per_week">Trainings/week</label>
-          <input id="own_sessions_${idx}" name="own_blocks[${idx}][sessions]" type="number" class="own-sessions" data-idx="${idx}" min="1" max="18" value="${b.sessions ?? ''}" />
+          <input id="own_sessions_${idx}" name="own_blocks[${idx}][sessions]" type="number" class="own-sessions" data-idx="${idx}" min="1" max="18" value="${b.sessions ?? ''}" ${detailActive ? 'disabled' : ''} />
           <div class="error" id="err-sessions_per_week_${idx}"></div>
         </div>
 
         <div class="field">
           <label for="own_intensity_${idx}" data-i18n="step3.intensity">Intensity</label>
-          <select id="own_intensity_${idx}" name="own_blocks[${idx}][intensity]" class="own-intensity" data-idx="${idx}">
+          <select id="own_intensity_${idx}" name="own_blocks[${idx}][intensity]" class="own-intensity" data-idx="${idx}" ${detailActive ? 'disabled' : ''}>
             <option value="low"    ${b.intensity === 'low' ? 'selected' : ''}    data-i18n="step3.intensity_low">Low</option>
             <option value="medium" ${b.intensity === 'medium' ? 'selected' : ''} data-i18n="step3.intensity_medium">Medium</option>
             <option value="high"   ${b.intensity === 'high' ? 'selected' : ''}   data-i18n="step3.intensity_high">High</option>
@@ -618,7 +806,7 @@ function renderOwnBlocks() {
         <div class="field">
           <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration</label>
           <div class="unit-input">
-            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" step="5" value="${b.minutes ?? ''}" />
+            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" step="5" value="${b.minutes ?? ''}" ${detailActive ? 'disabled' : ''} />
             <span class="unit-suffix">min</span>
           </div>
           <div class="error" id="err-minutes_${idx}"></div>
@@ -630,7 +818,7 @@ function renderOwnBlocks() {
             <span class="info-tip" tabindex="0" aria-label="${t('step3.energy_expenditure_help') || 'Estimated expenditure for one training session.'}">i</span>
           </label>
           <div class="unit-input">
-            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="${energyInputLimits().min}" max="${energyInputLimits().max}" step="50" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" />
+            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="${energyInputLimits().min}" max="${energyInputLimits().max}" step="50" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" ${detailActive ? 'disabled' : ''} />
             <span id="own_energy_unit_${idx}" class="unit-suffix">${activeUnit()}</span>
           </div>
           <div class="error" id="err-energy_per_session_${idx}"></div>
@@ -638,7 +826,7 @@ function renderOwnBlocks() {
       </div>
 
       <div class="own-block-actions">
-        <button type="button" class="btn-del-block" data-idx="${idx}" ${formState.sport.ownBlocks.length <= 1 ? 'disabled' : ''}>x</button>
+        <button type="button" class="btn-del-block" data-idx="${idx}" ${(formState.sport.ownBlocks.length <= 1 || detailActive) ? 'disabled' : ''}>x</button>
       </div>
     `;
     host.appendChild(card);
@@ -780,6 +968,227 @@ function renderOwnBlocks() {
   updateAddOwnBlockControls();
 }
 
+function renderStravaImportBlock() {
+  const block = document.getElementById('strava_import_block');
+  if (!block) return;
+  const isSport = formState.sport?.level === 'sport';
+  block.style.display = isSport ? '' : 'none';
+  if (!isSport) return;
+
+  const status = document.getElementById('strava_status');
+  const preview = document.getElementById('strava_preview');
+  const connectBtn = document.getElementById('strava_connect_btn');
+  const applyBtn = document.getElementById('strava_apply_btn');
+  const discardBtn = document.getElementById('strava_discard_btn');
+  const pending = formState.sport?._pendingStravaImport || null;
+  const error = formState.sport?._strava_error || '';
+
+  if (status) {
+    if (error) status.textContent = t(`step3.strava_error_${error}`) || t('step3.strava_error_generic') || 'Strava import failed.';
+    else if (pending) status.textContent = t('step3.strava_ready') || 'Import is ready to review.';
+    else status.textContent = '';
+  }
+
+  if (connectBtn) {
+    connectBtn.onclick = () => {
+      try {
+        localStorage.setItem('formState', JSON.stringify({ ...formState, locale: i18n?.lang || formState?.locale || 'cs' }));
+        localStorage.setItem('formStep', '2');
+      } catch (_) {}
+      window.location.href = apiUrl('/strava/connect');
+    };
+  }
+
+  if (applyBtn) {
+    applyBtn.style.display = pending ? '' : 'none';
+    applyBtn.onclick = () => {
+      if (!formState.sport?._pendingStravaImport) return;
+      const result = formState.sport._pendingStravaImport;
+      formState.sport.training_detail = {
+        enabled: true,
+        expanded: true,
+        source: 'strava_import',
+        rows: Array.isArray(result.rows) ? structuredClone(result.rows) : emptyTrainingDetailRows()
+      };
+      formState.sport.strava_import = {
+        import_days: result.import_days,
+        matched_count: result.matched_count,
+        selected_count: result.selected_count,
+        unmatched: result.unmatched || [],
+        imported_at: result.created_at || new Date().toISOString()
+      };
+      delete formState.sport._pendingStravaImport;
+      delete formState.sport._strava_error;
+      applyDetailRowsToSimpleSummary({ render: false });
+      renderOwnBlocks();
+      renderMainSportChips();
+      renderStravaImportBlock();
+      renderTrainingDetail();
+      onLevelOrPlanChanged();
+    };
+  }
+
+  if (discardBtn) {
+    discardBtn.style.display = pending ? '' : 'none';
+    discardBtn.onclick = () => {
+      delete formState.sport._pendingStravaImport;
+      delete formState.sport._strava_error;
+      renderStravaImportBlock();
+    };
+  }
+
+  if (!preview) return;
+  if (!pending) {
+    preview.innerHTML = '';
+    return;
+  }
+
+  const sportCounts = Object.entries(pending.sport_counts || {})
+    .map(([id, count]) => {
+      const label = sportLabel(window._sportCatalog?.[id], i18n.lang || 'en') || id;
+      return `${escapeHtml(label)}: ${count}`;
+    })
+    .join(', ');
+  const unmatchedCount = (pending.unmatched || []).reduce((sum, item) => sum + (Number(item.count) || 0), 0);
+  preview.innerHTML = `
+    <div>${escapeHtml(t('step3.strava_preview_matched') || 'Matched activities')}: ${pending.matched_count || 0}</div>
+    <div>${escapeHtml(t('step3.strava_preview_selected') || 'Used in week')}: ${pending.selected_count || 0}</div>
+    ${sportCounts ? `<div>${sportCounts}</div>` : ''}
+    ${unmatchedCount ? `<div>${escapeHtml(t('step3.strava_preview_unmatched') || 'Unmatched activities')}: ${unmatchedCount}</div>` : ''}
+  `;
+}
+
+function renderTrainingDetail() {
+  const panel = document.getElementById('training_detail_panel');
+  const host = document.getElementById('training_detail_rows');
+  if (!panel || !host) return;
+  ensureTrainingDetailRows();
+
+  const isSport = formState.sport?.level === 'sport';
+  panel.style.display = isSport ? '' : 'none';
+  if (!isSport) return;
+
+  const detail = formState.sport.training_detail;
+  panel.open = Boolean(detail.expanded || detail.enabled);
+  panel.ontoggle = () => {
+    formState.sport.training_detail.expanded = panel.open;
+  };
+
+  const badge = document.getElementById('training_detail_badge');
+  if (badge) {
+    badge.textContent = detail.enabled
+      ? (t('step3.detail_active') || 'Active')
+      : (t('step3.detail_inactive') || 'Optional');
+  }
+
+  const enableBtn = document.getElementById('training_detail_enable');
+  const disableBtn = document.getElementById('training_detail_disable');
+  if (enableBtn) {
+    enableBtn.style.display = detail.enabled ? 'none' : '';
+    enableBtn.onclick = () => {
+      setTrainingDetailEnabled(true, 'manual_detail');
+      renderTrainingDetail();
+    };
+  }
+  if (disableBtn) {
+    disableBtn.style.display = detail.enabled ? '' : 'none';
+    disableBtn.onclick = () => {
+      setTrainingDetailEnabled(false);
+      renderTrainingDetail();
+    };
+  }
+
+  const catalog = window._sportCatalog || {};
+  const byGroup = groupCatalogByGroup(catalog);
+  const lang = i18n.lang || 'en';
+  const rows = detail.rows || [];
+
+  host.innerHTML = rows.map((row, dayIdx) => {
+    const slotsHtml = TRAINING_SLOTS.map(slot => {
+      const sportId = row[`${slot}_activity`] || '';
+      const intensity = row[`${slot}_intensity`] || 'medium';
+      const manualKj = finiteNumber(row[`${slot}_manual_kj`]);
+      const energyValue = manualKj ? toActiveUnitFromKJ(manualKj) : '';
+      return `
+        <div class="training-slot" data-day="${dayIdx}" data-slot="${slot}">
+          <div class="training-slot__title">${escapeHtml(slotLabel(slot))}</div>
+          <select class="training-detail-sport" data-day="${dayIdx}" data-slot="${slot}">
+            ${buildDetailSportsSelectOptions(byGroup, lang, sportId)}
+          </select>
+          <div class="training-slot__grid">
+            <input type="number" class="training-detail-minutes" data-day="${dayIdx}" data-slot="${slot}" min="15" max="300" step="5" value="${row[`${slot}_minutes`] ?? ''}" placeholder="min" />
+            <select class="training-detail-intensity" data-day="${dayIdx}" data-slot="${slot}">
+              <option value="low" ${intensity === 'low' ? 'selected' : ''}>${escapeHtml(t('step3.intensity_low') || 'Low')}</option>
+              <option value="medium" ${intensity === 'medium' ? 'selected' : ''}>${escapeHtml(t('step3.intensity_medium') || 'Medium')}</option>
+              <option value="high" ${intensity === 'high' ? 'selected' : ''}>${escapeHtml(t('step3.intensity_high') || 'High')}</option>
+            </select>
+            <div class="unit-input">
+              <input type="number" class="training-detail-energy" data-day="${dayIdx}" data-slot="${slot}" min="0" step="50" value="${energyValue}" placeholder="${escapeHtml(t('step3.detail_energy_auto') || 'auto')}" />
+              <span class="unit-suffix">${activeUnit()}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    return `
+      <section class="training-day">
+        <h3>${escapeHtml(dayLabel(row.day))}</h3>
+        <div class="training-day__slots">${slotsHtml}</div>
+      </section>
+    `;
+  }).join('');
+
+  const updateSlot = (el, updater) => {
+    const dayIdx = Number(el.dataset.day);
+    const slot = el.dataset.slot;
+    const row = formState.sport.training_detail.rows[dayIdx];
+    if (!row || !slot) return;
+    updater(row, slot);
+    if (formState.sport.training_detail.enabled) {
+      applyDetailRowsToSimpleSummary({ render: false });
+      renderOwnBlocks();
+      renderMainSportChips();
+    }
+  };
+
+  host.querySelectorAll('.training-detail-sport').forEach(sel => {
+    sel.onchange = () => updateSlot(sel, (row, slot) => {
+      row[`${slot}_activity`] = sel.value || null;
+      if (!sel.value) {
+        row[`${slot}_intensity`] = null;
+        row[`${slot}_minutes`] = null;
+        row[`${slot}_manual_kj`] = null;
+      } else {
+        row[`${slot}_intensity`] ||= 'medium';
+        row[`${slot}_minutes`] ||= 45;
+      }
+      normalizeDetailSlot(row, slot);
+      renderTrainingDetail();
+    });
+  });
+
+  host.querySelectorAll('.training-detail-minutes').forEach(inp => {
+    inp.oninput = () => updateSlot(inp, (row, slot) => {
+      row[`${slot}_minutes`] = inp.value ? Number(inp.value) : null;
+      normalizeDetailSlot(row, slot);
+    });
+  });
+
+  host.querySelectorAll('.training-detail-intensity').forEach(sel => {
+    sel.onchange = () => updateSlot(sel, (row, slot) => {
+      row[`${slot}_intensity`] = sel.value || 'medium';
+      normalizeDetailSlot(row, slot);
+    });
+  });
+
+  host.querySelectorAll('.training-detail-energy').forEach(inp => {
+    inp.oninput = () => updateSlot(inp, (row, slot) => {
+      row[`${slot}_manual_kj`] = activeUnitToKj(inp.value);
+      normalizeDetailSlot(row, slot);
+    });
+  });
+}
+
 // Keep this even if need_plan is no longer used in the UI - you can remove the whole block if needed.
 function renderNeedSportsCollapsible(containerId, byGroup) {
   const host = document.getElementById(containerId);
@@ -857,9 +1266,11 @@ export function onLevelOrPlanChanged() {
   const needBlock = $('#need_plan_block');
   const hoursBlk = $('#hours_block');
   const mainBlk = $('#main_sport_block');
+  const stravaBlk = $('#strava_import_block');
+  const detailPanel = $('#training_detail_panel');
 
   if (!lvl) {
-    [noneBlock, planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x => x && (x.style.display = 'none'));
+    [noneBlock, planBlock, ownBlock, needBlock, hoursBlk, mainBlk, stravaBlk, detailPanel].forEach(x => x && (x.style.display = 'none'));
     return;
   }
 
@@ -868,7 +1279,7 @@ export function onLevelOrPlanChanged() {
     formState.sport.plan_choice = null;
     syncAliasToActive();
     if (noneBlock) noneBlock.style.display = '';
-    [planBlock, ownBlock, needBlock, hoursBlk, mainBlk].forEach(x => x && (x.style.display = 'none'));
+    [planBlock, ownBlock, needBlock, hoursBlk, mainBlk, stravaBlk, detailPanel].forEach(x => x && (x.style.display = 'none'));
     return;
   }
 
@@ -881,6 +1292,8 @@ export function onLevelOrPlanChanged() {
   if (needBlock) needBlock.style.display = 'none';
 
   renderOwnBlocks();
+  renderStravaImportBlock();
+  renderTrainingDetail();
   ensureMainForActive();
   renderMainSportChips();
 
@@ -889,10 +1302,41 @@ export function onLevelOrPlanChanged() {
   if (mainBlk) mainBlk.style.display = hasPickedOwn ? '' : 'none';
 }
 
+async function consumeStravaReturnParams() {
+  const params = new URLSearchParams(window.location.search);
+  const importId = params.get('strava_import_id');
+  const error = params.get('strava_error');
+  if (!importId && !error) return;
+
+  ensureSportState();
+  delete formState.sport._pendingStravaImport;
+  delete formState.sport._strava_error;
+
+  if (error) {
+    formState.sport._strava_error = error;
+  } else if (importId) {
+    try {
+      const res = await fetch(apiUrl(`/strava/imports/${encodeURIComponent(importId)}`));
+      if (!res.ok) throw new Error(`Import fetch failed: ${res.status}`);
+      formState.sport._pendingStravaImport = await res.json();
+    } catch (err) {
+      console.warn('Strava import fetch failed', err);
+      formState.sport._strava_error = 'expired';
+    }
+  }
+
+  params.delete('strava_import_id');
+  params.delete('strava_error');
+  const qs = params.toString();
+  const cleanUrl = `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash || ''}`;
+  window.history.replaceState({}, '', cleanUrl);
+}
+
 export async function bindSportStep() {
   ensureSportState();
   const catalog = await loadCatalog();
   await loadMetValues();
+  await consumeStravaReturnParams();
   const byGroup = groupCatalogByGroup(catalog);
 
   const bindChipGroup = (groupId, target, key, cb) => {
@@ -1046,7 +1490,9 @@ export function cleanupSportStateBeforeNext() {
       ownBlocks: formState.sport.ownBlocks || [],
       pickedOwn: formState.sport.pickedOwn || [],
       mainSportOwn: formState.sport.mainSportOwn || null,
-      preferences: formState.sport.preferences || {}
+      preferences: formState.sport.preferences || {},
+      training_detail: formState.sport.training_detail || { enabled: false, expanded: false, source: null, rows: [] },
+      strava_import: formState.sport.strava_import || null
     };
   } else {
     formState.sport = { level: lvl || null };
@@ -1892,6 +2338,13 @@ export async function handlePurchase() {
     // --- Create a clean copy for saving ---
     const cleanState = structuredClone(formState);
     if (cleanState.balance) delete cleanState.balance;
+    if (cleanState.sport) {
+      delete cleanState.sport._pendingStravaImport;
+      delete cleanState.sport._strava_error;
+    }
+    const trainingPlanPayload = trainingPlanPayloadFromDetail();
+    if (trainingPlanPayload) cleanState.training_plan = trainingPlanPayload;
+    else delete cleanState.training_plan;
 
     const resp = await fetch(apiUrl("/orders/"), {
       method: "POST",

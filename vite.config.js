@@ -66,7 +66,8 @@ export default defineConfig(async ({ command }) => {
         '/orders': 'http://localhost:8000',
         '/payments': 'http://localhost:8000',
         '/mail': 'http://localhost:8000',
-        '/discounts': 'http://localhost:8000'
+        '/discounts': 'http://localhost:8000',
+        '/strava': 'http://localhost:8000'
       }
     },
     resolve: {

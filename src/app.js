@@ -486,7 +486,7 @@ async function loadStep(idx){
 
     if (idx===0) { dbg('bindProfileStep'); bindProfileStep(); }
     if (idx===1) { dbg('bindGoalStep');    bindGoalStep(); }
-    if (idx===2) { dbg('bindSportStep');   bindSportStep(); }
+    if (idx===2) { dbg('bindSportStep');   await bindSportStep(); }
     if (idx===3) { dbg('bindBalanceStep'); bindBalanceStep(); }
     if (idx===4) { dbg('bindDietStep'); bindDietStep(); }
     if (idx===5) { dbg('bindMenuSettingsStep'); bindMenuSettingsStep(); }
@@ -887,10 +887,14 @@ function bindStepperClicks() {
 
     const params = new URLSearchParams(location.search);
 
+    const hasStravaReturn = params.has("strava_import_id") || params.has("strava_error");
+
     // === Resume logic ===
-    if (params.get("resume") === "true") {
+    if (params.get("resume") === "true" || hasStravaReturn) {
       const savedForm = localStorage.getItem("formState");
-      const savedStep = parseInt(localStorage.getItem("formStep") || "6", 10);
+      const savedStep = hasStravaReturn
+        ? 2
+        : parseInt(localStorage.getItem("formStep") || "6", 10);
 
       if (savedForm) {
         try {
@@ -906,14 +910,14 @@ function bindStepperClicks() {
         } catch (err) {
           console.warn("Resume failed:", err);
 
-          currentStep = 0;
-          await loadStep(0);
-          history.pushState({ step: 0 }, "", makeStepUrl(0));
+          currentStep = hasStravaReturn ? 2 : 0;
+          await loadStep(currentStep);
+          history.pushState({ step: currentStep }, "", makeStepUrl(currentStep));
         }
       } else {
-        currentStep = 0;
-        await loadStep(0);
-        history.pushState({ step: 0 }, "", makeStepUrl(0));
+        currentStep = hasStravaReturn ? 2 : 0;
+        await loadStep(currentStep);
+        history.pushState({ step: currentStep }, "", makeStepUrl(currentStep));
       }
 
     } else {

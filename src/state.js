@@ -51,6 +51,13 @@ export function createInitialState() {
       sessions_per_week: null,
       minutes: null,
       intensity: 'medium',
+      training_detail: {
+        enabled: false,
+        expanded: false,
+        source: null,
+        rows: []
+      },
+      strava_import: null,
 
       // chci teprve začít
       futureMulti: [],

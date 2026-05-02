@@ -61,6 +61,37 @@
     </div>
 
     <!-- HLAVNÍ SPORT -->
+    <div id="strava_import_block" class="strava-import" style="display:none;">
+      <div class="strava-import__content">
+        <div>
+          <div class="field-label"><strong data-i18n="step3.strava_title">Import from Strava</strong></div>
+          <div class="help" data-i18n="step3.strava_help">Use your recent activities to prefill the detailed training week.</div>
+          <div id="strava_status" class="strava-import__status"></div>
+        </div>
+        <div class="strava-import__actions">
+          <button type="button" id="strava_connect_btn" class="btn-strava" data-i18n="step3.strava_connect">Import from Strava</button>
+          <button type="button" id="strava_apply_btn" class="btn-detail-primary" style="display:none;" data-i18n="step3.strava_apply">Use import</button>
+          <button type="button" id="strava_discard_btn" class="btn-detail-secondary" style="display:none;" data-i18n="step3.strava_discard">Discard</button>
+        </div>
+      </div>
+      <div id="strava_preview" class="strava-import__preview"></div>
+    </div>
+
+    <details id="training_detail_panel" class="training-detail">
+      <summary>
+        <span data-i18n="step3.detail_title">Detailed training week</span>
+        <span id="training_detail_badge" class="training-detail__badge" data-i18n="step3.detail_inactive">Optional</span>
+      </summary>
+      <div class="training-detail__intro">
+        <p data-i18n="step3.detail_help">Add specific days and time blocks when you want the meal plan to use a detailed schedule.</p>
+        <div class="training-detail__toolbar">
+          <button type="button" id="training_detail_enable" class="btn-detail-primary" data-i18n="step3.detail_enable">Use detailed week</button>
+          <button type="button" id="training_detail_disable" class="btn-detail-secondary" data-i18n="step3.detail_disable">Return to simple entry</button>
+        </div>
+      </div>
+      <div id="training_detail_rows" class="training-detail__rows"></div>
+    </details>
+
     <div id="main_sport_block" class="field" style="display:none;">
       <div class="field-label"><strong data-i18n="step3.main_sport">Main sport</strong></div>
       <div class="help" data-i18n="step3.help_main_sport">step3.help_main_sport</div>
