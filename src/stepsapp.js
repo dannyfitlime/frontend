@@ -67,6 +67,8 @@ export function bindProfileStep() {
 const KCAL_TO_KJ = 4.184;
 const toKJ = (kcal) => kcal * KCAL_TO_KJ;
 const toKcal = (kj) => kj / KCAL_TO_KJ;
+const TRAINING_ENERGY_MIN_KCAL = 50;
+const TRAINING_ENERGY_MAX_KCAL = 2000;
 
 const roundKcal = (v) => Math.round(v / 10) * 10;  // kcal -> 10
 const roundKJ = (v) => Math.round(v / 50) * 50;  // kJ -> 50
@@ -404,7 +406,8 @@ function estimateEnergyKjPerSession(block) {
   }
 
   const kcal = met * weightKg * (minutes / 60);
-  return kcal * KCAL_TO_KJ;
+  const clampedKcal = Math.min(TRAINING_ENERGY_MAX_KCAL, Math.max(TRAINING_ENERGY_MIN_KCAL, kcal));
+  return clampedKcal * KCAL_TO_KJ;
 }
 
 function refreshEstimatedEnergy(block, { force = false } = {}) {
@@ -436,6 +439,20 @@ function activeUnitToKj(value) {
   return activeUnit() === 'kcal' ? toKJ(num) : num;
 }
 
+function energyInputLimits() {
+  const unit = activeUnit();
+  if (unit === 'kcal') {
+    return {
+      min: TRAINING_ENERGY_MIN_KCAL,
+      max: TRAINING_ENERGY_MAX_KCAL
+    };
+  }
+  return {
+    min: roundKJ(toKJ(TRAINING_ENERGY_MIN_KCAL)),
+    max: roundKJ(toKJ(TRAINING_ENERGY_MAX_KCAL))
+  };
+}
+
 function updateOwnEnergyInput(idx, { force = false } = {}) {
   const block = formState.sport?.ownBlocks?.[idx];
   if (!block) return;
@@ -447,8 +464,11 @@ function updateOwnEnergyInput(idx, { force = false } = {}) {
   const input = document.getElementById(`own_energy_${idx}`);
   const unit = document.getElementById(`own_energy_unit_${idx}`);
   if (input) {
+    const limits = energyInputLimits();
     input.value = energyDisplayValue(block);
     input.placeholder = energyInputPlaceholder(block);
+    input.min = String(limits.min);
+    input.max = String(limits.max);
   }
   if (unit) unit.textContent = activeUnit();
 }
@@ -520,7 +540,7 @@ function renderOwnBlocks() {
         <div class="field">
           <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration</label>
           <div class="unit-input">
-            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
+            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" step="5" value="${b.minutes ?? ''}" />
             <span class="unit-suffix">min</span>
           </div>
           <div class="error" id="err-minutes_${idx}"></div>
@@ -532,10 +552,10 @@ function renderOwnBlocks() {
             <span class="info-tip" tabindex="0" aria-label="${t('step3.energy_expenditure_help') || 'Estimated expenditure for one training session.'}">i</span>
           </label>
           <div class="unit-input">
-            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="1" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" />
+            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="${energyInputLimits().min}" max="${energyInputLimits().max}" step="50" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" />
             <span id="own_energy_unit_${idx}" class="unit-suffix">${activeUnit()}</span>
           </div>
-          <div class="error energy-error-spacer" aria-hidden="true"></div>
+          <div class="error" id="err-energy_per_session_${idx}"></div>
         </div>
       </div>
 

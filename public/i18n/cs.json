@@ -614,6 +614,7 @@
     "add_own_block_limit_hint": "Dosáhli jste maximálního počtu sportů.",
     "add_own_block_full": "Kapacita vyčerpána",
     "error_sessions_total_field": "Celkem max 18 tréninků.",
+    "error_energy_per_session_range": "Energetický výdej musí být mezi {{min}} a {{max}} {{unit}}.",
     "error_future_max3": "Můžete vybrat maximálně 3 sporty.",
     "select_sport_placeholder": "Zvolte sport"
   },

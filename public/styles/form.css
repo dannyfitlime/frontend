@@ -289,10 +289,6 @@ button:focus-visible {
   margin-top: 4px;
 }
 
-.energy-error-spacer {
-  visibility: hidden;
-}
-
 .info-text {
   margin-top: 1.5rem;
   font-size: 0.95rem;
