@@ -769,6 +769,19 @@ button:focus-visible {
     display: block;
   }
 
+  .own-block-grid .own-sport-field--attention label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .own-block-grid .own-sport-field--attention label::before {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    aspect-ratio: 1 / 1;
+  }
+
   .own-block-grid select,
   .own-block-grid input {
     width: 100%;
