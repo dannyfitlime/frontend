@@ -346,6 +346,11 @@ button:focus-visible {
   box-shadow: 0 6px 18px rgba(0,0,0,.04);
 }
 
+.own-block-card--needs-sport {
+  border-color: rgba(5, 102, 8, .45);
+  box-shadow: 0 10px 26px rgba(5, 102, 8, .10);
+}
+
 .own-block-grid {
   display: grid;
   grid-template-columns:
@@ -356,6 +361,47 @@ button:focus-visible {
     minmax(145px, .62fr);
   gap: 16px;
   align-items: end;
+}
+
+.own-sport-field--attention label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #034d05;
+}
+
+.own-sport-field--attention label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #056608;
+  box-shadow: 0 0 0 5px rgba(5, 102, 8, .12);
+  flex: 0 0 auto;
+}
+
+.own-sport-field--attention select {
+  border-color: #056608;
+  background: #f3fbf4;
+  box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+  color: #062d07;
+  font-weight: 700;
+  animation: sportSelectNudge 2.1s ease-in-out infinite;
+}
+
+@keyframes sportSelectNudge {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(5, 102, 8, .20);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .own-sport-field--attention select {
+    animation: none;
+  }
 }
 
 @media (min-width: 720px) {

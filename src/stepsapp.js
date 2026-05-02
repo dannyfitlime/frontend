@@ -510,10 +510,10 @@ function renderOwnBlocks() {
     refreshEstimatedEnergy(b);
 
     const card = document.createElement('div');
-    card.className = 'own-block-card';
+    card.className = `own-block-card${!b.sportId ? ' own-block-card--needs-sport' : ''}`;
     card.innerHTML = `
       <div class="own-block-grid">
-        <div class="field">
+        <div class="field own-sport-field${!b.sportId ? ' own-sport-field--attention' : ''}">
           <label for="own_sport_${idx}"><strong data-i18n="step3.sports">Sport</strong></label>
           <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}">
             ${buildSportsSelectOptions(byGroup, lang, b.sportId)}
