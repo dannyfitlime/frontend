@@ -18,7 +18,7 @@
    =============================== */
 :root {
   --boxw: clamp(320px, 80vw, 720px);
-  --formw: clamp(320px, 92vw, 820px);
+  --formw: clamp(320px, 88vw, 1040px);
 
   --footer-h: clamp(56px, 8vh, 92px);
   --cta-h: 56px;

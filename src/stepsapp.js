@@ -425,23 +425,31 @@ function energyDisplayValue(block) {
   return String(toActiveUnitFromKJ(kj));
 }
 
+function energyInputPlaceholder(block) {
+  if (!block?.sportId) return t('step3.energy_waiting_for_sport') || 'Select sport';
+  return '----';
+}
+
 function activeUnitToKj(value) {
   const num = finiteNumber(value);
   if (num == null || num <= 0) return null;
   return activeUnit() === 'kcal' ? toKJ(num) : num;
 }
 
-function updateOwnEnergyInput(idx) {
+function updateOwnEnergyInput(idx, { force = false } = {}) {
   const block = formState.sport?.ownBlocks?.[idx];
   if (!block) return;
 
-  if (block.energy_source !== 'manual') {
-    refreshEstimatedEnergy(block);
+  if (force || block.energy_source !== 'manual') {
+    refreshEstimatedEnergy(block, { force });
   }
 
   const input = document.getElementById(`own_energy_${idx}`);
   const unit = document.getElementById(`own_energy_unit_${idx}`);
-  if (input) input.value = energyDisplayValue(block);
+  if (input) {
+    input.value = energyDisplayValue(block);
+    input.placeholder = energyInputPlaceholder(block);
+  }
   if (unit) unit.textContent = activeUnit();
 }
 
@@ -510,18 +518,24 @@ function renderOwnBlocks() {
         </div>
 
         <div class="field">
-          <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration (min)</label>
-          <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
+          <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration</label>
+          <div class="unit-input">
+            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
+            <span class="unit-suffix">min</span>
+          </div>
           <div class="error" id="err-minutes_${idx}"></div>
         </div>
 
         <div class="field">
-          <label for="own_energy_${idx}" data-i18n="step3.energy_expenditure">Energy expenditure</label>
-          <div class="input-with-unit own-energy-wrap">
-            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="1" value="${energyDisplayValue(b)}" />
-            <span id="own_energy_unit_${idx}" class="unit">${activeUnit()}</span>
+          <label for="own_energy_${idx}" class="label-with-info">
+            <span data-i18n="step3.energy_expenditure">Energy expenditure</span>
+            <span class="info-tip" tabindex="0" aria-label="${t('step3.energy_expenditure_help') || 'Estimated expenditure for one training session.'}">i</span>
+          </label>
+          <div class="unit-input">
+            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="1" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" />
+            <span id="own_energy_unit_${idx}" class="unit-suffix">${activeUnit()}</span>
           </div>
-          <div class="help" data-i18n="step3.energy_expenditure_help">Estimated expenditure for one training session.</div>
+          <div class="error energy-error-spacer" aria-hidden="true"></div>
         </div>
       </div>
 
@@ -540,7 +554,7 @@ function renderOwnBlocks() {
       if (activePlan() === 'own') ensureMainForActive();
       renderMainSportChips();
       onLevelOrPlanChanged();
-      updateOwnEnergyInput(i);
+      updateOwnEnergyInput(i, { force: true });
     };
   });
 
@@ -557,7 +571,7 @@ function renderOwnBlocks() {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].intensity = sel.value;
       if (i === 0) formState.sport.intensity = formState.sport.ownBlocks[0].intensity;
-      updateOwnEnergyInput(i);
+      updateOwnEnergyInput(i, { force: true });
     };
   });
 
@@ -566,7 +580,7 @@ function renderOwnBlocks() {
       const i = +inp.dataset.idx;
       formState.sport.ownBlocks[i].minutes = +inp.value || null;
       if (i === 0) formState.sport.minutes = formState.sport.ownBlocks[0].minutes;
-      updateOwnEnergyInput(i);
+      updateOwnEnergyInput(i, { force: true });
     };
   });
 
