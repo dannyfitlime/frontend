@@ -18,6 +18,30 @@ const rangeMsg = (t, min, max, key)=> {
 // Conversions used by validation
 function toKcal(kj) { return kj / 4.184; }
 function toKJ(kcal) { return kcal * 4.184; }
+function roundKJ(kj) { return Math.round(kj / 50) * 50; }
+
+const TRAINING_ENERGY_LIMITS_KCAL = { min: 50, max: 2000 };
+
+function activeEnergyUnitForBlock(index) {
+  const unit = document.getElementById(`own_energy_unit_${index}`)?.textContent?.trim();
+  return unit === 'kJ' ? 'kJ' : 'kcal';
+}
+
+function trainingEnergyLimitsForUnit(unit) {
+  if (unit === 'kJ') {
+    return {
+      min: roundKJ(toKJ(TRAINING_ENERGY_LIMITS_KCAL.min)),
+      max: roundKJ(toKJ(TRAINING_ENERGY_LIMITS_KCAL.max)),
+      label: 'kJ'
+    };
+  }
+
+  return {
+    min: TRAINING_ENERGY_LIMITS_KCAL.min,
+    max: TRAINING_ENERGY_LIMITS_KCAL.max,
+    label: 'kcal'
+  };
+}
 
 /* ===== Profile ===== */
 export function validateProfile(profile, t){
@@ -148,7 +172,6 @@ export function validateSport(sport, t){
 
   if (s.plan_choice === 'own') {
     const picked = Array.isArray(s.picked) ? s.picked : [];
-    if (picked.length === 0) e['picked_own'] = reqMsg(t);
     if (picked.length > 0 && !s.mainSportId) e['mainSportId'] = reqMsg(t);
 
     const blocks = Array.isArray(s.ownBlocks) ? s.ownBlocks : [];
@@ -186,6 +209,28 @@ export function validateSport(sport, t){
 
         // intensity
         if (!b.intensity) e[`intensity_${i}`] = reqMsg(t);
+
+        // manually edited energy expenditure per session
+        if (b.energy_source === 'manual') {
+          const energyKj = Number(b.energy_kj_per_session);
+          if (!Number.isFinite(energyKj) || energyKj <= 0) {
+            e[`energy_per_session_${i}`] = numMsg(t);
+          } else {
+            const unit = activeEnergyUnitForBlock(i);
+            const limits = trainingEnergyLimitsForUnit(unit);
+            const displayValue = unit === 'kJ' ? energyKj : toKcal(energyKj);
+
+            if (displayValue < limits.min || displayValue > limits.max) {
+              const tpl = t?.('step3.error_energy_per_session_range');
+              e[`energy_per_session_${i}`] = tpl && typeof tpl === 'string'
+                ? tpl
+                    .replace('{{min}}', limits.min)
+                    .replace('{{max}}', limits.max)
+                    .replace('{{unit}}', limits.label)
+                : `Energy expenditure must be between ${limits.min} and ${limits.max} ${limits.label}.`;
+            }
+          }
+        }
       });
 
             // New: global limit for sessions per week

@@ -30,10 +30,31 @@
     <div class="help" data-i18n="step5.help_diet">Choose the type of diet you usually follow.</div>
     <div id="diet_group" class="chips chips-hero" role="group" aria-label="Diet type">
       <button type="button" class="chip" data-value="no_restrictions" data-i18n="step5.diet_no_restrictions">No restrictions</button>
+      <button type="button" class="chip" data-value="flexitarian"  data-i18n="step5.diet_flexitarian">Flexitarian</button>
       <button type="button" class="chip" data-value="vegetarian"   data-i18n="step5.diet_vegetarian">Vegetarian</button>
-      <button type="button" class="chip" data-value="pescatarian"  data-i18n="step5.diet_pescetarian">Pescatarian</button>
+      <button type="button" class="chip" data-value="pescatarian"  data-i18n="step5.diet_pescatarian">Pescatarian</button>
       <button type="button" class="chip" data-value="gluten_free"  data-i18n="step5.diet_gluten_free">Gluten-free</button>
       <button type="button" class="chip" data-value="lactose_free" data-i18n="step5.diet_lactose_free">Lactose-free</button>
+    </div>
+    <div class="grams-hints">
+      <div class="grams-hint active" data-value="no_restrictions" data-i18n="step5.diet_no_restrictions_hint">
+        I eat all common types of foods and do not follow any specific dietary restriction.
+      </div>
+      <div class="grams-hint" data-value="flexitarian" data-i18n="step5.diet_flexitarian_hint">
+        I mostly eat plant-based meals, but occasionally include meat and other animal products.
+      </div>
+      <div class="grams-hint" data-value="vegetarian" data-i18n="step5.diet_vegetarian_hint">
+        I do not eat meat or fish, but I may include eggs and dairy products.
+      </div>
+      <div class="grams-hint" data-value="pescatarian" data-i18n="step5.diet_pescatarian_hint">
+        I do not eat meat, but I do include fish and seafood in my diet.
+      </div>
+      <div class="grams-hint" data-value="gluten_free" data-i18n="step5.diet_gluten_free_hint">
+        I avoid foods containing gluten, such as wheat, rye, and barley.
+      </div>
+      <div class="grams-hint" data-value="lactose_free" data-i18n="step5.diet_lactose_free_hint">
+        I avoid foods containing lactose or choose lactose-free dairy alternatives.
+      </div>
     </div>
     <div class="error" id="err-diet"></div>
   </div>

@@ -67,6 +67,8 @@ export function bindProfileStep() {
 const KCAL_TO_KJ = 4.184;
 const toKJ = (kcal) => kcal * KCAL_TO_KJ;
 const toKcal = (kj) => kj / KCAL_TO_KJ;
+const TRAINING_ENERGY_MIN_KCAL = 50;
+const TRAINING_ENERGY_MAX_KCAL = 2000;
 
 const roundKcal = (v) => Math.round(v / 10) * 10;  // kcal -> 10
 const roundKJ = (v) => Math.round(v / 50) * 50;  // kJ -> 50
@@ -252,13 +254,17 @@ function ensureOwnDefaults() {
   formState.sport ||= {};
   formState.sport.ownBlocks ||= [];
   if (formState.sport.ownBlocks.length === 0) {
-    formState.sport.ownBlocks.push({ sportId: '', sessions: 3, minutes: 45, intensity: 'medium' });
+    formState.sport.ownBlocks.push(emptyOwnBlock());
   }
   formState.sport.ownBlocks.forEach(b => {
     if (!b.sportId) b.sportId = '';
     if (!b.sessions) b.sessions = 3;
     if (!b.minutes) b.minutes = 45;
     if (!b.intensity) b.intensity = 'medium';
+    if (!b.energy_source) b.energy_source = 'estimated';
+    if (b.energy_source !== 'manual' && b.energy_kj_per_session === undefined) {
+      b.energy_kj_per_session = null;
+    }
   });
   recomputePickedOwnFromBlocks();
   if (!formState.sport.mainSportOwn && (formState.sport.pickedOwn || []).length > 0) {
@@ -276,8 +282,27 @@ async function loadCatalog() {
   return data;
 }
 
+async function loadMetValues() {
+  if (window._sportMetValues) return window._sportMetValues;
+  const res = await fetch('/sports/met_values.json');
+  if (!res.ok) { console.warn('MET values fetch failed', res.status); return {}; }
+  const data = await res.json();
+  window._sportMetValues = data;
+  return data;
+}
+
 function sportLabel(rec, lang) {
   return rec?.labels?.[lang] || rec?.labels?.en || rec?.id || '';
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[ch]);
 }
 
 function groupCatalogByGroup(catalog) {
@@ -287,6 +312,22 @@ function groupCatalogByGroup(catalog) {
     (groups[g] ||= []).push({ id, ...rec });
   }
   return groups;
+}
+
+function sportGroupMeta() {
+  return {
+    labels: {
+      endurance: t('step3.groups.title_endurance') || 'Endurance sports',
+      individual: t('step3.groups.title_individual') || 'Individual sports',
+      team: t('step3.groups.title_team') || 'Team sports',
+      fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
+      water: t('step3.groups.title_water') || 'Water sports',
+      winter: t('step3.groups.title_winter') || 'Winter sports',
+      combat: t('step3.groups.title_combat') || 'Combat sports',
+      other: t('step3.groups.title_other') || 'Other sports'
+    },
+    order: ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other']
+  };
 }
 
 
@@ -329,17 +370,7 @@ function setMainForActive(id) {
 }
 
 function buildSportsSelectOptions(byGroup, lang, selectedId) {
-  const labels = {
-    endurance: t('step3.groups.title_endurance') || 'Endurance sports',
-    individual: t('step3.groups.title_individual') || 'Individual sports',
-    team: t('step3.groups.title_team') || 'Team sports',
-    fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
-    water: t('step3.groups.title_water') || 'Water sports',
-    winter: t('step3.groups.title_winter') || 'Winter sports',
-    combat: t('step3.groups.title_combat') || 'Combat sports',
-    other: t('step3.groups.title_other') || 'Other sports'
-  };
-  const order = ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other'];
+  const { labels, order } = sportGroupMeta();
 
   // This option is shown as a placeholder, but not in the dropdown list
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
@@ -348,22 +379,175 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
 
   for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
-    html += `<optgroup label="${labels[g]}">`;
+    html += `<optgroup label="${escapeHtml(labels[g])}">`;
     list.slice()
       .filter(rec => rec.id !== 'triathlon')
       .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
       .forEach(rec => {
         const lbl = sportLabel(rec, lang);
-        html += `<option value="${rec.id}" ${rec.id === selectedId ? 'selected' : ''}>${lbl}</option>`;
+        html += `<option value="${escapeHtml(rec.id)}" ${rec.id === selectedId ? 'selected' : ''}>${escapeHtml(lbl)}</option>`;
       });
     html += `</optgroup>`;
   }
   return html;
 }
 
+function buildSportsPickerHtml(byGroup, lang, selectedId, idx) {
+  const { labels, order } = sportGroupMeta();
+  const selectedRec = selectedId ? window._sportCatalog?.[selectedId] : null;
+  const selectedLabel = selectedRec ? sportLabel(selectedRec, lang) : '';
+  const placeholder = t('step3.select_sport_placeholder') || 'Select a sport';
+  const searchPlaceholder = t('step3.search_sport_placeholder') || 'Search sport';
+  const panelId = `sport_picker_panel_${idx}`;
+
+  let groupsHtml = '';
+  for (const g of order) {
+    const list = byGroup[g];
+    if (!list || !list.length) continue;
+
+    const options = list.slice()
+      .filter(rec => rec.id !== 'triathlon')
+      .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+      .map(rec => {
+        const label = sportLabel(rec, lang);
+        return `
+          <button type="button"
+                  class="sport-picker-option${rec.id === selectedId ? ' selected' : ''}"
+                  data-idx="${idx}"
+                  data-sport-id="${escapeHtml(rec.id)}"
+                  data-search="${escapeHtml(label.toLowerCase())}">
+            ${escapeHtml(label)}
+          </button>
+        `;
+      })
+      .join('');
+
+    groupsHtml += `
+      <section class="sport-picker-group" data-group="${escapeHtml(g)}">
+        <h4>${escapeHtml(labels[g])}</h4>
+        <div class="sport-picker-options">${options}</div>
+      </section>
+    `;
+  }
+
+  return `
+    <div class="sport-picker">
+      <button type="button"
+              class="sport-picker-toggle${selectedId ? ' has-value' : ''}"
+              data-idx="${idx}"
+              aria-expanded="false"
+              aria-controls="${panelId}">
+        <span>${escapeHtml(selectedLabel || placeholder)}</span>
+      </button>
+      <div id="${panelId}" class="sport-picker-panel" data-idx="${idx}" hidden>
+        <input type="search"
+               class="sport-picker-search"
+               data-idx="${idx}"
+               placeholder="${escapeHtml(searchPlaceholder)}"
+               autocomplete="off" />
+        <div class="sport-picker-groups">
+          ${groupsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 
 function emptyOwnBlock() {
-  return { sportId: '', sessions: 3, minutes: 45, intensity: 'medium' };
+  return {
+    sportId: '',
+    sessions: 3,
+    minutes: 45,
+    intensity: 'medium',
+    energy_kj_per_session: null,
+    energy_source: 'estimated'
+  };
+}
+
+function finiteNumber(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : null;
+}
+
+function estimateEnergyKjPerSession(block) {
+  const metValues = window._sportMetValues || {};
+  const sportId = block?.sportId;
+  const intensity = block?.intensity || 'medium';
+  const minutes = finiteNumber(block?.minutes);
+  const weightKg = finiteNumber(formState.profile?.weight_kg);
+  const met = finiteNumber(metValues?.[sportId]?.[intensity]);
+
+  if (!sportId || !met || !minutes || !weightKg || minutes <= 0 || weightKg <= 0) {
+    return null;
+  }
+
+  const kcal = met * weightKg * (minutes / 60);
+  const clampedKcal = Math.min(TRAINING_ENERGY_MAX_KCAL, Math.max(TRAINING_ENERGY_MIN_KCAL, kcal));
+  return clampedKcal * KCAL_TO_KJ;
+}
+
+function refreshEstimatedEnergy(block, { force = false } = {}) {
+  if (!block || (block.energy_source === 'manual' && !force)) return block?.energy_kj_per_session ?? null;
+
+  const estimate = estimateEnergyKjPerSession(block);
+  block.energy_source = 'estimated';
+  block.energy_kj_per_session = estimate == null ? null : Math.round(estimate);
+  return block.energy_kj_per_session;
+}
+
+function energyDisplayValue(block) {
+  const kj = block?.energy_source === 'manual'
+    ? finiteNumber(block.energy_kj_per_session)
+    : refreshEstimatedEnergy(block);
+
+  if (kj == null || kj <= 0) return '';
+  return String(toActiveUnitFromKJ(kj));
+}
+
+function energyInputPlaceholder(block) {
+  if (!block?.sportId) return t('step3.energy_waiting_for_sport') || 'Select sport';
+  return '----';
+}
+
+function activeUnitToKj(value) {
+  const num = finiteNumber(value);
+  if (num == null || num <= 0) return null;
+  return activeUnit() === 'kcal' ? toKJ(num) : num;
+}
+
+function energyInputLimits() {
+  const unit = activeUnit();
+  if (unit === 'kcal') {
+    return {
+      min: TRAINING_ENERGY_MIN_KCAL,
+      max: TRAINING_ENERGY_MAX_KCAL
+    };
+  }
+  return {
+    min: roundKJ(toKJ(TRAINING_ENERGY_MIN_KCAL)),
+    max: roundKJ(toKJ(TRAINING_ENERGY_MAX_KCAL))
+  };
+}
+
+function updateOwnEnergyInput(idx, { force = false } = {}) {
+  const block = formState.sport?.ownBlocks?.[idx];
+  if (!block) return;
+
+  if (force || block.energy_source !== 'manual') {
+    refreshEstimatedEnergy(block, { force });
+  }
+
+  const input = document.getElementById(`own_energy_${idx}`);
+  const unit = document.getElementById(`own_energy_unit_${idx}`);
+  if (input) {
+    const limits = energyInputLimits();
+    input.value = energyDisplayValue(block);
+    input.placeholder = energyInputPlaceholder(block);
+    input.min = String(limits.min);
+    input.max = String(limits.max);
+  }
+  if (unit) unit.textContent = activeUnit();
 }
 
 function recomputePickedOwnFromBlocks() {
@@ -399,15 +583,19 @@ function renderOwnBlocks() {
 
   host.innerHTML = '';
   formState.sport.ownBlocks.forEach((b, idx) => {
+    if (!b.energy_source) b.energy_source = 'estimated';
+    refreshEstimatedEnergy(b);
+
     const card = document.createElement('div');
-    card.className = 'own-block-card';
+    card.className = `own-block-card${!b.sportId ? ' own-block-card--needs-sport' : ''}`;
     card.innerHTML = `
       <div class="own-block-grid">
-        <div class="field">
+        <div class="field own-sport-field${!b.sportId ? ' own-sport-field--attention' : ''}">
           <label for="own_sport_${idx}"><strong data-i18n="step3.sports">Sport</strong></label>
           <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}">
             ${buildSportsSelectOptions(byGroup, lang, b.sportId)}
           </select>
+          ${buildSportsPickerHtml(byGroup, lang, b.sportId, idx)}
           <div class="error" id="err-picked_own_${idx}"></div>
         </div>
 
@@ -428,9 +616,24 @@ function renderOwnBlocks() {
         </div>
 
         <div class="field">
-          <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration (min)</label>
-          <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" value="${b.minutes ?? ''}" />
+          <label for="own_minutes_${idx}" data-i18n="step3.minutes">Duration</label>
+          <div class="unit-input">
+            <input id="own_minutes_${idx}" name="own_blocks[${idx}][minutes]" type="number" class="own-minutes" data-idx="${idx}" min="15" max="300" step="5" value="${b.minutes ?? ''}" />
+            <span class="unit-suffix">min</span>
+          </div>
           <div class="error" id="err-minutes_${idx}"></div>
+        </div>
+
+        <div class="field">
+          <label for="own_energy_${idx}" class="label-with-info">
+            <span data-i18n="step3.energy_expenditure">Energy expenditure</span>
+            <span class="info-tip" tabindex="0" aria-label="${t('step3.energy_expenditure_help') || 'Estimated expenditure for one training session.'}">i</span>
+          </label>
+          <div class="unit-input">
+            <input id="own_energy_${idx}" name="own_blocks[${idx}][energy_per_session]" type="number" class="own-energy" data-idx="${idx}" min="${energyInputLimits().min}" max="${energyInputLimits().max}" step="50" value="${energyDisplayValue(b)}" placeholder="${energyInputPlaceholder(b)}" />
+            <span id="own_energy_unit_${idx}" class="unit-suffix">${activeUnit()}</span>
+          </div>
+          <div class="error" id="err-energy_per_session_${idx}"></div>
         </div>
       </div>
 
@@ -449,6 +652,62 @@ function renderOwnBlocks() {
       if (activePlan() === 'own') ensureMainForActive();
       renderMainSportChips();
       onLevelOrPlanChanged();
+      updateOwnEnergyInput(i, { force: true });
+    };
+  });
+
+  const closeSportPickerPanels = (except = null) => {
+    host.querySelectorAll('.sport-picker-panel').forEach(panel => {
+      if (panel === except) return;
+      panel.hidden = true;
+      const toggle = host.querySelector(`.sport-picker-toggle[aria-controls="${panel.id}"]`);
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  host.querySelectorAll('.sport-picker-toggle').forEach(btn => {
+    btn.onclick = () => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      const willOpen = panel.hidden;
+      closeSportPickerPanels(panel);
+      panel.hidden = !willOpen;
+      btn.setAttribute('aria-expanded', String(willOpen));
+      if (willOpen) {
+        requestAnimationFrame(() => panel.querySelector('.sport-picker-search')?.focus());
+      }
+    };
+  });
+
+  host.querySelectorAll('.sport-picker-search').forEach(input => {
+    input.oninput = () => {
+      const query = input.value.trim().toLowerCase();
+      const panel = input.closest('.sport-picker-panel');
+      panel?.querySelectorAll('.sport-picker-group').forEach(group => {
+        let visibleCount = 0;
+        group.querySelectorAll('.sport-picker-option').forEach(btn => {
+          const visible = !query || btn.dataset.search.includes(query);
+          btn.hidden = !visible;
+          if (visible) visibleCount++;
+        });
+        group.hidden = visibleCount === 0;
+      });
+    };
+  });
+
+  host.querySelectorAll('.sport-picker-option').forEach(btn => {
+    btn.onclick = () => {
+      const i = +btn.dataset.idx;
+      const sportId = btn.dataset.sportId;
+      const nativeSelect = host.querySelector(`#own_sport_${i}`);
+
+      formState.sport.ownBlocks[i].sportId = sportId;
+      if (nativeSelect) nativeSelect.value = sportId;
+      recomputePickedOwnFromBlocks();
+      if (activePlan() === 'own') ensureMainForActive();
+      renderMainSportChips();
+      onLevelOrPlanChanged();
+      updateOwnEnergyInput(i, { force: true });
     };
   });
 
@@ -465,6 +724,7 @@ function renderOwnBlocks() {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].intensity = sel.value;
       if (i === 0) formState.sport.intensity = formState.sport.ownBlocks[0].intensity;
+      updateOwnEnergyInput(i, { force: true });
     };
   });
 
@@ -473,6 +733,27 @@ function renderOwnBlocks() {
       const i = +inp.dataset.idx;
       formState.sport.ownBlocks[i].minutes = +inp.value || null;
       if (i === 0) formState.sport.minutes = formState.sport.ownBlocks[0].minutes;
+      updateOwnEnergyInput(i, { force: true });
+    };
+  });
+
+  host.querySelectorAll('.own-energy').forEach(inp => {
+    inp.oninput = () => {
+      const i = +inp.dataset.idx;
+      const block = formState.sport.ownBlocks[i];
+      const kj = activeUnitToKj(inp.value);
+
+      block.energy_source = 'manual';
+      block.energy_kj_per_session = kj;
+    };
+    inp.onblur = () => {
+      const i = +inp.dataset.idx;
+      const block = formState.sport.ownBlocks[i];
+      if (activeUnitToKj(inp.value) == null) {
+        block.energy_source = 'estimated';
+        refreshEstimatedEnergy(block, { force: true });
+        updateOwnEnergyInput(i);
+      }
     };
   });
 
@@ -611,6 +892,7 @@ export function onLevelOrPlanChanged() {
 export async function bindSportStep() {
   ensureSportState();
   const catalog = await loadCatalog();
+  await loadMetValues();
   const byGroup = groupCatalogByGroup(catalog);
 
   const bindChipGroup = (groupId, target, key, cb) => {
@@ -834,7 +1116,7 @@ export function bindDietStep() {
     return value;
   };
 
-  const bindChipGroup = (groupId, target, key) => {
+  const bindChipGroup = (groupId, target, key, cb) => {
     const chips = document.querySelectorAll(`#${groupId} .chip`);
     chips.forEach(ch => {
       if (target[key] === normalizeChipValue(key, ch.dataset.value)) ch.classList.add('selected');
@@ -842,6 +1124,7 @@ export function bindDietStep() {
         chips.forEach(x => x.classList.remove('selected'));
         ch.classList.add('selected');
         target[key] = normalizeChipValue(key, ch.dataset.value);
+        cb && cb(target[key]);
         updatePremiumNote();
         checkIfPremiumNeeded(); // After each diet/repeats change
       };
@@ -852,7 +1135,12 @@ export function bindDietStep() {
   bindChipGroup('warm_meals_group', formState.nutrition, 'warm_meals');
 
   // Dieta
-  bindChipGroup('diet_group', formState.nutrition, 'diet');
+  const updateDietHints = (val) => {
+    const hints = document.querySelectorAll('#diet_block .grams-hint');
+    hints.forEach(h => h.classList.toggle('active', h.dataset.value === String(val)));
+  };
+  bindChipGroup('diet_group', formState.nutrition, 'diet', updateDietHints);
+  updateDietHints(formState.nutrition.diet);
 
   // Dislikes (WITHOUT 'Other')
   const MAX_DISLIKES = 4;
@@ -1047,7 +1335,7 @@ function formatPrice(czk, eur) {
   const currency = currentCurrency();
   return currency === 'EUR'
     ? `€ ${eur.toFixed(2)}`
-    : `${czk} CZK`;
+    : `${czk} Kč`;
 }
 function populatePlanPriceData() {
   const pricing = window?.PRICING;
@@ -1414,7 +1702,7 @@ export function bindReviewStep() {
       const { czk, eur } = formState.plan.price;
       const isEur = (currentCurrency() === 'EUR');
       const originalPrice = isEur ? eur : czk;
-      priceBox.textContent = isEur ? `€ ${originalPrice.toFixed(2)}` : `${originalPrice} CZK`;
+      priceBox.textContent = isEur ? `€ ${originalPrice.toFixed(2)}` : `${originalPrice} Kč`;
       priceBox.dataset.original = originalPrice;
     } else {
       priceBox.textContent = '-';
@@ -1519,7 +1807,7 @@ export function bindReviewStep() {
           formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
 
           // update UI
-          priceEl.textContent = isEur ? `€ ${newPrice}` : `${newPrice} CZK`;
+          priceEl.textContent = isEur ? `€ ${newPrice}` : `${newPrice} Kč`;
           infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (-${discount}%)`;
           errorEl.textContent = "";
         } else {

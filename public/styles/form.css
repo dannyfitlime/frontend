@@ -21,6 +21,16 @@
   .row--2 { grid-template-columns: 1fr 1fr; }
 }
 
+@media (min-width: 1100px) {
+  .layout-step1 .row--3 {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 24px;
+    row-gap: 28px;
+  }
+}
+
 /* === Pole formuláře === */
 .field { display: flex; flex-direction: column; gap: 4px; }
 
@@ -99,8 +109,8 @@ button:focus-visible {
   box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
 }
 .chip.selected {
-  border-color: #111;
-  background: #111;
+  border-color: #005003;
+  background: #005003;
   color: #fff;
 }
 
@@ -308,7 +318,13 @@ button:focus-visible {
 }
 .align-end { align-items: end; }
 .input-with-unit { display: inline-flex; align-items: center; gap: 10px; }
-.layout-step2 #bmr_value { max-width: 260px; padding: 10px 12px; }
+.layout-step2 .bmr-unit-input {
+  max-width: 260px;
+}
+.layout-step2 #bmr_value {
+  max-width: 260px;
+  padding: 10px 52px 10px 12px;
+}
 .error-inline { margin-top: 8px; }
 /* Lepší vertikální zarovnání mezi "Cíl" a "Jednotka energie" */
 .layout-step2 .row--2 {
@@ -346,15 +362,310 @@ button:focus-visible {
   box-shadow: 0 6px 18px rgba(0,0,0,.04);
 }
 
+.own-block-card--needs-sport {
+  border-color: rgba(5, 102, 8, .45);
+  box-shadow: 0 10px 26px rgba(5, 102, 8, .10);
+}
+
 .own-block-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.6fr 0.7fr 0.6fr;
-  gap: 12px;
+  grid-template-columns:
+    minmax(210px, 1fr)
+    minmax(105px, .48fr)
+    minmax(125px, .58fr)
+    minmax(125px, .54fr)
+    minmax(145px, .62fr);
+  gap: 16px;
   align-items: end;
 }
 
+.own-sport-field--attention label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #034d05;
+}
+
+.own-sport-field--attention label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #056608;
+  box-shadow: 0 0 0 5px rgba(5, 102, 8, .12);
+  flex: 0 0 auto;
+}
+
+.own-sport-field--attention select {
+  border-color: #056608;
+  background: #f3fbf4;
+  box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+  color: #062d07;
+  font-weight: 700;
+  animation: sportSelectNudge 2.1s ease-in-out infinite;
+}
+
+@keyframes sportSelectNudge {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(5, 102, 8, .20);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .own-sport-field--attention select,
+  .own-sport-field--attention .sport-picker-toggle {
+    animation: none;
+  }
+}
+
+.own-sport-field {
+  position: relative;
+}
+
+.own-sport-select {
+  display: none;
+}
+
+.sport-picker {
+  position: relative;
+  width: 100%;
+}
+
+.sport-picker-toggle {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 38px 10px 12px;
+  border: 1px solid var(--line-strong, #d1d5db);
+  border-radius: 10px;
+  background: #fff;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+
+.sport-picker-toggle::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-65%) rotate(45deg);
+  opacity: .75;
+}
+
+.sport-picker-toggle:hover,
+.sport-picker-toggle[aria-expanded="true"] {
+  border-color: #056608;
+  box-shadow: 0 0 0 3px rgba(5, 102, 8, .10);
+}
+
+.sport-picker-toggle.has-value {
+  border-color: #056608;
+  color: #034d05;
+}
+
+.own-sport-field--attention .sport-picker-toggle {
+  border-color: #056608;
+  background: #f3fbf4;
+  box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+  color: #062d07;
+  font-weight: 800;
+  animation: sportSelectNudge 2.1s ease-in-out infinite;
+}
+
+.sport-picker-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 40;
+  width: min(820px, calc(100vw - 52px));
+  max-height: min(620px, 72vh);
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid rgba(5, 102, 8, .25);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, .16);
+  display: flex;
+  flex-direction: column;
+}
+
+.sport-picker-panel[hidden] {
+  display: none;
+}
+
+.sport-picker-search {
+  flex: 0 0 auto;
+  margin-bottom: 14px;
+  border-color: #cbd5e1;
+  background: #fff;
+}
+
+.sport-picker-search:focus {
+  border-color: #056608;
+  box-shadow: 0 0 0 3px rgba(5, 102, 8, .12);
+}
+
+.sport-picker-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 14px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.sport-picker-group {
+  min-width: 0;
+}
+
+.sport-picker-group h4 {
+  margin: 0 0 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.sport-picker-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.sport-picker-option {
+  border: 1px solid #d6dde6;
+  border-radius: 999px;
+  padding: 8px 11px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s, transform .06s, box-shadow .15s;
+}
+
+.sport-picker-option:hover,
+.sport-picker-option:focus-visible {
+  border-color: #056608;
+  background: #eef8ef;
+  color: #034d05;
+  transform: translateY(-1px);
+}
+
+.sport-picker-option.selected {
+  border-color: #056608;
+  background: #056608;
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .sport-picker-panel {
+    position: static;
+    width: 100%;
+    max-height: 420px;
+    margin-top: 8px;
+  }
+
+  .sport-picker-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width: 720px) {
-  .own-block-grid { grid-template-columns: 1.1fr .6fr .7fr .6fr; }
+  .own-block-grid {
+    grid-template-columns:
+      minmax(210px, 1fr)
+      minmax(105px, .48fr)
+      minmax(125px, .58fr)
+      minmax(125px, .54fr)
+      minmax(145px, .62fr);
+  }
+}
+
+.unit-input {
+  position: relative;
+  width: 100%;
+}
+
+.unit-input input {
+  width: 100%;
+  min-width: 0;
+  padding-right: 46px;
+}
+
+.unit-input .unit-suffix {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.label-with-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #94a3b8;
+  border-radius: 50%;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: help;
+  user-select: none;
+}
+
+.info-tip::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: 20;
+  width: max-content;
+  max-width: 230px;
+  padding: 7px 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+  color: #111;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.info-tip:hover::after,
+.info-tip:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .own-block-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
@@ -426,6 +737,24 @@ button:focus-visible {
 .need-groups-grid .sport-accordion[open] > summary::after {
   transform: translateY(-50%) rotate(0deg);
 }
+
+@media (max-width: 1024px) and (min-width: 551px) {
+  .own-block-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+    align-items: start;
+  }
+
+  .own-block-grid > .field:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .own-block-grid select,
+  .own-block-grid input {
+    width: 100%;
+  }
+}
+
 @media (max-width: 550px) {
   .own-block-grid {
     display: grid;
@@ -444,6 +773,10 @@ button:focus-visible {
   .own-block-grid input {
     width: 100%;
     font-size: 16px;
+  }
+
+  .unit-input input {
+    padding-right: 52px;
   }
 
   /* tlačítko odstranit blok (křížek) */
@@ -791,6 +1124,8 @@ button:focus-visible {
   background: #fff;
   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .plan-card--select:hover {
@@ -805,12 +1140,11 @@ button:focus-visible {
 /* Nadpisy a texty v kartě */
 .plan-card--select h3 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 22px;
   margin-bottom: 8px;
-  position: relative;
-  gap: 8px;
+  gap: 12px;
 }
 .plan-card--select[data-variant="premium"] h3 span:first-child {
   color: #a37000;
@@ -821,10 +1155,7 @@ button:focus-visible {
   border-radius: 999px;
   padding: 2px 10px;
   font-size: 13px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  flex: 0 0 auto;
 }
 
 .badge--premium {
@@ -846,7 +1177,7 @@ button:focus-visible {
 
 /* === Ceny === */
 .plan-card--select .prices {
-  margin: 26px auto 0;
+  margin: auto auto 0;
   padding: 12px 13px;
   width: fit-content;
   text-align: center;
@@ -983,6 +1314,69 @@ button:focus-visible {
 }
 .delivery-time::before { content: "\231B"; /* Symbol ⌛ */ ; font-size: 16px; }
 [data-variant="premium"] .delivery-time::before { content: "\26A1"; /* Symbol ⚡ */; }
+
+@media (min-width: 1100px) {
+  #plan-step {
+    width: 100%;
+  }
+
+  .plan-type-grid {
+    grid-template-columns: repeat(2, minmax(320px, 430px));
+    justify-content: center;
+    gap: 28px;
+    margin: 24px auto 18px;
+  }
+
+  .plan-card--select {
+    min-height: 360px;
+    padding: 26px 28px 22px;
+    border-radius: 14px;
+  }
+
+  .plan-card--select h3 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .plan-card--select .badge {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+
+  .plan-card--select p,
+  .plan-card--select ul {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .plan-card--select ul {
+    margin-top: 4px;
+  }
+
+  .plan-card--select .prices {
+    margin-top: auto;
+    padding: 13px 18px;
+  }
+
+  .price {
+    font-size: 28px;
+  }
+
+  .delivery-time {
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  .plan-details-intro {
+    margin-top: 26px;
+    font-size: 15px;
+  }
+
+  .plan-details-grid {
+    grid-template-columns: repeat(2, minmax(320px, 420px));
+    justify-content: center;
+  }
+}
 
 .plan-card--detail .premium-feature {
   color: #056608;
