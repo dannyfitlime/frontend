@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Maksymalnie 18 treningów łącznie w tygodniu.",
     "error_energy_per_session_range": "Wydatek energetyczny musi mieścić się w zakresie od {{min}} do {{max}} {{unit}}.",
     "error_future_max3": "Można wybrać maksymalnie 3 sporty.",
-    "select_sport_placeholder": "Proszę wybrać sport"
+    "select_sport_placeholder": "Proszę wybrać sport",
+    "search_sport_placeholder": "Szukaj sportu"
   },
   "step4": {
     "title": "Makroskładniki i wykresy",

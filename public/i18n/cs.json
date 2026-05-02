@@ -617,7 +617,8 @@
     "error_sessions_total_field": "Celkem max 18 tréninků.",
     "error_energy_per_session_range": "Energetický výdej musí být mezi {{min}} a {{max}} {{unit}}.",
     "error_future_max3": "Můžete vybrat maximálně 3 sporty.",
-    "select_sport_placeholder": "Zvolte sport"
+    "select_sport_placeholder": "Zvolte sport",
+    "search_sport_placeholder": "Hledat sport"
   },
   "step4": {
     "title": "Makra & grafy",

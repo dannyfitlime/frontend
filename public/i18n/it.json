@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Massimo 18 allenamenti a settimana in totale.",
     "error_energy_per_session_range": "Il dispendio energetico deve essere compreso tra {{min}} e {{max}} {{unit}}.",
     "error_future_max3": "Puoi selezionare al massimo 3 sport.",
-    "select_sport_placeholder": "Scegli uno sport"
+    "select_sport_placeholder": "Scegli uno sport",
+    "search_sport_placeholder": "Cerca sport"
   },
   "step4": {
     "title": "Macronutrienti & grafici",

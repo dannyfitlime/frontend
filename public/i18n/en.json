@@ -617,7 +617,8 @@
     "error_sessions_total_field": "Total max 18 workouts.",
     "error_energy_per_session_range": "Energy expenditure must be between {{min}} and {{max}} {{unit}}.",
     "error_future_max3": "You can select a maximum of 3 sports.",
-    "select_sport_placeholder": "Choose a sport"
+    "select_sport_placeholder": "Choose a sport",
+    "search_sport_placeholder": "Search sport"
   },
   "step4": {
     "title": "Macros & charts",

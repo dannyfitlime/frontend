@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Máximo 18 entrenos en total.",
     "error_energy_per_session_range": "El gasto energético debe estar entre {{min}} y {{max}} {{unit}}.",
     "error_future_max3": "Puedes elegir como máximo 3 deportes.",
-    "select_sport_placeholder": "Selecciona un deporte"
+    "select_sport_placeholder": "Selecciona un deporte",
+    "search_sport_placeholder": "Buscar deporte"
   },
   "step4": {
     "title": "Macros y gráficos",

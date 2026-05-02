@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Maximum 18 séances au total par semaine.",
     "error_energy_per_session_range": "La dépense énergétique doit être comprise entre {{min}} et {{max}} {{unit}}.",
     "error_future_max3": "Vous pouvez sélectionner au maximum 3 sports.",
-    "select_sport_placeholder": "Choisissez un sport"
+    "select_sport_placeholder": "Choisissez un sport",
+    "search_sport_placeholder": "Rechercher un sport"
   },
   "step4": {
     "title": "Macros & graphiques",

@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Máximo de 18 treinos no total por semana.",
     "error_energy_per_session_range": "O gasto energético deve estar entre {{min}} e {{max}} {{unit}}.",
     "error_future_max3": "Pode selecionar no máximo 3 desportos.",
-    "select_sport_placeholder": "Escolha um desporto"
+    "select_sport_placeholder": "Escolha um desporto",
+    "search_sport_placeholder": "Pesquisar desporto"
   },
   "step4": {
     "title": "Macros & gráficos",

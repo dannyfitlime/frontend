@@ -295,6 +295,16 @@ function sportLabel(rec, lang) {
   return rec?.labels?.[lang] || rec?.labels?.en || rec?.id || '';
 }
 
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[ch]);
+}
+
 function groupCatalogByGroup(catalog) {
   const groups = {};
   for (const [id, rec] of Object.entries(catalog || {})) {
@@ -302,6 +312,22 @@ function groupCatalogByGroup(catalog) {
     (groups[g] ||= []).push({ id, ...rec });
   }
   return groups;
+}
+
+function sportGroupMeta() {
+  return {
+    labels: {
+      endurance: t('step3.groups.title_endurance') || 'Endurance sports',
+      individual: t('step3.groups.title_individual') || 'Individual sports',
+      team: t('step3.groups.title_team') || 'Team sports',
+      fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
+      water: t('step3.groups.title_water') || 'Water sports',
+      winter: t('step3.groups.title_winter') || 'Winter sports',
+      combat: t('step3.groups.title_combat') || 'Combat sports',
+      other: t('step3.groups.title_other') || 'Other sports'
+    },
+    order: ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other']
+  };
 }
 
 
@@ -344,17 +370,7 @@ function setMainForActive(id) {
 }
 
 function buildSportsSelectOptions(byGroup, lang, selectedId) {
-  const labels = {
-    endurance: t('step3.groups.title_endurance') || 'Endurance sports',
-    individual: t('step3.groups.title_individual') || 'Individual sports',
-    team: t('step3.groups.title_team') || 'Team sports',
-    fitness: t('step3.groups.title_fitness') || 'Fitness & gym',
-    water: t('step3.groups.title_water') || 'Water sports',
-    winter: t('step3.groups.title_winter') || 'Winter sports',
-    combat: t('step3.groups.title_combat') || 'Combat sports',
-    other: t('step3.groups.title_other') || 'Other sports'
-  };
-  const order = ['endurance', 'individual', 'team', 'fitness', 'water', 'winter', 'combat', 'other'];
+  const { labels, order } = sportGroupMeta();
 
   // This option is shown as a placeholder, but not in the dropdown list
   let html = `<option value="" disabled ${!selectedId ? 'selected' : ''} hidden>
@@ -363,17 +379,78 @@ function buildSportsSelectOptions(byGroup, lang, selectedId) {
 
   for (const g of order) {
     const list = byGroup[g]; if (!list || !list.length) continue;
-    html += `<optgroup label="${labels[g]}">`;
+    html += `<optgroup label="${escapeHtml(labels[g])}">`;
     list.slice()
       .filter(rec => rec.id !== 'triathlon')
       .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
       .forEach(rec => {
         const lbl = sportLabel(rec, lang);
-        html += `<option value="${rec.id}" ${rec.id === selectedId ? 'selected' : ''}>${lbl}</option>`;
+        html += `<option value="${escapeHtml(rec.id)}" ${rec.id === selectedId ? 'selected' : ''}>${escapeHtml(lbl)}</option>`;
       });
     html += `</optgroup>`;
   }
   return html;
+}
+
+function buildSportsPickerHtml(byGroup, lang, selectedId, idx) {
+  const { labels, order } = sportGroupMeta();
+  const selectedRec = selectedId ? window._sportCatalog?.[selectedId] : null;
+  const selectedLabel = selectedRec ? sportLabel(selectedRec, lang) : '';
+  const placeholder = t('step3.select_sport_placeholder') || 'Select a sport';
+  const searchPlaceholder = t('step3.search_sport_placeholder') || 'Search sport';
+  const panelId = `sport_picker_panel_${idx}`;
+
+  let groupsHtml = '';
+  for (const g of order) {
+    const list = byGroup[g];
+    if (!list || !list.length) continue;
+
+    const options = list.slice()
+      .filter(rec => rec.id !== 'triathlon')
+      .sort((a, b) => sportLabel(a, lang).localeCompare(sportLabel(b, lang)))
+      .map(rec => {
+        const label = sportLabel(rec, lang);
+        return `
+          <button type="button"
+                  class="sport-picker-option${rec.id === selectedId ? ' selected' : ''}"
+                  data-idx="${idx}"
+                  data-sport-id="${escapeHtml(rec.id)}"
+                  data-search="${escapeHtml(label.toLowerCase())}">
+            ${escapeHtml(label)}
+          </button>
+        `;
+      })
+      .join('');
+
+    groupsHtml += `
+      <section class="sport-picker-group" data-group="${escapeHtml(g)}">
+        <h4>${escapeHtml(labels[g])}</h4>
+        <div class="sport-picker-options">${options}</div>
+      </section>
+    `;
+  }
+
+  return `
+    <div class="sport-picker">
+      <button type="button"
+              class="sport-picker-toggle${selectedId ? ' has-value' : ''}"
+              data-idx="${idx}"
+              aria-expanded="false"
+              aria-controls="${panelId}">
+        <span>${escapeHtml(selectedLabel || placeholder)}</span>
+      </button>
+      <div id="${panelId}" class="sport-picker-panel" data-idx="${idx}" hidden>
+        <input type="search"
+               class="sport-picker-search"
+               data-idx="${idx}"
+               placeholder="${escapeHtml(searchPlaceholder)}"
+               autocomplete="off" />
+        <div class="sport-picker-groups">
+          ${groupsHtml}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 
@@ -518,6 +595,7 @@ function renderOwnBlocks() {
           <select id="own_sport_${idx}" name="own_blocks[${idx}][sport_id]" class="own-sport-select" data-idx="${idx}">
             ${buildSportsSelectOptions(byGroup, lang, b.sportId)}
           </select>
+          ${buildSportsPickerHtml(byGroup, lang, b.sportId, idx)}
           <div class="error" id="err-picked_own_${idx}"></div>
         </div>
 
@@ -570,6 +648,61 @@ function renderOwnBlocks() {
     sel.onchange = () => {
       const i = +sel.dataset.idx;
       formState.sport.ownBlocks[i].sportId = sel.value;
+      recomputePickedOwnFromBlocks();
+      if (activePlan() === 'own') ensureMainForActive();
+      renderMainSportChips();
+      onLevelOrPlanChanged();
+      updateOwnEnergyInput(i, { force: true });
+    };
+  });
+
+  const closeSportPickerPanels = (except = null) => {
+    host.querySelectorAll('.sport-picker-panel').forEach(panel => {
+      if (panel === except) return;
+      panel.hidden = true;
+      const toggle = host.querySelector(`.sport-picker-toggle[aria-controls="${panel.id}"]`);
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  host.querySelectorAll('.sport-picker-toggle').forEach(btn => {
+    btn.onclick = () => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      const willOpen = panel.hidden;
+      closeSportPickerPanels(panel);
+      panel.hidden = !willOpen;
+      btn.setAttribute('aria-expanded', String(willOpen));
+      if (willOpen) {
+        requestAnimationFrame(() => panel.querySelector('.sport-picker-search')?.focus());
+      }
+    };
+  });
+
+  host.querySelectorAll('.sport-picker-search').forEach(input => {
+    input.oninput = () => {
+      const query = input.value.trim().toLowerCase();
+      const panel = input.closest('.sport-picker-panel');
+      panel?.querySelectorAll('.sport-picker-group').forEach(group => {
+        let visibleCount = 0;
+        group.querySelectorAll('.sport-picker-option').forEach(btn => {
+          const visible = !query || btn.dataset.search.includes(query);
+          btn.hidden = !visible;
+          if (visible) visibleCount++;
+        });
+        group.hidden = visibleCount === 0;
+      });
+    };
+  });
+
+  host.querySelectorAll('.sport-picker-option').forEach(btn => {
+    btn.onclick = () => {
+      const i = +btn.dataset.idx;
+      const sportId = btn.dataset.sportId;
+      const nativeSelect = host.querySelector(`#own_sport_${i}`);
+
+      formState.sport.ownBlocks[i].sportId = sportId;
+      if (nativeSelect) nativeSelect.value = sportId;
       recomputePickedOwnFromBlocks();
       if (activePlan() === 'own') ensureMainForActive();
       renderMainSportChips();

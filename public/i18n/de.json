@@ -608,7 +608,8 @@
     "error_sessions_total_field": "Insgesamt max. 18 Trainingseinheiten.",
     "error_energy_per_session_range": "Der Energieverbrauch muss zwischen {{min}} und {{max}} {{unit}} liegen.",
     "error_future_max3": "Sie können maximal 3 Sportarten auswählen.",
-    "select_sport_placeholder": "Sportart auswählen"
+    "select_sport_placeholder": "Sportart auswählen",
+    "search_sport_placeholder": "Sport suchen"
   },
   "step4": {
     "title": "Makros & Grafiken",
