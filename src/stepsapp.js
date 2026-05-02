@@ -1202,7 +1202,7 @@ function formatPrice(czk, eur) {
   const currency = currentCurrency();
   return currency === 'EUR'
     ? `€ ${eur.toFixed(2)}`
-    : `${czk} CZK`;
+    : `${czk} Kč`;
 }
 function populatePlanPriceData() {
   const pricing = window?.PRICING;
@@ -1569,7 +1569,7 @@ export function bindReviewStep() {
       const { czk, eur } = formState.plan.price;
       const isEur = (currentCurrency() === 'EUR');
       const originalPrice = isEur ? eur : czk;
-      priceBox.textContent = isEur ? `€ ${originalPrice.toFixed(2)}` : `${originalPrice} CZK`;
+      priceBox.textContent = isEur ? `€ ${originalPrice.toFixed(2)}` : `${originalPrice} Kč`;
       priceBox.dataset.original = originalPrice;
     } else {
       priceBox.textContent = '-';
@@ -1674,7 +1674,7 @@ export function bindReviewStep() {
           formState.plan.price.currency = currentCurrency() === "EUR" ? "EUR" : "CZK";
 
           // update UI
-          priceEl.textContent = isEur ? `€ ${newPrice}` : `${newPrice} CZK`;
+          priceEl.textContent = isEur ? `€ ${newPrice}` : `${newPrice} Kč`;
           infoEl.textContent = `${t("step8.discount_applied") || "Discount code"}: ${code} (-${discount}%)`;
           errorEl.textContent = "";
         } else {

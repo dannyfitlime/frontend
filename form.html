@@ -90,7 +90,7 @@
 
       <!-- Střední blok: značka -->
       <div class="footer-center">
-        <span class="brandline">FitLime s.r.o. © <span id="year">2026</span></span>
+        <span class="brandline" data-i18n="home.footer.form_tagline">FitLime · jídelníček na míru</span>
       </div>
 
       <!-- Pravý blok: platby -->
@@ -117,8 +117,9 @@
       });
     }
 
-    // Nastavit rok ve footeru
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Nastavit rok ve footeru, pokud je v aktuální variantě patičky použitý.
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     function renderContactEmails() {
       document.querySelectorAll('[data-contact-email]').forEach(el => {
